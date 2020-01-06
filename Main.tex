@@ -1,0 +1,231 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{epsfig,amsfonts}
+\usepackage{natbib}
+\usepackage{authblk}
+\usepackage{subfig}
+\usepackage{setspace}
+\usepackage{hypcap}
+%From: https://tex.stackexchange.com/questions/14364/cross-referencing-between-different-files to connect references from external .tex documents; NOTE: to get xr package to work in Overleaf, followed the directions here https://www.overleaf.com/learn/how-to/Cross_referencing_with_the_xr_package_in_Overleaf ; NOTE: seems like when use {xr} and not {xr-hyper}, things work -- get some 'errors' when use xr-hyper, even though within the document looks like things are working fine?
+\usepackage{xr}
+
+\title{Differential complex trait architecture across humans: epistasis identified in non-European populations at multiple genomic scales}
+\author[1,2]{Michael C. Turchin}
+\author[1,3]{Isabella Ting}
+\author[1,4,5,*]{Lorin Crawford}
+\author[1,2,*,$\dag$]{Sohini Ramachandran}
+\affil[1]{Center for Computational Molecular Biology, Brown University}
+\affil[2]{Department of Ecology and Evolutionary Biology, Brown University}
+\affil[3]{Department of Computer Science, Brown University}
+\affil[4]{Department of Biostatistics, Brown University}
+\affil[5]{Center for Statistical Science, Brown University}
+\affil[$\ast$]{indicates these authors contributed equally}
+\affil[$^\dag$]{To whom correspondence should be addressed: sramachandran@brown.edu}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}\label{InterPath-Abstract}
+Genome-wide association (GWA) studies have identified thousands of significant genetic associations in humans across a number of complex traits. However, the vast majority of these studies use datasets of predominantly European ancestry \cite{Popejoy2016}. It has generally been thought that complex trait genetic architecture should be transferable across populations of different ancestries, but recent work has shown a number of differences in trait architecture across human ancestries, including heterogeneity in both the identified causal variants and estimated effect sizes 
+\cite{Martin2017,Wojcik2019}. Here, we report further evidence that complex trait genetic architecture is fundamentally different among human ancestries by jointly leveraging pathway and epistasis analysis.
+
+Under the assumption that a given complex trait may have differential polygenic architectures across human ancestries, we hypothesize that human populations may also be enriched for differences in epistatic effects. However, since polygenic traits tend to have smaller GWA effect sizes, combining variants via pathway analysis may allow us to better reveal these signals. To accomplish this, we extend the concept of identifying marginal epistasis, moving from testing single variants \cite{Crawford2017} to testing groups of variants for nonlinear association with a trait of interest.
+
+We apply our new method to multiple ancestries present in the UK Biobank \cite{Sudlow2015} and explore multiple pathway-related interaction models. Using morphometric traits we find evidence for genome-wide epistasis in African and other non-European populations. We also find evidence that these trends exists on the SNP and gene levels as well. Results also indicate this may be due to increased heterozygosity in non-European populations. This suggests that non-European populations may be well-suited for identifying non-additive effects in human complex trait architecture; this also suggests further evidence that European populations -- predominantly used for epistasis studies -- may indeed be limited and inaccurate proxies for all human ancestries in complex trait research.
+\end{abstract}
+
+
+\section{Introduction}\label{InterPath-Introduction}
+
+paragraph introducing the issues with european-centric gwas data that has begun to occur with recent efforts; relate this back to underlying issues of unexplored, potential differences in genetic architecture across human populations
+
+second paragraph focusing on the lack of exploration of higher-order effects in human populations in general. link \& explain that we think this may be one area where there are differences between populations that are not being accounted for in the previously mentioned models and analyses, leading to the issues currently being seen
+
+additionally, when comparing human populations we expect large scale, if subtle, changes in allele frequencies across the genome -- these differences may have a greater impact on the multiplicative nature of epistasis than the more self-contained models of additivity, thus suggesting epistasis as a prime candidate for contributing to differences in complex traits across human populations. 
+
+third paragraph introduce what we are doing, ie using the European \& non-European ancestries in the UKBioBank to explore epistasis in non-European populations. We use previously published methods as well as a new method combining pathway \& epistasis analysis to reveal that there is evidence for higher-order interactions for complex traits in non-European populations, and that these higher-order interactions differ among human populations. Fundamentally, this further provides evidence thatc complex trait genetic architecture is  different across human populations and should not be assumed to be otherwise. Furthermore, this also provides evidence that European populations may not be well-suited for investigations of epistasis in human populations, and in general may be an inappropriate proxy for other human ancestries for these (and potentially other) complex trait analyses. 
+
+
+
+
+\section{Results}\label{InterPath-Results}
+
+
+\subsection{SNP Level Epistasis}\label{InterPath-Results-SNPEpistasis}
+
+PLINK and MAPIT results
+
+\subsection{Genome Level Epistasis}\label{InterPath-Results-SNPEpistasis}
+
+GEMMA PVE Results
+
+\subsection{Pathway Level Epistasis}\label{InterPath-Results-SNPGenomeEpistasis}
+
+Explain motivation for moving into InterPath
+
+\subsubsection{InterPath}
+
+Explain InterPath
+
+\subsubsection{InterPath Results}
+
+Show Results
+
+\subsection{Replication in British Subsamples}
+
+\subsection{Relationship Between Epistasis and Genetic Diversity}
+
+\section{Discussion}\label{InterPath-Discussion}
+
+
+\section{Online Methods}\label{InterPath-Online-Methods}
+
+
+\section{URLs}\label{InterPath-URLs}
+
+\section{Acknowledgments}\label{InterPath-Acknowledgments}
+
+\section{Author Contributions}\label{InterPath-Author-Contributions}
+
+\section{Competing Interests}\label{InterPath-Competing-Interests}
+
+\begingroup
+\bibliographystyle{apalike}
+\setstretch{1.0}
+%\bibliography{Main}
+\endgroup
+
+\clearpage
+\section{Supplementary Material}
+
+\captionsetup[figure]{name=Supplementary Figure}
+\captionsetup[table]{name=Supplementary Table}
+%\setcounter{figure}{0}
+
+
+\begingroup
+\bibliographystyle{apalike}
+\setstretch{1.0}
+%\bibliography{Supplementary}
+\endgroup
+
+
+\iffalse
+
+%\iffalse
+\begin{figure}[htbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[scale=.15]{Images/InterPath_Manuscript_Main_KG_QQPlotsMain_vs4.png}}
+\caption[K*G Results: QQ Plots]{\textbf{K*G Results: QQ Plots}}
+\label{InterPath-Main-KG-QQPlots-Orig}
+\end{figure} 
+\begingroup
+\renewcommand{\thefigure}{\arabic{figure} (Cont.)}
+\addtocounter{figure}{-1}
+\captionof{figure}[]{\textbf{K*G Results: QQ Plots} -- ...}
+\renewcommand{\thefigure}{\arabic{figure}}
+\endgroup
+%\fi
+
+
+\begin{itemize}
+    \item Much work has been done identifying genome-wide associations for a large number of traits
+    \item However the vast majority of these studies have been conducted in datasets of predominantly European ancestry
+    \item Recent work has shown that these association results may not be transferable to non-European ancestries
+    \item However most of this recent work has focused solely on genome-wide significant hits and additive models, such as polygenic risk score analysis
+    \item We became interested in whether this evidence for differential complex trait architecture across ancestries extended to even broader qualities of the human genome.
+    \item To explore this, we chose to look for evidence of higher-order genetic interactions in complex trait architecutre. Specifically we chose to test for marginal epistasis. 
+    \item then go into explaining how we chose to do the pathway setup because of smaller effect sizes in common SNPs/complex trait architecture, that we're extending the MAPIT framework, and that we chose to focus on the UKBioBank dataset and the MSigDB pathways?
+\end{itemize}
+
+
+\subsection{InterPath Model}\label{InterPath-Results-subsection1}
+
+\begin{itemize}
+    \item Describe InterPath model
+    \begin{itemize}
+        \item Overall concept (connect and extend it from the MAPIT model, or just present as its own thing from the get-go?)
+        \item Our particular use of it for 'pathway' vs. 'rest of the genome'
+        \item introduce some overall 'study design figure'? a part A showing the model, with a possible part B showing the analysis setup to be used in the next section?
+    \end{itemize}
+    \item Show simulation results
+\end{itemize}
+
+\subsection{UKB Analysis}\label{InterPath-Results-UKBAnalysis}
+    
+\begin{itemize}
+    \item Describe analysis setup
+    \begin{itemize}
+        \item ie UKB dataset, phenotypes (Height, BMI), which populations to use, MSigDB choices, variant grouping strategy (only going to mention GenePlus20kb, correct?)
+    \end{itemize}
+    \item Show main results
+    \begin{itemize}
+        \item QQ plot figure of height + bmi for each population (probably two QQ plots, one for each phenotype, with all the ancestries together on the same plot, since only showing GenePlus20kb for this paper/analysis)
+        \item Heatplot of overlap between 'top' pathways, the genome-wide significant version? with a less conservative version as a supplemental figure?
+    \end{itemize}
+    \item emphasize the interesting/surprising result of more hits in the African vs. European populations?
+\end{itemize}
+
+\subsection{African vs. European Epistasis at Multiple Genomic Scales}\label{InterPath-Results-AfricanVsEuropean}
+
+\begin{itemize}
+    \item Explain that we decided to explore whether we can find a similar signals at different levels of analysis in the human genome
+    \item Genome-wide, higher-order heritability estimates via GEMMA analysis (if we can figure it out)
+    \begin{itemize}
+        \item this would probably be a table if we get a result from here?
+    \end{itemize}
+    \item Direct SNP-by-SNP interaction analysis via PLINK (we see a larger number of SNPs containing significant SNP-by-SNP epistatic interactions in the African population than European population)
+    \begin{itemize}
+        \item probably a plot of the four p-value distributions all together (height + bmi for African \& European)
+    \end{itemize}
+    \item Marginal SNP epistatic interactions via MAPIT (if the results work out)
+    \begin{itemize}
+        \item probably a Manhattan plot of sorts?
+    \end{itemize}
+    \item Gene-level InterPath analysis (not as strong overall signal in either of the population/phenotype combinations, but it did seem like there was a least a slightly greater signal in the African population than European one)
+    \begin{itemize}
+        \item QQ-plot again?
+    \end{itemize}
+\end{itemize}
+
+\subsection{Replication of Result in PAGE IPM BioMe Dataset}\label{InterPath-Results-IPMBioMeReplication}
+
+\begin{itemize}
+    \item Identified and subsetted IPM BioMe dataset down to an African American cohort and a European cohort
+    \begin{itemize}
+        \item (will need to finalize which European cohort to use, `strict' or `loose')
+    \end{itemize}
+    \item Redid InterPath analysis for Height and BMI in both subpopulations
+    \begin{itemize}
+        \item (currently figuring out PC/inflation situation)
+        \item (ideally) see similar results of African American cohort having a larger signal than European cohort, thus `replicating' our result
+        \item show via another QQ-plot?
+      \end{itemize}
+    \item possibly compare UKB and IPM BioMe African/African American results via correlation of p-values, and/or direct comparison of the actual top pathways showing up?
+    
+\end{itemize}
+
+\subsection{Something involving genetic diversity estimates across the genome or direct SNP allele frequency comparisons}\label{InterPath-Results-IPMBioMeReplication}
+
+\begin{itemize}
+    \item the idea here is to show *something* that begins to get at `why are we seeing stronger signals in the African/non-European cohorts'
+    \item one idea is to look at measures of genetic diversity and suggest that increased diversity across the genome is leading to either a) greater ability to pick up signal and/or b) more material for biology/evolution to act on
+    \begin{itemize}
+        \item possibly something like watterson's theta, looking at the value across 'top pathways' (ie see if larger diversity values is correlated with more significant p-values)? or nucleotide diversity, or heterozygosity
+        \item vcftools can do these things pretty directly I think
+    \end{itemize}
+    \item another idea is to look at joint SFSs between the two populations in both datasets? 
+\end{itemize}
+
+
+\fi
+
+\end{document}
