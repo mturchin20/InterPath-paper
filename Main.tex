@@ -57,16 +57,26 @@ Epistasis, despite being a well-established component of complex trait architect
 
 \subsection{Genome Level Epistasis}\label{InterPath-Results-GenomeEpistasis}
 
-To investigate epistasis in multiple human populations, we first extracted a variety of human ancestries from the UKB (see Methods). We collected a total of 8 UKB subsets with an average sample size of XXXX among the non-European populations (Supplementary Table 1), including African, Indian, Chinese, and Pakistani subsets. To maximize our sample sizes per subset, we focused on height and body mass index (BMI) as our complex traits of interest. 
+To investigate epistasis in multiple human populations, we first extracted a variety of human ancestries from the UKB (see Online Methods). We collected a total of 8 UKB subsets with an average sample size of XXXX among the non-European populations (Supplementary Table 1), including African, Indian, Chinese, and Pakistani subsets. To maximize our sample sizes per subset, we focused on height and body mass index (BMI) as our complex traits of interest. 
 
 The first approach we took to investigate epistasis was to look at genome-wide estimates of phenotypic PVE. Specifically, we were interested in the following variance component model:
 
 \begin{equation}\label{InterPath-GEMMA-Equation-Model}
- := \sum_{\gamma}w_{\gamma} \gamma
+ y = G_1 + G_2 + \epsilon
 \end{equation}
 
-start with ukbiobank information
-GEMMA PVE Results
+where $y$ is a $n \times 1$ vector of phenotypes, $G_1$ is a $n \times n$ genetic relatedness matrix (GRM), constructed using all SNPs genome-wide and representing all first-order interactions, $G_2$ is a $n \times n$ matrix produced from the Hadamard product of $G_1$ against itself ($G_2 = G_1 \circ G_1$), representing all second-order interactions, and $\epsilon$ is a $n \times 1$ vector of normally distributed random effects. In other words, $G_1$ can be thought of as representing all additive effects, and $G_2$ can be thought of as representing all pairwise epistatic effects. To fit this model and estimate $G_2$, we used GEMMA \citep{Zhou2012} and its REML AI algorithm for estimating variance components.
+
+Estimating these variance components and calculating their PVEs for height and BMI in each of our populations, we indeed find differences across each human ancestry (Table 1).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=1]{Images/Table1_Placeholder.png}
+\caption[TBD]{\textbf{TBD}. \\ this will be a table not a figure.}
+\label{IntrePath-Main-Table-GEMMA}
+\end{figure}
+
+In height, we do not see anything immediately new. For the additive effects $G_1$ we mainly calculate PVEs across each population within our range of expectation (between XX and XX (citation)). Additionally, we do not currently see much evidence for second-order effects $G_2$. However, looking at BMI we see a different result. Across all populations we see non-trivial PVEs for $G_2$, ranging from XX to XX. We also see larger values in multiple non-European populations. In particular we see a particularly strong result in XXX. This might be beginning evidence that indeed, non-European populations have more potential for picking up signals of higher-order interactions in the genome.   
 
 \subsection{SNP Level Epistasis}\label{InterPath-Results-SNPEpistasis}
 
@@ -133,9 +143,11 @@ GEMMA/GridLMM analyses were conducted using...
 
 \subsection{InterPath Analyses}
 
-InterPath analyses were condcuted by employing the...
+InterPath analyses were conducted by employing the...
 
 \subsection{Genetic Diversity Analyses}
+
+Genetic diversity analyses were conducted by...
 
 \section{URLs}\label{InterPath-URLs}
 
@@ -160,8 +172,8 @@ GridLMM:
 \clearpage
 \section{Supplementary Material}
 
-\captionsetup[figure]{name=Supplementary Figure}
-\captionsetup[table]{name=Supplementary Table}
+%\captionsetup[figure]{name=Supplementary Figure}
+%\captionsetup[table]{name=Supplementary Table}
 %\setcounter{figure}{0}
 
 
