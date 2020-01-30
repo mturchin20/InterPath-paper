@@ -96,20 +96,26 @@ Show Results
 
 \section{Online Methods}\label{InterPath-Online-Methods}
 
-\subsection{UK BioBank Subsets}
+\subsection{UK BioBank Data}
 
+\subsubsection{Population Subsets}
 UK BioBank data was applied for and downloaded from XXX. We first grouped and extracted our multiple population subsets by using self-identified ancestry (`African', `British', `Caribbean', `Chinese', `Indian', `Irish', and `Pakistani'). British random subsets of 4,000 and 10,000 individuals, both the original sets and the additional four rounds of replications, were constructed by randomly choosing initial sets of non-overlapping 4,000 and 10,000 individuals; each round of 4,000 and 10,000 individuals were ensured not to overlap with the previous rounds of the same size of subset. 
 
-We then conducted standard quality control (QC) procedures on each of these population subsets. Note that we focused our analyzes on the genotyped chip data throughout the project. First we conducted SNP-level QC by dropping variants that did not meet the following criteria:  minor allele frequency (MAF) >= .01, genotype missingness <= 5\%, and Hardy-Weinberg equilibrium test p-value >= $1\times10^{-6}$. We then conducted individual-level QC via the following steps. Individuals were removed if they did not have genotype missingness >= 5\%. Individuals were also removed if they were a 3\textsuperscript{rd} degree relative or more to someone else in the dataset; specifically the KING relatedness values provided with the UKB data were used to identify related individuals, and one individual from every pair of 3\textsuperscript{rd} degree or more relatives was removed. Individuals were also dropped if they were tagged by any of the following three flags from the UKB data: `het.missing.outliers', `putative.sex.chromosome.aneuploidy', and `excess.relatives'. Lastly, individuals were removed if they were determined to be PCA outliers; this was conducted by running flashPCA (citation) on each population subset separately and identifying individuals that had PC values greater than 7 standard deviations away from the mean for any of the top 6 PCs. 
+We then conducted standard quality control (QC) procedures on each of these population subsets. Note that we focused our analyzes on the genotyped chip data throughout the project. First we conducted SNP-level QC by dropping variants that did not meet the following criteria:  minor allele frequency (MAF) >= .01, genotype missingness <= 5\%, and Hardy-Weinberg equilibrium test p-value >= $1\times10^{-6}$. We then conducted individual-level QC via the following steps. Individuals were removed if they did not have genotype missingness >= 5\%. Individuals were also removed if they were a 3\textsuperscript{rd} degree relative or more to someone else in the dataset; specifically the KING relatedness values provided with the UKB data were used to identify related individuals, and one individual from every pair of 3\textsuperscript{rd} degree or more relatives was removed. Individuals were also dropped if they were tagged by any of the following three flags from the UKB data: `het.missing.outliers', `putative.sex.chromosome.aneuploidy', and `excess.relatives'. Lastly, individuals were removed if they were determined to be PCA outliers; this was conducted by running FlashPCA2\cite{Abraham2017} on each population subset separately and identifying individuals that had PC values greater than 7 standard deviations away from the mean for any of the top 6 PCs. 
 
-After this first round of QC procedures, we then proceeded to impute our current population subsets. Since most of the analyses in this project utilized genetic relatedness matrices (GRMs), and variants need to have no missing data for these GRMs, we used imputation primarily to maximize the number of genotyped SNPs that would not be dropped by this stringent threshold (as opposed to using imputation to increase the number of SNPs we were analyzing). To conduct this imputation, we uploaded our population subsets to the University of Michigan Imputation Server (citation) and used the following options: Minimac3 for the imputation software, 1000G phase 3 v5 for the reference panel, and Eagle v2.3 for the phasing software. After  
+After this first round of QC procedures, we then proceeded to impute our current population subsets. Since most of the analyses in this project utilized genetic relatedness matrices (GRMs), and variants need to have no missing data for these GRMs, we used imputation primarily to maximize the number of genotyped SNPs that would not be dropped by this stringent threshold (as opposed to using imputation to increase the number of SNPs we were analyzing). To conduct this imputation, we uploaded our population subsets to the University of Michigan Imputation Server\cite{Das2016} and used the following options: Minimac3 for the imputation software, 1000G phase 3 v5 for the reference panel, and Eagle v2.3 for the phasing software. Completed imputed files were then downloaded from the Imputation Server afterwards and treated to further QC steps: imputed variants were intersected back to the original set of genotyped chip variants, variants with imputation quality scores < .3 were removed, and variants that had genotype missingness rates > 0\% were also removed. These steps represent the last of our QC and imputation procedures, and information on the final forms of our UKB population subsets can be found in Supplementary Table (table).
 
+\subsubsection{Phenotypes}
 
-was then filtered by mino 
+For all the analyses presented in here, height and BMI were our complex traits of interest. Each phenotype was adjusted for age, gender, and assessment center. Following previous pipelines (cite GIANT), each dataset was first divided into male and female subsets. Age was then regressed out within each sex. The resulting residuals were then inverse normalized according to equation \#\# found in the supplement of (citation). These normalized values were then combined back between sexes, and, lastly, assessment center designations \textcolor{red}{(give UKB identifier?)} as detailed by the UKB were regressed out as well. 
 
-Individuals were extracted and grouped bWe conducted standard quality control (QC) procedures
+\subsubsection{Global Principal Components}
+
+To take into account possible global patterns of population structure, principal components to be used as covariates during analyses were derived by running PCA on our full set of UKB populations. FlashPCA2 was used to run PCA, and as stated, all of our post-QC, post-imputation population files were analyzed together.    
 
 \subsection{PLINK Analyses}
+
+PLINK pairwise epistasis analyses were conducted using PLINK v1.90b4, the `\texttt{-{}-epistasis}' command, and phenotypes that had top 10 global PCs regressed out; PCs were regressed out directly from the phenotypes due to the `\texttt{-{}-epistasis}' function having no explicit form to incorporate covariates. Default values for the `\texttt{-{}-epi1}' and `\texttt{-{}-epi2}' options (0.0001 and 0.01) were kept. 
 
 \subsection{MAPIT Analyses}
 
@@ -132,7 +138,7 @@ Individuals were extracted and grouped bWe conducted standard quality control (Q
 \begingroup
 \bibliographystyle{apalike}
 \setstretch{1.0}
-%\bibliography{Main}
+\bibliography{Main}
 \endgroup
 
 \clearpage
@@ -144,7 +150,7 @@ Individuals were extracted and grouped bWe conducted standard quality control (Q
 
 
 \begingroup
-\bibliographystyle{apalike}
+%\bibliographystyle{apalike}
 \setstretch{1.0}
 %\bibliography{Supplementary}
 \endgroup
