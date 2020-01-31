@@ -186,7 +186,20 @@ In height, we do not see anything immediately new. For the additive effects $G_1
 
 \subsection{SNP Level Epistasis}\label{InterPath-Results-SNPEpistasis}
 
-PLINK and MAPIT results
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.35]{Images/PLINK_Epistasis_Placeholder.png}
+\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\label{IntrePath-Main-Figure-PLINK}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.35]{Images/MAPIT_OLD_Placeholder.png}
+\caption[TBD]{\textbf{OLD DATA}. \\ Placeholder.}
+\label{IntrePath-Main-Figure-MAPIT}
+\end{figure}
 
 \subsection{Pathway Level Epistasis}\label{InterPath-Results-PathwayEpistasis}
 
@@ -255,10 +268,10 @@ Because we consider scenarios where there are more variants than samples, we nee
 
 To complete the specification of the InterPath methodology, we lastly assume an additional random effect $\bu$ which models the summation of all pairwise interaction effects between a given signaling pathway variant and all other pathways. In this work, we limit ourselves to the case of finding second order crosstalk relationships between pathways --- although, extensions to higher-order interactions is straightforward \citep{Crawford2017}. Altogether, this results in the following linear mixed model
 \begin{equation}
-\by = &\mu\bm{1}+ \bg +\wt\bg+\bu+\bvarepsilon,\\ 
-\bg\sim \mathcal{N}(\bm{0}, &\omega^2\bK), \quad \wt\bg\sim \mathcal{N}(\bm{0},
+\by = \mu\bm{1}+ \bg +\wt\bg+\bu+\bvarepsilon,\\ 
+\bg\sim \mathcal{N}(\bm{0}, \omega^2\bK), \quad \wt\bg\sim \mathcal{N}(\bm{0},
 \nu^2\wt\bK),\\ 
-\bu\sim\mathcal{N}(\bm{0},&\sigma^2\bQ), \quad \bvarepsilon\sim \mathcal{N}(\mathbf{0}, \tau^2\bI).\label{LMM}
+\bu\sim\mathcal{N}(\bm{0},\sigma^2\bQ), \quad \bvarepsilon\sim \mathcal{N}(\mathbf{0}, \tau^2\bI).\label{LMM}
 \end{equation}
 Here, the $\bQ = \bK\circ\wt\bK$ is represents a second-order interaction relationship matrix, and is obtained by using the Hadamard product (i.e.~the squaring of each element) between the pathway specific relatedness matrix and its corresponding polygenic background. Note that the formulation of InterPath in Equation \eq{LMM} can easily be extended to accommodate other fixed effects (e.g.~age, sex, or genotype principal components), as well as other random effects terms that can be used to account for sample non-independence due to other genetic or common environmental factors.
 
@@ -268,8 +281,8 @@ Here, the $\bQ = \bK\circ\wt\bK$ is represents a second-order interaction relati
 
 Our goal is to identify signaling pathways that have significant non-zero interaction effects on a given phenotype. To do so, we examine each $r$-th pathway of interest in turn, and test the null hypothesis in Equation \eqref{LMM} that $\text{H}_0: \sigma^2=0$. The variance component $\sigma^2$ effectively captures the total interaction effects between the $r$-th pathway and all other pathways. We refer to this as the marginal interaction effect for the $r$-th pathway. To do so, we make use of the MQS method for parameter estimation and hypothesis testing \citep{Zhou2017}. Briefly, MQS is based on the computationally efficient method of moments and produces estimates that are mathematically identical to the Haseman-Elston (HE) cross-product regression \citep{Haseman1972}. To estimate the variance components with MQS, we first multiply Equation \eq{LMM} by a projection (hat) matrix onto the null space of the intercept term $\mu$, where $\bH=\bI-\bm{1}(\bm{1}^{\T}\bm{1})^{-1}\bm{1}^{\T}$. After this projection procedure, we obtain a simplified linear mixed model 
 \begin{equation}
-\by^*_r &= \bg^*_r +\wt\bg^*_r+\bu^*_r+\bvarepsilon^*_r\\ 
-\bg_r\sim \mathcal{N}(\bm{0}, &\omega^2\bK^*_r), \quad \wt\bg_r\sim \mathcal{N}(\bm{0}, \nu^2\wt\bK^*_r),\\ \bu_r\sim\mathcal{N}(\bm{0},&\sigma^2\bQ^*_r), \quad \bvarepsilon_r\sim \mathcal{N}(\mathbf{0}, \tau^2\bH) \label{LMM2}
+\by^*_r = \bg^*_r +\wt\bg^*_r+\bu^*_r+\bvarepsilon^*_r\\ 
+\bg_r\sim \mathcal{N}(\bm{0}, \omega^2\bK^*_r), \quad \wt\bg_r\sim \mathcal{N}(\bm{0}, \nu^2\wt\bK^*_r),\\ \bu_r\sim\mathcal{N}(\bm{0},\sigma^2\bQ^*_r), \quad \bvarepsilon_r\sim \mathcal{N}(\mathbf{0}, \tau^2\bH) \label{LMM2}
 \end{equation}
 where $\by^*_r=\bH\by$; $\bg^*_r = \bH\bg_r$; $\bK^*_r = \bH\bK_r\bH$; $\wt\bg_r^* = \bH\wt\bg_r$; $\wt\bK_r^* = \bH\wt\bK_r\bH$; $\bu^*_r = \bH\bu_r$; $\bQ^*_r = \bH\bQ_r\bH$; and $\bvarepsilon_r^* = \bH_r\bvarepsilon$, respectively. Then for each pathway considered, the MQS estimate for the marginal interaction effect is computed as
 \begin{equation}
