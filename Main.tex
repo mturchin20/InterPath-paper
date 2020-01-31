@@ -18,6 +18,8 @@
 
 %From Lorin
 \usepackage{latexsym}
+\usepackage{bm}
+\usepackage{bbm}
 
 \def\eq#1{(\ref{#1})}
 \def\pdf{p.d.f.\ } \def\cdf{c.d.f.\ }
@@ -63,6 +65,7 @@
 \newcommand{\bu}{\mathbf{u}}
 \newcommand{\bw}{\mathbf{w}}
 \newcommand{\w}{\mathbf{w}}
+%\newcommand{\bm}{\mathbf{m}}
 \newcommand{\bp}{\mathbf{p}}
 \newcommand{\bK}{\mathbf{K}}
 \newcommand{\bV}{\mathbf{V}}
@@ -147,7 +150,7 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
 
 \section{Introduction}\label{InterPath-Introduction}
 
-Genome-wide association studies (GWAS) have identified over \textcolor{red}{24,000} significant associations between individual genotypes andcomplex human traits. However, the vast majority of these associations were identified in datasets of primarily European ancestry. In a survey of published GWAS from 2009, it was found that only 4\% of the 1.7 million individuals studied were of non-European ancestry (26). This report gained some brief attention, but an initial increase in the representation of non-European ancestries in GWAS has stagnated since 2014 (27,28); this lack of representation is even more disconcerting given the ongoing explosion of available human genomic data. 
+Genome-wide association studies (GWAS) have identified over \textcolor{red}{24,000} significant associations between individual genotypes and complex human traits. However, the vast majority of these associations were identified in datasets of primarily European ancestry. In a survey of published GWAS from 2009, it was found that only 4\% of the 1.7 million individuals studied were of non-European ancestry (26). This report gained some brief attention, but an initial increase in the representation of non-European ancestries in GWAS has stagnated since 2014 (27,28); this lack of representation is even more disconcerting given the ongoing explosion of available human genomic data. 
 
 It was largely hoped during the GWAS era that human genetic architecture would be consistent across human ancestries, for instance that causal loci and association effect sizes would remain the same among different human populations (26,29-31). However, recent work has begun to directly interrogate this assumption, and the initial findings are indeed showing that genetic architecture is often not the same between human ancestries; studies have shown that not only are association effect size estimates different between ancestries, but at times even causal loci appear to differ as well (32-35). Additionally, polygenic risk score studies, where published effect size estimates are used to predict phenotypes in other populations, are showing that applying European-based estimates to non-European populations consistently produce erratic and nonsensical results (36-39).
 
@@ -243,22 +246,20 @@ GEMMA/GridLMM analyses were conducted using...
 \subsection{InterPath Model}
 
 We describe the framework for ``\underline{Inter}actions in \underline{Path}way'' (InterPath) analysis in detail here. The key goal of this method is to identify crosstalk between signaling pathways in GWAS, without having to explicitly model all possible higher-order interactions. In general, consider a pathway which is defined by a set of SNPs found within the regulatory regions of genes in that pathway. We will denote these variants with the set of indices $\mathcal{R} = (r_1,\ldots,r_p)$. Begin by considering the following partitioned linear regression model,
-\begin{align}
-\by = \mu\bm{1}+\sum_{r\in \mathcal{R}}\bx_r\beta_{r}+\sum_{s\not\in \mathcal{R}}\bx_s\beta_{s}+\bvarepsilon, \quad \bvarepsilon\sim \mathcal{N}(\mathbf{0}, \tau^2\bI),\label{LM}
-\end{align}
+\begin{equation}\label{LM}
+\by = \mu\bm{1}+\sum_{r\in \mathcal{R}}\bx_r\beta_{r}+\sum_{s\not\in \mathcal{R}}\bx_s\beta_{s}+\bvarepsilon, \quad \bvarepsilon\sim \mathcal{N}(\mathbf{0}, \tau^2\bI),
+\end{equation}
 where $\by$ is an $n$-dimensional vector of quantitative phenotypes for $n$ individuals; $\mu$ is an intercept term with an $n$-dimensional vector of ones; $\bx_r$ and $\bx_s$ are $n$-dimensional genotype vectors for variants that lie within and outside the regulatory region $\mathcal{R}$, respectively; $\beta_r$ and $\beta_s$ are the corresponding additive effect sizes; $\bvarepsilon$ is an $n$-vector of residual errors; $\tau^2$ is the residual error variance; $\bI$ denotes the identity matrix; and $\mathcal{N}(\bullet,\bullet)$ denotes a multivariate normal distribution. Here, we also assume that the genotypic vectors have been centered and standardized to have mean 0 and standard deviation 1.
 
 Because we consider scenarios where there are more variants than samples, we need to specify additional modeling assumptions in Equation \eq{LM} to make the rest of the model identifiable. In particular, we recall previous approaches and assume that the individual effect sizes follow univariate normal distributions, or $\beta_r \sim \mathcal{N}(0, \omega^2/p)$ and $\beta_s \sim \mathcal{N}(0, \sigma^2/(l-p))$, where $l$ is the number of total number of all SNPs \citep{Crawford2017}. With the assumption of normally distributed effect sizes, the model defined in Equation \eq{LM} is equivalent to a variance component model where $\bg\sim \mathcal{N}(\bm{0}, \omega^2\bK)$ with $\bK=\bX_{\mathcal{R}}\bX_{\mathcal{R}}^{\T}/p$ being the genetic relatedness matrix computed using genotypes from all variants within the signaling pathway of interest; and $\wt\bg\sim \mathcal{N}(\bm{0}, \nu^2\wt\bK)$ with $\wt\bK=\bX_{-\mathcal{R}}\bX_{-\mathcal{R}}^{\T}/(l-p)$ representing a relatedness matrix computed using all other variants. Note that $\bg$ may be interpreted as a pathway's additive effect, while $\wt\bg$ denotes its polygenic background. 
 
 To complete the specification of the InterPath methodology, we lastly assume an additional random effect $\bu$ which models the summation of all pairwise interaction effects between a given signaling pathway variant and all other pathways. In this work, we limit ourselves to the case of finding second order crosstalk relationships between pathways --- although, extensions to higher-order interactions is straightforward \citep{Crawford2017}. Altogether, this results in the following linear mixed model
-\begin{align}
-\begin{aligned}
+\begin{equation}
 \by = &\mu\bm{1}+ \bg +\wt\bg+\bu+\bvarepsilon,\\ 
 \bg\sim \mathcal{N}(\bm{0}, &\omega^2\bK), \quad \wt\bg\sim \mathcal{N}(\bm{0},
 \nu^2\wt\bK),\\ 
 \bu\sim\mathcal{N}(\bm{0},&\sigma^2\bQ), \quad \bvarepsilon\sim \mathcal{N}(\mathbf{0}, \tau^2\bI).\label{LMM}
-\end{aligned}
-\end{align}
+\end{equation}
 Here, the $\bQ = \bK\circ\wt\bK$ is represents a second-order interaction relationship matrix, and is obtained by using the Hadamard product (i.e.~the squaring of each element) between the pathway specific relatedness matrix and its corresponding polygenic background. Note that the formulation of InterPath in Equation \eq{LMM} can easily be extended to accommodate other fixed effects (e.g.~age, sex, or genotype principal components), as well as other random effects terms that can be used to account for sample non-independence due to other genetic or common environmental factors.
 
 %Note that we make the assumption that each $\bg_k^{(l)}\sim \mbox{MVN}(\bm{0}, \sigma_{l}^2\bK^l_k)$, where the baseline covariance matrix $\bK_k=\bX_{-\mathcal{R}}\bX_{-\mathcal{R}}^{\T}/p_k$ is the conventional genetic relatedness matrix computed using genotypes from all $p_k$ variants outside of the region $\mathcal{R}$. Here, we use the power factor $l$ to denote the order of interaction (epistatic) effects that are accounted for within the model. For example, when $l=2$, $\mathbf{K}_k^2 = \mathbf{K}_k\circ\mathbf{K}_k$ represents a pairwise interaction relationship matrix, and is obtained by using the Hadamard product (i.e.~the squaring of each element) of the linear kernel matrix with itself \citep{Henderson:1985aa,Ronnegard:2008aa,Jiang:2015aa}. In this case, $\mathbf{K}_k^2$ denotes the marginal second order epistatic effect of the $k$\textsuperscript{th} functional marker under the polygenic background of all other markers. It is important to note that each $\bK_k^{l}$ changes with every new gene, protein, or pathway $k$ that is considered.
@@ -266,28 +267,26 @@ Here, the $\bQ = \bK\circ\wt\bK$ is represents a second-order interaction relati
 \subsection{Hypothesis Testing for Interaction Effects}
 
 Our goal is to identify signaling pathways that have significant non-zero interaction effects on a given phenotype. To do so, we examine each $r$-th pathway of interest in turn, and test the null hypothesis in Equation \eqref{LMM} that $\text{H}_0: \sigma^2=0$. The variance component $\sigma^2$ effectively captures the total interaction effects between the $r$-th pathway and all other pathways. We refer to this as the marginal interaction effect for the $r$-th pathway. To do so, we make use of the MQS method for parameter estimation and hypothesis testing \citep{Zhou2017}. Briefly, MQS is based on the computationally efficient method of moments and produces estimates that are mathematically identical to the Haseman-Elston (HE) cross-product regression \citep{Haseman1972}. To estimate the variance components with MQS, we first multiply Equation \eq{LMM} by a projection (hat) matrix onto the null space of the intercept term $\mu$, where $\bH=\bI-\bm{1}(\bm{1}^{\T}\bm{1})^{-1}\bm{1}^{\T}$. After this projection procedure, we obtain a simplified linear mixed model 
-\begin{align}
-\begin{aligned}
+\begin{equation}
 \by^*_r &= \bg^*_r +\wt\bg^*_r+\bu^*_r+\bvarepsilon^*_r\\ 
 \bg_r\sim \mathcal{N}(\bm{0}, &\omega^2\bK^*_r), \quad \wt\bg_r\sim \mathcal{N}(\bm{0}, \nu^2\wt\bK^*_r),\\ \bu_r\sim\mathcal{N}(\bm{0},&\sigma^2\bQ^*_r), \quad \bvarepsilon_r\sim \mathcal{N}(\mathbf{0}, \tau^2\bH) \label{LMM2}
-\end{aligned}
-\end{align}
+\end{equation}
 where $\by^*_r=\bH\by$; $\bg^*_r = \bH\bg_r$; $\bK^*_r = \bH\bK_r\bH$; $\wt\bg_r^* = \bH\wt\bg_r$; $\wt\bK_r^* = \bH\wt\bK_r\bH$; $\bu^*_r = \bH\bu_r$; $\bQ^*_r = \bH\bQ_r\bH$; and $\bvarepsilon_r^* = \bH_r\bvarepsilon$, respectively. Then for each pathway considered, the MQS estimate for the marginal interaction effect is computed as
-\begin{align}
+\begin{equation}
 \wh\sigma^2 = \by^{*\T}_r\bA_r\by
-\end{align}
+\end{equation}
 where $\bA_{r} = (\bS_r^{-1})_{31}\bK_r^*+(\bS_r^{-1})_{32}\wt\bK_r^*+(\bS_r^{-1})_{33}\bQ^*_r+(\bS_r^{-1})_{34}\bH$ with elements $(\bS_r)_{jk} = \tr(\bSigma_{rj} \bSigma_{rk})$ for the covariances matrices subscripted as $[\bSigma_{r1}; \bSigma_{r2}; \bSigma_{r3}; \bSigma_{r4}]  = [\bK^*_r; \wt\bK^*_r; \bQ^*_r; \bH]$. Here, $\tr(\bullet)$ is used to denote the matrix trace function. It has been shown that, under MQS, a given marginal variance component estimate $\wh\sigma^2$ follows a mixture of chi-square distributions under the null hypothesis \citep{Crawford2017}. Namely, $\wh\sigma^2 \sim \sum_{i=1}^{n}\lambda_{i}\chi^2_{1,i}$, where $\chi^2_{1}$ are chi-square random variables with one degree of freedom and $(\lambda_{1},\ldots,\lambda_{n})$ are the eigenvalues of the matrix 
-\begin{align*}
+\begin{equation*}
 \left(\wh\omega^2_{0}\bK^*_r+\wh\nu^2_{0}\wt\bK^*_r+\wh\tau^2_{0}\bH\right)^{1/2} \bA_{r}\left(\wh\omega^2_{0}\bK^*_r+\wh\nu^2_{0}\wt\bK^*_r+\wh\tau^2_{0}\bH\right)^{1/2}
-\end{align*}
+\end{equation*}
 with $(\wh\omega^2_{0},\wh\nu^2_{0},\wh\tau^2_{0})$ being the MQS estimates of $(\omega^2,\nu^2,\tau^2)$ under the null hypothesis. Several approximation and exact methods have been suggested to obtain p-values under the distribution of $\wh\sigma^2$. One frequented choice is Davies exact method \citep{Davies1980,Wu2011}. 
 
 %\subsection*{Hypothesis Testing for Overall Associations}
 
 %FORCE also provides an option for summarizing overall marker enrichment. Here, we assume that we have already computed the $q$ marginal effect p-values for genetic marker $k$, denoted as $\wh\bp_k = (\wh p_{k1},\ldots,\wh p_{kq})$. Let $\wh\balpha_k^* = F^{-1}(\wh\bp_k)$ be the transformed test statistic where $F^{-1}$ is the inverse of the cumulative distribution function (CDF) of the standard chi-square $\chi^2_1$. We follow previous works and define the sum of the correlated chi-square variables for a given functional genomic marker as \citep{Nakka:2016aa}
-%\begin{align}
+%\begin{equation}
 %\bar{\alpha}_k^* = \sum_{l=1}^{q}\wh\alpha_{k,l}^*.\label{Comp}
-%\end{align}
+%\end{equation}
 %(NOTE: Follow the rest of the language from methods in PEGASUS here).
 
 \subsection{InterPath Analyses}
@@ -326,11 +325,11 @@ GridLMM:
 %\setcounter{figure}{0}
 
 
-\begingroup
+%\begingroup
 %\bibliographystyle{apalike}
-\setstretch{1.0}
+%\setstretch{1.0}
 %\bibliography{Supplementary}
-\endgroup
+%\endgroup
 
 
 \iffalse
