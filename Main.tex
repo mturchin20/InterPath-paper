@@ -166,11 +166,9 @@ Epistasis, despite being a well-established component of complex trait architect
 To investigate epistasis in multiple human populations, we first extracted a variety of human ancestries from the UKB (see Online Methods). We collected a total of 8 UKB subsets with an average sample size of XXXX among the non-European populations (Supplementary Table 1), including African, Indian, Chinese, and Pakistani subsets. To maximize our sample sizes per subset, we focused on height and body mass index (BMI) as our complex traits of interest. 
 
 The first approach we took to investigate epistasis was to look at genome-wide estimates of phenotypic PVE. Specifically, we were interested in the following variance component model:
-
 \begin{equation}\label{InterPath-GEMMA-Equation-Model}
- y = G_1 + G_2 + \epsilon
+ \textbf{y} = \textbf{G}_1 + \textbf{G}_2 + \boldsymbol{\epsilon}
 \end{equation}
-
 where $y$ is a $n \times 1$ vector of phenotypes, $G_1$ is a $n \times n$ genetic relatedness matrix (GRM), constructed using all SNPs genome-wide and representing all first-order interactions, $G_2$ is a $n \times n$ matrix produced from the Hadamard product of $G_1$ against itself ($G_2 = G_1 \circ G_1$), representing all second-order interactions, and $\epsilon$ is a $n \times 1$ vector of normally distributed random effects. In other words, $G_1$ can be thought of as representing all additive effects, and $G_2$ can be thought of as representing all pairwise epistatic effects. To fit this model and estimate $G_2$, we used GEMMA \citep{Zhou2012} and its REML AI algorithm for estimating variance components.
 
 Estimating these variance components and calculating their PVEs for height and BMI in each of our populations, we indeed find differences across each human ancestry (Table 1).
@@ -186,19 +184,32 @@ In height, we do not see anything immediately new. For the additive effects $G_1
 
 \subsection{SNP Level Epistasis}\label{InterPath-Results-SNPEpistasis}
 
-\begin{figure}[h]
+\subsubsection{Pairwise SNP Epistasis}
+
+The next direction we took to investigate epistasis in global human populations was on the opposite side of the scale spectrum, the individual SNP level. And to look at epistasis on the individual SNP level, we used two different approaches. First, we looked at direct pairwise interactions between SNPs using PLINK's \texttt{--epistasis} method \citep{Purcell2007}. This approach fits the following canonical SNP-by-SNP epistasis model (citation?):
+\begin{equation}
+\textbf{y} = \beta_0 + \textbf{x}_1\beta_1 + \textbf{x}_2\beta_2 + \textbf{x}_1*\textbf{x}_2\beta_3    
+\end{equation}
+where \textbf{y} is once again a $n \times 1$ vector of phenotypes, $\beta_0$ is the y-intercept, $\textbf{x}_1$ is a $n \times 1$ vector of genotypes for SNP 1, $\beta_1$ is the corresponding additive effect size for $\textbf{x}_1$, $\textbf{x}_2$ is a $n \times 1$ vector of genotypes for SNP 2, $\beta_2$ is the corresponding additive effect size for $\textbf{x}_2$, $\textbf{x}_1 * \textbf{x}_2$ is the multiplicative interaction between $\textbf{x}_1$ and $\textbf{x}_2$, and $\beta_3$ is the corresponding effect size for $\textbf{x}_1 * \textbf{x}_2$. Our variable of interest of course is $\beta_3$ and whether this value significantly deviates from 0. 
+
+Running this method on each of our four UKB population subsets, we chose to look at the 'proportion of marginally significant tests' per SNP, where marginal significance is defined as any test with a $p$-value < $1\times10^{-4}$ (Figure \ref{InterPath-Main-Figure-PLINK}). We chose to look at proportion of tests due the varying number of SNPs across each population subset. What we find is that indeed there is variation between human ancestries in the amount of pairwise SNP epistasis across the genome. We also find that both the African and Caribbean population subsets show greater proportions of marginal interactions than the British population subset despite having both lower sample sizes. Thus far these results are in line with what we saw on the genome-wide PVE scales as well. 
+
+\begin{figure}[t]
 \centering
 \includegraphics[scale=.35]{Images/PLINK_Epistasis_Placeholder.png}
 \caption[TBD]{\textbf{TBD}. \\ Placeholder.}
-\label{IntrePath-Main-Figure-PLINK}
+\label{InterPath-Main-Figure-PLINK}
 \end{figure}
 
+\subsubsection{Marginal SNP Epistasis}
 
-\begin{figure}[h]
+Our second approach to investigating SNP-level epistasis across the genome was to look at `marginal epistasis'\citep{Crawford2017}. To explain `marginal epistasis', first imagine all possible pairwise interactions between every SNP in the genome. Next, imagine we focus on only one single SNP and then collect only the pairwise interactions that involve this SNP of interest. This collection of pairwise interactions can be thought of us a subset of all possible pairwise interactions, or in other words, the marginal distribution of all pairwise interactions pertaining to just our SNP of interest (see Supplementary Figure \ref{} for a graphical representation of this). If we were to measure   refers to the total amount of 
+
+\begin{figure}[htbp]
 \centering
 \includegraphics[scale=.35]{Images/MAPIT_OLD_Placeholder.png}
 \caption[TBD]{\textbf{OLD DATA}. \\ Placeholder.}
-\label{IntrePath-Main-Figure-MAPIT}
+\label{InterPath-Main-Figure-MAPIT}
 \end{figure}
 
 \subsection{Pathway Level Epistasis}\label{InterPath-Results-PathwayEpistasis}
