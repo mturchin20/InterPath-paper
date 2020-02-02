@@ -192,7 +192,7 @@ The next direction we took to investigate epistasis in global human populations 
 \end{equation}
 where \textbf{y} is once again a $n \times 1$ vector of phenotypes, $\beta_0$ is the y-intercept, $\textbf{x}_1$ is a $n \times 1$ vector of genotypes for SNP 1, $\beta_1$ is the corresponding additive effect size for $\textbf{x}_1$, $\textbf{x}_2$ is a $n \times 1$ vector of genotypes for SNP 2, $\beta_2$ is the corresponding additive effect size for $\textbf{x}_2$, $\textbf{x}_1 * \textbf{x}_2$ is the multiplicative interaction between $\textbf{x}_1$ and $\textbf{x}_2$, and $\beta_3$ is the corresponding effect size for $\textbf{x}_1 * \textbf{x}_2$. Our variable of interest of course is $\beta_3$ and whether this value significantly deviates from 0. 
 
-Running this method on each of our four UKB population subsets, we chose to look at the 'proportion of marginally significant tests' per SNP, where marginal significance is defined as any test with a $p$-value < $1\times10^{-4}$ (Figure \ref{InterPath-Main-Figure-PLINK}). We chose to look at proportion of tests due the varying number of SNPs across each population subset. What we find is that indeed there is variation between human ancestries in the amount of pairwise SNP epistasis across the genome. We also find that both the African and Caribbean population subsets show greater proportions of marginal interactions than the British population subset despite having both lower sample sizes. Thus far these results are in line with what we saw on the genome-wide PVE scales as well. 
+Running this method on each of our four UKB population subsets, we chose to look at the 'proportion of marginally significant tests' per SNP, where marginal significance is defined as any test with a $p$-value < $1\times10^{-4}$ (Figure \ref{InterPath-Main-Figure-PLINK}). We chose to look at proportion of tests due the varying number of SNPs across each population subset. What we find is that indeed there is variation between human ancestries in the amount of pairwise SNP epistasis across the genome. We also find that both the African and Caribbean population subsets show greater proportions of marginal interactions than the British population subset despite both non-European populations having lower sample sizes. On the population-level these results are thus far in line with what we see on the genome-wide PVE scales, though interestingly we see similar levels of SNP-epistasis between both phenotypes, which differs from before. 
 
 \begin{figure}[t]
 \centering
@@ -203,7 +203,20 @@ Running this method on each of our four UKB population subsets, we chose to look
 
 \subsubsection{Marginal SNP Epistasis}
 
-Our second approach to investigating SNP-level epistasis across the genome was to look at `marginal epistasis'\citep{Crawford2017}. To explain `marginal epistasis', first imagine all possible pairwise interactions between every SNP in the genome. Next, imagine we focus on only one single SNP and then collect only the pairwise interactions that involve this SNP of interest. This collection of pairwise interactions can be thought of us a subset of all possible pairwise interactions, or in other words, the marginal distribution of all pairwise interactions pertaining to just our SNP of interest (see Supplementary Figure \ref{} for a graphical representation of this). If we were to measure   refers to the total amount of 
+Our second approach to investigating SNP-level epistasis across the genome was to look at `marginal epistasis'\citep{Crawford2017}. To understand `marginal epistasis', first imagine all possible pairwise interactions between every SNP in the genome. Next, imagine we focus on only one single SNP and then collect only the pairwise interactions that involve this SNP of interest. This collection of pairwise interactions can be thought of us a subset of all possible pairwise interactions, or in other words, the marginal distribution of all pairwise interactions pertaining to just our SNP of interest (see Supplementary Figure \ref{} for a graphical representation of this).
+
+To test for SNP-level marginal epistasis, we use MAPIT \citep{Crawford2017}. For a full derivation of the MAPIT framework please see \citet{Crawford2017}, but in short MAPIT begins with the following setup:
+\begin{equation}
+\textbf{y} = \mu + \textbf{x}_k\beta_k + \sum_{l \neq k} \textbf{x}_l\beta_l + \sum_{l \neq k} (\textbf{x}_l \circ \textbf{x}_k)\alpha_l + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I})  
+\end{equation}
+
+where \textbf{y} is still a $n \times 1$ vector of phenotypes, $\textbf{x}_k$ is a $n \times 1$ vector of genotypes for our SNP of interest $k$, $\beta_k$ is our additive effect size for SNP $k$, $\textbf{x}_l$ is a $n \times 1$ vector of genotypes for every SNP $l$ that is not SNP $k$, $\beta_l$ is our additive effect size for SNP $l$, $(\textbf{x}_k \circ \textbf{x}_l)$ is the Hadamard product between our two SNP genotype vectors, $\alpha_l$ is interaction effect size, $\boldsymbol{\epsilon}$ is a $n \times 1$ vector of random effects which follow a multivariate normal distribution with mean $\textbf{0}$ and covariance matrix equal to variance effect $\tau$ times the $n \times n$ identity matrix $\textbf{I}$. In this model our parameter of interest would be $\alpha_l$, whether there is any significant interaction between our SNP of interest $k$ and of the remaining SNPs in the genome. However, as one might expect, the number of parameters in this model far exceeds the number of samples (ie $p >> n$), therefore making the solution indeterminable. To overcome this, MAPIT moves this setup into a linear mixed model framework and make the problem a variance component one. To do this, we put normal random priors on each of our effect sizes ($\beta_k$, $\beta_l$, and $\alpha_l$), and redefine our model as follows:
+\begin{equation}
+    \textbf{y} = \mu + \textbf{x}_k\beta_k + \textbf{m}_k + \textbf{g}_k + 
+\end{equation}
+ddfxf
+
+If we were to measure   refers to the total amount of 
 
 \begin{figure}[htbp]
 \centering
