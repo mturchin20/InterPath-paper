@@ -255,18 +255,22 @@ Running InterPath on our UKB subsets across height and BMI, we find a major incr
 
 In fact the vast majority of our significant interactions are represented in the African subset (XX/XX). This is interesting since the African subset is neither our population with the largest sample size or our population with the largest number of SNPs. We do see a significant relationship between number of SNPs in a pathway and that pathway's InterPath $p$-value (Supplementary Figure \ref{}), however the African subset has similar pathway SNP counts amongst its top pathways as compared to the other population subsets (Supplementary Figure/Table \ref{}). One possibility for this result may be an ascertainment bias from using variants based on a genotyping chip that was developed primarily using European data. However, simulations that replicate such an ascertainment bias show no evidence of this leading to an increase in power. Additionally, it is unlikely that, even if such an ascertainment bias existed, it could continually be directionality consistent across pathways that span the genome. If this were an approach that aggregated single SNP tests, then directionality would not be an issue and one might become concerned about continually incorporating a persistent signal from ascertainment bias; however, because this is a joint test on multiple SNPs as once, it is far less likely that differences between genotype chip SNP distributions and non-European population SNP distributions tracts in exactly the same direction across the entire genome. 
 
+Looking at the specific pathways that we observe as having significant evidence for marginal epistasis, we find that there appears to be both population-agnostic and population-specific interactions. Indeed, for a number of the top KEGG pathways found in the African subset, we find that these same pathways appear as top results in the other population subsets as well (Figure \ref{}a). Looking at these pathways, we find that they commonly involve either the immune system or cellular signaling (eg '', '', ''). And when we look at the genes that appear most frequently across these pathways, we find examples such as various HLA loci for immune system-related pathways and XXX, XXX, and XXX for cellular signaling (Supplementary Table \ref{}). Interestingly, if we look at the pathways that appear as significant across phenotypes, it is a large number of these immune and cellular signaling related pathways as well (Supplementary Table \ref{}). This might be evidence that some pathways are 'globally' important in the human body, and have the potential to impact a large number of complex traits. And it may not be surprising that this involves cellular signaling pathways, since this is inherently a biological process that will impact most, if not all, complex traits.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.225]{Images/InterPath_Main_Figure_Heatplots_vs1.png}
+\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\label{InterPath-Main-Figure-Heatplots}
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.225]{Images/InterPath_Main_Figure_Heatplots_REACTOME_vs1.png}
+\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\label{InterPath-Main-Figure-Heatplots2}
+\end{figure}
 
-
-
-Looking at the specific pathways that we observe as having significant evidence for marginal epistasis, we find that there appears to be both population-agnostic and population-specific interactions. 
-
-
-
-
-Show Results
- - overlap between ancestries / phenotypes
- - which pathways are coming up to the top? modes of epistasis being witnessed/seen?
+When we look at population-specific interactions... 
 
 \subsubsection{Replication in British Subsamples}
 
