@@ -244,8 +244,25 @@ where now R is a new random effects term that represents our new group of SNPs R
 
 To ultimately see if pathway analysis indeed provides similar benefits to epistasis analyses as it does to additive analyses, we ran InterPath on our UKB population subsets. Furthermore, because of our initial evidence that there might be larger signals of epistasis in other non-European populations, and variation in signals for epistasis across global populations in general, we further expanded the number of UKB population subsets we analyzed. In addition to African, British, Caribbean, and Indian population subsets, we now added subsets consisting of Chinese, Pakistani, and Irish ancestry, as well as a second random subset of British individuals representing a larger sample size of close to 10,000 individuals. Both the Irish and new, second British subsets represent large sample size subsets to test how our model performs as sample size increases. Lastly, we chose to analyze the KEGG and REACTOME pathways available from the MSigDB \citep{Liberzon2011} due to their coverage of a wide range of biological processes. 
 
-Running InterPath on our UKB subsets across height and BMI, we excitingly found a major increase in our power to detect marginal epistasis. In total across each population subset, phenotype, and pathway database combination, we identified XXX significance genetic interactions between a pathway and the remaining genomic background (Figure \ref{}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis). We also once again see variation in our observed results across population subsets; strikingly, the African subset shows much greater evidence for marginal epistasis than any other population subset. Furthermore, it appears that this increase in power is likely due in part to the aggregation of multiple variants; we observe a significant relationship between the number of variants present in a given pathway and the InterPath $p$-value (Supplementary Figure \ref{}). Strikingly though
-Perhaps unsurprisingly, one major reason for this increase in powerwe found a significant relationship 
+Running InterPath on our UKB subsets across height and BMI, we find a major increase in our power to detect marginal epistasis. In total across each population subset, phenotype, and pathway database combination, we identified XXX significance genetic interactions between a pathway and the remaining genomic background (Figure \ref{InterPath-Main-Figure-Barplots} and Table \ref{}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis). We see both variation in our ability to detect marginal epistasis across our population subsets as well as a much stronger ability to pick up signals in our African subset. 
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.35]{Images/InterPath_Main_Figure_Barplots_vs1.png}
+\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\label{InterPath-Main-Figure-Barplots}
+\end{figure}
+
+In fact the vast majority of our significant interactions are represented in the African subset (XX/XX). This is interesting since the African subset is neither our population with the largest sample size or our population with the largest number of SNPs. We do see a significant relationship between number of SNPs in a pathway and that pathway's InterPath $p$-value (Supplementary Figure \ref{}), however the African subset has similar pathway SNP counts amongst its top pathways as compared to the other population subsets (Supplementary Figure/Table \ref{}). One possibility for this result may be an ascertainment bias from using variants based on a genotyping chip that was developed primarily using European data. However, simulations that replicate such an ascertainment bias show no evidence of this leading to an increase in power. Additionally, it is unlikely that, even if such an ascertainment bias existed, it could continually be directionality consistent across pathways that span the genome. If this were an approach that aggregated single SNP tests, then directionality would not be an issue and one might become concerned about continually incorporating a persistent signal from ascertainment bias; however, because this is a joint test on multiple SNPs as once, it is far less likely that differences between genotype chip SNP distributions and non-European population SNP distributions tracts in exactly the same direction across the entire genome. 
+
+
+
+
+
+Looking at the specific pathways that we observe as having significant evidence for marginal epistasis, we find that there appears to be both population-agnostic and population-specific interactions. 
+
+
+
 
 Show Results
  - overlap between ancestries / phenotypes
