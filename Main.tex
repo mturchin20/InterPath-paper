@@ -207,7 +207,7 @@ Our second approach to investigating SNP-level epistasis across the genome was t
 
 To test for SNP-level marginal epistasis, we use MAPIT \citep{Crawford2017}. For a full derivation of the MAPIT framework please see \citet{Crawford2017}, but in short MAPIT begins with the following setup:
 \begin{equation}
-\textbf{y} = \mu + \textbf{x}_k\beta_k + \sum_{l \neq k} \textbf{x}_l\beta_l + \sum_{l \neq k} (\textbf{x}_l \circ \textbf{x}_k)\alpha_l + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I})  
+\textbf{y} = \mu + \textbf{x}_k\beta_k + \sum_{l \neq k} \textbf{x}_l\beta_l + \sum_{l \neq k} (\textbf{x}_k \circ \textbf{x}_l)\alpha_l + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I})  
 \end{equation}
 
 where \textbf{y} is still a $n \times 1$ vector of phenotypes, $\textbf{x}_k$ is a $n \times 1$ vector of genotypes for our SNP of interest $k$, $\beta_k$ is our additive effect size for SNP $k$, $\textbf{x}_l$ is a $n \times 1$ vector of genotypes for every SNP $l$ that is not SNP $k$, $\beta_l$ is our additive effect size for SNP $l$, $(\textbf{x}_k \circ \textbf{x}_l)$ is the Hadamard product between our two SNP genotype vectors, $\alpha_l$ is interaction effect size, $\boldsymbol{\epsilon}$ is a $n \times 1$ vector of random effects which follow a multivariate normal distribution with mean $\textbf{0}$ and covariance matrix equal to variance effect $\tau$ times the $n \times n$ identity matrix $\textbf{I}$. In this model our parameter of interest would be $\alpha_l$, whether there is any significant interaction between our SNP of interest $k$ and of the remaining SNPs in the genome. However, as one might expect, the number of parameters in this model far exceeds the number of samples (ie $p >> n$), therefore making the solution indeterminable. To overcome this, MAPIT moves this setup into a linear mixed model framework and make the problem a variance component one. To do this, we put normal random priors on each of our effect sizes ($\beta_k$, $\beta_l$, and $\alpha_l$), and redefine our model as follows:
@@ -228,23 +228,14 @@ Running MAPIT on our population subset and for both height and BMI, we find that
 
 One approach for increasing power in GWAS that has had much success in the additive world has been to look for associations with biological pathways (citations). By looking for association across multiple variants at once, and in particular across genes that you believe act in a biologically coherent manner, you are ideally increasing your signal to noise ratio. Additionally this might be well-suited for complex traits since we anticipate polygenic trait effect sizes to be modest on average (citation). Therefore we chose to create a new approach that combined marginal epistasis with pathway analysis to increase our power to detect evidence for genetic interactions in the genome.  
 
-
-Taking a cue from the additive world, 
-
-
-. $\textbf{m}_k$ has a mean of zer  that
-
-If we were to measure   refers to the total amount of 
-
-
-
 \subsection{Pathway Level Epistasis}\label{InterPath-Results-PathwayEpistasis}
-
-Explain motivation for moving into InterPath
 
 \subsubsection{InterPath}
 
-Explain InterPath
+We expanded the previous MAPIT model into a new framework that goes from looking for marginal epistasis with a single variant to looking for marginal epistasis with an entire biological pathway; we call this approach InterPath, for \underline{Inter}action and \underline{Path}way analysis. The main change we make to the marginal epistasis model is to go from a single SNP of interest \textbf{k} to a collection of SNPs of interest \textbf{R}. For a full description of this new model please see Online Methods, In the fully additive form of the model, this results in the following:
+\begin{equation}
+    \textbf{y} = \mu + \sum_{r \in R} \textbf{x}_r\beta_r + \sum_{l \notin R} \textbf{x}_l\beta_l + \sum_{r \in R}\sum_{l \notin R} (\textbf{x}_r \circ \textbf{x}_l)\alpha_{rl} + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I})  
+\end{equation}
 
 \subsubsection{InterPath Results}
 
