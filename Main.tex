@@ -13,6 +13,7 @@
 \usepackage{subfig}
 \usepackage{setspace}
 \usepackage{hypcap}
+\usepackage{lineno} %can do [right] to shift location of #s
 %From: https://tex.stackexchange.com/questions/14364/cross-referencing-between-different-files to connect references from external .tex documents; NOTE: to get xr package to work in Overleaf, followed the directions here https://www.overleaf.com/learn/how-to/Cross_referencing_with_the_xr_package_in_Overleaf ; NOTE: seems like when use {xr} and not {xr-hyper}, things work -- get some 'errors' when use xr-hyper, even though within the document looks like things are working fine?
 \usepackage{xr}
 
@@ -148,16 +149,17 @@ Under the assumption that a given complex trait may have differential polygenic 
 We apply our new method to multiple ancestries present in the UK Biobank \citep{Sudlow2015} and explore multiple pathway-related interaction models. Using morphometric traits we find evidence for genome-wide epistasis in African and other non-European populations. We also find evidence that these trends exists on the SNP and gene levels as well. Results also indicate this may be due to increased heterozygosity in non-European populations. This suggests that non-European populations may be well-suited for identifying non-additive effects in human complex trait architecture; this also suggests further evidence that European populations -- predominantly used for epistasis studies -- may indeed be limited and inaccurate proxies for all human ancestries in complex trait research.
 \end{abstract}
 
+\linenumbers
+
 \section{Introduction}\label{InterPath-Introduction}
 
-Genome-wide association studies (GWAS) have identified over \textcolor{red}{24,000} significant associations between individual genotypes and complex human traits. However, the vast majority of these associations were identified in datasets of primarily European ancestry. In a survey of published GWAS from 2009, it was found that only 4\% of the 1.7 million individuals studied were of non-European ancestry (26). This report gained some brief attention, but an initial increase in the representation of non-European ancestries in GWAS has stagnated since 2014 (27,28); this lack of representation is even more disconcerting given the ongoing explosion of available human genomic data. 
+Genome-wide association studies (GWAS) have identified over \textcolor{red}{24,000} significant associations between individual genotypes and complex human traits \citep{Buniello2019}. However, the vast majority of these associations were identified in datasets of primarily European ancestry. In a survey of published GWAS from 2009, it was found that only 4\% of the 1.7 million individuals studied were of non-European ancestry \citep{Need2009}. This report gained some brief attention, but an initial increase in the representation of non-European ancestries in GWAS has stagnated since 2014 \citep{Popejoy2016,Martin2019}; this lack of representation is even more disconcerting given the ongoing explosion of available human genomic data. 
 
-It was largely hoped during the GWAS era that human genetic architecture would be consistent across human ancestries, for instance that causal loci and association effect sizes would remain the same among different human populations (26,29-31). However, recent work has begun to directly interrogate this assumption, and the initial findings are indeed showing that genetic architecture is often not the same between human ancestries; studies have shown that not only are association effect size estimates different between ancestries, but at times even causal loci appear to differ as well (32-35). Additionally, polygenic risk score studies, where published effect size estimates are used to predict phenotypes in other populations, are showing that applying European-based estimates to non-European populations consistently produce erratic and nonsensical results (36-39).
+It was largely hoped during the GWAS era that human genetic architecture would be consistent across human ancestries, for instance that causal loci and association effect sizes would remain the same among different human populations \citep{Need2009,Pulit2010,Bustamante2011,Bien2019}. However, recent work has begun to directly interrogate this assumption, and the initial findings are indeed showing that genetic architecture is often not the same between human ancestries; studies have shown that not only are association effect size estimates different between ancestries, but at times even causal loci appear to differ as well \citep{Dumitrescu2011,Carlson2013,Kuchenbaecker2019,Wojcik2019}. Additionally, polygenic risk score studies, where published effect size estimates are used to predict phenotypes in other populations, are showing that applying European-based estimates to non-European populations consistently produce erratic and nonsensical results \citep{Martin2017,Duncan2019,Kerminen2019,Rosenberg2019}.
 
 It is clear both that non-European populations are incredibly underrepresented in modern GWAS studies and that European populations cannot act as accurate proxies for the rest of the world. Therefore there is an massive need for work that explores the many aspects of complex trait genetic architecture in non-European populations. To help address these needs, we focus here on investigating the importance of epistasis, or genetic interactions, in complex traits across multiple non-European populations. 
 
-Epistasis, despite being a well-established component of complex trait architecture in multiple model organisms (citations), is still regarded cautiously in human genetics (citations). Recent work has begun to show increased evidence of epistasis playing a role in human trait architecture, but still most of this research has been conducted primarily in datasets of European ancestry. Therefore to address this unexplored area of research, we investigated epistasis at multiple genomic scales across multiple European and non-European populations. We extracted both European and non-European subsets from the UK BioBank (UKB) (citation) and identified evidence for epistasis on the SNP-level, pathway-level, and the genome-wide level. We identify that evidence for epistasis varies across human ancestries, and that African populations often have greater evidence for epistasis. We present a novel framework for combining epistasis and pathway analysis and identify pathways that have both population-specific evidence for epistasis as well as pathways that appear to have significant levels of epistasis worldwide. And lastly, we show beginning evidence that one of the driving factors for the higher levels of epistasis apparent in non-European populations may be greater levels of population-wide genetic diversity.
-
+Epistasis, despite being a well-established component of complex trait architecture in multiple model organisms (citations), is still regarded cautiously in human genetics (citations). Recent work has begun to show increased evidence of epistasis playing a role in human trait architecture, but still most of this research has been conducted primarily in datasets of European ancestry. Therefore to address this unexplored area of research, we investigated epistasis at multiple genomic scales across multiple European and non-European populations. We extracted both European and non-European subsets from the UK BioBank (UKB) \citep{Sudlow2015} and identified evidence for epistasis on the SNP-level, pathway-level, and the genome-wide level. We identify that evidence for epistasis varies across human ancestries, and that African populations often have greater evidence for epistasis. We present a novel framework for combining epistasis and pathway analysis and identify pathways that have both population-specific evidence for epistasis as well as pathways that appear to have significant levels of epistasis worldwide. And lastly, we show beginning evidence that one of the driving factors for the higher levels of epistasis apparent in non-European populations may be greater levels of population-wide genetic diversity.
 
 \section{Results}\label{InterPath-Results}
 
@@ -244,7 +246,7 @@ where now R is a new random effects term that represents our new group of SNPs R
 
 To ultimately see if pathway analysis indeed provides similar benefits to epistasis analyses as it does to additive analyses, we ran InterPath on our UKB population subsets. Furthermore, because of our initial evidence that there might be larger signals of epistasis in other non-European populations, and variation in signals for epistasis across global populations in general, we further expanded the number of UKB population subsets we analyzed. In addition to African, British, Caribbean, and Indian population subsets, we now added subsets consisting of Chinese, Pakistani, and Irish ancestry, as well as a second random subset of British individuals representing a larger sample size of close to 10,000 individuals. Both the Irish and new, second British subsets represent large sample size subsets to test how our model performs as sample size increases. Lastly, we chose to analyze the KEGG and REACTOME pathways available from the MSigDB \citep{Liberzon2011} due to their coverage of a wide range of biological processes. 
 
-Running InterPath on our UKB subsets across height and BMI, we find a major increase in our power to detect marginal epistasis. In total across each population subset, phenotype, and pathway database combination, we identified XXX significance genetic interactions between a pathway and the remaining genomic background (Figure \ref{InterPath-Main-Figure-Barplots} and Table \ref{}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis). We see both variation in our ability to detect marginal epistasis across our population subsets as well as a much stronger ability to pick up signals in our African subset. 
+Running InterPath on our UKB subsets across height and BMI, we find a major increase in our power to detect marginal epistasis. In total across each population subset, phenotype, and pathway database combination, we identified XXX significance genetic interactions between a pathway and the remaining genomic background (Figure \ref{InterPath-Main-Figure-Barplots} and Table \ref{}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis). We see both variation in our ability to detect marginal epistasis across our population subsets as well as a much stronger ability to pick up signals in our African subset. Additionally, running a modest number of phenotype permutations shows that InterPath behaves as expected under the null (Supplementary Figure XX), and we observe FDR estimates ranging from XX to XX across our different ancestry, phenotype, and pathway database combinations (Supplementary Tables XX).
 
 \begin{figure}[htbp]
 \centering
@@ -273,6 +275,8 @@ Looking at the specific pathways that we observe as having significant evidence 
 When we look at population-specific interactions... 
 
 \subsubsection{Replication in British Subsamples}
+
+
 
 \subsection{Relationship Between Epistasis and Genetic Diversity}
 
@@ -372,13 +376,15 @@ InterPath: \url{}
 
 MAPIT: \url{https://github.com/lorinanthony/MAPIT}
 
-GridLMM: 
+GEMMA/GridLMM: 
 
 \section{Acknowledgments}\label{InterPath-Acknowledgments}
 
 \section{Author Contributions}\label{InterPath-Author-Contributions}
 
 \section{Competing Interests}\label{InterPath-Competing-Interests}
+
+\nolinenumbers
 
 \begingroup
 \bibliographystyle{apalike}
