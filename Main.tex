@@ -159,7 +159,13 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
     \item PLINK and MAPIT results
     \begin{enumerate}
         \item Results are shown in African, British.Ran4k, Caribbean, and Indian subsets; Height and BMI
+        \item PLINK -- looking at the proportion of marginal SNP-by-SNPs associations per SNP \& MAPIT -- looking at the amount of marginal association per SNP under the SNP*background model
         \item Results are weak -- we say either: 1) we have no signal so we want to explore a potentially more powered approach or 2) we see weak signals of significance and possible differences among human ancestries, but we need a potentially more powered approach to further understand what's going on
+        \item Compare MAPIT and GWAS results
+        \begin{enumerate}
+            \item this was an idea from a previous conversation that I haven't done yet -- to show that ordering of SNPs change when you do MAPIT vs. GWAS, suggesting that there is something happening here
+            \item should we still look into this? is my framing in a) the basic analysis setup we were thinking?
+        \end{enumerate}
     \end{enumerate}
     \item InterPath results -- multiple populations
     \begin{enumerate}
@@ -203,7 +209,10 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
     \end{enumerate}
     \item Ambiguity on dealing with non-European populations
     \begin{enumerate}
-        \item 
+        \item (need to develop this idea/framing a bit more)
+        \item We point out that it's unclear how to deal with structure in non-European populations
+        \item We show that there are not much differences between global and local PCs in terms of InterPath (and/or GWAS?) results?
+        \item We can put the GEMMA results here potentially -- that we see the expected $h^{2}$ for $G_1$ in British.Ran4k in Height and BMI, but using the exact same analysis setup we get weird/nonsensical results for some of the other non-European populations
     \end{enumerate}
     
 \end{enumerate}
