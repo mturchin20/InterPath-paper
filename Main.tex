@@ -163,7 +163,7 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
     \end{enumerate}
     \item InterPath results -- multiple populations
     \begin{enumerate}
-        \item Results are shown for African, British.Ran4k, British.Ran10k, Caribbean, Chinese, Indian, Irish, and Pakistani subsets; Height and BMI; KEGG and REACTOMR
+        \item Results are shown for African, British.Ran4k, British.Ran10k, Caribbean, Chinese, Indian, Irish, and Pakistani subsets; Height and BMI; KEGG and REACTOME
         \item We find that the African population shows a large number of genome-wide significant results
         \begin{enumerate}
             \item Brit.Ran4k, Caribbean, Chinese, Indian, and Pakistani havea few results as well
@@ -175,11 +175,37 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
             \item The model performs as expected under the null (no signal)
             \item we can correct for some scheme of population structure by controlling with top local PCs
             \item that there is unlikely to be a 'genotyping chip effect' by biasing our 'causal SNPs' based on MAF from European vs. African subsets
-        \item We show that there is not a ton of differences between the top pathways across ancestries 
+            \item show that as 'genetic diversity' grows in our simulated populations, the greater our signal gets??
         \end{enumerate}
+        \item We can also show via a single phenotype permutation run that results behave as expected, ie things generally follow the null
+        \begin{enumerate}
+            \item we can also show p-value histograms from these single permutation runs to show they are mostly uniform
+        \end{enumerate}
+        \item We show that there is not a ton of differences between the top pathways across ancestries
+        \begin{enumerate}
+            \item Instead it looks like we may have a number of pathways being driven by genes in HLA regions and cellular signaling
+            \item Maybe we are only beginning to scratch the surface of signal, and what we find are more 'globally biologically important' pathways, relevant to most pathways
+        \end{enumerate}
+        \item We see a similar situation when comparing Height and BMI, though there are a few pathways that diverge in the African subset (unclear how much I can draw from this -- still working on it)
+    \end{enumerate}
+    \item InterPath results -- British replicates
+    \begin{enumerate}
+        \item 4 extra Brit.4k and Brit.10k replicates (total of 5 including the first set from before)
+        \item Brit.4k replicates continue to have slightly more signal than Brit.10k replicates, very few significant results
+        \item Putting this analysis together now, but it might be good if at least the p-values are more correlated between replicates than what we see among the different ancestries previously
+        \item I am also running 10 phenotype permutations for each of these replicates -- we can potentially use these for some basic FDR measures
+    \end{enumerate}
+    \item Genetic Diversity results
+    \begin{enumerate}
+        \item this doesn't exist yet, but the idea would be to show somehow that greater genetic diversity/variation in any ancestry is correlated with more significant p-values
+        \item this is most likely to work in the African population, given that's where most of the signal is
+        \item Lorin and I have discussed some metrics trying to get at this using either the genotype matrix per pathway or the different GRMs we construct per pathway (pathway, background, and pathway*background GRMs)
+    \end{enumerate}
+    \item Ambiguity on dealing with non-European populations
+    \begin{enumerate}
         \item 
     \end{enumerate}
-    \item
+    
 \end{enumerate}
 
 \section{Introduction}\label{InterPath-Introduction}
