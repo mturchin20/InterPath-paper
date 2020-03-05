@@ -153,6 +153,35 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
 
 \linenumbers
 
+\section{Outline}
+
+\begin{enumerate}
+    \item PLINK and MAPIT results
+    \begin{enumerate}
+        \item Results are shown in African, British.Ran4k, Caribbean, and Indian subsets; Height and BMI
+        \item Results are weak -- we say either: 1) we have no signal so we want to explore a potentially more powered approach or 2) we see weak signals of significance and possible differences among human ancestries, but we need a potentially more powered approach to further understand what's going on
+    \end{enumerate}
+    \item InterPath results -- multiple populations
+    \begin{enumerate}
+        \item Results are shown for African, British.Ran4k, British.Ran10k, Caribbean, Chinese, Indian, Irish, and Pakistani subsets; Height and BMI; KEGG and REACTOMR
+        \item We find that the African population shows a large number of genome-wide significant results
+        \begin{enumerate}
+            \item Brit.Ran4k, Caribbean, Chinese, Indian, and Pakistani havea few results as well
+            \item Brit.Ran10k and Irish barely have any -- it appears large sample sizes may diminish signal somewhat, but our smallest sample sizes are in Chinese and Pakistani
+        \end{enumerate}
+        \item We find that having more SNPs tends to be correlated with having a stronger signal
+        \item We show through simulations the following* (*need to discuss this!):
+        \begin{enumerate}
+            \item The model performs as expected under the null (no signal)
+            \item we can correct for some scheme of population structure by controlling with top local PCs
+            \item that there is unlikely to be a 'genotyping chip effect' by biasing our 'causal SNPs' based on MAF from European vs. African subsets
+        \item We show that there is not a ton of differences between the top pathways across ancestries 
+        \end{enumerate}
+        \item 
+    \end{enumerate}
+    \item
+\end{enumerate}
+
 \section{Introduction}\label{InterPath-Introduction}
 
 Genome-wide association studies (GWAS) have identified over \textcolor{red}{24,000} significant associations between individual genotypes and complex human traits \citep{Buniello2019}. However, the vast majority of these associations were identified in datasets of primarily European ancestry. In a survey of published GWAS from 2009, it was found that only 4\% of the 1.7 million individuals studied were of non-European ancestry \citep{Need2009}. This report gained some brief attention, but an initial increase in the representation of non-European ancestries in GWAS has stagnated since 2014 \citep{Popejoy2016,Martin2019}; this lack of representation is even more disconcerting given the ongoing explosion of available human genomic data. 
@@ -247,26 +276,14 @@ When we look at population-specific interactions...
 
 
 
-\subsection{Genome Level Epistasis}\label{InterPath-Results-GenomeEpistasis}
 
-To investigate epistasis in multiple human populations, we first extracted a variety of human ancestries from the UKB (see Online Methods). We collected a total of 8 UKB subsets with an average sample size of XXXX among the non-European populations (Supplementary Table 1), including African, Indian, Chinese, and Pakistani subsets. To maximize our sample sizes per subset, we focused on height and body mass index (BMI) as our complex traits of interest. 
-
-The first approach we took to investigate epistasis was to look at genome-wide estimates of phenotypic PVE. Specifically, we setup a linear mixed model that incorporated both additive and epistatic interactions, and fit each of these variance components using GEMMA \citep{Zhou2012} (see Online Methods and Supplementary Note for details). Calculating these variance component PVEs for height and BMI in each of our populations, we indeed find differences across each human ancestry (Table 1).
-
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=1]{Images/Table1_Placeholder.png}
-\caption[TBD]{\textbf{TBD}. \\ this will be a table not a figure.}
-\label{IntrePath-Main-Table-GEMMA}
-\end{figure}
-
-In height, we do not see anything immediately new. For the additive effects $G_1$ we mainly calculate PVEs across each population within our range of expectation (between XX and XX (citation)). Additionally, we do not currently see much evidence for second-order effects $G_2$. However, looking at BMI we see a different result. Across all populations we see non-trivial PVEs for $G_2$, ranging from XX to XX. We also see larger values in multiple non-European populations. In particular we see a particularly strong result in XXX. This might be beginning evidence that indeed, non-European populations have more potential for picking up signals of higher-order interactions in the genome.   
-
-
-\subsubsection{Power Gained from Proper Pathway Definitions}
 
 
 \subsection{Relationship Between Epistasis and Genetic Diversity}
+
+
+\subsection{Ambiguity in controlling for population structure in non-European populations}
+
 
 
 \section{Discussion}\label{InterPath-Discussion}
@@ -415,6 +432,23 @@ GEMMA/GridLMM:
 
 
 \iffalse
+
+\subsection{Genome Level Epistasis}\label{InterPath-Results-GenomeEpistasis}
+
+To investigate epistasis in multiple human populations, we first extracted a variety of human ancestries from the UKB (see Online Methods). We collected a total of 8 UKB subsets with an average sample size of XXXX among the non-European populations (Supplementary Table 1), including African, Indian, Chinese, and Pakistani subsets. To maximize our sample sizes per subset, we focused on height and body mass index (BMI) as our complex traits of interest. 
+
+The first approach we took to investigate epistasis was to look at genome-wide estimates of phenotypic PVE. Specifically, we setup a linear mixed model that incorporated both additive and epistatic interactions, and fit each of these variance components using GEMMA \citep{Zhou2012} (see Online Methods and Supplementary Note for details). Calculating these variance component PVEs for height and BMI in each of our populations, we indeed find differences across each human ancestry (Table 1).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=1]{Images/Table1_Placeholder.png}
+\caption[TBD]{\textbf{TBD}. \\ this will be a table not a figure.}
+\label{IntrePath-Main-Table-GEMMA}
+\end{figure}
+
+In height, we do not see anything immediately new. For the additive effects $G_1$ we mainly calculate PVEs across each population within our range of expectation (between XX and XX (citation)). Additionally, we do not currently see much evidence for second-order effects $G_2$. However, looking at BMI we see a different result. Across all populations we see non-trivial PVEs for $G_2$, ranging from XX to XX. We also see larger values in multiple non-European populations. In particular we see a particularly strong result in XXX. This might be beginning evidence that indeed, non-European populations have more potential for picking up signals of higher-order interactions in the genome.   
+
+\subsubsection{Power Gained from Proper Pathway Definitions}
 
 \fi
 
