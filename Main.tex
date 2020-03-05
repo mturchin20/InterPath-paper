@@ -169,6 +169,7 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
     \end{enumerate}
     \item InterPath results -- multiple populations
     \begin{enumerate}
+        \item See Figure \ref{InterPath-Main-Figure-Barplots}
         \item Results are shown for African, British.Ran4k, British.Ran10k, Caribbean, Chinese, Indian, Irish, and Pakistani subsets; Height and BMI; KEGG and REACTOME
         \item We find that the African population shows a large number of genome-wide significant results
         \begin{enumerate}
@@ -191,6 +192,7 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
         \begin{enumerate}
             \item Instead it looks like we may have a number of pathways being driven by genes in HLA regions and cellular signaling
             \item Maybe we are only beginning to scratch the surface of signal, and what we find are more 'globally biologically important' pathways, relevant to most pathways
+            \item we propose that we need larger sample sizes to start identifying whether there is more ancestry specific epistasis occurring
         \end{enumerate}
         \item We see a similar situation when comparing Height and BMI, though there are a few pathways that diverge in the African subset (unclear how much I can draw from this -- still working on it)
     \end{enumerate}
@@ -212,7 +214,7 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
         \item (need to develop this idea/framing a bit more)
         \item We point out that it's unclear how to deal with structure in non-European populations
         \item We show that there are not much differences between global and local PCs in terms of InterPath (and/or GWAS?) results?
-        \item We can put the GEMMA results here potentially -- that we see the expected $h^{2}$ for $G_1$ in British.Ran4k in Height and BMI, but using the exact same analysis setup we get weird/nonsensical results for some of the other non-European populations
+        \item We can put the GEMMA results here potentially -- that we see the expected $h^{2}$ for $G_1$ in British.Ran4k in Height and BMI, but using the exact same analysis setup we get weird/nonsensical results for some of the other non-European populations?
     \end{enumerate}
     
 \end{enumerate}
@@ -277,7 +279,7 @@ where now R is a new random effects term that represents our new group of SNPs R
 
 To ultimately see if pathway analysis indeed provides similar benefits to epistasis analyses as it does to additive analyses, we ran InterPath on our UKB population subsets. Furthermore, because of our initial evidence that there might be larger signals of epistasis in other non-European populations, and variation in signals for epistasis across global populations in general, we further expanded the number of UKB population subsets we analyzed. In addition to the African, British 4k, Caribbean, and Indian population subsets, we now added subsets consisting of Chinese, Pakistani, and Irish ancestry, as well as a second random subset of British individuals representing a larger sample size of close to 10,000 individuals. Both the Irish and new, second British subsets represent large sample size subsets to test how our model performs as sample size increases. Lastly, we chose to analyze the KEGG and REACTOME pathways available from the MSigDB \citep{Liberzon2011} due to their coverage of a wide range of biological processes. 
 
-Running InterPath on our UKB subsets across height and BMI, we find a major increase in our power to detect marginal epistasis. In total across each population subset, phenotype, and pathway database combination, we identified XXX significance genetic interactions between a pathway and the remaining genomic background (Figure \ref{InterPath-Main-Figure-Barplots} and Table \ref{}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis). We see both variation in our ability to detect marginal epistasis across our population subsets as well as a much stronger ability to pick up signals in our African subset. Additionally, running a modest number of phenotype permutations shows that InterPath behaves as expected under the null (Supplementary Figure XX), and we observe FDR estimates ranging from XX to XX across our different ancestry, phenotype, and pathway database combinations (Supplementary Tables XX).
+Running InterPath on our UKB subsets across height and BMI, we find a major increase in our power to detect marginal epistasis. In total across each population subset, phenotype, and pathway database combination, we identified XXX significance genetic interactions between a pathway and the remaining genomic background (Figure \ref{InterPath-Main-Figure-Barplots} and Table \ref{}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis). We see both variation in our ability to detect marginal epistasis across our population subsets as well as a much stronger ability to pick up signals in our African subset. Additionally, conducting an analysis run with permuted phenotypes shows that InterPath behaves as expected under the null (Supplementary Figure XX), and we observe FDR estimates ranging from XX to XX across our different ancestry, phenotype, and pathway database combinations (Supplementary Tables XX).
 
 \begin{figure}[htbp]
 \centering
@@ -451,6 +453,19 @@ GEMMA/GridLMM:
 
 \clearpage
 \section{Supplementary Material}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.225]{Images/InterPath_Main_Figure_Heatplots_vs1.png}
+\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\label{InterPath-Main-Figure-Heatplots}
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.225]{Images/InterPath_Main_Figure_Heatplots_REACTOME_vs1.png}
+\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\label{InterPath-Suppl-Figure-Heatplots2}
+\end{figure}
 
 %\captionsetup[figure]{name=Supplementary Figure}
 %\captionsetup[table]{name=Supplementary Table}
