@@ -178,6 +178,9 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
             \item Brit.Ran10k and Irish barely have any -- it appears large sample sizes may diminish signal somewhat, but our smallest sample sizes are in Chinese and Pakistani
         \end{enumerate}
         \item We find that having more SNPs tends to be correlated with having a stronger signal
+        \begin{enumerate}
+            \item See Supplementary Figure \ref{InterPath-Suppl-Figure-pValsVsNumSNPs} \& \ref{InterPath-Suppl-Figure-pValsVsNumSNPs-perm1} (observed \& permuted data results, respectively)
+        \end{enumerate}
         \item We show through simulations the following* (*need to discuss this!):
         \begin{enumerate}
             \item The model performs as expected under the null (no signal)
@@ -187,7 +190,7 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
         \end{enumerate}
         \item We can also show via a single phenotype permutation run that results behave as expected, ie things generally follow the null
         \begin{enumerate}
-            \item See Supplementary Figures \ref{InterPath-Suppl-Figure-QQPlots-KEGG} \& \ref{InterPath-Suppl-Figure-QQPlots-REACTOME}
+            \item See Supplementary Figures \ref{InterPath-Suppl-Figure-QQPlots-KEGG} \& \ref{InterPath-Suppl-Figure-QQPlots-REACTOME} (permutation QQ plots for both databases)
             \item we can also show p-value histograms from these single permutation runs to show they are mostly uniform
         \end{enumerate}
         \item We show that there is not a ton of differences between the top pathways across ancestries
@@ -481,9 +484,23 @@ GEMMA/GridLMM:
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.225]{Images/InterPath_Suppl_pValsVsNumSNPs_vs1.png}
+\includegraphics[scale=.225]{Images/InterPath_Suppl_pValHists_vs1.png}
+\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\label{InterPath-Suppl-Figure-pValHists}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.15]{Images/InterPath_Suppl_pValsVsNumSNPs_vs1.png}
 \caption[TBD]{\textbf{TBD}. \\ Placeholder.}
 \label{InterPath-Suppl-Figure-pValsVsNumSNPs}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.15]{Images/InterPath_Suppl_pValsVsNumSNPs_perm1_vs1.png}
+\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\label{InterPath-Suppl-Figure-pValsVsNumSNPs-perm1}
 \end{figure}
 
 \begin{figure}[htbp]
