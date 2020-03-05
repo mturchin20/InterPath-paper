@@ -168,16 +168,16 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
             \item should we still look into this? is my framing in a) the basic analysis setup we were thinking?
         \end{enumerate}
     \end{enumerate}
-    \item InterPath results -- multiple populations
+    \item InterPath results -- European \& non-European populations
     \begin{enumerate}
         \item See Figure \ref{InterPath-Main-Figure-Barplots}
         \item Results are shown for African, British.Ran4k, British.Ran10k, Caribbean, Chinese, Indian, Irish, and Pakistani subsets; Height and BMI; KEGG and REACTOME
         \item We find that the African population shows a large number of genome-wide significant results
         \begin{enumerate}
-            \item Brit.Ran4k, Caribbean, Chinese, Indian, and Pakistani havea few results as well
+            \item Brit.Ran4k, Caribbean, Chinese, Indian, and Pakistani have a few results as well
             \item Brit.Ran10k and Irish barely have any -- it appears large sample sizes may diminish signal somewhat, but our smallest sample sizes are in Chinese and Pakistani
         \end{enumerate}
-        \item We find that having more SNPs tends to be correlated with having a stronger signal
+        \item We find that having more SNPs tends to be correlated with having a stronger signal (and barely any relationship in the permuted data)
         \begin{enumerate}
             \item See Supplementary Figure \ref{InterPath-Suppl-Figure-pValsVsNumSNPs} \& \ref{InterPath-Suppl-Figure-pValsVsNumSNPs-perm1} (observed \& permuted data results, respectively)
         \end{enumerate}
@@ -195,12 +195,17 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
         \end{enumerate}
         \item We show that there is not a ton of differences between the top pathways across ancestries
         \begin{enumerate}
-            \item See Figure \ref{InterPath-Main-Figure-PopCompDotPlots}
+            \item See Figures \ref{InterPath-Main-Figure-Heatplots-KEGG}, \ref{InterPath-Main-Figure-Heatplots-REACTOME} (Heatplots) \&  \ref{InterPath-Main-Figure-PopCompDotPlots} (Dotplots)
+            \item We do see some more tracking between the African and the Caribbean cohorts, which is encouraging (stands out more in REACTOME than KEGG?)
             \item Instead it looks like we may have a number of pathways being driven by genes in HLA regions and cellular signaling
             \item Maybe we are only beginning to scratch the surface of signal, and what we find are more 'globally biologically important' pathways, relevant to most pathways
             \item we propose that we need larger sample sizes to start identifying whether there is more ancestry specific epistasis occurring
         \end{enumerate}
         \item We see a similar situation when comparing Height and BMI, though there are a few pathways that diverge in the African subset (unclear how much I can draw from this -- still working on it)
+        \begin{enumerate}
+            \item See (Supplementary?) Figure \ref{InterPath-Suppl-Figure-PhenoCompDotPlots}
+            \item The barplots show this too, but it's more clear here that BMI has on average larger signals that height, which is kind of interesting -- in line with our expectations
+        \end{enumerate}
     \end{enumerate}
     \item InterPath results -- British replicates
     \begin{enumerate}
@@ -215,7 +220,7 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
         \item this is most likely to work in the African population, given that's where most of the signal is
         \item Lorin and I have discussed some metrics trying to get at this using either the genotype matrix per pathway or the different GRMs we construct per pathway (pathway, background, and pathway*background GRMs)
     \end{enumerate}
-    \item Ambiguity on dealing with non-European populations
+    \item Ambiguity on dealing with non-European populations (?)
     \begin{enumerate}
         \item (need to develop this idea/framing a bit more)
         \item We point out that it's unclear how to deal with structure in non-European populations
@@ -300,15 +305,15 @@ Looking at the specific pathways that we observe as having significant evidence 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.225]{Images/InterPath_Main_Figure_Heatplots_vs1.png}
+\includegraphics[scale=.225]{Images/InterPath_Main_Figure_Heatplots_KEGG_vs1.png}
 \caption[TBD]{\textbf{TBD}. \\ Placeholder.}
-\label{InterPath-Main-Figure-Heatplots}
+\label{InterPath-Main-Figure-Heatplots-KEGG}
 \end{figure}
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.225]{Images/InterPath_Main_Figure_Heatplots_REACTOME_vs1.png}
 \caption[TBD]{\textbf{TBD}. \\ Placeholder.}
-\label{InterPath-Main-Figure-Heatplots2}
+\label{InterPath-Main-Figure-Heatplots-REACTOME}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -484,7 +489,7 @@ GEMMA/GridLMM:
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.225]{Images/InterPath_Suppl_pValHists_vs1.png}
+\includegraphics[scale=.15]{Images/InterPath_Suppl_pValHists_vs1.png}
 \caption[TBD]{\textbf{TBD}. \\ Placeholder.}
 \label{InterPath-Suppl-Figure-pValHists}
 \end{figure}
@@ -505,7 +510,7 @@ GEMMA/GridLMM:
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.225]{Images/InterPath_Suppl_PhenoCompDotPlots_vs1.png}
+\includegraphics[scale=.15]{Images/InterPath_Suppl_PhenoCompDotPlots_vs1.png}
 \caption[TBD]{\textbf{TBD}. \\ Placeholder.}
 \label{InterPath-Suppl-Figure-PhenoCompDotPlots}
 \end{figure}
