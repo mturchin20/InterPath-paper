@@ -158,10 +158,11 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
 \begin{enumerate}
     \item PLINK and MAPIT results
     \begin{enumerate}
+        \item See (Supplementary?) Figures \ref{InterPath-Suppl-Figure-PLINK} (PLINK) \& \ref{InterPath-Main-Figure-MAPIT} (MAPIT)
         \item Results are shown in African, British.Ran4k, Caribbean, and Indian subsets; Height and BMI
         \item PLINK -- looking at the proportion of marginal SNP-by-SNPs associations per SNP \& MAPIT -- looking at the amount of marginal association per SNP under the SNP*background model
         \item Results are weak -- we say either: 1) we have no signal so we want to explore a potentially more powered approach or 2) we see weak signals of significance and possible differences among human ancestries, but we need a potentially more powered approach to further understand what's going on
-        \item Compare MAPIT and GWAS results
+        \item Compare MAPIT and GWAS results (?)
         \begin{enumerate}
             \item this was an idea from a previous conversation that I haven't done yet -- to show that ordering of SNPs change when you do MAPIT vs. GWAS, suggesting that there is something happening here
             \item should we still look into this? is my framing in a) the basic analysis setup we were thinking?
@@ -186,10 +187,12 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
         \end{enumerate}
         \item We can also show via a single phenotype permutation run that results behave as expected, ie things generally follow the null
         \begin{enumerate}
+            \item See Supplementary Figures \ref{InterPath-Suppl-Figure-QQPlots-KEGG} \& \ref{InterPath-Suppl-Figure-QQPlots-REACTOME}
             \item we can also show p-value histograms from these single permutation runs to show they are mostly uniform
         \end{enumerate}
         \item We show that there is not a ton of differences between the top pathways across ancestries
         \begin{enumerate}
+            \item See Figure \ref{InterPath-Main-Figure-PopCompDotPlots}
             \item Instead it looks like we may have a number of pathways being driven by genes in HLA regions and cellular signaling
             \item Maybe we are only beginning to scratch the surface of signal, and what we find are more 'globally biologically important' pathways, relevant to most pathways
             \item we propose that we need larger sample sizes to start identifying whether there is more ancestry specific epistasis occurring
@@ -239,13 +242,13 @@ To do some intiial investigations of epistasis in European and non-European popu
 
 Our first approach to investigate SNP-level epistasis was to run the canonical pair-wise interaction model as employed by PLINK's \texttt{--epistasis} method \citep{Purcell2007} (see Online Methods and Supplementary Note for details). Here, we directly estimated the effect size of every possible SNP pairwise interaction and calculated whether it was statistically significant or not.  
 
-Running this method on each of our four UKB population subsets, we chose to look at the 'proportion of marginally significant tests' per SNP, where marginal significance is defined as any test with a $p$-value < $1\times10^{-4}$ (Figure \ref{InterPath-Main-Figure-PLINK}). We chose to look at proportion of tests due the varying number of SNPs across each population subset. What we find is that indeed there is variation between human ancestries in the amount of pairwise SNP epistasis across the genome. We also find that both the African and Caribbean population subsets show greater proportions of marginal interactions than the British population subset despite both non-European populations having lower sample sizes. 
+Running this method on each of our four UKB population subsets, we chose to look at the 'proportion of marginally significant tests' per SNP, where marginal significance is defined as any test with a $p$-value < $1\times10^{-4}$ (Figure \ref{InterPath-Suppl-Figure-PLINK}). We chose to look at proportion of tests due the varying number of SNPs across each population subset. What we find is that indeed there is variation between human ancestries in the amount of pairwise SNP epistasis across the genome. We also find that both the African and Caribbean population subsets show greater proportions of marginal interactions than the British population subset despite both non-European populations having lower sample sizes. 
 
 \begin{figure}[t]
 \centering
-\includegraphics[scale=.35]{Images/PLINK_Epistasis_Placeholder.png}
+\includegraphics[scale=.35]{Images/InterPath_Suppl_Figure_PLINK_vs2.png}
 \caption[TBD]{\textbf{TBD}. \\ Placeholder.}
-\label{InterPath-Main-Figure-PLINK}
+\label{InterPath-Suppl-Figure-PLINK}
 \end{figure}
 
 \subsubsection{Marginal SNP Epistasis}
@@ -256,7 +259,7 @@ Running MAPIT on our population subsets in both height and BMI, we find that the
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.35]{Images/MAPIT_OLD_Placeholder.png}
+\includegraphics[scale=.35]{Images/InterPath_Main_Figure_MAPIT_vs1.png}
 \caption[TBD]{\textbf{OLD DATA}. \\ Placeholder.}
 \label{InterPath-Main-Figure-MAPIT}
 \end{figure}
@@ -307,8 +310,8 @@ Looking at the specific pathways that we observe as having significant evidence 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.225]{Images/InterPath_Main_PopCompDotPlots__African_vs1.png}
-\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\includegraphics[scale=.15]{Images/InterPath_Main_PopCompDotPlots_African_vs1.png}
+\caption[]{\textbf{TBD}. \\ InterPath comparisons between African and all other subsets in Height and BMI for both pathway datasets. The $x$-axis is the African -$\log_{10}$ $p$-values and $y$-axis is the row's population -$\log_{10}$ $p$-values for each pathway. Dotted red lines represent Bonferroni-corrected $p$-value thresholds for each population/phenotype/pathway-database combination.}
 \label{InterPath-Main-Figure-PopCompDotPlots}
 \end{figure}
 
@@ -464,9 +467,16 @@ GEMMA/GridLMM:
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.35]{Images/InterPath_Suppl_Figure_QQPlots_vs1.png}
+\includegraphics[scale=.35]{Images/InterPath_Suppl_Figure_QQPlots_KEGG_vs1.png}
 \caption[TBD]{\textbf{TBD}. \\ Placeholder.}
-\label{InterPath-Suppl-Figure-QQPlots}
+\label{InterPath-Suppl-Figure-QQPlots-KEGG}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.35]{Images/InterPath_Suppl_Figure_QQPlots_REACTOME_vs1.png}
+\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\label{InterPath-Suppl-Figure-QQPlots-REACTOME}
 \end{figure}
 
 \begin{figure}[htbp]
