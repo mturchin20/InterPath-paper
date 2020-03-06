@@ -122,6 +122,7 @@
 \newcommand{\bLambda}{\boldsymbol\Lambda}
 \newcommand{\bTheta}{\boldsymbol\Theta}
 \newcommand{\at}[2][]{#1|_{#2}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
 
 \title{Differential complex trait architecture across humans: epistasis identified in non-European populations at multiple genomic scales}
 \author[1,2]{Michael C. Turchin}
@@ -146,7 +147,7 @@ Information idea about creating random 'pathways' that have either the same numb
 Genome-wide association (GWA) studies have identified thousands of significant genetic associations in humans across a number of complex traits. However, the vast majority of these studies use datasets of predominantly European ancestry \citep{Popejoy2016}. It has generally been thought that complex trait genetic architecture should be transferable across populations of different ancestries, but recent work has shown a number of differences in trait architecture across human ancestries, including heterogeneity in both the identified causal variants and estimated effect sizes 
 \citep{Martin2017,Wojcik2019}. Here, we report further evidence that complex trait genetic architecture is fundamentally different among human ancestries by jointly leveraging pathway and epistasis analysis.
 
-Under the assumption that a given complex trait may have differential polygenic architectures across human ancestries, we hypothesize that human populations may also be enriched for differences in epistatic effects. However, since polygenic traits tend to have smaller GWA effect sizes, combining variants via pathway analysis may allow us to better reveal these signals. To accomplish this, we extend the concept of identifying marginal epistasis, moving from testing single variants \citep{Crawford2017} to testing groups of variants for nonlinear association with a trait of interest.
+Under the assumption that a given complex trait may have differential polygenic architectures across human ancestries, we hypothesize that human populations may also be enriched for differences in epistatic effects. However, since polygenic traits tend to have smaller GWA effect sizes, combining variants via pathway analysis may allow us to better reveal these \red{epistatic?} signals. To accomplish this, we extend the concept of identifying marginal epistasis, moving from testing single variants \citep{Crawford2017} to testing groups of variants for nonlinear association with a trait of interest.
 
 We apply our new method to multiple ancestries present in the UK Biobank \citep{Sudlow2015} and explore multiple pathway-related interaction models. Using morphometric traits we find evidence for genome-wide epistasis in African and other non-European populations. We also find evidence that these trends exists on the SNP and gene levels as well. Results also indicate this may be due to increased heterozygosity in non-European populations. This suggests that non-European populations may be well-suited for identifying non-additive effects in human complex trait architecture; this also suggests further evidence that European populations -- predominantly used for epistasis studies -- may indeed be limited and inaccurate proxies for all human ancestries in complex trait research.
 \end{abstract}
@@ -165,12 +166,12 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
         \item Compare MAPIT and GWAS results (?)
         \begin{enumerate}
             \item this was an idea from a previous conversation that I haven't done yet -- to show that ordering of SNPs change when you do MAPIT vs. GWAS, suggesting that there is something happening here
-            \item should we still look into this? is my framing in a) the basic analysis setup we were thinking?
+            \item should we still look into this? is my framing in a) the basic analysis setup we were thinking? \red{SR: I think we should move this up to the start to motivate epistasis as the overarching goal, before PLINK v. MAPIT. It could even be a multipanel figure.}
         \end{enumerate}
     \end{enumerate}
     \item InterPath results -- European \& non-European populations
     \begin{enumerate}
-        \item See Figure \ref{InterPath-Main-Figure-Barplots}
+        \item See Figure \ref{InterPath-Main-Figure-Barplots} \red{SR: We need figure captions. What does significant mean here? Also, I think it's better to just put the cohort name above each bar in the plot, or at least the first panel; the legend is hard to read.}
         \item Results are shown for African, British.Ran4k, British.Ran10k, Caribbean, Chinese, Indian, Irish, and Pakistani subsets; Height and BMI; KEGG and REACTOME
         \item We find that the African population shows a large number of genome-wide significant results
         \begin{enumerate}
@@ -185,7 +186,7 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
         \begin{enumerate}
             \item The model performs as expected under the null (no signal)
             \item we can correct for some scheme of population structure by controlling with top local PCs
-            \item that there is unlikely to be a 'genotyping chip effect' by biasing our 'causal SNPs' based on MAF from European vs. African subsets
+            \item that there is unlikely to be a 'genotyping chip effect' by biasing our 'causal SNPs' based on MAF from European vs. African subsets \red{SR: just a note that we have to be really careful using the word `causal'}
             \item show that as 'genetic diversity' grows in our simulated populations, the greater our signal gets??
         \end{enumerate}
         \item We can also show via a single phenotype permutation run that results behave as expected, ie things generally follow the null
@@ -195,7 +196,7 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
         \end{enumerate}
         \item We show that there is not a ton of differences between the top pathways across ancestries
         \begin{enumerate}
-            \item See Figures \ref{InterPath-Main-Figure-Heatplots-KEGG}, \ref{InterPath-Main-Figure-Heatplots-REACTOME} (Heatplots) \&  \ref{InterPath-Main-Figure-PopCompDotPlots} (Dotplots)
+            \item See Figures \ref{InterPath-Main-Figure-Heatplots-KEGG}, \ref{InterPath-Main-Figure-Heatplots-REACTOME} (Heatplots) \&  \ref{InterPath-Main-Figure-PopCompDotPlots} (Dotplots) \red{SR: the heatmap off-diagonal entries are hard to understand at this point and need to be introduced earlier because they are the first cross-ancestry comparisons I believe.}
             \item We do see some more tracking between the African and the Caribbean cohorts, which is encouraging (stands out more in REACTOME than KEGG?)
             \item Instead it looks like we may have a number of pathways being driven by genes in HLA regions and cellular signaling
             \item Maybe we are only beginning to scratch the surface of signal, and what we find are more 'globally biologically important' pathways, relevant to most pathways
@@ -207,16 +208,17 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
             \item The barplots show this too, but it's more clear here that BMI has on average larger signals that height, which is kind of interesting -- in line with our expectations
         \end{enumerate}
     \end{enumerate}
-    \item InterPath results -- British replicates
+    \item InterPath results -- British replicates \red{SR: this should come earlier - it will be on readers' minds from the moment another ancestry's results are presented.}
     \begin{enumerate}
         \item 4 extra Brit.4k and Brit.10k replicates (total of 5 including the first set from before)
         \item Brit.4k replicates continue to have slightly more signal than Brit.10k replicates, very few significant results
-        \item Putting this analysis together now, but it might be good if at least the p-values are more correlated between replicates than what we see among the different ancestries previously
+        \item Putting this analysis together now, but it might be good if at least the p-values are more correlated between replicates than what we see among the different ancestries previously \red{yes, but this may be slight - at least that's what Wei and Sam are seeing.}
         \item I am also running 10 phenotype permutations for each of these replicates -- we can potentially use these for some basic FDR measures
     \end{enumerate}
     \item Genetic Diversity results
     \begin{enumerate}
         \item this doesn't exist yet, but the idea would be to show somehow that greater genetic diversity/variation in any ancestry is correlated with more significant p-values
+        \item \red{SR: I'm also wondering whether your cross-ancestry analysis results with heatmaps are correlated with cross-pop Fst}
         \item this is most likely to work in the African population, given that's where most of the signal is
         \item Lorin and I have discussed some metrics trying to get at this using either the genotype matrix per pathway or the different GRMs we construct per pathway (pathway, background, and pathway*background GRMs)
     \end{enumerate}
