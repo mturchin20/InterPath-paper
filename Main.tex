@@ -1,3 +1,9 @@
+
+
+
+
+
+
 \documentclass[12pt, a4paper]{article}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -123,6 +129,7 @@
 \newcommand{\bTheta}{\boldsymbol\Theta}
 \newcommand{\at}[2][]{#1|_{#2}}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
 
 \title{Differential complex trait architecture across humans: epistasis identified in non-European populations at multiple genomic scales}
 \author[1,2]{Michael C. Turchin}
@@ -182,7 +189,7 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
         \begin{enumerate}
             \item See Supplementary Figure \ref{InterPath-Suppl-Figure-pValsVsNumSNPs} \& \ref{InterPath-Suppl-Figure-pValsVsNumSNPs-perm1} (observed \& permuted data results, respectively)
         \end{enumerate}
-        \item We show through simulations the following* (*need to discuss this!):
+        \item We show through simulations the following* \red{(MT: *need to discuss this!)}:
         \begin{enumerate}
             \item The model performs as expected under the null (no signal)
             \item we can correct for some scheme of population structure by controlling with top local PCs
@@ -257,7 +264,7 @@ Running this method on each of our four UKB population subsets, we chose to look
 \begin{figure}[t]
 \centering
 \includegraphics[scale=.35]{Images/InterPath_Suppl_Figure_PLINK_vs2.png}
-\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\caption[PLINK SNP Pairwise Epistasis]{\textbf{PLINK SNP Pairwise Epistasis.} \\ Shown are results from running PLINK's SNP-by-SNP pairwise epistasis method, \texttt{--epistasis}, on four of our initial UKB human population subsets in height and BMI. Specifically the $y$-axis shows the proportion of marginally significant interactions found per-SNP, where marginal significance is defined as the epistastic test returning a $p$-value $<$ $1\times10^{-4}$, and the $x$-axis shows the top 50 SNPs for this metric in each of the population subsets. The African subset contained 374,466 total SNPs, the British Random 4k subset contained 600,006 total SNPs, the Caribbean subset contained 410,017 total SNPs, and the Indian subset contained 505,854 total SNPs. We observe across each population different levels of marginal pairwise SNP significance as well as different patterns of significance. Additionally, both the African and Caribbean subsets contain the strongest signals.}
 \label{InterPath-Suppl-Figure-PLINK}
 \end{figure}
 
@@ -270,7 +277,7 @@ Running MAPIT on our population subsets in both height and BMI, we find that the
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.35]{Images/InterPath_Main_Figure_MAPIT_vs1.png}
-\caption[TBD]{\textbf{OLD DATA}. \\ Placeholder.}
+\caption[TBD]{\textbf{MAPIT Results QQ-Plots \red{(OLD DATA)}}. Shown are QQ-plots of our results from running MAPIT on our four initial UKB population subsets in height and BMI. On the $y$-axis are the -$\log_{10}$ of our observed $p$-values and the on the $y$-axis are on the -$\log_{10}$ of our expected $p$-values. We observe weak signals of marginal epistasis across most of the population subsets in height and only a few potential weak signals in BMI. We do observe potential differences across population subsets. However, this lack of signal may be a product of our limited sample sizes, emphasizing the need to increase power through other means, such as by methodological improvements.}
 \label{InterPath-Main-Figure-MAPIT}
 \end{figure}
 
@@ -297,7 +304,7 @@ Running InterPath on our UKB subsets across height and BMI, we find a major incr
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.35]{Images/InterPath_Main_Figure_Barplots_vs1.png}
-\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\caption[TBD]{\textbf{Number of Significant Pathways from Running InterPath on UKB subsets}. Shown are the number of significant pathways found from running InterPath on each of our expanded collection of UKB population subsets using height and BMI in the KEGG database (REACTOME results can be found in Supplementary Figure XX). A pathway is considered significant if its InterPath $p$-value is below XXX (.05 / XXX, the number of KEGG pathways tested). We find that the African population far and away has the largest number of significant pathways, both for each phenotype and for each pathway database. But in general we also tend to see significant pathways moreso in non-European populations than European populations.}
 \label{InterPath-Main-Figure-Barplots}
 \end{figure}
 
@@ -308,13 +315,13 @@ Looking at the specific pathways that we observe as having significant evidence 
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.225]{Images/InterPath_Main_Figure_Heatplots_KEGG_vs1.png}
-\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\caption[TBD]{\textbf{Overlap of Significant InterPath Pathways Between UKB Population Subsets}. \\ Shown are the numbers of significant InterPath pathways that overlap between each populations for both height and BMI in the KEGG database.  }
 \label{InterPath-Main-Figure-Heatplots-KEGG}
 \end{figure}
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.225]{Images/InterPath_Main_Figure_Heatplots_REACTOME_vs1.png}
-\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\caption[TBD]{\textbf{TBD}. \\ See above.}
 \label{InterPath-Main-Figure-Heatplots-REACTOME}
 \end{figure}
 
