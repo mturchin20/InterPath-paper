@@ -20,8 +20,21 @@
 \usepackage{setspace}
 \usepackage{hypcap}
 \usepackage{lineno} %can do [right] to shift location of #s
-%From: https://tex.stackexchange.com/questions/14364/cross-referencing-between-different-files to connect references from external .tex documents; NOTE: to get xr package to work in Overleaf, followed the directions here https://www.overleaf.com/learn/how-to/Cross_referencing_with_the_xr_package_in_Overleaf ; NOTE: seems like when use {xr} and not {xr-hyper}, things work -- get some 'errors' when use xr-hyper, even though within the document looks like things are working fine?
+%From: https://www.overleaf.com/learn/how-to/Cross_referencing_with_the_xr_package_in_Overleaf
 \usepackage{xr}
+\makeatletter
+\newcommand*{\addFileDependency}[1]{% argument=file name and extension
+  \typeout{(#1)}
+  \@addtofilelist{#1}
+  \IfFileExists{#1}{}{\typeout{No file #1.}}
+}
+\makeatother
+\newcommand*{\myexternaldocument}[1]{%
+    \externaldocument{#1}%
+    \addFileDependency{#1.tex}%
+    \addFileDependency{#1.aux}%
+}
+\myexternaldocument{Supplementary}
 
 %From Lorin
 \usepackage{latexsym}
@@ -299,7 +312,7 @@ where now R is a new random effects term that represents our new group of SNPs R
 
 To ultimately see if pathway analysis indeed provides similar benefits to epistasis analyses as it does to additive analyses, we ran InterPath on our UKB population subsets. Furthermore, because of our initial evidence that there might be larger signals of epistasis in other non-European populations, and variation in signals for epistasis across global populations in general, we further expanded the number of UKB population subsets we analyzed. In addition to the African, British 4k, Caribbean, and Indian population subsets, we now added subsets consisting of Chinese, Pakistani, and Irish ancestry, as well as a second random subset of British individuals representing a larger sample size of close to 10,000 individuals. Both the Irish and new, second British subsets represent large sample size subsets to test how our model performs as sample size increases. Lastly, we chose to analyze the KEGG and REACTOME pathways available from the MSigDB \citep{Liberzon2011} due to their coverage of a wide range of biological processes. 
 
-Running InterPath on our UKB subsets across height and BMI, we find a major increase in our power to detect marginal epistasis. In total across each population subset, phenotype, and pathway database combination, we identified XXX significance genetic interactions between a pathway and the remaining genomic background (Figure \ref{InterPath-Main-Figure-Barplots} and Table \ref{}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis). We see both variation in our ability to detect marginal epistasis across our population subsets as well as a much stronger ability to pick up signals in our African subset. Additionally, conducting an analysis run with permuted phenotypes shows that InterPath behaves as expected under the null (Supplementary Figures \ref{InterPath-Suppl-Figure-QQPlots-KEGG} & XX), and we observe FDR estimates ranging from XX to XX across our different ancestry, phenotype, and pathway database combinations (Supplementary Tables XX).
+Running InterPath on our UKB subsets across height and BMI, we find a major increase in our power to detect marginal epistasis. In total across each population subset, phenotype, and pathway database combination, we identified XXX significance genetic interactions between a pathway and the remaining genomic background (Figure \ref{InterPath-Main-Figure-Barplots} and Table \ref{}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis). We see both variation in our ability to detect marginal epistasis across our population subsets as well as a much stronger ability to pick up signals in our African subset. Additionally, conducting an analysis run with permuted phenotypes shows that InterPath behaves as expected under the null (Supplementary Figures \ref{InterPath-Suppl-Figure-QQPlots-KEGG} \& XX), and we observe FDR estimates ranging from XX to XX across our different ancestry, phenotype, and pathway database combinations (Supplementary Tables XX).
 
 \begin{figure}[htbp]
 \centering
@@ -478,66 +491,9 @@ GEMMA/GridLMM:
 \bibliography{Main}
 \endgroup
 
-\clearpage
-\section{Supplementary Material}
-
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.35]{Images/InterPath_Suppl_Figure_QQPlots_KEGG_vs1.png}
-\caption[TBD]{\textbf{InterPath Phenotype Permutation QQ-Plots}. Shown are QQ-plots for running InterPath using a single, permuted version of the phenotypes for both Height and BMI with the KEGG pathways. Phenotypes were permuted within each population subset. Shown on the $x$-axis are the -$\log_{10}$ of our expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of our observed $p$-values. The dotted red line is our Bonferroni-corrected $p$-value threshold (.05 / XX KEGG pathways). We find across all population subsets that InterPath displays the null behavior as expected when using permuted phenotypes.}
-\label{InterPath-Suppl-Figure-QQPlots-KEGG}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.35]{Images/InterPath_Suppl_Figure_QQPlots_REACTOME_vs1.png}
-\caption[TBD]{\textbf{TBD}. \\ Same as above (will be put in Supplementary).}
-\label{InterPath-Suppl-Figure-QQPlots-REACTOME}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.15]{Images/InterPath_Suppl_pValHists_vs1.png}
-\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
-\label{InterPath-Suppl-Figure-pValHists}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.15]{Images/InterPath_Suppl_pValsVsNumSNPs_vs1.png}
-\caption[TBD]{\textbf{InterPath $p$-values Versus Number of SNPs in a Pathway}. \\ Shown is the relationship between InterPath $p$-values and the number of SNPs found in a tested pathway across all populations in height and BMI within KEGG. Shown on the $x$-axis is the number of SNPs that were included for a given pathway and on the $y$-axis is shown that pathway's InterPath -$\log_{10}$ $p$-value. As expected, we find a generally positive relationship between these two variables -- in other words, the more SNPs that are included the more likely it is that InterPath will have a more significant $p$-value. We also find, however, that it is not simply the SNPs counts that are driving this signal; looking at this same comparison within the permuted phenotype analyses we find barely any positive relationship between SNP counts per pathway and a pathway's InterPath -$\log_{10}$ $p$-value (Supplementary Figure \ref{InterPath-Suppl-Figure-pValsVsNumSNPs-perm1}}
-\label{InterPath-Suppl-Figure-pValsVsNumSNPs}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.15]{Images/InterPath_Suppl_pValsVsNumSNPs_perm1_vs1.png}
-\caption[TBD]{\textbf{InterPath $p$-values Versus Number of SNPs in a Pathway, Permuted Phenotypes}. \\ Shown is the relationship between InterPath $p$-values and the number of SNPs found in a tested pathway across all populations in permuted height and BMI within KEGG. Shown on the $x$-axis is the number of SNPs that were included for a given pathway and on the $y$-axis is shown that pathway's InterPath -$\log_{10}$ $p$-value. Unlike with the observed data (Figure \ref{InterPath-Suppl-Figure-pValsVsNumSNPs}), we do not see a relationship between the number of SNPs included in a pathway and that pathway's -$\log_{10}$ InterPath $p$-value. This shows that while having more SNPs allows InterPath to generate more power to detect epistatic interactions, our significant results are not due solely to having more SNPs.}
-\label{InterPath-Suppl-Figure-pValsVsNumSNPs-perm1}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.15]{Images/InterPath_Suppl_PhenoCompDotPlots_vs1.png}
-\caption[TBD]{\textbf{InterPath Phenotype $p$-value Comparisons}. \\ Shown is a comparison of the InterPath $p$-values for both phenotypes analyzed across all population subsets in the KEGG database. Shown on the $x$-axis is the observed height -$\log_{10}$ InterPath $p$-value and shown on the $y$-axis is the observed BMI -$\log_{10}$ InterPath $p$-value. Dotted red lines represent Bonferroni-corrected $p$-value thresholds for each population/phenotype combination (.05 / number of KEGG pathways analyzed). In general we observe a correlation between InterPath $p$-values between each phenotype. In the African subset, where we have the most observed power, we find pathways that are significant in both phenotypes as well as each phenotype separately. Additionally, we observe, among marginally significant pathways, stronger InterPath signals in BMI than height -- this is in line with previous observations that BMI may contain higher levels of epistasis than height (citations).}
-\label{InterPath-Suppl-Figure-PhenoCompDotPlots}
-\end{figure}
-
-
-%\captionsetup[figure]{name=Supplementary Figure}
-%\captionsetup[table]{name=Supplementary Table}
-%\setcounter{figure}{0}
-
-
-%\begingroup
-%\bibliographystyle{apalike}
-%\setstretch{1.0}
-%\bibliography{Supplementary}
-%\endgroup
-
-
 \iffalse
+
+SCRAP
 
 \subsection{Genome Level Epistasis}\label{InterPath-Results-GenomeEpistasis}
 
