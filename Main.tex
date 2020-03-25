@@ -283,21 +283,8 @@ Running PLINK's XXX method to conduct a GWAS on each of our population subsets o
 
 To help further get a sense of whether these results are revealing patterns in true biology, we also annotated the top 20 most significant height GWAS SNPs in both our GWAS and MAPIT results. As expected, these 20 SNPs are heavily represented among the tail end of the most significant GWAS results, but maybe less expected is just how insignificant these SNPs appear on the MAPIT list of top results (\textcolor{red}{Supplementary Table \ref{} -- listing differences in ranking of these 20 SNPs between GWAS and MAPIT}). In fact looking across the genome it is easy to see how different the relative ranking of SNPs are between the GWAS and MAPIT results (Figures \ref{InterPath-Main-Figure-MAPIT-Manhattan} \& \ref{InterPath-Main-Figure-GWAS-Manhattan}). It is clear that even with our limited sample sizes, differences in the trends of importance of additive versus epistatic signals can be observed among marginally significant SNPs.  
 
+While these results are insightful and encouraging, they are still limited by the sample sizes available to us. There are ongoing efforts to increase the number of non-European individuals publicly available for complex trait analysis (PAGE,TOPMED refs \ref{}), but we can also increase power through methodological improvements. The epistatic analyses presented thus far have been on single variants. The additive field has long shown increased power when moving from single variant analyses to multiple variant analyses, often in the form of grouping variants in pathways \ref{} (refs for pathway analysis). Therefore, we decided to explore whether taking a similar approach for epistatic analyses would lead to a similar increase in power; specifically, we extended the marginal epistasis model from one variant to multiple variants in the form of pathway analysis, creating a new method InterPath (Interaction and Pathway Analysis).
 
-
-
-
-to see where they lie. And interestingly, we find...
-
-it would appear there is still a strong representation of 
-
-
-
-
-
-
-
-One approach for increasing power in GWAS that has had much success in the additive world has been to look for associations with biological pathways (citations). By looking for association across multiple variants at once, and in particular across genes that are suggested to act in a biologically coherent manner, you are ideally increasing your signal to noise ratio. Additionally this might be well-suited for complex traits since we anticipate polygenic trait effect sizes to be modest on average (citation). Therefore we chose to create a new approach that combined marginal epistasis with pathway analysis to increase our power to detect evidence for genetic interactions in the genome.  
 
 \subsection{Pathway Level Epistasis}\label{InterPath-Results-PathwayEpistasis}
 
