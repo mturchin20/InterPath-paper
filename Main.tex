@@ -144,9 +144,9 @@
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 
-\title{Differential complex trait architecture across humans: epistasis identified in non-European populations at multiple genomic scales}
+\title{Stronger Signals for Epistasis in Complex Trait Genetic Architecture Revealed by non-European Human Populations}
 \author[1,2]{Michael C. Turchin}
-\author[1,3]{Isabella Ting}
+\author[1,3]{Gregory Darnell}
 \author[1,4,5,*]{Lorin Crawford}
 \author[1,2,*,$\dag$]{Sohini Ramachandran}
 \affil[1]{Center for Computational Molecular Biology, Brown University}
@@ -266,20 +266,9 @@ Epistasis, despite being a well-established component of complex trait architect
 
 \subsection{SNP Level Epistasis}\label{InterPath-Results-SNPEpistasis}
 
+To investigate epistasis in non-European populations, we first extracted four population subsets from the UK BioBank dataset: African, Caribbean, and an Indian subset (Supplementary Table 1), as well as a random set of 4,000 British individuals. We conducted typical quality control (QC) procedures on each subset (see Online Methods) and focused our analyses on height and body mass index (BMI).  
+
 To do some intiial investigations of epistasis in European and non-European populations, we extracted four population subsets from the UKB dataset: African, Caribbean, and an Indian subset (Supplementary Table 1), as well as a random set of 4,000 British individuals. After regular QC procedures, we analyzed SNP-level epistasis using the following approaches in both height and body mass index (BMI).
-
-\subsubsection{Pairwise SNP Epistasis}
-
-Our first approach to investigate SNP-level epistasis was to run the canonical pair-wise interaction model as employed by PLINK's \texttt{--epistasis} method \citep{Purcell2007} (see Online Methods and Supplementary Note for details). Here, we directly estimated the effect size of every possible SNP pairwise interaction and calculated whether it was statistically significant or not.  
-
-Running this method on each of our four UKB population subsets, we chose to look at the 'proportion of marginally significant tests' per SNP, where marginal significance is defined as any test with a $p$-value < $1\times10^{-4}$ (Figure \ref{InterPath-Suppl-Figure-PLINK}). We chose to look at proportion of tests due the varying number of SNPs across each population subset. What we find is that indeed there is variation between human ancestries in the amount of pairwise SNP epistasis across the genome. We also find that both the African and Caribbean population subsets show greater proportions of marginal interactions than the British population subset despite both non-European populations having lower sample sizes. 
-
-\begin{figure}[t]
-\centering
-\includegraphics[scale=.35]{Images/InterPath_Suppl_Figure_PLINK_vs2.png}
-\caption[PLINK SNP Pairwise Epistasis]{\textbf{PLINK SNP Pairwise Epistasis.} \\ Shown are results from running PLINK's SNP-by-SNP pairwise epistasis method, \texttt{--epistasis}, on four of our initial UKB human population subsets in height and BMI. Specifically the $y$-axis shows the proportion of marginally significant interactions found per-SNP, where marginal significance is defined as the epistastic test returning a $p$-value $<$ $1\times10^{-4}$, and the $x$-axis shows the top 50 SNPs for this metric in each of the population subsets. The African subset contained 374,466 total SNPs, the British Random 4k subset contained 600,006 total SNPs, the Caribbean subset contained 410,017 total SNPs, and the Indian subset contained 505,854 total SNPs. We observe across each population different levels of marginal pairwise SNP significance as well as different patterns of significance. Additionally, both the African and Caribbean subsets contain the strongest signals.}
-\label{InterPath-Suppl-Figure-PLINK}
-\end{figure}
 
 \subsubsection{Marginal SNP Epistasis}
 
@@ -494,6 +483,19 @@ GEMMA/GridLMM:
 \iffalse
 
 SCRAP
+
+\subsubsection{Pairwise SNP Epistasis}
+
+Our first approach to investigate SNP-level epistasis was to run the canonical pair-wise interaction model as employed by PLINK's \texttt{--epistasis} method \citep{Purcell2007} (see Online Methods and Supplementary Note for details). Here, we directly estimated the effect size of every possible SNP pairwise interaction and calculated whether it was statistically significant or not.  
+
+Running this method on each of our four UKB population subsets, we chose to look at the 'proportion of marginally significant tests' per SNP, where marginal significance is defined as any test with a $p$-value < $1\times10^{-4}$ (Figure \ref{InterPath-Suppl-Figure-PLINK}). We chose to look at proportion of tests due the varying number of SNPs across each population subset. What we find is that indeed there is variation between human ancestries in the amount of pairwise SNP epistasis across the genome. We also find that both the African and Caribbean population subsets show greater proportions of marginal interactions than the British population subset despite both non-European populations having lower sample sizes. 
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=.35]{Images/InterPath_Suppl_Figure_PLINK_vs2.png}
+\caption[PLINK SNP Pairwise Epistasis]{\textbf{PLINK SNP Pairwise Epistasis.} \\ Shown are results from running PLINK's SNP-by-SNP pairwise epistasis method, \texttt{--epistasis}, on four of our initial UKB human population subsets in height and BMI. Specifically the $y$-axis shows the proportion of marginally significant interactions found per-SNP, where marginal significance is defined as the epistastic test returning a $p$-value $<$ $1\times10^{-4}$, and the $x$-axis shows the top 50 SNPs for this metric in each of the population subsets. The African subset contained 374,466 total SNPs, the British Random 4k subset contained 600,006 total SNPs, the Caribbean subset contained 410,017 total SNPs, and the Indian subset contained 505,854 total SNPs. We observe across each population different levels of marginal pairwise SNP significance as well as different patterns of significance. Additionally, both the African and Caribbean subsets contain the strongest signals.}
+\label{InterPath-Suppl-Figure-PLINK}
+\end{figure}
 
 \subsection{Genome Level Epistasis}\label{InterPath-Results-GenomeEpistasis}
 
