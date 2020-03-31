@@ -269,32 +269,32 @@ Our first approach to investigate this question then was to look at broadscale m
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_MAPIT_vs1.png}
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_Fst_vs1.png}
 \caption[TBD]{\textbf{MAPIT Results QQ-Plots \red{(OLD DATA)}}. Shown are QQ-plots of our results from running MAPIT on our four initial UKB population subsets in height and BMI. On the $x$-axis are the -$\log_{10}$ of our expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of our observed $p$-values. We observe weak signals of marginal epistasis across most of the population subsets in height and only a few potential weak signals in BMI. We do observe potential differences across population subsets. However, this lack of signal may be a product of our limited sample sizes, emphasizing the need to increase power through other means, such as by methodological improvements.}
 \label{InterPath-Main-Figure-Fst}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_MAPIT_vs1.png}
-\caption[TBD]{\textbf{MAPIT Results QQ-Plots \red{(OLD DATA)}}. Shown are QQ-plots of our results from running MAPIT on our four initial UKB population subsets in height and BMI. On the $x$-axis are the -$\log_{10}$ of our expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of our observed $p$-values. We observe weak signals of marginal epistasis across most of the population subsets in height and only a few potential weak signals in BMI. We do observe potential differences across population subsets. However, this lack of signal may be a product of our limited sample sizes, emphasizing the need to increase power through other means, such as by methodological improvements.}
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_Eigenvalues_vs1.png}
+\caption[TBD]{\textbf{MAPIT Results QQ-Plots \red{(OLD DATA)}}.}
 \label{InterPath-Main-Figure-Eigenvalues}
 \end{figure}
 
-To take these analyses one step further, we tried to investigate levels of genetic diversity on the pathway-scale to see if they match up with the observed InterPath results. To accomplish this, we calculated the mean proportion of pairwise identity-by-state across every pair of individuals using all the genotypes of a given pathway. Meaning for a single pathway, we had a metric ranging from 0 to 1 where 1 indicates all pairs of individuals had exactly the same genotypes at every SNP for a given pathway and 0 means all pairs of individuals had completely different genotypes at each of these SNPs. Lower values would then indicate greater levels of genetic diversity for a given a pathway within that ancestry subset. Once we had these values, we then compared them against each pathway's InterPath $p$-value; interestingly, we found there was no relationship between these two metrics (Figure \ref{}). This was true across almost every one of our UKB population subsets, phenotype, and pathway database collections (Supplementary Figure \ref{}). And in general it does not appear that this lack of relationship changes much per-ancestry either; directly comparing population subsets against one another shows that the per-pathway IBS proportions follow similar trajectories, shifted only by each population's mean level of IBS (Figure \ref{}). Therefore it appears this further supports our previous finding that the signal we are observing in our results is likely not being driven by broadscale levels of genetic variation. There is a more cryptic structure and relationship between the genetic variation in each subset and the epistasis we are observing with InterPath. 
+To take these analyses one step further, we tried to investigate levels of genetic diversity on the pathway-scale to see if they match up with the observed InterPath results. To accomplish this, we calculated the mean proportion of pairwise identity-by-state across every pair of individuals using all the genotypes of a given pathway. Meaning for a single pathway, we had a metric ranging from 0 to 1 where 1 indicates all pairs of individuals had exactly the same genotypes at every SNP for a given pathway and 0 means all pairs of individuals had completely different genotypes at each of these SNPs. Lower values would then indicate greater levels of genetic diversity for a given a pathway within that ancestry subset. Once we had these values, we then compared them against each pathway's InterPath $p$-value; interestingly, we found there was no relationship between these two metrics (Figure \ref{InterPath-Main-Figure-IBS-African} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}). This was true across almost every one of our UKB population subsets, phenotype, and pathway database collections. And in general it does not appear that this lack of relationship changes much per-ancestry either; directly comparing population subsets against one another shows that the per-pathway IBS proportions follow similar trajectories, shifted only by each population's mean level of IBS (Figure \ref{InterPath-Main-Figure-IBS-AllPopComps}). Therefore it appears this further supports our previous finding that the signal we are observing in our results is likely not being driven by broadscale levels of genetic variation. There is a more cryptic structure and relationship between the genetic variation in each subset and the epistasis we are observing with InterPath. 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_African_vs1.png}
+\includegraphics[scale=1]{Images/Main/InterPath_Main_Figure_IBS_African_vs1.png}
 \caption[TBD]{\textbf{IBS Proportions vs. InterPath $p$-values in African Subset}}
 \label{InterPath-Main-Figure-IBS-African}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_AllPops_vs1.png}
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_AllPopComps_vs1.png}
 \caption[TBD]{\textbf{IBS in Top Pathways Across Populations}.}
-\label{InterPath-Main-Figure-IBS-AllPops}
+\label{InterPath-Main-Figure-IBS-AllPopComps}
 \end{figure}
 
 \section{Discussion}\label{InterPath-Discussion}
