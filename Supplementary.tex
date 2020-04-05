@@ -14,6 +14,8 @@
 \usepackage{setspace}
 \usepackage{hypcap}
 \usepackage{xr}
+%From: https://tex.stackexchange.com/questions/337/how-to-change-certain-pages-into-landscape-portrait-mode
+\usepackage{lscape}
 
 \title{Supplementary: Differential complex trait architecture across humans: epistasis identified in non-European populations at multiple genomic scales}
 \author[1,2]{Michael C. Turchin}
@@ -111,6 +113,16 @@ After this first round of QC procedures, we then proceeded to impute our current
 \caption[TBD]{\textbf{InterPath Phenotype $p$-value Comparisons}. \\ Shown is a comparison of the InterPath $p$-values for both phenotypes analyzed across all population subsets in the KEGG database. Shown on the $x$-axis is the observed height -$\log_{10}$ InterPath $p$-value and shown on the $y$-axis is the observed BMI -$\log_{10}$ InterPath $p$-value. Dotted red lines represent Bonferroni-corrected $p$-value thresholds for each population/phenotype combination (.05 / number of KEGG pathways analyzed). In general we observe a correlation between InterPath $p$-values between each phenotype. In the African subset, where we have the most observed power, we find pathways that are significant in both phenotypes as well as each phenotype separately. Additionally, we observe, among marginally significant pathways, stronger InterPath signals in BMI than height -- this is in line with previous observations that BMI may contain higher levels of epistasis than height (citations).}
 \label{InterPath-Supp-Figure-PhenoCompDotPlots}
 \end{figure}
+
+\begin{landscape}
+\begin{figure}[htbp]
+\centering
+\hspace*{-2.5cm}
+\includegraphics[scale=1]{Images/Supp/InterPath_Supp_Table_TopPathwayGeneCounts.png}
+\caption[TBD]{\textbf{Table of Most Present Genes in Significant MAPIT-R Pathways} \textcolor{red}{this will be a table}}
+\label{InterPath-Supp-Tables-GeneCounts}
+\end{figure}
+\end{landscape}
 
 \begin{figure}[htbp]
 \centering
