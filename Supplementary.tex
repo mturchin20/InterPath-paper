@@ -42,6 +42,9 @@ We then conducted standard quality control (QC) procedures on each of these popu
 
 After this first round of QC procedures, we then proceeded to impute our current population subsets. Since most of the analyses in this project utilized genetic relatedness matrices (GRMs), and variants need to have no missing data for these GRMs, we used imputation primarily to maximize the number of genotyped SNPs that would not be dropped by this stringent threshold (as opposed to using imputation to increase the number of SNPs we were analyzing). To conduct this imputation, we uploaded our population subsets to the University of Michigan Imputation Server \citep{Das2016} and used the following options: Minimac3 for the imputation software, 1000G phase 3 v5 for the reference panel, and Eagle v2.3 for the phasing software. Completed imputed files were then downloaded from the Imputation Server afterwards and treated to further QC steps: imputed variants were intersected back to the original set of genotyped chip variants, variants with imputation quality scores < .3 were removed, and variants that had genotype missingness rates > 0\% were also removed. These steps represent the last of our QC and imputation procedures, and information on the final forms of our UKB population subsets can be found in Supplementary Table (table).
 
+\clearpage
+
+
 \section{Supplementary Figures}\label{Supplementary-Figures}
 
 \begin{figure}[htbp]
@@ -50,6 +53,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \caption[TBD]{\textbf{InterPath Phenotype Permutation QQ-Plots}. Shown are QQ-plots for running InterPath using a single, permuted version of the phenotypes for both Height and BMI with the KEGG pathways. Phenotypes were permuted within each population subset. Shown on the $x$-axis are the -$\log_{10}$ of our expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of our observed $p$-values. The dotted red line is our Bonferroni-corrected $p$-value threshold (.05 / XX KEGG pathways). We find across all population subsets that InterPath displays the null behavior as expected when using permuted phenotypes.}
 \label{InterPath-Supp-Figure-perm1-QQPlots-KEGG}
 \end{figure}
+\clearpage
 
 \begin{figure}[htbp]
 \centering
@@ -60,10 +64,11 @@ After this first round of QC procedures, we then proceeded to impute our current
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.15]{Images/Supp/InterPath_Supp_pValHists_vs1.png}
+\includegraphics[scale=.15]{Images/Supp/InterPath_Supp_Figure_pValHists_vs2.png}
 \caption[TBD]{\textbf{TBD}. \\ Placeholder.}
-\label{InterPath-Supp-Figure-perms-pValHists}
+\label{InterPath-Supp-Figure-10perms-pValHists}
 \end{figure}
+\clearpage
 
 \begin{figure}[htbp]
 \centering
@@ -71,20 +76,23 @@ After this first round of QC procedures, we then proceeded to impute our current
 \caption[TBD]{\textbf{TBD}. }
 \label{InterPath-Supp-Figure-FDR-AllPops}
 \end{figure}
+\clearpage
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.15]{Images/Supp/InterPath_Supp_pValsVsNumSNPs_vs1.png}
+\includegraphics[scale=.15]{Images/Supp/InterPath_Supp_Figure_pValsVsNumSNPs_vs1.png}
 \caption[TBD]{\textbf{InterPath $p$-values Versus Number of SNPs in a Pathway}. \\ Shown is the relationship between InterPath $p$-values and the number of SNPs found in a tested pathway across all populations in height and BMI within KEGG. Shown on the $x$-axis is the number of SNPs that were included for a given pathway and on the $y$-axis is shown that pathway's InterPath -$\log_{10}$ $p$-value. As expected, we find a generally positive relationship between these two variables -- in other words, the more SNPs that are included the more likely it is that InterPath will have a more significant $p$-value. We also find, however, that it is not simply the SNPs counts that are driving this signal; looking at this same comparison within the permuted phenotype analyses we find barely any positive relationship between SNP counts per pathway and a pathway's InterPath -$\log_{10}$ $p$-value (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}}
 \label{InterPath-Supp-Figure-pValsVsNumSNPs}
 \end{figure}
+\clearpage
 
 %\begin{figure}[htbp]
 %\centering
-%\includegraphics[scale=.15]{Images/Supp/InterPath_Supp_pValsVsNumSNPs_perm1_vs1.png}
+%\includegraphics[scale=.15]{Images/Supp/InterPath_Supp_Figure_pValsVsNumSNPs_perm1_vs1.png}
 %\caption[TBD]{\textbf{InterPath $p$-values Versus Number of SNPs in a Pathway, Permuted Phenotypes}. \\ Shown is the relationship between InterPath $p$-values and the number of SNPs found in a tested pathway across all populations in permuted height and BMI within KEGG. Shown on the $x$-axis is the number of SNPs that were included for a given pathway and on the $y$-axis is shown that pathway's InterPath -$\log_{10}$ $p$-value. Unlike with the observed data (Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}), we do not see a relationship between the number of SNPs included in a pathway and that pathway's -$\log_{10}$ InterPath $p$-value. This shows that while having more SNPs allows InterPath to generate more power to detect epistatic interactions, our significant results are not due solely to having more SNPs.}
 %\label{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}
 %\end{figure}
+%\clearpage
 
 \begin{figure}[htbp]
 \centering
@@ -92,13 +100,15 @@ After this first round of QC procedures, we then proceeded to impute our current
 \caption[TBD]{\textbf{TBD}. \\ See above (this would be a supplementary figure).}
 \label{InterPath-Supp-Figure-Heatplots-REACTOME}
 \end{figure}
+\clearpage
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.15]{Images/Main/InterPath_Main_PopCompDotPlots_African_vs1.png}
-\caption[]{\textbf{InterPath Cross-Population KEGG $p$-value Comparisons: African}. Shown are comparisons of each population subset's InterPath $p$-value for Height and BMI in KEGG against the African subset's InterPath $p$-values. On the $x$-axis are the African subset's observed -$\log_{10}$ $p$-value and on the $y$-axis is the other population's observed -$\log_{10}$ $p$-value. Dotted red lines represent Bonferroni-corrected $p$-value thresholds for each population/phenotype combination.}
-\label{InterPath-Main-Figure-PopCompDotPlots}
-\end{figure}
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[scale=.15]{Images/Main/InterPath_Main_PopCompDotPlots_African_vs1.png}
+%\caption[]{\textbf{InterPath Cross-Population KEGG $p$-value Comparisons: African}. Shown are comparisons of each population subset's InterPath $p$-value for Height and BMI in KEGG against the African subset's InterPath $p$-values. On the $x$-axis are the African subset's observed -$\log_{10}$ $p$-value and on the $y$-axis is the other population's observed -$\log_{10}$ $p$-value. Dotted red lines represent Bonferroni-corrected $p$-value thresholds for each population/phenotype combination.}
+%\label{InterPath-Main-Figure-PopCompDotPlots}
+%\end{figure}
+%\clearpage
 
 \begin{landscape}
 \begin{figure}[htbp]
@@ -109,6 +119,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \label{InterPath-Supp-Figure-BritReps-Barplots}
 \end{figure}
 \end{landscape}
+\clearpage
 
 \begin{figure}[htbp]
 \centering
@@ -116,13 +127,15 @@ After this first round of QC procedures, we then proceeded to impute our current
 \caption[TBD]{\textbf{TBD}. }
 \label{InterPath-Supp-Figure-BritReps-FDRs}
 \end{figure}
+\clearpage
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.15]{Images/Supp/InterPath_Supp_PhenoCompDotPlots_vs1.png}
-\caption[TBD]{\textbf{InterPath Phenotype $p$-value Comparisons}. \\ Shown is a comparison of the InterPath $p$-values for both phenotypes analyzed across all population subsets in the KEGG database. Shown on the $x$-axis is the observed height -$\log_{10}$ InterPath $p$-value and shown on the $y$-axis is the observed BMI -$\log_{10}$ InterPath $p$-value. Dotted red lines represent Bonferroni-corrected $p$-value thresholds for each population/phenotype combination (.05 / number of KEGG pathways analyzed). In general we observe a correlation between InterPath $p$-values between each phenotype. In the African subset, where we have the most observed power, we find pathways that are significant in both phenotypes as well as each phenotype separately. Additionally, we observe, among marginally significant pathways, stronger InterPath signals in BMI than height -- this is in line with previous observations that BMI may contain higher levels of epistasis than height (citations).}
-\label{InterPath-Supp-Figure-PhenoCompDotPlots}
-\end{figure}
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[scale=.15]{Images/Supp/InterPath_Supp_Figure_PhenoCompDotPlots_vs1.png}
+%\caption[TBD]{\textbf{InterPath Phenotype $p$-value Comparisons}. \\ Shown is a comparison of the InterPath $p$-values for both phenotypes analyzed across all population subsets in the KEGG database. Shown on the $x$-axis is the observed height -$\log_{10}$ InterPath $p$-value and shown on the $y$-axis is the observed BMI -$\log_{10}$ InterPath $p$-value. Dotted red lines represent Bonferroni-corrected $p$-value thresholds for each population/phenotype combination (.05 / number of KEGG pathways analyzed). In general we observe a correlation between InterPath $p$-values between each phenotype. In the African subset, where we have the most observed power, we find pathways that are significant in both phenotypes as well as each phenotype separately. Additionally, we observe, among marginally significant pathways, stronger InterPath signals in BMI than height -- this is in line with previous observations that BMI may contain higher levels of epistasis than height (citations).}
+%\label{InterPath-Supp-Figure-PhenoCompDotPlots}
+%\end{figure}
+%\clearpage
 
 \begin{landscape}
 \begin{figure}[htbp]
@@ -133,6 +146,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \label{InterPath-Supp-Tables-GeneCounts}
 \end{figure}
 \end{landscape}
+\clearpage
 
 \begin{figure}[htbp]
 \centering
@@ -140,6 +154,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \caption[TBD]{\textbf{IBS Proportions vs. InterPath $p$-values in All UKB Subsets}}
 \label{InterPath-Supp-Figure-IBS-AllPops}
 \end{figure}
+\clearpage
 
 \section{Supplementary Tables}\label{Supplementary-Tables}
 
