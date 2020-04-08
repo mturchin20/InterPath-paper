@@ -186,7 +186,7 @@ Epistasis, despite being a well-established component of complex trait architect
 
 \subsection{SNP Level Epistasis}\label{InterPath-Results-SNPEpistasis}
 
-To investigate epistasis in non-European populations, we first extracted four population subsets from the UK BioBank dataset: African, Caribbean, and an Indian subset (\textcolor{red}{Supplementary Table 1 -- just going to have some basic info and details about the population subsets}), as well as a random set of 4,000 British individuals. We conducted typical quality control (QC) procedures on each subset (see Online Methods) and focused our analyses on the complex traits height and body mass index (BMI). 
+To investigate epistasis in non-European populations, we first extracted four population subsets from the UK BioBank dataset: African, Caribbean, and an Indian subset (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}), as well as a random set of 4,000 British individuals. We conducted typical quality control (QC) procedures on each subset (see Online Methods) and focused our analyses on the complex traits height and body mass index (BMI). 
 
 To analyze epistasis on the single variant level, we implemented MAPIT \citep{Crawford2017}, a method which specifically tests for the presence of \textit{marginal epistasis} (see Online Methods). In brief, the marginal epistasis of a single SNP can be thought of as the summation of \textbf{all} epistatic interactions that SNP is involved with across the rest of the genome. Evidence for marginal epistasis does not immediately identify \textbf{which} other SNPs are the true interacting partners, but in exchange for this generalization the approach turns a highly burdensome multiple-testing model into a much more tractable variance component model.
 
@@ -238,7 +238,7 @@ While these results are insightful and encouraging, they are still limited by th
 
 \subsection{Pathway Level Epistasis}\label{InterPath-Results-PathwayEpistasis}
 
-We expanded the previous MAPIT model into a new framework that goes from looking for marginal epistasis with a single variant to looking for marginal epistasis with an entire biological pathway; we call this approach InterPath, for \underline{Inter}action and \underline{Path}way analysis. The main change we make to the marginal epistasis model is to go from a single SNP of interest \textbf{k} to a collection of SNPs of interest \textbf{R}. For a full description of this model please see Online Methods, but in brief this change leads to the following, new form of our linear mixed model:
+We expanded the previous MAPIT model into a new framework that goes from looking for marginal epistasis with a single variant to looking for marginal epistasis with an entire biological pathway; we call this approach MAPIT-R, for \underline{MA}rginal e\underline{PI}stasis \underline{T}est of \underline{R}egions. The main change we make to the marginal epistasis model is to go from a single SNP of interest \textbf{k} to a collection of SNPs of interest \textbf{R}. For a full description of this model please see Online Methods, but in brief this change leads to the following, new form of our linear mixed model:
 
 \begin{align}
     & \textbf{y} = \mu + \textbf{R} + \textbf{G} + \textbf{Q} + \boldsymbol{\epsilon} \\
@@ -249,23 +249,23 @@ where now R is a new random effects term that represents our new group of SNPs R
 
 Beyond extending our marginal epistasis model, we also expanded the number of UKB data subsets we analyzed given our encouraging results at the single SNP level. Specifically, we added UKB subsets consisting of Chinese, Pakistani, and Irish ancestry, as well as a second random subset of British individuals representing a larger sample size of close to 10,000 individuals. Both the Irish and new, second British subsets represent large sample size subsets to test how our model performs as sample size increases. Lastly, we chose to analyze the KEGG and REACTOME pathways available from the MSigDB \citep{Liberzon2011} due to their coverage of a wide range of biological processes. 
 
-Running InterPath on our UKB subsets across height and BMI, we find a major increase in our power to detect marginal epistasis. In total across each population subset, phenotype, and pathway database combination, we identified 245 significant genetic interactions between a pathway and the remaining genomic background (Figure \ref{InterPath-Main-Figure-Barplots} and \textcolor{red}{Supplementary Table \ref{} -- idea is tables of every significant pathway for each ancestry with some additional information, like number of genes and snps used in each pathway}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis). We see both variation in our ability to detect marginal epistasis across our population subsets as well as a much stronger ability to pick up signals in our African subset. Additionally, conducting an analysis run with permuted phenotypes shows that InterPath behaves as expected under the null (Supplementary Figures \ref{InterPath-Supp-Figure-perm1-QQPlots-KEGG}-\ref{InterPath-Supp-Figure-10perms-pValHists} \textcolor{red}{this is/will be two QQ plots of KEGG \& REACTOME results with the permutation phenotypes and a 3rd figure of p-value histograms showing relatively uniform p-values across all 10 permutations)}), and we observe FDR estimates as high as .06\% across our different ancestry, phenotype, and pathway database combinations (Supplementary Tables \ref{InterPath-Supp-Figure-FDR-AllPops} \textcolor{red}{this will be an actual table}).
+Running MAPIT-R on our UKB subsets across height and BMI, we find a major increase in our power to detect marginal epistasis. In total across each population subset, phenotype, and pathway database combination, we identified 245 significant genetic interactions between a pathway and the remaining genomic background (Figure \ref{InterPath-Main-Figure-Barplots} and \textcolor{red}{Supplementary Table \ref{} -- idea is tables of every significant pathway for each ancestry with some additional information, like number of genes and snps used in each pathway}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis). We see both variation in our ability to detect marginal epistasis across our population subsets as well as a much stronger ability to pick up signals in our African subset. Additionally, conducting an analysis run with permuted phenotypes shows that MAPIT-R behaves as expected under the null (Supplementary Figures \ref{InterPath-Supp-Figure-perm1-QQPlots-KEGG}-\ref{InterPath-Supp-Figure-10perms-pValHists}, and we observe FDR estimates as high as .06\% across our different ancestry, phenotype, and pathway database combinations (Supplementary Tables \ref{InterPath-Supp-Figure-FDR-AllPops} \textcolor{red}{this will be an actual table}).
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_Barplots_vs1.png}
-\caption[TBD]{\textbf{Number of Significant Pathways from Running InterPath on UKB subsets}. Shown are the number of significant pathways found from running InterPath on each of our expanded collection of UKB population subsets using height and BMI in the KEGG database (REACTOME results can be found in Supplementary Figure XX). A pathway is considered significant if its InterPath $p$-value is below XXX (.05 / XXX, the number of KEGG pathways tested). We find that the African population far and away has the largest number of significant pathways, both for each phenotype and for each pathway database. But in general we also tend to see significant pathways moreso in non-European populations than European populations.}
+\caption[TBD]{\textbf{Number of Significant Pathways from Running MAPIT-R on UKB subsets}. Shown are the number of significant pathways found from running MAPIT-R on each of our expanded collection of UKB population subsets using height and BMI in the KEGG database (REACTOME results can be found in Supplementary Figure XX). A pathway is considered significant if its MAPIT-R $p$-value is below XXX (.05 / XXX, the number of KEGG pathways tested). We find that the African population far and away has the largest number of significant pathways, both for each phenotype and for each pathway database. But in general we also tend to see significant pathways moreso in non-European populations than European populations.}
 \label{InterPath-Main-Figure-Barplots}
 \end{figure}
 
-In fact the vast majority of our significant interactions are represented in the African subset (165/245). This stands out because the African subset is neither our population with the largest sample size or our population with the largest number of SNPs. We do see a significant relationship between number of SNPs in a pathway and that pathway's InterPath $p$-value (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}), however the African subset has similar pathway SNP counts amongst its top pathways as compared to the other population subsets. One possibility for this result may be an ascertainment bias from using variants based on a genotyping chip that was developed primarily using European data. Simulations that replicate such an ascertainment bias however show no evidence of this leading to an increase in power (Supplementary Figure XX). Additionally, it is unlikely that our results are produced from excess cryptic population structure as well; simulations that specifically model different population structure schemes show no evidence for a bias in our results (Supplementary Figure XX \textcolor{red}{(this is where the proposed simulation results would go)}). 
+In fact the vast majority of our significant interactions are represented in the African subset (165/245). This stands out because the African subset is neither our population with the largest sample size or our population with the largest number of SNPs. We do see a significant relationship between number of SNPs in a pathway and that pathway's MAPIT-R $p$-value (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}), however the African subset has similar pathway SNP counts amongst its top pathways as compared to the other population subsets. One possibility for this result may be an ascertainment bias from using variants based on a genotyping chip that was developed primarily using European data. Simulations that replicate such an ascertainment bias however show no evidence of this leading to an increase in power (Supplementary Figure XX). Additionally, it is unlikely that our results are produced from excess cryptic population structure as well; simulations that specifically model different population structure schemes show no evidence for a bias in our results (Supplementary Figure XX \textcolor{red}{(this is where the proposed simulation results would go)}). 
 
 Looking at the specific pathways that we observe as having significant evidence for marginal epistasis, it does not appear that we can confidently infer population-specific examples of pathway marginal epistasis. Most genome-wide significant pathways in any non-African subset overlap with a genome-wide significant pathway in the African subset (Figure \ref{InterPath-Main-Figure-Heatplots-KEGG} \& Supplementary Figure \ref{InterPath-Supp-Figure-Heatplots-REACTOME}). Interestingly, while we do witness that while most populations overlap with the African subset, there is often little overlap among the non-African subsets; for example in KEGG BMI the Caribbean subset overlaps with African for 6 of its 7 pathways, and the Chinese subset overlaps with the African subset for 7 of its 8 pathways, but there is no overlap between the Chinese and Caribbean subsets.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.225]{Images/Main/InterPath_Main_Figure_Heatplots_KEGG_vs1.png}
-\caption[TBD]{\textbf{Overlap of Significant InterPath Pathways Between UKB Population Subsets}. \\ Shown are the numbers of significant InterPath pathways that overlap between each populations for both height and BMI in the KEGG database. A pathway is considered significant as defined in Figure \ref{InterPath-Main-Figure-Barplots}. The diagonal (overlap between the same populations) shows the total number of significant pathways per population subset. As observed in Figure \ref{InterPath-Main-Figure-Barplots}, we find that the African subset has a much larger number of significant pathways than any other population subset. We also observe that most of the significant pathways in other populations overlap with the significant pathways seen in the African subset. These top KEGG pathways can be seen in Table XX (TBD).}
+\caption[TBD]{\textbf{Overlap of Significant MAPIT-R Pathways Between UKB Population Subsets}. \\ Shown are the numbers of significant MAPIT-R pathways that overlap between each populations for both height and BMI in the KEGG database. A pathway is considered significant as defined in Figure \ref{InterPath-Main-Figure-Barplots}. The diagonal (overlap between the same populations) shows the total number of significant pathways per population subset. As observed in Figure \ref{InterPath-Main-Figure-Barplots}, we find that the African subset has a much larger number of significant pathways than any other population subset. We also observe that most of the significant pathways in other populations overlap with the significant pathways seen in the African subset. These top KEGG pathways can be seen in Table XX (TBD).}
 \label{InterPath-Main-Figure-Heatplots-KEGG}
 \end{figure}
 
@@ -279,9 +279,9 @@ One important consideration of our results is that we have limited representatio
 
 \subsection{Relationship Between Epistasis and Genetic Diversity}
 
-One of the clearest results from the InterPath analyses is that the African subset has much greater levels of evidence for pathway marginal epistasis than any other UKB subset. An obvious next question then is why. One of the most well-appreciated genetic architecture patterns in African populations versus other global human populations is the much greater levels of genetic diversity found in African versus out-of-African populations. This alignment of patterns then may be a good starting point, especially since greater levels of genetic variation in the underlying data may increase our power to detect epistasis, as suggested by our previous result of more SNPs being positive correlated with more significant InterPath $p$-values. 
+One of the clearest results from the MAPIT-R analyses is that the African subset has much greater levels of evidence for pathway marginal epistasis than any other UKB subset. An obvious next question then is why. One of the most well-appreciated genetic architecture patterns in African populations versus other global human populations is the much greater levels of genetic diversity found in African versus out-of-African populations. This alignment of patterns then may be a good starting point, especially since greater levels of genetic variation in the underlying data may increase our power to detect epistasis, as suggested by our previous result of more SNPs being positive correlated with more significant MAPIT-R $p$-values. 
 
-Our first approach to investigate this question then was to look at broadscale metrics of genetic variation across our population subsets. We did this by calculating both pairwise Fst values between each subset as well as PVE estimates for each subset's top 10 local principal component (Figures \ref{InterPath-Main-Figure-Fst} \& \ref{InterPath-Main-Figure-Eigenvalues}). For pairwise Fst, we find values get as large as .124, which seem to be within range of previous global sample estimates \cite{Wang2012}. We find that while the African subset does have some of the largest divergences from other populations (such as the British subsets), we also witness close to similar levels of divergence between the Chinese subset and other populations as well. In contract, looking at the top local PC PVE estimates, we see a pattern of population differentiation that is more similar to our InterPath results. The African subset has a PC1 PVE that is much greater than any other population, and the second highest population is the Caribbean cohort, which is also the population with the second most significant InterPath results. We do witness however higher baseline levels of PVE across the other population subsets as compared to the African and Caribbean ones. These results might suggest that what is driving our InterPath results is not solely high levels of genetic variation or differentiation, but also a quality of how this variation is structured within a given population as well.
+Our first approach to investigate this question then was to look at broadscale metrics of genetic variation across our population subsets. We did this by calculating both pairwise Fst values between each subset as well as PVE estimates for each subset's top 10 local principal component (Figures \ref{InterPath-Main-Figure-Fst} \& \ref{InterPath-Main-Figure-Eigenvalues}). For pairwise Fst, we find values get as large as .124, which seem to be within range of previous global sample estimates \cite{Wang2012}. We find that while the African subset does have some of the largest divergences from other populations (such as the British subsets), we also witness close to similar levels of divergence between the Chinese subset and other populations as well. In contract, looking at the top local PC PVE estimates, we see a pattern of population differentiation that is more similar to our MAPIT-R results. The African subset has a PC1 PVE that is much greater than any other population, and the second highest population is the Caribbean cohort, which is also the population with the second most significant MAPIT-R results. We do witness however higher baseline levels of PVE across the other population subsets as compared to the African and Caribbean ones. These results might suggest that what is driving our MAPIT-R results is not solely high levels of genetic variation or differentiation, but also a quality of how this variation is structured within a given population as well.
 
 \begin{figure}[htbp]
 \centering
@@ -297,12 +297,12 @@ Our first approach to investigate this question then was to look at broadscale m
 \label{InterPath-Main-Figure-Eigenvalues}
 \end{figure}
 
-To take these analyses one step further, we tried to investigate levels of genetic diversity on the pathway-scale to see if they match up with the observed InterPath results. To accomplish this, we calculated the mean proportion of pairwise identity-by-state across every pair of individuals using all the genotypes of a given pathway. Meaning for a single pathway, we had a metric ranging from 0 to 1 where 1 indicates all pairs of individuals had exactly the same genotypes at every SNP for a given pathway and 0 means all pairs of individuals had completely different genotypes at each of these SNPs. Lower values would then indicate greater levels of genetic diversity for a given a pathway within that ancestry subset. Once we had these values, we then compared them against each pathway's InterPath $p$-value; interestingly, we found there was no relationship between these two metrics (Figure \ref{InterPath-Main-Figure-IBS-African} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}). This was true across almost every one of our UKB population subsets, phenotype, and pathway database collections. And in general it does not appear that this lack of relationship changes much per-ancestry either; directly comparing population subsets against one another shows that the per-pathway IBS proportions follow similar trajectories, shifted only by each population's mean level of IBS (Figure \ref{InterPath-Main-Figure-IBS-AllPopComps}). Therefore it appears this further supports our previous finding that the signal we are observing in our results is likely not being driven by broadscale levels of genetic variation. There is a more cryptic structure and relationship between the genetic variation in each subset and the epistasis we are observing with InterPath. 
+To take these analyses one step further, we tried to investigate levels of genetic diversity on the pathway-scale to see if they match up with the observed MAPIT-R results. To accomplish this, we calculated the mean proportion of pairwise identity-by-state across every pair of individuals using all the genotypes of a given pathway. Meaning for a single pathway, we had a metric ranging from 0 to 1 where 1 indicates all pairs of individuals had exactly the same genotypes at every SNP for a given pathway and 0 means all pairs of individuals had completely different genotypes at each of these SNPs. Lower values would then indicate greater levels of genetic diversity for a given a pathway within that ancestry subset. Once we had these values, we then compared them against each pathway's MAPIT-R $p$-value; interestingly, we found there was no relationship between these two metrics (Figure \ref{InterPath-Main-Figure-IBS-African} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}). This was true across almost every one of our UKB population subsets, phenotype, and pathway database collections. And in general it does not appear that this lack of relationship changes much per-ancestry either; directly comparing population subsets against one another shows that the per-pathway IBS proportions follow similar trajectories, shifted only by each population's mean level of IBS (Figure \ref{InterPath-Main-Figure-IBS-AllPopComps}). Therefore it appears this further supports our previous finding that the signal we are observing in our results is likely not being driven by broadscale levels of genetic variation. There is a more cryptic structure and relationship between the genetic variation in each subset and the epistasis we are observing with MAPIT-R. 
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=1]{Images/Main/InterPath_Main_Figure_IBS_African_vs1.png}
-\caption[TBD]{\textbf{IBS Proportions vs. InterPath $p$-values in African Subset}}
+\caption[TBD]{\textbf{IBS Proportions vs. MAPIT-R $p$-values in African Subset}}
 \label{InterPath-Main-Figure-IBS-African}
 \end{figure}
 
@@ -367,9 +367,9 @@ where \textbf{y} is still a $n \times 1$ vector of phenotypes, $\textbf{x}_k$ is
 \end{align}
 where $\textbf{m}_k$ and $\textbf{g}_k$ are both random effects that follow multivariate normal distributions, $\omega$ and $\sigma$ are their respective variance components, $\textbf{K}_k = \textbf{X}_{-k}\textbf{X}^{\textbf{T}}_{-k}/(p-1)$, the genetic relatedness matrix (GRM) constructed from all SNPs available aside from SNP $k$, and $\textbf{G} = \textbf{D}_k\textbf{K}_k\textbf{D}_k$, a GRM based on pairwise interaction terms between the $k$\textsuperscript{th} variant and all other variants. Here, we denote $\textbf{D}_k =$ diag$(\textbf{x}_k)$ to be an $n \times n$ diagonal matrix with the genotype vector $\textbf{x}_k$ as its diagonal elements. Our parameter of interest here is $\sigma$ and whether it is significantly larger from 0; a significant deviation would represent there exist some subset of genetic interactions between $k$ and the rest of the genome.
 
-\subsection{InterPath Model}
+\subsection{MAPIT-R Model}
 
-We describe the framework for ``\underline{Inter}actions in \underline{Path}way'' (InterPath) analysis in detail here. The key goal of this method is to identify crosstalk between signaling pathways in GWAS, without having to explicitly model all possible higher-order interactions. In general, consider a pathway which is defined by a set of SNPs found within the regulatory regions of genes in that pathway. We will denote these variants with the set of indices $\mathcal{R} = (r_1,\ldots,r_p)$. Begin by considering the following partitioned linear regression model,
+We describe the framework for ``\underline{Inter}actions in \underline{Path}way'' (MAPIT-R) analysis in detail here. The key goal of this method is to identify crosstalk between signaling pathways in GWAS, without having to explicitly model all possible higher-order interactions. In general, consider a pathway which is defined by a set of SNPs found within the regulatory regions of genes in that pathway. We will denote these variants with the set of indices $\mathcal{R} = (r_1,\ldots,r_p)$. Begin by considering the following partitioned linear regression model,
 \begin{equation}\label{LM}
 \by = \mu\bm{1}+\sum_{r\in \mathcal{R}}\bx_r\beta_{r}+\sum_{s\not\in \mathcal{R}}\bx_s\beta_{s}+\bvarepsilon, \quad \bvarepsilon\sim \mathcal{N}(\mathbf{0}, \tau^2\bI),
 \end{equation}
@@ -377,14 +377,14 @@ where $\by$ is an $n$-dimensional vector of quantitative phenotypes for $n$ indi
 
 Because we consider scenarios where there are more variants than samples, we need to specify additional modeling assumptions in Equation \eq{LM} to make the rest of the model identifiable. In particular, we recall previous approaches and assume that the individual effect sizes follow univariate normal distributions, or $\beta_r \sim \mathcal{N}(0, \omega^2/p)$ and $\beta_s \sim \mathcal{N}(0, \sigma^2/(l-p))$, where $l$ is the number of total number of all SNPs \citep{Crawford2017}. With the assumption of normally distributed effect sizes, the model defined in Equation \eq{LM} is equivalent to a variance component model where $\bg\sim \mathcal{N}(\bm{0}, \omega^2\bK)$ with $\bK=\bX_{\mathcal{R}}\bX_{\mathcal{R}}^{\T}/p$ being the genetic relatedness matrix computed using genotypes from all variants within the signaling pathway of interest; and $\wt\bg\sim \mathcal{N}(\bm{0}, \nu^2\wt\bK)$ with $\wt\bK=\bX_{-\mathcal{R}}\bX_{-\mathcal{R}}^{\T}/(l-p)$ representing a relatedness matrix computed using all other variants. Note that $\bg$ may be interpreted as a pathway's additive effect, while $\wt\bg$ denotes its polygenic background. 
 
-To complete the specification of the InterPath methodology, we lastly assume an additional random effect $\bu$ which models the summation of all pairwise interaction effects between a given signaling pathway variant and all other pathways. In this work, we limit ourselves to the case of finding second order crosstalk relationships between pathways --- although, extensions to higher-order interactions is straightforward \citep{Crawford2017}. Altogether, this results in the following linear mixed model
+To complete the specification of the MAPIT-R methodology, we lastly assume an additional random effect $\bu$ which models the summation of all pairwise interaction effects between a given signaling pathway variant and all other pathways. In this work, we limit ourselves to the case of finding second order crosstalk relationships between pathways --- although, extensions to higher-order interactions is straightforward \citep{Crawford2017}. Altogether, this results in the following linear mixed model
 \begin{equation}
 \by = \mu\bm{1}+ \bg +\wt\bg+\bu+\bvarepsilon,\\ 
 \bg\sim \mathcal{N}(\bm{0}, \omega^2\bK), \quad \wt\bg\sim \mathcal{N}(\bm{0},
 \nu^2\wt\bK),\\ 
 \bu\sim\mathcal{N}(\bm{0},\sigma^2\bQ), \quad \bvarepsilon\sim \mathcal{N}(\mathbf{0}, \tau^2\bI).\label{LMM}
 \end{equation}
-Here, the $\bQ = \bK\circ\wt\bK$ is represents a second-order interaction relationship matrix, and is obtained by using the Hadamard product (i.e.~the squaring of each element) between the pathway specific relatedness matrix and its corresponding polygenic background. Note that the formulation of InterPath in Equation \eq{LMM} can easily be extended to accommodate other fixed effects (e.g.~age, sex, or genotype principal components), as well as other random effects terms that can be used to account for sample non-independence due to other genetic or common environmental factors.
+Here, the $\bQ = \bK\circ\wt\bK$ is represents a second-order interaction relationship matrix, and is obtained by using the Hadamard product (i.e.~the squaring of each element) between the pathway specific relatedness matrix and its corresponding polygenic background. Note that the formulation of MAPIT-R in Equation \eq{LMM} can easily be extended to accommodate other fixed effects (e.g.~age, sex, or genotype principal components), as well as other random effects terms that can be used to account for sample non-independence due to other genetic or common environmental factors.
 
 %Note that we make the assumption that each $\bg_k^{(l)}\sim \mbox{MVN}(\bm{0}, \sigma_{l}^2\bK^l_k)$, where the baseline covariance matrix $\bK_k=\bX_{-\mathcal{R}}\bX_{-\mathcal{R}}^{\T}/p_k$ is the conventional genetic relatedness matrix computed using genotypes from all $p_k$ variants outside of the region $\mathcal{R}$. Here, we use the power factor $l$ to denote the order of interaction (epistatic) effects that are accounted for within the model. For example, when $l=2$, $\mathbf{K}_k^2 = \mathbf{K}_k\circ\mathbf{K}_k$ represents a pairwise interaction relationship matrix, and is obtained by using the Hadamard product (i.e.~the squaring of each element) of the linear kernel matrix with itself \citep{Henderson:1985aa,Ronnegard:2008aa,Jiang:2015aa}. In this case, $\mathbf{K}_k^2$ denotes the marginal second order epistatic effect of the $k$\textsuperscript{th} functional marker under the polygenic background of all other markers. It is important to note that each $\bK_k^{l}$ changes with every new gene, protein, or pathway $k$ that is considered.
 
@@ -413,21 +413,10 @@ with $(\wh\omega^2_{0},\wh\nu^2_{0},\wh\tau^2_{0})$ being the MQS estimates of $
 %\end{equation}
 %(NOTE: Follow the rest of the language from methods in PEGASUS here).
 
-\subsection{InterPath Analyses}
-
-InterPath analyses were conducted by employing the...
-
-\subsection{Genetic Diversity Analyses}
-
-Genetic diversity analyses were conducted by...
-
 \section{URLs}\label{InterPath-URLs}
 
-InterPath: \url{}
-
 MAPIT: \url{https://github.com/lorinanthony/MAPIT}
-
-GEMMA/GridLMM: 
+MAPIT-R: \url{https://github.com/mturchin20/MAPIT-R}
 
 \section{Acknowledgments}\label{InterPath-Acknowledgments}
 
@@ -455,117 +444,9 @@ GEMMA/GridLMM:
 
 SCRAP
 
-Additionally, it is unlikely that, even if such an ascertainment bias existed, it could continually be directionality consistent across pathways that span the genome. If this were an approach that aggregated single SNP tests, then directionality would not be an issue and one might become concerned about continually incorporating a persistent signal from ascertainment bias; however, because this is a joint test on multiple SNPs as once, it is far less likely that differences between genotype chip SNP distributions and non-European population SNP distributions tracts in exactly the same direction across the entire genome.
-
 Information idea about creating random 'pathways' that have either the same number of genes or SNPs to show that it has to be the *right* collection of information/materials to get the same amount of significance
 
-\subsubsection{Pairwise SNP Epistasis}
-
-Our first approach to investigate SNP-level epistasis was to run the canonical pair-wise interaction model as employed by PLINK's \texttt{--epistasis} method \citep{Purcell2007} (see Online Methods and Supplementary Note for details). Here, we directly estimated the effect size of every possible SNP pairwise interaction and calculated whether it was statistically significant or not.  
-
-Running this method on each of our four UKB population subsets, we chose to look at the 'proportion of marginally significant tests' per SNP, where marginal significance is defined as any test with a $p$-value < $1\times10^{-4}$ (Figure \ref{InterPath-Supp-Figure-PLINK}). We chose to look at proportion of tests due the varying number of SNPs across each population subset. What we find is that indeed there is variation between human ancestries in the amount of pairwise SNP epistasis across the genome. We also find that both the African and Caribbean population subsets show greater proportions of marginal interactions than the British population subset despite both non-European populations having lower sample sizes. 
-
-\begin{figure}[t]
-\centering
-\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_PLINK_vs2.png}
-\caption[PLINK SNP Pairwise Epistasis]{\textbf{PLINK SNP Pairwise Epistasis.} \\ Shown are results from running PLINK's SNP-by-SNP pairwise epistasis method, \texttt{--epistasis}, on four of our initial UKB human population subsets in height and BMI. Specifically the $y$-axis shows the proportion of marginally significant interactions found per-SNP, where marginal significance is defined as the epistastic test returning a $p$-value $<$ $1\times10^{-4}$, and the $x$-axis shows the top 50 SNPs for this metric in each of the population subsets. The African subset contained 374,466 total SNPs, the British Random 4k subset contained 600,006 total SNPs, the Caribbean subset contained 410,017 total SNPs, and the Indian subset contained 505,854 total SNPs. We observe across each population different levels of marginal pairwise SNP significance as well as different patterns of significance. Additionally, both the African and Caribbean subsets contain the strongest signals.}
-\label{InterPath-Supp-Figure-PLINK}
-\end{figure}
-
-\subsection{Genome Level Epistasis}\label{InterPath-Results-GenomeEpistasis}
-
-To investigate epistasis in multiple human populations, we first extracted a variety of human ancestries from the UKB (see Online Methods). We collected a total of 8 UKB subsets with an average sample size of XXXX among the non-European populations (Supplementary Table 1), including African, Indian, Chinese, and Pakistani subsets. To maximize our sample sizes per subset, we focused on height and body mass index (BMI) as our complex traits of interest. 
-
-The first approach we took to investigate epistasis was to look at genome-wide estimates of phenotypic PVE. Specifically, we setup a linear mixed model that incorporated both additive and epistatic interactions, and fit each of these variance components using GEMMA \citep{Zhou2012} (see Online Methods and Supplementary Note for details). Calculating these variance component PVEs for height and BMI in each of our populations, we indeed find differences across each human ancestry (Table 1).
-
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=1]{Images/Table1_Placeholder.png}
-\caption[TBD]{\textbf{TBD}. \\ this will be a table not a figure.}
-\label{IntrePath-Main-Table-GEMMA}
-\end{figure}
-
-In height, we do not see anything immediately new. For the additive effects $G_1$ we mainly calculate PVEs across each population within our range of expectation (between XX and XX (citation)). Additionally, we do not currently see much evidence for second-order effects $G_2$. However, looking at BMI we see a different result. Across all populations we see non-trivial PVEs for $G_2$, ranging from XX to XX. We also see larger values in multiple non-European populations. In particular we see a particularly strong result in XXX. This might be beginning evidence that indeed, non-European populations have more potential for picking up signals of higher-order interactions in the genome.   
-
 \subsubsection{Power Gained from Proper Pathway Definitions}
-
-\section{Outline}
-
-\begin{enumerate}
-    \item PLINK and MAPIT results
-    \begin{enumerate}
-        \item See (Supplementary?) Figures \ref{InterPath-Suppl-Figure-PLINK} (PLINK) \& \ref{InterPath-Main-Figure-MAPIT} (MAPIT)
-        \item Results are shown in African, British.Ran4k, Caribbean, and Indian subsets; Height and BMI
-        \item PLINK -- looking at the proportion of marginal SNP-by-SNPs associations per SNP \& MAPIT -- looking at the amount of marginal association per SNP under the SNP*background model
-        \item Results are weak -- we say either: 1) we have no signal so we want to explore a potentially more powered approach or 2) we see weak signals of significance and possible differences among human ancestries, but we need a potentially more powered approach to further understand what's going on
-        \item Compare MAPIT and GWAS results (?)
-        \begin{enumerate}
-            \item this was an idea from a previous conversation that I haven't done yet -- to show that ordering of SNPs change when you do MAPIT vs. GWAS, suggesting that there is something happening here
-            \item should we still look into this? is my framing in a) the basic analysis setup we were thinking? \red{SR: I think we should move this up to the start to motivate epistasis as the overarching goal, before PLINK v. MAPIT. It could even be a multipanel figure.}
-        \end{enumerate}
-    \end{enumerate}
-    \item InterPath results -- European \& non-European populations
-    \begin{enumerate}
-        \item See Figure \ref{InterPath-Main-Figure-Barplots} \red{SR: We need figure captions. What does significant mean here? Also, I think it's better to just put the cohort name above each bar in the plot, or at least the first panel; the legend is hard to read.}
-        \item Results are shown for African, British.Ran4k, British.Ran10k, Caribbean, Chinese, Indian, Irish, and Pakistani subsets; Height and BMI; KEGG and REACTOME
-        \item We find that the African population shows a large number of genome-wide significant results
-        \begin{enumerate}
-            \item Brit.Ran4k, Caribbean, Chinese, Indian, and Pakistani have a few results as well
-            \item Brit.Ran10k and Irish barely have any -- it appears large sample sizes may diminish signal somewhat, but our smallest sample sizes are in Chinese and Pakistani
-        \end{enumerate}
-        \item We find that having more SNPs tends to be correlated with having a stronger signal (and barely any relationship in the permuted data)
-        \begin{enumerate}
-            \item See Supplementary Figure \ref{InterPath-Suppl-Figure-pValsVsNumSNPs} \& \ref{InterPath-Suppl-Figure-pValsVsNumSNPs-perm1} (observed \& permuted data results, respectively)
-        \end{enumerate}
-        \item We show through simulations the following* \red{(MT: *need to discuss this!)}:
-        \begin{enumerate}
-            \item The model performs as expected under the null (no signal)
-            \item we can correct for some scheme of population structure by controlling with top local PCs
-            \item that there is unlikely to be a 'genotyping chip effect' by biasing our 'causal SNPs' based on MAF from European vs. African subsets \red{SR: just a note that we have to be really careful using the word `causal'}
-            \item show that as 'genetic diversity' grows in our simulated populations, the greater our signal gets??
-        \end{enumerate}
-        \item We can also show via a single phenotype permutation run that results behave as expected, ie things generally follow the null
-        \begin{enumerate}
-            \item See Supplementary Figures \ref{InterPath-Suppl-Figure-QQPlots-KEGG} \& \ref{InterPath-Suppl-Figure-QQPlots-REACTOME} (permutation QQ plots for both databases)
-            \item we can also show p-value histograms from these single permutation runs to show they are mostly uniform
-        \end{enumerate}
-        \item We show that there is not a ton of differences between the top pathways across ancestries
-        \begin{enumerate}
-            \item See Figures \ref{InterPath-Main-Figure-Heatplots-KEGG}, \ref{InterPath-Main-Figure-Heatplots-REACTOME} (Heatplots) \&  \ref{InterPath-Main-Figure-PopCompDotPlots} (Dotplots) \red{SR: the heatmap off-diagonal entries are hard to understand at this point and need to be introduced earlier because they are the first cross-ancestry comparisons I believe.}
-            \item We do see some more tracking between the African and the Caribbean cohorts, which is encouraging (stands out more in REACTOME than KEGG?)
-            \item Instead it looks like we may have a number of pathways being driven by genes in HLA regions and cellular signaling
-            \item Maybe we are only beginning to scratch the surface of signal, and what we find are more 'globally biologically important' pathways, relevant to most pathways
-            \item we propose that we need larger sample sizes to start identifying whether there is more ancestry specific epistasis occurring
-        \end{enumerate}
-        \item We see a similar situation when comparing Height and BMI, though there are a few pathways that diverge in the African subset (unclear how much I can draw from this -- still working on it)
-        \begin{enumerate}
-            \item See (Supplementary?) Figure \ref{InterPath-Suppl-Figure-PhenoCompDotPlots}
-            \item The barplots show this too, but it's more clear here that BMI has on average larger signals that height, which is kind of interesting -- in line with our expectations
-        \end{enumerate}
-    \end{enumerate}
-    \item InterPath results -- British replicates \red{SR: this should come earlier - it will be on readers' minds from the moment another ancestry's results are presented.}
-    \begin{enumerate}
-        \item 4 extra Brit.4k and Brit.10k replicates (total of 5 including the first set from before)
-        \item Brit.4k replicates continue to have slightly more signal than Brit.10k replicates, very few significant results
-        \item Putting this analysis together now, but it might be good if at least the p-values are more correlated between replicates than what we see among the different ancestries previously \red{yes, but this may be slight - at least that's what Wei and Sam are seeing.}
-        \item I am also running 10 phenotype permutations for each of these replicates -- we can potentially use these for some basic FDR measures
-    \end{enumerate}
-    \item Genetic Diversity results
-    \begin{enumerate}
-        \item this doesn't exist yet, but the idea would be to show somehow that greater genetic diversity/variation in any ancestry is correlated with more significant p-values
-        \item \red{SR: I'm also wondering whether your cross-ancestry analysis results with heatmaps are correlated with cross-pop Fst}
-        \item this is most likely to work in the African population, given that's where most of the signal is
-        \item Lorin and I have discussed some metrics trying to get at this using either the genotype matrix per pathway or the different GRMs we construct per pathway (pathway, background, and pathway*background GRMs)
-    \end{enumerate}
-    \item Ambiguity on dealing with non-European populations (?)
-    \begin{enumerate}
-        \item (need to develop this idea/framing a bit more)
-        \item We point out that it's unclear how to deal with structure in non-European populations
-        \item We show that there are not much differences between global and local PCs in terms of InterPath (and/or GWAS?) results?
-        \item We can put the GEMMA results here potentially -- that we see the expected $h^{2}$ for $G_1$ in British.Ran4k in Height and BMI, but using the exact same analysis setup we get weird/nonsensical results for some of the other non-European populations?
-    \end{enumerate}
-    
-\end{enumerate}
 
 \fi
 

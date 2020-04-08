@@ -50,7 +50,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_perm1_QQPlots_KEGG_vs1.png}
-\caption[TBD]{\textbf{InterPath Phenotype Permutation QQ-Plots}. Shown are QQ-plots for running InterPath using a single, permuted version of the phenotypes for both Height and BMI with the KEGG pathways. Phenotypes were permuted within each population subset. Shown on the $x$-axis are the -$\log_{10}$ of our expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of our observed $p$-values. The dotted red line is our Bonferroni-corrected $p$-value threshold (.05 / XX KEGG pathways). We find across all population subsets that InterPath displays the null behavior as expected when using permuted phenotypes.}
+\caption[TBD]{\textbf{MAPIT-R Phenotype Permutation QQ-Plots}. Shown are QQ-plots for running MAPIT-R using a single, permuted version of the phenotypes for both Height and BMI with the KEGG pathways. Phenotypes were permuted within each population subset. Shown on the $x$-axis are the -$\log_{10}$ of our expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of our observed $p$-values. The dotted red line is our Bonferroni-corrected $p$-value threshold (.05 / XX KEGG pathways). We find across all population subsets that MAPIT-R displays the null behavior as expected when using permuted phenotypes.}
 \label{InterPath-Supp-Figure-perm1-QQPlots-KEGG}
 \end{figure}
 \clearpage
@@ -81,7 +81,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.15]{Images/Supp/InterPath_Supp_Figure_pValsVsNumSNPs_vs1.png}
-\caption[TBD]{\textbf{InterPath $p$-values Versus Number of SNPs in a Pathway}. \\ Shown is the relationship between InterPath $p$-values and the number of SNPs found in a tested pathway across all populations in height and BMI within KEGG. Shown on the $x$-axis is the number of SNPs that were included for a given pathway and on the $y$-axis is shown that pathway's InterPath -$\log_{10}$ $p$-value. As expected, we find a generally positive relationship between these two variables -- in other words, the more SNPs that are included the more likely it is that InterPath will have a more significant $p$-value. We also find, however, that it is not simply the SNPs counts that are driving this signal; looking at this same comparison within the permuted phenotype analyses we find barely any positive relationship between SNP counts per pathway and a pathway's InterPath -$\log_{10}$ $p$-value (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}}
+\caption[TBD]{\textbf{MAPIT-R $p$-values Versus Number of SNPs in a Pathway}. \\ Shown is the relationship between MAPIT-R $p$-values and the number of SNPs found in a tested pathway across all populations in height and BMI within KEGG. Shown on the $x$-axis is the number of SNPs that were included for a given pathway and on the $y$-axis is shown that pathway's MAPIT-R -$\log_{10}$ $p$-value. As expected, we find a generally positive relationship between these two variables -- in other words, the more SNPs that are included the more likely it is that MAPIT-R will have a more significant $p$-value. We also find, however, that it is not simply the SNPs counts that are driving this signal; looking at this same comparison within the permuted phenotype analyses we find barely any positive relationship between SNP counts per pathway and a pathway's MAPIT-R -$\log_{10}$ $p$-value (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}}
 \label{InterPath-Supp-Figure-pValsVsNumSNPs}
 \end{figure}
 \clearpage
@@ -89,7 +89,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 %\begin{figure}[htbp]
 %\centering
 %\includegraphics[scale=.15]{Images/Supp/InterPath_Supp_Figure_pValsVsNumSNPs_perm1_vs1.png}
-%\caption[TBD]{\textbf{InterPath $p$-values Versus Number of SNPs in a Pathway, Permuted Phenotypes}. \\ Shown is the relationship between InterPath $p$-values and the number of SNPs found in a tested pathway across all populations in permuted height and BMI within KEGG. Shown on the $x$-axis is the number of SNPs that were included for a given pathway and on the $y$-axis is shown that pathway's InterPath -$\log_{10}$ $p$-value. Unlike with the observed data (Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}), we do not see a relationship between the number of SNPs included in a pathway and that pathway's -$\log_{10}$ InterPath $p$-value. This shows that while having more SNPs allows InterPath to generate more power to detect epistatic interactions, our significant results are not due solely to having more SNPs.}
+%\caption[TBD]{\textbf{MAPIT-R $p$-values Versus Number of SNPs in a Pathway, Permuted Phenotypes}. \\ Shown is the relationship between MAPIT-R $p$-values and the number of SNPs found in a tested pathway across all populations in permuted height and BMI within KEGG. Shown on the $x$-axis is the number of SNPs that were included for a given pathway and on the $y$-axis is shown that pathway's MAPIT-R -$\log_{10}$ $p$-value. Unlike with the observed data (Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}), we do not see a relationship between the number of SNPs included in a pathway and that pathway's -$\log_{10}$ MAPIT-R $p$-value. This shows that while having more SNPs allows MAPIT-R to generate more power to detect epistatic interactions, our significant results are not due solely to having more SNPs.}
 %\label{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}
 %\end{figure}
 %\clearpage
@@ -105,7 +105,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 %\begin{figure}[htbp]
 %\centering
 %\includegraphics[scale=.15]{Images/Main/InterPath_Main_PopCompDotPlots_African_vs1.png}
-%\caption[]{\textbf{InterPath Cross-Population KEGG $p$-value Comparisons: African}. Shown are comparisons of each population subset's InterPath $p$-value for Height and BMI in KEGG against the African subset's InterPath $p$-values. On the $x$-axis are the African subset's observed -$\log_{10}$ $p$-value and on the $y$-axis is the other population's observed -$\log_{10}$ $p$-value. Dotted red lines represent Bonferroni-corrected $p$-value thresholds for each population/phenotype combination.}
+%\caption[]{\textbf{MAPIT-R Cross-Population KEGG $p$-value Comparisons: African}. Shown are comparisons of each population subset's MAPIT-R $p$-value for Height and BMI in KEGG against the African subset's MAPIT-R $p$-values. On the $x$-axis are the African subset's observed -$\log_{10}$ $p$-value and on the $y$-axis is the other population's observed -$\log_{10}$ $p$-value. Dotted red lines represent Bonferroni-corrected $p$-value thresholds for each population/phenotype combination.}
 %\label{InterPath-Main-Figure-PopCompDotPlots}
 %\end{figure}
 %\clearpage
@@ -132,7 +132,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 %\begin{figure}[htbp]
 %\centering
 %\includegraphics[scale=.15]{Images/Supp/InterPath_Supp_Figure_PhenoCompDotPlots_vs1.png}
-%\caption[TBD]{\textbf{InterPath Phenotype $p$-value Comparisons}. \\ Shown is a comparison of the InterPath $p$-values for both phenotypes analyzed across all population subsets in the KEGG database. Shown on the $x$-axis is the observed height -$\log_{10}$ InterPath $p$-value and shown on the $y$-axis is the observed BMI -$\log_{10}$ InterPath $p$-value. Dotted red lines represent Bonferroni-corrected $p$-value thresholds for each population/phenotype combination (.05 / number of KEGG pathways analyzed). In general we observe a correlation between InterPath $p$-values between each phenotype. In the African subset, where we have the most observed power, we find pathways that are significant in both phenotypes as well as each phenotype separately. Additionally, we observe, among marginally significant pathways, stronger InterPath signals in BMI than height -- this is in line with previous observations that BMI may contain higher levels of epistasis than height (citations).}
+%\caption[TBD]{\textbf{MAPIT-R Phenotype $p$-value Comparisons}. \\ Shown is a comparison of the MAPIT-R $p$-values for both phenotypes analyzed across all population subsets in the KEGG database. Shown on the $x$-axis is the observed height -$\log_{10}$ MAPIT-R $p$-value and shown on the $y$-axis is the observed BMI -$\log_{10}$ MAPIT-R $p$-value. Dotted red lines represent Bonferroni-corrected $p$-value thresholds for each population/phenotype combination (.05 / number of KEGG pathways analyzed). In general we observe a correlation between MAPIT-R $p$-values between each phenotype. In the African subset, where we have the most observed power, we find pathways that are significant in both phenotypes as well as each phenotype separately. Additionally, we observe, among marginally significant pathways, stronger MAPIT-R signals in BMI than height -- this is in line with previous observations that BMI may contain higher levels of epistasis than height (citations).}
 %\label{InterPath-Supp-Figure-PhenoCompDotPlots}
 %\end{figure}
 %\clearpage
@@ -151,7 +151,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_IBS_AllPops_vs1.png}
-\caption[TBD]{\textbf{IBS Proportions vs. InterPath $p$-values in All UKB Subsets}}
+\caption[TBD]{\textbf{IBS Proportions vs. MAPIT-R $p$-values in All UKB Subsets}}
 \label{InterPath-Supp-Figure-IBS-AllPops}
 \end{figure}
 \clearpage
@@ -198,5 +198,42 @@ British.Ran10000.5 & 9596 & 597507 & 186 & 669 \\
 \setstretch{1.0}
 \bibliography{Main}
 \endgroup
+
+
+\iffalse
+
+SCRAP
+
+Additionally, it is unlikely that, even if such an ascertainment bias existed, it could continually be directionality consistent across pathways that span the genome. If this were an approach that aggregated single SNP tests, then directionality would not be an issue and one might become concerned about continually incorporating a persistent signal from ascertainment bias; however, because this is a joint test on multiple SNPs as once, it is far less likely that differences between genotype chip SNP distributions and non-European population SNP distributions tracts in exactly the same direction across the entire genome.
+
+\subsubsection{Pairwise SNP Epistasis}
+
+Our first approach to investigate SNP-level epistasis was to run the canonical pair-wise interaction model as employed by PLINK's \texttt{--epistasis} method \citep{Purcell2007} (see Online Methods and Supplementary Note for details). Here, we directly estimated the effect size of every possible SNP pairwise interaction and calculated whether it was statistically significant or not.  
+
+Running this method on each of our four UKB population subsets, we chose to look at the 'proportion of marginally significant tests' per SNP, where marginal significance is defined as any test with a $p$-value < $1\times10^{-4}$ (Figure \ref{InterPath-Supp-Figure-PLINK}). We chose to look at proportion of tests due the varying number of SNPs across each population subset. What we find is that indeed there is variation between human ancestries in the amount of pairwise SNP epistasis across the genome. We also find that both the African and Caribbean population subsets show greater proportions of marginal interactions than the British population subset despite both non-European populations having lower sample sizes. 
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_PLINK_vs2.png}
+\caption[PLINK SNP Pairwise Epistasis]{\textbf{PLINK SNP Pairwise Epistasis.} \\ Shown are results from running PLINK's SNP-by-SNP pairwise epistasis method, \texttt{--epistasis}, on four of our initial UKB human population subsets in height and BMI. Specifically the $y$-axis shows the proportion of marginally significant interactions found per-SNP, where marginal significance is defined as the epistastic test returning a $p$-value $<$ $1\times10^{-4}$, and the $x$-axis shows the top 50 SNPs for this metric in each of the population subsets. The African subset contained 374,466 total SNPs, the British Random 4k subset contained 600,006 total SNPs, the Caribbean subset contained 410,017 total SNPs, and the Indian subset contained 505,854 total SNPs. We observe across each population different levels of marginal pairwise SNP significance as well as different patterns of significance. Additionally, both the African and Caribbean subsets contain the strongest signals.}
+\label{InterPath-Supp-Figure-PLINK}
+\end{figure}
+
+\subsection{Genome Level Epistasis}\label{InterPath-Results-GenomeEpistasis}
+
+To investigate epistasis in multiple human populations, we first extracted a variety of human ancestries from the UKB (see Online Methods). We collected a total of 8 UKB subsets with an average sample size of XXXX among the non-European populations (Supplementary Table 1), including African, Indian, Chinese, and Pakistani subsets. To maximize our sample sizes per subset, we focused on height and body mass index (BMI) as our complex traits of interest. 
+
+The first approach we took to investigate epistasis was to look at genome-wide estimates of phenotypic PVE. Specifically, we setup a linear mixed model that incorporated both additive and epistatic interactions, and fit each of these variance components using GEMMA \citep{Zhou2012} (see Online Methods and Supplementary Note for details). Calculating these variance component PVEs for height and BMI in each of our populations, we indeed find differences across each human ancestry (Table 1).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=1]{Images/Table1_Placeholder.png}
+\caption[TBD]{\textbf{TBD}. \\ this will be a table not a figure.}
+\label{IntrePath-Main-Table-GEMMA}
+\end{figure}
+
+In height, we do not see anything immediately new. For the additive effects $G_1$ we mainly calculate PVEs across each population within our range of expectation (between XX and XX (citation)). Additionally, we do not currently see much evidence for second-order effects $G_2$. However, looking at BMI we see a different result. Across all populations we see non-trivial PVEs for $G_2$, ranging from XX to XX. We also see larger values in multiple non-European populations. In particular we see a particularly strong result in XXX. This might be beginning evidence that indeed, non-European populations have more potential for picking up signals of higher-order interactions in the genome.   
+
+\fi
 
 \end{document}
