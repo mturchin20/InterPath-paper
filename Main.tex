@@ -144,7 +144,7 @@
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 
-\title{Stronger Signals for Epistasis in Complex Trait Genetic Architecture Revealed by non-European Human Populations}
+\title{Pathway Analysis Reveals Novel Variation in the Broad-sense Heritability of Complex Trait Genetic Architecture Across Multiethnic Populations}
 \author[1,2]{Michael C. Turchin}
 \author[1,3]{Gregory Darnell}
 \author[1,4,5,*]{Lorin Crawford}
@@ -184,7 +184,7 @@ Epistasis, despite being a well-established component of complex trait architect
 
 \section{Results}\label{InterPath-Results}
 
-\subsection{SNP Level Epistasis}\label{InterPath-Results-SNPEpistasis}
+\subsection{Single-SNP Methods Provide Limited Evidence For Epistasis}\label{InterPath-Results-SNPEpistasis}
 
 To investigate epistasis in non-European populations, we first extracted four population subsets from the UK BioBank dataset: African, Caribbean, and an Indian subset (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}), as well as a random set of 4,000 British individuals. We conducted typical quality control (QC) procedures on each subset (see Online Methods) and focused our analyses on the complex traits height and body mass index (BMI). 
 
@@ -236,7 +236,7 @@ To help further get a sense of whether these results are revealing patterns in t
 
 While these results are insightful and encouraging, they are still limited by the sample sizes available to us. There are ongoing efforts to increase the number of non-European individuals publicly available for complex trait analysis (PAGE,TOPMED refs \ref{}), but we can also increase power through methodological improvements. The epistatic analyses presented thus far have been on single variants. The additive field has long shown increased power when moving from single variant analyses to multiple variant analyses, often in the form of grouping variants in pathways \ref{} (refs for pathway analysis). Therefore, we decided to explore whether taking a similar approach for epistatic analyses would lead to a similar increase in power.
 
-\subsection{Pathway Level Epistasis}\label{InterPath-Results-PathwayEpistasis}
+\subsection{Region-Based Approaches Increase Power To Identify Epistasis}\label{InterPath-Results-PathwayEpistasis}
 
 We expanded the previous MAPIT model into a new framework that goes from looking for marginal epistasis with a single variant to looking for marginal epistasis with an entire biological pathway; we call this approach MAPIT-R, for \underline{MA}rginal e\underline{PI}stasis \underline{T}est of \underline{R}egions. The main change we make to the marginal epistasis model is to go from a single SNP of interest \textbf{k} to a collection of SNPs of interest \textbf{R}. For a full description of this model please see Online Methods, but in brief this change leads to the following, new form of our linear mixed model:
 
@@ -260,6 +260,9 @@ Running MAPIT-R on our UKB subsets across height and BMI, we find a major increa
 
 In fact the vast majority of our significant interactions are represented in the African subset (165/245). This stands out because the African subset is neither our population with the largest sample size or our population with the largest number of SNPs. We do see a significant relationship between number of SNPs in a pathway and that pathway's MAPIT-R $p$-value (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}), however the African subset has similar pathway SNP counts amongst its top pathways as compared to the other population subsets. One possibility for this result may be an ascertainment bias from using variants based on a genotyping chip that was developed primarily using European data. Simulations that replicate such an ascertainment bias however show no evidence of this leading to an increase in power (Supplementary Figure XX). Additionally, it is unlikely that our results are produced from excess cryptic population structure as well; simulations that specifically model different population structure schemes show no evidence for a bias in our results (Supplementary Figure XX \textcolor{red}{(this is where the proposed simulation results would go)}). 
 
+
+\subsection{Beginning Examples of Ancestry-Level Differences in Epistatic Interactions}
+
 Looking at the specific pathways that we observe as having significant evidence for marginal epistasis, it does not appear that we can confidently infer population-specific examples of pathway marginal epistasis. Most genome-wide significant pathways in any non-African subset overlap with a genome-wide significant pathway in the African subset (Figure \ref{InterPath-Main-Figure-Heatplots-KEGG} \& Supplementary Figure \ref{InterPath-Supp-Figure-Heatplots-REACTOME}). Interestingly, while we do witness that while most populations overlap with the African subset, there is often little overlap among the non-African subsets; for example in KEGG BMI the Caribbean subset overlaps with African for 6 of its 7 pathways, and the Chinese subset overlaps with the African subset for 7 of its 8 pathways, but there is no overlap between the Chinese and Caribbean subsets.
 
 \begin{figure}[htbp]
@@ -269,15 +272,19 @@ Looking at the specific pathways that we observe as having significant evidence 
 \label{InterPath-Main-Figure-Heatplots-KEGG}
 \end{figure}
 
+\subsection{The Proteasome as a Candidate Protein Complex Enriched for Epistasic Interactions}
+
 As previously mentioned, we observe that genome-wide significant pathways across subsets tend to be the pathways with the largest numbers of SNPs. While this is not surprising given that these are the pathways which potentially have the most power to identify a positive signal, we only have a limited number of these types of pathways to compare against one another; it is unclear if these particular pathways represent interesting biology specific to our complex traits or are moreso indicative of there being widespread, but indiscriminate, epistasis across the genome. One approach to decouple significant pathways from having a large number of SNPs is to simply look at the collection of top pathways with the least number of SNPs. For example, we observe 26 number of pathways in the African BMI REACTOME analysis that included less than 1000 SNPs. To identify whether there are common biological underpinnings across these pathways, we first looked at whether any groups of genes were enriched across these pathways. And indeed, we observe for many genes that are highly represented across these pathways, that they are significantly enriched (Supplementary Table \ref{InterPath-Supp-Tables-GeneCounts} \textcolor{red}{(table with a list of these genes; there's a figure/screenshot in the supplement that is an example of what it would look like)}).
 
 However, the hypergeometric test that underlies these enrichment results assumes independence between pathways, and we know that to not be the case. To get a better sense of what our expectations for the results should be, we instead reran these analyses using the full set of significant pathways, not just those with SNP counts below 1000. Our hypothesis is that if the full set of results are confounded by some pathways just having many more SNPs than real biological signals, the noise-to-signal ratio should get worse for the genes that represented true biology. And indeed when we rerun this analysis, we observe for a specific group of genes, those related to the proteasome complex, that their enrichment $p$-values become less significant going from the more refined set of smaller significant pathways to the more general set of total significant pathways (\textcolor{red}{Supplementary Table XX -- table showing the hypergeometric p-values of these genes going from the more refined, lower SNP-count set to the more general, full SNP-count set)}. These gene families (PSMA*, PSMB*, PSMC*, PSMD*, and PSME*) represent the different various subunits of the proteasome complex, a catalytic protein structure that is essential to the ubiquitination degradation pathway. Interestingly, the proteasome may be a reasonable candidate for having biologically important genetic interactions with the rest of the genome -- it is likely to be involved with a large number of distinct biological processes, though always in the same capacity. It is possibly unsurprising then that we find this gene enrichment in BMI and not height, since metabolism inherently involves the degradation of molecules. 
 
 %To further look into these proteasome genes, we...
 
+\subsection{Testing the Null Model with British Replicate Subpopulations}
+
 One important consideration of our results is that we have limited representations of the different human ancestries we are analyzing. Are the samples we are analyzing large enough to be representative of the true total populations? While it is still difficult to address that question directly for non-European populations due to the limited availability of other public datasets, we are able to ask that question for the British ancestry subsets. Specifically, we can take additional, non-overlapping random subsets of 4,000 and 10,000 British individuals and see if they are at least consistent in their lack of results as compared to each original random subset. And indeed this is what we observe when we take an additional 4 random subsets of British individuals at each sample size: similar low numbers of significant pathways and FDR estimates across each replication (Supplementary Tables \ref{InterPath-Supp-Figure-BritReps-Barplots} \& \ref{InterPath-Supp-Figure-BritReps-FDRs} \textcolor{red}{a barplot of the British Replicate results (currently show a screenshot of the numbers that'll be used to make the barplot) and a table showing FDR estimates}). This at least indicates that we are unlikely to observe the large levels of significant results we witness in the African subset by simply choosing a 'better' collection of individuals by chance.  
 
-\subsection{Relationship Between Epistasis and Genetic Diversity}
+\subsection{Investigating the Relationship Between Within-Population Genetic Variation and Detecting Epistasis}
 
 One of the clearest results from the MAPIT-R analyses is that the African subset has much greater levels of evidence for pathway marginal epistasis than any other UKB subset. An obvious next question then is why. One of the most well-appreciated genetic architecture patterns in African populations versus other global human populations is the much greater levels of genetic diversity found in African versus out-of-African populations. This alignment of patterns then may be a good starting point, especially since greater levels of genetic variation in the underlying data may increase our power to detect epistasis, as suggested by our previous result of more SNPs being positive correlated with more significant MAPIT-R $p$-values. 
 
