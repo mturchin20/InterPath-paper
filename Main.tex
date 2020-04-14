@@ -304,20 +304,20 @@ Our first approach to investigate this question then was to look at broadscale m
 \label{InterPath-Main-Figure-Eigenvalues}
 \end{figure}
 
-To take these analyses one step further, we tried to investigate levels of genetic diversity on the pathway-scale to see if they match up with the observed MAPIT-R results. To accomplish this, we calculated the mean proportion of pairwise identity-by-state across every pair of individuals using all the genotypes of a given pathway. Meaning for a single pathway, we had a metric ranging from 0 to 1 where 1 indicates all pairs of individuals had exactly the same genotypes at every SNP for a given pathway and 0 means all pairs of individuals had completely different genotypes at each of these SNPs. Lower values would then indicate greater levels of genetic diversity for a given a pathway within that ancestry subset. Once we had these values, we then compared them against each pathway's MAPIT-R $p$-value; interestingly, we found there was no relationship between these two metrics (Figure \ref{InterPath-Main-Figure-IBS-African} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}). This was true across almost every one of our UKB population subsets, phenotype, and pathway database collections. And in general it does not appear that this lack of relationship changes much per-ancestry either; directly comparing population subsets against one another shows that the per-pathway IBS proportions follow similar trajectories, shifted only by each population's mean level of IBS (Figure \ref{InterPath-Main-Figure-IBS-AllPopComps}). Therefore it appears this further supports our previous finding that the signal we are observing in our results is likely not being driven by broadscale levels of genetic variation. There is a more cryptic structure and relationship between the genetic variation in each subset and the epistasis we are observing with MAPIT-R. 
+To take these analyses one step further, we tried to investigate levels of genetic diversity on the pathway-scale to see if they match up with the observed MAPIT-R results. To accomplish this, we calculated the mean proportion of pairwise identity-by-state across every pair of individuals using all the genotypes of a given pathway. Meaning for a single pathway, we had a metric ranging from 0 to 1 where 1 indicates all pairs of individuals had exactly the same genotypes at every SNP for a given pathway and 0 means all pairs of individuals had completely different genotypes at each of these SNPs. Lower values would then indicate greater levels of genetic diversity for a given a pathway within that ancestry subset. Once we had these values, we then compared them against each pathway's MAPIT-R $p$-value; interestingly, we found there was no relationship between these two metrics (Figure \ref{InterPath-Main-Figure-IBS-AfrHght} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}). This was true across almost every one of our UKB population subsets, phenotype, and pathway database collections. And in general it does not appear that this lack of relationship changes much per-ancestry either; directly comparing population subsets against one another shows that the per-pathway IBS proportions follow similar trajectories, shifted only by each population's mean level of IBS (Figure \ref{InterPath-Main-Figure-IBS-AllPopComps-AfrHght} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPopComps}). Therefore it appears this further supports our previous finding that the signal we are observing in our results is likely not being driven by broadscale levels of genetic variation. There is a more cryptic structure and relationship between the genetic variation in each subset and the epistasis we are observing with MAPIT-R. 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=1]{Images/Main/InterPath_Main_Figure_IBS_African_vs1.png}
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_vs2_AfrHght.png}
 \caption[TBD]{\textbf{IBS Proportions vs. MAPIT-R $p$-values in African Subset}}
-\label{InterPath-Main-Figure-IBS-African}
+\label{InterPath-Main-Figure-IBS-AfrHght}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_AllPopComps_vs1.png}
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_AllPopComps_vs2_AfrHght.png}
 \caption[TBD]{\textbf{IBS in Top Pathways Across Populations}.}
-\label{InterPath-Main-Figure-IBS-AllPopComps}
+\label{InterPath-Main-Figure-IBS-AllPopComps-AfrHght}
 \end{figure}
 
 \section{Discussion}\label{InterPath-Discussion}
