@@ -215,65 +215,186 @@ British.Ran10000.5 & 9596 & 597507 & 186 & 669 \\
 \end{table}
 \clearpage
 
+%From: https://tex.stackexchange.com/questions/118606/numbering-tables-a1-a2-etc-in-latex & https://tex.stackexchange.com/questions/83689/next-subsequent-letter-in-the-alphabet
 \newcounter{CharNumber1}
 \setcounter{CharNumber1}{1}
 \renewcommand{\thetable}{\arabic{table}\alph{CharNumber1}}
+\begin{landscape}
 \begin{table}[ht]
 \centering
+\vspace*{-.5cm}
 \begin{tabular}{lrrr}
   \hline
-Pathway & Genes & SNPs & p-Value \\ 
+\textbf{Population \& Pathway} & \textbf{Genes} & \textbf{SNPs} & \textbf{p-Value} \\ 
   \hline
-KEGG\_AXON\_GUIDANCE & 120 & 3045 & 0.00 \\ 
-  KEGG\_HYPERTROPHIC\_CARDIOMYOPATHY\_HCM &  77 & 2132 & 0.00 \\ 
-  KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION & 234 & 2279 & 0.00 \\ 
-  KEGG\_PURINE\_METABOLISM & 135 & 2411 & 0.00 \\ 
-  KEGG\_DILATED\_CARDIOMYOPATHY &  83 & 2234 & 0.00 \\ 
-  KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  38 & 1659 & 0.00 \\ 
-  KEGG\_ENDOCYTOSIS & 169 & 2981 & 0.00 \\ 
-  KEGG\_OLFACTORY\_TRANSDUCTION & 365 & 3110 & 0.00 \\ 
-  KEGG\_AUTOIMMUNE\_THYROID\_DISEASE &  48 & 1504 & 0.00 \\ 
-  KEGG\_NATURAL\_KILLER\_CELL\_MEDIATED\_CYTOTOXICITY & 127 & 2216 & 0.00 \\ 
-  KEGG\_ALZHEIMERS\_DISEASE & 136 & 1846 & 0.00 \\ 
-  KEGG\_WNT\_SIGNALING\_PATHWAY & 141 & 2050 & 0.00 \\ 
-  KEGG\_ALLOGRAFT\_REJECTION &  32 & 1329 & 0.00 \\ 
-  KEGG\_HUNTINGTONS\_DISEASE & 148 & 1660 & 0.00 \\ 
-  KEGG\_GRAFT\_VERSUS\_HOST\_DISEASE &  35 & 1348 & 0.00 \\ 
-  KEGG\_GAP\_JUNCTION &  85 & 1851 & 0.00 \\ 
-  KEGG\_SYSTEMIC\_LUPUS\_ERYTHEMATOSUS & 111 & 1525 & 0.00 \\ 
-  KEGG\_VIRAL\_MYOCARDITIS &  64 & 1972 & 0.00 \\ 
-  KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION &  74 & 1598 & 0.00 \\ 
-  KEGG\_LONG\_TERM\_POTENTIATION &  63 & 1585 & 0.00 \\ 
-  KEGG\_INTESTINAL\_IMMUNE\_NETWORK\_FOR\_IGA\_PRODUCTION &  43 & 1072 & 0.00 \\ 
-  KEGG\_PHOSPHATIDYLINOSITOL\_SIGNALING\_SYSTEM &  75 & 1681 & 0.00 \\ 
-  KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC &  70 & 2373 & 0.00 \\ 
-  KEGG\_LONG\_TERM\_DEPRESSION &  66 & 1741 & 0.00 \\ 
-  KEGG\_GLIOMA &  64 & 974 & 0.00 \\ 
-  KEGG\_VASCULAR\_SMOOTH\_MUSCLE\_CONTRACTION & 106 & 2465 & 0.00 \\ 
-  KEGG\_REGULATION\_OF\_ACTIN\_CYTOSKELETON & 194 & 3047 & 0.00 \\ 
-  KEGG\_TYPE\_II\_DIABETES\_MELLITUS &  45 & 979 & 0.00 \\ 
+  \textbf{African:} & & & \\
+ KEGG\_AXON\_GUIDANCE & 120 & 3045 & 1.511E-08 \\ 
+  KEGG\_HYPERTROPHIC\_CARDIOMYOPATHY\_HCM & 77 & 2132 & 1.542E-08 \\ 
+  KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION & 234 & 2279 & 2.837E-08 \\ 
+  KEGG\_PURINE\_METABOLISM & 135 & 2411 & 1.186E-07 \\ 
+  KEGG\_DILATED\_CARDIOMYOPATHY & 83 & 2234 & 1.242E-07 \\ 
+  KEGG\_TYPE\_I\_DIABETES\_MELLITUS & 38 & 1659 & 1.330E-07 \\ 
+  KEGG\_ENDOCYTOSIS & 169 & 2981 & 1.523E-07 \\ 
+  KEGG\_OLFACTORY\_TRANSDUCTION & 365 & 3110 & 1.194E-06 \\ 
+  KEGG\_AUTOIMMUNE\_THYROID\_DISEASE & 48 & 1504 & 1.492E-06 \\ 
+  KEGG\_NATURAL\_KILLER\_CELL\_MEDIATED\_CYTOTOXICITY & 127 & 2216 & 5.160E-06 \\ 
+  KEGG\_ALZHEIMERS\_DISEASE & 136 & 1846 & 5.188E-06 \\ 
+  KEGG\_WNT\_SIGNALING\_PATHWAY & 141 & 2050 & 6.536E-06 \\ 
+  KEGG\_ALLOGRAFT\_REJECTION & 32 & 1329 & 8.152E-06 \\ 
+  KEGG\_HUNTINGTONS\_DISEASE & 148 & 1660 & 8.639E-06 \\ 
+  KEGG\_GRAFT\_VERSUS\_HOST\_DISEASE & 35 & 1348 & 8.933E-06 \\ 
+  KEGG\_GAP\_JUNCTION & 85 & 1851 & 9.300E-06 \\ 
+  KEGG\_SYSTEMIC\_LUPUS\_ERYTHEMATOSUS & 111 & 1525 & 1.499E-05 \\ 
+  KEGG\_VIRAL\_MYOCARDITIS & 64 & 1972 & 1.889E-05 \\ 
+  KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION & 74 & 1598 & 2.890E-05 \\ 
+  KEGG\_LONG\_TERM\_POTENTIATION & 63 & 1585 & 3.317E-05 \\ 
+  KEGG\_INTESTINAL\_IMMUNE\_NETWORK\_FOR\_IGA\_PRODUCTION & 43 & 1072 & 3.838E-05 \\ 
+  KEGG\_PHOSPHATIDYLINOSITOL\_SIGNALING\_SYSTEM & 75 & 1681 & 4.497E-05 \\ 
+  KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC & 70 & 2373 & 5.289E-05 \\ 
+  KEGG\_LONG\_TERM\_DEPRESSION & 66 & 1741 & 5.553E-05 \\ 
+  KEGG\_GLIOMA & 64 & 974 & 5.649E-05 \\ 
+  KEGG\_VASCULAR\_SMOOTH\_MUSCLE\_CONTRACTION & 106 & 2465 & 1.881E-04 \\ 
+  KEGG\_REGULATION\_OF\_ACTIN\_CYTOSKELETON & 194 & 3047 & 1.951E-04 \\ 
+  KEGG\_TYPE\_II\_DIABETES\_MELLITUS & 45 & 979 & 2.687E-04 \\ 
    \hline
 \end{tabular}
 \caption[TBD]{\textbf{UK BioBank Subset Statistics}. \\ }
 \label{InterPath-Supp-Table-TopPathways-KEGG-African-Height}
 \end{table}
 \addtocounter{table}{-1}
-\addtocounter{CharNumber1}{1}
+%\addtocounter{CharNumber1}{1}
 \clearpage
 
 \begin{table}[ht]
 \centering
+\vspace*{-.5cm}
 \begin{tabular}{lrrr}
   \hline
-Pathway & Genes & SNPs & p-Value \\ 
-  \hline
-KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 0.00 \\ 
+  \textbf{British.Ran4000:} & & & \\
+KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\ 
+ \textcolor{white}{KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC } & & & \\
+ \textbf{Caribbean:} & & & \\
+ KEGG\_NATURAL\_KILLER\_CELL\_MEDIATED\_CYTOTOXICITY & 128 & 2356 & 1.125E-05 \\
+  KEGG\_CELL\_ADHESION\_MOLECULES\_CAMS & 120 & 4029 & 1.770E-05 \\
+  KEGG\_LEUKOCYTE\_TRANSENDOTHELIAL\_MIGRATION & 105 & 1941 & 2.169E-05 \\
+  KEGG\_VASCULAR\_SMOOTH\_MUSCLE\_CONTRACTION & 106 & 2708 & 3.675E-05 \\
+  KEGG\_AXON\_GUIDANCE & 120 & 3365 & 1.088E-04 \\
+  KEGG\_SMALL\_CELL\_LUNG\_CANCER & 78 & 1931 & 1.369E-04 \\
+  KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC & 70 & 2581 & 1.376E-04 \\
+  KEGG\_HYPERTROPHIC\_CARDIOMYOPATHY\_HCM & 77 & 2298 & 1.960E-04 \\
+ \\
+ \textbf{Chinese:} & & & \\
+ KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION & 75 & 1505 & 8.287E-08 \\
+  KEGG\_MELANOGENESIS & 96 & 1382 & 1.028E-05 \\
+  KEGG\_ALLOGRAFT\_REJECTION & 33 & 1250 & 1.183E-05 \\
+  KEGG\_GRAFT\_VERSUS\_HOST\_DISEASE & 37 & 1274 & 2.424E-05 \\
+  KEGG\_NON\_SMALL\_CELL\_LUNG\_CANCER & 53 & 1081 & 5.337E-05 \\
+  KEGG\_SYSTEMIC\_LUPUS\_ERYTHEMATOSUS & 109 & 1399 & 1.252E-04 \\
+ \\
+ \textbf{Indian:} & & & \\
+ KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION & 237 & 2995 & 4.965E-05 \\
+  KEGG\_REGULATION\_OF\_ACTIN\_CYTOSKELETON & 193 & 4069 & 1.963E-04 \\
+  KEGG\_ERBB\_SIGNALING\_PATHWAY & 83 & 2174 & 2.128E-04 \\
+ \\
+ \textbf{Pakistani:} & & & \\
+ KEGG\_AMINO\_SUGAR\_AND\_NUCLEOTIDE\_SUGAR\_METABOLISM & 40 & 610 & 7.840E-05 \\
+  KEGG\_AUTOIMMUNE\_THYROID\_DISEASE & 49 & 1680 & 2.602E-04 \\
+ \\
    \hline
 \end{tabular}
 \caption[TBD]{\textbf{UK BioBank Subset Statistics}. \\ }
 \label{InterPath-Supp-Table-TopPathways-KEGG-BritRan4k-Height}
 \end{table}
+\addtocounter{table}{-1}
+\addtocounter{CharNumber1}{1}
 
+
+\begin{table}[ht]
+\centering
+\vspace*{-.5cm}
+\begin{tabular}{lrrr}
+  \hline
+  \textbf{African:} & & & \\
+ \textcolor{white}{KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC } & & & \\
+ \\
+   \hline
+\end{tabular}
+\caption[TBD]{\textbf{UK BioBank Subset Statistics}. \\ }
+\label{InterPath-Supp-Table-TopPathways-KEGG-BritRan4k-Height}
+\end{table}
+\addtocounter{table}{-1}
+%\addtocounter{CharNumber1}{1}
+
+
+\begin{table}[ht]
+\centering
+\vspace*{-.5cm}
+\begin{tabular}{lrrr}
+  \hline
+  \textbf{British.Ran4000:} & & & \\
+ \textcolor{white}{KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC } & & & \\
+ \textbf{Caribbean:} & & & \\
+ \\
+ \textbf{Chinese:} & & & \\
+ \\
+ \textbf{Indian:} & & & \\
+ \\
+ \textbf{Pakistani:} & & & \\
+ \\
+   \hline
+\end{tabular}
+\caption[TBD]{\textbf{UK BioBank Subset Statistics}. \\ }
+\label{InterPath-Supp-Table-TopPathways-KEGG-BritRan4k-Height}
+\end{table}
+\addtocounter{table}{-1}
+\addtocounter{CharNumber1}{1}
+
+
+
+
+
+
+
+
+\begin{table}[ht]
+\centering
+\vspace*{-.5cm}
+\begin{tabular}{lrrr}
+  \hline
+  \textbf{African:} & & & \\
+ \textcolor{white}{KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC } & & & \\
+ \\
+   \hline
+\end{tabular}
+\caption[TBD]{\textbf{UK BioBank Subset Statistics}. \\ }
+\label{InterPath-Supp-Table-TopPathways-KEGG-BritRan4k-Height}
+\end{table}
+\addtocounter{table}{-1}
+%\addtocounter{CharNumber1}{1}
+
+\begin{table}[ht]
+\centering
+\vspace*{-.5cm}
+\begin{tabular}{lrrr}
+  \hline
+  \textbf{British.Ran4000:} & & & \\
+ \textcolor{white}{KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC } & & & \\
+ \textbf{Caribbean:} & & & \\
+ \\
+ \textbf{Chinese:} & & & \\
+ \\
+ \textbf{Indian:} & & & \\
+ \\
+ \textbf{Pakistani:} & & & \\
+ \\
+   \hline
+\end{tabular}
+\caption[TBD]{\textbf{UK BioBank Subset Statistics}. \\ }
+\label{InterPath-Supp-Table-TopPathways-KEGG-BritRan4k-Height}
+\end{table}
+\addtocounter{table}{-1}
+\addtocounter{CharNumber1}{1}
+\end{landscape}
 
 
 \renewcommand{\thetable}{\arabic{table}}
