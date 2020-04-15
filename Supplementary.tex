@@ -215,6 +215,9 @@ British.Ran10000.5 & 9596 & 597507 & 186 & 669 \\
 \end{table}
 \clearpage
 
+\newcounter{CharNumber1}
+\setcounter{CharNumber1}{1}
+\renewcommand{\thetable}{\arabic{table}\alph{CharNumber1}}
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrr}
@@ -255,6 +258,7 @@ KEGG\_AXON\_GUIDANCE & 120 & 3045 & 0.00 \\
 \label{InterPath-Supp-Table-TopPathways-KEGG-African-Height}
 \end{table}
 \addtocounter{table}{-1}
+\addtocounter{CharNumber1}{1}
 \clearpage
 
 \begin{table}[ht]
@@ -272,7 +276,7 @@ KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 0.00 \\
 
 
 
-
+\renewcommand{\thetable}{\arabic{table}}
 \begin{landscape}
 \begin{figure}[htbp]
 \centering
