@@ -269,7 +269,7 @@ British.Ran10000.5 & 9596 & 597507 & 186 & 669 \\
 \begin{table}[ht]
 \centering
 \vspace*{-.75cm}
-\begin{tabular}{lrrr}
+\begin{tabular}{lccc}
   \hline
   \textbf{British.Ran4000:} & & & \\
   KEGG\_ERBB\_SIGNALING\_PATHWAY & 83 & 2674 & 1.003E-05 \\
@@ -311,7 +311,7 @@ KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\
 \begin{table}[ht]
 \centering
 \vspace*{-.75cm}
-\begin{tabular}{lrrr}
+\begin{tabular}{lccc}
   \hline
  \textbf{Pakistani:} & & & \\
  KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION & 78 & 1775 & 1.581E-08 \\
@@ -330,7 +330,7 @@ KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\
 \begin{table}[ht]
 \centering
 \vspace*{-.75cm}
-\begin{tabular}{lrrr}
+\begin{tabular}{lccc}
   \hline
 \textbf{Population \& Pathway} & \textbf{Genes} & \textbf{SNPs} & \textbf{p-Value} \\ 
   \hline
@@ -375,7 +375,7 @@ KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\
 \begin{table}[ht]
 \centering
 \vspace*{-.75cm}
-\begin{tabular}{lrrr}
+\begin{tabular}{lccc}
   \hline
   KEGG\_ADHERENS\_JUNCTION & 66 & 1603 & 2.023E-05 \\
   KEGG\_VASCULAR\_SMOOTH\_MUSCLE\_CONTRACTION & 106 & 2465 & 2.410E-05 \\
@@ -419,7 +419,7 @@ KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\
 \begin{table}[ht]
 \centering
 \vspace*{-.75cm}
-\begin{tabular}{lrrr}
+\begin{tabular}{lccc}
   \hline
   KEGG\_REGULATION\_OF\_ACTIN\_CYTOSKELETON & 193 & 3340 & 9.265E-05 \\
   KEGG\_VASCULAR\_SMOOTH\_MUSCLE\_CONTRACTION & 106 & 2708 & 1.374E-04 \\
@@ -459,7 +459,7 @@ KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\
 \begin{table}[ht]
 \centering
 \vspace*{-.75cm}
-\begin{tabular}{lrrr}
+\begin{tabular}{lccc}
   \hline
 \textbf{Population \& Pathway} & \textbf{Genes} & \textbf{SNPs} & \textbf{p-Value} \\ 
   \hline
@@ -505,7 +505,7 @@ KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\
 \begin{table}[ht]
 \centering
 \vspace*{-.75cm}
-\begin{tabular}{lrrr}
+\begin{tabular}{lccc}
   \hline
  \textbf{Caribbean:} & \textcolor{white}{Genes} & & \\
  REACTOME\_CLASS\_A1\_RHODOPSIN\_LIKE\_RECEPTORS & 263 & 2699 & 1.853E-07 \\
@@ -540,7 +540,7 @@ KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\
 \begin{table}[ht]
 \centering
 \vspace*{-.75cm}
-\begin{tabular}{lrrr}
+\begin{tabular}{lccc}
   \hline
 \textbf{Population \& Pathway} & \textbf{Genes} & \textbf{SNPs} & \textbf{p-Value} \\ 
   \hline
@@ -586,7 +586,7 @@ KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\
 \begin{table}[ht]
 \centering
 \vspace*{-.75cm}
-\begin{tabular}{lrrr}
+\begin{tabular}{lccc}
   \hline
   REACTOME\_CD28\_CO\_STIMULATION & 31 & 421 & 8.809E-06 \\
   REACTOME\_GLYCOSAMINOGLYCAN\_METABOLISM & 97 & 2092 & 1.006E-05 \\
@@ -631,7 +631,7 @@ REACTOME\_NCAM\_SIGNALING\_FOR\_NEURITE\_OUT\_GROWTH & 61 & 1271 & 1.473E-05 \\
 \begin{table}[ht]
 \centering
 \vspace*{-.75cm}
-\begin{tabular}{lrrr}
+\begin{tabular}{lccc}
   \hline
    REACTOME\_INTEGRATION\_OF\_ENERGY\_METABOLISM & 107 & 1985 & 5.734E-05 \\
     REACTOME\_INTEGRIN\_CELL\_SURFACE\_INTERACTIONS & 76 & 1594 & 5.806E-05 \\
@@ -676,11 +676,45 @@ REACTOME\_NCAM\_SIGNALING\_FOR\_NEURITE\_OUT\_GROWTH & 61 & 1271 & 1.473E-05 \\
 \clearpage
 \end{landscape}
 
+\setlength{\footskip}{4cm}
 \renewcommand{\thetable}{\arabic{table}}
+\begin{landscape}
+\begin{table}[ht]
+\centering
+\hspace*{-3cm}
+\begin{tabular}{ccccccccccc}
+  \hline
+\textbf{Population} & \textbf{Pathway} & \textbf{Bonferroni} & \textbf{Bonferroni} & \textbf{Bonferroni} & \textbf{0.001} & \textbf{0.001} & \textbf{0.001} & \textbf{0.01} & \textbf{0.01} & \textbf{0.01} \\
+ & \textbf{Counts} & \textbf{Threshold} & \textbf{Counts} & \textbf{FDR} & \textbf{Threshold} & \textbf{Counts} & \textbf{FDR} & \textbf{Threshold} & \textbf{Counts} & \textbf{FDR} \\ 
+  \hline
+\textbf{KEGG Height:} & & & & & & & & & \\
+African & 1800 & 2.778E-04 & 0 & 0.000 & 0.001 & 1 & 0.056 & 0.010 & 10 & 0.556 \\ 
+  British.Ran4000 & 1730 & 2.890E-04 & 0 & 0.000 & 0.001 & 0 & 0.000 & 0.010 & 13 & 0.751 \\ 
+  Caribbean & 1810 & 2.762E-04 & 1 & 0.055 & 0.001 & 1 & 0.055 & 0.010 & 5 & 0.276 \\ 
+  Chinese & 1530 & 3.268E-04 & 0 & 0.000 & 0.001 & 3 & 0.196 & 0.010 & 24 & 1.569 \\ 
+  Indian & 1810 & 2.762E-04 & 1 & 0.055 & 0.001 & 1 & 0.055 & 0.010 & 20 & 1.105 \\ 
+  Pakistani & 1410 & 3.546E-04 & 0 & 0.000 & 0.001 & 2 & 0.142 & 0.010 & 17 & 1.206 \\ 
+  \\
+  \textbf{KEGG BMI:} & & & & & & & & & \\
+African & 1800 & 2.778E-04 & 0 & 0.000 & 0.001 & 1 & 0.056 & 0.010 & 10 & 0.556 \\ 
+  British.Ran4000 & 1730 & 2.890E-04 & 0 & 0.000 & 0.001 & 0 & 0.000 & 0.010 & 13 & 0.751 \\ 
+  Caribbean & 1810 & 2.762E-04 & 1 & 0.055 & 0.001 & 1 & 0.055 & 0.010 & 5 & 0.276 \\ 
+  Chinese & 1530 & 3.268E-04 & 0 & 0.000 & 0.001 & 3 & 0.196 & 0.010 & 24 & 1.569 \\ 
+  Indian & 1810 & 2.762E-04 & 1 & 0.055 & 0.001 & 1 & 0.055 & 0.010 & 20 & 1.105 \\ 
+  Pakistani & 1410 & 3.546E-04 & 0 & 0.000 & 0.001 & 2 & 0.142 & 0.010 & 17 & 1.206 \\ 
+   \hline
+\end{tabular}
+\caption{PH1} 
+\end{table}
+\end{landscape}
+\clearpage
+
+\setlength{\footskip}{0cm}
 \begin{landscape}
 \begin{figure}[htbp]
 \centering
 \hspace*{-2.5cm}
+\vspace*{-1cm}
 \includegraphics[scale=1]{Images/Supp/InterPath_Supp_Table_TopPathwayGeneCounts.png}
 \caption[TBD]{\textbf{Table of Most Present Genes in Significant MAPIT-R Pathways} \textcolor{red}{this will be a table}}
 \label{InterPath-Supp-Tables-GeneCounts}
