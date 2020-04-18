@@ -701,9 +701,9 @@ REACTOME\_NCAM\_SIGNALING\_FOR\_NEURITE\_OUT\_GROWTH & 61 & 1271 & 1.473E-05 \\
 \addtocounter{CharNumber1}{1}
 \clearpage
 \end{landscape}
+\renewcommand{\thetable}{\arabic{table}}
 
 \setlength{\footskip}{4cm}
-\renewcommand{\thetable}{\arabic{table}}
 \begin{landscape}
 \begin{table}[ht]
 \vspace*{-1.25cm}
@@ -753,18 +753,47 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \end{landscape}
 \clearpage
 
-\setlength{\footskip}{0cm}
+%\setlength{\footskip}{0cm}
+%\begin{landscape}
+%\begin{figure}[htbp]
+%\centering
+%\hspace*{-2.5cm}
+%\vspace*{-1cm}
+%\includegraphics[scale=1]{Images/Supp/InterPath_Supp_Table_TopPathwayGeneCounts.png}
+%\caption[TBD]{\textbf{Table of Most Present Genes in Significant MAPIT-R Pathways} \textcolor{red}{this will be a table}}
+%\label{InterPath-Supp-Tables-GeneCounts}
+%\end{figure}
+%\end{landscape}
+%\clearpage
+
+\newcounter{CharNumber2}
+\setcounter{CharNumber2}{1}
+\renewcommand{\thetable}{\arabic{table}\alph{CharNumber2}}
 \begin{landscape}
-\begin{figure}[htbp]
+\begin{table}[ht]
 \centering
-\hspace*{-2.5cm}
-\vspace*{-1cm}
-\includegraphics[scale=1]{Images/Supp/InterPath_Supp_Table_TopPathwayGeneCounts.png}
-\caption[TBD]{\textbf{Table of Most Present Genes in Significant MAPIT-R Pathways} \textcolor{red}{this will be a table}}
-\label{InterPath-Supp-Tables-GeneCounts}
-\end{figure}
-\end{landscape}
+\begin{tabular}{lcl}
+  \hline
+\textbf{Phenotype} \& & \textbf{Gene Count} & \textbf{Genes} \\
+  \textbf{Population} & & \\
+  \hline
+ \textbf{Height:} & & \\
+ \textbf{African} & & \\
+ & 11 & MAPK3,MAPK1 \\
+  & 10 & TNF \\
+  &  9 & PRKCB,PLCB4,PLCB3,PLCB2,PLCB1,HRAS \\
+  &  8 & RAF1,PRKCG,PRKCA,NRAS,MAP2K1,KRAS,HLA-G,HLA-E,HLA-DRB1,HLA-DRA,HLA-DQB1,HLA-DQA2,HLA-DQA1,HLA-DPB1,HLA-DPA1,HLA-DOB,HLA-DOA,HLA-DMB,HLA-DMA,HLA-C,HLA-B,HLA-A \\
+  &  7 & PRKACG,PRKACB,PRKACA,MAP2K2,ITPR1,HLA-F,FAS,CD86,CD80,CD28,CACNA1C,BRAF \\
+  &  6 & RAC2,RAC1,PRF1,PIK3R5,PIK3R3,PIK3R2,PIK3R1,PIK3CG,PIK3CD,PIK3CB,PIK3CA,ITPR3,ITPR2,IL2,IFNG,GNAQ,FASLG,CD40,CALML6,CALML5,CALML3,CALM3,CALM2,CALM1,CACNA1D,ADCY8,ADCY3,ADCY1 \\
+  &  5 & SOS2,SOS1,ROCK2,ROCK1,RHOA,RAC3,PPP3R1,PPP3CC,PPP3CB,PPP3CA,PDGFRA,ITGB7,ITGB1,ITGA4,IL10,GZMB,EGFR,EGF,CXCR4,CHP2,CACNA1S,ADCY9,ADCY7,ADCY6,ADCY5,ADCY4,ADCY2,ACTG1,ACTB \\
+   \hline
+\end{tabular}
+\caption[TBD]{\textbf{MAPIT-R Top Pathway Gene Counts}}
+\label{InterPath-Supp-Tables-AllPops-TopGeneCounts}
+\end{table}
 \clearpage
+\end{landscape}
+\renewcommand{\thetable}{\arabic{table}}
 
 %\begin{figure}[htbp]
 %\centering
@@ -775,7 +804,6 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 %\clearpage
 
 \setlength{\footskip}{4cm}
-\renewcommand{\thetable}{\arabic{table}}
 \begin{landscape}
 \begin{table}[ht]
 \vspace*{-1.25cm}
