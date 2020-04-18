@@ -857,7 +857,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \hspace*{-1.75cm}
 \begin{tabular}{ccl}
   \hline
-\textbf{Population} \& & \textbf{Gene Count} & \textbf{Genes} \\
+\textbf{Population} & \textbf{Gene Count} & \textbf{Genes} \\
   \hline
   \textbf{African} & & \\
    & 8 & MAPK1 \\
@@ -881,7 +881,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \hspace*{-2cm}
 \begin{tabular}{ccl}
   \hline
-\textbf{Population} \& & \textbf{Gene Count} & \textbf{Genes} \\
+\textbf{Population} & \textbf{Gene Count} & \textbf{Genes} \\
   \hline
   \textbf{African} & & \\
   & 22 & UBA52,RPS27A \\
@@ -927,6 +927,30 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \addtocounter{CharNumber2}{1}
 \end{landscape}
 \renewcommand{\thetable}{\arabic{table}}
+
+\begin{landscape}
+\begin{table}[ht]
+\centering
+\hspace*{-1.5cm}
+\begin{tabular}{ccccccc}
+  \hline
+  \textbf{Gene} & \textbf{Pathway SNP} & \textbf{Gene Count in} & \textbf{Total Count of} & \textbf{Gene Count in} & \textbf{Total Count of} & \textbf{Hypergeometric} \\
+   & \textbf{Count Limit} & \textbf{Top Pathways} & \textbf{Top Pathways} & \textbf{All Pathways} & \textbf{All Pathways} & \textbf{$p$-Value} \\
+  \hline
+ \textbf{UBA52} & & & & & & \\
+ & No Limit & 22 & 65 & 106 & 658 & 1.537E-4 \\
+ & $<=$ 1000 SNPs & 10 & 26 & 84 & 577 & 1.855E-3 \\
+\\
+ \textbf{PSM*} & & & & & & \\
+ & No Limit & 12 & 65 & 44 & 658 & 5.304E-4 \\
+ & $<=$ 1000 SNPs & 9 & 26 & 34 & 577 & 4.464E-6 \\
+   \hline
+\end{tabular}
+\caption[TBD]{\textbf{MAPIT-R Top Pathway Gene Counts: Hypergeometric Tests}}
+\label{InterPath-Supp-Tables-AllPops-TopGeneCount-HypergeometricTests}
+\end{table}
+\end{landscape}
+\clearpage
 
 %\begin{figure}[htbp]
 %\centering
