@@ -188,7 +188,7 @@ Epistasis, despite being a well-established component of complex trait architect
 
 To begin investigating epistasis in non-European ancestries, we first extracted multiple non-European population subsets from the UK BioBank dataset, including  African, Caribbean, Chinese, Indian, and Pakistani subsets (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). For comparative purposes, we also extracted a British subset, but to make the cohort similar to the other non-European subsets we took a random subsample of 4,000 British individuals. Across all these population subsets, we conducted typical quality control (QC) procedures (see Online Methods) and focused our analyses on the complex traits of height and body mass index (BMI). 
 
-To analyze epistasis on the single variant level, we take two different approaches. First, we ran the canonical model of pairwise SNP interactions implemented by PLINK (see Online Methods). This approach iterates through every pair of SNPs and tests whether they have a significantly non-zero interaction effect size. Running this model on each of our population subsets we find that no pairs of SNPs produce a genome-wide significant interaction. Here we define 'genome-wide significant' as having an interaction $p$-value $<= 1e-XX$, which is the Bonferroni-corrected $p$-value threshold given the XXXXX number of tests that were conducted. This lack of significant results may not be surprising given such a heavy multiple-testing burden. Alternatively, we can forgo such a stringent criteria and instead look at SNPs that are marginally significant
+To analyze epistasis on the single variant level, we take two different approaches. First, we ran the canonical model of pairwise SNP interactions implemented by PLINK (see Online Methods). This approach iterates through every pair of SNPs and tests whether they have a significantly non-zero interaction effect size. Running this model on each of our population subsets we find that no pairs of SNPs produce a genome-wide significant interaction. Here we define 'genome-wide significant' as having an interaction $p$-value $<= 1e-XX$, which is the Bonferroni-corrected $p$-value threshold given the XXXXX number of tests that were conducted. This lack of significant results may not be surprising given such a heavy multiple-testing burden. Alternatively, we can forgo such a stringent criteria and instead look at SNPs that are marginally significant ($p$-value $<= 1e-4$); since this produces many possible interactions per SNP, we can also instead look at the \textbf{proportion} of marginally significant interactions per SNP as a more appropriate metric.  Looking at this new setup, we do start to see possibly different patterns between our ancestry subsets \ref{}. 
 
 tests whether two SNPs  
 
@@ -203,40 +203,8 @@ Running MAPIT on our population subsets for both height and BMI, we find that th
 \label{InterPath-Main-Figure-MAPIT-Height}
 \end{figure}
 
-Running a GWAS of height and BMI on each of our population subsets with PLINK, we find only one genome-wide significant hit (Figure \ref{InterPath-Main-Figure-GWAS-Height} \& Supplementary Figure \ref{InterPath-Supp-Figure-GWAS-BMI}). And further similarly to before, we also find a handful of marginally significant variants. More interestingly however, we now ask how similar the MAPIT and GWAS results are. And indeed, comparing the two sets of genome-wide analyzes, we see a wide range of different genetic architecture patterns being represented (Figure \ref{InterPath-Main-Figure-MAPITvsGWAS-AfrHght} \& Supplementary Figure \ref{InterPath-Supp-Figure-MAPITvsGWAS}). Focusing on the African subset and height, we find 49 SNPs that are only marginally significant in MAPIT, 50 SNPs that are only marginally significant in the GWAS, and 0 SNPs that are marginally significant in both tests. Despite the lack of power to identify genome-wide significant results, we still see a strong representation of the partition of additive and epistatic effects in our results. 
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_GWAS_vs2_Height.png}
-\caption[TBD]{\textbf{GWAS Results QQ-Plots}.}
-\label{InterPath-Main-Figure-GWAS-Height}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_MAPITvsGWAS_vs2_AfrHght.png}
-\caption[TBD]{\textbf{MAPIT vs. GWAS Results}.}
-\label{InterPath-Main-Figure-MAPITvsGWAS-AfrHght}
-\end{figure}
-
 \textcolor{red}{(NOTE: below is what we were expecting for these results. But as you can see, the GIANT height/bmi results don't align in the way were anticipating. They are more spread out between height and BMI. I have checked though that the GIANT p-values of these top 500 SNPs are more correlated with our GWAS p-values than our MAPIT p-values (like ~.17 vs. .05). 
 I think one alternative approach to this section is to angle instead as: 'we do not have power to even see a difference in GWAS vs. MAPIT as we were anticipating, thus indicating our real need to increase power. Hence, we moved forward with a method that we believed was going to accomplish that').}
-
-To help further get a sense of whether these results are revealing patterns in true biology, we also annotated the top 500 SNPs with the most significant height and BMI GWAS $p$-values from the 2018 GIANT and UKB meta-analysis \cite{Yengo2018} in both our GWAS and MAPIT results. As expected, these 500 SNPs are heavily represented among the tail end of the most significant GWAS results, but maybe less expected is just how insignificant these SNPs appear on the MAPIT list of top results (\textcolor{red}{Supplementary Table -- listing differences in ranking of these 500 SNPs between GWAS and MAPIT}). In fact looking across the genome it is easy to see how different the relative ranking of SNPs are between the GWAS and MAPIT results (Figures \ref{InterPath-Main-Figure-MAPITvsGWAS-Manhattan}D \& \ref{InterPath-Main-Figure-MAPITvsGWAS-Manhattan}E). It is clear that even with our limited sample sizes, differences in the trends of importance of additive versus epistatic signals can be observed among marginally significant SNPs.  
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_MAPITvsGWAS_Manhattan_vs1.png}
-\caption[TBD]{\textbf{MAPIT \& GWAS Manhattan Plots}. \textcolor{red}{will be just height, MAPIT on top (D), GWAS on bottom (E), each plot wider. Green dots are the 500 SNPs that have the most significant GIANT/UKB p-values.}}
-\label{InterPath-Main-Figure-MAPITvsGWAS-Manhattan}
-\end{figure}
-
-%\begin{figure}[htbp]
-%\centering
-%\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_GWAS_Manhattan_vs1.png}
-%\caption[TBD]{\textbf{GWAS Manhattan Plot}.}
-%\label{InterPath-Main-Figure-GWAS-Manhattan}
-%\end{figure}
 
 While these results are insightful and encouraging, they are still limited by the sample sizes available to us. There are ongoing efforts to increase the number of non-European individuals publicly available for complex trait analysis (PAGE,TOPMED refs \ref{}), but we can also increase power through methodological improvements. The epistatic analyses presented thus far have been on single variants. The additive field has long shown increased power when moving from single variant analyses to multiple variant analyses, often in the form of grouping variants in pathways \ref{} (refs for pathway analysis). Therefore, we decided to explore whether taking a similar approach for epistatic analyses would lead to a similar increase in power.
 
@@ -458,6 +426,38 @@ SCRAP
 Information idea about creating random 'pathways' that have either the same number of genes or SNPs to show that it has to be the *right* collection of information/materials to get the same amount of significance
 
 \subsubsection{Power Gained from Proper Pathway Definitions}
+
+Running a GWAS of height and BMI on each of our population subsets with PLINK, we find only one genome-wide significant hit (Figure \ref{InterPath-Main-Figure-GWAS-Height} \& Supplementary Figure \ref{InterPath-Supp-Figure-GWAS-BMI}). And further similarly to before, we also find a handful of marginally significant variants. More interestingly however, we now ask how similar the MAPIT and GWAS results are. And indeed, comparing the two sets of genome-wide analyzes, we see a wide range of different genetic architecture patterns being represented (Figure \ref{InterPath-Main-Figure-MAPITvsGWAS-AfrHght} \& Supplementary Figure \ref{InterPath-Supp-Figure-MAPITvsGWAS}). Focusing on the African subset and height, we find 49 SNPs that are only marginally significant in MAPIT, 50 SNPs that are only marginally significant in the GWAS, and 0 SNPs that are marginally significant in both tests. Despite the lack of power to identify genome-wide significant results, we still see a strong representation of the partition of additive and epistatic effects in our results. 
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_GWAS_vs2_Height.png}
+\caption[TBD]{\textbf{GWAS Results QQ-Plots}.}
+\label{InterPath-Main-Figure-GWAS-Height}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_MAPITvsGWAS_vs2_AfrHght.png}
+\caption[TBD]{\textbf{MAPIT vs. GWAS Results}.}
+\label{InterPath-Main-Figure-MAPITvsGWAS-AfrHght}
+\end{figure}
+
+To help further get a sense of whether these results are revealing patterns in true biology, we also annotated the top 500 SNPs with the most significant height and BMI GWAS $p$-values from the 2018 GIANT and UKB meta-analysis \cite{Yengo2018} in both our GWAS and MAPIT results. As expected, these 500 SNPs are heavily represented among the tail end of the most significant GWAS results, but maybe less expected is just how insignificant these SNPs appear on the MAPIT list of top results (\textcolor{red}{Supplementary Table -- listing differences in ranking of these 500 SNPs between GWAS and MAPIT}). In fact looking across the genome it is easy to see how different the relative ranking of SNPs are between the GWAS and MAPIT results (Figures \ref{InterPath-Main-Figure-MAPITvsGWAS-Manhattan}D \& \ref{InterPath-Main-Figure-MAPITvsGWAS-Manhattan}E). It is clear that even with our limited sample sizes, differences in the trends of importance of additive versus epistatic signals can be observed among marginally significant SNPs.  
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_MAPITvsGWAS_Manhattan_vs1.png}
+\caption[TBD]{\textbf{MAPIT \& GWAS Manhattan Plots}. \textcolor{red}{will be just height, MAPIT on top (D), GWAS on bottom (E), each plot wider. Green dots are the 500 SNPs that have the most significant GIANT/UKB p-values.}}
+\label{InterPath-Main-Figure-MAPITvsGWAS-Manhattan}
+\end{figure}
+
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_GWAS_Manhattan_vs1.png}
+%\caption[TBD]{\textbf{GWAS Manhattan Plot}.}
+%\label{InterPath-Main-Figure-GWAS-Manhattan}
+%\end{figure}
 
 \fi
 
