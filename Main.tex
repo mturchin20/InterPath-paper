@@ -211,17 +211,9 @@ Therefore we created a new method by expanding the previous MAPIT framework into
 
 Since this is a generalizable approach that allows for any set of SNPs \textbf{R} to be tested, we decided to begin by using known biological pathways. Specifically, we utilized the KEGG and REACTOME pathway datasets from the MSigDB \citep{Liberzon2011} due to their coverage of a wide range of biological processes as well as their wide range of pathway gene sizes. This would not only potentially allow us to investigate how, if this approach works, what the effect of different \textbf{R} sizes may be, but also provide biological insight into our epistatic results. Additionally, this would be the first time marginal epistasis has been investigated on the pathway scale in human populations.
 
-
-
 Running MAPIT-R on our UKB subsets across height and BMI, we find 245 pathways that are genome-wide significant for containing marginal epistatic interactions with the rest of the genome (Figure \ref{InterPath-Main-Figure-Barplots-KEGGHght}, Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-All}, and Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-KEGG-Height-a}\textcolor{blue}{-d}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis). We find similar numbers of significant pathways between the KEGG and REACTOME databases, though REACTOME does contain more significant hits (XX vs. XX). And in both databases, we find that BMI contains more significant patheways than height (XX vs. XX). Interestingly, the vast majority of our significant pathways are identified in the African subset (165/245). This abundance in the African subset is found in each pathway database as well as in each phenotype.   
 
 Looking at which specific pathways are significant in the African subset, we see multiple themes across each of the database and phenotype combinations (Supplementary Tables \ref{}-d). In KEGG height, we find multiple pathways representing cellular signaling (xxx), immune systems (xxx), and heart conditions (xxx). In KEGG BMI, we find similar themes, as well as multiple pathways that involve degradation (xxx). REACTOME pathways tend to show similar themes as well in both phenotypes.
-
-Another trend across all of these pathways is that they often contain many SNPs. In fact, within the African subset, we observe a very strong relationship between number of SNPs included in a pathway and the $-log10$ MAPIT-R $p$-value for both pathway databases and phenotypes (Figure \ref{} \& Supplementary Figure \ref{}). This matches our motivation and hypothesis that including more SNPs might allow us to detect greater signals for epistasis, much like what is observed for additive effects. However, this provides
-One important point to consider when evaluating these biological themes is whe
-
-
-We see variation both in our ability to detect marginal epistasis across our population subsets as well as a much stronger ability to pick up signals in our African subset. 
 
 \begin{figure}[htbp]
 \centering
@@ -230,7 +222,7 @@ We see variation both in our ability to detect marginal epistasis across our pop
 \label{InterPath-Main-Figure-Barplots-KEGGHght}
 \end{figure}
 
-In fact the vast majority of our significant interactions are represented in the African subset (165/245). This stands out because the African subset is neither our population with the largest sample size or our population with the largest number of SNPs. We do see a significant relationship between number of SNPs in a pathway and that pathway's MAPIT-R $p$-value (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}), however the African subset has similar pathway SNP counts amongst its top pathways as compared to the other population subsets. One possibility for this result may be an ascertainment bias from using variants based on a genotyping chip that was developed primarily using European data. Simulations that replicate such an ascertainment bias however show no evidence of this leading to an increase in power (Supplementary Figure XX). Additionally, it is unlikely that our results are produced from excess cryptic population structure as well; simulations that specifically model different population structure schemes show no evidence for a bias in our results (Supplementary Figure XX \textcolor{red}{(this is where the proposed simulation results would go)}). (\textcolor{red}{Include permutation informtaion here as well?}) Additionally, conducting an analysis run with permuted phenotypes shows that MAPIT-R behaves as expected under the null (Supplementary Figures \ref{InterPath-Supp-Figure-perm1-QQPlots-AllPaths}-\ref{InterPath-Supp-Figure-10perms-pValHists}), and we observe FDR estimates as high as only 1.5\% across our different ancestry, phenotype, and pathway database combinations (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-FDRs}).
+This abundance of signal in the African subset stands out since the African subset is neither our subset with the largest sample size or our subset with the largest number of SNPs (Table \ref{}). Therefore it is important to consider alternative reasons that might explain this result aside from it being representative of true underlying biological patterns. One alternative explanation for this result may be an ascertainment bias from using variants based on a genotyping chip that was developed primarily using European data. Simulations that replicate such an ascertainment bias however show no evidence of this leading to an increase in power (Supplementary Figure XX). Another possible alternative explanation is that these results are products of uncorrected, remaining population structure. While we do include top principal components as covariates in our analysis, we conducted additional simulations that explicitly model population structure, and we once again find no evidence that this may be affecting our results (Supplementary Figure XX \textcolor{red}{(this is where the proposed simulation results would go)}). (\textcolor{red}{Include permutation informtaion here as well?}) Lastly, we also ran vrsions of our analysis using permuted phenotypes, and find that our method behaves appropriately under this presumed null setup (Supplementary Figures \ref{InterPath-Supp-Figure-perm1-QQPlots-AllPaths}-\ref{InterPath-Supp-Figure-10perms-pValHists}); and from these permutations we also observe FDR estimates only as high as 1.5\% across our different ancestry, phenotype, and pathway database combinations (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-FDRs}).
 
 \subsection{BMI Contains Stronger Signals for Marginal Epistatic Interactions}
 
@@ -248,6 +240,12 @@ Looking at the specific pathways that we observe as having significant evidence 
 \end{figure}
 
 \subsection{The Proteasome as a Candidate Protein Complex Enriched for Epistatic Interactions}
+
+
+Another trend across all of these pathways is that they often contain many SNPs. In fact, within the African subset, we observe a very strong relationship between number of SNPs included in a pathway and the $-log10$ MAPIT-R $p$-value for both pathway databases and phenotypes (Figure \ref{} \& Supplementary Figure \ref{}). This matches our motivation and hypothesis that including more SNPs might allow us to detect greater signals for epistasis, much like what is observed for additive effects. However, this provides
+One important point to consider when evaluating these biological themes is whe
+
+We do see a significant relationship between number of SNPs in a pathway and that pathway's MAPIT-R $p$-value (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}), however the African subset has similar pathway SNP counts amongst its top pathways as compared to the other population subsets.
 
 which genes are driving these pathway signals?
 
