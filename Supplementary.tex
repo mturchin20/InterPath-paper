@@ -552,7 +552,7 @@ KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\
 \end{landscape}
 \begin{table} [t!]
   \caption{\textbf{Genome-Wide Significant MAPIT-R Pathways: KEGG BMI}. The tables show the lists of KEGG pathways for each subset that were found to be MAPIT-R genome-wide significant for BMI. Genome-wide significance was determined by using a Bonferroni-corrected $p$-value threshold of .05 divided by the number of pathways tested. The first column lists the subsets and KEGG pathways, the second column lists the number of genes that were included in the MAPIT-R test, the third column lists the number of SNPs that were included in the MAPIT-R test, and the fourth column lists the MAPIT-R $p$-values.}
-\label{InterPath-Supp-Table-TopPathways-KEGG-Height-Caption}
+\label{InterPath-Supp-Table-TopPathways-KEGG-BMI-Caption}
 \end{table}
 \addtocounter{table}{-1}
 \addtocounter{CharNumber1}{1}
@@ -642,7 +642,7 @@ KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\
 \end{landscape}
 \begin{table} [t!]
   \caption{\textbf{Genome-Wide Significant MAPIT-R Pathways: REACTOME Height}. The tables show the lists of REACTOME pathways for each subset that were found to be MAPIT-R genome-wide significant for height. Genome-wide significance was determined by using a Bonferroni-corrected $p$-value threshold of .05 divided by the number of pathways tested. The first column lists the subsets and REACTOME pathways, the second column lists the number of genes that were included in the MAPIT-R test, the third column lists the number of SNPs that were included in the MAPIT-R test, and the fourth column lists the MAPIT-R $p$-values.}
-\label{InterPath-Supp-Table-TopPathways-KEGG-Height-Caption}
+\label{InterPath-Supp-Table-TopPathways-REACTOME-Height-Caption}
 \end{table}
 \addtocounter{table}{-1}
 \addtocounter{CharNumber1}{1}
@@ -783,15 +783,15 @@ REACTOME\_NCAM\_SIGNALING\_FOR\_NEURITE\_OUT\_GROWTH & 61 & 1271 & 1.473E-05 \\
 \caption[TBD]{\textbf{Genome-Wide Significant MAPIT-R Pathways: REACTOME BMI}. Continued. \\ }
 \label{InterPath-Supp-Table-TopPathways-REACTOME-BMI-c}
 \end{table}
-%\addtocounter{table}{-1}
+\addtocounter{table}{-1}
 \clearpage
 
 \end{landscape}
 \begin{table} [t!]
   \caption{\textbf{Genome-Wide Significant MAPIT-R Pathways: REACTOME BMI}. The tables show the lists of REACTOME pathways for each subset that were found to be MAPIT-R genome-wide significant for BMI. Genome-wide significance was determined by using a Bonferroni-corrected $p$-value threshold of .05 divided by the number of pathways tested. The first column lists the subsets and REACTOME pathways, the second column lists the number of genes that were included in the MAPIT-R test, the third column lists the number of SNPs that were included in the MAPIT-R test, and the fourth column lists the MAPIT-R $p$-values.}
-\label{InterPath-Supp-Table-TopPathways-KEGG-Height-Caption}
+\label{InterPath-Supp-Table-TopPathways-REACTOME-BMI-Caption}
 \end{table}
-\addtocounter{table}{-1}
+%\addtocounter{table}{-1}
 \addtocounter{CharNumber1}{1}
 \clearpage
 \begin{landscape}
@@ -803,7 +803,7 @@ REACTOME\_NCAM\_SIGNALING\_FOR\_NEURITE\_OUT\_GROWTH & 61 & 1271 & 1.473E-05 \\
 \setlength{\footskip}{4cm}
 \begin{landscape}
 \begin{table}[ht]
-\vspace*{-1.25cm}
+\vspace*{-1.5cm}
 \centering
 \hspace*{-3.5cm}
 \begin{tabular}{ccccccccccc}
@@ -844,12 +844,19 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
   Pakistani & 5960 & 8.389E-05 & 0 & 0.000 & 0.001 & 4 & 0.067 & 0.010 & 45 & 0.755 \\
    \hline
 \end{tabular}
-\caption[TBD]{\textbf{FDRs for Main UK BioBank Subsets}}
+\caption[TBD]{\textbf{MAPIT-R Results: UKB Subset Phenotype Permutation FDRs}. Caption continued on next page. }
 \label{InterPath-Supp-Tables-AllPops-FDRs}
 \end{table}
 \end{landscape}
 \clearpage
 \setlength{\footskip}{0cm}
+
+\addtocounter{table}{-1}
+\begin{table} [t!]
+  \caption{\textbf{MAPIT-R Results: UKB Subset Phenotype Permutation FDRs}. The table shows for various significance thresholds the false discovery rates observed from MAPIT-R when run on ten rounds of phenotype permutations for each UKB subset and pathway database. The first column lists the pathway database, phenotype, and UKB subset combinations. The Second column lists the total number of pathways that were tested across each of the ten phenotype permutations. The third column shows the $p$-value threshold associated with using the Bonferroni method of correction, also known as the `genome-wide significant' threshold. The fourth column shows the number of pathways across all ten phenotype permutation rounds that crossed this Bonferroni threshold. The fifth column shows the associated FDR associated with the fourth column. And the remaining six columns show the same setup as columns three to five but with a $p$-value threshold of either 0.001 or 0.01.}
+\label{InterPath-Supp-Tables-AllPops-FDRs-Caption}
+\end{table}
+\clearpage
 
 %\begin{landscape}
 %\begin{figure}[htbp]
@@ -897,7 +904,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
   & & HLA-DOB,HLA-DOA,HLA-DMB,HLA-DMA \\
    \hline
 \end{tabular}
-\caption[TBD]{\textbf{MAPIT-R Top Pathway Gene Counts: KEGG Height}}
+\caption[TBD]{\textbf{MAPIT-R Top Pathway Gene Counts: KEGG Height}. Caption continued at end of tables.}
 \label{InterPath-Supp-Tables-AllPops-TopGeneCounts-KEGG-Height-a}
 \end{table}
 \clearpage
@@ -1020,10 +1027,19 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \label{InterPath-Supp-Tables-AllPops-TopGeneCounts-REACTOME-BMI-a}
 \end{table}
 \clearpage
-%\addtocounter{table}{-1}
+\addtocounter{table}{-1}
 \addtocounter{CharNumber2}{1}
 \end{landscape}
 \renewcommand{\thetable}{\arabic{table}}
+
+\begin{table} [t!]
+  \caption{\textbf{MAPIT-R Top Pathway Gene Counts}. 
+  
+  
+  The tables show the lists of REACTOME pathways for each subset that were found to be MAPIT-R genome-wide significant for height. Genome-wide significance was determined by using a Bonferroni-corrected $p$-value threshold of .05 divided by the number of pathways tested. The first column lists the subsets and REACTOME pathways, the second column lists the number of genes that were included in the MAPIT-R test, the third column lists the number of SNPs that were included in the MAPIT-R test, and the fourth column lists the MAPIT-R $p$-values.}
+\label{InterPath-Supp-Tables-AllPops-TopGeneCounts-Caption}
+\end{table}
+\clearpage
 
 \begin{landscape}
 \begin{table}[ht]
