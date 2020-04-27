@@ -101,35 +101,43 @@ After this first round of QC procedures, we then proceeded to impute our current
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_perm1_QQPlots_AllPaths_vs1.png}
-\caption[TBD]{\textbf{MAPIT-R Phenotype Permutation QQ-Plots}. Shown are QQ-plots for running MAPIT-R using a single, permuted version of the phenotypes for both Height and BMI with the KEGG \& REACTOME pathways. Phenotypes were permuted within each population subset. Shown on the $x$-axis are the -$\log_{10}$ of our expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of our observed $p$-values. The dotted red line is our Bonferroni-corrected $p$-value threshold (.05 / XX KEGG pathways). We find across all population subsets that MAPIT-R displays the null behavior as expected when using permuted phenotypes.}
+\caption[TBD]{\textbf{MAPIT-R Results: Phenotype Permutation QQ-Plots}. The figure shows QQ-plots for running MAPIT-R using single, permuted versions of both height and BMI with the KEGG \& REACTOME databases. Phenotypes were permuted within each population subset. Shown on the $x$-axis are the -$\log_{10}$ of our expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of our observed $p$-values. The dotted red line is our Bonferroni-corrected $p$-value threshold based on the number of pathways tested per phenotype and pathway database combination. We find across all UKB subset, phenotype, and pathway database combinations that MAPIT-R displays null behavior within the range expected when using permuted phenotypes.}
 \label{InterPath-Supp-Figure-perm1-QQPlots-AllPaths}
 \end{figure}
 \clearpage
 
+\setlength{\footskip}{3cm}
 \begin{figure}[htbp]
 \centering
 \vspace*{-2cm}
 \includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_pValHists_vs3.png}
-\caption[TBD]{\textbf{TBD}. \\ Placeholder.}
+\caption[TBD]{\textbf{MAPIT-R Results: Phenotype Permutation $p$-Value Histograms}. The figure shows histograms of MAPIT-R $p$-values collected across ten independent phenotype permutation runs for each UKB subset. The same phenotype permutation for a given subset was used across both pathway databases (i.e. 10 permutations were done for height and 10 done for BMI for each subset). Covariates used from the original MAPIT-R analysis were kept the same.}
 \label{InterPath-Supp-Figure-10perms-pValHists}
 \end{figure}
 \clearpage
+\setlength{\footskip}{0cm}
 
+\setlength{\footskip}{3cm}
 \begin{figure}[htbp]
 \centering
+\vspace*{-2cm}
 \includegraphics[scale=.15]{Images/Supp/InterPath_Supp_Figure_pValsVsNumSNPs_vs1.png}
-\caption[TBD]{\textbf{MAPIT-R $p$-values Versus Number of SNPs in a Pathway}. \\ Shown is the relationship between MAPIT-R $p$-values and the number of SNPs found in a tested pathway across all populations in height and BMI within KEGG. Shown on the $x$-axis is the number of SNPs that were included for a given pathway and on the $y$-axis is shown that pathway's MAPIT-R -$\log_{10}$ $p$-value. As expected, we find a generally positive relationship between these two variables -- in other words, the more SNPs that are included the more likely it is that MAPIT-R will have a more significant $p$-value. We also find, however, that it is not simply the SNPs counts that are driving this signal; looking at this same comparison within the permuted phenotype analyses we find barely any positive relationship between SNP counts per pathway and a pathway's MAPIT-R -$\log_{10}$ $p$-value (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}}
+\caption[TBD]{\textbf{MAPIT-R $p$-values Versus Number of SNPs in a Pathway}. The figure shows plots comparing the MAPIT-R $p$-values from our main analysis to the number of SNPs present in each pathway. Results for every UKB subset, phenotype, and pathway database combinations are shown. The dotted red line is the line of best fit and the legend provides the regression coefficient and its associated $p$-value. We observe that for most combinations there is a significant relationship between MAPIT-R $p$-value and the number of SNPs present in a pathway. This follows our hypothesis that combining SNPs together in a joint analysis might provide greater power to detect marginal epistasis than analyzing each SNP independently. We note, however, that these results appear to not solely be driven just by the presence or absence of large SNP counts -- conducting this same analysis on one of our sets of permuted phenotypes we now find very few significant relationships between MAPIT-R $p$-values and pathway SNP counts (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}}
 \label{InterPath-Supp-Figure-pValsVsNumSNPs}
 \end{figure}
 \clearpage
+\setlength{\footskip}{0cm}
 
-%\begin{figure}[htbp]
-%\centering
-%\includegraphics[scale=.15]{Images/Supp/InterPath_Supp_Figure_pValsVsNumSNPs_perm1_vs1.png}
-%\caption[TBD]{\textbf{MAPIT-R $p$-values Versus Number of SNPs in a Pathway, Permuted Phenotypes}. \\ Shown is the relationship between MAPIT-R $p$-values and the number of SNPs found in a tested pathway across all populations in permuted height and BMI within KEGG. Shown on the $x$-axis is the number of SNPs that were included for a given pathway and on the $y$-axis is shown that pathway's MAPIT-R -$\log_{10}$ $p$-value. Unlike with the observed data (Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}), we do not see a relationship between the number of SNPs included in a pathway and that pathway's -$\log_{10}$ MAPIT-R $p$-value. This shows that while having more SNPs allows MAPIT-R to generate more power to detect epistatic interactions, our significant results are not due solely to having more SNPs.}
-%\label{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}
-%\end{figure}
-%\clearpage
+\setlength{\footskip}{3cm}
+\begin{figure}[htbp]
+\centering
+\vspace*{-2cm}
+\includegraphics[scale=.15]{Images/Supp/InterPath_Supp_Figure_pValsVsNumSNPs_perm1_vs1.png}
+\caption[TBD]{\textbf{MAPIT-R $p$-values Versus Number of SNPs in a Pathway, Permuted Phenotypes}. The figure shows plots comparing the MAPIT-R $p$-values from our main analysis to the number of SNPs present in each pathway. For this analysis a single set of our permuted phenotypes (i.e. Supplementary Figure \ref{InterPath-Supp-Figure-perm1-QQPlots-AllPaths}) was used for each UKB subset. Results for every subset, permuted phenotype, and pathway database combinations are shown. The dotted red line is the line of best fit and the legend provides the regression coefficient and its associated $p$-value. We observe that for very few combinations there is any relationship between MAPIT-R $p$-value and the number of SNPs present in a pathway.}
+\label{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}
+\end{figure}
+\clearpage
+\setlength{\footskip}{0cm}
 
 %\begin{figure}[htbp]
 %\centering
@@ -142,7 +150,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.225]{Images/Supp/InterPath_Supp_Figure_Heatplots_Allpaths_vs2.png}
-\caption[TBD]{\textbf{TBD}. \\ See above (this would be a supplementary figure).}
+\caption[TBD]{\textbf{Overlap of Genome-Wide Significant MAPIT-R Pathways Between UKB Population Subsets}. The heatplots show the numbers of genome-wide significant MAPIT-R pathways that overlap between each UKB subset for height and BMI in the KEGG and REACTOME databases. The diagonal shows the total number of genome-wide significant pathways per population subset. We observe that most subsets often have overlap with the African subset but rarely do so with the remaining non-African subsets.}
 \label{InterPath-Supp-Figure-Heatplots-AllPaths}
 \end{figure}
 \clearpage
@@ -769,8 +777,8 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \end{table}
 \end{landscape}
 \clearpage
+\setlength{\footskip}{0cm}
 
-%\setlength{\footskip}{0cm}
 %\begin{landscape}
 %\begin{figure}[htbp]
 %\centering
@@ -1018,6 +1026,7 @@ British.Ran4000 & 1730 & 2.890E-04 & 1 & 0.058 & 0.001 & 2 & 0.116 & 0.010 & 14 
 \end{table}
 \end{landscape}
 \clearpage
+\setlength{\footskip}{0cm}
 \addtocounter{table}{-1}
 
 \setlength{\footskip}{4cm}
@@ -1063,6 +1072,7 @@ British.Ran4000 & 6490 & 7.704E-05 & 1 & 0.015 & 0.001 & 4 & 0.062 & 0.010 & 52 
 \end{table}
 \end{landscape}
 \clearpage
+\setlength{\footskip}{0cm}
 
 \begingroup
 \bibliographystyle{apalike}
