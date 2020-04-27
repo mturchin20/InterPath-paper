@@ -284,14 +284,14 @@ Our first approach to investigate this question then was to look at broadscale m
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.5]{Images/Main/InterPath_Main_Figure_Fst_vs1.png}
-\caption[TBD]{\textbf{UKB Population Subsets Pairwise \textsubscript{ST}} . }
+\caption[TBD]{\textbf{UKB Population Subsets Pairwise F\textsubscript{ST}}. The heatplot shows pairwise F\textsubscript{ST} values between each of our UKB population subsets using our genome-wide SNP data. F\textsubscript{ST} values range from $5.22\times10^{-4}$ to .124, and we observe typical global patterns (eg African/Caribbean vs. non-African subsets, Chinese vs. non-Asian subsets).}
 \label{InterPath-Main-Figure-Fst}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.5]{Images/Main/InterPath_Main_Figure_Eigenvalues_vs1.png}
-\caption[TBD]{\textbf{UKB Population Subsets Top 10 PC Eigenvalues}.}
+\caption[TBD]{\textbf{UKB Population Subsets Top 10 Local PC Eigenvalue PVEs}. The plot shows the PVE of each of the top 10 local PCs for each of our UKB population subsets. Local here continues to refer to calculating PCs by using each subset separately (versus jointly calculating PCs across all subsets together). We observe that the separation between our subsets in PC1 PVE appears well correlated with the patterns of genome-wide significant MAPIT-R pathways we find for each phenotype and database combination (see Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-All}).}
 \label{InterPath-Main-Figure-Eigenvalues}
 \end{figure}
 
@@ -300,14 +300,14 @@ To take these analyses one step further, we tried to investigate levels of genet
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_vs2_AfrHght.png}
-\caption[TBD]{\textbf{IBS Proportions vs. MAPIT-R $p$-values in African Subset}}
+\caption[TBD]{\textbf{Mean Pairwise IBS Proportions vs. MAPIT-R $p$-values in KEGG Height and African Subset}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the KEGG height results in the African subset. IBS proportions were calculated per pathway by using that pathway's set of SNPs, were calculated pairwise between every set of individuals in the subset, and then averaged across each of these pairs for a final, single summary metric. Results for each phenotype, pathway database, and subset combination can be found in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}. We observe across almost every combination no significant relationship between mean pairwise IBS proportion and MAPIT-R $p$-value.}
 \label{InterPath-Main-Figure-IBS-AfrHght}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_AllPopComps_vs2_AfrHght.png}
-\caption[TBD]{\textbf{IBS in Top Pathways Across Populations}.}
+\caption[TBD]{\textbf{Mean Pairwise IBS Proportions Across Each Subset in Top KEGG Height African Pathways}. The figure plots the mean pairwise IBS proportions of each UKB subset for the top 75 KEGG height African pathways (sorted by MAPIT-R $p$-value). Most variation in mean pairwise IBS proportions varies moreso based on the pathways themselves and not on ancestry; subsets differ between one another mostly at the same levels across each pathway. }
 \label{InterPath-Main-Figure-IBS-AllPopComps-AfrHght}
 \end{figure}
 
