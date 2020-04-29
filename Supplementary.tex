@@ -288,7 +288,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.45]{Images/Supp/InterPath_Supp_Figure_Hypergeometric_QQPlots_African_vs1.png}
-\caption[TBD]{\textbf{Gene Count Hypergeometric Enrichment Tests: African QQ-Plots}. The figure shows ...}
+\caption[TBD]{\textbf{Gene Count Hypergeometric Enrichment Tests: African QQ-Plots}. The figure shows QQ-plots of the gene count hypergeometric enrichment results for the African subset in both height and BMI and across both the KEGG and REACTOME databases. Every gene that was present among the set of MAPIT-R genome-wide significant pathways for that phenotype and pathway database combination was tested, including genes that were only present once. The $x$-axis is the expected -$\log_{10}$ $p$-values and the $y$-axis is the observed -$\log_{10}$ $p$-values. Brown dots are results from the height analysis and purple dots are results from the BMI analysis.}
 \label{InterPath-Supp-Figure-Hypergeometric-QQPlots-African}
 \end{figure}
 \clearpage
@@ -296,7 +296,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.45]{Images/Supp/InterPath_Supp_Figure_Hypergeometric_RestrictedComps_African_BMI_vs1.png}
-\caption[TBD]{\textbf{Gene Count Hypergeometric Enrichment Tests: African BMI Size Restriction $p$-Value Comparisons}. The figure shows ...}
+\caption[TBD]{\textbf{Gene Count Hypergeometric Enrichment Tests: African BMI Size Restriction $p$-Value Comparisons}. The figure shows comparisons of the gene count hypergeometric enrichment $p$-values between the size restricted version of the analysis and the original unrestricted version of the analysis. The size restricted version of the analysis is redoing the hypergeometric enrichment tests but only using pathways that contained $<=$ 1,000 SNPs. Only results for BMI are shown here since almost all Bonferroni significant pathways were lost in the height results due to this size restriction step. The $x$-axis shows the original, unrestricted hypergeometric -$\log_{10}$ $p$-values, and the $y$-axis shows the new, size restricted hypergeoemtric -$\log_{10}$ $p$-values. The PSM* gene cluster is highlighted in the REACTOME plot. For lists of the top genes that became more significant due to the size restriction step, see Supplementary Table \ref{InterPath-Supp-Table-Hypergeometric-RestrictedComps-African-BMI-TopExamples}.}
 \label{InterPath-Supp-Figure-Hypergeometric-RestrictedComps-African-BMI}
 \end{figure}
 \clearpage
@@ -413,7 +413,7 @@ British.Ran10000.5 & 9596 & 597507 & 186 & 669 \\
 \begin{tabular}{ccccccccc}
   \hline
   \textbf{Trait} & \textbf{African} & & \textbf{British.Ran4k} & & \textbf{Caribbean} & & \textbf{Indian} & \\ 
-& \textbf{Chr:BP} & \textbf{-log10($p$)} & \textbf{Chr:BP} & \textbf{-log10($p$)} & \textbf{Chr:BP} & \textbf{-log10($p$)} & \textbf{Chr:BP} & \textbf{-log10($p$)} \\ 
+& \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} & \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} & \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} & \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} \\ 
   \hline
 \textbf{Height:} & & & & & & & & \\
 & 15:98255395 & 6.064 & 15:40308859 & 5.654 & 10:102705058 & 6.366 & 11:30478524 & 5.869 \\ 
@@ -449,7 +449,7 @@ British.Ran10000.5 & 9596 & 597507 & 186 & 669 \\
 \addtocounter{table}{-1}
 
 \begin{table} [t!]
-  \caption{\textbf{MAPIT Results: Top SNPs}. The table shows the top 10 SNPs for each of our MAPIT analyses on height and BMI in our UKB subsets. For each UKB subset the first column lists the chromosome and basepair position for the SNP of interest and the second column lists the MAPIT -log10 $p$-value for that SNP. No single SNP reaches genome-wide significance ($p$-value $<= 5\times10^{-8}$).}
+  \caption{\textbf{MAPIT Results: Top SNPs}. The table shows the top 10 SNPs for each of our MAPIT analyses on height and BMI in our UKB subsets. For each UKB subset the first column lists the chromosome and basepair position for the SNP of interest and the second column lists the MAPIT -$\log_{10}$ $p$-value for that SNP. No single SNP reaches genome-wide significance ($p$-value $<= 5\times10^{-8}$).}
 \label{InterPath-Supp-Table-MAPIT-TopSNPs-Caption}
 \end{table}
 \clearpage
@@ -1296,14 +1296,15 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \end{table}
 \clearpage
 
+\setlength{\footskip}{2cm}
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccccc}
   \hline
-  \textbf{Trait} & \textbf{Gene} & \textbf{No Restriction} & \textbf{Restricted} & \textbf{-log10($p$-Value)} \\
-  & \textbf{$p$-Value} & \textbf{$p$-Value} & \textbf{Difference} \\
+  \textbf{Database} & \textbf{Gene} & \textbf{No Restriction} & \textbf{Restricted} & \textbf{-$\log_{10}$($p$-Value)} \\
+  & & \textbf{$p$-Value} & \textbf{$p$-Value} & \textbf{Difference} \\
   \hline
-  \textbf{Height:} & & & & \\
+  \textbf{KEGG:} & & & & \\
   & CDKN2A & 1.248E-01 & 7.974E-03 & 1.194 \\
   & CCNB2 & 2.795E-01 & 1.876E-02 & 1.173 \\
   & CCNB1 & 2.795E-01 & 1.876E-02 & 1.173 \\
@@ -1315,7 +1316,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
   & CHEK1 & 6.710E-02 & 6.559E-03 & 1.010 \\
   & ATR & 6.710E-02 & 6.559E-03 & 1.010 \\
   \\
-  \textbf{BMI:} & & & & \\ 
+  \textbf{REACTOME:} & & & & \\ 
   & SMC3 & 1.456E-05 & 5.589E-09 & 3.416 \\
   & PSM* & 5.304E-04 & 4.464E-06 & 2.075 \\
   & (Cluster) & & & \\ 
@@ -1329,13 +1330,11 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
   & ATR & 8.004E-03 & 1.261E-03 & 0.8.02 \\
    \hline
 \end{tabular}
-\caption[TBD]{\textbf{MAPIT-R Genome-Wide Significant Pathway Gene Counts: Hypergeometric Enrichment Size Restricted Examples}. 
-
-include note about PSM* gene family cluster thing
-}
+\caption[TBD]{\textbf{MAPIT-R Genome-Wide Significant Pathway Gene Counts: Hypergeometric Enrichment Size Restricted Examples}. The table shows the top examples of genes that became more significant in the hypergeometric enrichment analyses after the size restriction step in both pathway databases. Results are only shown for BMI since the majority of genome-wide significant pathways in height were lost from the size restriction step alone. The first column lists the pathway database, the second column lists the genes, the third column lists the original, unrestricted hypergeometric enrichment $p$-value, the fourth column lists the new, size-restricted hypergeometric enrichment $p$-value, and the fifth column lists the -$\log_{10}$ $p$-value difference between the third and fourth column. The top 10 genes sorted by the fifth column are shown for each database. For a plot of results from every gene analyzed in both databases, see Supplementary Figure \ref{InterPath-Supp-Figure-Hypergeometric-RestrictedComps-African-BMI}). Note that a single entry in the REACTOME results is included to represent the PSM* gene family cluster to preserve space.}
 \label{InterPath-Supp-Table-Hypergeometric-RestrictedComps-African-BMI-TopExamples}
 \end{table}
 \clearpage
+\setlength{\footskip}{0cm}
 
 \begin{landscape}
 \begin{table}[ht]
