@@ -144,7 +144,7 @@
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 
-\title{Pathway Analysis Reveals Novel Variation in the Broad-sense Heritability of Complex Trait Genetic Architecture Across Multiethnic Populations}
+\title{Pathway Analysis Reveals Novel Signals For Epistasis in Complex Trait Genetic Architecture Across Multiethnic Populations}
 \author[1,2]{Michael C. Turchin}
 \author[1,3]{Gregory Darnell}
 \author[1,4,5,*]{Lorin Crawford}
@@ -158,6 +158,7 @@
 \affil[$^\dag$]{To whom correspondence should be addressed: sramachandran@brown.edu}
 
 \begin{document}
+%\setlength{\footskip}{0cm}
 
 \maketitle
 
@@ -190,7 +191,7 @@ Epistasis, despite being a well-established component of complex trait architect
 
 \subsection{Single-SNP Methods Provide Limited Evidence For Epistasis}\label{InterPath-Results-SNPEpistasis}
 
-To begin investigating epistasis in non-European ancestries, we first extracted multiple non-European population subsets from the UK BioBank dataset, including  African, Caribbean, Chinese, Indian, and Pakistani subsets (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). For comparative purposes, we also extracted a British subset, but to make the cohort similar to the other non-European subsets we took a random subsample of 4,000 British individuals. Across all these population subsets, we conducted typical quality control (QC) procedures (see Online Methods) and focused our analyses on the complex traits of height and body mass index (BMI). 
+To begin investigating epistasis in non-European ancestries, we first extracted multiple non-European population subsets from the UK BioBank (UKB) dataset, including  African, Caribbean, Chinese, Indian, and Pakistani subpopulations (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). For comparative purposes, we also extracted a British subset, but to match the sample sizes of the non-European subsets we took a random subsample of 4,000 British individuals. Across all these population subsets, we conducted typical quality control (QC) procedures (see Online Methods) and focused our analyses on the complex traits of height and body mass index (BMI). 
 
 To analyze epistasis on the single variant level, we take two different approaches. First, we ran the canonical model of pairwise SNP interactions implemented by PLINK (see Online Methods). This approach iterates through every pair of SNPs and tests whether they have a significantly non-zero interaction effect size. Running this model on each of our population subsets we find that no pairs of SNPs produce a genome-wide significant interaction (Supplementary Figure \ref{InterPath-Supp-Figure-PLINK-HeightBMI-AllPops}). Here we define 'genome-wide significant' as having an interaction $p$-value $<= 5\times10^{-13}$, which is the Bonferroni-corrected $p$-value threshold given the over $1\times10^{11}$ number of tests that were conducted. This lack of significant results may not be surprising given such a heavy multiple-testing burden. Alternatively, we can forgo such a stringent criteria and instead look at SNPs that are marginally significant ($p$-value $<= 1\times10^{-4}$); since this produces many possible interactions per SNP, we can also instead look at the \textbf{proportion} of marginally significant interactions per SNP as a more appropriate metric.  
 
@@ -288,7 +289,7 @@ One important consideration of our results is that we have limited representatio
 
 And overall we see similar results across all datasets to our original results from the first set of 4,000 British individuals. We see limited numbers of significant pathways across all random subsets, phenotypes, and database pathways, as well as limited overlap of significant pathways between subsets (Supplementary Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}-\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}). We did also run analyses using phenotype permutations as before, and once again see proper behavior under the null and very low FDRs (Supplementary Tables \ref{InterPath-Supp-Tables-BritReps-FDRs-pt1}). While not presenting new significant pathways, these results at least suggest that the large numbers of significant pathways we observe in the African subset are a product of simply choosing a particularly optimal collection of individuals by chance.  
 
-\subsection{Investigating the Relationship Between Within-Population Genetic Variation and Detecting Epistasis}
+\subsection{Investigating the Relationship Between Within-Population Genetic Structure and Detecting Epistasis}
 
 It is clear that the African subset produces a much larger number of significant MAPIT-R results than any other population subset in our analysis, but an obvious question becomes: why? It is known that on average African populations harbor greater levels of genetic variation than other global human populations. It may be possible that having greater base levels of variation across the genome may provide more power for our approach. Therefore we began to investigate whether there were any links between different population genetic measures of genetic variation within our subsets and their respective MAPIT-R results.
 
