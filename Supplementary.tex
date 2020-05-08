@@ -247,17 +247,31 @@ After this first round of QC procedures, we then proceeded to impute our current
 \end{figure}
 \clearpage
 
-\setlength{\footskip}{2cm}
+\newcounter{CharNumber4}
+\setcounter{CharNumber4}{1}
+\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber4}}
+\begin{landscape}
 \begin{figure}[htbp]
 \centering
-\hspace*{-1.5cm}
-%\vspace*{-2cm}
-\includegraphics[scale=.24]{Images/Supp/InterPath_Supp_Figure_BritReps_Heatplots_AllPaths_vs2.png}
-\caption[TBD]{\textbf{Overlap of Genome-Wide Significant MAPIT-R Pathways Between British Replicates Subsets}. The heatplots show the numbers of genome-wide significant MAPIT-R pathways that overlap between each British replicate subset for height and BMI in the KEGG and REACTOME databases. The diagonal shows the total number of genome-wide significant pathways per population subset.}
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_Heatplots_KEGG_vs3.png}
+\caption[TBD]{\textbf{Overlap of Genome-Wide Significant MAPIT-R Pathways Between British Replicates Subsets: KEGG}. The heatplots show the numbers of genome-wide significant MAPIT-R pathways that overlap between each British replicate subset for height and BMI in the KEGG database. The diagonal shows the total number of genome-wide significant pathways per population subset. We do not observe many genome-wide significant pathways or pathways that overlap between replicate subsets.}
 \label{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths}
 \end{figure}
 \clearpage
-\setlength{\footskip}{1cm}
+\addtocounter{figure}{-1}
+\addtocounter{CharNumber4}{1}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_Heatplots_REACTOME_vs3.png}
+\caption[TBD]{\textbf{Overlap of Genome-Wide Significant MAPIT-R Pathways Between British Replicates Subsets: REACTOME}. The heatplots show the numbers of genome-wide significant MAPIT-R pathways that overlap between each British replicate subset for height and BMI in the REACTOME database. The diagonal shows the total number of genome-wide significant pathways per population subset. We do not observe many genome-wide significant pathways or pathways that overlap between replicate subsets.}
+\label{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths}
+\end{figure}
+\clearpage
+\renewcommand{\thefigure}{\arabic{figure}}
+\end{landscape}
 
 \begin{figure}[htbp]
 \centering
