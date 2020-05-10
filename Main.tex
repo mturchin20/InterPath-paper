@@ -165,12 +165,7 @@
 \maketitle
 
 \begin{abstract}\label{InterPath-Abstract}
-Genome-wide association (GWA) studies have identified thousands of significant genetic associations in humans across a number of complex traits. However, the vast majority of these studies use datasets of predominantly European ancestry \citep{Popejoy2016}. It has generally been thought that complex trait genetic architecture should be transferable across populations of different ancestries, but recent work has shown a number of differences in trait architecture across human ancestries, including heterogeneity in both the identified causal variants and estimated effect sizes 
-\citep{Martin2017,Wojcik2019}. Here, we report further evidence that complex trait genetic architecture is fundamentally different among human ancestries by jointly leveraging pathway and epistasis analysis.
 
-Under the assumption that a given complex trait may have differential polygenic architectures across human ancestries, we hypothesize that human populations may also be enriched for differences in epistatic effects. However, since polygenic traits tend to have smaller GWA effect sizes, combining variants via pathway analysis may allow us to better reveal these \red{epistatic?} signals. To accomplish this, we extend the concept of identifying marginal epistasis, moving from testing single variants \citep{Crawford2017} to testing groups of variants for nonlinear association with a trait of interest.
-
-We apply our new method to multiple ancestries present in the UK Biobank \citep{Sudlow2015} and explore multiple pathway-related interaction models. Using morphometric traits we find evidence for genome-wide epistasis in African and other non-European populations. We also find evidence that these trends exists on the SNP and gene levels as well. Results also indicate this may be due to increased heterozygosity in non-European populations. This suggests that non-European populations may be well-suited for identifying non-additive effects in human complex trait architecture; this also suggests further evidence that European populations -- predominantly used for epistasis studies -- may indeed be limited and inaccurate proxies for all human ancestries in complex trait research.
 \end{abstract}
 
 \linenumbers
@@ -178,6 +173,23 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
 \section{Introduction}\label{InterPath-Introduction}
 
 \textcolor{blue}{WIP}
+
+It is well-established that genome-wide association studies (GWAS) is a powerful tool for identifying statistical associations between genetic variation and traits of interest, and indeed have identified over XX,XXX statistically significant such associations in humans alone (citations). However, it is also becoming well-established in more recent years that GWAS and GWAS-related research directions have been extraordinarily focused on European-ancestry populations.  have identified tens of thousands of genetic associations between genetic variants and various traits of interest (citations). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Genome-wide association studies (GWAS) have identified over \textcolor{red}{24,000} significant associations between individual genotypes and complex human traits \citep{Buniello2019}. However, the vast majority of these associations were identified in datasets of primarily European ancestry. In a survey of published GWAS from 2009, it was found that only 4\% of the 1.7 million individuals studied were of non-European ancestry \citep{Need2009}. This report gained some brief attention, but an initial increase in the representation of non-European ancestries in GWAS has stagnated since 2014 \citep{Popejoy2016,Martin2019}; this lack of representation is even more disconcerting given the ongoing explosion of available human genomic data. 
 
@@ -522,6 +534,16 @@ where now R is a new random effects term that represents our new group of SNPs R
 
 
 Beyond extending our marginal epistasis model, we also expanded the number of UKB data subsets we analyzed given our encouraging results at the single SNP level. Specifically, we added UKB subsets consisting of Chinese, Pakistani, and Irish ancestry, as well as a second random subset of British individuals representing a larger sample size of close to 10,000 individuals. Both the Irish and new, second British subsets represent large sample size subsets to test how our model performs as sample size increases. Lastly, we chose to analyze the KEGG and REACTOME pathways available from the MSigDB \citep{Liberzon2011} due to their coverage of a wide range of biological processes. 
+
+
+prev abstract
+
+Genome-wide association (GWA) studies have identified thousands of significant genetic associations in humans across a number of complex traits. However, the vast majority of these studies use datasets of predominantly European ancestry \citep{Popejoy2016}. It has generally been thought that complex trait genetic architecture should be transferable across populations of different ancestries, but recent work has shown a number of differences in trait architecture across human ancestries, including heterogeneity in both the identified causal variants and estimated effect sizes 
+\citep{Martin2017,Wojcik2019}. Here, we report further evidence that complex trait genetic architecture is fundamentally different among human ancestries by jointly leveraging pathway and epistasis analysis.
+
+Under the assumption that a given complex trait may have differential polygenic architectures across human ancestries, we hypothesize that human populations may also be enriched for differences in epistatic effects. However, since polygenic traits tend to have smaller GWA effect sizes, combining variants via pathway analysis may allow us to better reveal these \red{epistatic?} signals. To accomplish this, we extend the concept of identifying marginal epistasis, moving from testing single variants \citep{Crawford2017} to testing groups of variants for nonlinear association with a trait of interest.
+
+We apply our new method to multiple ancestries present in the UK Biobank \citep{Sudlow2015} and explore multiple pathway-related interaction models. Using morphometric traits we find evidence for genome-wide epistasis in African and other non-European populations. We also find evidence that these trends exists on the SNP and gene levels as well. Results also indicate this may be due to increased heterozygosity in non-European populations. This suggests that non-European populations may be well-suited for identifying non-additive effects in human complex trait architecture; this also suggests further evidence that European populations -- predominantly used for epistasis studies -- may indeed be limited and inaccurate proxies for all human ancestries in complex trait research.
 
 \fi
 
