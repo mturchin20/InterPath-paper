@@ -363,16 +363,6 @@ For all the analyses presented in here, height and BMI were our complex traits o
 
 To take into account possible global patterns of population structure, principal components to be used as covariates during analyses were derived by running PCA on our full set of UKB populations. FlashPCA2 was used to run PCA, and as stated, all of our post-QC, post-imputation population files were analyzed together.    
 
-\subsection{GEMMA Analyses}
-
- the following variance component model:
-\begin{equation}\label{InterPath-GEMMA-Equation-Model}
- \textbf{y} = \textbf{G}_1 + \textbf{G}_2 + \boldsymbol{\epsilon}
-\end{equation}
-where $y$ is a $n \times 1$ vector of phenotypes, $G_1$ is a $n \times n$ genetic relatedness matrix (GRM), constructed using all SNPs genome-wide and representing all first-order interactions, $G_2$ is a $n \times n$ matrix produced from the Hadamard product of $G_1$ against itself ($G_2 = G_1 \circ G_1$), representing all second-order interactions, and $\epsilon$ is a $n \times 1$ vector of normally distributed random effects. In other words, $G_1$ can be thought of as representing all additive effects, and $G_2$ can be thought of as representing all pairwise epistatic effects. To fit this model and estimate $G_2$, we used GEMMA \citep{Zhou2012} and its REML AI algorithm for estimating variance components.
-
-GEMMA/GridLMM analyses were conducted using...
-
 \subsection{PLINK Analyses}
 
 PLINK pairwise epistasis analyses were conducted using PLINK v1.90b4 \citep{Purcell2007}, the `\texttt{-{}-epistasis}' command, and phenotypes that had top 10 global PCs regressed out; PCs were regressed out directly from the phenotypes due to the `\texttt{-{}-epistasis}' function having no explicit form to incorporate covariates. Default values for the `\texttt{-{}-epi1}' and `\texttt{-{}-epi2}' options (0.0001 and 0.01, respectively) were kept. And the PLINK model is as follows:
@@ -527,6 +517,24 @@ where now R is a new random effects term that represents our new group of SNPs R
 
 
 Beyond extending our marginal epistasis model, we also expanded the number of UKB data subsets we analyzed given our encouraging results at the single SNP level. Specifically, we added UKB subsets consisting of Chinese, Pakistani, and Irish ancestry, as well as a second random subset of British individuals representing a larger sample size of close to 10,000 individuals. Both the Irish and new, second British subsets represent large sample size subsets to test how our model performs as sample size increases. Lastly, we chose to analyze the KEGG and REACTOME pathways available from the MSigDB \citep{Liberzon2011} due to their coverage of a wide range of biological processes. 
+
+
+
+
+\subsection{GEMMA Analyses}
+
+ the following variance component model:
+\begin{equation}\label{InterPath-GEMMA-Equation-Model}
+ \textbf{y} = \textbf{G}_1 + \textbf{G}_2 + \boldsymbol{\epsilon}
+\end{equation}
+where $y$ is a $n \times 1$ vector of phenotypes, $G_1$ is a $n \times n$ genetic relatedness matrix (GRM), constructed using all SNPs genome-wide and representing all first-order interactions, $G_2$ is a $n \times n$ matrix produced from the Hadamard product of $G_1$ against itself ($G_2 = G_1 \circ G_1$), representing all second-order interactions, and $\epsilon$ is a $n \times 1$ vector of normally distributed random effects. In other words, $G_1$ can be thought of as representing all additive effects, and $G_2$ can be thought of as representing all pairwise epistatic effects. To fit this model and estimate $G_2$, we used GEMMA \citep{Zhou2012} and its REML AI algorithm for estimating variance components.
+
+GEMMA/GridLMM analyses were conducted using...
+
+
+
+
+
 
 
 prev abstract
