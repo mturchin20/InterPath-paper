@@ -318,7 +318,7 @@ Here we present the first exploration of marginal epistasis across multiple huma
 
 The fact that we find such an abundance of results in the African UKB subset is not necessarily surprising. The notion that African populations may be particularly insightful for complex trait genetics is not novel \citep{Rotimi2017,Choudhury2018,Martin2018,Bentley2020}, with efforts delineating the genetic architecture of skin pigmentation \citep{Martin2017b,Crawford2017b} and the evolutionary histories of FOXP2 and other loci \citep{Atkinson2018,Sugden2018} being some recent examples. The question of what aspects of the greater genetic diversity observed in African populations is driving the results found here is still an area of future work. As we have found initially, it is unlikely that our results are due to broadscale differences between populations in pathway-level genetic variation alone. Instead, what we may be observing is differences in observable population structure leading to variation in the ability to correct for background noise; the higher PC1 PVE observed in the African population may be evidence that being able to remove a greater amount of structure from the data leads to more exposure of the underlying genetic signal. Future work based on these results should include further exploration of this connection between patterns of genetic variation and power to detect epistatic signals in the African subset.  
 
-While the results presented here are encouraging on multiple levels, there are some limitations to the current analyses. One major future direction for work is the need for scaling these types of marginal epistasis methods. Similar to MAPIT, MAPIT-R currently does not scale well to the full sizes of current biobanks; in its current form MAPIT-R may begin to encounter burdensome computational times beyond 20,000 individuals. One potential avenue to overcome these issues is to incorporate the use of summary statistics for the analysis of marginal epistasis; moving from direct genotypes to GWAS summary statistics has proven useful in both speeding up computational time as well as increasing power in multiple other GWAS contexts \citep{Giambartolomei2014,Shi2016,Cheng2019,Turchin2019,Urbut2019}. Another limitation of MAPIT-R is that, as part of the marginal epistasis framework, it identifies whether a pathway contains any epistatic interactions with the rest of the genome. As shown here this has the advantage of accumulating signal over multiple variants, but it produces an ambiguous situation in terms of what regions of the genome to analyze \textit{a posteriori}. Extending or linking MAPIT-R with a framework that explicitly follows up marginal epistasis signals with more precise analyses such as finemapping or co-localization/variational Bayes (?) \citep{}(citations?) may further expand the power of the marginal epistasis approach.  
+While the results presented here are encouraging on multiple levels, there are some limitations to the current analyses. One major future direction for work is the need for scaling these types of marginal epistasis methods. Similar to MAPIT, MAPIT-R currently does not scale well to the full sizes of current biobanks; in its current form MAPIT-R may begin to encounter burdensome computational times beyond 20,000 individuals. One potential avenue to overcome these issues is to incorporate the use of summary statistics for the analysis of marginal epistasis; moving from direct genotypes to GWAS summary statistics has proven useful in both speeding up computational time as well as increasing power in multiple other GWAS contexts \citep{Giambartolomei2014,Shi2016,Cheng2019,Turchin2019,Urbut2019}. Another limitation of MAPIT-R is that, as part of the marginal epistasis framework, it identifies whether a pathway contains any epistatic interactions with the rest of the genome. As shown here this has the advantage of accumulating signal over multiple variants, but it produces an ambiguous situation in terms of what regions of the genome to analyze \textit{a posteriori}. Extending or linking MAPIT-R with a framework that explicitly follows up marginal epistasis signals with more locus specificity such as fine-mapping \citep{Kichaev2014,Chen2015,Benner2016} or co-localization approaches \citep{} may further expand the power of the marginal epistasis approach.  
 
 \section{Methods}\label{InterPath-Online-Methods}
 
@@ -337,29 +337,18 @@ To take into account possible global patterns of population structure, principal
 
 \subsection{PLINK Analyses}
 
-PLINK pairwise epistasis analyses were conducted using PLINK v1.90b4 \citep{Purcell2007}, the `\texttt{-{}-epistasis}' command, and phenotypes that had top 10 global PCs regressed out; PCs were regressed out directly from the phenotypes due to the `\texttt{-{}-epistasis}' function having no explicit form to incorporate covariates. Default values for the `\texttt{-{}-epi1}' and `\texttt{-{}-epi2}' options (0.0001 and 0.01, respectively) were kept. And the PLINK model is as follows:
-\begin{equation}
-\textbf{y} = \beta_0 + \textbf{x}_1\beta_1 + \textbf{x}_2\beta_2 + \textbf{x}_1*\textbf{x}_2\beta_3    
-\end{equation}
-where \textbf{y} is once again a $n \times 1$ vector of phenotypes, $\beta_0$ is the y-intercept, $\textbf{x}_1$ is a $n \times 1$ vector of genotypes for SNP 1, $\beta_1$ is the corresponding additive effect size for $\textbf{x}_1$, $\textbf{x}_2$ is a $n \times 1$ vector of genotypes for SNP 2, $\beta_2$ is the corresponding additive effect size for $\textbf{x}_2$, $\textbf{x}_1 * \textbf{x}_2$ is the multiplicative interaction between $\textbf{x}_1$ and $\textbf{x}_2$, and $\beta_3$ is the corresponding effect size for $\textbf{x}_1 * \textbf{x}_2$. Our variable of interest of course is $\beta_3$ and whether this value significantly deviates from 0.  
+PLINK pairwise epistasis analyses were conducted using PLINK v1.90b4 \citep{Purcell2007}, the `\texttt{-{}-epistasis}' command, and phenotypes that had top 10 local PCs regressed out; PCs were regressed out directly from the phenotypes due to the `\texttt{-{}-epistasis}' function having no explicit form to incorporate covariates. Default values for the `\texttt{-{}-epi1}' and `\texttt{-{}-epi2}' options (0.0001 and 0.01, respectively) were kept.   
 
 \subsection{MAPIT Analyses}
 
-MAPIT analyses were conducted using the MAPIT software downloaded from \url{https://github.com/lorinanthony/MAPIT}. MAPIT was run using the phenotypes as previously described and top 10 global PCs as covariates. The 
+MAPIT analyses were conducted using the MAPIT software downloaded from \url{https://github.com/lorinanthony/MAPIT}. MAPIT was run using the phenotypes as previously described and top 10 global PCs as covariates. The
 
-\noindent `\texttt{MAPIT\_Davies\_Approx}' function was used due to its computational speed up and having large enough sample sizes to properly employ the Davies approximation. 
+\noindent `\texttt{MAPIT\_Davies\_Approx}' function was used due to its computational speed up and having large enough sample sizes to properly employ the Davies approximation.  
 
-To test for SNP-level marginal epistasis, we use MAPIT \citep{Crawford2017a}. For a full derivation of the MAPIT framework please see \citet{Crawford2017a}, but in short MAPIT begins with the following setup:
-\begin{equation}
-\textbf{y} = \mu + \textbf{x}_k\beta_k + \sum_{l \neq k} \textbf{x}_l\beta_l + \sum_{l \neq k} (\textbf{x}_k \circ \textbf{x}_l)\alpha_l + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I})  
-\end{equation}
 
-where \textbf{y} is still a $n \times 1$ vector of phenotypes, $\textbf{x}_k$ is a $n \times 1$ vector of genotypes for our SNP of interest $k$, $\beta_k$ is our additive effect size for SNP $k$, $\textbf{x}_l$ is a $n \times 1$ vector of genotypes for every SNP $l$ that is not SNP $k$, $\beta_l$ is our additive effect size for SNP $l$, $(\textbf{x}_k \circ \textbf{x}_l)$ is the Hadamard product between our two SNP genotype vectors, $\alpha_l$ is interaction effect size, $\boldsymbol{\epsilon}$ is a $n \times 1$ vector of random effects which follow a multivariate normal distribution with mean $\textbf{0}$ and covariance matrix equal to variance effect $\tau$ times the $n \times n$ identity matrix $\textbf{I}$. In this model our parameter of interest would be $\alpha_l$, whether there is any significant interaction between our SNP of interest $k$ and of the remaining SNPs in the genome. However, as one might expect, the number of parameters in this model far exceeds the number of samples (ie $p >> n$), therefore making the solution indeterminable. To overcome this, MAPIT moves this setup into a linear mixed model framework and make the problem a variance component one. To do this, we put normal random priors on each of our effect sizes ($\beta_k$, $\beta_l$, and $\alpha_l$), and redefine our model as follows:
-\begin{align}
-    & \textbf{y} = \mu + \textbf{x}_k\beta_k + \textbf{m}_k + \textbf{g}_k + \boldsymbol{\epsilon} \\
-    \textbf{m}_k \sim \mathcal{MVN}(\textbf{0}, &\omega^{2}\textbf{K}_k) \quad \textbf{g}_k \sim \mathcal{MVN}(\textbf{0}, \sigma^{2}\textbf{G}_k) \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I}) \nonumber 
-\end{align}
-where $\textbf{m}_k$ and $\textbf{g}_k$ are both random effects that follow multivariate normal distributions, $\omega$ and $\sigma$ are their respective variance components, $\textbf{K}_k = \textbf{X}_{-k}\textbf{X}^{\textbf{T}}_{-k}/(p-1)$, the genetic relatedness matrix (GRM) constructed from all SNPs available aside from SNP $k$, and $\textbf{G} = \textbf{D}_k\textbf{K}_k\textbf{D}_k$, a GRM based on pairwise interaction terms between the $k$\textsuperscript{th} variant and all other variants. Here, we denote $\textbf{D}_k =$ diag$(\textbf{x}_k)$ to be an $n \times n$ diagonal matrix with the genotype vector $\textbf{x}_k$ as its diagonal elements. Our parameter of interest here is $\sigma$ and whether it is significantly larger from 0; a significant deviation would represent there exist some subset of genetic interactions between $k$ and the rest of the genome.
+don't explain MAPIT model. Just say that I ran it. Leave explicit model information in the MAPIT-R section
+
+
 
 \subsection{MAPIT-R Model}
 
@@ -521,6 +510,35 @@ We apply our new method to multiple ancestries present in the UK Biobank \citep{
 sample size scaling issue. multiple testing setup? looking at better searching algorithm? gridd?
 
 one possible avenue of future research is the use of summary statistics for epistatic analyses, similar to other recent methodological extensions to include GWAS summary statistics (matthew, bmass, one or two others?).
+
+
+
+
+
+
+
+
+
+And the PLINK model is as follows:
+\begin{equation}
+\textbf{y} = \beta_0 + \textbf{x}_1\beta_1 + \textbf{x}_2\beta_2 + \textbf{x}_1*\textbf{x}_2\beta_3    
+\end{equation}
+where \textbf{y} is once again a $n \times 1$ vector of phenotypes, $\beta_0$ is the y-intercept, $\textbf{x}_1$ is a $n \times 1$ vector of genotypes for SNP 1, $\beta_1$ is the corresponding additive effect size for $\textbf{x}_1$, $\textbf{x}_2$ is a $n \times 1$ vector of genotypes for SNP 2, $\beta_2$ is the corresponding additive effect size for $\textbf{x}_2$, $\textbf{x}_1 * \textbf{x}_2$ is the multiplicative interaction between $\textbf{x}_1$ and $\textbf{x}_2$, and $\beta_3$ is the corresponding effect size for $\textbf{x}_1 * \textbf{x}_2$. Our variable of interest of course is $\beta_3$ and whether this value significantly deviates from 0.
+
+
+To test for SNP-level marginal epistasis, we use MAPIT \citep{Crawford2017a}. For a full derivation of the MAPIT framework please see \citet{Crawford2017a}, but in short MAPIT begins with the following setup:
+\begin{equation}
+\textbf{y} = \mu + \textbf{x}_k\beta_k + \sum_{l \neq k} \textbf{x}_l\beta_l + \sum_{l \neq k} (\textbf{x}_k \circ \textbf{x}_l)\alpha_l + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I})  
+\end{equation}
+
+where \textbf{y} is still a $n \times 1$ vector of phenotypes, $\textbf{x}_k$ is a $n \times 1$ vector of genotypes for our SNP of interest $k$, $\beta_k$ is our additive effect size for SNP $k$, $\textbf{x}_l$ is a $n \times 1$ vector of genotypes for every SNP $l$ that is not SNP $k$, $\beta_l$ is our additive effect size for SNP $l$, $(\textbf{x}_k \circ \textbf{x}_l)$ is the Hadamard product between our two SNP genotype vectors, $\alpha_l$ is interaction effect size, $\boldsymbol{\epsilon}$ is a $n \times 1$ vector of random effects which follow a multivariate normal distribution with mean $\textbf{0}$ and covariance matrix equal to variance effect $\tau$ times the $n \times n$ identity matrix $\textbf{I}$. In this model our parameter of interest would be $\alpha_l$, whether there is any significant interaction between our SNP of interest $k$ and of the remaining SNPs in the genome. However, as one might expect, the number of parameters in this model far exceeds the number of samples (ie $p >> n$), therefore making the solution indeterminable. To overcome this, MAPIT moves this setup into a linear mixed model framework and make the problem a variance component one. To do this, we put normal random priors on each of our effect sizes ($\beta_k$, $\beta_l$, and $\alpha_l$), and redefine our model as follows:
+\begin{align}
+    & \textbf{y} = \mu + \textbf{x}_k\beta_k + \textbf{m}_k + \textbf{g}_k + \boldsymbol{\epsilon} \\
+    \textbf{m}_k \sim \mathcal{MVN}(\textbf{0}, &\omega^{2}\textbf{K}_k) \quad \textbf{g}_k \sim \mathcal{MVN}(\textbf{0}, \sigma^{2}\textbf{G}_k) \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I}) \nonumber 
+\end{align}
+where $\textbf{m}_k$ and $\textbf{g}_k$ are both random effects that follow multivariate normal distributions, $\omega$ and $\sigma$ are their respective variance components, $\textbf{K}_k = \textbf{X}_{-k}\textbf{X}^{\textbf{T}}_{-k}/(p-1)$, the genetic relatedness matrix (GRM) constructed from all SNPs available aside from SNP $k$, and $\textbf{G} = \textbf{D}_k\textbf{K}_k\textbf{D}_k$, a GRM based on pairwise interaction terms between the $k$\textsuperscript{th} variant and all other variants. Here, we denote $\textbf{D}_k =$ diag$(\textbf{x}_k)$ to be an $n \times n$ diagonal matrix with the genotype vector $\textbf{x}_k$ as its diagonal elements. Our parameter of interest here is $\sigma$ and whether it is significantly larger from 0; a significant deviation would represent there exist some subset of genetic interactions between $k$ and the rest of the genome.
+
+
 
 \fi
 
