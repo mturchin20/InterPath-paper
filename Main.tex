@@ -318,7 +318,7 @@ Here we present the first exploration of marginal epistasis across multiple huma
 
 The fact that we find such an abundance of results in the African UKB subset is not necessarily surprising. The notion that African populations may be particularly insightful for complex trait genetics is not novel \citep{Rotimi2017,Choudhury2018,Martin2018,Bentley2020}, with efforts delineating the genetic architecture of skin pigmentation \citep{Martin2017b,Crawford2017b} and the evolutionary histories of FOXP2 and other loci \citep{Atkinson2018,Sugden2018} being some recent examples. The question of what aspects of the greater genetic diversity observed in African populations is driving the results found here is still an area of future work. As we have found initially, it is unlikely that our results are due to broadscale differences between populations in pathway-level genetic variation alone. Instead, what we may be observing is differences in observable population structure leading to variation in the ability to correct for background noise; the higher PC1 PVE observed in the African population may be evidence that being able to remove a greater amount of structure from the data leads to more exposure of the underlying genetic signal. Future work based on these results should include further exploration of this connection between patterns of genetic variation and power to detect epistatic signals in the African subset.  
 
-While the results presented here are encouraging on multiple levels, there are some limitations to the current analyses. One major future direction for work is the need for scaling these types of marginal epistasis methods. Similar to MAPIT, MAPIT-R currently does not scale well to the full sizes of current biobanks; in its current form MAPIT-R may begin to encounter burdensome computational times beyond 20,000 individuals. One potential avenue to overcome these issues is to incorporate the use of summary statistics for the analysis of marginal epistasis; moving from direct genotypes to GWAS summary statistics has proven useful in both speeding up computational time as well as increasing power in multiple other GWAS contexts \citep{Giambartolomei2014,Shi2016,Cheng2019,Turchin2019,Urbut2019}. Another limitation of MAPIT-R is that, as part of the marginal epistasis framework, it identifies whether a pathway contains any epistatic interactions with the rest of the genome. As shown here this has the advantage of accumulating signal over multiple variants, but it produces an ambiguous situation in terms of what regions of the genome to analyze \textit{a posteriori}. Extending or linking MAPIT-R with a framework that explicitly follows up marginal epistasis signals with more locus specificity such as fine-mapping \citep{Kichaev2014,Chen2015,Benner2016} or co-localization approaches \citep{} may further expand the power of the marginal epistasis approach.  
+While the results presented here are encouraging on multiple levels, there are some limitations to the current analyses. One major future direction for work is the need for scaling these types of marginal epistasis methods. Similar to MAPIT, MAPIT-R currently does not scale well to the full sizes of current biobanks; in its current form MAPIT-R may begin to encounter burdensome computational times beyond 20,000 individuals. One potential avenue to overcome these issues is to incorporate the use of summary statistics for the analysis of marginal epistasis; moving from direct genotypes to GWAS summary statistics has proven useful in both speeding up computational time as well as increasing power in multiple other GWAS contexts \citep{Shi2016,Johnson2018,Ray2018,Cheng2019,Turchin2019,Urbut2019}. Another limitation of MAPIT-R is that, as part of the marginal epistasis framework, it identifies whether a pathway contains any epistatic interactions with the rest of the genome. As shown here this has the advantage of accumulating signal over multiple variants, but it produces an ambiguous situation in terms of what regions of the genome to analyze \textit{a posteriori}. Extending or linking MAPIT-R with a framework that explicitly follows up marginal epistasis signals with locus-focused methods such as fine-mapping \citep{Kichaev2014,Chen2015,Benner2016} or co-localization \citep{Hormozdiari2016,Zhu2016,Wen2017,Giambartolomei2018,Wallace2020} may further expand the power of the marginal epistasis approach.  
 
 \section{Methods}\label{InterPath-Online-Methods}
 
@@ -403,6 +403,7 @@ with $(\wh\omega^2_{0},\wh\nu^2_{0},\wh\tau^2_{0})$ being the MQS estimates of $
 \section{URLs}\label{InterPath-URLs}
 
 MAPIT: \url{https://github.com/lorinanthony/MAPIT}
+
 MAPIT-R: \url{https://github.com/mturchin20/MAPIT-R}
 
 \section{Acknowledgments}\label{InterPath-Acknowledgments}
@@ -420,6 +421,11 @@ This material is based upon work supported by the National Science Foundation un
 \setstretch{1.0}
 \bibliography{Main}
 \endgroup
+
+
+
+
+
 
 
 
