@@ -1662,22 +1662,6 @@ SCRAP
 
 Additionally, it is unlikely that, even if such an ascertainment bias existed, it could continually be directionality consistent across pathways that span the genome. If this were an approach that aggregated single SNP tests, then directionality would not be an issue and one might become concerned about continually incorporating a persistent signal from ascertainment bias; however, because this is a joint test on multiple SNPs as once, it is far less likely that differences between genotype chip SNP distributions and non-European population SNP distributions tracts in exactly the same direction across the entire genome.
 
-\subsubsection{Pairwise SNP Epistasis}
-
-Our first approach to investigate SNP-level epistasis was to run the canonical pair-wise interaction model as employed by PLINK's \texttt{--epistasis} method \citep{Purcell2007} (see Online Methods and Supplementary Note for details). Here, we directly estimated the effect size of every possible SNP pairwise interaction and calculated whether it was statistically significant or not.  
-
-Running this method on each of our four UKB population subsets, we chose to look at the 'proportion of marginally significant tests' per SNP, where marginal significance is defined as any test with a $p$-value < $1\times10^{-4}$ (Figure \ref{InterPath-Supp-Figure-PLINK}). We chose to look at proportion of tests due the varying number of SNPs across each population subset. What we find is that indeed there is variation between human ancestries in the amount of pairwise SNP epistasis across the genome. We also find that both the African and Caribbean population subsets show greater proportions of marginal interactions than the British population subset despite both non-European populations having lower sample sizes. 
-
-\begin{figure}[t]
-\centering
-\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_PLINK_vs2.png}
-\caption[PLINK SNP Pairwise Epistasis]{\textbf{PLINK SNP Pairwise Epistasis.} \\ Shown are results from running PLINK's SNP-by-SNP pairwise epistasis method, \texttt{--epistasis}, on four of our initial UKB human population subsets in height and BMI. Specifically the $y$-axis shows the proportion of marginally significant interactions found per-SNP, where marginal significance is defined as the epistastic test returning a $p$-value $<$ $1\times10^{-4}$, and the $x$-axis shows the top 50 SNPs for this metric in each of the population subsets. The African subset contained 374,466 total SNPs, the British Random 4k subset contained 600,006 total SNPs, the Caribbean subset contained 410,017 total SNPs, and the Indian subset contained 505,854 total SNPs. We observe across each population different levels of marginal pairwise SNP significance as well as different patterns of significance. Additionally, both the African and Caribbean subsets contain the strongest signals.}
-\label{InterPath-Supp-Figure-PLINK}
-\end{figure}
-
-
-
-
 
 
 
@@ -1695,6 +1679,129 @@ The first approach we took to investigate epistasis was to look at genome-wide e
 \end{figure}
 
 In height, we do not see anything immediately new. For the additive effects $G_1$ we mainly calculate PVEs across each population within our range of expectation (between XX and XX (citation)). Additionally, we do not currently see much evidence for second-order effects $G_2$. However, looking at BMI we see a different result. Across all populations we see non-trivial PVEs for $G_2$, ranging from XX to XX. We also see larger values in multiple non-European populations. In particular we see a particularly strong result in XXX. This might be beginning evidence that indeed, non-European populations have more potential for picking up signals of higher-order interactions in the genome.   
+
+
+
+
+Information idea about creating random 'pathways' that have either the same number of genes or SNPs to show that it has to be the *right* collection of information/materials to get the same amount of significance
+
+\subsubsection{Power Gained from Proper Pathway Definitions}
+
+Running a GWAS of height and BMI on each of our population subsets with PLINK, we find only one genome-wide significant hit (Figure \ref{InterPath-Main-Figure-GWAS-Height} \& Supplementary Figure \ref{InterPath-Supp-Figure-GWAS-BMI}). And further similarly to before, we also find a handful of marginally significant variants. More interestingly however, we now ask how similar the MAPIT and GWAS results are. And indeed, comparing the two sets of genome-wide analyzes, we see a wide range of different genetic architecture patterns being represented (Figure \ref{InterPath-Main-Figure-MAPITvsGWAS-AfrHght} \& Supplementary Figure \ref{InterPath-Supp-Figure-MAPITvsGWAS}). Focusing on the African subset and height, we find 49 SNPs that are only marginally significant in MAPIT, 50 SNPs that are only marginally significant in the GWAS, and 0 SNPs that are marginally significant in both tests. Despite the lack of power to identify genome-wide significant results, we still see a strong representation of the partition of additive and epistatic effects in our results. 
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_GWAS_vs2_Height.png}
+\caption[TBD]{\textbf{GWAS Results QQ-Plots}.}
+\label{InterPath-Main-Figure-GWAS-Height}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_MAPITvsGWAS_vs2_AfrHght.png}
+\caption[TBD]{\textbf{MAPIT vs. GWAS Results}.}
+\label{InterPath-Main-Figure-MAPITvsGWAS-AfrHght}
+\end{figure}
+
+\textcolor{red}{(NOTE: below is what we were expecting for these results. But as you can see, the GIANT height/bmi results don't align in the way were anticipating. They are more spread out between height and BMI. I have checked though that the GIANT p-values of these top 500 SNPs are more correlated with our GWAS p-values than our MAPIT p-values (like ~.17 vs. .05). 
+I think one alternative approach to this section is to angle instead as: 'we do not have power to even see a difference in GWAS vs. MAPIT as we were anticipating, thus indicating our real need to increase power. Hence, we moved forward with a method that we believed was going to accomplish that').}
+
+To help further get a sense of whether these results are revealing patterns in true biology, we also annotated the top 500 SNPs with the most significant height and BMI GWAS $p$-values from the 2018 GIANT and UKB meta-analysis \cite{Yengo2018} in both our GWAS and MAPIT results. As expected, these 500 SNPs are heavily represented among the tail end of the most significant GWAS results, but maybe less expected is just how insignificant these SNPs appear on the MAPIT list of top results (\textcolor{red}{Supplementary Table -- listing differences in ranking of these 500 SNPs between GWAS and MAPIT}). In fact looking across the genome it is easy to see how different the relative ranking of SNPs are between the GWAS and MAPIT results (Figures \ref{InterPath-Main-Figure-MAPITvsGWAS-Manhattan}D \& \ref{InterPath-Main-Figure-MAPITvsGWAS-Manhattan}E). It is clear that even with our limited sample sizes, differences in the trends of importance of additive versus epistatic signals can be observed among marginally significant SNPs.  
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_MAPITvsGWAS_Manhattan_vs1.png}
+\caption[TBD]{\textbf{MAPIT \& GWAS Manhattan Plots}. \textcolor{red}{will be just height, MAPIT on top (D), GWAS on bottom (E), each plot wider. Green dots are the 500 SNPs that have the most significant GIANT/UKB p-values.}}
+\label{InterPath-Main-Figure-MAPITvsGWAS-Manhattan}
+\end{figure}
+
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_GWAS_Manhattan_vs1.png}
+%\caption[TBD]{\textbf{GWAS Manhattan Plot}.}
+%\label{InterPath-Main-Figure-GWAS-Manhattan}
+%\end{figure}
+
+
+\begin{align}
+    & \textbf{y} = \mu + \textbf{R} + \textbf{G} + \textbf{Q} + \boldsymbol{\epsilon} \\
+    \textbf{R} \sim \mathcal{MVN}&(\textbf{0}, \phi^{2}\textbf{K}_R) \quad \textbf{G} \sim \mathcal{MVN}(\textbf{0}, \omega^{2}\textbf{K}_G) \nonumber \\ 
+    \textbf{Q} \sim \mathcal{MVN}&(\textbf{0}, \sigma^{2}\textbf{K}_Q) \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I}) \nonumber 
+\end{align}
+where now R is a new random effects term that represents our new group of SNPs R, with variance component $\phi$ and GRM $\textbf{K}_R$ based on the SNP set R, and where now $\textbf{K}_Q = \textbf{K}_R \circ \textbf{K}_G$, the Hadamard product between the GRMs constructed from R and G. Similar to the MAPIT model, we construct our 'epistasis' random effect by conducting pairwise multiplication, though now it is between two matrices instead of a vector and a matrix. To see how this changes the additive form of the model, see equation XX in Materials and Methods. We fit this model similarly to before (also see Materials and Methods), and are interested in whether the variance component term $\sigma$ is significantly greater than 0.
+
+
+Beyond extending our marginal epistasis model, we also expanded the number of UKB data subsets we analyzed given our encouraging results at the single SNP level. Specifically, we added UKB subsets consisting of Chinese, Pakistani, and Irish ancestry, as well as a second random subset of British individuals representing a larger sample size of close to 10,000 individuals. Both the Irish and new, second British subsets represent large sample size subsets to test how our model performs as sample size increases. Lastly, we chose to analyze the KEGG and REACTOME pathways available from the MSigDB \citep{Liberzon2011} due to their coverage of a wide range of biological processes. 
+
+
+
+
+\subsection{GEMMA Analyses}
+
+ the following variance component model:
+\begin{equation}\label{InterPath-GEMMA-Equation-Model}
+ \textbf{y} = \textbf{G}_1 + \textbf{G}_2 + \boldsymbol{\epsilon}
+\end{equation}
+where $y$ is a $n \times 1$ vector of phenotypes, $G_1$ is a $n \times n$ genetic relatedness matrix (GRM), constructed using all SNPs genome-wide and representing all first-order interactions, $G_2$ is a $n \times n$ matrix produced from the Hadamard product of $G_1$ against itself ($G_2 = G_1 \circ G_1$), representing all second-order interactions, and $\epsilon$ is a $n \times 1$ vector of normally distributed random effects. In other words, $G_1$ can be thought of as representing all additive effects, and $G_2$ can be thought of as representing all pairwise epistatic effects. To fit this model and estimate $G_2$, we used GEMMA \citep{Zhou2012} and its REML AI algorithm for estimating variance components.
+
+GEMMA/GridLMM analyses were conducted using...
+
+
+
+
+
+
+
+prev abstract
+
+Genome-wide association (GWA) studies have identified thousands of significant genetic associations in humans across a number of complex traits. However, the vast majority of these studies use datasets of predominantly European ancestry \citep{Popejoy2016}. It has generally been thought that complex trait genetic architecture should be transferable across populations of different ancestries, but recent work has shown a number of differences in trait architecture across human ancestries, including heterogeneity in both the identified causal variants and estimated effect sizes 
+\citep{Martin2017a,Wojcik2019}. Here, we report further evidence that complex trait genetic architecture is fundamentally different among human ancestries by jointly leveraging pathway and epistasis analysis.
+
+Under the assumption that a given complex trait may have differential polygenic architectures across human ancestries, we hypothesize that human populations may also be enriched for differences in epistatic effects. However, since polygenic traits tend to have smaller GWA effect sizes, combining variants via pathway analysis may allow us to better reveal these \red{epistatic?} signals. To accomplish this, we extend the concept of identifying marginal epistasis, moving from testing single variants \citep{Crawford2017a} to testing groups of variants for nonlinear association with a trait of interest.
+
+We apply our new method to multiple ancestries present in the UK Biobank \citep{Sudlow2015} and explore multiple pathway-related interaction models. Using morphometric traits we find evidence for genome-wide epistasis in African and other non-European populations. We also find evidence that these trends exists on the SNP and gene levels as well. Results also indicate this may be due to increased heterozygosity in non-European populations. This suggests that non-European populations may be well-suited for identifying non-additive effects in human complex trait architecture; this also suggests further evidence that European populations -- predominantly used for epistasis studies -- may indeed be limited and inaccurate proxies for all human ancestries in complex trait research.
+
+sample size scaling issue. multiple testing setup? looking at better searching algorithm? gridd?
+
+one possible avenue of future research is the use of summary statistics for epistatic analyses, similar to other recent methodological extensions to include GWAS summary statistics (matthew, bmass, one or two others?).
+
+
+
+
+
+
+
+
+
+And the PLINK model is as follows:
+\begin{equation}
+\textbf{y} = \beta_0 + \textbf{x}_1\beta_1 + \textbf{x}_2\beta_2 + \textbf{x}_1*\textbf{x}_2\beta_3    
+\end{equation}
+where \textbf{y} is once again a $n \times 1$ vector of phenotypes, $\beta_0$ is the y-intercept, $\textbf{x}_1$ is a $n \times 1$ vector of genotypes for SNP 1, $\beta_1$ is the corresponding additive effect size for $\textbf{x}_1$, $\textbf{x}_2$ is a $n \times 1$ vector of genotypes for SNP 2, $\beta_2$ is the corresponding additive effect size for $\textbf{x}_2$, $\textbf{x}_1 * \textbf{x}_2$ is the multiplicative interaction between $\textbf{x}_1$ and $\textbf{x}_2$, and $\beta_3$ is the corresponding effect size for $\textbf{x}_1 * \textbf{x}_2$. Our variable of interest of course is $\beta_3$ and whether this value significantly deviates from 0.
+
+
+To test for SNP-level marginal epistasis, we use MAPIT \citep{Crawford2017a}. For a full derivation of the MAPIT framework please see \citet{Crawford2017a}, but in short MAPIT begins with the following setup:
+\begin{equation}
+\textbf{y} = \mu + \textbf{x}_k\beta_k + \sum_{l \neq k} \textbf{x}_l\beta_l + \sum_{l \neq k} (\textbf{x}_k \circ \textbf{x}_l)\alpha_l + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I})  
+\end{equation}
+
+where \textbf{y} is still a $n \times 1$ vector of phenotypes, $\textbf{x}_k$ is a $n \times 1$ vector of genotypes for our SNP of interest $k$, $\beta_k$ is our additive effect size for SNP $k$, $\textbf{x}_l$ is a $n \times 1$ vector of genotypes for every SNP $l$ that is not SNP $k$, $\beta_l$ is our additive effect size for SNP $l$, $(\textbf{x}_k \circ \textbf{x}_l)$ is the Hadamard product between our two SNP genotype vectors, $\alpha_l$ is interaction effect size, $\boldsymbol{\epsilon}$ is a $n \times 1$ vector of random effects which follow a multivariate normal distribution with mean $\textbf{0}$ and covariance matrix equal to variance effect $\tau$ times the $n \times n$ identity matrix $\textbf{I}$. In this model our parameter of interest would be $\alpha_l$, whether there is any significant interaction between our SNP of interest $k$ and of the remaining SNPs in the genome. However, as one might expect, the number of parameters in this model far exceeds the number of samples (ie $p >> n$), therefore making the solution indeterminable. To overcome this, MAPIT moves this setup into a linear mixed model framework and make the problem a variance component one. To do this, we put normal random priors on each of our effect sizes ($\beta_k$, $\beta_l$, and $\alpha_l$), and redefine our model as follows:
+\begin{align}
+    & \textbf{y} = \mu + \textbf{x}_k\beta_k + \textbf{m}_k + \textbf{g}_k + \boldsymbol{\epsilon} \\
+    \textbf{m}_k \sim \mathcal{MVN}(\textbf{0}, &\omega^{2}\textbf{K}_k) \quad \textbf{g}_k \sim \mathcal{MVN}(\textbf{0}, \sigma^{2}\textbf{G}_k) \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I}) \nonumber 
+\end{align}
+where $\textbf{m}_k$ and $\textbf{g}_k$ are both random effects that follow multivariate normal distributions, $\omega$ and $\sigma$ are their respective variance components, $\textbf{K}_k = \textbf{X}_{-k}\textbf{X}^{\textbf{T}}_{-k}/(p-1)$, the genetic relatedness matrix (GRM) constructed from all SNPs available aside from SNP $k$, and $\textbf{G} = \textbf{D}_k\textbf{K}_k\textbf{D}_k$, a GRM based on pairwise interaction terms between the $k$\textsuperscript{th} variant and all other variants. Here, we denote $\textbf{D}_k =$ diag$(\textbf{x}_k)$ to be an $n \times n$ diagonal matrix with the genotype vector $\textbf{x}_k$ as its diagonal elements. Our parameter of interest here is $\sigma$ and whether it is significantly larger from 0; a significant deviation would represent there exist some subset of genetic interactions between $k$ and the rest of the genome.
+
+
+
+
+
+
+
+
+It has generally been thought that complex trait genetic architecture should be transferable across populations of different ancestries, but recent work has shown a number of differences in additive trait architecture across human ancestries, including heterogeneity in both the identified causal variants and estimated effect sizes. Here, we explore a form of non-additive trait architecture, epistasis, to see if there are similar discrepancies in complex trait association metrics across ancestries in a diverse dataset.
+
+
 
 \fi
 
