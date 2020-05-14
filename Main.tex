@@ -171,7 +171,7 @@ Genome-wide association (GWA) studies have identified thousands of significant g
 including leading to more ancestry-specific estimates of effect sizes and greater discoveries of associated, putative causal variants. Here, we explore a form of non-additive trait architecture, epistasis, to see if there are similar insights that can be gained in complex traits when analyzing a particularly diverse dataset.
 
 
-It has generally been thought that complex trait genetic architecture should be transferable across populations of different ancestries, but recent work has shown a number of differences in additive trait architecture across human ancestries, including heterogeneity in both the identified causal variants and estimated effect sizes. Here, we explore a form of non-additive trait architecture, epistasis, to see if there are similar discrepancies in complex trait association metrics across ancestries in a diverse dataset. To increase our power to detect epistasis, we create a new method to detect pathway-level marginal epistasis, and apply this method to a diverse group of ancestry subsets within the UK BioBank (UKB) dataset. We analyze height and BMI with the KEGG and REACTOME databases and find over XXX pathways with statistically significant signals of marginal epistasis. We find that the majority of these results are found in an African subset of the UKB data (XX/XX). We find that BMI consistently produces stronger signals of pathway-level marginal epistasis than height. And we find that pathway-level genetic diversity is unlikely to be a major factor in driving these signals of marginal epistasis.  
+To increase our power to detect epistasis, we create a new method to detect pathway-level marginal epistasis, and apply this method to a diverse group of ancestry subsets within the UK BioBank (UKB) dataset. We analyze height and BMI with the KEGG and REACTOME databases and find over XXX pathways with statistically significant signals of marginal epistasis. We find that the majority of these results are found in an African subset of the UKB data (XX/XX). We find that BMI consistently produces stronger signals of pathway-level marginal epistasis than height. And we find that pathway-level genetic diversity is unlikely to be a major factor in driving these signals of marginal epistasis.  
 
 \end{abstract}
 
@@ -291,7 +291,7 @@ Our first approach to investigate this question was to look at broadscale metric
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=.5]{Images/Main/InterPath_Main_Figure_Fst_vs2.png}
-\caption[TBD]{\textbf{Distribution of pairwise F\textsubscript{ST} across the UKB subsets}. The heatplot shows pairwise F\textsubscript{ST} values between each of our UKB population subsets using our genome-wide SNP data. F\textsubscript{ST} values range from .001 to .124, and we observe typical global patterns (eg African/Caribbean vs. non-African subsets, Chinese vs. non-Asian subsets). These global patterns, however, do not match the distribution of per-ancestry total number of significant MAPIT-R pathways observed in Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}.
+\caption[TBD]{\textbf{Distribution of pairwise F\textsubscript{ST} across the UKB subsets}. The heatplot shows pairwise F\textsubscript{ST} values between each of our UKB population subsets using our genome-wide SNP data. F\textsubscript{ST} values range from .001 to .124, and we observe typical global patterns (eg African/Caribbean vs. non-African subsets, Chinese vs. non-Asian subsets). These global patterns, however, do not match the distribution of total number of significant MAPIT-R pathways observed per-ancestry in Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}.}
 \label{InterPath-Main-Figure-Fst}
 \end{figure}
 
@@ -307,7 +307,7 @@ To take these analyses one step further, we investigated levels of genetic diver
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_vs3_African.png}
-\caption[TBD]{\textbf{Pathway-level genetic diversity versus MAPIT-R results in the African subset and KEGG database}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the African subset KEGG height and BMI results. IBS proportions were calculated per pathway by using that pathway's set of SNPs, were calculated pairwise between every set of individuals in the subset, and then averaged across each of these pairs for a final, single summary metric. Results for each phenotype, pathway database, and subset combination can be found in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}. We observe across almost every combination no significant relationship between mean pairwise IBS proportion and MAPIT-R $p$-value.}
+\caption[TBD]{\textbf{Pathway-level genetic diversity versus MAPIT-R results in the African subset and KEGG database}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the African subset KEGG height and BMI results. IBS proportions were calculated per pathway by using that pathway's set of SNPs, were calculated pairwise between every set of individuals in the subset, and then averaged across each of these pairs for a final, single summary metric. Results for each phenotype, pathway database, and subset combination can be found in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}. We observe across almost every combination no significant relationship between pathway mean pairwise IBS proportion and MAPIT-R $p$-value.}
 \label{InterPath-Main-Figure-IBS-African}
 \end{figure}
 
@@ -555,6 +555,13 @@ where \textbf{y} is still a $n \times 1$ vector of phenotypes, $\textbf{x}_k$ is
 where $\textbf{m}_k$ and $\textbf{g}_k$ are both random effects that follow multivariate normal distributions, $\omega$ and $\sigma$ are their respective variance components, $\textbf{K}_k = \textbf{X}_{-k}\textbf{X}^{\textbf{T}}_{-k}/(p-1)$, the genetic relatedness matrix (GRM) constructed from all SNPs available aside from SNP $k$, and $\textbf{G} = \textbf{D}_k\textbf{K}_k\textbf{D}_k$, a GRM based on pairwise interaction terms between the $k$\textsuperscript{th} variant and all other variants. Here, we denote $\textbf{D}_k =$ diag$(\textbf{x}_k)$ to be an $n \times n$ diagonal matrix with the genotype vector $\textbf{x}_k$ as its diagonal elements. Our parameter of interest here is $\sigma$ and whether it is significantly larger from 0; a significant deviation would represent there exist some subset of genetic interactions between $k$ and the rest of the genome.
 
 
+
+
+
+
+
+
+It has generally been thought that complex trait genetic architecture should be transferable across populations of different ancestries, but recent work has shown a number of differences in additive trait architecture across human ancestries, including heterogeneity in both the identified causal variants and estimated effect sizes. Here, we explore a form of non-additive trait architecture, epistasis, to see if there are similar discrepancies in complex trait association metrics across ancestries in a diverse dataset.
 
 \fi
 
