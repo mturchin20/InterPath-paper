@@ -178,9 +178,16 @@ Genome-wide association (GWA) studies have identified thousands of significant g
 
 \section{Introduction}\label{InterPath-Introduction}
 
-Genome-wide association (GWA) studies are a powerful tool for identifying statistical associations between genetic variation and complex traits, and have identified over 24,000 statistically significant such associations in humans alone \citep{Buniello2019}. The most common approach for conducting GWA studies involve looking for linear associations between genetic variants and a trait of interest, where estimated effect sizes represent an additive relationship between number of genotype copies and the downstream impact on the phenotype. While this approach has produced \textcolor{red}{xxxx}, an alternative framework for GWA is to look for nonlinear associations between genetic variants and a trait of interest, such as epistasis. Epistasis, interaction between genetic variants leading to non-additive effects on traits of interest, is a well-established phenomenon in a number of model organisms \citep{Lehner2006,Rowe2008,Shao2008,Flint2009,Costanzo2010,He2010,Jarvis2011,Pettersson2011,Bloom2013,Monnahan2015}. Epistasis has also been suggested as a major driver of both complex trait genetic architecture and evolution \citep{Carlborg2004,Carlborg2006,Martin2007,Phillips2008,Moore2009,Jones2014,Mackay2014}. However, there remains skepticism regarding the extent to which epistasis has affected human populations \citep{Hill2008,Crow2010,Aschard2012,Wood2014,Yang2015}.
+Genome-wide association (GWA) studies are a powerful tool for identifying statistical associations between genetic variation and complex traits, and have identified over 24,000 statistically significant such associations in humans alone \citep{Buniello2019}. The most common approach for conducting GWA studies involve looking for linear associations between genetic variants and a trait of interest, where estimated effect sizes represent an additive relationship between number of genotype copies and the downstream impact on the phenotype. While this approach has produced \textcolor{red}{xxxx}, an alternative framework for GWA is to look for nonlinear associations between genetic variants and a trait of interest, such as epistasis. Epistasis, interaction between genetic variants leading to non-additive effects on traits of interest, is a well-established phenomenon in a number of model organisms \citep{Lehner2006,Rowe2008,Shao2008,Flint2009,Costanzo2010,He2010,Jarvis2011,Pettersson2011,Bloom2013,Monnahan2015}. Epistasis has also been suggested as a major driver of both complex trait genetic architecture and evolution \citep{Carlborg2004,Carlborg2006,Martin2007,Phillips2008,Moore2009,Jones2014,Mackay2014}. However, there remains skepticism regarding the extent to which epistasis has affected human populations \citep{Hill2008,Crow2010,Aschard2012,Wood2014,Yang2015}. Recently work though has begun to explore a completely new approach for identifying genetic interactions, \textit{marginal epistasis} \citep{Crawford2017a}.
 
-Recent work in 
+When given a set of variants and all their genetic interactions, marginal epistasis refers to the subset of interactions that revolve around any single variant. A typical approach for analyzing epistasis is to test all pairwise interactions 
+
+However, as mentioned, this first implementation of a marginal epistasis test pertained to analyzing only single variants one at a time. It has well-established in GWA approaches that aggregating variants in group-based tests can increase power to detect genetic associations (citations), and recent work has only further emphasized this point (citations). Therefore, we were interested in whether we could expand the marginal epistasis approach from a test that analyzes a single variants to a test that analyzes a group of variants, potentially increasing power to detect marginal epistasis as well. Here we present the results from creating such a model and test, which we refer to as the ``MArginal ePIstasis Test for Regions'' (MAPIT-R). 
+
+
+genetic interactions that occur when focusing on a single variant. The framework 
+
+Recent work in non-linear associations has began to explore a new framework for identifying genetic interactions, \textit{marginal epistasis} \citep{Crawford2017a}. Given a set of variants and all their genetic interactions, marginal epistasis refers to the subset Marginal epistasis  
 
 allelic copies 
 
@@ -371,6 +378,8 @@ MAPIT analyses were conducted using the MAPIT software downloaded from \url{http
 
 
 \subsection{MAPIT-R Model}
+
+\textcolor{red}{Reminder: we regress the additive genotypes out of the phenotype now instead of including that information in the m-projection matrix}
 
 We describe the framework for ``\underline{Inter}actions in \underline{Path}way'' (MAPIT-R) analysis in detail here. The key goal of this method is to identify crosstalk between signaling pathways in GWA studies, without having to explicitly model all possible higher-order interactions. In general, consider a pathway which is defined by a set of SNPs found within the regulatory regions of genes in that pathway. We will denote these variants with the set of indices $\mathcal{R} = (r_1,\ldots,r_p)$. Begin by considering the following partitioned linear regression model,
 \begin{equation}\label{LM}
