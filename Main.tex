@@ -218,30 +218,10 @@ For a full description of this new model please see Materials and Methods, but i
 
 
 
-To test for SNP-level marginal epistasis, we use MAPIT \citep{Crawford2017}. For a full derivation of the MAPIT framework please see \citet{Crawford2017}, but in short MAPIT begins with the following setup:
-\begin{equation}
-\textbf{y} = \mu + \textbf{x}_k\beta_k + \sum_{l \neq k} \textbf{x}_l\beta_l + \sum_{l \neq k} (\textbf{x}_k \circ \textbf{x}_l)\alpha_l + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I})  
-\end{equation}
-
-where \textbf{y} is still a $n \times 1$ vector of phenotypes, $\textbf{x}_k$ is a $n \times 1$ vector of genotypes for our SNP of interest $k$, $\beta_k$ is our additive effect size for SNP $k$, $\textbf{x}_l$ is a $n \times 1$ vector of genotypes for every SNP $l$ that is not SNP $k$, $\beta_l$ is our additive effect size for SNP $l$, $(\textbf{x}_k \circ \textbf{x}_l)$ is the Hadamard product between our two SNP genotype vectors, $\alpha_l$ is interaction effect size, $\boldsymbol{\epsilon}$ is a $n \times 1$ vector of random effects which follow a multivariate normal distribution with mean $\textbf{0}$ and covariance matrix equal to variance effect $\tau$ times the $n \times n$ identity matrix $\textbf{I}$. In this model our parameter of interest would be $\alpha_l$, whether there is any significant interaction between our SNP of interest $k$ and of the remaining SNPs in the genome. However, as one might expect, the number of parameters in this model far exceeds the number of samples (ie $p >> n$), therefore making the solution indeterminable. To overcome this, MAPIT moves this setup into a linear mixed model framework and make the problem a variance component one. To do this, we put normal random priors on each of our effect sizes ($\beta_k$, $\beta_l$, and $\alpha_l$), and redefine our model as follows:
-\begin{align}
-    & \textbf{y} = \mu + \textbf{x}_k\beta_k + \textbf{m}_k + \textbf{g}_k + \boldsymbol{\epsilon} \\
-    \textbf{m}_k \sim \mathcal{MVN}(\textbf{0}, &\omega^{2}\textbf{K}_k) \quad \textbf{g}_k \sim \mathcal{MVN}(\textbf{0}, \sigma^{2}\textbf{G}_k) \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I}) \nonumber 
-\end{align}
-where $\textbf{m}_k$ and $\textbf{g}_k$ are both random effects that follow multivariate normal distributions, $\omega$ and $\sigma$ are their respective variance components, $\textbf{K}_k = \textbf{X}_{-k}\textbf{X}^{\textbf{T}}_{-k}/(p-1)$, the genetic relatedness matrix (GRM) constructed from all SNPs available aside from SNP $k$, and $\textbf{G} = \textbf{D}_k\textbf{K}_k\textbf{D}_k$, a GRM based on pairwise interaction terms between the $k$\textsuperscript{th} variant and all other variants. Here, we denote $\textbf{D}_k =$ diag$(\textbf{x}_k)$ to be an $n \times n$ diagonal matrix with the genotype vector $\textbf{x}_k$ as its diagonal elements. Our parameter of interest here is $\sigma$ and whether it is significantly larger from 0; a significant deviation would represent there exist some subset of genetic interactions between $k$ and the rest of the genome.
-
-We describe the framework for ``\underline{Inter}actions in \underline{Path}way'' (InterPath) analysis in detail here. The key goal of this method is to identify crosstalk between signaling pathways in GWAS, without having to explicitly model all possible higher-order interactions. In general, consider a pathway which is defined by a set of SNPs found within the regulatory regions of genes in that pathway. We will denote these variants with the set of indices $\mathcal{R} = (r_1,\ldots,r_p)$. Begin by considering the following partitioned linear regression model,
-\begin{equation}\label{LM}
-\by = \mu\bm{1}+\sum_{r\in \mathcal{R}}\bx_r\beta_{r}+\sum_{s\not\in \mathcal{R}}\bx_s\beta_{s}+\bvarepsilon, \quad \bvarepsilon\sim \mathcal{N}(\mathbf{0}, \tau^2\bI),
-\end{equation}
-where $\by$ is an $n$-dimensional vector of quantitative phenotypes for $n$ individuals; $\mu$ is an intercept term with an $n$-dimensional vector of ones; $\bx_r$ and $\bx_s$ are $n$-dimensional genotype vectors for variants that lie within and outside the regulatory region $\mathcal{R}$, respectively; $\beta_r$ and $\beta_s$ are the corresponding additive effect sizes; $\bvarepsilon$ is an $n$-vector of residual errors; $\tau^2$ is the residual error variance; $\bI$ denotes the identity matrix; and $\mathcal{N}(\bullet,\bullet)$ denotes a multivariate normal distribution. Here, we also assume that the genotypic vectors have been centered and standardized to have mean 0 and standard deviation 1.
-
-Because we consider scenarios where there are more variants than samples, we need to specify additional modeling assumptions in Equation \eq{LM} to make the rest of the model identifiable. In particular, we recall previous approaches and assume that the individual effect sizes follow univariate normal distributions, or $\beta_r \sim \mathcal{N}(0, \omega^2/p)$ and $\beta_s \sim \mathcal{N}(0, \sigma^2/(l-p))$, where $l$ is the number of total number of all SNPs \citep{Crawford2017}. With the assumption of normally distributed effect sizes, the model defined in Equation \eq{LM} is equivalent to a variance component model where $\bg\sim \mathcal{N}(\bm{0}, \omega^2\bK)$ with $\bK=\bX_{\mathcal{R}}\bX_{\mathcal{R}}^{\T}/p$ being the genetic relatedness matrix computed using genotypes from all variants within the signaling pathway of interest; and $\wt\bg\sim \mathcal{N}(\bm{0}, \nu^2\wt\bK)$ with $\wt\bK=\bX_{-\mathcal{R}}\bX_{-\mathcal{R}}^{\T}/(l-p)$ representing a relatedness matrix computed using all other variants. Note that $\bg$ may be interpreted as a pathway's additive effect, while $\wt\bg$ denotes its polygenic background. 
-
 
 \subsubsection{Marginal SNP Epistasis}
 
-Our second approach to investigating SNP-level epistasis across the genome was to look at `marginal epistasis'\citep{Crawford2017}. To understand `marginal epistasis', first imagine all possible pairwise interactions between every SNP in the genome. Next, imagine we focus on only one single SNP and then collect only the pairwise interactions that involve this SNP of interest. This collection of pairwise interactions can be thought of us a subset of all possible pairwise interactions, or in other words, the marginal distribution of all pairwise interactions pertaining to just our SNP of interest (see Supplementary Figure \ref{} for a graphical representation of this).
+Our second approach to investigating SNP-level epistasis across the genome was to look at `marginal epistasis'\citep{Crawford2017a}. To understand `marginal epistasis', first imagine all possible pairwise interactions between every SNP in the genome. Next, imagine we focus on only one single SNP and then collect only the pairwise interactions that involve this SNP of interest. This collection of pairwise interactions can be thought of us a subset of all possible pairwise interactions, or in other words, the marginal distribution of all pairwise interactions pertaining to just our SNP of interest (see Supplementary Figure \ref{} for a graphical representation of this).
 
 To test for SNP-level marginal epistasis, we use MAPIT \citep{Crawford2017}. For a full derivation of the MAPIT framework please see \citet{Crawford2017}, but in short MAPIT begins with the following setup:
 \begin{equation}
@@ -272,6 +252,53 @@ We expanded the previous MAPIT model into a new framework that goes from looking
     \textbf{Q} \sim \mathcal{MVN}&(\textbf{0}, \sigma^{2}\textbf{K}_Q) \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I}) \nonumber 
 \end{align}
 where now R is a new random effects term that represents our new group of SNPs R, with variance component $\phi$ and GRM $\textbf{K}_R$ based on the SNP set R, and where now $\textbf{K}_Q = \textbf{K}_R \circ \textbf{K}_G$, the Hadamard product between the GRMs constructed from R and G. Similar to the MAPIT model, we construct our 'epistasis' random effect by conducting pairwise multiplication, though now it is between two matrices instead of a vector and a matrix. To see how this changes the additive form of the model, see equation XX in Online Methods. We fit this model similarly to before (also see Online Methods), and once again are interested primarily interested in whether the variance component term $\sigma$ is significantly greater than 0.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To test for SNP-level marginal epistasis, we use MAPIT \citep{Crawford2017}. For a full derivation of the MAPIT framework please see \citet{Crawford2017}, but in short MAPIT begins with the following setup:
+\begin{equation}
+\textbf{y} = \mu + \textbf{x}_k\beta_k + \sum_{l \neq k} \textbf{x}_l\beta_l + \sum_{l \neq k} (\textbf{x}_k \circ \textbf{x}_l)\alpha_l + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I})  
+\end{equation}
+
+where \textbf{y} is still a $n \times 1$ vector of phenotypes, $\textbf{x}_k$ is a $n \times 1$ vector of genotypes for our SNP of interest $k$, $\beta_k$ is our additive effect size for SNP $k$, $\textbf{x}_l$ is a $n \times 1$ vector of genotypes for every SNP $l$ that is not SNP $k$, $\beta_l$ is our additive effect size for SNP $l$, $(\textbf{x}_k \circ \textbf{x}_l)$ is the Hadamard product between our two SNP genotype vectors, $\alpha_l$ is interaction effect size, $\boldsymbol{\epsilon}$ is a $n \times 1$ vector of random effects which follow a multivariate normal distribution with mean $\textbf{0}$ and covariance matrix equal to variance effect $\tau$ times the $n \times n$ identity matrix $\textbf{I}$. In this model our parameter of interest would be $\alpha_l$, whether there is any significant interaction between our SNP of interest $k$ and of the remaining SNPs in the genome. However, as one might expect, the number of parameters in this model far exceeds the number of samples (ie $p >> n$), therefore making the solution indeterminable. To overcome this, MAPIT moves this setup into a linear mixed model framework and make the problem a variance component one. To do this, we put normal random priors on each of our effect sizes ($\beta_k$, $\beta_l$, and $\alpha_l$), and redefine our model as follows:
+\begin{align}
+    & \textbf{y} = \mu + \textbf{x}_k\beta_k + \textbf{m}_k + \textbf{g}_k + \boldsymbol{\epsilon} \\
+    \textbf{m}_k \sim \mathcal{MVN}(\textbf{0}, &\omega^{2}\textbf{K}_k) \quad \textbf{g}_k \sim \mathcal{MVN}(\textbf{0}, \sigma^{2}\textbf{G}_k) \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I}) \nonumber 
+\end{align}
+where $\textbf{m}_k$ and $\textbf{g}_k$ are both random effects that follow multivariate normal distributions, $\omega$ and $\sigma$ are their respective variance components, $\textbf{K}_k = \textbf{X}_{-k}\textbf{X}^{\textbf{T}}_{-k}/(p-1)$, the genetic relatedness matrix (GRM) constructed from all SNPs available aside from SNP $k$, and $\textbf{G} = \textbf{D}_k\textbf{K}_k\textbf{D}_k$, a GRM based on pairwise interaction terms between the $k$\textsuperscript{th} variant and all other variants. Here, we denote $\textbf{D}_k =$ diag$(\textbf{x}_k)$ to be an $n \times n$ diagonal matrix with the genotype vector $\textbf{x}_k$ as its diagonal elements. Our parameter of interest here is $\sigma$ and whether it is significantly larger from 0; a significant deviation would represent there exist some subset of genetic interactions between $k$ and the rest of the genome.
+
+We describe the framework for ``\underline{Inter}actions in \underline{Path}way'' (InterPath) analysis in detail here. The key goal of this method is to identify crosstalk between signaling pathways in GWAS, without having to explicitly model all possible higher-order interactions. In general, consider a pathway which is defined by a set of SNPs found within the regulatory regions of genes in that pathway. We will denote these variants with the set of indices $\mathcal{R} = (r_1,\ldots,r_p)$. Begin by considering the following partitioned linear regression model,
+\begin{equation}\label{LM}
+\by = \mu\bm{1}+\sum_{r\in \mathcal{R}}\bx_r\beta_{r}+\sum_{s\not\in \mathcal{R}}\bx_s\beta_{s}+\bvarepsilon, \quad \bvarepsilon\sim \mathcal{N}(\mathbf{0}, \tau^2\bI),
+\end{equation}
+where $\by$ is an $n$-dimensional vector of quantitative phenotypes for $n$ individuals; $\mu$ is an intercept term with an $n$-dimensional vector of ones; $\bx_r$ and $\bx_s$ are $n$-dimensional genotype vectors for variants that lie within and outside the regulatory region $\mathcal{R}$, respectively; $\beta_r$ and $\beta_s$ are the corresponding additive effect sizes; $\bvarepsilon$ is an $n$-vector of residual errors; $\tau^2$ is the residual error variance; $\bI$ denotes the identity matrix; and $\mathcal{N}(\bullet,\bullet)$ denotes a multivariate normal distribution. Here, we also assume that the genotypic vectors have been centered and standardized to have mean 0 and standard deviation 1.
+
+Because we consider scenarios where there are more variants than samples, we need to specify additional modeling assumptions in Equation \eq{LM} to make the rest of the model identifiable. In particular, we recall previous approaches and assume that the individual effect sizes follow univariate normal distributions, or $\beta_r \sim \mathcal{N}(0, \omega^2/p)$ and $\beta_s \sim \mathcal{N}(0, \sigma^2/(l-p))$, where $l$ is the number of total number of all SNPs \citep{Crawford2017a}. With the assumption of normally distributed effect sizes, the model defined in Equation \eq{LM} is equivalent to a variance component model where $\bg\sim \mathcal{N}(\bm{0}, \omega^2\bK)$ with $\bK=\bX_{\mathcal{R}}\bX_{\mathcal{R}}^{\T}/p$ being the genetic relatedness matrix computed using genotypes from all variants within the signaling pathway of interest; and $\wt\bg\sim \mathcal{N}(\bm{0}, \nu^2\wt\bK)$ with $\wt\bK=\bX_{-\mathcal{R}}\bX_{-\mathcal{R}}^{\T}/(l-p)$ representing a relatedness matrix computed using all other variants. Note that $\bg$ may be interpreted as a pathway's additive effect, while $\wt\bg$ denotes its polygenic background. 
+
+
+
+
+
+
 
 
 
