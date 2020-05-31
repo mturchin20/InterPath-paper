@@ -217,13 +217,23 @@ Here we provide an overview of the MAPIT-R model; for a full description, see Ma
 \end{equation}
 where \textbf{y} is a $n \times 1$ vector of phenotypes, $\mu$ is the grand mean, $\textbf{x}_r$ is a $n \times 1$ vector of genotypes for each variant $r$ that belongs to the total group of variants $R$ that are being tested for marginal epistasis, $\beta_r$ is the additive effect size for variant $r$, $\textbf{x}_s$ is a $n \times 1$ vector of genotypes for every variant $s$ of the total variant set $p$ that does not belong to the group $R$, $\beta_s$ is the additive effect size for variant $s$, $(\textbf{x}_r \circ \textbf{x}_s)$ is the Hadamard product between the two variant genotype vectors $\textbf{x}_r$ and $\textbf{x}_s$, $\alpha_{rs}$ is interaction effect size between variants $\textbf{r}$ and $\textbf{s}$, and $\boldsymbol{\epsilon}$ is a $n \times 1$ vector of random effects which follow a multivariate normal distribution with mean $\textbf{0}$ and covariance matrix equal to variance effect $\tau$ times the $n \times n$ identity matrix $\textbf{I}$. Here the Hadamard product between each variant in the sets belonging to and not belonging to \textbf{R} represent the genetic interactions our group of variants \textbf{R} against the remaining variants in rest of the genome.
 
-Following the same setup as MAPIT, we observe that the model in equation \ref{Overview1} is an underdetermined linear system ($p > n$). Therefore, we make additional modeling assumption on the effect sizes $\beta_r$, $\beta_s$, and $\alpha_{rs}$ to make the model identifiable. To do so, we follow standard approaches (citations) and assume that each individual effect size follows a normal distribution, or $\beta_r \sim \mathcal{N}(0, \omega^2/R)$, $\beta_s \sim \mathcal{N}(0, \sigma^2/(p-R))$, and $\alpha_{rs} \sim \mathcal{N}(0, \phi^2/(R*(p-R)))$ \citep{Crawford2017a}. With the normal assumption on effect sizes, the model in equation \ref{Overview1} becomes equivalent to the following variance component model:
+Following the same setup as MAPIT, we observe that the model in equation \ref{Overview1} is an underdetermined linear system ($p > n$). Therefore, we make additional modeling assumption on the effect sizes $\beta_r$, $\beta_s$, and $\alpha_{rs}$ to make the model identifiable. To do so, we follow standard approaches (citations) and assume that each individual effect size follows a normal distribution, or $\beta_r \sim \mathcal{N}(0, \omega^2/q)$, $\beta_s \sim \mathcal{N}(0, \sigma^2/(p-q))$, and $\alpha_{rs} \sim \mathcal{N}(0, \phi^2/(q*(p-q)))$, where $q$ is the number of variants in \textbf{R} \citep{Crawford2017a}. With the normal assumption on effect sizes, the model in equation \ref{Overview1} becomes equivalent to the following variance component model:
 \begin{align}\label{Overview2}
-    & \textbf{y} = \mu + \textbf{R} + \textbf{G} + \textbf{Q} + \boldsymbol{\epsilon} \\
-    \textbf{R} \sim \mathcal{MVN}&(\textbf{0}, \phi^{2}\textbf{K}_R) \quad \textbf{G} \sim \mathcal{MVN}(\textbf{0}, \omega^{2}\textbf{K}_G) \nonumber \\ 
-    \textbf{Q} \sim \mathcal{MVN}&(\textbf{0}, \sigma^{2}\textbf{K}_Q) \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I}) \nonumber 
+    & \textbf{y} = \mu + \textbf{K} + \textbf{M} + \textbf{G} + \boldsymbol{\epsilon} \\
+    \textbf{K} \sim \mathcal{MVN}&(\textbf{0}, \phi^{2}\textbf{K}_K) \quad \textbf{M} \sim \mathcal{MVN}(\textbf{0}, \omega^{2}\textbf{K}_M) \nonumber \\ 
+    \textbf{G} \sim \mathcal{MVN}&(\textbf{0}, \sigma^{2}\textbf{K}_G) \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I}) \nonumber 
 \end{align}
-where now R is a new random effects term that represents our new group of SNPs R, with variance component $\phi$ and GRM $\textbf{K}_R$ based on the SNP set R, and where now $\textbf{K}_Q = \textbf{K}_R \circ \textbf{K}_G$, the Hadamard product between the GRMs constructed from R and G. Similar to the MAPIT model, we construct our 'epistasis' random effect by conducting pairwise multiplication, though now it is between two matrices instead of a vector and a matrix.
+where \textbf{K}, \textbf{M}, and \textbf{G} are all random effects that follow multivariate normal distributions, $\phi$, $\omega$, and $\sigma$ are their respective variance components, $\textbf{K}_K = \textbf{X}_{R}\textbf{X}^{\textbf{T}}_{R}/q$ is the genetic relatedness matrix (GRM) constructed from the $q$ variants that belong to the test group \textbf{R}, $\textbf{K}_M = \textbf{X}_{-R}\textbf{X}^{\textbf{T}}_{-R}/(p-q)$ is the GRM constructed from all the remaining variants in $p$ not in \textbf{R}, and $\textbf{K}_G = \textbf{K}_K \circ \textbf{K}_M$, the Hadamard product between the GRMs $\textbf{K}_K$ and $\textbf{K}_M$.
+
+
+
+
+
+
+
+
+
+K is a random effects term that represents our new group of SNPs R, with variance component $\phi$ and GRM $\textbf{K}_R$ based on the SNP set R, and where now $\textbf{K}_Q = \textbf{K}_R \circ \textbf{K}_G$, the Hadamard product between the GRMs constructed from R and G. Similar to the MAPIT model, we construct our 'epistasis' random effect by conducting pairwise multiplication, though now it is between two matrices instead of a vector and a matrix.
 
 where $\textbf{m}_k$ and $\textbf{g}_k$ are both random effects that follow multivariate normal distributions, $\omega$ and $\sigma$ are their respective variance components, $\textbf{K}_k = \textbf{X}_{-k}\textbf{X}^{\textbf{T}}_{-k}/(p-1)$, the genetic relatedness matrix (GRM) constructed from all SNPs available aside from SNP $k$, and $\textbf{G} = \textbf{D}_k\textbf{K}_k\textbf{D}_k$, a GRM based on pairwise interaction terms between the $k$\textsuperscript{th} variant and all other variants. Here, we denote $\textbf{D}_k =$ diag$(\textbf{x}_k)$ to be an $n \times n$ diagonal matrix with the genotype vector $\textbf{x}_k$ as its diagonal elements. Our parameter of interest here is $\sigma$ and whether it is significantly larger from 0; a significant deviation would represent there exist some subset of genetic interactions between $k$ and the rest of the genome.
 
@@ -266,7 +276,11 @@ We expanded the previous MAPIT model into a new framework that goes from looking
     \textbf{R} \sim \mathcal{MVN}&(\textbf{0}, \phi^{2}\textbf{K}_R) \quad \textbf{G} \sim \mathcal{MVN}(\textbf{0}, \omega^{2}\textbf{K}_G) \nonumber \\ 
     \textbf{Q} \sim \mathcal{MVN}&(\textbf{0}, \sigma^{2}\textbf{K}_Q) \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I}) \nonumber 
 \end{align}
-where now R is a new random effects term that represents our new group of SNPs R, with variance component $\phi$ and GRM $\textbf{K}_R$ based on the SNP set R, and where now $\textbf{K}_Q = \textbf{K}_R \circ \textbf{K}_G$, the Hadamard product between the GRMs constructed from R and G. Similar to the MAPIT model, we construct our 'epistasis' random effect by conducting pairwise multiplication, though now it is between two matrices instead of a vector and a matrix. To see how this changes the additive form of the model, see equation XX in Online Methods. We fit this model similarly to before (also see Online Methods), and once again are interested primarily interested in whether the variance component term $\sigma$ is significantly greater than 0.
+where now R is a new random effects term that represents our new group of SNPs R, with variance component $\phi$ and GRM $\textbf{K}_R$ based on the SNP set R, and where now $\textbf{K}_Q = \textbf{K}_R \circ \textbf{K}_G$, the Hadamard product between the GRMs constructed from R and G. Similar to the MAPIT model, we construct our 'epistasis' random effect by conducting pairwise multiplication, though now it is between two matrices instead of a vector and a matrix. To see how this changes the additive form of the model, see equation XX in Online Methods. 
+
+
+
+We fit this model similarly to before (also see Online Methods), and once again are interested primarily interested in whether the variance component term $\sigma$ is significantly greater than 0.
 
 
 
