@@ -276,6 +276,21 @@ Looking specifically at pathways that diverge in significance between height and
 
 \subsection{The Proteasome is Enriched for Marginal Epistatic Interactions}
 
+With a large number of pathways now identified as being impacted by marginal epistasis, we wanted to further try and identify possible biological mechanisms or processes that were driving these results. One approach to do this is to see whether any genes are significantly represented among the genome-wide significant pathways we identified versus the background distribution of pathways in each database. To accomplish such an analysis, we ran hypergeometric tests for enrichment to identify whether any such 
+
+And in fact running such an analysis reveals many genes that are significantly enriched among our significant MAPIT-R pathways. However, one possible confounder to our analysis is that pathways with more genes, and therefore more variants, are more likely to have smaller MAPIT-R $p$-values (Supplementary Figure \ref{}); this follows our original hypothesis that analyzing multiple variants should lead to more power to detect associations (though we note that solely having more variants does not lead to smaller MAPIT-R $p$-value, as shown in the permuted phenotype analyses; Supplementary Figure \ref{}). As a result, this first enrichment analysis may be identifying genes that are often presented in larger pathways, such as housekeeping genes. To limit the effect of this possible confounder, we rerun our enrichment analysis, but this time only using pathways with less than 1,000 SNPs. And indeed, we see a large drop in the number of genes that are significantly enriched among our significant, but smalller, MAPIT-R pathways (Supplementary Figure \refP{}). However, we do see two sets of genes that have experienced an opposite effect -- their enrichment $p$-values have become more signfiicant. 
+
+
+
+by restricting the size of the pathways analyzed, this aims t 
+
+Identifying genes that are enriched among our results may help further focus  
+
+
+
+
+
+
 To test whether any genes were significantly enriched across our top pathways, we used a hypergeometric test for enrichment to compare the number of times a gene appears among our significant pathways against the number of times that gene appears in the full distribution of pathways in either the KEGG or REACTOME databases. 
 
 Supplementary Tables \ref{InterPath-Supp-Tables-AllPops-TopGeneCounts-KEGG-Height-a}\textcolor{blue}{-d} shows the various genes present across our significant pathways at different levels of counts, and Supplementary Figure \ref{InterPath-Supp-Figure-Hypergeometric-QQPlots-African} shows the QQ-plots of our hypergeometric enrichment results across these genes. What immediately stands out is the abundance of `significant' $p$-values we find. For example, using the conservative Bonferroni cutoff of $2.082\times10^{-5}$ (.05 / 2401 genes), we would identify 45 genes as being significantly enriched in the REACTOME BMI analysis. However, one major assumption underlying this test is that each pathway is independent from one another, and we know this to not be the case. In fact this assumption is being violated in two ways in regards to the distribution of pathways we are analyzing. 
@@ -289,7 +304,7 @@ The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical 
 %To further look into these proteasome genes, we...
 
 
-\subsection{MAPIT-R Provides Greater Evidence for Epistasis Than Single-SNP Methods}\label{InterPath-Results-SNPEpistasis}
+\subsection{MAPIT-R Provides Greater Evidence for Epistasis Than Single-SNP Methods in UKB Subgroups}\label{InterPath-Results-SNPEpistasis}
 
 Part of our initial hypothesis was that testing multiple variants at once would provide greater power to detect marginal epistasis than testing only single variants. While we have now identified pathways with genome-wide significant signals of marginal epistasis, we wanted to investigate whether any of these signals, in particular the differences between ancestry subgroups, were identifiable on the single-SNP level. So to explore this, we applied MAPIT to each of our UKB subgroups for both height and BMI. We find that there are no SNPs with genome-wide significant signals for marginal epistasis ($p$-value $< 5\times10^{-8}$; Supplementary Figure \ref{InterPath-Supp-Figure-MAPIT-HeightBMI}). While we observe possible enrichment of marginally significant $p$-values ($p$-value $< 5\times10^{-4}$) in the African, Caribbean, and Indian subgroups versus the British, Chinese, and Pakistani subgroups in both phenotypes, it is not as clear a between-ancestry pattern as we observe in the MAPIT-R results. And to compare against the more typical, direct pairwise variant epistasis analysis, we also applied PLINK's exhaustive pairwise epistasis test \citep{Purcell2007} to each of our ancestry subgroups in height and BMI, and once again do not observe any genome-wide significant tests ($p$-value $\leq 5\times10^{-13}$, Bonferroni-corrected for $1\times10^{11}$ tests; Supplementary Figure \ref{InterPath-Supp-Figure-PLINK-HeightBMI-AllPops}). Overall analyzing groups of variants jointly with MAPIT-R provides a greater ability to detect epistasis in these UKB subgroups than using single variant methods. 
 
