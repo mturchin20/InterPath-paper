@@ -296,35 +296,6 @@ While there appear to be different patterns of impact within each gene family, t
 
 
 
-not only is there an example of a gene family having a strong impact on the pathway-level signal for marginal epistasis, subunit  
-
-for 
-
-
-
-
-
-
-Each component of the proteasome is encoded by one of the aforementioned gene family subunits, producing a situation to possibly further refine the original, pathway-level signals for marginal epistasis. Since each subunit family has a distinct set of SNPs mapping to them, we can incrementally remove 
-
-For the purposes of our investigation of marginal epistasis, the prot
-
-
-The proteasome itself is made up of a core of four stacked rings (proteins from the subunits \textit{PSMA}* and \textit{PSMB}*) that need to be broken down are tagged by ubiquitin and are eventually directed to the proteasome, wh
-
-ich  Each of these subunits also correspond to specific structural components of the proteasome itself, offering a chance to further explore the 
-
-
-And most of these genes fall in the same family, as components of the various proteins that make up the proteasome. 
-
-One set of genes corresponds to the different substructures of the proteasome (), and the second set is a single gene, XXX, which encodes the protein ubiquitin. In fact, both the proteasome and ubiquitin together form ubiquitin-proteasome system (UPS).
-
-
-
-And in fact both sets of genes correspond to the same biological process, the ubiquitin-proteasome system (UPS).
-
-The first set of The first set is a cluster of genes that all correspond to different parts of the proteasome
-
 
 
 
@@ -375,8 +346,9 @@ And overall we see similar results across all replicates to our original results
 
 \subsection{Investigating the Relationship Between Within-Subgroup Genetic Variation and Detecting Epistasis}
 
-As observed previously, the African subgroup produces the majority of our significant MAPIT-R pathway results; a follow up question then is why we see such between-ancestry subgroup differences in our MAPIT-R results. One possibility is this reflects the amount of genetic variation present in each subgroup -- greater levels of genetic variation may allow for greater numbers of possible genetic interactions. It is also well-established that African-ancestry populations contain the highest levels of within-population genetic variation on average compared to other global populations (citations). Therefore, we decided to investigate whether there were any connections between different measures of genetic variation within and between our subgroups and their respective MAPIT-R results.
+As observed previously, the African subgroup produces the majority of our significant MAPIT-R pathway results; a follow up question then is why we see such between-ancestry subgroup differences in our MAPIT-R results. One possibility is this reflects the amount of genetic variation present in each subgroup -- greater levels of genetic variation may allow for greater numbers of possible genetic interactions. It is also well-established that African-ancestry populations contain the highest levels of within-population genetic variation on average compared to other global populations (citations). Therefore, we decided to investigate whether there were any connections between measures of genetic variation within and between our subgroups and the number of significant MAPIT-R pathways each subgroup produced.
 
+Our first approach was to look at genome-wide levels of genetic variation both between and within our subgroups. To do this, we calculated both pairwise F\textsubscript{ST} values between every UKB subgroup as well as within population F\textsubscript{IS} values as well.
 
 African subgroup versus all the other ancestry subgroups in our dataset i? Across each of our different comb
 
@@ -2288,6 +2260,50 @@ Running MAPIT on our population subgroups for both height and BMI, we find that 
 \end{figure}
 
 There remains the issue though of our limited sample sizes and datasets. As previously discussed, there are ongoing efforts to increase the number of non-European individuals publicly available for complex trait analysis \citep{Matise2011,Kowalski2019}, but these numbers still currently pale in comparison to what is available for European individuals. Therefore, we need to identify alternative ways to improve power to detect signals of epistasis with our current datasets. The approaches we have used thus far have revolved around testing single variants. {\red{However, it is well-appreciated in other association approaches, such as GWA studies, that aggregating evidence for association across multiple variants can increase power to detect significant associations \citep{Cantor2010,Wang2010,Oldmeadow2011,Ramanan2012,Chimusa2019,White2019}. Therefore, we decided to explore whether taking a similar aggregate approach towards epistatic analyses would lead to an increase in significant associations as well. SR: this sentiment can go in the intro; the rest of this section should basically turn into a couple sentences.}} 
+
+
+
+
+
+
+
+
+
+
+
+not only is there an example of a gene family having a strong impact on the pathway-level signal for marginal epistasis, subunit  
+
+for 
+
+
+
+
+
+
+Each component of the proteasome is encoded by one of the aforementioned gene family subunits, producing a situation to possibly further refine the original, pathway-level signals for marginal epistasis. Since each subunit family has a distinct set of SNPs mapping to them, we can incrementally remove 
+
+For the purposes of our investigation of marginal epistasis, the prot
+
+
+The proteasome itself is made up of a core of four stacked rings (proteins from the subunits \textit{PSMA}* and \textit{PSMB}*) that need to be broken down are tagged by ubiquitin and are eventually directed to the proteasome, wh
+
+ich  Each of these subunits also correspond to specific structural components of the proteasome itself, offering a chance to further explore the 
+
+
+And most of these genes fall in the same family, as components of the various proteins that make up the proteasome. 
+
+One set of genes corresponds to the different substructures of the proteasome (), and the second set is a single gene, XXX, which encodes the protein ubiquitin. In fact, both the proteasome and ubiquitin together form ubiquitin-proteasome system (UPS).
+
+
+
+And in fact both sets of genes correspond to the same biological process, the ubiquitin-proteasome system (UPS).
+
+The first set of The first set is a cluster of genes that all correspond to different parts of the proteasome
+
+
+
+
+
 
 
 
