@@ -189,6 +189,12 @@ Specifically, we applied MAPIT-R to the complex traits of height and body mass i
 By applying MAPIT-R to height and BMI in these UKB ancestry subgroups, we identify 245 pathways that have significant evidence for marginal epistasis. We observe that the majority of these new signals occur in the African UKB subgroup (135/245), and that BMI consistently produces stronger signals of marginal epistasis than height. We find that pathways related to cellular signaling and the immune system often show evidence for marginal epistasis, and we find evidence that the proteasome may be particularly enriched for epistatic interactions as well. Lastly, we investigate whether differences in ancestry subgroup genetic variation are the drivers behind the differences in marginal epistasis signals we see between subgroups. 
 
 
+
+
+
+
+
+
 Epistasis is a well-established phenomenon in a number of model organisms \citep{Lehner2006,Rowe2008,Shao2008,Flint2009,Costanzo2010,He2010,Jarvis2011,Pettersson2011,Bloom2013,Monnahan2015}, and has been suggested as a major \red{driver?} of both complex trait genetic architecture and evolution \citep{Carlborg2004,Carlborg2006,Martin2007,Phillips2008,Moore2009,Jones2014,Mackay2014}. However, there remains skepticism regarding the extent to which epistasis has \red{affected} human populations \citep{Hill2008,Crow2010,Aschard2012,Wood2014,Yang2015}. Recent methodological advances have shown increasing evidence for epistasis in humans \citep{Verma2016,Crawford2017a,Fang2019,Runcie2019},
 
 
@@ -280,7 +286,23 @@ With a large number of pathways now identified as being impacted by marginal epi
 
 And in fact running such an analysis reveals many genes that are significantly enriched among our significant MAPIT-R pathways. However, one possible confounder to our analysis is that pathways with more genes, and therefore more variants, are more likely to have smaller MAPIT-R $p$-values (Supplementary Figure \ref{}); this follows our original hypothesis that analyzing multiple variants should lead to more power to detect associations (though we note that solely having more variants does not lead to smaller MAPIT-R $p$-value, as shown in the permuted phenotype analyses; Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}). As a result, this first enrichment analysis may be identifying genes that are often presented in larger pathways, such as housekeeping genes. 
 
-To limit the effect of this possible confounder, we rerun our enrichment analysis, but this time only using pathways with less than 1,000 SNPs. And indeed, we see a large drop in the number of genes that are significantly enriched among our significant, but smaller, MAPIT-R pathways (29 to 2 in KEGG height, 47 to 11 in KEGG BMI, 24 to 0 in REACTOME height, and 65 to 26 in REACTOME BMI; Supplementary Figure \ref{}). However, we do also see one gene and a separate gene family  have experienced the opposite effect: their enrichment $p$-values have become more significant. The gene that has had the largest increase in significance is SMC3, a component of the multisubunit cohesin complex that holds together sister chromatids during mitosis. However, while having not as large a change in $p$-value, the next genes that experienced an increase in significance are all from the same family of proteins, the various subunits of the proteasome complex (\textit{PSMA}*, \textit{PSMB}*, \textit{PSMC}*, \textit{PSMD}*, and \textit{PSME}*). The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical process for proper protein degradation and cell homeostasis \citep{Voges1999,Livneh2016,Collins2017}.
+To limit the effect of this possible confounder, we rerun our enrichment analysis, but this time only using pathways with less than 1,000 SNPs. And indeed, we see a large drop in the number of genes that are significantly enriched among our significant, but smaller, MAPIT-R pathways (29 to 2 in KEGG height, 47 to 11 in KEGG BMI, 24 to 0 in REACTOME height, and 65 to 26 in REACTOME BMI; Supplementary Figure \ref{}). However, we do also see one gene and a separate gene family  have experienced the opposite effect: their enrichment $p$-values have become more significant. The gene that has had the largest increase in significance is SMC3, a component of the multimeric cohesin complex. However, while having not as large a change in $p$-value, the next genes that experienced an increase in significance are all from the same family of proteins, the various subunits of the proteasome complex (\textit{PSMA}*, \textit{PSMB}*, \textit{PSMC}*, \textit{PSMD}*, and \textit{PSME}*). The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical process for proper protein degradation and cell homeostasis \citep{Voges1999,Livneh2016,Collins2017}. Proteins requiring break down are tagged by ubiquitin, which in turn initiates a process that ultimately leads proteins to being directed towards a proteasome. For our purposes of investigating marginal epistasis, the proteasome offers a unique opportunity to not only further refine the original pathway-level signal, but also to further show the utility of group-based approaches.
+
+Specifically, we are interested in determining whether any subunit of the proteasome is particularly enriched for marginal epistasis compared to the rest of the subunits. To investigate this, we can remove each proteasome subunit one at a time from the original set of pathways analyzed and see if any group of SNPs has an out-sized affect on the new MAPIT-R $p$-values. If each subunit has an equal impact on the original pathway-level signal, then the change in MAPIT-R $p$-value should mainly be determined by the number of SNPs being removed with each subunit. Therefore, we reran each genome-wide significant MAPIT-R pathway that contained these proteasome subunit gene families and incrementally ran pathway versions with each subunit gene family removed. We ran these analyses specifically in the African subgroup and BMI since this combination is where the original signal was strongest. And what we observe on both the gene family level and on the individual SNP level is that there are indeed differing levels of impact on the original MAPIT-R pathway $p$-values between proteasome subunits (Figure \ref{}).
+
+
+
+
+
+
+Each component of the proteasome is encoded by one of the aforementioned gene family subunits, producing a situation to possibly further refine the original, pathway-level signals for marginal epistasis. Since each subunit family has a distinct set of SNPs mapping to them, we can incrementally remove 
+
+For the purposes of our investigation of marginal epistasis, the prot
+
+
+The proteasome itself is made up of a core of four stacked rings (proteins from the subunits \textit{PSMA}* and \textit{PSMB}*) that need to be broken down are tagged by ubiquitin and are eventually directed to the proteasome, wh
+
+ich  Each of these subunits also correspond to specific structural components of the proteasome itself, offering a chance to further explore the 
 
 
 And most of these genes fall in the same family, as components of the various proteins that make up the proteasome. 
