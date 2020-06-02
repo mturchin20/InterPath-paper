@@ -291,7 +291,12 @@ To limit the effect of this possible confounder, we rerun our enrichment analysi
 Specifically, we are interested in determining whether any subunit of the proteasome is particularly enriched for marginal epistasis compared to the rest of the subunits. To investigate this, we can remove each proteasome subunit one at a time from the original set of pathways analyzed and see if any group of SNPs has an out-sized affect on the new MAPIT-R $p$-values. If each subunit has an equal impact on the original pathway-level signal, then the change in MAPIT-R $p$-value should mainly be determined by the number of SNPs being removed with each subunit. Therefore, we reran each genome-wide significant MAPIT-R pathway that contained these proteasome subunit gene families and incrementally ran pathway versions with each subunit gene family removed. We ran these analyses specifically in the African subgroup and BMI since this combination is where the original signal was strongest. 
 
 And what we observe on both the gene family level and on the individual SNP level is that there are indeed differing levels of impact on the original MAPIT-R pathway $p$-values between proteasome subunits (Figure \ref{}).
-While there appear to be different patterns of impact within each gene family, two examples stand out in particular with the subunits of the \textit{PSME}* and \textit{PSMA}* families. First, genes from the \textit{PSME}* family encode an alternative regulatory cap (11S) that can also associate with the core proteasome; this isoform of the proteasome is also known as the immunoproteasome, since its functionality is moreso related to immune processes. Specifically, the immunoproteasome has been found to be more commonly invovled with the degradation of XXX. Therefore this may explain why removal of the \textit{PSME}* gene family may produce larger effects on the MAPIT-R $p$-values of pathways related to NF kappa B, B-cells, HIV-infection, and apoptosis. Second, genes from the \textit{PSMA}* family  
+While there appear to be different patterns of impact within each gene family, two examples stand out in particular with the subunits of the \textit{PSME}* and \textit{PSMA}* families. First, genes from the \textit{PSME}* family encode an alternative regulatory cap (11S) that can also associate with the core proteasome; this isoform of the proteasome is also known as the immunoproteasome, since its functionality is moreso related to immune processes. Specifically, the immunoproteasome has been found to be more commonly involved with the degradation of XXX (citations). Therefore this may explain why removal of the \textit{PSME}* gene family may produce larger effects on the MAPIT-R $p$-values of pathways related to NF kappa B, B-cells, HIV-infection, and apoptosis. Additionally, recent work has more directly connected \textit{PSME}* genes as potential upregulators of NF kappa B as well (citations), providing further support that this proteaseom subunit may have more genetic interactions than other subunit families. Second, genes from the \textit{PSMA}* family encode the outer two rings of the core four ones in the 20S structure. These outer, `alpha' rings are gates which control the entry of proteins into the core of the proteasome, as regulated by the caps (eg 19S or 11S). Unlike the regulatory caps or the inner `beta' rings (encoded by the \textit{PSMB}* family), which contain protease active sites, the outer rings may have less catalytic functionality, which is what is reflected by the consistent lack of change in MAPIT-R $p$-values across each pathway when \textit{PSMA}* genes are removed. Therefore in two instances we see examples of how known functionality of these proteasome subunits aligns with their estimated impacts on the overall pathway-level marginal epistasis signals.
+
+
+
+
+not only is there an example of a gene family having a strong impact on the pathway-level signal for marginal epistasis, subunit  
 
 for 
 
@@ -319,6 +324,12 @@ One set of genes corresponds to the different substructures of the proteasome ()
 And in fact both sets of genes correspond to the same biological process, the ubiquitin-proteasome system (UPS).
 
 The first set of The first set is a cluster of genes that all correspond to different parts of the proteasome
+
+
+
+
+
+
 
 The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical process for proper protein degradation and cell homeostasis \citep{Voges1999,Livneh2016,Collins2017}. And the genes highlighted in this size-restricted analysis represent both the core (20S) and regulatory cap (19S or 11S) subunits of the 26S proteasome, the main variant found within the cytosol of mammalian cells. Looking at the size-restricted pathways these genes are present in, we see multiple pathways related to cell-cycle regulation and, once again, the immune system (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome}).
 
