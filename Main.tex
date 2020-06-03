@@ -170,20 +170,7 @@ sramachandran@brown.edu}
 
 \begin{abstract}\label{InterPath-Abstract}
 
-Genome-wide association (GWA) studies have identified thousands of significant genetic associations in humans across a number of complex traits. However, the majority of these studies focus on linear, or additive, relationships between genotypic and phenotypic variation. Epistasis, genetic interactions that lead to non-linear relationships between genotypic and phenotypic variation, is a well-established phenomenon in a number of model organisms and is suggested as a major driver of both complex trait genetic architecture and evolution. A recent methodological advancement has introduced the concept of \textit{marginal epistasis}, or epistasis between a variant and the rest of the genome -- this new approach reduces both the computational and statistical burdens to investigate epistasis in complex trait. However, the first implementation of this framework focused only on analyzing single variants one at a time; many GWA studies, including recent work, have shown how grouping multiple variants together often increases power to detect association. Therefore, to increase power to detect marginal epistasis, we create a new group-based method that analyzes multiple variants jointly for the presence of marginal epistasis (MAPIT-R), and apply this method to a diverse group of ancestry subgroups within the UK BioBank dataset. We analyze height and body mass index with the KEGG and REACTOME databases and find 245 pathways with statistically significant signals of marginal epistasis. We find that 67\% of these results are found in an African subgroup of the UKB data. We find that BMI consistently produces stronger signals of pathway-level marginal epistasis than height. We find that the proteasome is enriched for signals of marginal epistasis and show how region-based tests such as MAPIT-R can be used to further localize association signals. And we investigate the relationship between within-subgroup genetic variation and its impact on the ability to detect marginal epistasis. 
-
-
-though  
-This is in spite of alternative non-linear approaches such as incorporatin
-
-. Despite 
-
-
-
-
-Genome-wide association (GWA) studies have identified thousands of significant genetic associations in humans across a number of complex traits. However, the vast majority of these studies use datasets of predominantly European ancestry. This discrepancy is a persistent, known issue, however the body of work showing the benefits of diverse genomic datasets to additive complex trait genetics only continues to grow, including more ancestry-specific estimates of effect sizes and increased discoveries of associated, putative causal variants.\footnote{\red{SR: I'm not sure this sentence is doing much for you. It's also a bit awkwardly phrased and hard to parse - should be shorter and more direct.}} Here, we explore a form of non-additive trait architecture, epistasis, to see if there are similar insights that can be gained in complex traits when analyzing a particularly diverse dataset. 
-
-To increase our power to detect epistasis, we create a new method to detect pathway-level marginal epistasis (MAPIT-R), and apply this method to a diverse group of ancestry subgroups within the UK BioBank (UKB) dataset. We analyze height and BMI with the KEGG and REACTOME databases and find 245 pathways with statistically significant signals of marginal epistasis. We find that 67\% of these results are found in an African subgroup of the UKB data. We find that BMI consistently produces stronger signals of pathway-level marginal epistasis than height. We find that the proteasome is enriched for signals of marginal epistasis and show how region-based tests such as MAPIT-R can be used to further localize association signals. And we investigate the relationship between within-subgroup genetic variation and its impact on the ability to detect marginal epistasis. 
+Genome-wide association (GWA) studies have identified thousands of significant genetic associations in humans across a number of complex traits. However, the majority of these studies focus on linear, or additive, relationships between genotypic and phenotypic variation. Epistasis, genetic interactions that lead to non-linear relationships between genotypic and phenotypic variation, is a well-established phenomenon in a number of model organisms and is suggested as a major driver of both complex trait genetic architecture and evolution. A recent methodological advancement has introduced the concept of \textit{marginal epistasis}, or epistasis between a variant and the rest of the genome -- this new approach reduces both the computational and statistical burdens to investigate epistasis in complex trait. However, the first implementation of this framework focused only on analyzing single variants one at a time; many GWA studies, including recent work, have shown how grouping multiple variants together often increases power to detect association. Therefore, to increase power to detect marginal epistasis, we create a new group-based method that analyzes multiple variants jointly for the presence of marginal epistasis (MAPIT-R), and apply this method to a diverse group of ancestry subgroups within the UK BioBank dataset. We analyze height and body mass index with the KEGG and REACTOME databases and find 245 pathways with statistically significant signals of marginal epistasis. We find that 67\% of these results are found in an African subgroup of the UKB data. We find that BMI consistently produces stronger signals of pathway-level marginal epistasis than height. We find that the proteasome is enriched for signals of marginal epistasis and show how region-based tests such as MAPIT-R can be used to further localize association signals. And we investigate the relationship between within-subgroup genetic variation and detecting marginal epistasis.
 
 \end{abstract}
 
@@ -2361,6 +2348,23 @@ And in fact both sets of genes correspond to the same biological process, the ub
 
 The first set of The first set is a cluster of genes that all correspond to different parts of the proteasome
 
+
+
+
+
+
+
+though  
+This is in spite of alternative non-linear approaches such as incorporatin
+
+. Despite 
+
+
+
+
+Genome-wide association (GWA) studies have identified thousands of significant genetic associations in humans across a number of complex traits. However, the vast majority of these studies use datasets of predominantly European ancestry. This discrepancy is a persistent, known issue, however the body of work showing the benefits of diverse genomic datasets to additive complex trait genetics only continues to grow, including more ancestry-specific estimates of effect sizes and increased discoveries of associated, putative causal variants.\footnote{\red{SR: I'm not sure this sentence is doing much for you. It's also a bit awkwardly phrased and hard to parse - should be shorter and more direct.}} Here, we explore a form of non-additive trait architecture, epistasis, to see if there are similar insights that can be gained in complex traits when analyzing a particularly diverse dataset. 
+
+To increase our power to detect epistasis, we create a new method to detect pathway-level marginal epistasis (MAPIT-R), and apply this method to a diverse group of ancestry subgroups within the UK BioBank (UKB) dataset. We analyze height and BMI with the KEGG and REACTOME databases and find 245 pathways with statistically significant signals of marginal epistasis. We find that 67\% of these results are found in an African subgroup of the UKB data. We find that BMI consistently produces stronger signals of pathway-level marginal epistasis than height. We find that the proteasome is enriched for signals of marginal epistasis and show how region-based tests such as MAPIT-R can be used to further localize association signals. And we investigate the relationship between within-subgroup genetic variation and its impact on the ability to detect marginal epistasis. 
 
 
 
