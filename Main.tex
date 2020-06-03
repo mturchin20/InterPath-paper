@@ -211,6 +211,13 @@ To accomplish this, we followed past examples of how incorporating diverse colle
 
 In this study, we present \red{MAPIT-R}, a new methodological framework for analyzing marginal epistasis on the \red{region and/or?} pathway level. We analyze epistasis in height and body mass index (BMI) at multiple genomic \red{scales} across six different human ancestry subgroups present in the UK BioBank (UKB) \citep{Sudlow2015} dataset, and find that an African ancestry UKB subgroup produces many more significant epistatic pathways than any other UKB ancestry subgroup (165 of 245 total significant pathways \red{how many subgroups analyed?}). \red{You need to define what a significant hit is - a pathway with a large marginal epistatic signal? Marginal epistasis has not been identified, and there's no mention of why one might want to look at pathways? I would think you would want to highlight some GWA enrichment analyses like RSS and gene-e} We find pathways related to cellular signaling and the immune system are often represented among our significant hits, and evidence that the proteasome may be particularly enriched for epistatic interactions.\footnote{\red{SR: I think this sentence, related to my last comment, should start with something like "Our significant hits for epistastic interactions include pathways realted to cellualar signaling...." is this in both traits?}} We find that BMI on average produces stronger signals of pathway-level marginal epistasis than height, in line with previous results suggesting BMI may be more influenced by non-additive factors than height \citep{Elks2012,Visscher2012}. And lastly we find that differences between ancestries are unlikely to be due to large, broadscale patterns of genetic variation.  
 
+
+
+
+
+
+
+
 \section{Results}\label{InterPath-Results}
 
 \subsection{Overview of MAPIT-R Model}\label{InterPath-Results-MAPITRModel}
@@ -229,7 +236,7 @@ Following the same setup as MAPIT, we observe that the model in equation \ref{Ov
 \end{align}
 where \textbf{K}, \textbf{M}, and \textbf{G} are all random effects that follow multivariate normal distributions, $\phi$, $\omega$, and $\sigma$ are their respective variance components, $\textbf{K}_K = \textbf{X}_{R}\textbf{X}^{\textbf{T}}_{R}/q$, the genetic relatedness matrix (GRM) constructed from the $q$ variants that belong to the test group \textbf{R}, $\textbf{K}_M = \textbf{X}_{-R}\textbf{X}^{\textbf{T}}_{-R}/(p-q)$, the GRM constructed from all the remaining variants in $p$ not in \textbf{R}, and $\textbf{K}_G = \textbf{K}_K \circ \textbf{K}_M$, the Hadamard product between the GRMs $\textbf{K}_K$ and $\textbf{K}_M$.
 
-Given this new, tractable form of our model, we return to our test of interest: whether there are any non-zero interaction effects between the variants in \textbf{R} and the rest of the variants remaining in the genome. This is equivalent to testing whether the variance component $\sigma$ is equal to 0, or alternatively a null hypothesis of $H_0: \sigma = 0$. To estimate and test $\sigma$, we follow the same procedure as MAPIT and employ MQS, an approach that is based on the method of moments and produces estimates that are mathematically identical to the Haseman-Elston (HE) cross-product regression (citation: Xiang and the HE paper) (see Materials and Methods). MQS allows us to jointly estimate the set of variance components $(\phi^{2}, \omega^{2}, \sigma^{2}, \tau^{2})$ in a computational tractable manner, and we are able to get a final p-value using the Davies method (citations).  
+Given this new, implementable form of our model, we return to our test of interest: whether there are any non-zero interaction effects between the variants in \textbf{R} and the rest of the variants remaining in the genome. This is equivalent to testing whether the variance component $\sigma$ is equal to 0, or alternatively a null hypothesis of $H_0: \sigma = 0$. To estimate and test $\sigma$, we follow the same procedure as MAPIT and employ MQS, an approach that is based on the method of moments and produces estimates that are mathematically identical to the Haseman-Elston (HE) cross-product regression \citep{Haseman1972, Zhou2017} (see Materials and Methods). MQS allows us to jointly estimate the set of variance components $(\phi^{2}, \omega^{2}, \sigma^{2}, \tau^{2})$ in a computationally tractable manner, which are needed to properly test $\sigma$ and are also needed to be recalculated with every pathway. However, because of MQS this process is feasible, and we are ultimately able to test $\sigma$ and get final $p$-values for each pathway using the Davies method \citep{Crawford2017a,Davies1980}.  
 
 
 
@@ -238,7 +245,7 @@ Given this new, tractable form of our model, we return to our test of interest: 
 
 \subsection{Many Pathways Identified As Containing Marginal Epistasis in the African Subgroup}\label{InterPath-Results-PathwayEpistasis}
 
-To investigate marginal epistasis by grouping variants for the first time then, we applied MAPIT-R to height and BMI on the pathway-level using individuals from the UKB. We used pathways from the KEGG and REACTOME databases \citep{Liberzon2011} as previously mentioned and analyzed 6 different human ancestry subgroups that we extracted from the UKB: African (n=), British (n=), Caribbean (n=), Chinese (n=), Indian (n=), and Pakistani (n=) (Supplementary Figure \ref{InterPath-Supp-Figure-UKB-subgroups-PCAPlot} and Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Subgroups were extracted based on self-identified ancestry and were further refined using typical quality control (QC) procedures (see Materials and Methods for details). The British subgroup was created by randomly extracting a set of 4,000 individuals pre-QC in order to have a European-ancestry subgroup that matched the sample sizes of the other non-European ancestry subgroups. 
+To investigate marginal epistasis by grouping variants for the first time then, we applied MAPIT-R to height and BMI on the pathway-level using individuals from the UKB. We used pathways from the KEGG and REACTOME databases \citep{Liberzon2011} as previously mentioned and analyzed 6 different human ancestry subgroups that we extracted from the UKB: African (n=3111), British (n=3848), Caribbean (n=3833), Chinese (n=1448), Indian (n=5077), and Pakistani (n=1581) (Supplementary Figure \ref{InterPath-Supp-Figure-UKB-subgroups-PCAPlot} and Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Subgroups were extracted based on self-identified ancestry and were further refined using typical quality control (QC) procedures (see Materials and Methods for details). The British subgroup was created by randomly extracting a set of 4,000 individuals pre-QC in order to have a European-ancestry subgroup that matched the sample sizes of the other non-European ancestry subgroups. 
 
 Applying MAPIT-R to height and BMI with these databases and ancestry subgroups, we find 245 pathways that have genome-wide significant signals for marginal epistatic interactions with the rest of the genome (Figure \ref{InterPath-Main-Figure-Barplots-KEGG}, Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}, and Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-KEGG-Height-a}\textcolor{blue}{-d}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis). We find similar numbers of significant pathways between the KEGG and REACTOME databases 130 and 115, respectively. (\red{SR - overlap? Venn diagram? or doesn't matter?} \textcolor{blue}{MT - no overlap, these are just the raw counts from each database separately}). And across both databases in total, we find that BMI contains more significant pathways than height (155 vs. 90) (\red{SR: this is summed across both databases for each trait? I'm confused.} \textcolor{blue}{MT -- summed across databases, added some text to try and clarify}). The majority of our significant pathways are identified in the African subgroup (165/245). This enrichment towards the African subgroup is found in each pathway database as well as in each phenotype.
 
@@ -344,6 +351,11 @@ One important consideration of our results is that we have limited representatio
 
 And overall we see similar results across all replicates to our original results from the first set of 4,000 British individuals. We see limited numbers of significant pathways across all phenotype, database, and replicate subgroup combinations, as well as limited overlap of significant pathways between replicates (Supplementary Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}\textcolor{blue}{-13}). We also ran analyses using permuted phenotypes, as before, and once again see proper behavior under the null and very low FDRs (Supplementary Tables \ref{InterPath-Supp-Tables-BritReps-FDRs-pt1}). While not presenting new significant pathways, these results at least suggest that the large numbers of significant pathways we observe in the African subgroup are less likely to be a product of simply choosing a particularly optimal set of individuals by chance.  
 
+
+
+
+
+
 \subsection{Investigating the Relationship Between Within-Subgroup Genetic Variation and Detecting Epistasis}
 
 As observed previously, the African subgroup produces the majority of our significant MAPIT-R pathway results; a follow up question then is why we see such between-ancestry subgroup differences in our MAPIT-R results. One possibility is this reflects the amount of genetic variation present in each subgroup -- greater levels of genetic variation may allow for greater numbers of possible genetic interactions. It is also well-established that African-ancestry populations contain the highest levels of within-population genetic variation on average compared to other global populations (citations). Therefore, we decided to investigate whether there were any connections between measures of genetic variation within and between our subgroups and the number of significant MAPIT-R pathways each subgroup produced.
@@ -383,6 +395,14 @@ Genome-wide levels of genetic variation do not appear to be a major factor in pa
 \end{figure}
 
 Therefore, to investigate this possible relationship between subgroup PVE on PC1 and MAPIT-R results, we compared the proportion of SNPs that are strongly loaded on PC1 within a given pathway against that pathway's MAPIT-R $p$-value\footnote{\textcolor{blue}{MT: I'm wondering if we can just say 'strongly loaded' here and define it in the caption of the figure}}. And across both phenotypes in both pathway databases in the African subgroup, we find no significant relationship (Supplementary Figure \ref{}), nor do we find any significantly positive relationships in any other ancestry subgroup as well. Focusing on pathways with the largest number of SNPs, and therefore potentially the pathways with the largest signals, we do see a marginally significant relationship in the African subgroup using REACTOME pathways (Figure \ref{}; linear regression $p$-value < .05), but this result is not replicated in the KEGG pathways. Overall then, it is still unclear if and how within-subgroup genetic variation relates back to the differences in between subgroup MAPIT-R results we observe.
+
+
+
+
+
+
+
+
 
 
 
