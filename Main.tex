@@ -196,7 +196,7 @@ By applying MAPIT-R to height and BMI in these UKB ancestry subgroups, we identi
 
 \subsection{Overview of MAPIT-R Model}\label{InterPath-Results-MAPITRModel}
 
-Here we provide an overview of the MAPIT-R model; for a full description, see Materials and Methods. As previously mentioned, MAPIT-R is a multiple-variant extension of the single-variant MAPIT framework, where we are interested in testing whether there are any non-zero genetic interaction effects between a group of variants \textbf{R} and \textbf{any} other variant remaining in the genome \textbf{S}. The typical GWA linear form of this model would be:  
+Here we provide an overview of the MAPIT-R model; for a full description, see Materials and Methods. As previously mentioned, MAPIT-R is a multiple-variant extension of the single-variant MAPIT framework. Here, we are interested in testing whether there are any non-zero genetic interaction effects between a group of variants \textbf{R} and \textbf{any} other variant remaining in the genome \textbf{S}. The typical GWA linear form of this model is:  
 \begin{equation}\label{Overview1}
 \textbf{y} = \mu\textbf{1} + \sum_{r \in R} \textbf{x}_r\beta_r + \sum_{s \not\in R} \textbf{x}_s\beta_s + \sum_{r \in R}\sum_{s \not\in R} (\textbf{x}_r \circ \textbf{x}_s)\alpha_{rs} + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I})  
 \end{equation}
@@ -210,12 +210,7 @@ Following the same setup as MAPIT, we observe that the model in equation \ref{Ov
 \end{align}
 where \textbf{K}, \textbf{M}, and \textbf{G} are all random effects that follow multivariate normal distributions, $\phi$, $\omega$, and $\sigma$ are their respective variance components, $\textbf{K}_K = \textbf{X}_{R}\textbf{X}^{\textbf{T}}_{R}/q$, the genetic relatedness matrix (GRM) constructed from the $q$ variants that belong to the test group \textbf{R}, $\textbf{K}_M = \textbf{X}_{-R}\textbf{X}^{\textbf{T}}_{-R}/(p-q)$, the GRM constructed from all the remaining variants in $p$ not in \textbf{R}, and $\textbf{K}_G = \textbf{K}_K \circ \textbf{K}_M$, the Hadamard product between the GRMs $\textbf{K}_K$ and $\textbf{K}_M$.
 
-Given this new, implementable form of our model, we return to our test of interest: whether there are any non-zero interaction effects between the variants in \textbf{R} and the rest of the variants remaining in the genome. This is equivalent to testing whether the variance component $\sigma$ is equal to 0, or alternatively a null hypothesis of $H_0: \sigma = 0$. To estimate and test $\sigma$, we follow the same procedure as MAPIT and employ MQS, an approach that is based on the method of moments and produces estimates that are mathematically identical to the Haseman-Elston (HE) cross-product regression \citep{Haseman1972, Zhou2017} (see Materials and Methods). MQS allows us to jointly estimate the set of variance components $(\phi^{2}, \omega^{2}, \sigma^{2}, \tau^{2})$ in a computationally tractable manner, which are needed to properly test $\sigma$ and are also needed to be recalculated with every pathway. However, because of MQS this process is feasible, and we are ultimately able to test $\sigma$ and get final $p$-values for each pathway using the Davies method \citep{Crawford2017a,Davies1980}.  
-
-
-
-
-
+Given this new, implementable form of our model, we return to our test of interest: whether there are any non-zero interaction effects between the variants in \textbf{R} and the rest of the genome. This is equivalent to testing whether the variance component $\sigma$ is equal to 0, or alternatively, a null hypothesis of $H_0: \sigma = 0$. To estimate and test $\sigma$, we follow the same procedure as MAPIT and employ MQS, an approach that is based on the method of moments and produces estimates that are mathematically identical to the Haseman-Elston (HE) cross-product regression \citep{Haseman1972, Zhou2017} (see Materials and Methods). MQS allows us to jointly estimate the set of variance components $(\phi^{2}, \omega^{2}, \sigma^{2}, \tau^{2})$ in a computationally tractable manner, which are needed to both properly test $\sigma$ and be recalculated with every pathway. Given these variance component estimates per pathway then, we are to test $\sigma$ and get final $p$-values for each pathway using the Davies method \citep{Crawford2017a,Davies1980}.  
 
 \subsection{Many Pathways Identified As Containing Marginal Epistasis in the African Subgroup}\label{InterPath-Results-PathwayEpistasis}
 
