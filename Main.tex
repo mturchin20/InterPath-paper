@@ -262,7 +262,7 @@ With a large number of pathways now identified as being impacted by marginal epi
 
 And indeed, by doing so, we find many genes that are significantly enriched among our significant MAPIT-R pathways (Supplementary Figure \ref{InterPath-Supp-Figure-Hypergeometric-QQPlots-African}). In the African subgroup for example, we find an abundance of `significant' $p$-values for both height and BMI in both pathway databases. Using the conservative Bonferroni cutoff of $2.082\times10^{-5}$ (.05 / 2401 genes), we would identify 45 genes as being significantly enriched in the REACTOME BMI analysis. However, one possible confounder to our analysis is that pathways with more genes, and therefore more variants, are more likely to have smaller MAPIT-R $p$-values (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}); this follows our original hypothesis that analyzing multiple variants should lead to more power to detect associations (though we note that solely having more variants does not lead to smaller MAPIT-R $p$-value, as shown in the permuted phenotype analyses; Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs-perm1})\footnote{\textcolor{blue}{MT: should this, bringing up the permutation results, be a comment in the caption of the supplementary figure and not something brought up in the main text?}}. As a result, this enrichment analysis may be moreso identifying genes that are overrepresented among larger pathways, such as housekeeping genes, than genes that are necessarily overrepresented among MAPIT-R significant pathways. 
 
-To limit the effect of this possible confounder, we reran our enrichment analysis, but this time only using pathways with less than 1,000 SNPs. And indeed, we see a large drop in the number of genes that are significantly enriched among our significant, but smaller, MAPIT-R pathways; most subgroups no longer have any significant genes, and the African subgroup has many fewer significant genes (29 to 2 in KEGG height, 47 to 11 in KEGG BMI, 24 to 0 in REACTOME height, and 65 to 26 in REACTOME BMI; Figure \ref{InterPath-Main-Figure-Hypergeometric-RestrictedComps-African-BMI}). However, we do also see one gene and a separate gene family  have experienced the opposite effect: their enrichment $p$-values have become more significant. The gene that has had the largest increase in significance is SMC3, a component of the multimeric cohesin complex. However, while having not as large a change in $p$-value, the next genes that experienced an increase in significance are all from the same family of proteins, the various subunits of the proteasome complex (\textit{PSMA}*, \textit{PSMB}*, \textit{PSMC}*, \textit{PSMD}*, and \textit{PSME}*). The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical system for a variety of processes related to protein degradation within the cell \citep{Voges1999,Livneh2016,Collins2017}. Whereas ubiquitin is the first half of this system that tags proteins for eventual degradation, the proteasome is the second half of this system that catalyzes the degradation itself. The main proteasome isoform, 26S, is made up of two main components: the 20S main core of four stack rings (an outer, structural ring encoaded by PSMA genes, and inner, catalytical ring encoded by PSMB genes) and the 19S regulatory caps which booked both sides of the main core (encoded by both PSMC and PSMD genes) (Figure \ref{InterPath-Main-Figure-Proteasome-Schematic}). For our purposes of investigating marginal epistasis, the proteasome offers a unique opportunity to not only further refine the original pathway-level signal, but also to further show the utility of group-based approaches.
+To limit the effect of this possible confounder, we reran our enrichment analysis, but this time only using pathways with less than 1,000 SNPs. And indeed, we see a large drop in the number of genes that are significantly enriched among our significant, but smaller, MAPIT-R pathways; most subgroups no longer have any significant genes, and the African subgroup has many fewer significant genes (29 to 2 in KEGG height, 47 to 11 in KEGG BMI, 24 to 0 in REACTOME height, and 65 to 26 in REACTOME BMI; Figure \ref{InterPath-Main-Figure-Hypergeometric-RestrictedComps-African-BMI}). However, we do also see one gene and a separate gene family  have experienced the opposite effect: their enrichment $p$-values have become more significant. The gene that has had the largest increase in significance is SMC3, a component of the multimeric cohesin complex. However, while having not as large a change in $p$-value, the next genes that experienced an increase in significance are all from the same family of proteins, the various subunits of the proteasome complex (PSMA*, PSMB*, PSMC*, PSMD*, PSME*, and PSMF*). The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical system for a variety of processes related to protein degradation within the cell \citep{Voges1999,Livneh2016,Collins2017}. Whereas ubiquitin is the first half of this system that tags proteins for eventual degradation, the proteasome is the second half of this system that catalyzes the degradation itself. The main proteasome isoform, 26S, is made up of two main components: the 20S main core of four stack rings (an outer, structural ring encoded by PSMA genes, and an inner, catalytic ring encoded by PSMB genes) and the 19S regulatory caps which booked both sides of the main core (encoded by both PSMC and PSMD genes) (Figure \ref{InterPath-Main-Figure-Proteasome-Schematic}). For our purposes of investigating marginal epistasis, the proteasome offers a unique opportunity to not only further refine the original pathway-level signal, but also to further show the utility of group-based approaches.
 
 \begin{figure}[htbp]
 \centering
@@ -280,10 +280,10 @@ To limit the effect of this possible confounder, we reran our enrichment analysi
 \label{InterPath-Main-Figure-Proteasome-Schematic}
 \end{figure}
 
-Specifically, we are interested in determining whether any subunit of the proteasome is particularly enriched for marginal epistasis compared to the rest of the subunits. To investigate this, we can remove each proteasome subunit one at a time from the original set of pathways analyzed and see if any group of SNPs has an out-sized affect on the new MAPIT-R $p$-values. If each subunit has an equal impact on the original pathway-level signal, then the change in MAPIT-R $p$-value should mainly be determined by the number of SNPs being removed with each subunit. Therefore, we reran each genome-wide significant MAPIT-R pathway that contained these proteasome subunit gene families and incrementally ran pathway versions with each subunit gene family removed. We ran these analyses specifically in the African subgroup and BMI since this combination is where the original signal was strongest. 
+Specifically, we were interested in determining whether any subunit of the proteasome is particularly enriched for marginal epistasis compared to the rest of the subunits. To investigate this, we can create versions of the original pathways analyzed where each individual subunit has been removed; in turn this could reveal whether any particular subunit leads to much greater loss in MAPIT-R $p$-value than compared to the other subunits. Therefore, we reran each genome-wide significant MAPIT-R pathway that contained these proteasome subunit gene families and incrementally ran pathway versions with each subunit gene family removed. We ran these analyses specifically in the African subgroup and BMI since this combination is where the original signal was strongest. 
 
-And what we observe on both the gene family level and on the individual SNP level is that there are indeed differing levels of impact on the original MAPIT-R pathway $p$-values between proteasome subunits (Figure \ref{InterPath-Main-Figure-Proteasome-Schematic} and \ref{InterPath-Main-Figure-Proteasome-Heatplot}).
-While there appear to be different patterns of impact within each gene family, two examples stand out in particular with the subunits of the \textit{PSME}* and \textit{PSMA}* families. First, genes from the \textit{PSME}* family encode an alternative regulatory cap (11S) that can also associate with the core proteasome; this isoform of the proteasome is also known as the immunoproteasome, since its functionality is moreso related to immune processes. Specifically, the immunoproteasome has been found to be more commonly involved with the degradation of XXX (citations). Therefore this may explain why removal of the \textit{PSME}* gene family may produce larger effects on the MAPIT-R $p$-values of pathways related to NF$\kappa$B, B-cells, HIV-infection, and apoptosis. Additionally, recent work has more directly connected \textit{PSME}* genes as potential upregulators of NF$\kappa$B as well \citep{Sun2016,Mitchell2019}, providing further support that this proteasome subunit may have more genome-wide genetic interactions that are relevant to these pathways than other subunit families. Second, genes from the \textit{PSMA}* family encode the outer two rings of the core four ones in the 20S structure. These outer, `alpha' rings are gates which control the entry of proteins into the core of the proteasome, as regulated by the caps (eg 19S or 11S). Unlike the regulatory caps or the inner `beta' rings (encoded by the \textit{PSMB}* family), which contain protease active sites, the outer rings may have less catalytic functionality, which is what is reflected by the consistent lack of change in MAPIT-R $p$-values across each pathway when \textit{PSMA}* genes are removed. Therefore in two instances we see examples of how known functionality of these proteasome subunits aligns with their observed impacts on the overall pathway-level marginal epistasis signals.
+And indeed we observe that some proteasome subunits appear to have greater impacts on the original MAPIT-R pathway $p$-values than others (Figure \ref{InterPath-Main-Figure-Proteasome-Heatplot}).
+While there appear to be different patterns of impact within each gene family, two examples stand out in particular with the subunits of the PSME and PSMA families. First, genes from the PSME family encode an alternative regulatory cap (11S) that can also associate with the core proteasome; this isoform of the proteasome is also known as the immunoproteasome, since its functionality is moreso related to immune processes. Specifically, the immunoproteasome has been found to be more commonly involved with the degradation of XXX (citations). Therefore this may explain why removal of the PSME gene family may produce larger effects on the MAPIT-R $p$-values of pathways related to NF$\kappa$B, B-cells, HIV-infection, and apoptosis. Additionally, recent work has more directly connected PSME genes as potential upregulators of NF$\kappa$B as well \citep{Sun2016,Mitchell2019}, providing further support that this proteasome subunit may have more genome-wide genetic interactions that are relevant to these pathways than other subunit families. Second, genes from the \textit{PSMA}* family encode the outer two rings of the core four ones in the 20S structure. These outer, `alpha' rings are gates which control the entry of proteins into the core of the proteasome, as regulated by the caps (eg 19S or 11S). Unlike the regulatory caps or the inner `beta' rings (encoded by the PSMB family), which contain protease active sites, the outer rings may have less catalytic functionality, which is what is reflected by the consistent lack of change in MAPIT-R $p$-values across each pathway when PSMA genes are removed. Therefore in two instances we see examples of how biological function aligns with observed impacts on pathway-level marginal epistasis signals.
 
 \begin{figure}[htb]
 \centering
@@ -301,12 +301,6 @@ While there appear to be different patterns of impact within each gene family, t
 
 
 
-The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical process for proper protein degradation and cell homeostasis \citep{Voges1999,Livneh2016,Collins2017}. And the genes highlighted in this size-restricted analysis represent both the core (20S) and regulatory cap (19S or 11S) subunits of the 26S proteasome, the main variant found within the cytosol of mammalian cells. Looking at the size-restricted pathways these genes are present in, we see multiple pathways related to cell-cycle regulation and, once again, the immune system (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome}).
-
-
-family that has had the opposite result -- multiple proteasome subunit genes (\textit{PSMA}*, \textit{PSMB}*, \textit{PSMC}*, \textit{PSMD}*, and \textit{PSME*}) now produce more significant hypergeometric $p$-values upon this restriction to pathways with smaller SNP counts (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-HypergeometricTests}). 
-
-The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical process for proper protein degradation and cell homeostasis \citep{Voges1999,Livneh2016,Collins2017}. And the genes highlighted in this size-restricted analysis represent both the core (20S) and regulatory cap (19S or 11S) subunits of the 26S proteasome, the main variant found within the cytosol of mammalian cells. Looking at the size-restricted pathways these genes are present in, we see multiple pathways related to cell-cycle regulation and, once again, the immune system (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome}). This new, first, category makes sense since protein levels (and therefore their regulation and degradation) are a key component of determining when cells progress through various cycle checkpoints. Encouragingly, these pathways also contain a range of SNP sizes, including multiple pathways with less than 600 SNPs -- this suggests that the results are not simply the product of finding pathways with the next largest set of allowable SNP sizes, but are instead being driven by other factors, such as the underlying biology. More work will be needed to investigate whether these particular results are unique to BMI or are representative of a broadly important protein complex for many phenotypes. But overall these results suggest the proteasome is a prime candidate as a protein complex that is significantly enriched for marginal epistatic interactions.  
 
 
 \subsection{MAPIT-R Provides Greater Evidence for Epistasis Than Single-SNP Methods in UKB Subgroups}\label{InterPath-Results-SNPEpistasis}
@@ -2000,39 +1994,39 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \end{table}
 \clearpage
 
-\begin{landscape}
-\setlength{\footskip}{2cm}
-\begin{table}[ht]
-\centering
-\begin{tabular}{lrrr}
-  \hline
-\textbf{Pathway} & \textbf{Genes} & \textbf{SNPs} & \textbf{$p$-Value} \\ 
-  \hline
-REACTOME\_M\_G1\_TRANSITION & 73 & 458 & 3.191E-06 \\ 
-  REACTOME\_CELL\_CYCLE\_CHECKPOINTS & 105 & 670 & 5.781E-06 \\ 
-  REACTOME\_HOST\_INTERACTIONS\_OF\_HIV\_FACTORS & 112 & 963 & 7.521E-06 \\ 
-  REACTOME\_DOWNSTREAM\_SIGNALING\_EVENTS\_OF\_ & & & \\ 
-  \qquad B\_CELL\_RECEPTOR\_BCR & 89 & 745 & 1.195E-05 \\
-  REACTOME\_REGULATION\_OF\_APOPTOSIS & 52 & 564 & 1.218E-05 \\ 
-  REACTOME\_MITOTIC\_G1\_G1\_S\_PHASES & 121 & 747 & 1.453E-05 \\ 
-  REACTOME\_ACTIVATION\_OF\_NF\_KAPPAB\_IN\_B\_CELLS & 59 & 465 & 1.861E-05 \\ 
-  REACTOME\_ASSEMBLY\_OF\_THE\_PRE\_REPLICATIVE\_COMPLEX & 60 & 331 & 3.293E-05 \\ 
-  REACTOME\_ANTIGEN\_PROCESSING\_CROSS\_PRESENTATION & 68 & 850 & 3.956E-05 \\ 
-   \hline
-\end{tabular}
-  \caption{\textbf{Size-restricted pathways that contain the PSM* cluster of genes}. Caption continued on next page.}
-\label{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome}
-\end{table}
-\clearpage
-\end{landscape}
-\setlength{\footskip}{1cm}
+%\begin{landscape}
+%\setlength{\footskip}{2cm}
+%\begin{table}[ht]
+%\centering
+%\begin{tabular}{lrrr}
+%  \hline
+%\textbf{Pathway} & \textbf{Genes} & \textbf{SNPs} & %\textbf{$p$-Value} \\ 
+%  \hline
+%REACTOME\_M\_G1\_TRANSITION & 73 & 458 & 3.191E-06 \\ 
+%  REACTOME\_CELL\_CYCLE\_CHECKPOINTS & 105 & 670 & 5.781E-06 \\ 
+%  REACTOME\_HOST\_INTERACTIONS\_OF\_HIV\_FACTORS & 112 & 963 & 7.521E-06 \\ 
+%  REACTOME\_DOWNSTREAM\_SIGNALING\_EVENTS\_OF\_ & & & \\ 
+%  \qquad B\_CELL\_RECEPTOR\_BCR & 89 & 745 & 1.195E-05 \\
+%  REACTOME\_REGULATION\_OF\_APOPTOSIS & 52 & 564 & 1.218E-05 \\ 
+%  REACTOME\_MITOTIC\_G1\_G1\_S\_PHASES & 121 & 747 & 1.453E-05 \\ 
+%  REACTOME\_ACTIVATION\_OF\_NF\_KAPPAB\_IN\_B\_CELLS & 59 & 465 & 1.861E-05 \\ 
+%  REACTOME\_ASSEMBLY\_OF\_THE\_PRE\_REPLICATIVE\_COMPLEX & 60 & 331 & 3.293E-05 \\ 
+%  REACTOME\_ANTIGEN\_PROCESSING\_CROSS\_PRESENTATION & 68 & 850 & 3.956E-05 \\ 
+%   \hline
+%\end{tabular}
+%  \caption{\textbf{Size-restricted pathways that contain the PSM* cluster of genes}. Caption continued on next page.}
+%\label{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome}
+%\end{table}
+%\clearpage
+%\end{landscape}
+%\setlength{\footskip}{1cm}
 
-\addtocounter{table}{-1}
-\begin{table} [t!]
-  \caption{\textbf{Size-restricted pathways that contain the PSM* cluster of genes}. The table shows the MAPIT-R genome-wide significant REACTOME pathways for BMI in the African subgroup that both have SNP sizes less than 1,000 and also contain the set of proteasome genes being investigated (\textit{PSMA}*, \textit{PSMB}*, \textit{PSMC}*, \textit{PSMD}*, and \textit{PSME*}). The first column shows the REACTOME pathway names, the second column shows the number of genes that were included in the MAPIT-R analysis, the third column show the number of SNPs that were included in the MAPIT-R analysis, and the fourth column shows the MAPIT-R $p$-value.}
-\label{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome-Caption}
-\end{table}
-\clearpage
+%\addtocounter{table}{-1}
+%\begin{table} [t!]
+%  \caption{\textbf{Size-restricted pathways that contain the PSM* cluster of genes}. The table shows the MAPIT-R genome-wide significant REACTOME pathways for BMI in the African subgroup that both have SNP sizes less than 1,000 and also contain the set of proteasome genes being investigated (\textit{PSMA}*, \textit{PSMB}*, \textit{PSMC}*, \textit{PSMD}*, and \textit{PSME*}). The first column shows the REACTOME pathway names, the second column shows the number of genes that were included in the MAPIT-R analysis, the third column show the number of SNPs that were included in the MAPIT-R analysis, and the fourth column shows the MAPIT-R $p$-value.}
+%\label{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome-Caption}
+%\end{table}
+%\clearpage
 
 %\begin{figure}[htbp]
 %\centering
@@ -2276,6 +2270,15 @@ The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical 
 
 %To further look into these proteasome genes, we...
 
+
+
+
+The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical process for proper protein degradation and cell homeostasis \citep{Voges1999,Livneh2016,Collins2017}. And the genes highlighted in this size-restricted analysis represent both the core (20S) and regulatory cap (19S or 11S) subunits of the 26S proteasome, the main variant found within the cytosol of mammalian cells. Looking at the size-restricted pathways these genes are present in, we see multiple pathways related to cell-cycle regulation and, once again, the immune system (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome}).
+
+
+family that has had the opposite result -- multiple proteasome subunit genes (\textit{PSMA}*, \textit{PSMB}*, \textit{PSMC}*, \textit{PSMD}*, and \textit{PSME*}) now produce more significant hypergeometric $p$-values upon this restriction to pathways with smaller SNP counts (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-HypergeometricTests}). 
+
+The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical process for proper protein degradation and cell homeostasis \citep{Voges1999,Livneh2016,Collins2017}. And the genes highlighted in this size-restricted analysis represent both the core (20S) and regulatory cap (19S or 11S) subunits of the 26S proteasome, the main variant found within the cytosol of mammalian cells. Looking at the size-restricted pathways these genes are present in, we see multiple pathways related to cell-cycle regulation and, once again, the immune system (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome}). This new, first, category makes sense since protein levels (and therefore their regulation and degradation) are a key component of determining when cells progress through various cycle checkpoints. Encouragingly, these pathways also contain a range of SNP sizes, including multiple pathways with less than 600 SNPs -- this suggests that the results are not simply the product of finding pathways with the next largest set of allowable SNP sizes, but are instead being driven by other factors, such as the underlying biology. More work will be needed to investigate whether these particular results are unique to BMI or are representative of a broadly important protein complex for many phenotypes. But overall these results suggest the proteasome is a prime candidate as a protein complex that is significantly enriched for marginal epistatic interactions.  
 
 
 
