@@ -301,30 +301,6 @@ family that has had the opposite result -- multiple proteasome subunit genes (\t
 The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical process for proper protein degradation and cell homeostasis \citep{Voges1999,Livneh2016,Collins2017}. And the genes highlighted in this size-restricted analysis represent both the core (20S) and regulatory cap (19S or 11S) subunits of the 26S proteasome, the main variant found within the cytosol of mammalian cells. Looking at the size-restricted pathways these genes are present in, we see multiple pathways related to cell-cycle regulation and, once again, the immune system (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome}). This new, first, category makes sense since protein levels (and therefore their regulation and degradation) are a key component of determining when cells progress through various cycle checkpoints. Encouragingly, these pathways also contain a range of SNP sizes, including multiple pathways with less than 600 SNPs -- this suggests that the results are not simply the product of finding pathways with the next largest set of allowable SNP sizes, but are instead being driven by other factors, such as the underlying biology. More work will be needed to investigate whether these particular results are unique to BMI or are representative of a broadly important protein complex for many phenotypes. But overall these results suggest the proteasome is a prime candidate as a protein complex that is significantly enriched for marginal epistatic interactions.  
 
 
-
-
-by restricting the size of the pathways analyzed, this aims t 
-
-Identifying genes that are enriched among our results may help further focus  
-
-
-
-
-
-
-To test whether any genes were significantly enriched across our top pathways, we used a hypergeometric test for enrichment to compare the number of times a gene appears among our significant pathways against the number of times that gene appears in the full distribution of pathways in either the KEGG or REACTOME databases. 
-
-Supplementary Tables \ref{InterPath-Supp-Tables-AllPops-TopGeneCounts-KEGG-Height-a}\textcolor{blue}{-d} shows the various genes present across our significant pathways at different levels of counts, and Supplementary Figure \ref{InterPath-Supp-Figure-Hypergeometric-QQPlots-African} shows the QQ-plots of our hypergeometric enrichment results across these genes. What immediately stands out is the abundance of `significant' $p$-values we find. For example, using the conservative Bonferroni cutoff of $2.082\times10^{-5}$ (.05 / 2401 genes), we would identify 45 genes as being significantly enriched in the REACTOME BMI analysis. However, one major assumption underlying this test is that each pathway is independent from one another, and we know this to not be the case. In fact this assumption is being violated in two ways in regards to the distribution of pathways we are analyzing. 
-
-First, we know that many pathways overlap one another in terms of gene content, and that this particular set of relationships is not easily deconstructed. Second, we also know that the hypothesis underlying our approach is that more SNPs should be correlated to greater levels of significance, and this is indeed what we observe in the results (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}); across both phenotypes in both pathway databases, we observe significant relationships between MAPIT-R -$\log_{10}$ $p$-values and the number of SNPs present in an analyzed pathway. This is encouraging in that it supports our initial intuition, but it does lead to significant pathways being more likely to have many SNPs and genes. Therefore when we observe a gene as significantly enriched, it may be possible that the locus just happens to be present in many pathways due to the nature of its function, such as being a `housekeeping' gene. In this case, the enrichment may be less a reflection of our biological interest (genes enriched for epistatic interactions) and more a reflection of the quality of the pathway databases (larger pathways have more similar gene content than smaller pathways do).
-
-The second of these two situations is what we tried to resolve first. If we are concerned about a relationship between larger pathways and inflated hypergeometric $p$-values, then one possible approach might be to restrict the size of the pathways analyzed. Instead of looking at enrichment among all pathways, we can instead look at enrichment only among pathways that have under a certain number of SNPs. And indeed, by restricting the number of SNPs present in a pathway to 1,000 or less, we see a major drop off in the number of significant pathways remaining (29 to 2 for KEGG height, 47 to 11 for KEGG BMI, 24 to 0 for REACTOME height, and 65 to 26 for REACTOME BMI); this, by extension, also produces a large drop in the genes that are present across these pathways as well as their associated hypergeometric $p$-values (Supplementary Figure \ref{InterPath-Supp-Figure-Hypergeometric-RestrictedComps-African-BMI} and Supplementary Table \ref{InterPath-Supp-Table-Hypergeometric-RestrictedComps-African-BMI-TopExamples}). Interestingly however, we find one gene family that has had the opposite result -- multiple proteasome subunit genes (\textit{PSMA}*, \textit{PSMB}*, \textit{PSMC}*, \textit{PSMD}*, and \textit{PSME*}) now produce more significant hypergeometric $p$-values upon this restriction to pathways with smaller SNP counts (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-HypergeometricTests}). 
-
-The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical process for proper protein degradation and cell homeostasis \citep{Voges1999,Livneh2016,Collins2017}. And the genes highlighted in this size-restricted analysis represent both the core (20S) and regulatory cap (19S or 11S) subunits of the 26S proteasome, the main variant found within the cytosol of mammalian cells. Looking at the size-restricted pathways these genes are present in, we see multiple pathways related to cell-cycle regulation and, once again, the immune system (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome}). This new, first, category makes sense since protein levels (and therefore their regulation and degradation) are a key component of determining when cells progress through various cycle checkpoints. Encouragingly, these pathways also contain a range of SNP sizes, including multiple pathways with less than 600 SNPs -- this suggests that the results are not simply the product of finding pathways with the next largest set of allowable SNP sizes, but are instead being driven by other factors, such as the underlying biology. More work will be needed to investigate whether these particular results are unique to BMI or are representative of a broadly important protein complex for many phenotypes. But overall these results suggest the proteasome is a prime candidate as a protein complex that is significantly enriched for marginal epistatic interactions.  
-
-%To further look into these proteasome genes, we...
-
-
 \subsection{MAPIT-R Provides Greater Evidence for Epistasis Than Single-SNP Methods in UKB Subgroups}\label{InterPath-Results-SNPEpistasis}
 
 Part of our initial hypothesis was that testing multiple variants at once would provide greater power to detect marginal epistasis than testing only single variants. While we have now identified pathways with genome-wide significant signals of marginal epistasis, we wanted to investigate whether any of these signals, in particular the differences between ancestry subgroups, were identifiable on the single-SNP level. So to explore this, we applied MAPIT to each of our UKB subgroups for both height and BMI. We find that there are no SNPs with genome-wide significant signals for marginal epistasis ($p$-value $< 5\times10^{-8}$; Supplementary Figure \ref{InterPath-Supp-Figure-MAPIT-HeightBMI}). While we observe possible enrichment of marginally significant $p$-values ($p$-value $< 5\times10^{-4}$) in the African, Caribbean, and Indian subgroups versus the British, Chinese, and Pakistani subgroups in both phenotypes, it is not as clear a between-ancestry pattern as we observe in the MAPIT-R results. And to compare against the more typical, direct pairwise variant epistasis analysis, we also applied PLINK's exhaustive pairwise epistasis test \citep{Purcell2007} to each of our ancestry subgroups in height and BMI, and once again do not observe any genome-wide significant tests ($p$-value $\leq 5\times10^{-13}$, Bonferroni-corrected for $1\times10^{11}$ tests; Supplementary Figure \ref{InterPath-Supp-Figure-PLINK-HeightBMI-AllPops}). Overall analyzing groups of variants jointly with MAPIT-R provides a greater ability to detect epistasis in these UKB subgroups than using single variant methods. 
@@ -2186,143 +2162,6 @@ SCRAP
 
 
 
-
-%To create a new method that uses multiple SNPs to analyze epistasis, we expanded the previous MAPIT framework into a new model that goes from identifying single-SNP marginal epistasis to identifying multiple-SNP marginal epistasis; we call this approach MAPIT-R, for \underline{MA}rginal e\underline{PI}stasis \underline{T}est for \underline{R}egions.\footnote{\red{SR: This should be in the intro.}} 
-
-
-K is a random effects term that represents our new group of SNPs R, with variance component $\phi$ and GRM $\textbf{K}_R$ based on the SNP set R, and where now $\textbf{K}_Q = \textbf{K}_R \circ \textbf{K}_G$, the Hadamard product between the GRMs constructed from R and G. Similar to the MAPIT model, we construct our 'epistasis' random effect by conducting pairwise multiplication, though now it is between two matrices instead of a vector and a matrix.
-
-where $\textbf{m}_k$ and $\textbf{g}_k$ are both random effects that follow multivariate normal distributions, $\omega$ and $\sigma$ are their respective variance components, $\textbf{K}_k = \textbf{X}_{-k}\textbf{X}^{\textbf{T}}_{-k}/(p-1)$, the genetic relatedness matrix (GRM) constructed from all SNPs available aside from SNP $k$, and $\textbf{G} = \textbf{D}_k\textbf{K}_k\textbf{D}_k$, a GRM based on pairwise interaction terms between the $k$\textsuperscript{th} variant and all other variants. Here, we denote $\textbf{D}_k =$ diag$(\textbf{x}_k)$ to be an $n \times n$ diagonal matrix with the genotype vector $\textbf{x}_k$ as its diagonal elements. Our parameter of interest here is $\sigma$ and whether it is significantly larger from 0; a significant deviation would represent there exist some subset of genetic interactions between $k$ and the rest of the genome.
-
-%Therefore, we have to make additional modeling assumptions on the effect sizes βl and αl to make the model identifiable. To do so, we follow standard approaches [64, 67, 69] and assume that each individual effect size follows a normal distribution, or βl ∼ N(0, ω2/(p − 1)) and αl ∼ N(0, σ2/(p − 1)) for l ≠ k. With the normal assumption on effect sizes, the model in Eq (1) is equivalent to the following variance component model,
-
-but in brief the main change we make is to go from a single SNP of interest \textbf{k} to a collection of SNPs of interest \textbf{R}. This in turns leads us to incorporate a new random effect  \textbf{Q} that represents the epistatic interactions between all the SNPs in \textbf{R} with all the remaining variants (SNPs not in \textbf{R}) across the genome. Using the same MQS (expand?) \citep{Zhou2017} setup as MAPIT did, we then test whether the variance component associated with \textbf{Q}, $\phi$ is significantly different from zero. If $\phi$ is significantly different from zero, it indicates that there is detectable marginal epistatic interactions between our group of SNPs \textbf{R} and the rest of the genome. Since this is a generalizable approach that allows for any set of SNPs \textbf{R} to be tested, we decided to begin by using known biological pathways. Specifically, we utilized the KEGG and REACTOME pathway datasets from the MSigDB \citep{Liberzon2011}; we chose these pathways due to their coverage of a wide range of biological processes as well as their wide range of pathway gene sizes. This would not only potentially allow us to investigate what the effect of different \textbf{R} sizes may be on our approach, but also provide biological starting points for any putative results. Additionally, this would be the first time marginal epistasis had been investigated on the pathway scale in human populations.
-
-
-
-
-
-
-Our second approach to investigating SNP-level epistasis across the genome was to look at `marginal epistasis'\citep{Crawford2017a}. To understand `marginal epistasis', first imagine all possible pairwise interactions between every SNP in the genome. Next, imagine we focus on only one single SNP and then collect only the pairwise interactions that involve this SNP of interest. This collection of pairwise interactions can be thought of us a subset of all possible pairwise interactions, or in other words, the marginal distribution of all pairwise interactions pertaining to just our SNP of interest (see Supplementary Figure \ref{} for a graphical representation of this).
-
-To test for SNP-level marginal epistasis, we use MAPIT \citep{Crawford2017}. For a full derivation of the MAPIT framework please see \citet{Crawford2017}, but in short MAPIT begins with the following setup:
-\begin{equation}
-\textbf{y} = \mu + \textbf{x}_k\beta_k + \sum_{l \neq k} \textbf{x}_l\beta_l + \sum_{l \neq k} (\textbf{x}_k \circ \textbf{x}_l)\alpha_l + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I})  
-\end{equation}
-
-where \textbf{y} is still a $n \times 1$ vector of phenotypes, $\textbf{x}_k$ is a $n \times 1$ vector of genotypes for our SNP of interest $k$, $\beta_k$ is our additive effect size for SNP $k$, $\textbf{x}_l$ is a $n \times 1$ vector of genotypes for every SNP $l$ that is not SNP $k$, $\beta_l$ is our additive effect size for SNP $l$, $(\textbf{x}_k \circ \textbf{x}_l)$ is the Hadamard product between our two SNP genotype vectors, $\alpha_l$ is interaction effect size, $\boldsymbol{\epsilon}$ is a $n \times 1$ vector of random effects which follow a multivariate normal distribution with mean $\textbf{0}$ and covariance matrix equal to variance effect $\tau$ times the $n \times n$ identity matrix $\textbf{I}$. In this model our parameter of interest would be $\alpha_l$, whether there is any significant interaction between our SNP of interest $k$ and of the remaining SNPs in the genome. However, as one might expect, the number of parameters in this model far exceeds the number of samples (ie $p >> n$), therefore making the solution indeterminable. To overcome this, MAPIT moves this setup into a linear mixed model framework and make the problem a variance component one. To do this, we put normal random priors on each of our effect sizes ($\beta_k$, $\beta_l$, and $\alpha_l$), and redefine our model as follows:
-\begin{align}
-    & \textbf{y} = \mu + \textbf{x}_k\beta_k + \textbf{m}_k + \textbf{g}_k + \boldsymbol{\epsilon} \\
-    \textbf{m}_k \sim \mathcal{MVN}(\textbf{0}, &\omega^{2}\textbf{K}_k) \quad \textbf{g}_k \sim \mathcal{MVN}(\textbf{0}, \sigma^{2}\textbf{G}_k) \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I}) \nonumber 
-\end{align}
-where $\textbf{m}_k$ and $\textbf{g}_k$ are both random effects that follow multivariate normal distributions, $\omega$ and $\sigma$ are their respective variance components, $\textbf{K}_k = \textbf{X}_{-k}\textbf{X}^{\textbf{T}}_{-k}/(p-1)$, the genetic relatedness matrix (GRM) constructed from all SNPs available aside from SNP $k$, and $\textbf{G} = \textbf{D}_k\textbf{K}_k\textbf{D}_k$, a GRM based on pairwise interaction terms between the $k$\textsuperscript{th} variant and all other variants. Here, we denote $\textbf{D}_k =$ diag$(\textbf{x}_k)$ to be an $n \times n$ diagonal matrix with the genotype vector $\textbf{x}_k$ as its diagonal elements. Our parameter of interest here is $\sigma$ and whether it is significantly larger from 0; a significant deviation would represent there exist some subset of genetic interactions between $k$ and the rest of the genome.
-
-Running MAPIT on our population subset and for both height and BMI, we find that there are no significant signals for marginal epistasis (Figure \ref{InterPath-Main-Figure-MAPIT}). Matching the PLINK results we do see a small uptick of significance for height, but not much of anything for BMI. However, we note that we are still working with relatively smaller sample sizes as compared to the typical European GWAS (hundreds of thousands versus thousands). And with this discrepancy unlikely to immediately be fixed, we wanted to find another way to increase the power to detected marginal epistasis. 
-
-
-One approach for increasing power in GWAS that has had much success in the additive world has been to look for associations with biological pathways (citations). By looking for association across multiple variants at once, and in particular across genes that you believe act in a biologically coherent manner, you are ideally increasing your signal to noise ratio. Additionally this might be well-suited for complex traits since we anticipate polygenic trait effect sizes to be modest on average (citation). Therefore we chose to create a new approach that combined marginal epistasis with pathway analysis to increase our power to detect evidence for genetic interactions in the genome.  
-
-
-
-
-
-
-We expanded the previous MAPIT model into a new framework that goes from looking for marginal epistasis with a single variant to looking for marginal epistasis with an entire biological pathway; we call this approach InterPath, for \underline{Inter}action and \underline{Path}way analysis. The main change we make to the marginal epistasis model is to go from a single SNP of interest \textbf{k} to a collection of SNPs of interest \textbf{R}. For a full description of how this change leads to our new please see Online Methods, but in short this expansion leads to the following, new form of our linear mixed model:
-\begin{align}
-    & \textbf{y} = \mu + \textbf{R} + \textbf{G} + \textbf{Q} + \boldsymbol{\epsilon} \\
-    \textbf{R} \sim \mathcal{MVN}&(\textbf{0}, \phi^{2}\textbf{K}_R) \quad \textbf{G} \sim \mathcal{MVN}(\textbf{0}, \omega^{2}\textbf{K}_G) \nonumber \\ 
-    \textbf{Q} \sim \mathcal{MVN}&(\textbf{0}, \sigma^{2}\textbf{K}_Q) \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I}) \nonumber 
-\end{align}
-where now R is a new random effects term that represents our new group of SNPs R, with variance component $\phi$ and GRM $\textbf{K}_R$ based on the SNP set R, and where now $\textbf{K}_Q = \textbf{K}_R \circ \textbf{K}_G$, the Hadamard product between the GRMs constructed from R and G. Similar to the MAPIT model, we construct our 'epistasis' random effect by conducting pairwise multiplication, though now it is between two matrices instead of a vector and a matrix. To see how this changes the additive form of the model, see equation XX in Online Methods. 
-
-
-
-We fit this model similarly to before (also see Online Methods), and once again are interested primarily interested in whether the variance component term $\sigma$ is significantly greater than 0.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-To test for SNP-level marginal epistasis, we use MAPIT \citep{Crawford2017}. For a full derivation of the MAPIT framework please see \citet{Crawford2017}, but in short MAPIT begins with the following setup:
-\begin{equation}
-\textbf{y} = \mu + \textbf{x}_k\beta_k + \sum_{l \neq k} \textbf{x}_l\beta_l + \sum_{l \neq k} (\textbf{x}_k \circ \textbf{x}_l)\alpha_l + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I})  
-\end{equation}
-
-where \textbf{y} is still a $n \times 1$ vector of phenotypes, $\textbf{x}_k$ is a $n \times 1$ vector of genotypes for our SNP of interest $k$, $\beta_k$ is our additive effect size for SNP $k$, $\textbf{x}_l$ is a $n \times 1$ vector of genotypes for every SNP $l$ that is not SNP $k$, $\beta_l$ is our additive effect size for SNP $l$, $(\textbf{x}_k \circ \textbf{x}_l)$ is the Hadamard product between our two SNP genotype vectors, $\alpha_l$ is interaction effect size, $\boldsymbol{\epsilon}$ is a $n \times 1$ vector of random effects which follow a multivariate normal distribution with mean $\textbf{0}$ and covariance matrix equal to variance effect $\tau$ times the $n \times n$ identity matrix $\textbf{I}$. In this model our parameter of interest would be $\alpha_l$, whether there is any significant interaction between our SNP of interest $k$ and of the remaining SNPs in the genome. However, as one might expect, the number of parameters in this model far exceeds the number of samples (ie $p >> n$), therefore making the solution indeterminable. To overcome this, MAPIT moves this setup into a linear mixed model framework and make the problem a variance component one. To do this, we put normal random priors on each of our effect sizes ($\beta_k$, $\beta_l$, and $\alpha_l$), and redefine our model as follows:
-\begin{align}
-    & \textbf{y} = \mu + \textbf{x}_k\beta_k + \textbf{m}_k + \textbf{g}_k + \boldsymbol{\epsilon} \\
-    \textbf{m}_k \sim \mathcal{MVN}(\textbf{0}, &\omega^{2}\textbf{K}_k) \quad \textbf{g}_k \sim \mathcal{MVN}(\textbf{0}, \sigma^{2}\textbf{G}_k) \quad \boldsymbol{\epsilon} \sim \mathcal{MVN}(\textbf{0}, \tau^{2}\textbf{I}) \nonumber 
-\end{align}
-where $\textbf{m}_k$ and $\textbf{g}_k$ are both random effects that follow multivariate normal distributions, $\omega$ and $\sigma$ are their respective variance components, $\textbf{K}_k = \textbf{X}_{-k}\textbf{X}^{\textbf{T}}_{-k}/(p-1)$, the genetic relatedness matrix (GRM) constructed from all SNPs available aside from SNP $k$, and $\textbf{G} = \textbf{D}_k\textbf{K}_k\textbf{D}_k$, a GRM based on pairwise interaction terms between the $k$\textsuperscript{th} variant and all other variants. Here, we denote $\textbf{D}_k =$ diag$(\textbf{x}_k)$ to be an $n \times n$ diagonal matrix with the genotype vector $\textbf{x}_k$ as its diagonal elements. Our parameter of interest here is $\sigma$ and whether it is significantly larger from 0; a significant deviation would represent there exist some subset of genetic interactions between $k$ and the rest of the genome.
-
-We describe the framework for ``\underline{Inter}actions in \underline{Path}way'' (InterPath) analysis in detail here. The key goal of this method is to identify crosstalk between signaling pathways in GWAS, without having to explicitly model all possible higher-order interactions. In general, consider a pathway which is defined by a set of SNPs found within the regulatory regions of genes in that pathway. We will denote these variants with the set of indices $\mathcal{R} = (r_1,\ldots,r_p)$. Begin by considering the following partitioned linear regression model,
-\begin{equation}\label{LM}
-\by = \mu\bm{1}+\sum_{r\in \mathcal{R}}\bx_r\beta_{r}+\sum_{s\not\in \mathcal{R}}\bx_s\beta_{s}+\bvarepsilon, \quad \bvarepsilon\sim \mathcal{N}(\mathbf{0}, \tau^2\bI),
-\end{equation}
-where $\by$ is an $n$-dimensional vector of quantitative phenotypes for $n$ individuals; $\mu$ is an intercept term with an $n$-dimensional vector of ones; $\bx_r$ and $\bx_s$ are $n$-dimensional genotype vectors for variants that lie within and outside the regulatory region $\mathcal{R}$, respectively; $\beta_r$ and $\beta_s$ are the corresponding additive effect sizes; $\bvarepsilon$ is an $n$-vector of residual errors; $\tau^2$ is the residual error variance; $\bI$ denotes the identity matrix; and $\mathcal{N}(\bullet,\bullet)$ denotes a multivariate normal distribution. Here, we also assume that the genotypic vectors have been centered and standardized to have mean 0 and standard deviation 1.
-
-Because we consider scenarios where there are more variants than samples, we need to specify additional modeling assumptions in Equation \eq{LM} to make the rest of the model identifiable. In particular, we recall previous approaches and assume that the individual effect sizes follow univariate normal distributions, or $\beta_r \sim \mathcal{N}(0, \omega^2/p)$ and $\beta_s \sim \mathcal{N}(0, \sigma^2/(l-p))$, where $l$ is the number of total number of all SNPs \citep{Crawford2017a}. With the assumption of normally distributed effect sizes, the model defined in Equation \eq{LM} is equivalent to a variance component model where $\bg\sim \mathcal{N}(\bm{0}, \omega^2\bK)$ with $\bK=\bX_{\mathcal{R}}\bX_{\mathcal{R}}^{\T}/p$ being the genetic relatedness matrix computed using genotypes from all variants within the signaling pathway of interest; and $\wt\bg\sim \mathcal{N}(\bm{0}, \nu^2\wt\bK)$ with $\wt\bK=\bX_{-\mathcal{R}}\bX_{-\mathcal{R}}^{\T}/(l-p)$ representing a relatedness matrix computed using all other variants. Note that $\bg$ may be interpreted as a pathway's additive effect, while $\wt\bg$ denotes its polygenic background. 
-
-
-
-
-
-In brief, the marginal epistasis of a single SNP can be thought of as the summation of \textbf{all} epistatic interactions that SNP has with the rest of the genome.\footnote{\red{SR: this sentence should be in the intro.}} %\sout{Evidence for marginal epistasis does not immediately identify \textbf{which} loci elsewhere in the genome the SNP of interest is interacting with, but in exchange for this generalization the approach turns a highly burdensome multiple-testing setup into a much more tractable variance component model.}
-
-
-
-
-
-
-,  additionally do not see any 
-
-
-\red{We used two different approaches to detect epistasis at the individual variant level: the exhaustive pairwise search implemented in PLINK (citation), and the test for marginal epistasis implemented in MAPIT (citation); details on our applications of these methods are given in Materials and Methods}. Testing for epistasis with PLINK on each of our population subgroups we find that no pairs of SNPs produce a genome-wide significant interaction ($p$-value $\leq 5\times10^{-13}$, Bonferroni-corrected for $1\times10^{11}$ tests; Supplementary Figure \ref{InterPath-Supp-Figure-PLINK-HeightBMI-AllPops}).
-
-Alternatively, we can forgo such a stringent criteria\footnote{\red{SR: based on the ``a'' just a couple words earlier, this should be ``criterion''; at any rate, see my next comment.}} and instead look at SNPs that are marginally significant ($p$-value $< 1\times10^{-4}$); since this produces many possible interactions per SNP, we can also instead look at the \textbf{proportion} of marginally significant interactions per SNP as a more appropriate metric. Looking at this new framework, we start to see different patterns between our ancestry subgroups (Supplementary Figure \ref{InterPath-Supp-Figure-PLINK-Proportions-HeightBMI}). We find that different areas of the genome are producing SNPs with large proportions of marginally significant interactions across our different subgroups (Supplementary Table \ref{InterPath-Supp-Table-PLINK-Proportions-TopSNPs-a}), as well as different baseline levels of marginally significant interactions between ancestry subgroups as well (such as the Chinese and Pakistani subgroups having the largest baseline interactions in height). However, we once again do not have many individual SNPs that particularly stand out.\footnote{\red{SR: this paragraph will need to go/be heavily edited.}} 
-
-The second approach we took to investigate single-SNP epistasis was to implement MAPIT \citep{Crawford2017a}, a method which specifically tests for the presence of \textit{marginal epistasis} . 
-
-
-
-Running MAPIT on our population subgroups for both height and BMI, we find that there are no SNPs with genome-wide significant signals for marginal epistasis ($p$-value $< 5\times10^{-8}$; Supplementary Figure \ref{InterPath-Supp-Figure-MAPIT-HeightBMI}). We do see once again the top SNPs occurring in different regions of the genome between our different population subgroups (Supplementary Table \ref{InterPath-Supp-Table-MAPIT-TopSNPs-a}). But it is unclear if these are results reflecting true biology or simply noise due to a lack of power. To see if there were common patterns between analyzing marginal epistasis and direct pairwise epistasis, we compared our MAPIT results against our PLINK results. Specifically, we compared each SNP's MAPIT -$\log_{10}$ $p$-value against its proportion of marginal significant PLINK interactions, and we see more potential evidence for patterns of epistasis (Figure \ref{InterPath-Main-Figure-PLINKvsMAPIT-HeightBMI-African} \& Supplementary Figure \ref{InterPath-Supp-Figure-MAPITvsPLINK-HeightBMI-AllPops-a}). Looking at height and BMI in the African subgroup for example, we see that for some SNPs that have marginally significant MAPIT $p$-values, they also have greater proportions of marginally significant pairwise SNP interactions. Because these two metrics are potentially measuring the same signal but through different approaches, seeing marginal signals from both methods at the same locus is encouraging. Therefore, despite our limited power to identify single-SNP genome-wide significant interactions, there may be evidence for epistasis at lower stringency thresholds in our data.
-
-\begin{figure}[htb]
-\centering
-\includegraphics[scale=.45]{Images/Main/InterPath_Main_Figure_PLINKvsMAPIT_vs3_African_HeightBMI.png}
-\caption[TBD]{\textbf{Comparison of single-SNP epistasis methods in African subgroup}. The figure shows the single-SNP PLINK results vs. MAPIT results for height and BMI in the African subgroup. The PLINK results are shown on the $x$-axis as the proportion of marginally significant interactions per SNP (where marginally significant is defined as interaction test $p$-value $< 1\times10^{-4}$) and the MAPIT results are shown on the $y$-axis as the -$\log_{10}$ of the MAPIT $p$-values. The dotted red line shows the line of best fit, and the correlation between the two metrics is shown in the legend. We observe a subgroup of SNPs with greater marginal epistasis (higher -$\log_{10}$ $p$-values) beginning to correlate with having larger proportions of marginally significant SNP-by-SNP interactions. Seeing the same signal between two different approaches suggests there may be evidence for epistasis on the single-SNP level, albeit weak. For the same plots across all UKB subgroups, see Supplementary Figure \ref{InterPath-Supp-Figure-MAPITvsPLINK-HeightBMI-AllPops-a}.}
-\label{InterPath-Main-Figure-PLINKvsMAPIT-HeightBMI-African}
-\end{figure}
-
-There remains the issue though of our limited sample sizes and datasets. As previously discussed, there are ongoing efforts to increase the number of non-European individuals publicly available for complex trait analysis \citep{Matise2011,Kowalski2019}, but these numbers still currently pale in comparison to what is available for European individuals. Therefore, we need to identify alternative ways to improve power to detect signals of epistasis with our current datasets. The approaches we have used thus far have revolved around testing single variants. {\red{However, it is well-appreciated in other association approaches, such as GWA studies, that aggregating evidence for association across multiple variants can increase power to detect significant associations \citep{Cantor2010,Wang2010,Oldmeadow2011,Ramanan2012,Chimusa2019,White2019}. Therefore, we decided to explore whether taking a similar aggregate approach towards epistatic analyses would lead to an increase in significant associations as well. SR: this sentiment can go in the intro; the rest of this section should basically turn into a couple sentences.}} 
-
-
-
-
-
-
-
-
-
-
-
 not only is there an example of a gene family having a strong impact on the pathway-level signal for marginal epistasis, subunit  
 
 for 
@@ -2397,6 +2236,37 @@ In this study, we present \red{MAPIT-R}, a new methodological framework for anal
 
 
 Epistasis is a well-established phenomenon in a number of model organisms \citep{Lehner2006,Rowe2008,Shao2008,Flint2009,Costanzo2010,He2010,Jarvis2011,Pettersson2011,Bloom2013,Monnahan2015}, and has been suggested as a major \red{driver?} of both complex trait genetic architecture and evolution \citep{Carlborg2004,Carlborg2006,Martin2007,Phillips2008,Moore2009,Jones2014,Mackay2014}. However, there remains skepticism regarding the extent to which epistasis has \red{affected} human populations \citep{Hill2008,Crow2010,Aschard2012,Wood2014,Yang2015}. Recent methodological advances have shown increasing evidence for epistasis in humans \citep{Verma2016,Crawford2017a,Fang2019,Runcie2019},
+
+
+
+
+
+
+
+
+
+
+
+by restricting the size of the pathways analyzed, this aims t 
+
+Identifying genes that are enriched among our results may help further focus  
+
+
+
+
+
+
+To test whether any genes were significantly enriched across our top pathways, we used a hypergeometric test for enrichment to compare the number of times a gene appears among our significant pathways against the number of times that gene appears in the full distribution of pathways in either the KEGG or REACTOME databases. 
+
+Supplementary Tables \ref{InterPath-Supp-Tables-AllPops-TopGeneCounts-KEGG-Height-a}\textcolor{blue}{-d} shows the various genes present across our significant pathways at different levels of counts, and Supplementary Figure \ref{InterPath-Supp-Figure-Hypergeometric-QQPlots-African} shows the QQ-plots of our hypergeometric enrichment results across these genes. What immediately stands out is the abundance of `significant' $p$-values we find. For example, using the conservative Bonferroni cutoff of $2.082\times10^{-5}$ (.05 / 2401 genes), we would identify 45 genes as being significantly enriched in the REACTOME BMI analysis. However, one major assumption underlying this test is that each pathway is independent from one another, and we know this to not be the case. In fact this assumption is being violated in two ways in regards to the distribution of pathways we are analyzing. 
+
+First, we know that many pathways overlap one another in terms of gene content, and that this particular set of relationships is not easily deconstructed. Second, we also know that the hypothesis underlying our approach is that more SNPs should be correlated to greater levels of significance, and this is indeed what we observe in the results (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}); across both phenotypes in both pathway databases, we observe significant relationships between MAPIT-R -$\log_{10}$ $p$-values and the number of SNPs present in an analyzed pathway. This is encouraging in that it supports our initial intuition, but it does lead to significant pathways being more likely to have many SNPs and genes. Therefore when we observe a gene as significantly enriched, it may be possible that the locus just happens to be present in many pathways due to the nature of its function, such as being a `housekeeping' gene. In this case, the enrichment may be less a reflection of our biological interest (genes enriched for epistatic interactions) and more a reflection of the quality of the pathway databases (larger pathways have more similar gene content than smaller pathways do).
+
+The second of these two situations is what we tried to resolve first. If we are concerned about a relationship between larger pathways and inflated hypergeometric $p$-values, then one possible approach might be to restrict the size of the pathways analyzed. Instead of looking at enrichment among all pathways, we can instead look at enrichment only among pathways that have under a certain number of SNPs. And indeed, by restricting the number of SNPs present in a pathway to 1,000 or less, we see a major drop off in the number of significant pathways remaining (29 to 2 for KEGG height, 47 to 11 for KEGG BMI, 24 to 0 for REACTOME height, and 65 to 26 for REACTOME BMI); this, by extension, also produces a large drop in the genes that are present across these pathways as well as their associated hypergeometric $p$-values (Supplementary Figure \ref{InterPath-Supp-Figure-Hypergeometric-RestrictedComps-African-BMI} and Supplementary Table \ref{InterPath-Supp-Table-Hypergeometric-RestrictedComps-African-BMI-TopExamples}). Interestingly however, we find one gene family that has had the opposite result -- multiple proteasome subunit genes (\textit{PSMA}*, \textit{PSMB}*, \textit{PSMC}*, \textit{PSMD}*, and \textit{PSME*}) now produce more significant hypergeometric $p$-values upon this restriction to pathways with smaller SNP counts (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-HypergeometricTests}). 
+
+The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical process for proper protein degradation and cell homeostasis \citep{Voges1999,Livneh2016,Collins2017}. And the genes highlighted in this size-restricted analysis represent both the core (20S) and regulatory cap (19S or 11S) subunits of the 26S proteasome, the main variant found within the cytosol of mammalian cells. Looking at the size-restricted pathways these genes are present in, we see multiple pathways related to cell-cycle regulation and, once again, the immune system (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome}). This new, first, category makes sense since protein levels (and therefore their regulation and degradation) are a key component of determining when cells progress through various cycle checkpoints. Encouragingly, these pathways also contain a range of SNP sizes, including multiple pathways with less than 600 SNPs -- this suggests that the results are not simply the product of finding pathways with the next largest set of allowable SNP sizes, but are instead being driven by other factors, such as the underlying biology. More work will be needed to investigate whether these particular results are unique to BMI or are representative of a broadly important protein complex for many phenotypes. But overall these results suggest the proteasome is a prime candidate as a protein complex that is significantly enriched for marginal epistatic interactions.  
+
+%To further look into these proteasome genes, we...
 
 
 
