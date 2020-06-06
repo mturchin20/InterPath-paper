@@ -316,9 +316,9 @@ And overall we see similar results across all replicates to our original results
 
 \subsection{Investigating the Relationship Between Within-Subgroup Genetic Variation and Detecting Epistasis}
 
-As observed previously, the African subgroup produces the majority of our significant MAPIT-R pathway results; a follow up question then is why we see such between-ancestry subgroup differences in our MAPIT-R results. One possibility is this reflects the amount of genetic variation present in each subgroup -- greater levels of genetic variation may allow for greater numbers of possible genetic interactions. It is also well-established that African-ancestry populations contain the highest levels of within-population genetic variation on average compared to other global populations \citep{International2010,Genomes2015,Mallick2016}. Therefore, we decided to investigate whether there were any connections between measures of genetic variation within and between our subgroups and the number of significant MAPIT-R pathways each subgroup produced.
+As observed previously, the African subgroup produces the majority of our significant MAPIT-R pathways; a follow up question then is why we see such between-ancestry subgroup differences in our MAPIT-R results. One possibility is this reflects the amount of genetic variation present in each subgroup -- greater levels of genetic variation may allow for greater numbers of possible genetic interactions. It is also well-established that African-ancestry populations contain the highest levels of within-population genetic variation on average compared to other global populations \citep{International2010,Genomes2015,Mallick2016}. Therefore, we decided to investigate whether there were any connections between measures of genetic variation within and between our subgroups and the number of significant MAPIT-R pathways each subgroup produced.
 
-Our first approach was to look at genome-wide levels of genetic variation both between and within our subgroups. To do this, we calculated both pairwise F\textsubscript{ST} values between every UKB subgroup as well as within population F\textsubscript{ST} values as well (Figure \ref{InterPath-Main-Figure-Fst}). For between subgroup F\textsubscript{ST}, we find values as large as .124, which are within range of previous global sample estimates \citep{Ramachandran2005,Weir2005,Wang2012,Sugden2016}. We find that while the African subgroup does have some of the largest divergences from other populations (such as versus the British subgroup), we also observe close to similar levels of divergence between the Chinese subgroup and other populations as well. However, looking at within subgroup F\textsubscript{ST} (the diagonal), we observe that the African subgroup has the largest amount of differentiation as compared to any other subgroup. Additionally, the Caribbean and Chinese subgroups are the subgroups with the next largest values of within subgroup F\textsubscript{ST}, approximately matching the order in which subgroups produce significant pathway MAPIT-R results. Therefore, we decided to look further into whether within subgroup levels of genetic variation are connected to more significant MAPIT-R results.
+Our first approach was to look at genome-wide levels of genetic variation both between and within our subgroups. To do this, we calculated both pairwise F\textsubscript{ST} values between every UKB subgroup as well as within population F\textsubscript{ST} values as well (Figure \ref{InterPath-Main-Figure-Fst}). For between subgroup F\textsubscript{ST}, we find values as large as .124, which are within range of previous global sample estimates \citep{Ramachandran2005,Weir2005,Wang2012,Sugden2016}. We find that while the African subgroup does have some of the largest divergences from other populations (such as versus the British subgroup), we also observe close to similar levels of divergence between the Chinese subgroup and other populations as well. However, looking at within subgroup F\textsubscript{ST} (the diagonal)\footnote{\textcolor{blue}{MT: note, this is predicated on us figuring out the proper metric to use for the diagonal; if we cannot come up with a proper one, or if it doesn't match the following descriptions, I'll update things to match andd follow the figure properly}}, we observe that the African subgroup has the largest amount of differentiation as compared to any other subgroup. Additionally, the Caribbean and Chinese subgroups are the subgroups with the next largest values of within subgroup F\textsubscript{ST}, approximately matching the order in which subgroups produce significant pathway MAPIT-R results. Therefore, we decided to look further into whether within subgroup levels of genetic variation are connected to more significant MAPIT-R results.
 
 \begin{figure}[htb]
 \centering
@@ -343,78 +343,31 @@ To accomplish this, we calculated a pathway-level metric of within-subgroup gene
 \label{InterPath-Main-Figure-IBS-AllPopComps-KEGG}
 \end{figure}
 
-Genome-wide levels of genetic variation do not appear to be a major factor in pathway-level MAPIT-R results, so we then looked at more cryptic\footnote{\textcolor{blue}{MT: we can talk about the use of this word; I've iterated over a few versions, including 'cryptic', 'localized', and 'structured'.}} forms of genetic variation. Specifically, we looked at the PVEs of the within-subgroup principal components we had previously calculated to see if there were any patterns between subgroups that matched the levels of MAPIT-R results we found per subgroup. And indeed, similar to the within-subgroup F\textsubscript{ST} values we saw, we find that subgroup PVE on PC1 matches an order similar to which populations produce the largest numbers of significant pathways (Figure \ref{InterPath-Main-Figure-Eigenvalues}). While this patterns mostly fades by PC3, we wondered whether this suggested a more complex relationship between within-subgroup genetic variation and MAPIT-R results; possibly, if a pathway had a greater proportion of variants that covered the portions of the genome that were highly loaded on PC1, it might lead to more efficient removal of background population structure. For subgroups that have lower PVEs per PC, reflecting more subtle, less discernible population structure, this potential benefit may be less realized.
+Genome-wide levels of genetic variation do not appear to be a major factor in between-subgrou differences in pathway-level MAPIT-R results, so we then looked at more cryptic\footnote{\textcolor{blue}{MT: we can talk about the use of this word; I've iterated over a few versions, including 'cryptic', 'localized', and 'structured'.}} forms of genetic variation. Specifically, we looked at the PVEs of the within-subgroup principal components we had previously calculated to see if there were any patterns between subgroups that matched the levels of MAPIT-R results we found per subgroup. And indeed, similar to the within-subgroup F\textsubscript{ST} values we saw, we find that subgroup PVE on PC1 matches an order similar to which populations produce the largest numbers of significant pathways (Figure \ref{InterPath-Main-Figure-Eigenvalues}). While this pattern mostly fades by PC3, it may suggest a more complex relationship between within-subgroup genetic variation and MAPIT-R results; possibly, if a pathway had a greater proportion of variants that covered the portions of the genome that were highly loaded on PC1, it might lead to more efficient removal of background population structure. For subgroups that have lower PVEs per PC, reflecting more subtle, less discernible population structure, this may be a less actionable potential benefit.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=.5]{Images/Main/InterPath_Main_Figure_Eigenvalues_vs2.png}
+\includegraphics[scale=.45]{Images/Main/InterPath_Main_Figure_Eigenvalues_vs2.png}
 \caption[TBD]{\textbf{Distribution of top 10 local principal component PVEs across UKB subgroups}. The plot shows the PVE of each of the top 10 local PCs for each of our UKB population subgroups. Local here continues to refer to calculating PCs within each subgroup separately (versus calculating PCs jointly across all subgroups together). We observe that the distribution of PC1 PVEs among our subgroups appears to strongly correlate with the distribution of total number of genome-wide significant MAPIT-R pathways we identify per subgroup (see Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and  Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}).}
 \label{InterPath-Main-Figure-Eigenvalues}
 \end{figure}
 
-Therefore, to investigate this possible relationship between subgroup PVE on PC1 and MAPIT-R results, we compared the proportion of SNPs that are strongly loaded on PC1 within a given pathway against that pathway's MAPIT-R $p$-value\footnote{\textcolor{blue}{MT: I'm wondering if we can just say 'strongly loaded' here and define it in the caption of the figure}}. And across both phenotypes in both pathway databases in the African subgroup, we find no significant relationship (Supplementary Figure \ref{}), nor do we find any significantly positive relationships in any other ancestry subgroup as well. Focusing on pathways with the largest number of SNPs, and therefore potentially the pathways with the largest signals, we do see a marginally significant relationship in the African subgroup using REACTOME pathways (Figure \ref{}; linear regression $p$-value < .05), but this result is not replicated in the KEGG pathways. Overall then, it is still unclear if and how within-subgroup genetic variation relates back to the differences between subgroup MAPIT-R results we observe.
+Therefore, to investigate this possible relationship between subgroup PVE on PC1 and MAPIT-R results, we compared the proportion of SNPs that are strongly loaded on PC1 within a given pathway against that pathway's MAPIT-R $p$-value\footnote{\textcolor{blue}{MT: I'm wondering if we can just say 'strongly loaded' here and define it in the caption of the figure}}. And across both phenotypes in both pathway databases in the African subgroup, we find no significant relationship (Supplementary Figure \ref{}), nor do we find any significantly positive relationships in any other ancestry subgroup as well. Focusing on pathways with the largest number of SNPs, and therefore potentially the pathways with the largest signals, we do see a marginally significant relationship in the African subgroup using REACTOME pathways (Figure \ref{InterPath-Main-Figure-PC1Loading}; linear regression $p$-value $\approx$ .05), but this result is not replicated in the KEGG pathways. Overall then, it is still unclear if and how within-subgroup genetic variation relates back to the differences between subgroup MAPIT-R results we observe.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_PC1Loading_vs1.png}
+\caption[TBD]{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1}. The figure shows 
+
+
+.}
+\label{InterPath-Main-Figure-PC1Loading}
+\end{figure}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-make the removal of  such that particular subsets of the genome, like those strongly loaded on PC1, may be driving the MAPIT-R findings. This might be the case if
-
-Pathways which contain greater proportions of the genome that are highly loaded on PC1 may have a greater     
-
-this was the mean pairwise proportion of identity-by-state (IBS) between every pair of individuals using the SNPs for each pathway. a pathway-level measure of genetic variation by 
-
-The order of within subgroup F\textsubscript{ST} across the subgroups also roughly matches the order in which subgroups contain 
-
-African subgroup versus all the other ancestry subgroups in our dataset i? Across each of our different comb
-
-
-
-
-
-It is clear that the African subgroup produces many more significant MAPIT-R results than any other subgroup in our analysis; an obvious next question then is: why? It is known that on average African populations harbor greater levels of genetic variation than other global human populations. It may be possible that having greater base levels of variation across the genome may provide more power for our approach. Therefore we began to investigate whether there were any links between different population genetic measures of genetic variation within our subgroups and their respective MAPIT-R results.
-
-Our first approach to investigate this question was to look at broadscale metrics of genetic variation across our population subgroups. We did this by calculating both pairwise F\textsubscript{ST} values between each subgroup as well as PVE estimates for each subgroup's top 10 local principal components (Figures \ref{InterPath-Main-Figure-Fst} \& \ref{InterPath-Main-Figure-Eigenvalues}; `local' here refers to conducting PCA on each subgroup separately). For pairwise F\textsubscript{ST}, we find values as large as .124, which are within range of previous global sample estimates \citep{Ramachandran2005,Weir2005,Wang2012,Sugden2016}. We find that while the African subgroup does have some of the largest divergences from other populations (such as the British subgroups), we also witness close to similar levels of divergence between the Chinese subgroup and other populations as well. In contrast, looking at the top local PC PVE estimates, we see a pattern of population differentiation that is more similar to our MAPIT-R results. The African subgroup has a PC1 PVE that is much greater than any other population, and the second highest population is the Caribbean cohort, which is also the population with the second most significant MAPIT-R results. We do witness however higher baseline levels of PVE across the other population subgroups as compared to the African and Caribbean ones. These results suggest that what is driving our MAPIT-R results is not solely high levels of genetic variation or differentiation, but also a quality of how this variation is structured within a given population as well.
-
-%\begin{figure}[htb]
-%\centering
-%\includegraphics[scale=.5]{Images/Main/InterPath_Main_Figure_Fst_vs2.png}
-%\caption[TBD]{\textbf{Distribution of pairwise F\textsubscript{ST} across the UKB subgroups}. The heatplot shows pairwise F\textsubscript{ST} values between each of our UKB population subgroups using our genome-wide SNP data. F\textsubscript{ST} values range from .001 to .124, and we observe typical global patterns (eg African and Caribbean being more differentiated versus non-African subgroups, Chinese being more differentiated versus non-Asian subgroups). These global patterns, however, do not match the distribution of total number of significant MAPIT-R pathways observed per-ancestry in Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}.}
-%\label{InterPath-Main-Figure-Fst}
-%\end{figure}
-
-%\begin{figure}[htb]
-%\centering
-%\includegraphics[scale=.5]{Images/Main/InterPath_Main_Figure_Eigenvalues_vs2.png}
-%\caption[TBD]{\textbf{Distribution of top 10 local principal component PVEs across UKB subgroups}. The plot shows the PVE of each of the top 10 local PCs for each of our UKB population subgroups. Local here continues to refer to calculating PCs within each subgroup separately (versus calculating PCs jointly across all subgroups together). We observe that the distribution of PC1 PVEs among our subgroups appears to strongly correlate with the distribution of total number of genome-wide significant MAPIT-R pathways we identify per subgroup (see Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and  Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}).}
-%\label{InterPath-Main-Figure-Eigenvalues}
-%\end{figure}
-
-To take these analyses one step further, we investigated levels of genetic diversity on the pathway-scale as well to see if they are correlated with the MAPIT-R results. To accomplish this, we calculated the mean proportion of pairwise identity-by-state across every pair of individuals on the pathway level. Meaning for a single pathway, we had a metric ranging from 0 to 1 where 1 indicates all pairs of individuals had exactly the same genotypes at every SNP for a given pathway and 0 means all pairs of individuals had completely different genotypes at each of these SNPs. Lower values would then indicate greater levels of genetic diversity for a given pathway within that ancestry subgroup. Once we had these values, we then compared them against each pathway's MAPIT-R -$\log_{10}$ $p$-value; however, we found there was no relationship between these two metrics (Figure \ref{InterPath-Main-Figure-IBS-African} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}). This was true across almost every combination of phenotype, pathway database, and UKB subgroup. And in directly comparing population subgroups against one another, it can be seen that the per-pathway IBS proportions follow similar trajectories, shifted only by each population's mean level of IBS (Figure \ref{InterPath-Main-Figure-IBS-AllPopComps-KEGG} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPopComps-REACTOME}). Therefore it appears this further supports our previous finding that the signal we are observing in our results is likely not being driven by broadscale levels of genetic variation. Instead, there may be a more cryptic structure and relationship between the genetic variation in each subgroup and the power to detect epistasis we are observing with MAPIT-R.
-
-%\begin{figure}[htb]
-%\centering
-%\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_vs3_African.png}
-%\caption[TBD]{\textbf{Pathway-level genetic diversity versus MAPIT-R results in the African subgroup and KEGG database}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the African subgroup KEGG height and BMI analysis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results for each phenotype, database, and subgroup combination can be found in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}. We observe across almost every combination no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
-%\label{InterPath-Main-Figure-IBS-African}
-%\end{figure}
-
-%\begin{figure}[htb]
-%\centering
-%\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_AllPopComps_vs3_KEGG.png}
-%\caption[TBD]{\textbf{Pathway-level genetic diversity across all UKB subgroups for top African MAPIT-R KEGG pathways}. The figure plots the mean pairwise IBS proportions of each UKB subgroup for the top 75 KEGG pathways (sorted by MAPIT-R African subgroup $p$-value). Mean pairwise IBS proportions appear to follow similar trajectories across each subgroup, shifted mainly by average mean pairwise IBS proportion differences between subgroups. Results for both phenotypes in the REACTOME database can be see in Supplementary Figure %\ref{InterPath-Supp-Figure-IBS-AllPopComps-REACTOME}.}
-%\label{InterPath-Main-Figure-IBS-AllPopComps-KEGG}
-%\end{figure}
 
 
 
@@ -2275,6 +2228,61 @@ The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical 
 family that has had the opposite result -- multiple proteasome subunit genes (\textit{PSMA}*, \textit{PSMB}*, \textit{PSMC}*, \textit{PSMD}*, and \textit{PSME*}) now produce more significant hypergeometric $p$-values upon this restriction to pathways with smaller SNP counts (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-HypergeometricTests}). 
 
 The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical process for proper protein degradation and cell homeostasis \citep{Voges1999,Livneh2016,Collins2017}. And the genes highlighted in this size-restricted analysis represent both the core (20S) and regulatory cap (19S or 11S) subunits of the 26S proteasome, the main variant found within the cytosol of mammalian cells. Looking at the size-restricted pathways these genes are present in, we see multiple pathways related to cell-cycle regulation and, once again, the immune system (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome}). This new, first, category makes sense since protein levels (and therefore their regulation and degradation) are a key component of determining when cells progress through various cycle checkpoints. Encouragingly, these pathways also contain a range of SNP sizes, including multiple pathways with less than 600 SNPs -- this suggests that the results are not simply the product of finding pathways with the next largest set of allowable SNP sizes, but are instead being driven by other factors, such as the underlying biology. More work will be needed to investigate whether these particular results are unique to BMI or are representative of a broadly important protein complex for many phenotypes. But overall these results suggest the proteasome is a prime candidate as a protein complex that is significantly enriched for marginal epistatic interactions.  
+
+
+
+make the removal of  such that particular subsets of the genome, like those strongly loaded on PC1, may be driving the MAPIT-R findings. This might be the case if
+
+Pathways which contain greater proportions of the genome that are highly loaded on PC1 may have a greater     
+
+this was the mean pairwise proportion of identity-by-state (IBS) between every pair of individuals using the SNPs for each pathway. a pathway-level measure of genetic variation by 
+
+The order of within subgroup F\textsubscript{ST} across the subgroups also roughly matches the order in which subgroups contain 
+
+African subgroup versus all the other ancestry subgroups in our dataset i? Across each of our different comb
+
+
+
+
+
+It is clear that the African subgroup produces many more significant MAPIT-R results than any other subgroup in our analysis; an obvious next question then is: why? It is known that on average African populations harbor greater levels of genetic variation than other global human populations. It may be possible that having greater base levels of variation across the genome may provide more power for our approach. Therefore we began to investigate whether there were any links between different population genetic measures of genetic variation within our subgroups and their respective MAPIT-R results.
+
+Our first approach to investigate this question was to look at broadscale metrics of genetic variation across our population subgroups. We did this by calculating both pairwise F\textsubscript{ST} values between each subgroup as well as PVE estimates for each subgroup's top 10 local principal components (Figures \ref{InterPath-Main-Figure-Fst} \& \ref{InterPath-Main-Figure-Eigenvalues}; `local' here refers to conducting PCA on each subgroup separately). For pairwise F\textsubscript{ST}, we find values as large as .124, which are within range of previous global sample estimates \citep{Ramachandran2005,Weir2005,Wang2012,Sugden2016}. We find that while the African subgroup does have some of the largest divergences from other populations (such as the British subgroups), we also witness close to similar levels of divergence between the Chinese subgroup and other populations as well. In contrast, looking at the top local PC PVE estimates, we see a pattern of population differentiation that is more similar to our MAPIT-R results. The African subgroup has a PC1 PVE that is much greater than any other population, and the second highest population is the Caribbean cohort, which is also the population with the second most significant MAPIT-R results. We do witness however higher baseline levels of PVE across the other population subgroups as compared to the African and Caribbean ones. These results suggest that what is driving our MAPIT-R results is not solely high levels of genetic variation or differentiation, but also a quality of how this variation is structured within a given population as well.
+
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[scale=.5]{Images/Main/InterPath_Main_Figure_Fst_vs2.png}
+%\caption[TBD]{\textbf{Distribution of pairwise F\textsubscript{ST} across the UKB subgroups}. The heatplot shows pairwise F\textsubscript{ST} values between each of our UKB population subgroups using our genome-wide SNP data. F\textsubscript{ST} values range from .001 to .124, and we observe typical global patterns (eg African and Caribbean being more differentiated versus non-African subgroups, Chinese being more differentiated versus non-Asian subgroups). These global patterns, however, do not match the distribution of total number of significant MAPIT-R pathways observed per-ancestry in Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}.}
+%\label{InterPath-Main-Figure-Fst}
+%\end{figure}
+
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[scale=.5]{Images/Main/InterPath_Main_Figure_Eigenvalues_vs2.png}
+%\caption[TBD]{\textbf{Distribution of top 10 local principal component PVEs across UKB subgroups}. The plot shows the PVE of each of the top 10 local PCs for each of our UKB population subgroups. Local here continues to refer to calculating PCs within each subgroup separately (versus calculating PCs jointly across all subgroups together). We observe that the distribution of PC1 PVEs among our subgroups appears to strongly correlate with the distribution of total number of genome-wide significant MAPIT-R pathways we identify per subgroup (see Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and  Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}).}
+%\label{InterPath-Main-Figure-Eigenvalues}
+%\end{figure}
+
+To take these analyses one step further, we investigated levels of genetic diversity on the pathway-scale as well to see if they are correlated with the MAPIT-R results. To accomplish this, we calculated the mean proportion of pairwise identity-by-state across every pair of individuals on the pathway level. Meaning for a single pathway, we had a metric ranging from 0 to 1 where 1 indicates all pairs of individuals had exactly the same genotypes at every SNP for a given pathway and 0 means all pairs of individuals had completely different genotypes at each of these SNPs. Lower values would then indicate greater levels of genetic diversity for a given pathway within that ancestry subgroup. Once we had these values, we then compared them against each pathway's MAPIT-R -$\log_{10}$ $p$-value; however, we found there was no relationship between these two metrics (Figure \ref{InterPath-Main-Figure-IBS-African} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}). This was true across almost every combination of phenotype, pathway database, and UKB subgroup. And in directly comparing population subgroups against one another, it can be seen that the per-pathway IBS proportions follow similar trajectories, shifted only by each population's mean level of IBS (Figure \ref{InterPath-Main-Figure-IBS-AllPopComps-KEGG} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPopComps-REACTOME}). Therefore it appears this further supports our previous finding that the signal we are observing in our results is likely not being driven by broadscale levels of genetic variation. Instead, there may be a more cryptic structure and relationship between the genetic variation in each subgroup and the power to detect epistasis we are observing with MAPIT-R.
+
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_vs3_African.png}
+%\caption[TBD]{\textbf{Pathway-level genetic diversity versus MAPIT-R results in the African subgroup and KEGG database}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the African subgroup KEGG height and BMI analysis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results for each phenotype, database, and subgroup combination can be found in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}. We observe across almost every combination no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
+%\label{InterPath-Main-Figure-IBS-African}
+%\end{figure}
+
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_AllPopComps_vs3_KEGG.png}
+%\caption[TBD]{\textbf{Pathway-level genetic diversity across all UKB subgroups for top African MAPIT-R KEGG pathways}. The figure plots the mean pairwise IBS proportions of each UKB subgroup for the top 75 KEGG pathways (sorted by MAPIT-R African subgroup $p$-value). Mean pairwise IBS proportions appear to follow similar trajectories across each subgroup, shifted mainly by average mean pairwise IBS proportion differences between subgroups. Results for both phenotypes in the REACTOME database can be see in Supplementary Figure %\ref{InterPath-Supp-Figure-IBS-AllPopComps-REACTOME}.}
+%\label{InterPath-Main-Figure-IBS-AllPopComps-KEGG}
+%\end{figure}
+
+
+
+
+
 
 
 
