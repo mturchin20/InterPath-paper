@@ -214,7 +214,7 @@ Given this new, implementable form of our model, we return to our test of intere
 
 \subsection{Many Pathways Identified As Containing Marginal Epistasis in the African Subgroup}\label{InterPath-Results-PathwayEpistasis}
 
-To investigate marginal epistasis by grouping variants for the first time then, we applied MAPIT-R to height and BMI on the pathway-level using individuals from the UKB. We used pathways from the KEGG and REACTOME databases \citep{Liberzon2011} as previously mentioned and analyzed 6 different human ancestry subgroups that we extracted from the UKB: African (n=3111), British (n=3848), Caribbean (n=3833), Chinese (n=1448), Indian (n=5077), and Pakistani (n=1581) (Supplementary Figure \ref{InterPath-Supp-Figure-UKB-subgroups-PCAPlot} and Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Subgroups were extracted based on self-identified ancestry and were further refined using typical quality control (QC) procedures (see Materials and Methods for details). The British subgroup was created by randomly extracting a set of 4,000 individuals pre-QC in order to have a European-ancestry subgroup that matched the sample sizes of the other non-European ancestry subgroups. 
+To investigate marginal epistasis by grouping variants for the first time then, we applied MAPIT-R to height and BMI on the pathway-level using individuals from the UKB. We used pathways from the KEGG and REACTOME databases \citep{Liberzon2011} as previously mentioned and analyzed 6 different human ancestry subgroups that we extracted from the UKB: African (n=3111), British (n=3848), Caribbean (n=3833), Chinese (n=1448), Indian (n=5077), and Pakistani (n=1581) (Supplementary Figure \ref{InterPath-Supp-Figure-UKB-subgroups-PCAPlot} and Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats} \textcolor{blue}{[MT: I have your previous comments logged, will make those changes to this supplementary table]}). Subgroups were extracted based on self-identified ancestry and were further refined using typical quality control (QC) procedures (see Materials and Methods for details). The British subgroup was created by randomly extracting a set of 4,000 individuals pre-QC in order to have a European-ancestry subgroup that matched the sample sizes of the other non-European ancestry subgroups. 
 
 Applying MAPIT-R to height and BMI with these databases and ancestry subgroups, we find 245 pathways that have genome-wide significant signals for marginal epistatic interactions with the rest of the genome (Figure \ref{InterPath-Main-Figure-Barplots-KEGG}, Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}, and Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-KEGG-Height-a}\textcolor{blue}{-d}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis). We find similar numbers of significant pathways between the KEGG and REACTOME databases 130 and 115, respectively. (\red{SR - overlap? Venn diagram? or doesn't matter?} \textcolor{blue}{MT - no overlap, these are just the raw counts from each database separately}). And across both databases in total, we find that BMI contains more significant pathways than height (155 vs. 90) (\red{SR: this is summed across both databases for each trait? I'm confused.} \textcolor{blue}{MT -- summed across databases, added some text to try and clarify}). The majority of our significant pathways are identified in the African subgroup (165/245). This enrichment towards the African subgroup is found in each pathway database as well as in each phenotype.
 
@@ -497,13 +497,13 @@ After this first round of QC procedures, we then proceeded to impute our current
 %\label{InterPath-Supp-Figure-PLINK-Proportions-BMI}
 %\end{figure}
 
-\begin{figure}[htb]
-\centering
-\hspace*{-1.7cm}
-\includegraphics[scale=.45]{Images/Main/InterPath_Main_Figure_PLINK_vs4_HeightBMI.png}
-\caption[TBD]{\textbf{SNPs with the largest proportions of marginally significant PLINK pairwise epistasis tests, per subgroup}. The figure shows the proportion of pairwise marginally significant epistatic interactions a single SNP contains when tested on height and BMI within our UKB subgroups. Pairwise tests are conducted exhaustively for each individual SNP through PLINK. Marginally significant is defined as a pairwise SNP epistasis $p$-value $< 1\times10^{-4}$. Only the top 50 SNPs sorted by decreasing proportion are shown for each UKB subgroup. In general we find that the African and Caribbean subgroups have the highest proportions of marginally significant interactions per SNP.}
-\label{InterPath-Supp-Figure-PLINK-Proportions-HeightBMI}
-\end{figure}
+%\begin{figure}[htb]
+%\centering
+%\hspace*{-1.7cm}
+%\includegraphics[scale=.45]{Images/Main/InterPath_Main_Figure_PLINK_vs4_HeightBMI.png}
+%\caption[TBD]{\textbf{SNPs with the largest proportions of marginally significant PLINK pairwise epistasis tests, per subgroup}. The figure shows the proportion of pairwise marginally significant epistatic interactions a single SNP contains when tested on height and BMI within our UKB subgroups. Pairwise tests are conducted exhaustively for each individual SNP through PLINK. Marginally significant is defined as a pairwise SNP epistasis $p$-value $< 1\times10^{-4}$. Only the top 50 SNPs sorted by decreasing proportion are shown for each UKB subgroup. In general we find that the African and Caribbean subgroups have the highest proportions of marginally significant interactions per SNP.}
+%\label{InterPath-Supp-Figure-PLINK-Proportions-HeightBMI}
+%\end{figure}
 
 %\begin{figure}[htbp]
 %\centering
@@ -538,35 +538,35 @@ After this first round of QC procedures, we then proceeded to impute our current
 %\end{figure}
 %\clearpage
 
-\setlength{\footskip}{3cm}
-\begin{figure}[htbp]
-\centering
-\vspace*{-2cm}
-\includegraphics[scale=.3]{Images/Supp/InterPath_Supp_Figure_PLINKvsMAPIT_vs3_AllPops_HeightBMI_pt1.png}
-\caption[TBD]{\textbf{Comparison of single-SNP epistasis methods in height and BMI, per subgroup}. Caption continued at end of figures.}
-\label{InterPath-Supp-Figure-MAPITvsPLINK-HeightBMI-AllPops-a}
-\end{figure}
-\clearpage
-\setlength{\footskip}{1cm}
-\addtocounter{figure}{-1}
+%\setlength{\footskip}{3cm}
+%\begin{figure}[htbp]
+%\centering
+%\vspace*{-2cm}
+%\includegraphics[scale=.3]{Images/Supp/InterPath_Supp_Figure_PLINKvsMAPIT_vs3_AllPops_HeightBMI_pt1.png}
+%\caption[TBD]{\textbf{Comparison of single-SNP epistasis methods in height and BMI, per subgroup}. Caption continued at end of figures.}
+%\label{InterPath-Supp-Figure-MAPITvsPLINK-HeightBMI-AllPops-a}
+%\end{figure}
+%\clearpage
+%\setlength{\footskip}{1cm}
+%\addtocounter{figure}{-1}
 
-\setlength{\footskip}{3cm}
-\begin{figure}[htbp]
-\centering
-\vspace*{-2cm}
-\includegraphics[scale=.3]{Images/Supp/InterPath_Supp_Figure_PLINKvsMAPIT_vs3_AllPops_HeightBMI_pt2.png}
-\caption[TBD]{\textbf{Comparison of single-SNP epistasis methods in height and BMI, per subgroup}. Caption continued at end of figure.}
-\label{InterPath-Supp-Figure-MAPITvsPLINK-HeightBMI-AllPops-b}
-\end{figure}
-\clearpage
-\setlength{\footskip}{1cm}
-\addtocounter{figure}{-1}
+%\setlength{\footskip}{3cm}
+%\begin{figure}[htbp]
+%\centering
+%\vspace*{-2cm}
+%\includegraphics[scale=.3]{Images/Supp/InterPath_Supp_Figure_PLINKvsMAPIT_vs3_AllPops_HeightBMI_pt2.png}
+%\caption[TBD]{\textbf{Comparison of single-SNP epistasis methods in height and BMI, per subgroup}. Caption continued at end of figure.}
+%\label{InterPath-Supp-Figure-MAPITvsPLINK-HeightBMI-AllPops-b}
+%\end{figure}
+%\clearpage
+%\setlength{\footskip}{1cm}
+%\addtocounter{figure}{-1}
 
-\begin{figure} [t!]
-\caption[TBD]{\textbf{Comparison of single-SNP epistasis methods in height and BMI, per subgroup}. The figure shows the single-SNP PLINK results vs. MAPIT results for height and BMI in each UKB subgroup. For each individual plot, the PLINK results are shown on the $x$-axis as the proportion of marginally significant interactions per SNP (where marginally significant is defined as $p$-value $< 1\times10^{-4}$) and the MAPIT results are shown on the $y$-axis as the -$\log_{10}$ of the MAPIT $p$-values. The dotted red line shows the line of best fit, and the correlation between the two metrics is shown in the legend. For many of these plots we observe a subset of SNPs with greater marginal epistasis (higher -$\log_{10}$ $p$-values) beginning to correlate with having larger proportions of marginally significant SNP-by-SNP interactions. Seeing the same signal between two different approaches suggests there may be evidence for epistasis on the single-SNP level, albeit weak.}
-\label{InterPath-Supp-Figure-MAPITvsPLINK-HeightBMI-All-caption}
-\end{figure}
-\clearpage
+%\begin{figure} [t!]
+%\caption[TBD]{\textbf{Comparison of single-SNP epistasis methods in height and BMI, per subgroup}. The figure shows the single-SNP PLINK results vs. MAPIT results for height and BMI in each UKB subgroup. For each individual plot, the PLINK results are shown on the $x$-axis as the proportion of marginally significant interactions per SNP (where marginally significant is defined as $p$-value $< 1\times10^{-4}$) and the MAPIT results are shown on the $y$-axis as the -$\log_{10}$ of the MAPIT $p$-values. The dotted red line shows the line of best fit, and the correlation between the two metrics is shown in the legend. For many of these plots we observe a subset of SNPs with greater marginal epistasis (higher -$\log_{10}$ $p$-values) beginning to correlate with having larger proportions of marginally significant SNP-by-SNP interactions. Seeing the same signal between two different approaches suggests there may be evidence for epistasis on the single-SNP level, albeit weak.}
+%\label{InterPath-Supp-Figure-MAPITvsPLINK-HeightBMI-All-caption}
+%\end{figure}
+%\clearpage
 
 \begin{figure}[htbp]
 \centering
