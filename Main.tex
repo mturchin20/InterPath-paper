@@ -172,8 +172,6 @@ sramachandran@brown.edu}
 
 Genome-wide association (GWA) studies have identified thousands of significant genetic associations in humans across a number of complex traits. However, the majority of these studies focus on linear additive relationships between genotypic and phenotypic variation. Epistasis, or non-linear genetic interactions between genotypic and phenotypic variation, is regarded as a major driver of both complex trait genetic architecture and evolution in multiple model organisms -- but not in humans. A recent methodological advancement has introduced the concept of \textit{marginal epistasis}, or epistasis between a variant and the rest of the genome; identifying variants with statistically significant marginal epistatic interactions genome-wide enables computationally efficient detection of epistasis in a given complex trait. Previous approaches for detecting marginal epistasis focused only on analyzing individual variants, one at a time. Here, we present a new method, MAPIT-R, that analyzes sets of user-defined variants for the presence of marginal epistasis, and apply MAPIT-R to six diverse subgroups within the UK BioBank dataset\red{: NAME THEM HERE - see SR's comment later on using self-identified group labels or some other defining covariate from UK Biobank datasets}. We test for marginal epistasis signals underlying each of height and body mass index, and find 245 pathways within the KEGG and REACTOME databases containing statistically significant signals of marginal epistasis. 67\% of these results are detected in our African subgroup of the UKB data. We also find that BMI consistently produces lower MAPIT-R $p$-values for pathway-level marginal epistasis than height. We find that genes in the proteasome are enriched for signals of marginal epistasis and show how region-based tests such as MAPIT-R can be used to further localize epistatic signals. And we investigate the relationship between within-subgroup genetic variation and detecting marginal epistasis.
 
-conclusion sentence in abstract? linking back to 'not considered a major driver in humans?' -- we could explicitly have a sentence saying 'these results suggest region-based tests of epistasis and looking for epistasis in more diverse human populations may reveal greater evidence for epistasis's role in complex trait genetic architecture in humans' 
-
 \end{abstract}
 
 \linenumbers
@@ -187,15 +185,17 @@ Marginal epistasis refers to the total interaction effects of a single variant w
 
 \citet{Crawford2017a} implemented MAPIT, and focused on analyzing only single variants one at a time for marginal signals of epistasis with other variants in the rest of the genome. As with GWA studies, identifying marginal signals of association is difficult to interpret biologically. Just as numerous enrichment analyses have augmented the GWA framework by aggregating SNP-level association signals and testing for enrichment of associations in genes and pathways (citations needed - RSS both papers, SKAT, MAGMA, gene-e, Ben Raphael has a review with ``guilt by association" in the title I think). It is well-established in GWA approaches that aggregating variants in group-based tests can increase power to detect genetic associations \citep{Subramanian2005,Cantor2010,Wang2010,Lee2012,Carbonetto2013,Mooney2014,Gamazon2015,de2016}, and recent work has only further emphasized this point \citep{Nakka2016,Zhu2018,Cheng2019,Sun2019}. In this study, our objective is to expand the marginal epistasis framework to focus on user-specified groups of variants (e.g., genes, pathways), producing biologically interpretable results in scans for epistasis while reducing the multiple testing burden. We implement this approach in ``MArginal ePIstasis Test for Regions'', which we refer to as MAPIT-R.
 
-We apply MAPIT-R to genotype data and the quantitative traits height and body mass index (BMI) using pathways from the KEGG and REACTOME databases \citep{Liberzon2011} and multiple human ancestry subgroups (British, African, Caribbean, Chinese, Indian, and Pakistani)  in the UK BioBank (UKB) dataset \citep{Sudlow2015}. 
+We apply MAPIT-R to genotype data and the quantitative traits height and body mass index (BMI) using pathways from the KEGG and REACTOME databases \citep{Liberzon2011} and multiple human ancestry subgroups (British, African, Caribbean, Chinese, Indian, and Pakistani)  in the UK BioBank (UKB) dataset \citep{Sudlow2015}. We analyze multiple non-European human ancestries to help get a more global view of epistasis in human populations. We find multiple pathways with significant evidence for marginal epistatic interactions with the rest of the genome. 
 
 
 
 
-We focused on height and BMI due to the extensive work that has already been done investigating the broad-sense and narrow-sense heritabilities of these traits \citep{Yang2010,Elks2012,Visscher2012,Finucane2015,Speed2017,Wainschtein2019}. We began our group-based analyses using pathways from KEGG and REACTOME due to extensive range of biological processes these databases cover as well as range of SNP sizes the pathways themselves cover as well. And we analyzed multiple human ancestries due to the ongoing imbalance of published GWA studies that solely focuses on European-ancestry individuals \citep{Need2009,Popejoy2016,Gurdasani2019,Martin2019,Sirugo2019}. Roughly 20\% of published GWA studies have been conducted in individuals of non-European ancestries \citep{Gurdasani2019,Martin2019,Sirugo2019}, and that is despite ongoing awareness of this problem over the last decade \citep{Need2009,Popejoy2016} and an increasing amount of work showing the importance of studying non-European populations \citep{Dumitrescu2011,Martin2017a,Martin2017b,Mogil2018,Bien2019,Duncan2019,Kuchenbaecker2019,Wojcik2019,Zhong2019,Marnetto2020,Mostafavi2020}. 
+We focused on height and BMI due to the extensive work that has already been done investigating the broad-sense and narrow-sense heritabilities of these traits \citep{Yang2010,Elks2012,Visscher2012,Finucane2015,Speed2017,Wainschtein2019}. 
+
+We began our group-based analyses using pathways from KEGG and REACTOME due to extensive range of biological processes these databases cover as well as range of SNP sizes the pathways themselves cover as well.
 
 
-
+And we analyzed multiple human ancestries due to the ongoing imbalance of published GWA studies that solely focuses on European-ancestry individuals \citep{Need2009,Popejoy2016,Gurdasani2019,Martin2019,Sirugo2019}. Roughly 20\% of published GWA studies have been conducted in individuals of non-European ancestries \citep{Gurdasani2019,Martin2019,Sirugo2019}, and that is despite ongoing awareness of this problem over the last decade \citep{Need2009,Popejoy2016} and an increasing amount of work showing the importance of studying non-European populations \citep{Dumitrescu2011,Martin2017a,Martin2017b,Mogil2018,Bien2019,Duncan2019,Kuchenbaecker2019,Wojcik2019,Zhong2019,Marnetto2020,Mostafavi2020}. 
 
 \red{SR: I do think saying something about why we looked at multiple ancestries here - genetic heterogeneity maybe? - is a good idea but should be somewhat cut-and-dry.}
 %Dumitrescu2011,Stranger2012,Carlson2013,Kerminen2019,Rosenberg2019,
@@ -235,7 +235,7 @@ Applying MAPIT-R to height and BMI measurements and genotype data using  these p
 
 This enrichment towards the African subgroup is found in each pathway database as well as in each phenotype.
 
-The specific pathways with significant marginal epistasis signals in the African subgroup share multiple themes across each of the database and phenotype combinations (Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-KEGG-BMI-a}\textcolor{blue}{-d}). Analyzing height in KEGG, we find multiple pathways representing cellular signaling (e.g. KEGG\_CHEMOKINE\_SIGNALING\_PATHWAY, KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION, and \\ KEGG\_WNT\_SIGNALING\_PATHWAY), immune systems (e.g. \\ KEGG\_AUTOIMMUNE\_THYROID\_DISEASE, KEGG\_ALLOGRAFT\_REJECTION, and KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION), and heart conditions (e.g. KEGG\_DILATED\_CARDIOMYOPATHY and \\ KEGG\_VIRAL\_MYOCARDITIS). Analyzing BMI in KEGG, we find similar themes, as well as multiple pathways that involve metabolism (e.g. KEGG\_PURINE\_METABOLISM, KEGG\_BETA\_ALANINE\_METABOLISM, and \\ KEGG\_ETHER\_LIPID\_METABOLISM). REACTOME pathways show similar themes as well in both phenotypes.
+The specific pathways with significant marginal epistasis signals in the African subgroup share multiple themes across each of the database and phenotype combinations (Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-KEGG-BMI-a}\textcolor{blue}{-d}). Analyzing height in KEGG, we find multiple pathways representing cellular signaling (e.g. KEGG\_CHEMOKINE\_SIGNALING\_PATHWAY, KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION, and \\ KEGG\_WNT\_SIGNALING\_PATHWAY), immune systems (e.g. \\ KEGG\_AUTOIMMUNE\_THYROID\_DISEASE, KEGG\_ALLOGRAFT\_REJECTION, and KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION), and heart conditions (e.g. KEGG\_DILATED\_CARDIOMYOPATHY and \\ KEGG\_VIRAL\_MYOCARDITIS). Analyzing BMI in KEGG, we find similar themes, as well as multiple pathways that involve metabolism (e.g. KEGG\_PURINE\_METABOLISM, KEGG\_BETA\_ALANINE\_METABOLISM, and \\ KEGG\_ETHER\_LIPID\_METABOLISM). REACTOME pathways show similar themes as well in both phenotypes (Supplemntary Table XX).
 
 \begin{figure}[htb]
 \centering
@@ -245,7 +245,7 @@ The specific pathways with significant marginal epistasis signals in the African
 \label{InterPath-Main-Figure-Barplots-KEGG}
 \end{figure}
 
-The African subgroup is neither the subgroup with the largest sample size nor the subgroup with the largest number of SNPs (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). However our simulation studies done under a number of biological scenarios show MAPIT-R behaves properly under the null (Supplementary Figure XX). We also used permuted phenotypes to validate MAPIT-R's behavior under the null of no epistasis between any pathway and the rest of the genome (Supplementary Figures \ref{InterPath-Supp-Figure-perm1-QQPlots-AllPaths} and \ref{InterPath-Supp-Figure-10perms-pValHists}); we also used these permutations to investigate MAPIT-R's false discovery rates and observe values only as high as 1.5\% across our multiple phenotype, database, and subgroup combinations at different significance thresholds (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-FDRs}).
+The African subgroup is neither the subgroup with the largest sample size nor the subgroup with the largest number of SNPs (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). However our simulation studies done under a number of biological scenarios show MAPIT-R controls type 1 error accurately (Supplementary Figure XX). We also used permuted phenotypes to validate MAPIT-R's behavior under the null of no epistasis between any pathway and the rest of the genome (Supplementary Figures \ref{InterPath-Supp-Figure-perm1-QQPlots-AllPaths} and \ref{InterPath-Supp-Figure-10perms-pValHists}); we also used these permutations to investigate MAPIT-R's false discovery rates and observe values only as high as 1.5\% across our multiple phenotype, database, and subgroup combinations at different significance thresholds (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-FDRs}).
 
 \subsection{Non-African subgroups reveal additional pathways with significant marginal epistasis}
 
@@ -258,7 +258,7 @@ In our analyses of non-African subgroups, we identify 80 pathways that are signi
 \label{InterPath-Main-Figure-Heatplots-KEGG}
 \end{figure}
 
-The pathways with significant marginal epistasis identified in both the African and Caribbean subgroups are related to the cellular signaling and heart condition patterns; these overlapping results appear to be driven by multiple kinases (e.g, {\emph{MAPK1}}, {\emph{ROCK1}}, {\emph{PRKCB}}, {\emph{PAK1}}) and calcium channel proteins (e.g., {\emph{CACNA1S}}, {\emph{CACNA1D}}) (Supplementary Tables \ref{InterPath-Supp-Tables-MAPITR-TopPathway-Overlap} \& \ref{InterPath-Supp-Tables-MAPITR-TopPathway-GeneCounts-Overlap}). In contrast, the pathways with significant marginal epistasis identified in both the African and Chinese subgroups are pathways related to the immune system and appear to be driven primarily by multiple HLA loci (e.g., {\emph{HLA-DRA}}, {\emph{HLA-DRB1}}, {\emph{HLA-A}}, {\emph{HLA-B}}) (Supplementary Tables \ref{InterPath-Supp-Tables-MAPITR-TopPathway-Overlap} \& \ref{InterPath-Supp-Tables-MAPITR-TopPathway-GeneCounts-Overlap}). These differences between ancestries may reflect heterogeneous power to detect epistatic signals. 
+The pathways with significant marginal epistasis identified in both the African and Caribbean subgroups are related to the cellular signaling and heart condition patterns; the genes underlying these overlapping pathways include multiple kinases (e.g, {\emph{MAPK1}}, {\emph{ROCK1}}, {\emph{PRKCB}}, {\emph{PAK1}}) and calcium channel proteins (e.g., {\emph{CACNA1S}}, {\emph{CACNA1D}}) (Supplementary Tables \ref{InterPath-Supp-Tables-MAPITR-TopPathway-Overlap} \& \ref{InterPath-Supp-Tables-MAPITR-TopPathway-GeneCounts-Overlap}). In contrast, the pathways with significant marginal epistasis identified in both the African and Chinese subgroups are pathways related to the immune system and these overlapping pathways contain multiple HLA loci (e.g., {\emph{HLA-DRA}}, {\emph{HLA-DRB1}}, {\emph{HLA-A}}, {\emph{HLA-B}})  (Supplementary Tables \ref{InterPath-Supp-Tables-MAPITR-TopPathway-Overlap} \& \ref{InterPath-Supp-Tables-MAPITR-TopPathway-GeneCounts-Overlap}).
 
 \subsection{Stronger signals of pathway-level marginal epistasis underlie BMI than height}
 
@@ -272,6 +272,8 @@ In our analyses of marginal epistasis at the pathway-level in the African subgro
 \end{figure}
 
 We detect one cluster of pathways in the KEGG results  with divergent statistical evidence for marginal epistasis in height versus BMI (Figure \ref{InterPath-Main-Figure-MAPITR-PhenoComps-African}). The four pathways circled in Figure \ref{InterPath-Main-Figure-MAPITR-PhenoComps-African} are signaling and oncogenic pathways: sorted by decreasing -$\log_{10}$ $p$-value, these are KEGG\_SMALL\_CELL\_LUNG\_CANCER, KEGG\_ERBB\_SIGNALING\_PATHWAY, KEGG\_NON\_SMALL\_CELL\_LUNG\_CANCER, and KEGG\_T\_CELL\_RECEPTOR\_SIGNALING\_PATHWAY. Two sets of gene families appear in all four of these pathways with differential marginal epistasis signals for height versus BMI (Supplementary Table \ref{InterPath-Supp-Table-MAPITR-PhenoComps-African-GeneCounts}): phosphatidylinositol 3-kinases (PIKs) and the AKT serine/threonine-protein kinases. One gene that stands out from this group is AKT2, a locus that has been associated with multiple monogenic disorders of glucose metabolism, including severe insulin resistance and diabetes, and severe fasting hypoinsulinemic hypoglycemia \citep{George2004,Manning2017,Latva-Rasku2018}. This gene may have more marginal epistatic interactions relevant to BMI than height then, possibly being a driver for this pathway cluster.
+
+
 
 \subsection{The proteasome is enriched for marginal epistatic interactions with the rest of the genome}
 
@@ -291,7 +293,7 @@ To further test the effect of pathway size on our results, we conducted a second
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=.2]{Images/Main/MockUp1.png}
-\caption[TBD]{\textbf{Structure of the Proteasome}. The figure shows the different components of the proteasome and which gene families encode which part. \textcolor{blue}{MT: currently a mockup of an idea on how to present this -- maybe this and the heatplot should be one larger figure? } SR: I think maybe you need to note more of your results here - like which genes were significant in which analysis using your results?
+\caption[TBD]{\textbf{Structure of the Proteasome}. The figure shows the different components of the proteasome and which gene families encode which part. \textcolor{blue}{MT: currently a mockup of an idea on how to present this -- maybe this and the heatplot should be one larger figure? } \textcolor{red}{SR: I think maybe you need to note more of your results here - like which genes were significant in which analysis using your results?}
 }
 \label{InterPath-Main-Figure-Proteasome-Schematic}
 \end{figure}
@@ -367,7 +369,18 @@ Therefore, to investigate this possible relationship between subgroup PVE on PC1
 \label{InterPath-Main-Figure-PC1Loading}
 \end{figure}
 
+
+
+
+
 \section{Discussion}\label{InterPath-Discussion}
+
+\textcolor{blue}{MT: collection of parts that were requested to be moved to discussion -- not integrated yet}
+
+
+
+ These differences between ancestries may reflect heterogeneous power to detect epistatic signals. \textcolor{blue}{from section: pathway overlap between African and other non-African populations  }
+
 
 \textcolor{blue}{MT: not updated yet}
 
