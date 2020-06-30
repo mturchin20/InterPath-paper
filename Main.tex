@@ -284,6 +284,11 @@ To further test the effect of pathway size on our results, we conducted a second
 
 
 
+
+
+
+
+
 \textcolor{blue}{MT: reread below, but think can possibly stay the same?}
 
 Next we tested whether any subunit of the proteasome is particularly enriched for marginal epistasis compared to the rest of the subunits. To investigate this in the African subgroup, we removed genes encoding each individual subunit of the proteasome and reran pathway-level scans for marginal epistasis with MAPIT-R; the objective of this test was to reveal whether any particular subunit leads to much greater loss in MAPIT-R $p$-value when compared to the other subunits. Therefore, we reran each genome-wide significant MAPIT-R pathway that contained these proteasome subunit gene families and incrementally ran pathway versions with each subunit gene family removed. 
@@ -306,7 +311,7 @@ We find that some proteasome subunits appear to have greater impacts on the orig
 
 \subsection{Testing the null model with British replicate subpopulations}
 
-One important consideration of our results is that we have limited sample sizes of the diverse non-European human ancestries we are analyzing. Given the large sample size of the white British individuals in the UK Biobank, we decided to test whether the subsampled replicates of this cohort were large enough to be representative of the genetic variation in the full dataset of over 470,000 individuals. Specifically, we sampled additional, non-overlapping random subgroups of 4,000 British individuals and tested whether MAPIT-R scans in those random samples were consistent with our results for the British subgroup in [cite appropriate figures and tables].  We also constructed larger British subsamples of non-overlapping 10,000 individuals to project the impact of sample size on our results as well. In total we analyzed 5 sets of 4,000 British individuals and 5 sets of 10,000 British individuals. 
+One important consideration of our results is that we have limited sample sizes of the diverse non-European human ancestries we are analyzing. Given the large sample size of the white British individuals in the UK Biobank, we decided to test whether the subsampled replicates of this cohort were large enough to be representative of the genetic variation in the full dataset of over 470,000 individuals. Specifically, we sampled additional, non-overlapping random subgroups of 4,000 British individuals and tested whether MAPIT-R scans in those random samples were consistent with our results for the British subgroup in Figures \ref{InterPath-Main-Figure-Heatplots-KEGG} and \ref{InterPath-Main-Figure-Heatplots-KEGG}.  We also constructed larger British subsamples of non-overlapping 10,000 individuals to project the impact of sample size on our results as well. In total we analyzed 5 sets of 4,000 British individuals and 5 sets of 10,000 British individuals. 
 
 When applying MAPIT-R to these non-overlapping replicates of 4,000 and 10,000 white British individuals, our results are similar to our original results in Figures \ref{InterPath-Main-Figure-Heatplots-KEGG} and \ref{InterPath-Main-Figure-Heatplots-KEGG}. We see limited numbers of significant pathways across all phenotype, database, and replicate subgroup combinations, as well as limited overlap of significant pathways between replicates (Supplementary Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}\textcolor{blue}{-25}). We also ran analyses using permuted phenotypes, and once again see proper behavior under the null and very low FDRs (Supplementary Tables \ref{InterPath-Supp-Tables-BritReps-FDRs-pt1}). These results at least suggest that the large numbers of significant pathways we observe in the African subgroup are less likely to be a product of chance.  
 
@@ -314,7 +319,7 @@ When applying MAPIT-R to these non-overlapping replicates of 4,000 and 10,000 wh
 
 As described above, MAPIT-R analyses of the African subgroup in the UKB produced the majority of our significant MAPIT-R pathways; a follow up question then is why we see heterogeneity across ancestries in our MAPIT-R results. One possibility is that MAPIT-R's performance? is influenced by the amount of genetic variation present in each subgroup -- greater levels of genetic variation may allow for greater numbers of possible genetic interactions. It is also well-established that African-ancestry populations contain the highest levels of within-population genetic variation on average compared to other global populations \citep{International2010,Genomes2015,Mallick2016}. Therefore, we decided to investigate whether there were any associations between measures of genetic variation within and between our subgroups and the number of significant MAPIT-R pathways each subgroup produced.
 
-Our first approach was to look at genome-wide levels of genetic variation both between and within our subgroups. To do this, we calculated both pairwise F\textsubscript{ST} values between every UKB subgroup as well as within population F\textsubscript{ST} values as well (Figure \ref{InterPath-Main-Figure-Fst}). For pairwise F\textsubscript{ST} among subgroups, we find values as large as .124, which are within range of previous estimates from globally distributed datasets \citep{Ramachandran2005,Weir2005,Wang2012,Sugden2016,Martin2017a}. The African and Chinese subgroups are most differentiated from other subgroups we analyzed. . However, looking at within subgroup F\textsubscript{ST} (the diagonal)\footnote{\textcolor{blue}{MT: note, this is predicated on using a proper metric for the diagonal; if we one doesn't come up, or if it doesn't match the following descriptions, I'll update things to match and follow the figure properly}}, we observe that the African subgroup has the largest amount of differentiation as compared to any other subgroup. Additionally, the Caribbean and Chinese subgroups are the subgroups with the next largest values of within subgroup F\textsubscript{ST}, approximately matching the order in which subgroups produce significant pathway MAPIT-R results. Next we tested whether within-subgroup levels of genetic variation were associated with more significant signals of marginal epistasis in MAPIT-R analyses.
+Our first approach was to look at genome-wide levels of genetic variation both between and within our subgroups. To do this, we calculated both pairwise F\textsubscript{ST} values between every UKB subgroup as well as within population F\textsubscript{ST} values as well (Figure \ref{InterPath-Main-Figure-Fst}). For pairwise F\textsubscript{ST} among subgroups, we find values as large as .124, which are within range of previous estimates from globally distributed datasets \citep{Ramachandran2005,Weir2005,Henn2011,Wang2012,Sugden2016}. The African and Chinese subgroups are most differentiated from other subgroups we analyzed. . However, looking at within subgroup F\textsubscript{ST} (the diagonal)\footnote{\textcolor{blue}{MT: note, this is predicated on using a proper metric for the diagonal; if we one doesn't come up, or if it doesn't match the following descriptions, I'll update things to match and follow the figure properly}}, we observe that the African subgroup has the largest amount of differentiation as compared to any other subgroup. Additionally, the Caribbean and Chinese subgroups are the subgroups with the next largest values of within subgroup F\textsubscript{ST}, approximately matching the order in which subgroups produce significant pathway MAPIT-R results. Next we tested whether within-subgroup levels of genetic variation were associated with more significant signals of marginal epistasis in MAPIT-R analyses.
 
 \begin{figure}[htb]
 \centering
@@ -356,6 +361,10 @@ Therefore, to investigate this possible relationship between subgroup PVE on PC1
 \caption[TBD]{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, African subgroup and large pathways}. The figure shows the proportion of SNPs within a given pathway that are strongly loaded on local PC1 plotted against that pathway's MAPIT-R -$\log_{10}$ $p$-value, specifically for the African subgroup and pathways with greater than 1,500 SNPs. `Local' here refers to PCA having been conducted within-subgroup. SNPs are designated as `strongly loaded' on local PC1 if they are within the 10\% tails of the loading SNP score distributions. We observe that there is a marginally significant relationship between MAPIT-R $p$-values and proportion of SNPs that are strongly loaded on PC1, but this is not replicated in the KEGG database.}
 \label{InterPath-Main-Figure-PC1Loading}
 \end{figure}
+
+
+
+
 
 
 
@@ -502,14 +511,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \centering
 \hspace*{-1cm}
 \includegraphics[scale=.4]{Images/Supp/InterPath_Supp_Figure_UKB_PCAPlot_vs1.png}
-\caption[TBD]{\textbf{Global PCA Plots of the UK BioBank subgroups}. The figure shows the top eight global principal components of our UKB subgroup dataset plotted against one another: a) PC1 vs. PC2, b) PC3 vs. PC4, c) PC5 vs. PC6, d) PC7 vs. PC8. PCA was conducted using FlashPCA \citep{Abraham2017} and a post-QC, pruned SNP set. Note that these PCs were created similar to the descriptions in `Population subgroups' of Methods and `Population Subgroup Quality Control' of Supplementary Note, but in lieu of running FlashPCA on each subgroup separately, FlashPCA was run on the full dataset together jointly. Local PCs were used for quality control and as covariates; global PCs were only used for these plots.
-
-spell out eight
-first mention of principal components of PCs (PCs in parentheses)
-
-define local here
-
-}
+\caption[TBD]{\textbf{Global PCA Plots of the UK BioBank subgroups}. The figure shows the top eight global principal components (PCs) of our UKB subgroup dataset plotted against one another: a) PC1 vs. PC2, b) PC3 vs. PC4, c) PC5 vs. PC6, d) PC7 vs. PC8. PCA was conducted using FlashPCA \citep{Abraham2017} and a post-QC, pruned SNP set. Here `Global' PCs refers to PCs calculated from running PCA on the full dataset of all subgroups together jointly. This is in contrast to `local' PCs, which are calculated by running PCA on each subgroup separately. As a result of this difference, global PCs were created similar to the descriptions in `Population subgroups' of Methods and `Population Subgroup Quality Control' of Supplementary Note, but in lieu of running FlashPCA on each subgroup separately, FlashPCA was run on the full dataset together jointly. Global PCs were only used for these plots, and local PCs were used for quality control and as covariates.}
 \label{InterPath-Supp-Figure-UKB-subgroups-PCAPlot}
 \end{figure}
 \clearpage
@@ -613,11 +615,7 @@ define local here
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_perm1_QQPlots_AllPaths_vs2.png}
-\caption[TBD]{\textbf{QQ-Plots of MAPIT-R results using permuted phenotypes, per subgroup}. The figure shows QQ-plots for running MAPIT-R using a single permutation of either height or BMI measurements within the KEGG and REACTOME databases. Phenotypes were permuted within each population subgroup. Shown on the $x$-axis are the -$\log_{10}$ of the expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of the observed $p$-values. The dotted red line is the Bonferroni-corrected $p$-value threshold based on the number of pathways tested per phenotype and pathway database combination (cite Supplementary Table 1). We find across all UKB subgroup, phenotype, and pathway database combinations that MAPIT-R displays null behavior within the range expected when using permuted phenotypes.  
-
-cite supplementary table 1 again
-make last sentence more precise 
-}
+\caption[TBD]{\textbf{QQ-Plots of MAPIT-R results using permuted phenotypes, per subgroup}. The figure shows QQ-plots for running MAPIT-R using a single permutation of either height or BMI measurements within the KEGG and REACTOME databases. Phenotypes were permuted within each population subgroup. Shown on the $x$-axis are the -$\log_{10}$ of the expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of the observed $p$-values. The dotted red line is the Bonferroni-corrected $p$-value threshold based on the number of pathways tested per phenotype and pathway database combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Looking in total across the ten permutation runs conducted for each UKB subgroup, phenotype, and pathway database combination, we find that MAPIT-R properly controls for the false positive rate at varying significance cutoff thresholds (Supplementary Figure \ref{InterPath-Supp-Tables-BritReps-FDRs-pt1}).}
 \label{InterPath-Supp-Figure-perm1-QQPlots-AllPaths}
 \end{figure}
 \clearpage
