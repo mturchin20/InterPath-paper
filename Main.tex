@@ -254,7 +254,7 @@ We detect one cluster of pathways in the KEGG results  with divergent statistica
 
 \subsection{Refining pathway-level marginal epistatic signals using region-based tests: a case study using the proteasome}
 
-One advantage region-based tests offer is the ability to further refine statistically significant signals, whether in GWA or marginal epistatic scenarios. If starting on a pathway-level in an analysis, using a region-based test can allow you to test smaller segments of a pathway to further identify where a statistical signal is localized. We were interested then in identifying whether we could use MAPIT-R to refine any of the significant pathway-level marginal epistatic signals we have found in our UKB subgroups.
+One advantage region-based tests offer is the ability to further refine statistically significant signals, whether in GWA or marginal epistatic scenarios. If starting on a pathway-level in an analysis, you can use a region-based test to investigate smaller segments of a pathway to see if a pathway-level significant signal can be narrowed down to a specific part of the pathway. We were interested then in identifying whether we could use MAPIT-R to refine any of the significant pathway-level marginal epistatic signals we have found in our UKB subgroups.
 
 To test this framework of refining pathway-level marginal epistatic signals, we looked towards breaking down pathways onto the genic-level. Specifically, we wanted to identify whether there were any genes or gene families that appeared to be particularly enriched amongst our significant MAPIT-R pathways, and then return to these pathways to test the enriched genes' relative importance to the original MAPIT-R pathway-level signals. To do this, we conducted two types of hypergeometric tests for enrichment to properly identify genes that were significantly overrepresented amongst the pathways that showed significant marginal epistatic interactions with the rest of the genome. 
 
@@ -268,10 +268,7 @@ First, we conducted a standard hypergeometric test for enrichment by comparing t
 \end{figure}
 \clearpage
 
-For this analysis, we find the majority of UKB subgroups do 
-
-
-one gene and a separate gene family have enrichment $p$-values that have become more significant. The gene with the largest increase in significance is {\emph{SMC3}}, a component of the multimeric cohesin complex. The others genes that were identified as significantly enriched in MAPIT-R-identified pathways in the restricted analysis are all from the same family of proteins, the various subunits of the proteasome complex ({\emph{PSMA*}}, {\emph{PSMB*}}, {\emph{PSMC*}}, {\emph{PSMD*}}, {\emph{PSME*}}, and {\emph{PSMF*}}). The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical system for a variety of processes related to protein degradation within the cell \citep{Voges1999,Livneh2016,Collins2017}. Whereas ubiquitin is the first half of this system that tags proteins for eventual degradation, the proteasome is the second half of this system that catalyzes the degradation itself. The main proteasome isoform, 26S, is made up of two main components: the 20S main core of four stack rings (an outer, structural ring encoded by PSMA genes, and an inner, catalytic ring encoded by PSMB genes) and the 19S regulatory caps which booked both sides of the main core (encoded by both PSMC and PSMD genes) (Figure \ref{InterPath-Main-Figure-Proteasome-Schematic}). 
+Focusing on the MAPIT-R test combination that had the largest number of significant pathways (African + BMI + REACTOME), we find one gene and a separate gene family that each have greater enrichment $p$-values in the restricted analysis than in the original non-restricted analysis. The gene with the largest increase in significance is {\emph{SMC3}}, a component of the multimeric cohesin complex. The others genes that were identified as significantly enriched in MAPIT-R-identified pathways in the restricted analysis are all from the same family of proteins, the various subunits of the proteasome complex ({\emph{PSMA*}}, {\emph{PSMB*}}, {\emph{PSMC*}}, {\emph{PSMD*}}, {\emph{PSME*}}, and {\emph{PSMF*}}). The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical system for a variety of processes related to protein degradation within the cell \citep{Voges1999,Livneh2016,Collins2017}. Whereas ubiquitin is the first half of this system that tags proteins for eventual degradation, the proteasome is the second half of this system that catalyzes the degradation itself. The main proteasome isoform, 26S, is made up of two main components: the 20S main core of four stack rings (an outer, structural ring encoded by PSMA genes, and an inner, catalytic ring encoded by PSMB genes) and the 19S regulatory caps which booked both sides of the main core (encoded by both PSMC and PSMD genes) (Figure \ref{InterPath-Main-Figure-Proteasome-Schematic}). Since this gene family contains both a larger number of loci as well as known biological functions, we used the proteasome as a test case to explore further refining MAPIT-R pathway-level signals.
 
 \begin{figure}[htb]
 \centering
@@ -288,7 +285,6 @@ one gene and a separate gene family have enrichment $p$-values that have become 
 
 
 
-\textcolor{blue}{MT: reread below, but think can possibly stay the same?}
 
 Next we tested whether any subunit of the proteasome is particularly enriched for marginal epistasis compared to the rest of the subunits. To investigate this in the African subgroup, we removed genes encoding each individual subunit of the proteasome and reran pathway-level scans for marginal epistasis with MAPIT-R; the objective of this test was to reveal whether any particular subunit leads to much greater loss in MAPIT-R $p$-value when compared to the other subunits. Therefore, we reran each genome-wide significant MAPIT-R pathway that contained these proteasome subunit gene families and incrementally ran pathway versions with each subunit gene family removed. 
 
@@ -381,8 +377,6 @@ And we analyzed multiple human ancestries due to the ongoing imbalance of publis
 This pattern of overlapping results for each non-African subgroup with results from analyzing  the African subgroup may suggest that the first sets of pathways to be identified as having marginal epistasis interactions will be widely important biologically, hence seeing themes such as cellular signaling and the immune system; identifying more population-specific examples of pathway-level marginal epistasis may require greater sample sizes. \textcolor{blue}{from: pathway overlap between African and other non-African populations}
 
  This gene may have more marginal epistatic interactions relevant to BMI than height then, possibly being a driver for this pathway cluster. \textcolor{blue}{from: BMI vs height MAPIT-R $p$-values}
-
-For our purposes of investigating marginal epistasis, the proteasome offers a unique opportunity to not only further refine the original pathway-level signal, but also to further show the utility of group-based approaches. \textcolor{blue}{from: refining MAPIT-R signals w/ proteasome section}
 
 \textcolor{blue}{MT: not updated yet}
 
