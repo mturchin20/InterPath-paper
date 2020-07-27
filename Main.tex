@@ -180,7 +180,7 @@ Genome-wide association (GWA) studies have identified thousands of significant g
 
 
 
-A recent methodological advancement has introduced the concept of \textit{marginal epistasis}, or epistasis between a variant and the rest of the genome; identifying variants with statistically significant marginal epistatic interactions genome-wide enables computationally efficient detection of epistasis in a given complex trait. Previous approaches for detecting marginal epistasis focused only on analyzing individual variants, one at a time. Here, we present a new method, MAPIT-R, that analyzes sets of user-defined variants for the presence of marginal epistasis, and apply MAPIT-R to six diverse subgroups within the UK BioBank dataset (African, British, Caribbean, Chinese, Indian, and Pakistani). We test for marginal epistasis signals underlying each of height and body mass index, and find 245 pathways within the KEGG and REACTOME databases containing statistically significant signals of marginal epistasis. 67\% of these results are detected in our African subgroup of the UKB data. We also find that BMI consistently produces lower MAPIT-R $p$-values for pathway-level marginal epistasis than height. We find that genes in the proteasome are enriched for signals of marginal epistasis and show how region-based tests such as MAPIT-R can be used to further localize epistatic signals.
+%A recent methodological advancement has introduced the concept of \textit{marginal epistasis}, or epistasis between a variant and the rest of the genome; identifying variants with statistically significant marginal epistatic interactions genome-wide enables computationally efficient detection of epistasis in a given complex trait. Previous approaches for detecting marginal epistasis focused only on analyzing individual variants, one at a time. Here, we present a new method, MAPIT-R, that analyzes sets of user-defined variants for the presence of marginal epistasis, and apply MAPIT-R to six diverse subgroups within the UK BioBank dataset (African, British, Caribbean, Chinese, Indian, and Pakistani). We test for marginal epistasis signals underlying each of height and body mass index, and find 245 pathways within the KEGG and REACTOME databases containing statistically significant signals of marginal epistasis. 67\% of these results are detected in our African subgroup of the UKB data. We also find that BMI consistently produces lower MAPIT-R $p$-values for pathway-level marginal epistasis than height. We find that genes in the proteasome are enriched for signals of marginal epistasis and show how region-based tests such as MAPIT-R can be used to further localize epistatic signals.
 
 \end{abstract}
 
@@ -879,279 +879,6 @@ British.Ran10000.5 & 9596 & 597507 & 186 & 669 \\
 
 %Irish & 11575 & 588324 & 186 & 671 \\ 
 
-%\begin{landscape}
-%\setlength{\footskip}{2cm}
-%\begin{table}[ht]
-%\centering
-%\begin{tabular}{ccccccc}
-%  \hline
-%  \textbf{Trait} & \textbf{African} & & \textbf{British.Ran4k} & & \textbf{Caribbean} & \\ 
-%& \textbf{Chr:BP} & \textbf{Proportion} & \textbf{Chr:BP} & \textbf{Proportion} & \textbf{Chr:BP} & \textbf{Proportion} \\ 
-%  \hline
-%\textbf{Height:} & & & & & & \\
-%& 9:8851248 & 0.402 & 2:68593134 & 0.434 & 3:115845348 & 0.352 \\
-%  & 2:192167280 & 0.301 & 11:33992648 & 0.350 & 4:142116338 & 0.329 \\ 
-%  & 20:11424166 & 0.291 & 1:19440383 & 0.270 & 16:11185464 & 0.246 \\ 
-%  & 15:25999954 & 0.271 & 11:12738444 & 0.258 & 7:38160558 & 0.240 \\ 
-%  & 8:4275585 & 0.256 & 12:129932700 & 0.212 & 4:84952912 & 0.237 \\ 
-%  & 7:111551740 & 0.247 & 10:129548670 & 0.209 & 20:42387041 & 0.213 \\ 
-%  & 7:5894502 & 0.245 & 7:126672487 & 0.193 & 5:138942117 & 0.208 \\ 
-%  & 20:42387041 & 0.221 & 11:12674963 & 0.187 & 8:27895386 & 0.205 \\ 
-%  & 11:56631974 & 0.213 & 9:23129565 & 0.176 & 19:43701423 & 0.198 \\ 
-%  & 8:116901222 & 0.213 & 20:55953947 & 0.170 & 6:834751 & 0.196 \\ 
-%  \\
-%\textbf{BMI:} & & & & & & \\
-%& 16:26051170 & 0.230 & 2:27075505 & 0.293 & 12:99313419 & 0.319 \\ 
-%  & 5:172707503 & 0.228 & 1:107460560 & 0.267 & 5:70798541 & 0.284 \\ 
-%  & 11:2699051 & 0.208 & 21:16339852 & 0.212 & 2:34625180 & 0.273 \\ 
-%  & 5:16862840 & 0.207 & 2:223779979 & 0.189 & 1:221101692 & 0.266 \\ 
-%  & 8:48411885 & 0.202 & 2:162386309 & 0.189 & 14:51994228 & 0.235 \\ 
-%  & 10:133143956 & 0.198 & 2:138690969 & 0.189 & 10:131663327 & 0.234 \\ 
-%  & 15:93657838 & 0.192 & 16:83246883 & 0.177 & 1:56414458 & 0.225 \\ 
-%  & 16:55172951 & 0.191 & 13:90223042 & 0.174 & 5:93403619 & 0.220 \\ 
-%  & 17:32754797 & 0.184 & 13:92829268 & 0.163 & 2:177527111 & 0.219 \\ 
-%  & 6:1011570 & 0.168 & 6:100900508 & 0.157 & 1:85416840 & 0.218 \\
-%   \hline
-%\end{tabular}
-%\caption[TBD]{\textbf{Lists of SNPs with the largest proportions of marginally significant PLINK pairwise epistasis tests, per subgroup}. Caption continued at the end of the table.}
-%\label{InterPath-Supp-Table-PLINK-Proportions-TopSNPs-a}
-%\end{table}
-%\end{landscape}
-%\clearpage
-%\setlength{\footskip}{1cm}
-%\addtocounter{table}{-1}
-%
-%\begin{landscape}
-%\setlength{\footskip}{2cm}
-%\begin{table}[ht]
-%\centering
-%\begin{tabular}{ccccccc}
-%  \hline
-%  \textbf{Trait} & \textbf{Chinese} & & \textbf{Indian} & & \textbf{Pakistani} & \\ 
-%& \textbf{Chr:BP} & \textbf{Proportion} & \textbf{Chr:BP} & \textbf{Proportion} & \textbf{Chr:BP} & \textbf{Proportion} \\ 
-%  \hline
-%\textbf{Height:} & & & & & & \\
-%& 6:74098688 & 1.025 & 8:22014852 & 0.203 & 3:25962790 & 1.015 \\
-%  & 7:19736280 & 0.503 & 2:135138136 & 0.190 & 11:33951568 & 0.953 \\ 
-%  & 17:74993606 & 0.493 & 11:55110903 & 0.190 & 1:61014885 & 0.616 \\ 
-%  & 7:150512307 & 0.491 & 2:181346849 & 0.180 & 18:18905020 & 0.580 \\ 
-%  & 7:95703904 & 0.461 & 2:181318303 & 0.167 & 12:119540062 & 0.573 \\ 
-%  & 17:8135061 & 0.416 & 1:159947480 & 0.159 & 8:145948440 & 0.558 \\ 
-%  & 19:2500027 & 0.413 & 1:18062545 & 0.157 & 22:44643912 & 0.539 \\ 
-%  & 7:95696930 & 0.408 & 8:86425809 & 0.153 & 5:175433876 & 0.491 \\ 
-%  & 8:89565212 & 0.401 & 5:44725795 & 0.151 & 11:101951678 & 0.488 \\ 
-%  & 14:86697878 & 0.399 & 5:167366400 & 0.149 & 12:119554751 & 0.486 \\
-%  \\
-%\textbf{BMI:} & & & & & & \\
-%& 3:74946238 & 0.692 & 6:131708393 & 0.169 & 1:24690676 & 0.872 \\ 
-%  & 17:65485380 & 0.689 & 11:90267176 & 0.166 & 2:30702842 & 0.458 \\ 
-%  & 3:116001766 & 0.496 & 3:75936499 & 0.165 & 7:29191481 & 0.448 \\ 
-%  & 3:30814425 & 0.470 & 5:73129149 & 0.162 & 4:167120342 & 0.431 \\ 
-%  & 5:117528365 & 0.395 & 13:74840677 & 0.153 & 18:45616828 & 0.411 \\ 
-%  & 3:75050057 & 0.370 & 12:68110089 & 0.150 & 15:90686924 & 0.406 \\ 
-%  & 20:55362831 & 0.354 & 11:92390082 & 0.146 & 11:131792814 & 0.391 \\ 
-%  & 22:22359389 & 0.338 & 4:63750280 & 0.142 & 5:83958603 & 0.379 \\ 
-%  & 10:85864069 & 0.332 & 18:10853771 & 0.141 & 7:152693740 & 0.375 \\ 
-%  & 3:75064460 & 0.320 & 16:6860576 & 0.140 & 10:110657497 & 0.371 \\ 
-%   \hline
-%\end{tabular}
-%\caption[TBD]{\textbf{Lists of SNPs with the largest proportions of marginally significant PLINK pairwise epistasis tests, per subgroup}. Caption continued at the end of the table.}
-%\label{InterPath-Supp-Table-PLINK-Proportions-TopSNPs-b}
-%\end{table}
-%\end{landscape}
-%\clearpage
-%\setlength{\footskip}{1cm}
-%\addtocounter{table}{-1}
-%
-%\begin{table} [t!]
-%  \caption{\textbf{Lists of SNPs with the largest proportions of marginally significant PLINK pairwise epistasis tests, per subgroup}. The table shows the top 10 SNPs in terms of proportion of marginally significant PLINK pairwise epistatic interactions for height and BMI in each of our UKB subgroups. Marginal significance is determined by a PLINK pairwise SNP interaction $p$-value being below $1\times10^{-4}$. For each UKB subgroup the first column lists the chromosome and basepair position for the SNP of interest and the second column lists the PLINK test proportions.}
-%\label{InterPath-Supp-Table-PLINK-Proportions-TopSNPs-Caption}
-%\end{table}
-%\clearpage
-%
-%\begin{landscape}
-%\setlength{\footskip}{2cm}
-%\begin{table}[ht]
-%\centering
-%\begin{tabular}{ccccccc}
-%  \hline
-%  \textbf{Trait} & \textbf{African} & & \textbf{British.Ran4k} & & \textbf{Caribbean} & \\ 
-%& \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} & \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} & \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} \\ 
-%  \hline
-%\textbf{Height:} & & & & & & \\
-%& 15:98255395 & 6.064 & 15:40308859 & 5.654 & 10:102705058 & 6.366 \\ 
-%  & 21:33179371 & 5.947 & 20:18929160 & 5.206 & 10:102754238 & 6.167 \\ 
-%  & 7:107441154 & 5.633 & 2:68593134 & 5.175 & 11:60876561 & 5.899 \\ 
-%  & 22:50883961 & 5.292 & 15:40284523 & 4.941 & 10:102738551 & 5.787 \\ 
-%  & 20:10633313 & 5.234 & 17:34817693 & 4.866 & 2:29225504 & 5.778 \\ 
-%  & 7:28263825 & 5.221 & 17:34833820 & 4.863 & 10:102746503 & 5.736 \\ 
-%  & 15:43423327 & 4.928 & 11:33992648 & 4.859 & 4:38155825 & 5.631 \\ 
-%  & 7:12077909 & 4.794 & 13:37130549 & 4.778 & 12:28230120 & 5.494 \\ 
-%  & 6:75947027 & 4.764 & 13:23471815 & 4.750 & 8:32275265 & 5.380 \\ 
-%  & 1:49180331 & 4.763 & 4:46199808 & 4.641 & 16:78704199 & 5.296 \\ 
-%   \\
-%\textbf{BMI:} & & & & & & \\
-%& 16:54243548 & 6.119 & 4:153811650 & 5.119 & 1:177923440 & 6.536 \\ 
-%  & 18:24501383 & 5.818 & 18:20190795 & 5.068 & 16:21710678 & 5.922 \\ 
-%  & 2:233554499 & 5.402 & 1:104061746 & 5.063 & 9:130479233 & 5.843 \\ 
-%  & 3:10899881 & 5.345 & 4:153690842 & 4.901 & 4:8332861 & 5.702 \\ 
-%  & 18:68624629 & 5.330 & 8:107630040 & 4.877 & 22:39830123 & 5.652 \\ 
-%  & 2:5257185 & 5.048 & 21:21535472 & 4.866 & 5:123252456 & 5.564 \\ 
-%  & 10:48485976 & 4.868 & 11:127409790 & 4.780 & 6:35705892 & 5.445 \\ 
-%  & 11:19838292 & 4.850 & 1:183277665 & 4.779 & 1:234364335 & 5.419 \\ 
-%  & 5:172707503 & 4.715 & 2:122598583 & 4.779 & 2:66821247 & 5.396 \\ 
-%  & 4:38789675 & 4.713 & 20:5478313 & 4.773 & 1:221101692 & 5.379 \\ 
-%   \hline
-%\end{tabular}
-%\caption[TBD]{\textbf{Lists of SNPs with the most significant MAPIT $p$-values, per subgroup}. Caption continued at the end of the table.}
-%\label{InterPath-Supp-Table-MAPIT-TopSNPs-a}
-%\end{table}
-%\end{landscape}
-%\clearpage
-%\setlength{\footskip}{1cm}
-%\addtocounter{table}{-1}
-%
-%\begin{landscape}
-%\setlength{\footskip}{2cm}
-%\begin{table}[ht]
-%\centering
-%\begin{tabular}{ccccccc}
-%  \hline
-%  \textbf{Trait} & \textbf{Chinese} & & \textbf{Indian} & & \textbf{Pakistani} & \\ 
-%& \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} & \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} & \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} \\ 
-%  \hline
-%\textbf{Height:} & & & & & & \\
-%& 4:101070872 & 5.673 & 11:30478524 & 5.869 & 14:84654448 & 5.562 \\ 
-%  & 9:84390158 & 5.453 & 11:30452281 & 5.546 & 2:177358580 & 4.986 \\ 
-%  & 19:2500027 & 5.329 & 11:30564908 & 5.443 & 2:64556555 & 4.814 \\ 
-%  & 13:20836940 & 5.224 & 10:121732871 & 5.399 & 6:52476643 & 4.774 \\ 
-%  & 4:159328540 & 5.073 & 5:151876334 & 5.351 & 3:9071220 & 4.767 \\ 
-%  & 10:45368032 & 4.979 & 19:53154530 & 5.304 & 6:14814367 & 4.740 \\ 
-%  & 6:113595727 & 4.927 & 13:19745579 & 5.223 & 1:168609132 & 4.631 \\ 
-%  & 4:101059291 & 4.773 & 5:158867212 & 5.198 & 16:61560661 & 4.626 \\ 
-%  & 10:72763749 & 4.682 & 12:32084875 & 5.138 & 7:80071426 & 4.625 \\ 
-%  & 3:187622081 & 4.619 & 6:46375132 & 5.120 & 8:60021908 & 4.586 \\ 
-%   \\
-%\textbf{BMI:} & & & & & & \\
-%& 11:97016249 & 5.184 & 2:2116870 & 6.096 & 22:25096704 & 5.147 \\ 
-%  & 10:12681042 & 4.961 & 8:65989176 & 6.025 & 17:12707766 & 4.907 \\ 
-%  & 21:34354062 & 4.809 & 6:29702709 & 5.920 & 7:10580190 & 4.778 \\ 
-%  & 4:14390603 & 4.736 & 6:29700079 & 5.729 & 10:73300992 & 4.744 \\ 
-%  & 4:14386866 & 4.643 & 6:29700615 & 5.729 & 13:42116031 & 4.652 \\ 
-%  & 7:73145015 & 4.642 & 4:102205385 & 5.634 & 19:13980805 & 4.402 \\ 
-%  & 4:14390228 & 4.618 & 7:29413388 & 5.440 & 15:25980875 & 4.350 \\ 
-%  & 4:14385522 & 4.587 & 3:54409526 & 5.431 & 3:32802690 & 4.328 \\ 
-%  & 10:122226568 & 4.586 & 8:130332722 & 5.341 & 5:133848660 & 4.304 \\ 
-%  & 1:33714603 & 4.576 & 8:4656695 & 5.210 & 6:40366427 & 4.296 \\ 
-%   \hline
-%\end{tabular}
-%\caption[TBD]{\textbf{Lists of SNPs with the most significant MAPIT $p$-values, per subgroup}. Caption continued at the end of the table.}
-%\label{InterPath-Supp-Table-MAPIT-TopSNPs-b}
-%\end{table}
-%\end{landscape}
-%\clearpage
-%\setlength{\footskip}{1cm}
-%\addtocounter{table}{-1}
-%
-%\begin{table} [t!]
-%  \caption{\textbf{Lists of SNPs with the most significant MAPIT $p$-values, per subgroup}. The table shows the top 10 SNPs for each of our MAPIT analyses on height and BMI in our UKB subgroups. For each UKB subgroup the first column lists the chromosome and basepair position for the SNP of interest and the second column lists the MAPIT -$\log_{10}$ $p$-value for that SNP. No single SNP reaches genome-wide significance ($p$-value $< 5\times10^{-8}$).}
-%\label{InterPath-Supp-Table-MAPIT-TopSNPs-Caption}
-%\end{table}
-%\clearpage
-
-%From: https://tex.stackexchange.com/questions/118606/numbering-tables-a1-a2-etc-in-latex & https://tex.stackexchange.com/questions/83689/next-subsequent-letter-in-the-alphabet
-\newcounter{CharNumber1}
-\setcounter{CharNumber1}{1}
-%\renewcommand{\thetable}{\arabic{table}\alph{CharNumber1}}
-\setlength{\footskip}{2cm}
-\begin{landscape}
-\begin{table}[ht]
-\centering
-\vspace*{-.75cm}
-\begin{tabular}{lccc}
-  \hline
-\textbf{Population \& Pathway} & \textbf{Genes} & \textbf{SNPs} & \textbf{$p$-Value} \\ 
-  \hline
-  \textbf{African:} & & & \\
- KEGG\_CHEMOKINE\_SIGNALING\_PATHWAY & 170 & 2448 & 5.136E-10 \\
- KEGG\_AXON\_GUIDANCE & 120 & 3045 & 1.511E-08 \\ 
-  KEGG\_HYPERTROPHIC\_CARDIOMYOPATHY\_HCM & 77 & 2132 & 1.542E-08 \\ 
-  KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION & 234 & 2279 & 2.837E-08 \\ 
-  KEGG\_PURINE\_METABOLISM & 135 & 2411 & 1.186E-07 \\ 
-  KEGG\_DILATED\_CARDIOMYOPATHY & 83 & 2234 & 1.242E-07 \\ 
-  KEGG\_TYPE\_I\_DIABETES\_MELLITUS & 38 & 1659 & 1.330E-07 \\ 
-  KEGG\_ENDOCYTOSIS & 169 & 2981 & 1.523E-07 \\ 
-  KEGG\_OLFACTORY\_TRANSDUCTION & 365 & 3110 & 1.194E-06 \\ 
-  KEGG\_AUTOIMMUNE\_THYROID\_DISEASE & 48 & 1504 & 1.492E-06 \\ 
-  KEGG\_NATURAL\_KILLER\_CELL\_MEDIATED\_CYTOTOXICITY & 127 & 2216 & 5.160E-06 \\ 
-  KEGG\_ALZHEIMERS\_DISEASE & 136 & 1846 & 5.188E-06 \\ 
-  KEGG\_WNT\_SIGNALING\_PATHWAY & 141 & 2050 & 6.536E-06 \\ 
-  KEGG\_ALLOGRAFT\_REJECTION & 32 & 1329 & 8.152E-06 \\ 
-  KEGG\_HUNTINGTONS\_DISEASE & 148 & 1660 & 8.639E-06 \\ 
-  KEGG\_GRAFT\_VERSUS\_HOST\_DISEASE & 35 & 1348 & 8.933E-06 \\ 
-  KEGG\_GAP\_JUNCTION & 85 & 1851 & 9.300E-06 \\ 
-  KEGG\_SYSTEMIC\_LUPUS\_ERYTHEMATOSUS & 111 & 1525 & 1.499E-05 \\ 
-  KEGG\_VIRAL\_MYOCARDITIS & 64 & 1972 & 1.889E-05 \\ 
-  KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION & 74 & 1598 & 2.890E-05 \\ 
-  KEGG\_LONG\_TERM\_POTENTIATION & 63 & 1585 & 3.317E-05 \\ 
-  KEGG\_INTESTINAL\_IMMUNE\_NETWORK\_FOR\_IGA\_PRODUCTION & 43 & 1072 & 3.838E-05 \\ 
-  KEGG\_PHOSPHATIDYLINOSITOL\_SIGNALING\_SYSTEM & 75 & 1681 & 4.497E-05 \\ 
-  KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC & 70 & 2373 & 5.289E-05 \\ 
-  KEGG\_LONG\_TERM\_DEPRESSION & 66 & 1741 & 5.553E-05 \\ 
-  KEGG\_GLIOMA & 64 & 974 & 5.649E-05 \\ 
-  KEGG\_VASCULAR\_SMOOTH\_MUSCLE\_CONTRACTION & 106 & 2465 & 1.881E-04 \\ 
-  KEGG\_REGULATION\_OF\_ACTIN\_CYTOSKELETON & 194 & 3047 & 1.951E-04 \\ 
-  KEGG\_TYPE\_II\_DIABETES\_MELLITUS & 45 & 979 & 2.687E-04 \\ 
-   \hline
-\end{tabular}
-\caption[TBD]{\textbf{Lists of genome-wide significant MAPIT-R KEGG pathways in height, per subgroup}. Caption continued at end of tables.}
-\label{InterPath-Supp-Table-TopPathways-KEGG-Height-a}
-\end{table}
-\addtocounter{table}{-1}
-%\addtocounter{CharNumber1}{1}
-\clearpage
-
-\begin{table}[ht]
-\centering
-\vspace*{-.75cm}
-\begin{tabular}{lccc}
-  \hline
-  \textbf{British.Ran4000:} & & & \\
-  KEGG\_ERBB\_SIGNALING\_PATHWAY & 83 & 2674 & 1.003E-05 \\
-KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\ 
- \textcolor{white}{KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC } & & & \\
- \textbf{Caribbean:} & & & \\
- KEGG\_CHEMOKINE\_SIGNALING\_PATHWAY & 171 & 2688 & 2.733E-06 \\
- KEGG\_NATURAL\_KILLER\_CELL\_MEDIATED\_CYTOTOXICITY & 128 & 2356 & 1.125E-05 \\
-  KEGG\_CELL\_ADHESION\_MOLECULES\_CAMS & 120 & 4029 & 1.770E-05 \\
-  KEGG\_LEUKOCYTE\_TRANSENDOTHELIAL\_MIGRATION & 105 & 1941 & 2.169E-05 \\
-  KEGG\_VASCULAR\_SMOOTH\_MUSCLE\_CONTRACTION & 106 & 2708 & 3.675E-05 \\
-  KEGG\_AXON\_GUIDANCE & 120 & 3365 & 1.088E-04 \\
-  KEGG\_SMALL\_CELL\_LUNG\_CANCER & 78 & 1931 & 1.369E-04 \\
-  KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC & 70 & 2581 & 1.376E-04 \\
-  KEGG\_HYPERTROPHIC\_CARDIOMYOPATHY\_HCM & 77 & 2298 & 1.960E-04 \\
- \\
- \textbf{Chinese:} & & & \\
- KEGG\_TYPE\_I\_DIABETES\_MELLITUS & 39 & 1573 & 1.269E-08 \\
- KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION & 75 & 1505 & 8.287E-08 \\
-  KEGG\_MELANOGENESIS & 96 & 1382 & 1.028E-05 \\
-  KEGG\_ALLOGRAFT\_REJECTION & 33 & 1250 & 1.183E-05 \\
-  KEGG\_GRAFT\_VERSUS\_HOST\_DISEASE & 37 & 1274 & 2.424E-05 \\
-  KEGG\_NON\_SMALL\_CELL\_LUNG\_CANCER & 53 & 1081 & 5.337E-05 \\
-  KEGG\_SYSTEMIC\_LUPUS\_ERYTHEMATOSUS & 109 & 1399 & 1.252E-04 \\
- \\
- \textbf{Indian:} & & & \\
- KEGG\_NON\_SMALL\_CELL\_LUNG\_CANCER & 53 & 1696 & 4.182E-05 \\
- KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION & 237 & 2995 & 4.965E-05 \\
-  KEGG\_REGULATION\_OF\_ACTIN\_CYTOSKELETON & 193 & 4069 & 1.963E-04 \\
-  KEGG\_ERBB\_SIGNALING\_PATHWAY & 83 & 2174 & 2.128E-04 \\
-   \hline
-\end{tabular}
-\caption[TBD]{\textbf{Lists of genome-wide significant MAPIT-R KEGG pathways in height, per subgroup}. Continued. \\ }
-\label{InterPath-Supp-Table-TopPathways-KEGG-Height-b}
-\end{table}
-\addtocounter{table}{-1}
-%\addtocounter{CharNumber1}{1}
 
 \begin{table}[ht]
 \centering
@@ -1171,7 +898,7 @@ KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\
 \addtocounter{table}{-1}
 \clearpage
 
-\end{landscape}
+
 \renewcommand{\thetable}{\arabic{table}}
 \setlength{\footskip}{1cm}
 
@@ -2181,7 +1908,279 @@ To further test the effect of pathway size on our results, we conducted a second
 \end{figure}
 
 
+%\begin{landscape}
+%\setlength{\footskip}{2cm}
+%\begin{table}[ht]
+%\centering
+%\begin{tabular}{ccccccc}
+%  \hline
+%  \textbf{Trait} & \textbf{African} & & \textbf{British.Ran4k} & & \textbf{Caribbean} & \\ 
+%& \textbf{Chr:BP} & \textbf{Proportion} & \textbf{Chr:BP} & \textbf{Proportion} & \textbf{Chr:BP} & \textbf{Proportion} \\ 
+%  \hline
+%\textbf{Height:} & & & & & & \\
+%& 9:8851248 & 0.402 & 2:68593134 & 0.434 & 3:115845348 & 0.352 \\
+%  & 2:192167280 & 0.301 & 11:33992648 & 0.350 & 4:142116338 & 0.329 \\ 
+%  & 20:11424166 & 0.291 & 1:19440383 & 0.270 & 16:11185464 & 0.246 \\ 
+%  & 15:25999954 & 0.271 & 11:12738444 & 0.258 & 7:38160558 & 0.240 \\ 
+%  & 8:4275585 & 0.256 & 12:129932700 & 0.212 & 4:84952912 & 0.237 \\ 
+%  & 7:111551740 & 0.247 & 10:129548670 & 0.209 & 20:42387041 & 0.213 \\ 
+%  & 7:5894502 & 0.245 & 7:126672487 & 0.193 & 5:138942117 & 0.208 \\ 
+%  & 20:42387041 & 0.221 & 11:12674963 & 0.187 & 8:27895386 & 0.205 \\ 
+%  & 11:56631974 & 0.213 & 9:23129565 & 0.176 & 19:43701423 & 0.198 \\ 
+%  & 8:116901222 & 0.213 & 20:55953947 & 0.170 & 6:834751 & 0.196 \\ 
+%  \\
+%\textbf{BMI:} & & & & & & \\
+%& 16:26051170 & 0.230 & 2:27075505 & 0.293 & 12:99313419 & 0.319 \\ 
+%  & 5:172707503 & 0.228 & 1:107460560 & 0.267 & 5:70798541 & 0.284 \\ 
+%  & 11:2699051 & 0.208 & 21:16339852 & 0.212 & 2:34625180 & 0.273 \\ 
+%  & 5:16862840 & 0.207 & 2:223779979 & 0.189 & 1:221101692 & 0.266 \\ 
+%  & 8:48411885 & 0.202 & 2:162386309 & 0.189 & 14:51994228 & 0.235 \\ 
+%  & 10:133143956 & 0.198 & 2:138690969 & 0.189 & 10:131663327 & 0.234 \\ 
+%  & 15:93657838 & 0.192 & 16:83246883 & 0.177 & 1:56414458 & 0.225 \\ 
+%  & 16:55172951 & 0.191 & 13:90223042 & 0.174 & 5:93403619 & 0.220 \\ 
+%  & 17:32754797 & 0.184 & 13:92829268 & 0.163 & 2:177527111 & 0.219 \\ 
+%  & 6:1011570 & 0.168 & 6:100900508 & 0.157 & 1:85416840 & 0.218 \\
+%   \hline
+%\end{tabular}
+%\caption[TBD]{\textbf{Lists of SNPs with the largest proportions of marginally significant PLINK pairwise epistasis tests, per subgroup}. Caption continued at the end of the table.}
+%\label{InterPath-Supp-Table-PLINK-Proportions-TopSNPs-a}
+%\end{table}
+%\end{landscape}
+%\clearpage
+%\setlength{\footskip}{1cm}
+%\addtocounter{table}{-1}
+%
+%\begin{landscape}
+%\setlength{\footskip}{2cm}
+%\begin{table}[ht]
+%\centering
+%\begin{tabular}{ccccccc}
+%  \hline
+%  \textbf{Trait} & \textbf{Chinese} & & \textbf{Indian} & & \textbf{Pakistani} & \\ 
+%& \textbf{Chr:BP} & \textbf{Proportion} & \textbf{Chr:BP} & \textbf{Proportion} & \textbf{Chr:BP} & \textbf{Proportion} \\ 
+%  \hline
+%\textbf{Height:} & & & & & & \\
+%& 6:74098688 & 1.025 & 8:22014852 & 0.203 & 3:25962790 & 1.015 \\
+%  & 7:19736280 & 0.503 & 2:135138136 & 0.190 & 11:33951568 & 0.953 \\ 
+%  & 17:74993606 & 0.493 & 11:55110903 & 0.190 & 1:61014885 & 0.616 \\ 
+%  & 7:150512307 & 0.491 & 2:181346849 & 0.180 & 18:18905020 & 0.580 \\ 
+%  & 7:95703904 & 0.461 & 2:181318303 & 0.167 & 12:119540062 & 0.573 \\ 
+%  & 17:8135061 & 0.416 & 1:159947480 & 0.159 & 8:145948440 & 0.558 \\ 
+%  & 19:2500027 & 0.413 & 1:18062545 & 0.157 & 22:44643912 & 0.539 \\ 
+%  & 7:95696930 & 0.408 & 8:86425809 & 0.153 & 5:175433876 & 0.491 \\ 
+%  & 8:89565212 & 0.401 & 5:44725795 & 0.151 & 11:101951678 & 0.488 \\ 
+%  & 14:86697878 & 0.399 & 5:167366400 & 0.149 & 12:119554751 & 0.486 \\
+%  \\
+%\textbf{BMI:} & & & & & & \\
+%& 3:74946238 & 0.692 & 6:131708393 & 0.169 & 1:24690676 & 0.872 \\ 
+%  & 17:65485380 & 0.689 & 11:90267176 & 0.166 & 2:30702842 & 0.458 \\ 
+%  & 3:116001766 & 0.496 & 3:75936499 & 0.165 & 7:29191481 & 0.448 \\ 
+%  & 3:30814425 & 0.470 & 5:73129149 & 0.162 & 4:167120342 & 0.431 \\ 
+%  & 5:117528365 & 0.395 & 13:74840677 & 0.153 & 18:45616828 & 0.411 \\ 
+%  & 3:75050057 & 0.370 & 12:68110089 & 0.150 & 15:90686924 & 0.406 \\ 
+%  & 20:55362831 & 0.354 & 11:92390082 & 0.146 & 11:131792814 & 0.391 \\ 
+%  & 22:22359389 & 0.338 & 4:63750280 & 0.142 & 5:83958603 & 0.379 \\ 
+%  & 10:85864069 & 0.332 & 18:10853771 & 0.141 & 7:152693740 & 0.375 \\ 
+%  & 3:75064460 & 0.320 & 16:6860576 & 0.140 & 10:110657497 & 0.371 \\ 
+%   \hline
+%\end{tabular}
+%\caption[TBD]{\textbf{Lists of SNPs with the largest proportions of marginally significant PLINK pairwise epistasis tests, per subgroup}. Caption continued at the end of the table.}
+%\label{InterPath-Supp-Table-PLINK-Proportions-TopSNPs-b}
+%\end{table}
+%\end{landscape}
+%\clearpage
+%\setlength{\footskip}{1cm}
+%\addtocounter{table}{-1}
+%
+%\begin{table} [t!]
+%  \caption{\textbf{Lists of SNPs with the largest proportions of marginally significant PLINK pairwise epistasis tests, per subgroup}. The table shows the top 10 SNPs in terms of proportion of marginally significant PLINK pairwise epistatic interactions for height and BMI in each of our UKB subgroups. Marginal significance is determined by a PLINK pairwise SNP interaction $p$-value being below $1\times10^{-4}$. For each UKB subgroup the first column lists the chromosome and basepair position for the SNP of interest and the second column lists the PLINK test proportions.}
+%\label{InterPath-Supp-Table-PLINK-Proportions-TopSNPs-Caption}
+%\end{table}
+%\clearpage
+%
+%\begin{landscape}
+%\setlength{\footskip}{2cm}
+%\begin{table}[ht]
+%\centering
+%\begin{tabular}{ccccccc}
+%  \hline
+%  \textbf{Trait} & \textbf{African} & & \textbf{British.Ran4k} & & \textbf{Caribbean} & \\ 
+%& \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} & \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} & \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} \\ 
+%  \hline
+%\textbf{Height:} & & & & & & \\
+%& 15:98255395 & 6.064 & 15:40308859 & 5.654 & 10:102705058 & 6.366 \\ 
+%  & 21:33179371 & 5.947 & 20:18929160 & 5.206 & 10:102754238 & 6.167 \\ 
+%  & 7:107441154 & 5.633 & 2:68593134 & 5.175 & 11:60876561 & 5.899 \\ 
+%  & 22:50883961 & 5.292 & 15:40284523 & 4.941 & 10:102738551 & 5.787 \\ 
+%  & 20:10633313 & 5.234 & 17:34817693 & 4.866 & 2:29225504 & 5.778 \\ 
+%  & 7:28263825 & 5.221 & 17:34833820 & 4.863 & 10:102746503 & 5.736 \\ 
+%  & 15:43423327 & 4.928 & 11:33992648 & 4.859 & 4:38155825 & 5.631 \\ 
+%  & 7:12077909 & 4.794 & 13:37130549 & 4.778 & 12:28230120 & 5.494 \\ 
+%  & 6:75947027 & 4.764 & 13:23471815 & 4.750 & 8:32275265 & 5.380 \\ 
+%  & 1:49180331 & 4.763 & 4:46199808 & 4.641 & 16:78704199 & 5.296 \\ 
+%   \\
+%\textbf{BMI:} & & & & & & \\
+%& 16:54243548 & 6.119 & 4:153811650 & 5.119 & 1:177923440 & 6.536 \\ 
+%  & 18:24501383 & 5.818 & 18:20190795 & 5.068 & 16:21710678 & 5.922 \\ 
+%  & 2:233554499 & 5.402 & 1:104061746 & 5.063 & 9:130479233 & 5.843 \\ 
+%  & 3:10899881 & 5.345 & 4:153690842 & 4.901 & 4:8332861 & 5.702 \\ 
+%  & 18:68624629 & 5.330 & 8:107630040 & 4.877 & 22:39830123 & 5.652 \\ 
+%  & 2:5257185 & 5.048 & 21:21535472 & 4.866 & 5:123252456 & 5.564 \\ 
+%  & 10:48485976 & 4.868 & 11:127409790 & 4.780 & 6:35705892 & 5.445 \\ 
+%  & 11:19838292 & 4.850 & 1:183277665 & 4.779 & 1:234364335 & 5.419 \\ 
+%  & 5:172707503 & 4.715 & 2:122598583 & 4.779 & 2:66821247 & 5.396 \\ 
+%  & 4:38789675 & 4.713 & 20:5478313 & 4.773 & 1:221101692 & 5.379 \\ 
+%   \hline
+%\end{tabular}
+%\caption[TBD]{\textbf{Lists of SNPs with the most significant MAPIT $p$-values, per subgroup}. Caption continued at the end of the table.}
+%\label{InterPath-Supp-Table-MAPIT-TopSNPs-a}
+%\end{table}
+%\end{landscape}
+%\clearpage
+%\setlength{\footskip}{1cm}
+%\addtocounter{table}{-1}
+%
+%\begin{landscape}
+%\setlength{\footskip}{2cm}
+%\begin{table}[ht]
+%\centering
+%\begin{tabular}{ccccccc}
+%  \hline
+%  \textbf{Trait} & \textbf{Chinese} & & \textbf{Indian} & & \textbf{Pakistani} & \\ 
+%& \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} & \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} & \textbf{Chr:BP} & \textbf{-$\log_{10}$($p$)} \\ 
+%  \hline
+%\textbf{Height:} & & & & & & \\
+%& 4:101070872 & 5.673 & 11:30478524 & 5.869 & 14:84654448 & 5.562 \\ 
+%  & 9:84390158 & 5.453 & 11:30452281 & 5.546 & 2:177358580 & 4.986 \\ 
+%  & 19:2500027 & 5.329 & 11:30564908 & 5.443 & 2:64556555 & 4.814 \\ 
+%  & 13:20836940 & 5.224 & 10:121732871 & 5.399 & 6:52476643 & 4.774 \\ 
+%  & 4:159328540 & 5.073 & 5:151876334 & 5.351 & 3:9071220 & 4.767 \\ 
+%  & 10:45368032 & 4.979 & 19:53154530 & 5.304 & 6:14814367 & 4.740 \\ 
+%  & 6:113595727 & 4.927 & 13:19745579 & 5.223 & 1:168609132 & 4.631 \\ 
+%  & 4:101059291 & 4.773 & 5:158867212 & 5.198 & 16:61560661 & 4.626 \\ 
+%  & 10:72763749 & 4.682 & 12:32084875 & 5.138 & 7:80071426 & 4.625 \\ 
+%  & 3:187622081 & 4.619 & 6:46375132 & 5.120 & 8:60021908 & 4.586 \\ 
+%   \\
+%\textbf{BMI:} & & & & & & \\
+%& 11:97016249 & 5.184 & 2:2116870 & 6.096 & 22:25096704 & 5.147 \\ 
+%  & 10:12681042 & 4.961 & 8:65989176 & 6.025 & 17:12707766 & 4.907 \\ 
+%  & 21:34354062 & 4.809 & 6:29702709 & 5.920 & 7:10580190 & 4.778 \\ 
+%  & 4:14390603 & 4.736 & 6:29700079 & 5.729 & 10:73300992 & 4.744 \\ 
+%  & 4:14386866 & 4.643 & 6:29700615 & 5.729 & 13:42116031 & 4.652 \\ 
+%  & 7:73145015 & 4.642 & 4:102205385 & 5.634 & 19:13980805 & 4.402 \\ 
+%  & 4:14390228 & 4.618 & 7:29413388 & 5.440 & 15:25980875 & 4.350 \\ 
+%  & 4:14385522 & 4.587 & 3:54409526 & 5.431 & 3:32802690 & 4.328 \\ 
+%  & 10:122226568 & 4.586 & 8:130332722 & 5.341 & 5:133848660 & 4.304 \\ 
+%  & 1:33714603 & 4.576 & 8:4656695 & 5.210 & 6:40366427 & 4.296 \\ 
+%   \hline
+%\end{tabular}
+%\caption[TBD]{\textbf{Lists of SNPs with the most significant MAPIT $p$-values, per subgroup}. Caption continued at the end of the table.}
+%\label{InterPath-Supp-Table-MAPIT-TopSNPs-b}
+%\end{table}
+%\end{landscape}
+%\clearpage
+%\setlength{\footskip}{1cm}
+%\addtocounter{table}{-1}
+%
+%\begin{table} [t!]
+%  \caption{\textbf{Lists of SNPs with the most significant MAPIT $p$-values, per subgroup}. The table shows the top 10 SNPs for each of our MAPIT analyses on height and BMI in our UKB subgroups. For each UKB subgroup the first column lists the chromosome and basepair position for the SNP of interest and the second column lists the MAPIT -$\log_{10}$ $p$-value for that SNP. No single SNP reaches genome-wide significance ($p$-value $< 5\times10^{-8}$).}
+%\label{InterPath-Supp-Table-MAPIT-TopSNPs-Caption}
+%\end{table}
+%\clearpage
 
+%From: https://tex.stackexchange.com/questions/118606/numbering-tables-a1-a2-etc-in-latex & https://tex.stackexchange.com/questions/83689/next-subsequent-letter-in-the-alphabet
+\newcounter{CharNumber1}
+\setcounter{CharNumber1}{1}
+%\renewcommand{\thetable}{\arabic{table}\alph{CharNumber1}}
+\setlength{\footskip}{2cm}
+\begin{landscape}
+\begin{table}[ht]
+\centering
+\vspace*{-.75cm}
+\begin{tabular}{lccc}
+  \hline
+\textbf{Population \& Pathway} & \textbf{Genes} & \textbf{SNPs} & \textbf{$p$-Value} \\ 
+  \hline
+  \textbf{African:} & & & \\
+ KEGG\_CHEMOKINE\_SIGNALING\_PATHWAY & 170 & 2448 & 5.136E-10 \\
+ KEGG\_AXON\_GUIDANCE & 120 & 3045 & 1.511E-08 \\ 
+  KEGG\_HYPERTROPHIC\_CARDIOMYOPATHY\_HCM & 77 & 2132 & 1.542E-08 \\ 
+  KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION & 234 & 2279 & 2.837E-08 \\ 
+  KEGG\_PURINE\_METABOLISM & 135 & 2411 & 1.186E-07 \\ 
+  KEGG\_DILATED\_CARDIOMYOPATHY & 83 & 2234 & 1.242E-07 \\ 
+  KEGG\_TYPE\_I\_DIABETES\_MELLITUS & 38 & 1659 & 1.330E-07 \\ 
+  KEGG\_ENDOCYTOSIS & 169 & 2981 & 1.523E-07 \\ 
+  KEGG\_OLFACTORY\_TRANSDUCTION & 365 & 3110 & 1.194E-06 \\ 
+  KEGG\_AUTOIMMUNE\_THYROID\_DISEASE & 48 & 1504 & 1.492E-06 \\ 
+  KEGG\_NATURAL\_KILLER\_CELL\_MEDIATED\_CYTOTOXICITY & 127 & 2216 & 5.160E-06 \\ 
+  KEGG\_ALZHEIMERS\_DISEASE & 136 & 1846 & 5.188E-06 \\ 
+  KEGG\_WNT\_SIGNALING\_PATHWAY & 141 & 2050 & 6.536E-06 \\ 
+  KEGG\_ALLOGRAFT\_REJECTION & 32 & 1329 & 8.152E-06 \\ 
+  KEGG\_HUNTINGTONS\_DISEASE & 148 & 1660 & 8.639E-06 \\ 
+  KEGG\_GRAFT\_VERSUS\_HOST\_DISEASE & 35 & 1348 & 8.933E-06 \\ 
+  KEGG\_GAP\_JUNCTION & 85 & 1851 & 9.300E-06 \\ 
+  KEGG\_SYSTEMIC\_LUPUS\_ERYTHEMATOSUS & 111 & 1525 & 1.499E-05 \\ 
+  KEGG\_VIRAL\_MYOCARDITIS & 64 & 1972 & 1.889E-05 \\ 
+  KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION & 74 & 1598 & 2.890E-05 \\ 
+  KEGG\_LONG\_TERM\_POTENTIATION & 63 & 1585 & 3.317E-05 \\ 
+  KEGG\_INTESTINAL\_IMMUNE\_NETWORK\_FOR\_IGA\_PRODUCTION & 43 & 1072 & 3.838E-05 \\ 
+  KEGG\_PHOSPHATIDYLINOSITOL\_SIGNALING\_SYSTEM & 75 & 1681 & 4.497E-05 \\ 
+  KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC & 70 & 2373 & 5.289E-05 \\ 
+  KEGG\_LONG\_TERM\_DEPRESSION & 66 & 1741 & 5.553E-05 \\ 
+  KEGG\_GLIOMA & 64 & 974 & 5.649E-05 \\ 
+  KEGG\_VASCULAR\_SMOOTH\_MUSCLE\_CONTRACTION & 106 & 2465 & 1.881E-04 \\ 
+  KEGG\_REGULATION\_OF\_ACTIN\_CYTOSKELETON & 194 & 3047 & 1.951E-04 \\ 
+  KEGG\_TYPE\_II\_DIABETES\_MELLITUS & 45 & 979 & 2.687E-04 \\ 
+   \hline
+\end{tabular}
+\caption[TBD]{\textbf{Lists of genome-wide significant MAPIT-R KEGG pathways in height, per subgroup}. Caption continued at end of tables.}
+\label{InterPath-Supp-Table-TopPathways-KEGG-Height-a}
+\end{table}
+\addtocounter{table}{-1}
+%\addtocounter{CharNumber1}{1}
+\clearpage
+
+\begin{table}[ht]
+\centering
+\vspace*{-.75cm}
+\begin{tabular}{lccc}
+  \hline
+  \textbf{British.Ran4000:} & & & \\
+  KEGG\_ERBB\_SIGNALING\_PATHWAY & 83 & 2674 & 1.003E-05 \\
+KEGG\_TYPE\_I\_DIABETES\_MELLITUS &  39 & 1924 & 1.693E-05 \\ 
+ \textcolor{white}{KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC } & & & \\
+ \textbf{Caribbean:} & & & \\
+ KEGG\_CHEMOKINE\_SIGNALING\_PATHWAY & 171 & 2688 & 2.733E-06 \\
+ KEGG\_NATURAL\_KILLER\_CELL\_MEDIATED\_CYTOTOXICITY & 128 & 2356 & 1.125E-05 \\
+  KEGG\_CELL\_ADHESION\_MOLECULES\_CAMS & 120 & 4029 & 1.770E-05 \\
+  KEGG\_LEUKOCYTE\_TRANSENDOTHELIAL\_MIGRATION & 105 & 1941 & 2.169E-05 \\
+  KEGG\_VASCULAR\_SMOOTH\_MUSCLE\_CONTRACTION & 106 & 2708 & 3.675E-05 \\
+  KEGG\_AXON\_GUIDANCE & 120 & 3365 & 1.088E-04 \\
+  KEGG\_SMALL\_CELL\_LUNG\_CANCER & 78 & 1931 & 1.369E-04 \\
+  KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC & 70 & 2581 & 1.376E-04 \\
+  KEGG\_HYPERTROPHIC\_CARDIOMYOPATHY\_HCM & 77 & 2298 & 1.960E-04 \\
+ \\
+ \textbf{Chinese:} & & & \\
+ KEGG\_TYPE\_I\_DIABETES\_MELLITUS & 39 & 1573 & 1.269E-08 \\
+ KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION & 75 & 1505 & 8.287E-08 \\
+  KEGG\_MELANOGENESIS & 96 & 1382 & 1.028E-05 \\
+  KEGG\_ALLOGRAFT\_REJECTION & 33 & 1250 & 1.183E-05 \\
+  KEGG\_GRAFT\_VERSUS\_HOST\_DISEASE & 37 & 1274 & 2.424E-05 \\
+  KEGG\_NON\_SMALL\_CELL\_LUNG\_CANCER & 53 & 1081 & 5.337E-05 \\
+  KEGG\_SYSTEMIC\_LUPUS\_ERYTHEMATOSUS & 109 & 1399 & 1.252E-04 \\
+ \\
+ \textbf{Indian:} & & & \\
+ KEGG\_NON\_SMALL\_CELL\_LUNG\_CANCER & 53 & 1696 & 4.182E-05 \\
+ KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION & 237 & 2995 & 4.965E-05 \\
+  KEGG\_REGULATION\_OF\_ACTIN\_CYTOSKELETON & 193 & 4069 & 1.963E-04 \\
+  KEGG\_ERBB\_SIGNALING\_PATHWAY & 83 & 2174 & 2.128E-04 \\
+   \hline
+\end{tabular}
+\caption[TBD]{\textbf{Lists of genome-wide significant MAPIT-R KEGG pathways in height, per subgroup}. Continued. \\ }
+\label{InterPath-Supp-Table-TopPathways-KEGG-Height-b}
+\end{table}
+\addtocounter{table}{-1}
+%\addtocounter{CharNumber1}{1}
 
 
 \fi
