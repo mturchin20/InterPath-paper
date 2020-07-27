@@ -236,7 +236,7 @@ The specific pathways with significant marginal epistasis signals in the African
 \label{InterPath-Main-Figure-Barplots-KEGG}
 \end{figure}
 
-The African subgroup is neither the subgroup with the largest sample size nor the subgroup with the largest number of SNPs (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). However our simulation studies done under a number of biological scenarios show MAPIT-R controls type 1 error accurately (Supplementary Figure XX). We also used permuted phenotypes to validate MAPIT-R's behavior under the null of no epistasis between any pathway and the rest of the genome (Supplementary Figures \ref{InterPath-Supp-Figure-perm1-QQPlots-AllPaths} and \ref{InterPath-Supp-Figure-10perms-pValHists}); we also used these permutations to investigate MAPIT-R's false discovery rates and observe values only as high as 1.5\% across our multiple database + phenotype + subgroup combinations at different significance thresholds (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-FDRs}).
+The African subgroup is neither the subgroup with the largest sample size nor the subgroup with the largest number of SNPs (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). However our simulation studies done under a number of biological scenarios show MAPIT-R controls type 1 error accurately (Supplementary Figure XX). We also used permuted phenotypes to validate MAPIT-R's behavior under the null of no epistasis between any pathway and the rest of the genome (Supplementary Figures \ref{InterPath-Supp-Figure-perm1-QQPlots-AllPaths} and \ref{InterPath-Supp-Figure-10perms-pValHists}); we also used these permutations to investigate MAPIT-R's false discovery rates and observe values only as high as 1.5\% across our multiple database + phenotype + subgroup combinations at different significance thresholds (Supplementary Table \ref{InterPath-Supp-Table-AllPops-FDRs}).
 
 \subsection{Non-African subgroups reveal additional pathways with significant marginal epistasis}
 
@@ -249,7 +249,7 @@ In our analyses of the British, Chinese, Caribbean, Indian, and Pakistani subgro
 \label{InterPath-Main-Figure-Heatplots-KEGG}
 \end{figure}
 
-The pathways with significant marginal epistasis identified in both the African and Caribbean subgroups are related to the cellular signaling and heart condition patterns; the genes underlying these overlapping pathways include multiple kinases (e.g, {\emph{MAPK1}}, {\emph{ROCK1}}, {\emph{PRKCB}}, {\emph{PAK1}}) and calcium channel proteins (e.g., {\emph{CACNA1S}}, {\emph{CACNA1D}}) (Supplementary Tables \ref{InterPath-Supp-Tables-MAPITR-TopPathway-Overlap} \& \ref{InterPath-Supp-Tables-MAPITR-TopPathway-GeneCounts-Overlap}). In contrast, the pathways with significant marginal epistasis identified in both the African and Chinese subgroups are pathways related to the immune system and these overlapping pathways contain multiple HLA loci (e.g., {\emph{HLA-DRA}}, {\emph{HLA-DRB1}}, {\emph{HLA-A}}, {\emph{HLA-B}})  (Supplementary Tables \ref{InterPath-Supp-Tables-MAPITR-TopPathway-Overlap} \& \ref{InterPath-Supp-Tables-MAPITR-TopPathway-GeneCounts-Overlap}). These differences between ancestries may reflect heterogeneous power to detect epistatic signals.
+The pathways with significant marginal epistasis identified in both the African and Caribbean subgroups are related to the cellular signaling and heart condition patterns; the genes underlying these overlapping pathways include multiple kinases (e.g, {\emph{MAPK1}}, {\emph{ROCK1}}, {\emph{PRKCB}}, {\emph{PAK1}}) and calcium channel proteins (e.g., {\emph{CACNA1S}}, {\emph{CACNA1D}}) (Supplementary Tables \ref{InterPath-Supp-Table-MAPITR-TopPathway-Overlap} \& \ref{InterPath-Supp-Table-MAPITR-TopPathway-GeneCounts-Overlap}). In contrast, the pathways with significant marginal epistasis identified in both the African and Chinese subgroups are pathways related to the immune system and these overlapping pathways contain multiple HLA loci (e.g., {\emph{HLA-DRA}}, {\emph{HLA-DRB1}}, {\emph{HLA-A}}, {\emph{HLA-B}})  (Supplementary Tables \ref{InterPath-Supp-Table-MAPITR-TopPathway-Overlap} \& \ref{InterPath-Supp-Table-MAPITR-TopPathway-GeneCounts-Overlap}). These differences between ancestries may reflect heterogeneous power to detect epistatic signals.
 
 \subsection{Stronger signals of pathway-level marginal epistasis underlie BMI than height}
 
@@ -312,7 +312,7 @@ Therefore, running each of these new `one proteaseome gene-family removed' pathw
 
 One important consideration of our results is that we have limited sample sizes of the diverse non-European human ancestries we are analyzing. Given the large sample size of the white British individuals in the UK Biobank, we decided to test whether the subsampled replicates of this cohort were large enough to be representative of the genetic variation in the full dataset of over 470,000 individuals. Specifically, we sampled additional, non-overlapping random subgroups of 4,000 British individuals and tested whether MAPIT-R scans in those random samples were consistent with our results for the British subgroup in Figures \ref{InterPath-Main-Figure-Heatplots-KEGG} and \ref{InterPath-Main-Figure-Heatplots-KEGG}.  We also constructed larger British subsamples of non-overlapping 10,000 individuals to project the impact of sample size on our results as well. In total we analyzed 5 sets of 4,000 British individuals and 5 sets of 10,000 British individuals. 
 
-When applying MAPIT-R to these non-overlapping replicates of 4,000 and 10,000 white British individuals, our results are similar to our original results in Figures \ref{InterPath-Main-Figure-Heatplots-KEGG} and \ref{InterPath-Main-Figure-Heatplots-KEGG}. We see limited numbers of significant pathways across all database + phenotype + replicate subgroup combinations, as well as limited overlap of significant pathways between replicates (Supplementary Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}\textcolor{blue}{-}\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}). We also ran analyses using permuted phenotypes, and once again see proper behavior under the null and very low FDRs (Supplementary Tables \ref{InterPath-Supp-Tables-BritReps-FDRs-pt1}). These results at least suggest that the large numbers of significant pathways we observe in the African subgroup are less likely to be a product of chance.  
+When applying MAPIT-R to these non-overlapping replicates of 4,000 and 10,000 white British individuals, our results are similar to our original results in Figures \ref{InterPath-Main-Figure-Heatplots-KEGG} and \ref{InterPath-Main-Figure-Heatplots-KEGG}. We see limited numbers of significant pathways across all database + phenotype + replicate subgroup combinations, as well as limited overlap of significant pathways between replicates (Supplementary Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}\textcolor{blue}{-}\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}). We also ran analyses using permuted phenotypes, and once again see proper behavior under the null and very low FDRs (Supplementary Tables \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}). These results at least suggest that the large numbers of significant pathways we observe in the African subgroup are less likely to be a product of chance.  
 
 \subsection{Investigating the relationship between within-subgroup genetic variation and signals of marginal epistasis}
 
@@ -596,7 +596,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_perm1_QQPlots_AllPaths_vs2.png}
-\caption[TBD]{\textbf{QQ-Plots of MAPIT-R results using permuted phenotypes, per subgroup}. The figure shows QQ-plots for running MAPIT-R using a single permutation of either height or BMI measurements within the KEGG and REACTOME databases. Phenotypes were permuted within each population subgroup. Shown on the $x$-axis are the -$\log_{10}$ of the expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of the observed $p$-values. The dotted red line is the Bonferroni-corrected $p$-value threshold based on the number of pathways tested per pathway database + phenotype combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Looking in total across the ten permutation runs conducted for each pathway database + phenotype + UKB subgroup combination, we find that MAPIT-R properly controls for the false positive rate at varying significance cutoff thresholds (Supplementary Figure \ref{InterPath-Supp-Tables-BritReps-FDRs-pt1}).}
+\caption[TBD]{\textbf{QQ-Plots of MAPIT-R results using permuted phenotypes, per subgroup}. The figure shows QQ-plots for running MAPIT-R using a single permutation of either height or BMI measurements within the KEGG and REACTOME databases. Phenotypes were permuted within each population subgroup. Shown on the $x$-axis are the -$\log_{10}$ of the expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of the observed $p$-values. The dotted red line is the Bonferroni-corrected $p$-value threshold based on the number of pathways tested per pathway database + phenotype combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Looking in total across the ten permutation runs conducted for each pathway database + phenotype + UKB subgroup combination, we find that MAPIT-R properly controls for the false positive rate at varying significance cutoff thresholds (Supplementary Figure \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}).}
 \label{InterPath-Supp-Figure-perm1-QQPlots-AllPaths}
 \end{figure}
 \clearpage
@@ -933,7 +933,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
    \hline
 \end{tabular}
 \caption[TBD]{\textbf{MAPIT-R false discovery rates at different significance thresholds, per subgroup}. Caption continued on next page. }
-\label{InterPath-Supp-Tables-AllPops-FDRs}
+\label{InterPath-Supp-Table-AllPops-FDRs}
 \end{table}
 \end{landscape}
 \clearpage
@@ -942,7 +942,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \addtocounter{table}{-1}
 \begin{table} [t!]
   \caption{\textbf{MAPIT-R false discovery rates at different significance thresholds, per subgroup}. The table shows for various significance thresholds the false discovery rates observed from MAPIT-R when run on ten rounds of phenotype permutations for each UKB subgroup and pathway database. The first column lists the pathway database + phenotype + UKB subgroup combinations. The second column lists the total number of pathways that were tested across each of the ten phenotype permutations. The third column shows the $p$-value threshold associated with using the Bonferroni method of correction, also known as the `genome-wide significant' threshold. The fourth column shows the number of pathways across all ten phenotype permutation rounds that crossed this Bonferroni threshold. The fifth column shows the associated FDR associated with the fourth column. And the remaining six columns show the same setup as columns three to five but with a $p$-value threshold of either 0.001 or 0.01.}
-\label{InterPath-Supp-Tables-AllPops-FDRs-Caption}
+\label{InterPath-Supp-Table-AllPops-FDRs-Caption}
 \end{table}
 \clearpage
 
@@ -974,7 +974,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
    \hline
 \end{tabular}
 \caption[TBD]{\textbf{Genome-wide significant MAPIT-R KEGG pathway overlap between UKB subgroups, in height}. Caption continued on next page. }
-\label{InterPath-Supp-Tables-MAPITR-TopPathway-Overlap}
+\label{InterPath-Supp-Table-MAPITR-TopPathway-Overlap}
 \end{table}
 \end{landscape}
 \clearpage
@@ -983,7 +983,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \addtocounter{table}{-1}
 \begin{table} [t!]
   \caption{\textbf{Genome-wide significant MAPIT-R KEGG pathway overlap between UKB subgroups, in height}. The table shows genome-wide significant pathways that overlap between multiple UKB subgroups. Specifically, pathways that overlap between the African subgroup and Caribbean subgroup, and between the African subgroup and Chinese subgroup, are listed for height results from KEGG.}
-\label{InterPath-Supp-Tables-MAPITR-TopPathway-Overlap-Caption}
+\label{InterPath-Supp-Table-MAPITR-TopPathway-Overlap-Caption}
 \end{table}
 \clearpage
 
@@ -1012,8 +1012,8 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 & 3 & PRF1,IL2,GZMB,FASLG,FAS \\
    \hline
 \end{tabular}
-\caption[TBD]{\textbf{Gene counts across genome-wide significant MAPIT-R KEGG pathways that overlap between UKB subgroups, in height}. The table shows genes that are present across multiple pathways that overlap between the population subgroups referenced in the first column. Pathways from which these gene count lists are derived can be found in Supplementary Table \ref{InterPath-Supp-Tables-MAPITR-TopPathway-Overlap-Caption}. The second column lists the number of times the given genes appear across the aforementioned lists of pathways. The third column lists the specific genes the appear at the specific gene count numbers. Note that these results are specifically for the KEGG height analysis.}
-\label{InterPath-Supp-Tables-MAPITR-TopPathway-GeneCounts-Overlap}
+\caption[TBD]{\textbf{Gene counts across genome-wide significant MAPIT-R KEGG pathways that overlap between UKB subgroups, in height}. The table shows genes that are present across multiple pathways that overlap between the population subgroups referenced in the first column. Pathways from which these gene count lists are derived can be found in Supplementary Table \ref{InterPath-Supp-Table-MAPITR-TopPathway-Overlap-Caption}. The second column lists the number of times the given genes appear across the aforementioned lists of pathways. The third column lists the specific genes the appear at the specific gene count numbers. Note that these results are specifically for the KEGG height analysis.}
+\label{InterPath-Supp-Table-MAPITR-TopPathway-GeneCounts-Overlap}
 \end{table}
 \clearpage
 \setlength{\footskip}{1cm}
@@ -1048,10 +1048,21 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 %\vspace*{-1cm}
 %\includegraphics[scale=1]{Images/Supp/InterPath_Supp_Table_TopPathwayGeneCounts.png}
 %\caption[TBD]{\textbf{Table of Most Present Genes in Significant MAPIT-R Pathways} \textcolor{red}{this will be a table}}
-%\label{InterPath-Supp-Tables-GeneCounts}
+%\label{InterPath-Supp-Table-GeneCounts}
 %\end{figure}
 %\end{landscape}
 %\clearpage
+
+
+
+\begin{table} [t!]
+  \caption{\textbf{Lists of genome-wide significant MAPIT-R pathways, per subgroup}.  Attached Excel sheets list the pathways that were found to be MAPIT-R genome-wide significant in each UKB subgroup for the following phenotype and pathway database combinations: (a) KEGG+Height, (b) KEGG+BMI, (c) REACTOME+Height, and (d) REACTOME+BMI. Genome-wide significance was determined by using a Bonferroni-corrected $p$-value threshold of .05 divided by the number of pathways tested (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}).}
+\label{InterPath-Supp-Table-opGeneCounts-AllPaths-AllPhenos-Caption
+
+InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}
+\end{table}
+\clearpage
+
 
 \newcounter{CharNumber2}
 \setcounter{CharNumber2}{1}
@@ -1089,7 +1100,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
    \hline
 \end{tabular}
 \caption[TBD]{\textbf{Gene counts across MAPIT-R genome-wide significant KEGG pathways in height, per subgroup}. Caption continued at end of tables.}
-\label{InterPath-Supp-Tables-AllPops-TopGeneCounts-KEGG-Height-a}
+\label{InterPath-Supp-Table-AllPops-TopGeneCounts-KEGG-Height-a}
 \end{table}
 \clearpage
 \addtocounter{table}{-1}
@@ -1133,7 +1144,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
    \hline
 \end{tabular}
 \caption[TBD]{\textbf{Gene counts across MAPIT-R genome-wide significant KEGG pathways in BMI, per subgroup}}
-\label{InterPath-Supp-Tables-AllPops-TopGeneCounts-KEGG-BMI-a}
+\label{InterPath-Supp-Table-AllPops-TopGeneCounts-KEGG-BMI-a}
 \end{table}
 \clearpage
 \addtocounter{table}{-1}
@@ -1157,7 +1168,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
    \hline
 \end{tabular}
 \caption[TBD]{\textbf{Gene counts across MAPIT-R genome-wide significant REACTOME pathways in height, per subgroup}}
-\label{InterPath-Supp-Tables-AllPops-TopGeneCounts-REACTOME-Height-a}
+\label{InterPath-Supp-Table-AllPops-TopGeneCounts-REACTOME-Height-a}
 \end{table}
 \clearpage
 \addtocounter{table}{-1}
@@ -1208,7 +1219,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
    \hline
 \end{tabular}
 \caption[TBD]{\textbf{Gene counts across MAPIT-R genome-wide significant REACTOME pathways in BMI, per subgroup}}
-\label{InterPath-Supp-Tables-AllPops-TopGeneCounts-REACTOME-BMI-a}
+\label{InterPath-Supp-Table-AllPops-TopGeneCounts-REACTOME-BMI-a}
 \end{table}
 \clearpage
 \addtocounter{table}{-1}
@@ -1219,7 +1230,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 
 \begin{table} [t!]
   \caption{\textbf{Gene counts across MAPIT-R genome-wide significant pathways, per subgroup}. The tables show the lists of genes that appear most frequently across the pathways that were MAPIT-R genome-wide significant in the following phenotype and pathway database combinations: (a) KEGG height, (b) KEGG BMI, (c) REACTOME height, and (d) REACTOME BMI. The first columns list the UKB subgroups, the second columns list the number of times the given genes appeared in the set of genome-wide significant pathways for that pathway database + phenotype + subgroup combination, and the third columns list the actual gene names for each of these numbers of gene counts.}
-\label{InterPath-Supp-Tables-AllPops-TopGeneCounts-Caption}
+\label{InterPath-Supp-Table-AllPops-TopGeneCounts-Caption}
 \end{table}
 \clearpage
 
@@ -1282,7 +1293,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
    \hline
 \end{tabular}
 \caption[TBD]{\textbf{MAPIT-R Genome-Wide Significant Pathway Gene Counts: Hypergeometric Enrichment Examples}. Caption continued on next page.}
-\label{InterPath-Supp-Tables-AllPops-TopGeneCount-HypergeometricTests}
+\label{InterPath-Supp-Table-AllPops-TopGeneCount-HypergeometricTests}
 \end{table}
 \end{landscape}
 \clearpage
@@ -1290,7 +1301,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \addtocounter{table}{-1}
 \begin{table} [t!]
   \caption{\textbf{PSM* and UBA52 gene count enrichment test examples, size restriction and no restriction}. The table shows examples and results of running the hypergeometric test for enrichment on two different genes in two different study designs. In all cases a gene is tested for being significantly more frequent among the set of MAPIT-R genome-wide significant pathways than among the background distribution of pathways in the original database. Two study designs were employed for these tests, either (a) using all pathways present in the given databases or (b) using only pathways that contained less than or equal to 1,000 SNPs. The first column lists the gene or gene family being tested. The second column lists which of the two aforementioned study designs was used. Columns three through six list the different count values used in the hypergeometric test: the third column lists the number of times a gene is present among the genome-wide significant list of pathways, the fourth column lists the total number of pathways that were genome-wide significant, the fifth column lists the number of times a gene is present among all the pathways in the given database, and the sixth column lists the total number of pathways in the given database. The seventh column is the hypergeometric $p$-value associated with columns three through six. Note that the vast majority of proteasome genes included in our analysis had the same number of gene counts across each hypergeometric category, hence why \textbf{PSM*} was used to represent them as a whole.}
-\label{InterPath-Supp-Tables-AllPops-TopGeneCount-HypergeometricTests-Caption}
+\label{InterPath-Supp-Table-AllPops-TopGeneCount-HypergeometricTests-Caption}
 \end{table}
 \clearpage
 
@@ -1315,7 +1326,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 %   \hline
 %\end{tabular}
 %  \caption{\textbf{Size-restricted pathways that contain the PSM* cluster of genes}. Caption continued on next page.}
-%\label{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome}
+%\label{InterPath-Supp-Table-AllPops-TopGeneCount-SizeRestricted-Proteasome}
 %\end{table}
 %\clearpage
 %\end{landscape}
@@ -1324,7 +1335,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 %\addtocounter{table}{-1}
 %\begin{table} [t!]
 %  \caption{\textbf{Size-restricted pathways that contain the PSM* cluster of genes}. The table shows the MAPIT-R genome-wide significant REACTOME pathways for BMI in the African subgroup that both have SNP sizes less than 1,000 and also contain the set of proteasome genes being investigated (\textit{PSMA}*, \textit{PSMB}*, \textit{PSMC}*, \textit{PSMD}*, and \textit{PSME*}). The first column shows the REACTOME pathway names, the second column shows the number of genes that were included in the MAPIT-R analysis, the third column show the number of SNPs that were included in the MAPIT-R analysis, and the fourth column shows the MAPIT-R $p$-value.}
-%\label{InterPath-Supp-Tables-AllPops-TopGeneCount-SizeRestricted-Proteasome-Caption}
+%\label{InterPath-Supp-Table-AllPops-TopGeneCount-SizeRestricted-Proteasome-Caption}
 %\end{table}
 %\clearpage
 
@@ -1373,7 +1384,7 @@ British.Ran4000 & 1730 & 2.890E-04 & 1 & 0.058 & 0.001 & 2 & 0.116 & 0.010 & 14 
    \hline
 \end{tabular}
 \caption[TBD]{\textbf{MAPIT-R false discovery rates at different significance thresholds, per British replicate}. Caption continued at end of tables.}
-\label{InterPath-Supp-Tables-BritReps-FDRs-pt1}
+\label{InterPath-Supp-Table-BritReps-FDRs-pt1}
 \end{table}
 \end{landscape}
 \clearpage
@@ -1419,7 +1430,7 @@ British.Ran4000 & 6490 & 7.704E-05 & 1 & 0.015 & 0.001 & 4 & 0.062 & 0.010 & 52 
    \hline
 \end{tabular}
 \caption[TBD]{\textbf{MAPIT-R false discovery rates at different significance thresholds, per British replicate}. Continued.}
-\label{InterPath-Supp-Tables-BritReps-FDRs-pt2}
+\label{InterPath-Supp-Table-BritReps-FDRs-pt2}
 \end{table}
 \end{landscape}
 \clearpage
@@ -1428,7 +1439,7 @@ British.Ran4000 & 6490 & 7.704E-05 & 1 & 0.015 & 0.001 & 4 & 0.062 & 0.010 & 52 
 \addtocounter{table}{-1}
 \begin{table} [t!]
   \caption{\textbf{MAPIT-R false discovery rates at different significance thresholds, per British replicate}. The tables show for various significance thresholds the false discovery rates observed from MAPIT-R when run on ten rounds of phenotype permutations for each British replicate subsample and pathway database. The first column lists the pathway database + phenotype + British replicate subsample combinations. The second column lists the total number of pathways that were tested across each of the ten phenotype permutations. The third column shows the $p$-value threshold associated with using the Bonferroni method of correction, also known as the `genome-wide significant' threshold. The fourth column shows the number of pathways across all ten phenotype permutation rounds that crossed this Bonferroni threshold. The fifth column shows the associated FDR associated with the fourth column. And the remaining six columns show the same setup as columns three to five but with a $p$-value threshold of either 0.001 or 0.01.}
-\label{InterPath-Supp-Tables-BritReps-FDRs-Caption}
+\label{InterPath-Supp-Table-BritReps-FDRs-Caption}
 \end{table}
 \clearpage
 
@@ -1460,7 +1471,7 @@ SCRAP
 
 
 
-The second of these two situations is what we tried to resolve first. If we are concerned about a relationship between larger pathways and inflated hypergeometric $p$-values, then one possible approach might be to restrict the size of the pathways analyzed. Instead of looking at enrichment among all pathways, we can instead look at enrichment only among pathways that have under a certain number of SNPs. And indeed, by restricting the number of SNPs present in a pathway to 1,000 or less, we see a major drop off in the number of significant pathways remaining (29 to 2 for KEGG height, 47 to 11 for KEGG BMI, 24 to 0 for REACTOME height, and 65 to 26 for REACTOME BMI); this, by extension, also produces a large drop in the genes that are present across these pathways as well as their associated hypergeometric $p$-values (Supplementary Figure \ref{InterPath-Supp-Figure-Hypergeometric-RestrictedComps-African-BMI} and Supplementary Table \ref{InterPath-Supp-Table-Hypergeometric-RestrictedComps-African-BMI-TopExamples}). Interestingly however, we find one gene family that has had the opposite result -- multiple proteasome subunit genes (\textit{PSMA}*, \textit{PSMB}*, \textit{PSMC}*, \textit{PSMD}*, and \textit{PSME*}) now produce more significant hypergeometric $p$-values upon this restriction to pathways with smaller SNP counts (Supplementary Table \ref{InterPath-Supp-Tables-AllPops-TopGeneCount-HypergeometricTests}). 
+The second of these two situations is what we tried to resolve first. If we are concerned about a relationship between larger pathways and inflated hypergeometric $p$-values, then one possible approach might be to restrict the size of the pathways analyzed. Instead of looking at enrichment among all pathways, we can instead look at enrichment only among pathways that have under a certain number of SNPs. And indeed, by restricting the number of SNPs present in a pathway to 1,000 or less, we see a major drop off in the number of significant pathways remaining (29 to 2 for KEGG height, 47 to 11 for KEGG BMI, 24 to 0 for REACTOME height, and 65 to 26 for REACTOME BMI); this, by extension, also produces a large drop in the genes that are present across these pathways as well as their associated hypergeometric $p$-values (Supplementary Figure \ref{InterPath-Supp-Figure-Hypergeometric-RestrictedComps-African-BMI} and Supplementary Table \ref{InterPath-Supp-Table-Hypergeometric-RestrictedComps-African-BMI-TopExamples}). Interestingly however, we find one gene family that has had the opposite result -- multiple proteasome subunit genes (\textit{PSMA}*, \textit{PSMB}*, \textit{PSMC}*, \textit{PSMD}*, and \textit{PSME*}) now produce more significant hypergeometric $p$-values upon this restriction to pathways with smaller SNP counts (Supplementary Table \ref{InterPath-Supp-Table-AllPops-TopGeneCount-HypergeometricTests}). 
 
 
 
