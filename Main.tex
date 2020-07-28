@@ -189,6 +189,25 @@ We apply MAPIT-R to genotype data and the quantitative traits height and body ma
 
 \section{Results}\label{InterPath-Results}
 
+-barplot(numsabove;mn\&suppl)
+-pca(pveincld)
+-anntnhgtvsbm
+
+-vschrintrprt
+-chkuseof'bs+phn+sbgrp'thrghot
+-fgrs:1e-10,a)\&b)thngs
+-fgrs:'bs+phn+sbgrp'atall?
+-'need to explain this a little better'thng
+-popstrctsctn?
+-prtsmfgrs
+-prtsmothrpops
+-prtsctnrchk
+-popstrctsctn?
+-whrincldprwseepivals?
+-rrdvrthng?
+-dscnn
+-grgSmFgr?
+
 \subsection{Overview of the MAPIT-R Model}\label{InterPath-Results-MAPITRModel}
 
 Here we provide an overview of the MAPIT-R model, a multiple-variant extension of the single-variant MAPIT framework (see Materials and Methods for a full description). The objective of MAPIT-R is to test whether there are any non-zero genetic interaction effects between a group of variants $\textbf{R}$ and \textbf{any} other variant remaining in the genome ($\textbf{R}^C$). The typical GWA linear form of this model is:  
@@ -219,7 +238,7 @@ The specific pathways with significant marginal epistasis signals in the African
 \begin{figure}[htb]
 \centering
 \hspace*{-.9cm}
-\includegraphics[scale=.45]{Images/Main/InterPath_Main_Figure_Barplots_KEGG_vs2.png}
+\includegraphics[scale=.45]{Images/Main/InterPath_Main_Figure_Barplots_KEGG_vs4.png}
 \caption[TBD]{\textbf{Numbers of KEGG pathways that have significant marginal epistasis, per subgroup}. The figure shows the numbers of genome-wide significant pathways found from running MAPIT-R on height and BMI in the KEGG database within each of the UKB subgroups.  Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database + phenotype + subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Across all database + phenotype combinations, the African subgroup has the largest numbers of significant pathways. For lists of the specific significant pathways per database + phenotype + subgroup combination, see Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}. Results from running MAPIT-R with REACTOME database pathways can be found in Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}.}
 \label{InterPath-Main-Figure-Barplots-KEGG}
 \end{figure}
@@ -292,9 +311,9 @@ Therefore, running each of these new `one proteaseome gene-family removed' pathw
 \label{InterPath-Main-Figure-Proteasome-Heatplot}
 \end{figure}
 
-\subsection{Testing the null model with British replicate subpopulations}
+\subsection{Testing the variability in MAPIT-R results with British replicate subpopulations}
 
-One important consideration of our results is that we have limited sample sizes of the diverse non-European human ancestries we are analyzing. Given the large sample size of the white British individuals in the UK Biobank, we decided to test whether the subsampled replicates of this cohort were large enough to be representative of the genetic variation in the full dataset of over 470,000 individuals. Specifically, we sampled additional, non-overlapping random subgroups of 4,000 British individuals and tested whether MAPIT-R scans in those random samples were consistent with our results for the British subgroup in Figures \ref{InterPath-Main-Figure-Heatplots-KEGG} and \ref{InterPath-Main-Figure-Heatplots-KEGG}.  We also constructed larger British subsamples of non-overlapping 10,000 individuals to project the impact of sample size on our results as well. In total we analyzed 5 sets of 4,000 British individuals and 5 sets of 10,000 British individuals. 
+One important consideration of our results is that we have limited sample sizes of the diverse non-European human ancestries we are analyzing. Given the large sample size of the white British individuals in the UK BioBank, we decided to test whether the subsampled replicates of this cohort were large enough to be representative of the genetic variation in the full dataset of over 470,000 individuals. Specifically, we sampled additional, non-overlapping random subgroups of 4,000 British individuals and tested whether MAPIT-R scans in those random samples were consistent with our results for the British subgroup in Figures \ref{InterPath-Main-Figure-Heatplots-KEGG} and \ref{InterPath-Main-Figure-Heatplots-KEGG}.  We also constructed larger British subsamples of non-overlapping 10,000 individuals to project the impact of sample size on our results as well. In total we analyzed 5 sets of 4,000 British individuals and 5 sets of 10,000 British individuals. 
 
 When applying MAPIT-R to these non-overlapping replicates of 4,000 and 10,000 white British individuals, our results are similar to our original results in Figures \ref{InterPath-Main-Figure-Heatplots-KEGG} and \ref{InterPath-Main-Figure-Heatplots-KEGG}. We see limited numbers of significant pathways across all database + phenotype + replicate subgroup combinations, as well as limited overlap of significant pathways between replicates (Supplementary Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}\textcolor{blue}{-}\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}). We also ran analyses using permuted phenotypes, and once again see proper behavior under the null and very low FDRs (Supplementary Tables \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}). These results at least suggest that the large numbers of significant pathways we observe in the African subgroup are less likely to be a product of chance.  
 
