@@ -237,7 +237,7 @@ We applied MAPIT-R to height and BMI to detect pathways from the KEGG and REACTO
 
 Applying MAPIT-R to height and BMI measurements and genotype data using  these pathway databases and ancestry subgroups, we find 245 pathways that have genome-wide significant signals for marginal epistatic interactions with the rest of the genome (Figure \ref{InterPath-Main-Figure-Barplots-KEGG}, Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}, and Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis, see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). We find similar numbers of significant pathways between the KEGG and REACTOME databases: 130 and 115, respectively. Totaling across both databases, we find that BMI contains more significant pathways than does height: 155 vs. 90. The majority of our significant pathways are identified in database + phenotype + subgroup combinations that contain the African subgroup: 165 out of 245.
 
-The specific pathways with significant marginal epistasis signals in the African subgroup share multiple themes across each of the database and phenotype combinations (Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}). Analyzing height in KEGG, we find multiple pathways representing cellular signaling, immune systems, and heart conditions, and analyzing BMI we find similar themes plus multiple pathways that involve metabolism (see Table XX for examples). REACTOME pathways show similar themes as well in both phenotypes (Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}).  
+The specific pathways with significant marginal epistasis signals in the African subgroup share multiple themes across each of the database and phenotype combinations (Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}). Analyzing height in KEGG, we find multiple pathways representing cellular signaling, immune systems, and heart conditions, and analyzing BMI we find similar themes plus multiple pathways that involve metabolism (see Table \ref{InterPath-Main-Table-KEGG-African-TopPathways-Themes} for examples). REACTOME pathways show similar themes as well in both phenotypes (see Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d} for complete lists of MAPIT-R significant pathways in all database + phenotype + subgroup combinations).  
 
 
 \begin{figure}[htb]
@@ -252,7 +252,7 @@ The specific pathways with significant marginal epistasis signals in the African
 \centering
 \begin{tabular}{lrr}
   \hline
-\textbf{Pathway} & \textbf{Height} & \textbf{BMI} \\ 
+\textbf{KEGG Pathway} & \textbf{Height} & \textbf{BMI} \\ 
 & \textbf{$p$-Value} & \textbf{$p$-Value} \\ 
   \hline
   \textbf{Cellular Signaling:} & & \\
@@ -267,13 +267,18 @@ The specific pathways with significant marginal epistasis signals in the African
   ANTIGEN\_PROCESSING\_AND\_PRESENTATION & 2.89E-05 & 2.08E-07 \\
   \\
   \textbf{Heart Conditions:} & & \\
-  ACTIVATION\_OF\_NF\_KAPPAB\_IN\_B\_CELLS & 465 & 1.861E-05 \\ 
-  ASSEMBLY\_OF\_THE\_PRE\_REPLICATIVE\_COMPLEX & 331 & 3.293E-05 \\ 
-  ANTIGEN\_PROCESSING\_CROSS\_PRESENTATION & 850 & 3.956E-05 \\ 
+  DILATED\_CARDIOMYOPATHY & 1.24E-07 & 6.99E-06 \\
+  VIRAL\_MYOCARDITIS & 1.89E-05 & 1.09E-06 \\
+  \\
+  \textbf{Metabolism:} & & \\
+  PURINE\_METABOLISM & 1.19E-07 & 2.46E-06 \\
+  BETA\_ALANINE\_METABOLISM & NS & 1.12E-04 \\
+  ETHER\_LIPID\_METABOLISM & NS & 1.41E-04 \\
+  O\_GLYCAN\_BIOSYNTHESIS & NS & 1.92E-04 \\
    \hline
 \end{tabular}
-  \caption{\textbf{Size-restricted pathways that contain the PSM* cluster of genes}. Caption continued on next page.}
-\label{InterPath-Supp-Table-AllPops-TopGeneCount-SizeRestricted-Proteasome}
+  \caption{\textbf{Biological themes among MAPIT-R significant KEGG pathways in the African subgroup}. Caption continued on next page.}
+\label{InterPath-Main-Table-KEGG-African-TopPathways-Themes}
 \end{table}
 
 The African subgroup is neither the subgroup with the largest sample size nor the subgroup with the largest number of SNPs (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). However our simulation studies done under a number of biological scenarios show MAPIT-R controls type 1 error accurately (Supplementary Figure XX). We also used permuted phenotypes to validate MAPIT-R's behavior under the null of no epistasis between any pathway and the rest of the genome (Supplementary Figures \ref{InterPath-Supp-Figure-perm1-QQPlots-AllPaths} and \ref{InterPath-Supp-Figure-10perms-pValHists}); we also used these permutations to investigate MAPIT-R's false discovery rates and observe values only as high as 1.5\% across our multiple database + phenotype + subgroup combinations at different significance thresholds (Supplementary Table \ref{InterPath-Supp-Table-AllPops-FDRs}).
