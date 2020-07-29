@@ -240,8 +240,6 @@ Applying MAPIT-R to height and BMI measurements and genotype data using  these p
 The specific pathways with significant marginal epistasis signals in the African subgroup share multiple themes across each of the database and phenotype combinations (Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}). Analyzing height in KEGG, we find multiple pathways representing cellular signaling, immune systems, and heart conditions, and analyzing BMI we find similar themes plus multiple pathways that involve metabolism (see Table XX for examples). REACTOME pathways show similar themes as well in both phenotypes (Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}).  
 
 
-(e.g. KEGG\_CHEMOKINE\_SIGNALING\_PATHWAY, KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION, and \\ KEGG\_WNT\_SIGNALING\_PATHWAY), immune systems (e.g. \\ KEGG\_AUTOIMMUNE\_THYROID\_DISEASE, KEGG\_ALLOGRAFT\_REJECTION, and KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION), and heart conditions (e.g. KEGG\_DILATED\_CARDIOMYOPATHY and \\ KEGG\_VIRAL\_MYOCARDITIS). Analyzing BMI in KEGG, we find similar themes, as well as multiple pathways that involve metabolism (e.g. KEGG\_PURINE\_METABOLISM, KEGG\_BETA\_ALANINE\_METABOLISM, and \\ KEGG\_ETHER\_LIPID\_METABOLISM). REACTOME pathways show similar themes as well in both phenotypes (Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}).
-
 \begin{figure}[htb]
 \centering
 \hspace*{-.9cm}
@@ -249,8 +247,6 @@ The specific pathways with significant marginal epistasis signals in the African
 \caption[TBD]{\textbf{Numbers of KEGG pathways that have significant marginal epistasis, per subgroup}. The figure shows the numbers of genome-wide significant pathways found from running MAPIT-R on height and BMI in the KEGG database within each of the UKB subgroups.  Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database + phenotype + subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Across all database + phenotype combinations, the African subgroup has the largest numbers of significant pathways. For lists of the specific significant pathways per database + phenotype + subgroup combination, see Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}. Results from running MAPIT-R with REACTOME database pathways can be found in Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}.}
 \label{InterPath-Main-Figure-Barplots-KEGG}
 \end{figure}
-
-cellular signaling, immune systems, and heart conditions 
 
 \begin{table}[ht]
 \centering
@@ -260,15 +256,15 @@ cellular signaling, immune systems, and heart conditions
 & \textbf{$p$-Value} & \textbf{$p$-Value} \\ 
   \hline
   \textbf{Cellular Signaling:} & & \\
-M\_G1\_TRANSITION & 458 & 3.191E-06 \\ 
-  CELL\_CYCLE\_CHECKPOINTS & 670 & 5.781E-06 \\ 
-  HOST\_INTERACTIONS\_OF\_HIV\_FACTORS & 963 & 7.521E-06 \\ 
+ CHEMOKINE\_SIGNALING\_PATHWAY & 5.14E-10 & 1.51E-08 \\
+ CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION & 2.84E-08 & NS \\
+ WNT\_SIGNALING\_PATHWAY & 6.54E-06 & 1.41E-07 \\
+ ERBB\_SIGNALING\_PATHWAY & NS & 3.30E-07 \\
   \\
   \textbf{Immune Systems:} & & \\
-  DOWNSTREAM\_SIGNALING\_EVENTS\_OF\_ & & \\ 
-  \qquad B\_CELL\_RECEPTOR\_BCR & 745 & 1.195E-05 \\
-  REGULATION\_OF\_APOPTOSIS & 564 & 1.218E-05 \\ 
-  MITOTIC\_G1\_G1\_S\_PHASES & 747 & 1.453E-05 \\ 
+  AUTOIMMUNE\_THYROID\_DISEASE & 1.49E-06 & 1.39E-08 \\
+  ALLOGRAFT\_REJECTION & 8.15E-06 & 2.53E-08 \\
+  ANTIGEN\_PROCESSING\_AND\_PRESENTATION & 2.89E-05 & 2.08E-07 \\
   \\
   \textbf{Heart Conditions:} & & \\
   ACTIVATION\_OF\_NF\_KAPPAB\_IN\_B\_CELLS & 465 & 1.861E-05 \\ 
@@ -1163,6 +1159,9 @@ To further test the effect of pathway size on our results, we conducted a second
 \subsection{MAPIT-R identifies signals of epistasis in diverse UKB subgroups where pairwise tests for epistasis fail}\label{InterPath-Results-SNPEpistasis}
 
 \textcolor{red}{SR: Next we wanted to test whether we could identify significant pairwise epistatic interactions between pairs of SNPs such that one SNP in the pair was in a pathway MAPIT-R identified as having genome-wide significant marginal epistasis with the rest of the genome. We were particularly interested in identifying epistatic interactions with pathways showing ancestry-specific signals of marginal epistasis in our MAPIT-R application (cite appropriate figure).} To this end, we applied MAPIT to each of our UKB subgroups for both height and BMI. We find that there are no SNPs with genome-wide significant signals for marginal epistasis ($p$-value $< 5\times10^{-8}$; Supplementary Figure \ref{InterPath-Supp-Figure-MAPIT-HeightBMI}). While we observe possible enrichment of marginally significant $p$-values ($p$-value $< 5\times10^{-4}$) in the African, Caribbean, and Indian subgroups versus the British, Chinese, and Pakistani subgroups in both phenotypes, it is not as clear a between-ancestry pattern as we observe in the MAPIT-R results. And to compare against the more typical, direct pairwise variant epistasis analysis, we also applied PLINK's exhaustive pairwise epistasis test \citep{Purcell2007} to each of our ancestry subgroups in height and BMI, and once again do not observe any genome-wide significant tests ($p$-value $\leq 5\times10^{-13}$, Bonferroni-corrected for $1\times10^{11}$ tests; Supplementary Figure \ref{InterPath-Supp-Figure-PLINK-HeightBMI-AllPops}).
+
+
+(e.g. KEGG\_CHEMOKINE\_SIGNALING\_PATHWAY, KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION, and \\ KEGG\_WNT\_SIGNALING\_PATHWAY), immune systems (e.g. \\ KEGG\_AUTOIMMUNE\_THYROID\_DISEASE, KEGG\_ALLOGRAFT\_REJECTION, and KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION), and heart conditions (e.g. KEGG\_DILATED\_CARDIOMYOPATHY and \\ KEGG\_VIRAL\_MYOCARDITIS). Analyzing BMI in KEGG, we find similar themes, as well as multiple pathways that involve metabolism (e.g. KEGG\_PURINE\_METABOLISM, KEGG\_BETA\_ALANINE\_METABOLISM, and \\ KEGG\_ETHER\_LIPID\_METABOLISM). REACTOME pathways show similar themes as well in both phenotypes (Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}).
 
 \fi
 
