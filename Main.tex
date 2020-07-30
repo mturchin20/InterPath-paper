@@ -199,19 +199,25 @@ We apply MAPIT-R to genotype data and the quantitative traits height and body ma
 -prtsmothrpops
 -prtsctnrchk
 
--vschrintrprt
-
 -fgrs:1e-10
 -fgrs:a)\&b)thngs
+-fgr 1, 2, 3, 4, 5, 6, suppl fgr 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
 -fgrs:'bs+phn+sbgrp'atall?
+
+-vschrintrprt
+-dscnn
+-fxFstFgr
+-algn\&cndns Fst/IBS, PC1 ldng, and RFMix work misc
+-drop HLA-related pathways for all of these analyses?
+-incldGglPthwBlgymsc
+
 -'need to explain this a little better'thng
+-rrng/rmvFgrs (pt frst prtsm fgr into suppl, get rid of the crosspopIBSfgr)
 -popstrctsctn?
 -popstrctsctn?
 -whrincldprwseepivals?
 -rrdvrthng?
--dscnn
--grgSmFgr?
--incldGglPthwBlgymsc
+-grgSmltnFgr?
 
 \subsection{Overview of the MAPIT-R Model}\label{InterPath-Results-MAPITRModel}
 
@@ -369,20 +375,15 @@ Our first approach was to look at genome-wide levels of genetic variation both b
 \label{InterPath-Main-Figure-Fst}
 \end{figure}
 
-To test this, we calculated a pathway-level metric of within-subgroup genetic variation, the mean pairwise proportion of identity-by-state (IBS) per pathway; specifically, for each pathway, we calculated the proportion of IBS between every pair of individuals using the SNPs of the given pathway, and then took the average of this proportion across all pairwise comparisons.  Comparing this per-pathway metric of within-subgroup genetic variation against each pathway's MAPIT-R $p$-value, we find that there is no significant relationship between the two (Figure \ref{InterPath-Main-Figure-IBS-African} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}). Figure \ref{InterPath-Main-Figure-IBS-African} shows the analysis specifically for the African subgroup in the REACTOME database for both height and BMI, but this lack of relationship is observed for the majority of our pathway database + phenotype + UKB subgroup combinations (Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}). And in directly comparing these analyses between subgroups, we observe that specific differences between pathways are similar across subgroups; subgroups are shifted by their average level of mean proportion of pairwise IBS per pathway, but otherwise no clear ancestry-specific patterns are seen. (Figure \ref{InterPath-Main-Figure-IBS-AllPopComps-KEGG} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPopComps-REACTOME}). 
+To test this, we calculated a pathway-level metric of within-subgroup genetic variation, the mean pairwise proportion of identity-by-state (IBS) per pathway; specifically, for each pathway, we calculated the proportion of IBS between every pair of individuals using the SNPs of the given pathway, and then took the average of this proportion across all pairwise comparisons.  Comparing this per-pathway metric of within-subgroup genetic variation against each pathway's MAPIT-R $p$-value, we find that there is no significant relationship between the two (Figure \ref{InterPath-Main-Figure-IBS-African} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}). Figure \ref{InterPath-Main-Figure-IBS-African} shows the analysis specifically for the African subgroup in the REACTOME database for both height and BMI, but this lack of relationship is observed for the majority of our pathway database + phenotype + UKB subgroup combinations (Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}). 
+
+%And in directly comparing these analyses between subgroups, we observe that specific differences between pathways are similar across subgroups; subgroups are shifted by their average level of mean proportion of pairwise IBS per pathway, but otherwise no clear ancestry-specific patterns are seen. (Figure \ref{InterPath-Main-Figure-IBS-AllPopComps-KEGG} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPopComps-REACTOME}). 
 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_vs3_African.png}
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_vs4_African.png}
 \caption[TBD]{\textbf{Pathway-level genetic diversity versus MAPIT-R results in the African subgroup and KEGG database}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the African subgroup KEGG height and BMI analysis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results for each database + phenotype + subgroup combination can be found in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}. We observe across the majority of our combinations no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
 \label{InterPath-Main-Figure-IBS-African}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_AllPopComps_vs3_KEGG.png}
-\caption[TBD]{\textbf{Pathway-level genetic diversity across all UKB subgroups for top African MAPIT-R KEGG pathways}. The figure plots the mean pairwise IBS proportions of each UKB subgroup for the top 75 KEGG pathways (sorted by MAPIT-R African subgroup $p$-value). Mean pairwise IBS proportions appear to follow similar trajectories across each subgroup, shifted mainly by average mean pairwise IBS proportion differences between subgroups. Results for both phenotypes in the REACTOME database can be see in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPopComps-REACTOME}.}
-\label{InterPath-Main-Figure-IBS-AllPopComps-KEGG}
 \end{figure}
 
 We also examined whether cryptic population structure within subgroups was associated with increased signals of marginal epistasis in our MAPIT-R analyses. Specifically, we investigated correlations between the percent variance explained by within-subgroup principal components (Figure \ref{InterPath-Main-Figure-Eigenvalues} with the number of genome-wide MAPIT-R results we found per subgroup. And indeed, similar to the within-subgroup F\textsubscript{ST} values we saw, we find that subgroup PVE on PC1 matches an order similar to which populations produce the largest numbers of significant pathways. While this pattern mostly fades by PC3, it may suggest a more complex relationship between within-subgroup genetic variation and MAPIT-R results; possibly, if a pathway had a greater proportion of variants that covered the portions of the genome that were highly loaded on PC1, it might lead to more efficient removal of background population structure. For subgroups that have lower PVEs per PC, reflecting more subtle, less discernible population structure, this may be a less actionable potential benefit.
@@ -398,7 +399,7 @@ Therefore, to investigate this possible relationship between subgroup PVE on PC1
 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_PC1Loading_vs1.png}
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_PC1Loading_vs2.png}
 \caption[TBD]{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, African subgroup and large pathways}. The figure shows the proportion of SNPs within a given pathway that are strongly loaded on local PC1 plotted against that pathway's MAPIT-R -$\log_{10}$ $p$-value, specifically for the African subgroup and pathways with greater than 1,500 SNPs. `Local' here refers to PCA having been conducted within-subgroup. SNPs are designated as `strongly loaded' on local PC1 if they are within the 10\% tails of the loading SNP score distributions. We observe that there is a marginally significant relationship between MAPIT-R $p$-values and proportion of SNPs that are strongly loaded on PC1, but this is not replicated in the KEGG database.}
 \label{InterPath-Main-Figure-PC1Loading}
 \end{figure}
@@ -732,7 +733,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \begin{figure}[htbp]
 \centering
 \vspace*{-2cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_IBS_AllPops_vs3.png}
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_IBS_AllPops_vs4.png}
 \caption[TBD]{\textbf{Pathway-level genetic diversity versus MAPIT-R results for all database + phenotype + subgroup combinations}. Caption continued on next page.}
 \label{InterPath-Supp-Figure-IBS-AllPops}
 \end{figure}
@@ -758,7 +759,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \begin{figure}[htbp]
 \centering
 \vspace*{-2cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_PC1Loading_AllPaths_vs1.png}
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_PC1Loading_AllPaths_vs2.png}
 \caption[TBD]{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, all pathways}. Caption continued on next page.}
 \label{InterPath-Supp-Figure-PC1Loading-AllPaths}
 \end{figure}
@@ -1168,6 +1169,13 @@ To further test the effect of pathway size on our results, we conducted a second
 
 
 (e.g. KEGG\_CHEMOKINE\_SIGNALING\_PATHWAY, KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION, and \\ KEGG\_WNT\_SIGNALING\_PATHWAY), immune systems (e.g. \\ KEGG\_AUTOIMMUNE\_THYROID\_DISEASE, KEGG\_ALLOGRAFT\_REJECTION, and KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION), and heart conditions (e.g. KEGG\_DILATED\_CARDIOMYOPATHY and \\ KEGG\_VIRAL\_MYOCARDITIS). Analyzing BMI in KEGG, we find similar themes, as well as multiple pathways that involve metabolism (e.g. KEGG\_PURINE\_METABOLISM, KEGG\_BETA\_ALANINE\_METABOLISM, and \\ KEGG\_ETHER\_LIPID\_METABOLISM). REACTOME pathways show similar themes as well in both phenotypes (Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}).
+
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_AllPopComps_vs3_KEGG.png}
+%\caption[TBD]{\textbf{Pathway-level genetic diversity across all UKB subgroups for top African MAPIT-R KEGG pathways}. The figure plots the mean pairwise IBS proportions of each UKB subgroup for the top 75 KEGG pathways (sorted by MAPIT-R African subgroup $p$-value). Mean pairwise IBS proportions appear to follow similar trajectories across each subgroup, shifted mainly by average mean pairwise IBS proportion differences between subgroups. Results for both phenotypes in the REACTOME database can be see in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPopComps-REACTOME}.}
+%\label{InterPath-Main-Figure-IBS-AllPopComps-KEGG}
+%\end{figure}
 
 \fi
 
