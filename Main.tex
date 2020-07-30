@@ -196,9 +196,9 @@ We apply MAPIT-R to genotype data and the quantitative traits height and body ma
 -prtsctnrchk
 
 -drop HLA-related pathways for all of these analyses?
-
-
 -vschrintrprt
+
+
 -dscnn
 -fxFstFgr
 -algn\&cndns Fst/IBS, PC1 ldng, and RFMix work misc
@@ -374,7 +374,7 @@ To test this, we calculated a pathway-level metric of within-subgroup genetic va
 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_vs4_African.png}
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_vs4_African_noHLA.png}
 \caption[TBD]{\textbf{Pathway-level genetic diversity versus MAPIT-R results in the African subgroup and KEGG database}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the African subgroup KEGG (a) height and (b) BMI analysis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results for each database + phenotype + subgroup combination can be found in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}. We observe across the majority of our combinations no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
 \label{InterPath-Main-Figure-IBS-African}
 \end{figure}
@@ -392,7 +392,7 @@ Therefore, to investigate this possible relationship between subgroup PVE on PC1
 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_PC1Loading_vs2.png}
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_PC1Loading_vs2_noHLA.png}
 \caption[TBD]{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, African subgroup and large pathways}. The figure shows the proportion of SNPs within a given pathway that are strongly loaded on local PC1 plotted against that pathway's MAPIT-R -$\log_{10}$ $p$-value, specifically for the African subgroup and in the (a) KEGG and (b) REACTOME pathway databases. `Local' here refers to PCA having been conducted within-subgroup. SNPs are designated as `strongly loaded' on local PC1 if they are within the 10\% tails of the loading SNP score distributions. We observe that there is no significant relationship between MAPIT-R $p$-values and proportion of SNPs that are strongly loaded on PC1 in either pathway database, and for the majority of analyses done in the other subgroups \ref{InterPath-Supp-Figure-PC1Loading-AllPaths}.}
 \label{InterPath-Main-Figure-PC1Loading}
 \end{figure}
@@ -726,7 +726,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \begin{figure}[htbp]
 \centering
 \vspace*{-2cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_IBS_AllPops_vs4.png}
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_IBS_AllPops_vs4_noHLA.png}
 \caption[TBD]{\textbf{Pathway-level genetic diversity versus MAPIT-R results for all database + phenotype + subgroup combinations}. Caption continued on next page.}
 \label{InterPath-Supp-Figure-IBS-AllPops}
 \end{figure}
@@ -752,7 +752,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \begin{figure}[htbp]
 \centering
 \vspace*{-2cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_PC1Loading_AllPaths_vs2.png}
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_PC1Loading_AllPaths_vs2_noHLA.png}
 \caption[TBD]{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, all pathways}. Caption continued on next page.}
 \label{InterPath-Supp-Figure-PC1Loading-AllPaths}
 \end{figure}
