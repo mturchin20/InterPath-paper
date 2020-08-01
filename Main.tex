@@ -13,7 +13,7 @@
 \geometry{a4paper, top=1in, bottom=2in}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{graphicx}
+\usepackage[demo]{graphicx}
 \usepackage[colorlinks=true, allcolors=blue, hypertexnames=false]{hyperref}
 \usepackage{epsfig,amsfonts}
 \usepackage{natbib}
@@ -38,6 +38,9 @@
     \addFileDependency{#1.aux}%
 }
 %\myexternaldocument{Supplementary}
+%From: https://tex.stackexchange.com/questions/64934/subfig-label-positioning (went with second example solution on how to get multiple figures aligned with subfig + desired labeling)
+%\usepackage{floatrow}
+
 
 %From Lorin
 \usepackage{latexsym}
@@ -195,13 +198,15 @@ We apply MAPIT-R to genotype data and the quantitative traits height and body ma
 -prtsctnrchk
 -prts'clrfybttr'prt
 
-
 -dscnn
+
 -fxFstFgr
 -algn\&cndns Fst/IBS, PC1 ldng, and RFMix work misc
 -incldGglPthwBlgymsc
 
 -britrpbrnmbrs
+
+
 
 -'need to explain this a little better'thng
 -'clarify better'thngprtsm
@@ -234,16 +239,16 @@ Given this new, implementable form of our model, we return to our test of intere
 
 We applied MAPIT-R to height and BMI to detect pathways from the KEGG and REACTOME databases \citep{Liberzon2011} with significant epistatic interactions with the rest of the genome, using genotype data and diverse individuals from the UK Biobank. We focused on height and BMI due to the extensive work that has already been done investigating the broad-sense and narrow-sense heritabilities of these traits \citep{Yang2010,Elks2012,Visscher2012,Finucane2015,Speed2017,Wainschtein2019}, and we used the KEGG and REACTOME databases because they cover an extensive range of biological processes as well as pathway-sizes in terms of SNP counts. We analyzed six different human ancestry subgroups that we extracted from the UKB: African (n=3111), British (n=3848), Caribbean (n=3833), Chinese (n=1448), Indian (n=5077), and Pakistani (n=1581) (Supplementary Figure \ref{InterPath-Supp-Figure-UKB-subgroups-PCAPlot} and Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Subgroups were extracted based on self-identified ancestry and individuals were filtered using standard quality control (QC) procedures (see Materials and Methods for details). The British subgroup was produced by randomly extracting a set of 4,000 individuals pre-QC in order to approximate the sample sizes of the other non-European ancestry subgroups.
 
-Applying MAPIT-R to height and BMI measurements and genotype data using these pathway databases and ancestry subgroups, we find 245 pathways that have genome-wide significant signals for marginal epistatic interactions with the rest of the genome (Figure \ref{InterPath-Main-Figure-Barplots-KEGG}, Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}, and Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis, see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). We find similar numbers of significant pathways between the KEGG and REACTOME databases: 130 and 115, respectively. Totaling across both databases, we find that BMI contains more significant pathways than does height: 155 vs. 90. The majority of our significant pathways are identified in database + phenotype + subgroup combinations that contain the African subgroup: 165 out of 245.
+Applying MAPIT-R to height and BMI measurements and genotype data using these pathway databases and ancestry subgroups, we find 245 pathways that have genome-wide significant signals for marginal epistatic interactions with the rest of the genome (Figure \ref{InterPath-Main-Figure-Barplots-KEGG}, Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}, and Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}\textcolor{blue}{a-d}; $p$-value significance thresholds were determined using Bonferroni multiple testing correction based on the number of pathways tested per analysis, see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). We find similar numbers of significant pathways between the KEGG and REACTOME databases: 130 and 115, respectively. Totaling across both databases, we find that BMI contains more significant pathways than does height: 155 vs. 90. The majority of our significant pathways are identified in database + phenotype + subgroup combinations that contain the African subgroup: 165 out of 245.
 
-The specific pathways with significant marginal epistasis signals in the African subgroup share multiple themes across each of the database + phenotype combinations (Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}). Analyzing height in KEGG, we find multiple pathways representing cellular signaling, immune systems, and heart conditions, and analyzing BMI we find similar themes plus multiple pathways that involve metabolism (see Table \ref{InterPath-Main-Table-KEGG-African-TopPathways-Themes} for examples). REACTOME pathways show similar themes as well in both phenotypes (see Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d} for complete lists of MAPIT-R significant pathways in all database + phenotype + subgroup combinations).  
+The specific pathways with significant marginal epistasis signals in the African subgroup share multiple themes across each of the database + phenotype combinations (Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}\textcolor{blue}{a-d}). Analyzing height in KEGG, we find multiple pathways representing cellular signaling, immune systems, and heart conditions, and analyzing BMI we find similar themes plus multiple pathways that involve metabolism (see Table \ref{InterPath-Main-Table-KEGG-African-TopPathways-Themes} for examples). REACTOME pathways show similar themes as well in both phenotypes (see Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}\textcolor{blue}{a-d} for complete lists of MAPIT-R significant pathways in all database + phenotype + subgroup combinations).  
 
 
 \begin{figure}[htb]
 \centering
 \hspace*{-.9cm}
 \includegraphics[scale=.45]{Images/Main/InterPath_Main_Figure_Barplots_KEGG_vs4.png}
-\caption[TBD]{\textbf{Numbers of KEGG pathways that have significant marginal epistasis, per subgroup}. The figure shows the numbers of genome-wide significant pathways found from running MAPIT-R on (a) height and (b) BMI in the KEGG database within each of the UKB subgroups.  Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database + phenotype + subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Across all database + phenotype combinations, the African subgroup has the largest numbers of significant pathways. For lists of the specific significant pathways per database + phenotype + subgroup combination, see Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}. Results from running MAPIT-R with REACTOME database pathways can be found in Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}.}
+\caption[TBD]{\textbf{Numbers of KEGG pathways that have significant marginal epistasis, per subgroup}. The figure shows the numbers of genome-wide significant pathways found from running MAPIT-R on (a) height and (b) BMI in the KEGG database within each of the UKB subgroups.  Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database + phenotype + subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Across all database + phenotype combinations, the African subgroup has the largest numbers of significant pathways. For lists of the specific significant pathways per database + phenotype + subgroup combination, see Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}\textcolor{blue}{a-d}. Results from running MAPIT-R with REACTOME database pathways can be found in Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}.}
 \label{InterPath-Main-Figure-Barplots-KEGG}
 \end{figure}
 
@@ -276,7 +281,7 @@ The specific pathways with significant marginal epistasis signals in the African
   O\_GLYCAN\_BIOSYNTHESIS & NS & 1.92E-04 \\
    \hline
 \end{tabular}
-  \caption{\textbf{Biological themes among MAPIT-R significant KEGG pathways in the African subgroup}. The table shows different biological themes amongst the MAPIT-R significant pathways for both height and BMI in the African subgroup. Example pathways for each biological theme are included along with the pathway's MAPIT-R $p$-value in height and BMI. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database + phenotype + subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). For a full list of MAPIT-R significant pathways in all database + phenotype + subgroup combinations, see Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}. `NS' indicates the pathway was not genome-wide significant for the given phenotype.}
+  \caption{\textbf{Biological themes among MAPIT-R significant KEGG pathways in the African subgroup}. The table shows different biological themes amongst the MAPIT-R significant pathways for both height and BMI in the African subgroup. Example pathways for each biological theme are included along with the pathway's MAPIT-R $p$-value in height and BMI. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database + phenotype + subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). For a full list of MAPIT-R significant pathways in all database + phenotype + subgroup combinations, see Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}\textcolor{blue}{a-d}. `NS' indicates the pathway was not genome-wide significant for the given phenotype.}
 \label{InterPath-Main-Table-KEGG-African-TopPathways-Themes}
 \end{table}
 
@@ -546,7 +551,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \centering
 \hspace*{-.9cm}
 \includegraphics[scale=.45]{Images/Supp/InterPath_Supp_Figure_Barplots_REACTOME_vs4.png}
-\caption[TBD]{\textbf{Numbers of REACTOME pathways that have significant marginal epistasis, per subgroup}. The barplots show the number of genome-wide significant pathways found from running MAPIT-R for both (a) height and (b) BMI in the REACTOME database on each of our UKB subgroups. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each pathway database + phenotype + subgroup combination. As shown in these results, we find across all database + phenotype combinations that the African subgroup has the largest numbers of significant pathways. For lists of the specific significant pathways per database + phenotype + subgroup combination, see Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}.}
+\caption[TBD]{\textbf{Numbers of REACTOME pathways that have significant marginal epistasis, per subgroup}. The barplots show the number of genome-wide significant pathways found from running MAPIT-R for both (a) height and (b) BMI in the REACTOME database on each of our UKB subgroups. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each pathway database + phenotype + subgroup combination. As shown in these results, we find across all database + phenotype combinations that the African subgroup has the largest numbers of significant pathways. For lists of the specific significant pathways per database + phenotype + subgroup combination, see Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}\textcolor{blue}{a-d}.}
 \label{InterPath-Supp-Figure-Barplots-REACTOME}
 \end{figure}
 \clearpage
@@ -801,7 +806,7 @@ British.Ran10000.5 & 9596 & 597507 & 186 & 669 \\
 
 \begin{table} [t!]
   \caption{\textbf{Lists of genome-wide significant MAPIT-R pathways, per subgroup}.  Attached Excel sheets list the pathways that were found to be MAPIT-R genome-wide significant in each UKB subgroup for the following phenotype and pathway database combinations: (a) KEGG+Height, (b) KEGG+BMI, (c) REACTOME+Height, and (d) REACTOME+BMI. Genome-wide significance was determined by using a Bonferroni-corrected $p$-value threshold of .05 divided by the number of pathways tested (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}).}
-\label{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}
+\label{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}
 \end{table}
 \clearpage
 
@@ -929,7 +934,7 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 & 3 & PRF1,IL2,GZMB,FASLG,FAS \\
    \hline
 \end{tabular}
-\caption[TBD]{\textbf{Gene counts across genome-wide significant MAPIT-R KEGG pathways that overlap between UKB subgroups, in height}. The table shows genes that are present across multiple pathways that overlap between the population subgroups referenced in the first column. Pathways from which these gene count lists are derived can be found in Supplementary Table \ref{InterPath-Supp-Table-MAPITR-TopPathway-Overlap-Caption}. The second column lists the number of times the given genes appear across the aforementioned lists of pathways. The third column lists the specific genes the appear at the specific gene count numbers. Note that these results are specifically for the KEGG height analysis.}
+\caption[TBD]{\textbf{Gene counts across genome-wide significant MAPIT-R KEGG pathways that overlap between UKB subgroups, in height}. The table shows genes that are present across multiple pathways that overlap between the population subgroups referenced in the first column. Pathways from which these gene count lists are derived can be found in Supplementary Table \ref{InterPath-Supp-Table-MAPITR-TopPathway-Overlap}. The second column lists the number of times the given genes appear across the aforementioned lists of pathways. The third column lists the specific genes the appear at the specific gene count numbers. Note that these results are specifically for the KEGG height analysis.}
 \label{InterPath-Supp-Table-MAPITR-TopPathway-GeneCounts-Overlap}
 \end{table}
 \clearpage
@@ -1003,6 +1008,29 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \begin{table} [t!]
   \caption{\textbf{PSM* and UBA52 gene count enrichment test examples, size restriction and no restriction}. The table shows examples and results of running the hypergeometric test for enrichment on two different genes in two different study designs. In all cases a gene is tested for being significantly more frequent among the set of MAPIT-R genome-wide significant pathways than among the background distribution of pathways in the original database. Two study designs were employed for these tests, either (a) using all pathways present in the given databases or (b) using only pathways that contained less than or equal to 1,000 SNPs. The first column lists the gene or gene family being tested. The second column lists which of the two aforementioned study designs was used. Columns three through six list the different count values used in the hypergeometric test: the third column lists the number of times a gene is present among the genome-wide significant list of pathways, the fourth column lists the total number of pathways that were genome-wide significant, the fifth column lists the number of times a gene is present among all the pathways in the given database, and the sixth column lists the total number of pathways in the given database. The seventh column is the hypergeometric $p$-value associated with columns three through six. Note that the vast majority of proteasome genes included in our analysis had the same number of gene counts across each hypergeometric category, hence why \textbf{PSM*} was used to represent them as a whole.}
 \label{InterPath-Supp-Table-AllPops-TopGeneCount-HypergeometricTests-Caption}
+\end{table}
+\clearpage
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{cccc}
+  \hline
+\textbf{Proteasome} & \textbf{SNP} & \textbf{REACTOME} & \textbf{SNP} \\
+\textbf{Gene Family} & \textbf{Counts} & \textbf{Pathways} & \textbf{Counts} \\
+  \hline
+PSMA & 17 & Activation of NF-KappaB in B Cells & 465 \\
+PSMB & 74 & Antigen Processing Cross Presentation & 850 \\
+PSMC & 20 & Assembly of the Pre-Replicative Complex & 331 \\
+PSMD & 62 & Cell Cycle Checkpoints & 670 \\
+PSME & 15 & Cell Cycle & 2459 \\
+PSMF & 16 & Cell Cycle Mitotic & 1906 \\
+ & & Downstream Signaling Events of the B Cell Receptor & 745 \\
+ & & HIV Infection & 1346 \\
+ & & Host Interactions of HIV Factors & 963 \\
+ & & M G1 Transition & 458 \\
+ & & Regulation of Apoptosis & 564 \\
+  \hline
+\end{tabular}
 \end{table}
 \clearpage
 
@@ -1155,7 +1183,7 @@ To further test the effect of pathway size on our results, we conducted a second
 \textcolor{red}{SR: Next we wanted to test whether we could identify significant pairwise epistatic interactions between pairs of SNPs such that one SNP in the pair was in a pathway MAPIT-R identified as having genome-wide significant marginal epistasis with the rest of the genome. We were particularly interested in identifying epistatic interactions with pathways showing ancestry-specific signals of marginal epistasis in our MAPIT-R application (cite appropriate figure).} To this end, we applied MAPIT to each of our UKB subgroups for both height and BMI. We find that there are no SNPs with genome-wide significant signals for marginal epistasis ($p$-value $< 5\times10^{-8}$; Supplementary Figure \ref{InterPath-Supp-Figure-MAPIT-HeightBMI}). While we observe possible enrichment of marginally significant $p$-values ($p$-value $< 5\times10^{-4}$) in the African, Caribbean, and Indian subgroups versus the British, Chinese, and Pakistani subgroups in both phenotypes, it is not as clear a between-ancestry pattern as we observe in the MAPIT-R results. And to compare against the more typical, direct pairwise variant epistasis analysis, we also applied PLINK's exhaustive pairwise epistasis test \citep{Purcell2007} to each of our ancestry subgroups in height and BMI, and once again do not observe any genome-wide significant tests ($p$-value $\leq 5\times10^{-13}$, Bonferroni-corrected for $1\times10^{11}$ tests; Supplementary Figure \ref{InterPath-Supp-Figure-PLINK-HeightBMI-AllPops}).
 
 
-(e.g. KEGG\_CHEMOKINE\_SIGNALING\_PATHWAY, KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION, and \\ KEGG\_WNT\_SIGNALING\_PATHWAY), immune systems (e.g. \\ KEGG\_AUTOIMMUNE\_THYROID\_DISEASE, KEGG\_ALLOGRAFT\_REJECTION, and KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION), and heart conditions (e.g. KEGG\_DILATED\_CARDIOMYOPATHY and \\ KEGG\_VIRAL\_MYOCARDITIS). Analyzing BMI in KEGG, we find similar themes, as well as multiple pathways that involve metabolism (e.g. KEGG\_PURINE\_METABOLISM, KEGG\_BETA\_ALANINE\_METABOLISM, and \\ KEGG\_ETHER\_LIPID\_METABOLISM). REACTOME pathways show similar themes as well in both phenotypes (Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos-Caption}\textcolor{blue}{a-d}).
+(e.g. KEGG\_CHEMOKINE\_SIGNALING\_PATHWAY, KEGG\_CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION, and \\ KEGG\_WNT\_SIGNALING\_PATHWAY), immune systems (e.g. \\ KEGG\_AUTOIMMUNE\_THYROID\_DISEASE, KEGG\_ALLOGRAFT\_REJECTION, and KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION), and heart conditions (e.g. KEGG\_DILATED\_CARDIOMYOPATHY and \\ KEGG\_VIRAL\_MYOCARDITIS). Analyzing BMI in KEGG, we find similar themes, as well as multiple pathways that involve metabolism (e.g. KEGG\_PURINE\_METABOLISM, KEGG\_BETA\_ALANINE\_METABOLISM, and \\ KEGG\_ETHER\_LIPID\_METABOLISM). REACTOME pathways show similar themes as well in both phenotypes (Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}\textcolor{blue}{a-d}).
 
 %\begin{figure}[htb]
 %\centering
