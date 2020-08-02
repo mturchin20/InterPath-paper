@@ -198,6 +198,7 @@ We apply MAPIT-R to genotype data and the quantitative traits height and body ma
 -prtsctnrchk
 -prts'clrfybttr'prt
 -prtsmfgrs:captns
+-prtsmfgrs:lgnttls w/ par() + text()?
 
 -dscnn
 
@@ -1204,6 +1205,12 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \begin{table} [t!]
   \caption{\textbf{PSM* and UBA52 gene count enrichment test examples, size restriction and no restriction}. The table shows examples and results of running the hypergeometric test for enrichment on two different genes in two different study designs. In all cases a gene is tested for being significantly more frequent among the set of MAPIT-R genome-wide significant pathways than among the background distribution of pathways in the original database. Two study designs were employed for these tests, either (a) using all pathways present in the given databases or (b) using only pathways that contained less than or equal to 1,000 SNPs. The first column lists the gene or gene family being tested. The second column lists which of the two aforementioned study designs was used. Columns three through six list the different count values used in the hypergeometric test: the third column lists the number of times a gene is present among the genome-wide significant list of pathways, the fourth column lists the total number of pathways that were genome-wide significant, the fifth column lists the number of times a gene is present among all the pathways in the given database, and the sixth column lists the total number of pathways in the given database. The seventh column is the hypergeometric $p$-value associated with columns three through six. Note that the vast majority of proteasome genes included in our analysis had the same number of gene counts across each hypergeometric category, hence why \textbf{PSM*} was used to represent them as a whole.}
 \label{InterPath-Supp-Table-AllPops-TopGeneCount-HypergeometricTests-Caption}
+\end{table}
+\clearpage
+
+\begin{table} [t!]
+  \caption{\textbf{Gene counts across size-restricted MAPIT-R genome-wide significant pathways, per subgroup}. Attached Excel sheets contain lists of genes that appear multiple times across the MAPIT-R genome-wide significant pathways that contain less than or equal to 1,000 SNPs (`size-restricted') in each UKB subgroup for the following pathway database + phenotype combinations: (a) KEGG+Height, (b) KEGG+BMI, (c) REACTOME+Height, and (d) REACTOME+BMI. Genome-wide significance was determined by using a Bonferroni-corrected $p$-value threshold of .05 divided by the number of pathways tested (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}).}
+\label{InterPath-Supp-Table-AllPops-Proteasome-Dropouts-Caption}
 \end{table}
 \clearpage
 
