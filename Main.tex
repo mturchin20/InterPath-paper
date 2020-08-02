@@ -13,7 +13,7 @@
 \geometry{a4paper, top=1in, bottom=2in}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage[demo]{graphicx}
+\usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue, hypertexnames=false]{hyperref}
 \usepackage{epsfig,amsfonts}
 \usepackage{natbib}
@@ -650,6 +650,39 @@ After this first round of QC procedures, we then proceeded to impute our current
 %\end{figure}
 %\clearpage
 
+%From: ,https://tex.stackexchange.com/questions/64934/subfig-label-positioning, https://tex.stackexchange.com/questions/196653/how-do-i-stack-two-figures-on-top-of-each-other-rather-than-side-to-side, https://tex.stackexchange.com/questions/47311/include-table-as-a-subfigure, https://tex.stackexchange.com/questions/169541/looking-for-three-images-on-top-of-each-other-with-text-underneath-each, https://tex.stackexchange.com/questions/10863/is-there-a-way-to-slightly-shrink-a-table-including-font-size-to-fit-within-th
+
+\begin{figure}[ht]
+\centering
+\vspace*{-.5cm}
+\subfloat[]{\includegraphics[scale=.5]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_African_Loop_vs3.png}}
+\par
+\subfloat[]{\resizebox{1.1\columnwidth}{!}{
+ \hspace*{-1cm}
+ \begin{tabular}{cc|ccc}
+  \hline
+\textbf{Proteasome} & \textbf{SNPs} & \textbf{REACTOME} & \textbf{SNPs} & \textbf{MAPIT-R} \\
+ \textbf{Gene Family} & & \textbf{Pathway} & & \textbf{p-Value} \\
+  \hline
+PSMA & 17 & Activation of NF-KappaB in B Cells & 465 \\
+PSMB & 74 & Antigen Processing Cross Presentation & 850 \\
+PSMC & 20 & Assembly of the Pre-Replicative Complex & 331 \\
+PSMD & 62 & Cell Cycle Checkpoints & 670 \\
+PSME & 15 & Cell Cycle & 2459 \\
+PSMF & 16 & Cell Cycle Mitotic & 1906 \\
+ & & Downstream Signaling Events of the B Cell Receptor & 745 \\
+ & & HIV Infection & 1346 \\
+ & & Host Interactions of HIV Factors & 963 \\
+ & & M G1 Transition & 458 \\
+ & & Regulation of Apoptosis & 564 \\
+  \hline
+\end{tabular}}}
+%\captionsetup[subfigure]{position=top, labelfont=bf,textfont=normalfont,singlelinecheck=off,justification=raggedright}
+\caption[TBD]{\textbf{MAPIT-R false discovery rates at different significance thresholds, per British replicate}. Caption continued at end of tables.}
+\label{InterPath-Supp-Figure-Prot-Heatplots-African}
+\end{figure}
+\clearpage
+
 \begin{figure}[htbp]
 \centering
 \hspace*{-1.75cm}
@@ -1008,29 +1041,6 @@ African & 6580 & 7.599E-05 & 1 & 0.015 & 0.001 & 4 & 0.061 & 0.010 & 39 & 0.593 
 \begin{table} [t!]
   \caption{\textbf{PSM* and UBA52 gene count enrichment test examples, size restriction and no restriction}. The table shows examples and results of running the hypergeometric test for enrichment on two different genes in two different study designs. In all cases a gene is tested for being significantly more frequent among the set of MAPIT-R genome-wide significant pathways than among the background distribution of pathways in the original database. Two study designs were employed for these tests, either (a) using all pathways present in the given databases or (b) using only pathways that contained less than or equal to 1,000 SNPs. The first column lists the gene or gene family being tested. The second column lists which of the two aforementioned study designs was used. Columns three through six list the different count values used in the hypergeometric test: the third column lists the number of times a gene is present among the genome-wide significant list of pathways, the fourth column lists the total number of pathways that were genome-wide significant, the fifth column lists the number of times a gene is present among all the pathways in the given database, and the sixth column lists the total number of pathways in the given database. The seventh column is the hypergeometric $p$-value associated with columns three through six. Note that the vast majority of proteasome genes included in our analysis had the same number of gene counts across each hypergeometric category, hence why \textbf{PSM*} was used to represent them as a whole.}
 \label{InterPath-Supp-Table-AllPops-TopGeneCount-HypergeometricTests-Caption}
-\end{table}
-\clearpage
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{cccc}
-  \hline
-\textbf{Proteasome} & \textbf{SNP} & \textbf{REACTOME} & \textbf{SNP} \\
-\textbf{Gene Family} & \textbf{Counts} & \textbf{Pathways} & \textbf{Counts} \\
-  \hline
-PSMA & 17 & Activation of NF-KappaB in B Cells & 465 \\
-PSMB & 74 & Antigen Processing Cross Presentation & 850 \\
-PSMC & 20 & Assembly of the Pre-Replicative Complex & 331 \\
-PSMD & 62 & Cell Cycle Checkpoints & 670 \\
-PSME & 15 & Cell Cycle & 2459 \\
-PSMF & 16 & Cell Cycle Mitotic & 1906 \\
- & & Downstream Signaling Events of the B Cell Receptor & 745 \\
- & & HIV Infection & 1346 \\
- & & Host Interactions of HIV Factors & 963 \\
- & & M G1 Transition & 458 \\
- & & Regulation of Apoptosis & 564 \\
-  \hline
-\end{tabular}
 \end{table}
 \clearpage
 
