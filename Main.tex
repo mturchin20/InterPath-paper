@@ -652,6 +652,9 @@ After this first round of QC procedures, we then proceeded to impute our current
 
 %From: ,https://tex.stackexchange.com/questions/64934/subfig-label-positioning, https://tex.stackexchange.com/questions/196653/how-do-i-stack-two-figures-on-top-of-each-other-rather-than-side-to-side, https://tex.stackexchange.com/questions/47311/include-table-as-a-subfigure, https://tex.stackexchange.com/questions/169541/looking-for-three-images-on-top-of-each-other-with-text-underneath-each, https://tex.stackexchange.com/questions/10863/is-there-a-way-to-slightly-shrink-a-table-including-font-size-to-fit-within-th
 
+\newcounter{CharNumber5}
+\setcounter{CharNumber5}{1}
+\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber5}}
 \begin{figure}[ht]
 \centering
 \vspace*{-.5cm}
@@ -677,11 +680,52 @@ PSMF & 16 & Cell Cycle Mitotic & 1906 \\
  & & Regulation of Apoptosis & 564 \\
   \hline
 \end{tabular}}}
-%\captionsetup[subfigure]{position=top, labelfont=bf,textfont=normalfont,singlelinecheck=off,justification=raggedright}
-\caption[TBD]{\textbf{MAPIT-R false discovery rates at different significance thresholds, per British replicate}. Caption continued at end of tables.}
+\caption[TBD]{\textbf{MAPIT-R false discovery rates at different significance thresholds, per British replicate}. .}
 \label{InterPath-Supp-Figure-Prot-Heatplots-African}
 \end{figure}
 \clearpage
+\addtocounter{figure}{-1}
+\addtocounter{CharNumber5}{1}
+
+%\captionsetup[subfigure]{position=top, labelfont=bf,textfont=normalfont,singlelinecheck=off,justification=raggedright}
+
+
+\begin{figure}[ht]
+\centering
+\vspace*{-.5cm}
+\subfloat[]{\includegraphics[scale=.5]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_African_Loop_vs3.png}}
+\par
+\subfloat[]{\resizebox{1.1\columnwidth}{!}{
+ \hspace*{-1cm}
+ \begin{tabular}{cc|ccc}
+  \hline
+\textbf{Proteasome} & \textbf{SNPs} & \textbf{REACTOME} & \textbf{SNPs} & \textbf{MAPIT-R} \\
+ \textbf{Gene Family} & & \textbf{Pathway} & & \textbf{p-Value} \\
+  \hline
+PSMA & 17 & Activation of NF-KappaB in B Cells & 465 \\
+PSMB & 74 & Antigen Processing Cross Presentation & 850 \\
+PSMC & 20 & Assembly of the Pre-Replicative Complex & 331 \\
+PSMD & 62 & Cell Cycle Checkpoints & 670 \\
+PSME & 15 & Cell Cycle & 2459 \\
+PSMF & 16 & Cell Cycle Mitotic & 1906 \\
+ & & Downstream Signaling Events of the B Cell Receptor & 745 \\
+ & & HIV Infection & 1346 \\
+ & & Host Interactions of HIV Factors & 963 \\
+ & & M G1 Transition & 458 \\
+ & & Regulation of Apoptosis & 564 \\
+  \hline
+\end{tabular}}}
+\caption[TBD]{\textbf{MAPIT-R false discovery rates at different significance thresholds, per British replicate}. .}
+\label{InterPath-Supp-Figure-Prot-Heatplots-BritRan4000}
+\end{figure}
+\clearpage
+\addtocounter{figure}{-1}
+\addtocounter{CharNumber5}{1}
+
+\addtocounter{figure}{1}
+\renewcommand{\thefigure}{\arabic{figure}}
+
+
 
 \begin{figure}[htbp]
 \centering
