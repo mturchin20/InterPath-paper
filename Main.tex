@@ -400,14 +400,6 @@ We also examined whether cryptic population structure within subgroups was assoc
 
 Therefore, to investigate this possible relationship between subgroup PVE on PC1 and MAPIT-R results, we compared the proportion of SNPs that are strongly loaded on PC1 within a given pathway against that pathway's MAPIT-R $p$-value. something something soemthing. However, across both phenotypes in both pathway databases in the African subgroup, we find no significant relationship, nor do we find any significantly positive relationships in any other ancestry subgroup as well (Supplementary Figure \ref{InterPath-Supp-Figure-PC1Loading-AllPaths}). 
 
-%Focusing on pathways with the largest number of SNPs, and therefore potentially the pathways with the largest signals, we do see a marginally significant relationship in the African subgroup using REACTOME pathways (Figure \ref{InterPath-Main-Figure-PC1Loading}; linear regression $p$-value $\approx$ .05), but this result is not replicated in the KEGG pathways. Overall then, it is still unclear if and how within-subgroup genetic variation relates back to the differences between subgroup MAPIT-R results we observe.
-
-%\begin{figure}[htb]
-%\centering
-%\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_PC1Loading_vs2_noHLA.png}
-%\caption[TBD]{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, African subgroup and large pathways}. The figure shows the proportion of SNPs within a given pathway that are strongly loaded on local PC1 plotted against that pathway's MAPIT-R -$\log_{10}$ $p$-value, specifically for the African subgroup and in the (a) KEGG and (b) REACTOME pathway databases. `Local' here refers to PCA having been conducted within-subgroup. SNPs are designated as `strongly loaded' on local PC1 if they are within the 10\% tails of the loading SNP score distributions. We observe that there is no significant relationship between MAPIT-R $p$-values and proportion of SNPs that are strongly loaded on PC1 in either pathway database, and for the majority of analyses done in the other subgroups \ref{InterPath-Supp-Figure-PC1Loading-AllPaths}.}
-%\label{InterPath-Main-Figure-PC1Loading}
-%\end{figure}
 
 
 
@@ -956,6 +948,14 @@ PSMF & 22 & Host Interactions of HIV Factors & 1315 & 1.00E-01 \\
 %\end{figure}
 %\clearpage
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_RFMix_vs2_African_KEGG_noHLA.png}
+\caption[TBD]{\textbf{Pathway-level genetic diversity versus MAPIT-R results in the African subgroup and KEGG database}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the African subgroup KEGG (a) height and (b) BMI analysis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results with REACTOME database pathways can be found in Supplementary Figure \ref{InterPath-Main-Figure-RFMix-African-REACTOME}. We observe across the majority of our combinations no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
+\label{InterPath-Supp-Figure-RFMix-African-KEGG}
+\end{figure}
+\clearpage
+
 \setlength{\footskip}{3cm}
 \begin{figure}[htbp]
 \centering
@@ -973,6 +973,10 @@ PSMF & 22 & Host Interactions of HIV Factors & 1315 & 1.00E-01 \\
 \label{InterPath-Supp-Figure-PC1Loading-AllPaths-Caption}
 \end{figure}
 \clearpage
+
+
+
+
 
 \section{Supplementary Tables}\label{Supplementary-Tables}
 
@@ -1400,6 +1404,18 @@ To further test the effect of pathway size on our results, we conducted a second
 }
 \label{InterPath-Main-Figure-Proteasome-Heatplot}
 \end{figure}
+
+
+
+%Focusing on pathways with the largest number of SNPs, and therefore potentially the pathways with the largest signals, we do see a marginally significant relationship in the African subgroup using REACTOME pathways (Figure \ref{InterPath-Main-Figure-PC1Loading}; linear regression $p$-value $\approx$ .05), but this result is not replicated in the KEGG pathways. Overall then, it is still unclear if and how within-subgroup genetic variation relates back to the differences between subgroup MAPIT-R results we observe.
+
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_PC1Loading_vs2_noHLA.png}
+%\caption[TBD]{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, African subgroup and large pathways}. The figure shows the proportion of SNPs within a given pathway that are strongly loaded on local PC1 plotted against that pathway's MAPIT-R -$\log_{10}$ $p$-value, specifically for the African subgroup and in the (a) KEGG and (b) REACTOME pathway databases. `Local' here refers to PCA having been conducted within-subgroup. SNPs are designated as `strongly loaded' on local PC1 if they are within the 10\% tails of the loading SNP score distributions. We observe that there is no significant relationship between MAPIT-R $p$-values and proportion of SNPs that are strongly loaded on PC1 in either pathway database, and for the majority of analyses done in the other subgroups \ref{InterPath-Supp-Figure-PC1Loading-AllPaths}.}
+%\label{InterPath-Main-Figure-PC1Loading}
+%\end{figure}
+
 
 \fi
 
