@@ -201,9 +201,9 @@ We apply MAPIT-R to genotype data and the quantitative traits height and body ma
 -X fxFstFgr
 -X algn\&cndns Fst/IBS, PC1 ldng, and RFMix work misc
 
-'make reactome' thng
 prtsmsctnrchk
 fstfgrcpt
+rfmxcptn
 
 -dscnn (+ incldGglPthwBlgymsc + whrincldprwseepivals?)
 
@@ -384,7 +384,7 @@ To see if there is more differentiation among subgroups on a smaller genomic sca
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_vs4_African_REACTOME_noHLA.png}
-\caption[TBD]{\textbf{MAPIT-R results vs. pathway-level genetic diversity in the African subgroup and REACTOME database}. The figure shows MAPIT-R $p$-values per pathway plotted against each pathway's mean pairwise IBS proportions for the African subgroup REACTOME (a) height and (b) BMI analyses. Mean pairwise IBS proportions are shown on the $x$-axis and MAPIT-R $p$-values are shown on the $y$-axis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results for each database + phenotype + subgroup combination can be found in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}. We observe across the majority of our combinations no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
+\caption[TBD]{\textbf{MAPIT-R results vs. pathway-level genetic diversity in the African subgroup and REACTOME database}. The figure shows MAPIT-R $p$-values per pathway plotted against each pathway's mean pairwise IBS proportions for the African subgroup REACTOME (a) height and (b) BMI analyses. Mean pairwise IBS proportions are shown on the $x$-axis and MAPIT-R $p$-values are shown on the $y$-axis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results for each database + phenotype + subgroup combination can be found in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}.}
 \label{InterPath-Main-Figure-IBS-African}
 \end{figure}
 
@@ -393,7 +393,7 @@ Since neither whole-genome or pathway-level metrics of genetic variation appear 
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_RFMix_vs2_African_REACTOME_noHLA.png}
-\caption[TBD]{\textbf{Pathway-level genetic diversity versus MAPIT-R results in the African subgroup and KEGG database}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the African subgroup KEGG (a) height and (b) BMI analysis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results with KEGG database pathways can be found in Supplementary Figure \ref{InterPath-Supp-Figure-RFMix-African-KEGG}. We observe across the majority of our combinations no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
+\caption[TBD]{\textbf{MAPIT-R results vs. proportion of local African ancestry per REACTOME pathway}. The figure shows MAPIT-R $p$-values per pathway plotted against each pathway's proportion of local African ancestry for each REACTOME (a) height and (b) BMI analysis. Proportions of African ancestry are shown on the $x$-axis and MAPIT-R $p$-values are shown on the $y$-axis. African ancestry proportions were calculated per individual by using RFMix with the 1000 Genomes CEU and YRI populations as outgroups and then genome-wide averages were taken across the subgroup. Per pathway proportions of African ancestry were derived by taking the average of the subgroup-wide estimates of African ancestry across the regions of the genome that each pathway overlapped.}
 \label{InterPath-Main-Figure-RFMix-African-REACTOME}
 \end{figure}
 
@@ -406,7 +406,7 @@ As one last approach to investigate what aspects of the African subgroup are dri
 \label{InterPath-Main-Figure-Eigenvalues}
 \end{figure}
 
-Therefore, to investigate this possible relationship between subgroup PVE on PC1 and MAPIT-R results, we compared the proportion of SNPs that are strongly loaded on PC1 within a given pathway against that pathway's MAPIT-R $p$-value. If the cryptic structure represented by PC1 is driving the African MAPIT-R results, then we might expect pathways with more SNPs that are strongly loaded on PC1 to have more significant MAPIT-R $p$-values as well. However, across both phenotypes in both pathway databases in the African subgroup, we find no significant relationship; and looking across the other database + phenotype + subgroup combinations, we find no significantly positive relationships either (Supplementary Figure \ref{InterPath-Supp-Figure-PC1Loading-AllPaths}). 
+Therefore, we took this one step further and investigated the relationship between subgroup PVE on PC1 and MAPIT-R results; we compared the proportion of SNPs that are strongly loaded on PC1 within a given pathway against that pathway's MAPIT-R $p$-value. If the cryptic structure represented by PC1 is driving the African MAPIT-R results, then we might expect pathways with more SNPs that are strongly loaded on PC1 to have more significant MAPIT-R $p$-values as well. We did this by projecting every SNP back onto the  local PC space derived for the MAPIT-R analyses, and defined a SNP as `strongly loaded' on PC1 if it had a loading score within the 10\% tails of the full PC1 loading score distribution. We then found the proportion of `strongly loaded' SNPs that were present in every pathway to have a final pathway-level metric. However, after comparing these values to MAPIT-R $p$-values, we once again find no relationship. Testing MAPIT-R pathway $p$-values against each pathway's proportion of `strongly loaded' PC1 SNPs shows no significantly positive relationship across any of our database + phenotype + subgroup combinations (Supplementary Figure \ref{InterPath-Supp-Figure-PC1Loading-AllPaths}). 
 
 \section{Discussion}\label{InterPath-Discussion}
 
