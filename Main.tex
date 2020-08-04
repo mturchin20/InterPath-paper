@@ -198,12 +198,10 @@ We apply MAPIT-R to genotype data and the quantitative traits height and body ma
 %- prtsmfgrs:star for when lose significance?
 -prtsm:suppfgcptns
 
--X fxFstFgr
--X algn\&cndns Fst/IBS, PC1 ldng, and RFMix work misc
+-goovrpopstrctagn
 
 prtsmsctnrchk
 fstfgrcpt
-rfmxcptn
 
 -dscnn (+ incldGglPthwBlgymsc + whrincldprwseepivals?)
 
@@ -217,7 +215,6 @@ rfmxcptn
 -'clarify better'thngprtsm (cmmnt)
 -'make .001 and .01 multi column headers and get rid of 'threshold' columns' thing (cmmnt)
 -'SR: also, do those describe why the pathway numbers change? Is it due to SNPs in pathways changing with QC procedures? I think that needs to be clarified in the caption.' thing (cmmnt)
--'make reactome' thing (cmmnt)
 -prtsm:suppfgcptns
 -mthdsgovr
 -whrincldprwseepivals?
@@ -321,6 +318,12 @@ In our analyses of marginal epistasis at the pathway-level in the African subgro
 
 We detect one cluster of pathways in the KEGG results  with divergent statistical evidence for marginal epistasis in height versus BMI (Figure \ref{InterPath-Main-Figure-MAPITR-PhenoComps-African}). The four highlighted pathways in Figure \ref{InterPath-Main-Figure-MAPITR-PhenoComps-African} are signaling and oncogenic pathways: sorted by decreasing -$\log_{10}$ $p$-value, these are SMALL\_CELL\_LUNG\_CANCER ($p$-value: 3.20E-10), ERBB\_SIGNALING\_PATHWAY ($p$-value: 3.30E-07), \\NON\_SMALL\_CELL\_LUNG\_CANCER ($p$-value: 1.64E-06), and \\T\_CELL\_RECEPTOR\_SIGNALING\_PATHWAY ($p$-value: 6.12E-06). Two sets of gene families appear in all four of these pathways with differential marginal epistasis signals for height versus BMI (Supplementary Table \ref{InterPath-Supp-Table-MAPITR-PhenoComps-African-GeneCounts}): phosphatidylinositol 3-kinases (PIKs) and the AKT serine/threonine-protein kinases. One gene in this group, \emph{AKT2}, has been associated with multiple monogenic disorders of glucose metabolism, including severe insulin resistance and diabetes, and severe fasting hypoinsulinemic hypoglycemia \citep{George2004,Manning2017,Latva-Rasku2018}.
 
+\subsection{Testing variability in MAPIT-R results with British replicate subpopulations}
+
+One important consideration of our results is that we have limited sample sizes of the diverse non-European human ancestries we are analyzing. Given the large sample size of the white British individuals in the UK BioBank, we decided to test whether the subsampled replicates of this cohort were large enough to be representative of the genetic variation in the full dataset of over 470,000 individuals. Specifically, we sampled additional, non-overlapping random subgroups of 4,000 British individuals and tested whether MAPIT-R scans in those random samples were consistent with our results for the British subgroup in Figures \ref{InterPath-Main-Figure-Heatplots-KEGG} and \ref{InterPath-Main-Figure-Heatplots-KEGG}.  We also constructed larger British subsamples of non-overlapping 10,000 individuals to project the impact of sample size on our results as well. In total we analyzed 5 sets of 4,000 British individuals and 5 sets of 10,000 British individuals. 
+
+When applying MAPIT-R to these non-overlapping replicates of 4,000 and 10,000 white British individuals, our results are similar to our original results in Figures \ref{InterPath-Main-Figure-Heatplots-KEGG} and \ref{InterPath-Main-Figure-Heatplots-KEGG}. We see limited numbers of significant pathways across all database + phenotype + replicate subgroup combinations, as well as limited overlap of significant pathways between replicates (Supplementary Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}\textcolor{blue}{-}\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}). We also ran analyses using permuted phenotypes, and once again see proper behavior under the null and very low FDRs (Supplementary Tables \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}). These results at least suggest that the large numbers of significant pathways we observe in the African subgroup are less likely to be a product of chance. 
+
 \subsection{Refining pathway-level marginal epistatic signals using region-based tests: a case study using the proteasome}
 
 One advantage region-based tests offer is the ability to further refine statistically significant signals, whether in GWA or marginal epistatic scenarios. If starting on a pathway-level in an analysis, you can use a region-based test to investigate smaller segments of a pathway to see if a pathway-level significant signal can be narrowed down to a specific part of the pathway. We were interested then in identifying whether we could use MAPIT-R to refine any of the significant pathway-level marginal epistatic signals we have found in our UKB subgroups.
@@ -352,12 +355,6 @@ To investigate whether pathway-level signals of marginal epistasis can be furthe
 Therefore, running each of these new `one proteaseome gene-family removed' pathways through MAPIT-R, we do indeed find some proteasome subunits have greater impacts on the original MAPIT-R pathway $p$-values than others (Figure \ref{InterPath-Main-Figure-Proteasome-Panels}\textcolor{blue}{b}). In particular, PSMA and PSME gene families seem to be driving changes in marginal-epistasis scan results. First, genes from the PSME family encode an alternative regulatory cap (11S or PA28) that can also associate with the main 20S core; this hybrid-proteasome is part of a subset of isoforms known as immunoproteasomes. Immunoproteasomes are specialized proteasomes that are expressed at higher levels in hematopietic cells and are more directly associated with immunity-related processes such as MHC antigen presentation \citep{Ferrington2012,Basler2013,McCarthy2015}. PA28 itself is an Interferon-$\gamma$ (IFN-$\gamma$) inducible isoform that operates in a ubiquitin-independent manner, increasing production of a specific subset of MHC-1 presenting antigens \citep{Groettrup1996,de2011,Raule2014,Murata2018}. Additionally, recent work has more directly connected PSME genes as potential upregulators of NF$\kappa$B as well \citep{Sun2016,Mitchell2019}. Therefore this may explain why removal of the PSME gene family affects marginal epistasis scan results more than does the removal of other subunits in the MAPIT-R $p$-values of pathways related to NF$\kappa$B, B-cells, HIV-infection, and apoptosis. Second, genes from the PSMA family encode the outer two rings of the core four in the 20S structure. These outer, `alpha' rings are gates which help control the entry of proteins into the core of the proteasome. Unlike the regulatory caps or the inner `beta' rings (encoded by the PSMB family), which contain protease active sites, the outer rings have no known catalytic functionality, which is what may be reflected by the consistency of MAPIT-R $p$-values even when PSMA genes are removed. In some instances, removing PSMA genes may even improve MAPIT-R $p$-values.
 
 %...is Interferon-$\gamma$ (IFN-$\gamma$) inducible and...
-
-\subsection{Testing the variability in MAPIT-R results with British replicate subpopulations}
-
-One important consideration of our results is that we have limited sample sizes of the diverse non-European human ancestries we are analyzing. Given the large sample size of the white British individuals in the UK BioBank, we decided to test whether the subsampled replicates of this cohort were large enough to be representative of the genetic variation in the full dataset of over 470,000 individuals. Specifically, we sampled additional, non-overlapping random subgroups of 4,000 British individuals and tested whether MAPIT-R scans in those random samples were consistent with our results for the British subgroup in Figures \ref{InterPath-Main-Figure-Heatplots-KEGG} and \ref{InterPath-Main-Figure-Heatplots-KEGG}.  We also constructed larger British subsamples of non-overlapping 10,000 individuals to project the impact of sample size on our results as well. In total we analyzed 5 sets of 4,000 British individuals and 5 sets of 10,000 British individuals. 
-
-When applying MAPIT-R to these non-overlapping replicates of 4,000 and 10,000 white British individuals, our results are similar to our original results in Figures \ref{InterPath-Main-Figure-Heatplots-KEGG} and \ref{InterPath-Main-Figure-Heatplots-KEGG}. We see limited numbers of significant pathways across all database + phenotype + replicate subgroup combinations, as well as limited overlap of significant pathways between replicates (Supplementary Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}\textcolor{blue}{-}\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}). We also ran analyses using permuted phenotypes, and once again see proper behavior under the null and very low FDRs (Supplementary Tables \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}). These results at least suggest that the large numbers of significant pathways we observe in the African subgroup are less likely to be a product of chance.  
 
 \subsection{Investigating the relationship between within-subgroup genetic variation and signals of marginal epistasis}
 
