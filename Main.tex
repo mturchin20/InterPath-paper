@@ -195,13 +195,8 @@ We apply MAPIT-R to genotype data and the quantitative traits height and body ma
 
 -prtsctnrchk
 -prts'clrfybttr'prt
-%- prtsmfgrs:star for when lose significance?
--X prtsm:suppfgcptns
 
 -goovrpopstrctagn
-
-prtsmsctnrchk
-
 
 -dscnn (+ incldGglPthwBlgymsc + whrincldprwseepivals?)
 -mthdsscn
@@ -327,7 +322,7 @@ One advantage region-based tests offer is the ability to further refine statisti
 
 To test this framework of refining pathway-level marginal epistatic signals, we looked towards breaking down pathways onto the genic-level. Specifically, we wanted to identify whether there were any genes or gene families that appeared to be particularly enriched amongst our significant MAPIT-R pathways, and then return to these pathways to test the enriched genes' relative importance to the original MAPIT-R pathway-level signals. To do this, we conducted two types of hypergeometric tests for enrichment to properly identify genes that were significantly overrepresented amongst the pathways that showed significant marginal epistatic interactions with the rest of the genome. 
 
-First, we conducted a standard hypergeometric test for enrichment by comparing the number of times a gene appears amongst the set of significant MAPIT-R pathways for a given UKB pathway database + phenotype + subgroup combination against the number of times that same gene appears amongst the set of all pathways for the same pathway database. However, this test may be confounded by the fact that larger pathways are more likely to have significant MAPIT-R $p$-values (where larger pathways means greater number of SNPs, see Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}); instead of solely identifying genes that are enriched for marginal epistatic interactions, this first test may also pick up genes that are enriched for being present in larger pathways, such as housekeeping genes. Therefore as a second approach, we also ran tests for enrichment using only MAPIT-R significant pathways that were also below a specific size threshold; by focusing on smaller pathways, we would limit the extent to which pathway size may confound the analysis. Running both of these complementary enrichment tests in conjunction, we compared a gene's hypergeometric $p$-value from both analyses and looked for genes that increased their $p$-value in the size-restricted analysis compared to the not size-restricted analysis (Figure \ref{InterPath-Main-Figure-Hypergeometric-RestrictedComps-African-BMI}). 
+First, we conducted a standard hypergeometric test for enrichment by comparing the number of times a gene appears amongst the set of significant MAPIT-R pathways for a given UKB pathway database + phenotype + subgroup combination against the number of times that same gene appears amongst the set of all pathways for the same pathway database. However, this test may be confounded by the fact that larger pathways are more likely to have significant MAPIT-R $p$-values (where larger pathways means greater number of SNPs, see Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}); instead of solely identifying genes that are enriched for marginal epistatic interactions, this first test may also pick up genes that are enriched for being present in larger pathways, such as housekeeping genes. Therefore as a second approach, we also ran tests for enrichment using only MAPIT-R significant pathways that were also below a specific size threshold; by focusing on smaller pathways, we would limit the extent to which pathway size may confound the analysis. 
 
 \begin{figure}[htbp]
 \centering
@@ -337,7 +332,7 @@ First, we conducted a standard hypergeometric test for enrichment by comparing t
 \end{figure}
 \clearpage
 
-Focusing on the MAPIT-R test combination that had the largest number of significant pathways (REACTOME + BMI + Africa; see Materials and Methods), we find one gene and a separate gene family that each have greater enrichment $p$-values in the restricted analysis than in the original non-restricted analysis. The gene with the largest increase in significance is {\emph{SMC3}}, a component of the multimeric cohesin complex. The others genes that were identified as significantly enriched in MAPIT-R-identified pathways in the restricted analysis are all from the same family of proteins, the various subunits of the proteasome complex ({\emph{PSMA*}}, {\emph{PSMB*}}, {\emph{PSMC*}}, {\emph{PSMD*}}, {\emph{PSME*}}, and {\emph{PSMF*}}). The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical system for a variety of processes related to protein degradation within the cell \citep{Voges1999,Livneh2016,Collins2017}. Whereas ubiquitin is the first half of this system that tags proteins for eventual degradation, the proteasome is the second half of this system that catalyzes the degradation itself. The main proteasome isoform, 26S, is made up of two main components: the 20S core particle (CP) of four stack rings (two outer, structural rings encoded by PSMA genes, and two inner, catalytic rings encoded by PSMB genes) and the 19S regulatory particle (RP) which caps both ends of the CP (encoded by both PSMC and PSMD genes) (Figure \ref{InterPath-Main-Figure-Proteasome-Panels}\textcolor{blue}{a}). Since these gene families contains both a larger number of loci as well as known biological functions, we used the proteasome as a test case to explore further refining MAPIT-R pathway-level signals.
+Therefore running both of these complementary enrichment tests in conjunction, we compared a gene's hypergeometric $p$-value from both analyses and looked for genes that increased their $p$-value in the size-restricted analysis compared to the not size-restricted analysis (Figure \ref{InterPath-Main-Figure-Hypergeometric-RestrictedComps-African-BMI}). We focused on the MAPIT-R test combination of REACTOME + BMI + African subgroup since no other subgroup contained enough significant pathways that could pass the size-restriction step (see Materials and Methods). Running this analysis, we find one gene and a separate gene family that each have greater enrichment $p$-values in the restricted analysis than in the original non-restricted analysis. The gene with the largest increase in significance is {\emph{SMC3}}, a component of the multimeric cohesin complex. The others genes that were identified as significantly enriched in MAPIT-R-identified pathways in the restricted analysis are all from the same family of proteins, the various subunits of the proteasome complex ({\emph{PSMA*}}, {\emph{PSMB*}}, {\emph{PSMC*}}, {\emph{PSMD*}}, {\emph{PSME*}}, and {\emph{PSMF*}}). The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical system for a variety of processes related to protein degradation within the cell \citep{Voges1999,Livneh2016,Collins2017}. Whereas ubiquitin is the first half of this system that tags proteins for eventual degradation, the proteasome is the second half of this system that catalyzes the degradation itself. The main proteasome isoform, 26S, is made up of two main components: the 20S core particle (CP) of four stack rings (two outer, structural rings encoded by PSMA genes, and two inner, catalytic rings encoded by PSMB genes) and the 19S regulatory particle (RP) which caps both ends of the CP (encoded by both PSMC and PSMD genes) (Figure \ref{InterPath-Main-Figure-Proteasome-Panels}\textcolor{blue}{a}). Since these gene families contains both a larger number of loci as well as known biological functions, we used the proteasome as a test case to explore further refining MAPIT-R pathway-level signals.
 
 \begin{figure}[htbp]
 \centering
@@ -1431,6 +1426,14 @@ PLINK pairwise epistasis analyses were conducted using PLINK v1.90b4 \citep{Purc
 \subsection{MAPIT Analyses}
 
 MAPIT analyses were conducted using the MAPIT software downloaded from \url{https://github.com/lorinanthony/MAPIT}. MAPIT was run using the phenotypes as previously described and top 10 local PCs as covariates. Specifically, we used the `\texttt{MAPIT\_Davies\_Approx}' function due to its computational speed up and because our datasets had large enough sample sizes to properly employ the approximate form.  
+
+
+
+
+
+
+%- prtsmfgrs:star for when lose significance?
+
 
 \fi
 
