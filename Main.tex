@@ -196,14 +196,16 @@ We apply MAPIT-R to genotype data and the quantitative traits height and body ma
 -prtsctnrchk
 -prts'clrfybttr'prt
 %- prtsmfgrs:star for when lose significance?
+-prtsm:suppfgcptns
 
--fxFstFgr
+-X fxFstFgr
 -X algn\&cndns Fst/IBS, PC1 ldng, and RFMix work misc
 
-fxFstFgr
+'make reactome' thng
 prtsmsctnrchk
+fstfgrcpt
 
--dscnn
+-dscnn (+ incldGglPthwBlgymsc + whrincldprwseepivals?)
 
 
 -incldGglPthwBlgymsc
@@ -367,7 +369,7 @@ One potential issue with these analyses however is that they look across the ent
 
 \begin{figure}[htb]
 \centering
-\hspace*{-1cm}
+\hspace*{-2cm}
 \includegraphics[scale=.5]{Images/Main/InterPath_Main_Figure_Fst_vs3.png}
 \caption[TBD]{\textbf{Between- and within-UKB subgroup genetic variation estimates}. (a) The heatplot shows pairwise F\textsubscript{ST} values between each of our UKB population subgroups using the genome-wide SNP data. F\textsubscript{ST} values range from .001 to .124, and we observe typical global patterns (eg African and Caribbean being more differentiated versus non-African subgroups, Chinese being more differentiated versus non-Asian subgroups). (b) }
 \label{InterPath-Main-Figure-Fst}
@@ -381,8 +383,8 @@ To see if there is more differentiation among subgroups on a smaller genomic sca
 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_vs4_African_noHLA.png}
-\caption[TBD]{\textbf{MAPIT-R results vs. pathway-level genetic diversity in the African subgroup and KEGG database}. The figure shows MAPIT-R $p$-values per pathway plotted against each pathway's mean pairwise IBS proportions for the African subgroup KEGG (a) height and (b) BMI analyses. Mean pairwise IBS proportions are shown on the $x$-axis and MAPIT-R $p$-values are shown on the $y$-axis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results for each database + phenotype + subgroup combination can be found in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}. We observe across the majority of our combinations no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_vs4_African_REACTOME_noHLA.png}
+\caption[TBD]{\textbf{MAPIT-R results vs. pathway-level genetic diversity in the African subgroup and REACTOME database}. The figure shows MAPIT-R $p$-values per pathway plotted against each pathway's mean pairwise IBS proportions for the African subgroup REACTOME (a) height and (b) BMI analyses. Mean pairwise IBS proportions are shown on the $x$-axis and MAPIT-R $p$-values are shown on the $y$-axis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results for each database + phenotype + subgroup combination can be found in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}. We observe across the majority of our combinations no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
 \label{InterPath-Main-Figure-IBS-African}
 \end{figure}
 
