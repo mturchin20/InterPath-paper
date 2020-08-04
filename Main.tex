@@ -346,7 +346,7 @@ Focusing on the MAPIT-R test combination that had the largest number of signific
 \centering
 \hspace*{-2.5cm}
 \includegraphics[scale=.55]{Images/Main/InterPath_Main_Figure_Proteasome_vs2.png}
-\caption[TBD]{\textbf{MAPIT-R leave-one-out case study: proteasome gene families}. \textbf{(a)} The figures show models of different isoforms of the proteasome. The `26S Proteasome' is the main isoform, composed of the 20S core particle (CP) and capped on both ends by  the 19S regulatory particle (RP), which is required for degradation of ubiquitinated proteins. The `Hybrid Proteasome' isoform is produced when the CP binds on one end with a RP and on the other end with the IFN-$\gamma$-inducible complex PA28$\alpha\beta$. The \textit{PSMA} and \textit{PSMB} gene families encode the proteins for the CP, the \textit{PSMC} and \textit{PSMD} gene families encode the proteins for the RP, and the \textit{PSME} gene family encodes PA28$\alpha\beta$. Note that \textit{PSMF} represents a single gene (\textit{PSMF1)} that encodes a proteasome inhibitor and is not shown. The structures shown were adopted and modified from the Protein Data Bank (human 26S proteasome, \href{https://www.rcsb.org/structure/5GJR}{5GJR}; mouse PA28$\alpha\beta$, \href{https://www.rcsb.org/structure/5MX5}{5MX5}) and from \citet{Murata2018}. \textbf{(b)} The figure shows the change in MAPIT-R $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time compared to the original MAPIT-R pathway $p$-values. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and so the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. \textbf{(c)} The table shows the number of SNPs present in each proteasome gene family, as well as the number of SNPs present in each REACTOME pathway.}
+\caption[TBD]{\textbf{MAPIT-R leave-one-out case study: proteasome gene families}. \textbf{(a)} The figures show models of different isoforms of the proteasome. The `26S Proteasome' is the main isoform, composed of the 20S core particle (CP) and capped on both ends by  the 19S regulatory particle (RP), which is required for degradation of ubiquitinated proteins. The `Hybrid Proteasome' isoform is produced when the CP binds on one end with a RP and on the other end with the IFN-$\gamma$-inducible complex PA28$\alpha\beta$. The \textit{PSMA} and \textit{PSMB} gene families encode the proteins for the CP, the \textit{PSMC} and \textit{PSMD} gene families encode the proteins for the RP, and the \textit{PSME} gene family encodes PA28$\alpha\beta$. Note that \textit{PSMF} represents a single gene (\textit{PSMF1)} that encodes a proteasome inhibitor and is not shown. The structures shown were adopted and modified from the Protein Data Bank (human 26S proteasome, \href{https://www.rcsb.org/structure/5GJR}{5GJR}; mouse PA28$\alpha\beta$, \href{https://www.rcsb.org/structure/5MX5}{5MX5}) and from \citet{Murata2018}. \textbf{(b)} The figure shows the change in MAPIT-R $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time compared to the original MAPIT-R pathway $p$-values. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. \textbf{(c)} The table shows the number of SNPs present in each proteasome gene family, as well as the number of SNPs present in each REACTOME pathway.}
 \label{InterPath-Main-Figure-Proteasome-Panels}
 \end{figure}
 
@@ -602,6 +602,77 @@ After this first round of QC procedures, we then proceeded to impute our current
 \clearpage
 \setlength{\footskip}{1cm}
 
+\begin{figure}[htbp]
+\centering
+\hspace*{-1.75cm}
+\includegraphics[scale=.45]{Images/Supp/InterPath_Supp_Figure_BritReps_Barplot_vs4.png}
+\caption[TBD]{\textbf{Numbers of pathways that have significant marginal epistasis, per British replicate}. The barplots show the number of genome-wide significant pathways found from running MAPIT-R for both height and BMI in the KEGG and REACTOME databases on each of the British subsample replicate subgroups we analyzed. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each pathway database + phenotype + subgroup combination. Most replicate runs did not produce many significant results.}
+\label{InterPath-Supp-Figure-BritReps-Barplots}
+\end{figure}
+\clearpage
+
+\newcounter{CharNumber4}
+\setcounter{CharNumber4}{1}
+\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber4}}
+\begin{landscape}
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_Heatplots_KEGG_vs4.png}
+\caption[TBD]{\textbf{Overlap of genome-wide significant MAPIT-R pathways between British replicate subgroups: KEGG}. The heatplots show the numbers of genome-wide significant MAPIT-R pathways that overlap between each British replicate subgroup for (a) height and (b) BMI in the KEGG database. The diagonal shows the total number of genome-wide significant pathways per population subgroup. We do not observe many genome-wide significant pathways or pathways that overlap between replicate subgroups.}
+\label{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths-KEGG}
+\end{figure}
+\clearpage
+\addtocounter{figure}{-1}
+\addtocounter{CharNumber4}{1}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_Heatplots_REACTOME_vs4.png}
+\caption[TBD]{\textbf{Overlap of genome-wide significant MAPIT-R pathways between British replicate subgroups: REACTOME}. The heatplots show the numbers of genome-wide significant MAPIT-R pathways that overlap between each British replicate subgroup for (a) height and (b) BMI in the REACTOME database. The diagonal shows the total number of genome-wide significant pathways per population subgroup. We do not observe many genome-wide significant pathways or pathways that overlap between replicate subgroups.}
+\label{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths-REACTOME}
+\end{figure}
+\clearpage
+\end{landscape}
+\renewcommand{\thefigure}{\arabic{figure}}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_BritReps_perm1_QQPlots_AllPaths_vs1.png}
+\caption[TBD]{\textbf{QQ-Plots of MAPIT-R results using permuted phenotypes, per British replicate}. The figure shows QQ-plots for running MAPIT-R using single, permuted versions of both height and BMI with the KEGG \& REACTOME databases. Phenotypes were permuted within each British replicate subgroup. Shown on the $x$-axis are the -$\log_{10}$ of the expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of the observed $p$-values. The dotted red line is the Bonferroni-corrected $p$-value threshold based on the number of pathways tested per pathway database + phenotype combination. We find across all pathway database + phenotype + replicate combinations that MAPIT-R continues to show proper null behavior within the range expected when using permuted phenotypes.}
+\label{InterPath-Supp-Figure-BritReps-perm1-QQPlots-AllPaths}
+\end{figure}
+\clearpage
+
+%\newcounter{CharNumber3}
+%\setcounter{CharNumber3}{1}
+%\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber3}}
+\setlength{\footskip}{1cm}
+\begin{figure}[htbp]
+\centering
+\vspace*{-1cm}
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_pValHists_AllPaths_vs1_pt1.png}
+\caption[TBD]{\textbf{$p$-Value histograms of MAPIT-R results using permuted phenotypes, per British replicate}. The figure shows histograms of MAPIT-R $p$-values collected across ten independent phenotype permutation runs for each British Ran4000 and Ran10000 subsample replicate. The same phenotype permutation for a given replicate was used across both pathway databases (i.e. 10 permutations were done for height and 10 done for BMI for each subgroup). Covariates used from the original MAPIT-R analysis were kept the same.}
+\label{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}
+\end{figure}
+\clearpage
+\setlength{\footskip}{1cm}
+\addtocounter{figure}{-1}
+%\addtocounter{CharNumber3}{1}
+
+\setlength{\footskip}{2cm}
+\begin{figure}[htbp]
+\centering
+\vspace*{-1cm}
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_pValHists_AllPaths_vs1_pt2.png}
+\caption[TBD]{\textbf{$p$-Value histograms of MAPIT-R results using permuted phenotypes, per British replicate}. The figure shows histograms of MAPIT-R $p$-values collected across ten independent phenotype permutation runs for each British Ran4000 and Ran10000 subsample replicate. The same phenotype permutation for a given replicate was used across both pathway databases (i.e. 10 permutations were done for height and 10 done for BMI for each subgroup). Covariates used from the original MAPIT-R analysis were kept the same.}
+\label{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt2}
+\end{figure}
+\clearpage
+\setlength{\footskip}{1cm}
+%\renewcommand{\thefigure}{\arabic{figure}}
+
 \setlength{\footskip}{3cm}
 \begin{figure}[htbp]
 \centering
@@ -685,7 +756,7 @@ PSMF & 16 & Cell Cycle Mitotic & 1906 & 4.51e-05 \\
  & & Regulation of Apoptosis & 564 & 1.22e-05 \\
   \hline
 \end{tabular}}}
-\caption[TBD]{\textbf{MAPIT-R proteasome gene family leave-one-out reruns, African subgroup}. .}
+\caption[TBD]{\textbf{MAPIT-R proteasome gene family leave-one-out reruns, African subgroup}. (a) The figure shows the change in MAPIT-R $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time compared to the original MAPIT-R pathway $p$-values. The leave-one-out analysis was conducted in BMI + African subgroup. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-value for each pathway is also shown on the right.}
 \label{InterPath-Supp-Figure-Prot-Heatplots-African}
 \end{figure}
 \clearpage
@@ -850,77 +921,6 @@ PSMF & 22 & Host Interactions of HIV Factors & 1315 & 1.00E-01 \\
 
 \addtocounter{figure}{1}
 \renewcommand{\thefigure}{\arabic{figure}}
-
-\begin{figure}[htbp]
-\centering
-\hspace*{-1.75cm}
-\includegraphics[scale=.45]{Images/Supp/InterPath_Supp_Figure_BritReps_Barplot_vs4.png}
-\caption[TBD]{\textbf{Numbers of pathways that have significant marginal epistasis, per British replicate}. The barplots show the number of genome-wide significant pathways found from running MAPIT-R for both height and BMI in the KEGG and REACTOME databases on each of the British subsample replicate subgroups we analyzed. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each pathway database + phenotype + subgroup combination. Most replicate runs did not produce many significant results.}
-\label{InterPath-Supp-Figure-BritReps-Barplots}
-\end{figure}
-\clearpage
-
-\newcounter{CharNumber4}
-\setcounter{CharNumber4}{1}
-\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber4}}
-\begin{landscape}
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_Heatplots_KEGG_vs4.png}
-\caption[TBD]{\textbf{Overlap of genome-wide significant MAPIT-R pathways between British replicate subgroups: KEGG}. The heatplots show the numbers of genome-wide significant MAPIT-R pathways that overlap between each British replicate subgroup for (a) height and (b) BMI in the KEGG database. The diagonal shows the total number of genome-wide significant pathways per population subgroup. We do not observe many genome-wide significant pathways or pathways that overlap between replicate subgroups.}
-\label{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths-KEGG}
-\end{figure}
-\clearpage
-\addtocounter{figure}{-1}
-\addtocounter{CharNumber4}{1}
-\end{landscape}
-
-\begin{landscape}
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_Heatplots_REACTOME_vs4.png}
-\caption[TBD]{\textbf{Overlap of genome-wide significant MAPIT-R pathways between British replicate subgroups: REACTOME}. The heatplots show the numbers of genome-wide significant MAPIT-R pathways that overlap between each British replicate subgroup for (a) height and (b) BMI in the REACTOME database. The diagonal shows the total number of genome-wide significant pathways per population subgroup. We do not observe many genome-wide significant pathways or pathways that overlap between replicate subgroups.}
-\label{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths-REACTOME}
-\end{figure}
-\clearpage
-\end{landscape}
-\renewcommand{\thefigure}{\arabic{figure}}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_BritReps_perm1_QQPlots_AllPaths_vs1.png}
-\caption[TBD]{\textbf{QQ-Plots of MAPIT-R results using permuted phenotypes, per British replicate}. The figure shows QQ-plots for running MAPIT-R using single, permuted versions of both height and BMI with the KEGG \& REACTOME databases. Phenotypes were permuted within each British replicate subgroup. Shown on the $x$-axis are the -$\log_{10}$ of the expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of the observed $p$-values. The dotted red line is the Bonferroni-corrected $p$-value threshold based on the number of pathways tested per pathway database + phenotype combination. We find across all pathway database + phenotype + replicate combinations that MAPIT-R continues to show proper null behavior within the range expected when using permuted phenotypes.}
-\label{InterPath-Supp-Figure-BritReps-perm1-QQPlots-AllPaths}
-\end{figure}
-\clearpage
-
-\newcounter{CharNumber3}
-\setcounter{CharNumber3}{1}
-%\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber3}}
-\setlength{\footskip}{1cm}
-\begin{figure}[htbp]
-\centering
-\vspace*{-1cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_pValHists_AllPaths_vs1_pt1.png}
-\caption[TBD]{\textbf{$p$-Value histograms of MAPIT-R results using permuted phenotypes, per British replicate}. The figure shows histograms of MAPIT-R $p$-values collected across ten independent phenotype permutation runs for each British Ran4000 and Ran10000 subsample replicate. The same phenotype permutation for a given replicate was used across both pathway databases (i.e. 10 permutations were done for height and 10 done for BMI for each subgroup). Covariates used from the original MAPIT-R analysis were kept the same.}
-\label{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}
-\end{figure}
-\clearpage
-\setlength{\footskip}{1cm}
-\addtocounter{figure}{-1}
-\addtocounter{CharNumber3}{1}
-
-\setlength{\footskip}{2cm}
-\begin{figure}[htbp]
-\centering
-\vspace*{-1cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_pValHists_AllPaths_vs1_pt2.png}
-\caption[TBD]{\textbf{$p$-Value histograms of MAPIT-R results using permuted phenotypes, per British replicate}. The figure shows histograms of MAPIT-R $p$-values collected across ten independent phenotype permutation runs for each British Ran4000 and Ran10000 subsample replicate. The same phenotype permutation for a given replicate was used across both pathway databases (i.e. 10 permutations were done for height and 10 done for BMI for each subgroup). Covariates used from the original MAPIT-R analysis were kept the same.}
-\label{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt2}
-\end{figure}
-\clearpage
-\setlength{\footskip}{1cm}
-%\renewcommand{\thefigure}{\arabic{figure}}
 
 \setlength{\footskip}{3cm}
 \begin{figure}[htbp]
