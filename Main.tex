@@ -440,19 +440,7 @@ To create the UKB population subgroups used in this study, we first extracted an
 \subsubsection{Phenotypes}
 
 For the analyses presented in this study we focused on the complex traits of height and BMI. Each phenotype was adjusted for age, gender, and assessment center. Following previous pipelines \citep{Wood2014,Locke2015}, each dataset was first divided into males and females. Age was then regressed out within each sex, and the resulting residuals were inverse normalized. These normalized values were then combined back together between sexes and, lastly, assessment center designations were regressed out. 
-
-\subsection{PLINK Analyses}
-
-PLINK pairwise epistasis analyses were conducted using PLINK v1.90b4 \citep{Purcell2007}, the `\texttt{-{}-epistasis}' command, and phenotypes that had top 10 local PCs regressed out; PCs were regressed out directly from the phenotypes due to the `\texttt{-{}-epistasis}' function having no explicit form to incorporate covariates. Default values for the `\texttt{-{}-epi1}' and `\texttt{-{}-epi2}' options (0.0001 and 0.01, respectively) were kept.   
-
-\subsection{MAPIT Analyses}
-
-MAPIT analyses were conducted using the MAPIT software downloaded from \url{https://github.com/lorinanthony/MAPIT}. MAPIT was run using the phenotypes as previously described and top 10 local PCs as covariates. Specifically, we used the `\texttt{MAPIT\_Davies\_Approx}' function due to its computational speed up and because our datasets had large enough sample sizes to properly employ the approximate form.  
-
-
-
-
-
+%Have a sentence about permuted phenotypes?
 
 \subsection{MAPIT-R Model}
 
@@ -503,8 +491,23 @@ with $(\wh\omega^2_{0},\wh\nu^2_{0},\wh\tau^2_{0})$ being the MQS estimates of $
 %(NOTE: Follow the rest of the language from methods in PEGASUS here).
 
 
+%Add note about MAPIT-R being in an R package at the end of Lorin's material?
 \subsection{MAPIT-R Analyses}
+-snp/gene/pathway matching
+-note about mapit-r code now in R package.
 
+
+
+\subsection{Hypergeometric enrichment analyses}
+
+\subsection{Proteasome gene family `leave-one-out' analyses}
+
+\subsection{MAPIT-R results vs. genetic diversity metric analyses}
+\subsubsection{Pathway-level IBS analyses}
+
+\subsubsection{RFMix analyses}
+
+\subsubsection{PC1 SNP loading analyses}
 
 \section{URLs}\label{InterPath-URLs}
 
@@ -1420,6 +1423,14 @@ However, looking at within subgroup F\textsubscript{ST} (the diagonal)\footnote{
 into which regions of the genome . 
 
 we also examined whether cryptic population structure within subgroups was associated with increased signals of marginal epistasis in our MAPIT-R analyses. Specifically, we investigated correlations between the percent variance explained by within-subgroup principal components (Figure \ref{InterPath-Main-Figure-Eigenvalues} with the number of genome-wide MAPIT-R results we found per subgroup. And indeed, similar to the within-subgroup F\textsubscript{ST} values we saw, we find that subgroup PVE on PC1 matches an order similar to which populations produce the largest numbers of significant pathways.
+
+\subsection{PLINK Analyses}
+
+PLINK pairwise epistasis analyses were conducted using PLINK v1.90b4 \citep{Purcell2007}, the `\texttt{-{}-epistasis}' command, and phenotypes that had top 10 local PCs regressed out; PCs were regressed out directly from the phenotypes due to the `\texttt{-{}-epistasis}' function having no explicit form to incorporate covariates. Default values for the `\texttt{-{}-epi1}' and `\texttt{-{}-epi2}' options (0.0001 and 0.01, respectively) were kept.   
+
+\subsection{MAPIT Analyses}
+
+MAPIT analyses were conducted using the MAPIT software downloaded from \url{https://github.com/lorinanthony/MAPIT}. MAPIT was run using the phenotypes as previously described and top 10 local PCs as covariates. Specifically, we used the `\texttt{MAPIT\_Davies\_Approx}' function due to its computational speed up and because our datasets had large enough sample sizes to properly employ the approximate form.  
 
 \fi
 
