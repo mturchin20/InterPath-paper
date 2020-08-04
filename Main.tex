@@ -196,15 +196,15 @@ We apply MAPIT-R to genotype data and the quantitative traits height and body ma
 -prtsctnrchk
 -prts'clrfybttr'prt
 %- prtsmfgrs:star for when lose significance?
--prtsm:suppfgcptns
+-X prtsm:suppfgcptns
 
 -goovrpopstrctagn
 
 prtsmsctnrchk
-fstfgrcpt
+
 
 -dscnn (+ incldGglPthwBlgymsc + whrincldprwseepivals?)
-
+-mthdsscn
 
 -incldGglPthwBlgymsc
 
@@ -215,9 +215,6 @@ fstfgrcpt
 -'clarify better'thngprtsm (cmmnt)
 -'make .001 and .01 multi column headers and get rid of 'threshold' columns' thing (cmmnt)
 -'SR: also, do those describe why the pathway numbers change? Is it due to SNPs in pathways changing with QC procedures? I think that needs to be clarified in the caption.' thing (cmmnt)
--prtsm:suppfgcptns
--mthdsgovr
--whrincldprwseepivals?
 -rrdvrthng?
 -grgSmltnFgr?
 
@@ -340,7 +337,7 @@ First, we conducted a standard hypergeometric test for enrichment by comparing t
 \end{figure}
 \clearpage
 
-Focusing on the MAPIT-R test combination that had the largest number of significant pathways (REACTOME + BMI + Africa), we find one gene and a separate gene family that each have greater enrichment $p$-values in the restricted analysis than in the original non-restricted analysis. The gene with the largest increase in significance is {\emph{SMC3}}, a component of the multimeric cohesin complex. The others genes that were identified as significantly enriched in MAPIT-R-identified pathways in the restricted analysis are all from the same family of proteins, the various subunits of the proteasome complex ({\emph{PSMA*}}, {\emph{PSMB*}}, {\emph{PSMC*}}, {\emph{PSMD*}}, {\emph{PSME*}}, and {\emph{PSMF*}}). The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical system for a variety of processes related to protein degradation within the cell \citep{Voges1999,Livneh2016,Collins2017}. Whereas ubiquitin is the first half of this system that tags proteins for eventual degradation, the proteasome is the second half of this system that catalyzes the degradation itself. The main proteasome isoform, 26S, is made up of two main components: the 20S main core of four stack rings (an outer, structural ring encoded by PSMA genes, and an inner, catalytic ring encoded by PSMB genes) and the 19S regulatory caps which booked both sides of the main core (encoded by both PSMC and PSMD genes) (Figure \ref{InterPath-Main-Figure-Proteasome-Panels}\textcolor{blue}{a}). Since this gene family contains both a larger number of loci as well as known biological functions, we used the proteasome as a test case to explore further refining MAPIT-R pathway-level signals.
+Focusing on the MAPIT-R test combination that had the largest number of significant pathways (REACTOME + BMI + Africa; see Materials and Methods), we find one gene and a separate gene family that each have greater enrichment $p$-values in the restricted analysis than in the original non-restricted analysis. The gene with the largest increase in significance is {\emph{SMC3}}, a component of the multimeric cohesin complex. The others genes that were identified as significantly enriched in MAPIT-R-identified pathways in the restricted analysis are all from the same family of proteins, the various subunits of the proteasome complex ({\emph{PSMA*}}, {\emph{PSMB*}}, {\emph{PSMC*}}, {\emph{PSMD*}}, {\emph{PSME*}}, and {\emph{PSMF*}}). The proteasome is one half of the ubiquitin-proteasome system (UPS), a critical system for a variety of processes related to protein degradation within the cell \citep{Voges1999,Livneh2016,Collins2017}. Whereas ubiquitin is the first half of this system that tags proteins for eventual degradation, the proteasome is the second half of this system that catalyzes the degradation itself. The main proteasome isoform, 26S, is made up of two main components: the 20S core particle (CP) of four stack rings (two outer, structural rings encoded by PSMA genes, and two inner, catalytic rings encoded by PSMB genes) and the 19S regulatory particle (RP) which caps both ends of the CP (encoded by both PSMC and PSMD genes) (Figure \ref{InterPath-Main-Figure-Proteasome-Panels}\textcolor{blue}{a}). Since these gene families contains both a larger number of loci as well as known biological functions, we used the proteasome as a test case to explore further refining MAPIT-R pathway-level signals.
 
 \begin{figure}[htbp]
 \centering
@@ -350,9 +347,9 @@ Focusing on the MAPIT-R test combination that had the largest number of signific
 \label{InterPath-Main-Figure-Proteasome-Panels}
 \end{figure}
 
-To investigate whether pathway-level signals of marginal epistasis can be further narrowed down using components of the proteasome, we first collected all the significant MAPIT-R pathways from the African + BMI + REACTOME analysis that contained \emph{PSM*} gene family loci. Next we identified whether any of these individual gene families had a particularly strong effect on the original MAPIT-R $p$-values. To accomplish this, we removed each gene family one at a time from every original significant pathway and then reran each of these `one gene-family removed' pathway versions through MAPIT-R; we then identified whether any gene family lead to a particularly strong drop in the MAPIT-R $p$-value, suggesting the original signal observed was potentially contained within the removed proteaseome gene family.  
+To investigate whether pathway-level signals of marginal epistasis can be further narrowed down using components of the proteasome, we first collected all the significant MAPIT-R pathways from the African + BMI + REACTOME analysis that contained every \emph{PSM*} gene family locus. Next we identified whether any of these individual gene families had a particularly strong effect on the original MAPIT-R $p$-values. To accomplish this, we removed each gene family one at a time from the original significant pathways in a `leave-one-out' setup, and then reran each of these `one gene-family removed' pathway versions through MAPIT-R; we then looked across the resulting MAPIT-R $p$-values to identify whether removing any gene families had a particularly strong impact on diminishing the original MAPIT-R results.  
 
-Therefore, running each of these new `one proteaseome gene-family removed' pathways through MAPIT-R, we do indeed find some proteasome subunits have greater impacts on the original MAPIT-R pathway $p$-values than others (Figure \ref{InterPath-Main-Figure-Proteasome-Panels}\textcolor{blue}{b}). In particular, PSMA and PSME gene families seem to be driving changes in marginal-epistasis scan results. First, genes from the PSME family encode an alternative regulatory cap (11S or PA28) that can also associate with the main 20S core; this hybrid-proteasome is part of a subset of isoforms known as immunoproteasomes. Immunoproteasomes are specialized proteasomes that are expressed at higher levels in hematopietic cells and are more directly associated with immunity-related processes such as MHC antigen presentation \citep{Ferrington2012,Basler2013,McCarthy2015}. PA28 itself is an Interferon-$\gamma$ (IFN-$\gamma$) inducible isoform that operates in a ubiquitin-independent manner, increasing production of a specific subset of MHC-1 presenting antigens \citep{Groettrup1996,de2011,Raule2014,Murata2018}. Additionally, recent work has more directly connected PSME genes as potential upregulators of NF$\kappa$B as well \citep{Sun2016,Mitchell2019}. Therefore this may explain why removal of the PSME gene family affects marginal epistasis scan results more than does the removal of other subunits in the MAPIT-R $p$-values of pathways related to NF$\kappa$B, B-cells, HIV-infection, and apoptosis. Second, genes from the PSMA family encode the outer two rings of the core four in the 20S structure. These outer, `alpha' rings are gates which help control the entry of proteins into the core of the proteasome. Unlike the regulatory caps or the inner `beta' rings (encoded by the PSMB family), which contain protease active sites, the outer rings have no known catalytic functionality, which is what may be reflected by the consistency of MAPIT-R $p$-values even when PSMA genes are removed. In some instances, removing PSMA genes may even improve MAPIT-R $p$-values.
+Therefore, running this `leave-one-out' approach in the REACTOME + BMI + African combination, we find that the PSMA and PSME gene families appear in particular to impact the original MAPIT-R $p$-values (Figure \ref{InterPath-Main-Figure-Proteasome-Panels}\textcolor{blue}{b}). First, genes from the PSMA family encode the outer two rings of the core four in the 20S structure. These outer, `alpha' rings are gates which help control the entry of proteins into the core of the proteasome. Unlike the regulatory caps or the inner `beta' rings (encoded by the PSMB family), which contain protease active sites, the outer rings have no known catalytic functionality; this lack of catalytic activity may be what is reflected by the consistent lack of change in MAPIT-R $p$-values when PSMA genes are removed. Second, genes from the PSME family encode an alternative regulatory particle (11S PA28$\alpha\beta$) that can also associate with the main 20S core; this hybrid proteasome is part of a subset of isoforms known as immunoproteasomes. Immunoproteasomes are specialized proteasomes that are expressed at higher levels in hematopietic cells and are more directly associated with immunity-related processes such as MHC antigen presentation \citep{Ferrington2012,Basler2013,McCarthy2015}. PA28$\alpha\beta$ itself is an Interferon-$\gamma$ (IFN-$\gamma$) inducible regulatory protein that operates in a ubiquitin-independent manner, increasing production of a specific subset of MHC-1 presenting antigens \citep{Groettrup1996,de2011,Raule2014,Murata2018}. Additionally, recent work has more directly connected PSME genes as potential upregulators of NF$\kappa$B as well \citep{Sun2016,Mitchell2019}. Therefore this may explain why removal of the PSME gene family affects marginal epistasis scan results more than does the removal of other subunits in the MAPIT-R $p$-values of pathways related to NF$\kappa$B, B-cells, HIV-infection, and apoptosis. Lastly, running these `leave-one-out' versions in the other UKB subgroups produce noisier results, but we do observe that the PSME gene family impacts at least one REACTOME pathway in almost every subgroup (Supplementary Figures \ref{}). 
 
 %...is Interferon-$\gamma$ (IFN-$\gamma$) inducible and...
 
@@ -756,7 +753,7 @@ PSMF & 16 & Cell Cycle Mitotic & 1906 & 4.51e-05 \\
  & & Regulation of Apoptosis & 564 & 1.22e-05 \\
   \hline
 \end{tabular}}}
-\caption[TBD]{\textbf{MAPIT-R proteasome gene family leave-one-out reruns, African subgroup}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI + African subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME + BMI + African}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI + African subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
 \label{InterPath-Supp-Figure-Prot-Heatplots-African}
 \end{figure}
 \clearpage
@@ -789,7 +786,7 @@ PSME & 25 & Cell Cycle Mitotic & 3304 & 2.34E-01 \\
  & & Regulation of Apoptosis & 906 & 2.98E-02 \\
   \hline
 \end{tabular}}}
-\caption[TBD]{\textbf{MAPIT-R proteasome gene family leave-one-out reruns, British.Ran4000 subgroup}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI + British.Ran4000 subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME + BMI + British.Ran4000}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI + British.Ran4000 subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
 \label{InterPath-Supp-Figure-Prot-Heatplots-BritRan4000}
 \end{figure}
 \clearpage
@@ -821,7 +818,7 @@ PSMF & 16 & Cell Cycle Mitotic & 2111 & 7.98E-01 \\
  & & Regulation of Apoptosis & 615 & 9.42E-01 \\
   \hline
 \end{tabular}}}
-\caption[TBD]{\textbf{MAPIT-R proteasome gene family leave-one-out reruns, Caribbean subgroup}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI + Caribbean subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME + BMI + Caribbean}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI + Caribbean subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
 \label{InterPath-Supp-Figure-Prot-Heatplots-Caribbean}
 \end{figure}
 \clearpage
@@ -851,7 +848,7 @@ PSMF & 16 & HIV Infection & 1266 & 3.68E-03 \\
  & & Regulation of Apoptosis & 527 & 2.26E-02 \\
   \hline
 \end{tabular}}}
-\caption[TBD]{\textbf{MAPIT-R proteasome gene family leave-one-out reruns, Chinese subgroup}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI + Chinese subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME + BMI + Chinese}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI + Chinese subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
 \label{InterPath-Supp-Figure-Prot-Heatplots-Chinese}
 \end{figure}
 \clearpage
@@ -883,7 +880,7 @@ PSMF & 21 & Cell Cycle Mitotic & 2656 & 2.316E-01 \\
  & & Regulation of Apoptosis & 754 & 5.606E-01 \\
   \hline
 \end{tabular}}}
-\caption[TBD]{\textbf{MAPIT-R proteasome gene family leave-one-out reruns, Indian subgroup}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI + Indian subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME + BMI + Indian}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI + Indian subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
 \label{InterPath-Supp-Figure-Prot-Heatplots-Indian}
 \end{figure}
 \clearpage
@@ -912,7 +909,7 @@ PSMF & 22 & Host Interactions of HIV Factors & 1315 & 1.00E-01 \\
  & & Regulation of Apoptosis & 774 & 5.16E-02 \\
   \hline
 \end{tabular}}}
-\caption[TBD]{\textbf{MAPIT-R proteasome gene family leave-one-out reruns, Pakistani subgroup}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI + Pakistani subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME + BMI + Pakistani}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI + Pakistani subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
 \label{InterPath-Supp-Figure-Prot-Heatplots-Pakistani}
 \end{figure}
 \clearpage
@@ -927,7 +924,7 @@ PSMF & 22 & Host Interactions of HIV Factors & 1315 & 1.00E-01 \\
 \centering
 \vspace*{-2cm}
 \includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_IBS_AllPops_vs4_noHLA.png}
-\caption[TBD]{\textbf{Pathway-level genetic diversity versus MAPIT-R results for all database + phenotype + subgroup combinations}. Caption continued on next page.}
+\caption[TBD]{\textbf{Pathway-level genetic diversity vs. MAPIT-R results for all database + phenotype + subgroup combinations}. Caption continued on next page.}
 \label{InterPath-Supp-Figure-IBS-AllPops}
 \end{figure}
 \clearpage
@@ -935,7 +932,7 @@ PSMF & 22 & Host Interactions of HIV Factors & 1315 & 1.00E-01 \\
 \addtocounter{figure}{-1}
 
 \begin{figure} [t!]
-\caption[TBD]{\textbf{Pathway-level genetic diversity versus MAPIT-R results for all database + phenotype + subgroup combinations}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for every pathway database + phenotype + UKB subgroup combination. IBS proportions were calculated per pathway by using that pathway's set of SNPs, were calculated pairwise between every set of individuals in the subgroup, and then averaged across each of these pairs for a final, single summary metric. We observe across the majority of combinations no significant relationship between mean pairwise IBS proportion and MAPIT-R $p$-value.}
+\caption[TBD]{\textbf{Pathway-level genetic diversity vs. MAPIT-R results for all database + phenotype + subgroup combinations}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for every pathway database + phenotype + UKB subgroup combination. IBS proportions were calculated per pathway by using that pathway's set of SNPs, were calculated pairwise between every set of individuals in the subgroup, and then averaged across each of these pairs for a final, single summary metric. We observe across the majority of combinations no significant relationship between mean pairwise IBS proportion and MAPIT-R $p$-value.}
 \label{InterPath-Supp-Figure-IBS-AllPops-Caption}
 \end{figure}
 \clearpage
@@ -951,7 +948,7 @@ PSMF & 22 & Host Interactions of HIV Factors & 1315 & 1.00E-01 \\
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_RFMix_vs2_African_KEGG_noHLA.png}
-\caption[TBD]{\textbf{Pathway-level genetic diversity versus MAPIT-R results in the African subgroup and KEGG database}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the African subgroup KEGG (a) height and (b) BMI analysis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results with REACTOME database pathways can be found in Supplementary Figure \ref{InterPath-Main-Figure-RFMix-African-REACTOME}. We observe across the majority of our combinations no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
+\caption[TBD]{\textbf{Pathway-level genetic diversity vs. MAPIT-R results in the African subgroup and KEGG database}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the African subgroup KEGG (a) height and (b) BMI analysis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results with REACTOME database pathways can be found in Supplementary Figure \ref{InterPath-Main-Figure-RFMix-African-REACTOME}. We observe across the majority of our combinations no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
 \label{InterPath-Supp-Figure-RFMix-African-KEGG}
 \end{figure}
 \clearpage
