@@ -382,9 +382,7 @@ To see if there is more differentiation among subgroups on a smaller genomic sca
 \label{InterPath-Main-Figure-IBS-African}
 \end{figure}
 
-Next
-
-
+Since neither whole-genome or pathway-level metrics of genetic variation appear to drive MAPIT-R results, we instead looked at more direct estimates of African ancestry rather than genetic variation as a proxy for African ancestry. Specifically, we ran RFMix (citation) on our African subgroup with the 1000 Genomes CEU and YRI \citep{Genomes2015} populations as outgroups to calculate subgroup-wide average estimates of local African ancestry. By comparing the average overlap a pathway has on locally African regions of the genome against that pathway's MAPIT-R $p$-value, we might identify regions of the genome that are both driving the MAPIT-R results but also doing so in an African-ancestry specific way. However, testing REACTOME pathway MAPIT-R $p$-values against a pathway's average amount of local African ancestry does not reveal a significant relationship (Figure \ref{InterPath-Main-Figure-RFMix-African-REACTOME}), and neither does looking at KEGG pathways (Supplementary Figure \ref{InterPath-Supp-Figure-RFMix-African-KEGG}).    
 
 \begin{figure}[htb]
 \centering
@@ -393,16 +391,16 @@ Next
 \label{InterPath-Main-Figure-RFMix-African-REACTOME}
 \end{figure}
 
-Lastly, we also examined whether cryptic population structure within subgroups was associated with increased signals of marginal epistasis in our MAPIT-R analyses. Specifically, we investigated correlations between the percent variance explained by within-subgroup principal components (Figure \ref{InterPath-Main-Figure-Eigenvalues} with the number of genome-wide MAPIT-R results we found per subgroup. And indeed, similar to the within-subgroup F\textsubscript{ST} values we saw, we find that subgroup PVE on PC1 matches an order similar to which populations produce the largest numbers of significant pathways.
+As one other approach to investigate possible connections between African ancestry and MAPIT-R results, we looked at whether since  we also examined whether cryptic population structure within subgroups was associated with increased signals of marginal epistasis in our MAPIT-R analyses. Specifically, we investigated correlations between the percent variance explained by within-subgroup principal components (Figure \ref{InterPath-Main-Figure-Eigenvalues} with the number of genome-wide MAPIT-R results we found per subgroup. And indeed, similar to the within-subgroup F\textsubscript{ST} values we saw, we find that subgroup PVE on PC1 matches an order similar to which populations produce the largest numbers of significant pathways.
 
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=.45]{Images/Main/InterPath_Main_Figure_Eigenvalues_vs2.png}
-\caption[TBD]{\textbf{Distribution of top 10 local principal component PVEs across UKB subgroups}. The plot shows the PVE of each of the top 10 local PCs for each of our UKB population subgroups. Local here continues to refer to calculating PCs within each subgroup separately (versus calculating PCs jointly across all subgroups together). We observe that the distribution of PC1 PVEs among our subgroups appears to strongly correlate with the distribution of total number of genome-wide significant MAPIT-R pathways we identify per subgroup (see Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and  Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}).}
+\caption[TBD]{\textbf{Distribution of top 10 local principal component PVEs across UKB subgroups}. The plot shows the PVE of each of the top 10 local PCs for each of our UKB population subgroups. Local here continues to refer to calculating PCs within each subgroup separately (versus calculating PCs jointly across all subgroups together). We observe that the distribution of PC1 PVEs among the subgroups appears to match the distribution of total number of genome-wide significant MAPIT-R pathways we identify per subgroup (see Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and  Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}).}
 \label{InterPath-Main-Figure-Eigenvalues}
 \end{figure}
 
-Therefore, to investigate this possible relationship between subgroup PVE on PC1 and MAPIT-R results, we compared the proportion of SNPs that are strongly loaded on PC1 within a given pathway against that pathway's MAPIT-R $p$-value. If the cryptic structure represented by PC1 is driving the African MAPIT-R results, then we might expect pathways with more SNPs that are strongly loaded on PC1 to have more significant MAPIT-R $p$-values as well.  something something something. However, across both phenotypes in both pathway databases in the African subgroup, we find no significant relationship; and looking across the other database + phenotype + subgroup combinations, we find no significantly positive relationships either (Supplementary Figure \ref{InterPath-Supp-Figure-PC1Loading-AllPaths}). 
+Therefore, to investigate this possible relationship between subgroup PVE on PC1 and MAPIT-R results, we compared the proportion of SNPs that are strongly loaded on PC1 within a given pathway against that pathway's MAPIT-R $p$-value. If the cryptic structure represented by PC1 is driving the African MAPIT-R results, then we might expect pathways with more SNPs that are strongly loaded on PC1 to have more significant MAPIT-R $p$-values as well. However, across both phenotypes in both pathway databases in the African subgroup, we find no significant relationship; and looking across the other database + phenotype + subgroup combinations, we find no significantly positive relationships either (Supplementary Figure \ref{InterPath-Supp-Figure-PC1Loading-AllPaths}). 
 
 \section{Discussion}\label{InterPath-Discussion}
 
