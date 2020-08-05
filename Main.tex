@@ -193,9 +193,6 @@ We apply MAPIT-R to genotype data and the quantitative traits height and body ma
 
 \section{Results}\label{InterPath-Results}
 
--prtsctnrchk
--prts'clrfybttr'prt
-
 -goovrpopstrctagn
 
 -dscnn (+ incldGglPthwBlgymsc + whrincldprwseepivals?)
@@ -327,7 +324,7 @@ First, we conducted a standard hypergeometric test for enrichment by comparing t
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.4]{Images/Main/InterPath_Main_Figure_Hypergeometric_RestrictedComps_African_BMI_vs3.png}
-\caption[TBD]{\textbf{Comparison of gene count hypergeometric enrichment $p$-values in BMI using pathway size of at most 1000 SNPs versus no size restrictions in the African subgroup}. The figure shows comparisons of the gene-based hypergeometric enrichment $p$-values between the size restricted version of the analysis and the original unrestricted version of the analysis in the (a) KEGG and (b) REACTOME pathway databases. Only results for BMI are shown here since almost all pathway-levels signals of marginal epistasis were lost in the height analysis with pathways of restricted size. The $x$-axis shows the original, unrestricted hypergeometric -$\log_{10}$ $p$-values, and the $y$-axis shows the new, size restricted hypergeometric -$\log_{10}$ $p$-values. The PSM* gene cluster is highlighted (blue dashed circle) in the REACTOME plot. For lists containing each gene's original and  size-restricted hypergeometric $p$-values, see Supplementary Table \ref{InterPath-Supp-Table-Hypergeometric-RestrictedComps-African-BMI}.}
+\caption[TBD]{\textbf{Comparison of gene count hypergeometric enrichment $p$-values in BMI using pathway size of at most 1000 SNPs versus no size restrictions in the African subgroup}. The figure shows comparisons of the gene-based hypergeometric enrichment $p$-values between the size restricted version of the analysis and the original unrestricted version of the analysis in the (a) KEGG and (b) REACTOME pathway databases. Only results for BMI are shown here since almost all pathway-levels signals of marginal epistasis were lost in the height analysis with pathways of restricted size. The $x$-axis shows the original, unrestricted hypergeometric -$\log_{10}$ $p$-values, and the $y$-axis shows the new, size restricted hypergeometric -$\log_{10}$ $p$-values. The \textit{PSM*} gene cluster is highlighted (blue dashed circle) in the REACTOME plot. For lists containing each gene's original and  size-restricted hypergeometric $p$-values, see Supplementary Table \ref{InterPath-Supp-Table-Hypergeometric-RestrictedComps-African-BMI}.}
 \label{InterPath-Main-Figure-Hypergeometric-RestrictedComps-African-BMI}
 \end{figure}
 \clearpage
@@ -348,7 +345,7 @@ Running this `leave-one-out' approach in the REACTOME + BMI + African combinatio
 
 %...is Interferon-$\gamma$ (IFN-$\gamma$) inducible and...
 
-\subsection{Investigating the relationship between within-subgroup genetic variation and signals of marginal epistasis}
+\subsection{Investigating the relationship between subgroup genetic variation and signals of marginal epistasis}
 
 As described above, MAPIT-R analyses of the African subgroup in the UKB produced the majority of our significant MAPIT-R pathways; a follow up question then is why we see heterogeneity across ancestries in our MAPIT-R results. One possibility is that MAPIT-R's performance is influenced by the amount of genetic variation present in each subgroup -- greater levels of genetic variation may allow for more effective identification of putative genetic interactions. It is also well-established that African-ancestry populations often contain the highest levels of within-population genetic variation on average compared to other global populations \citep{International2010,Genomes2015,Mallick2016}. Therefore, we decided to investigate whether there were any associations between measures of genetic variation within and between our subgroups and the number of significant MAPIT-R pathways each subgroup produced.
 
