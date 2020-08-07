@@ -387,33 +387,10 @@ Therefore, we took this one step further and investigated the relationship betwe
 
 \section{Discussion}\label{InterPath-Discussion}
 
-
-
-
-
-\textcolor{blue}{MT: collection of parts that were requested to be moved to discussion -- not integrated yet}
-
-
-
-And we analyzed multiple human ancestries due to the ongoing imbalance of published GWA studies that solely focuses on European-ancestry individuals \citep{Need2009,Popejoy2016,Gurdasani2019,Martin2019,Sirugo2019}. Roughly 20\% of published GWA studies have been conducted in individuals of non-European ancestries \citep{Gurdasani2019,Martin2019,Sirugo2019}, and that is despite ongoing awareness of this problem over the last decade \citep{Need2009,Popejoy2016} and an increasing amount of work showing the importance of studying non-European populations \citep{Dumitrescu2011,Martin2017a,Martin2017b,Mogil2018,Bien2019,Duncan2019,Kuchenbaecker2019,Wojcik2019,Zhong2019,Marnetto2020,Mostafavi2020}.
-
-%Dumitrescu2011,Stranger2012,Carlson2013,Kerminen2019,Rosenberg2019,
-
-
-
-
-This pattern of overlapping results for each non-African subgroup with results from analyzing  the African subgroup may suggest that the first sets of pathways to be identified as having marginal epistasis interactions will be widely important biologically, hence seeing themes such as cellular signaling and the immune system; identifying more population-specific examples of pathway-level marginal epistasis may require greater sample sizes. \textcolor{blue}{from: pathway overlap between African and other non-African populations}
-
-
-
-
-
-\textcolor{blue}{MT: not updated yet}
-
 Here we present both the first exploration of marginal epistasis on the pathway-level as well as within multiple human ancestries. Specifically we investigate both single SNP and pathway level marginal epistasis in height and BMI, and present a novel framework for analyzing marginal epistasis in pathways. We find that our African subgroup is particularly well-powered to detect signals of pathway marginal epistasis, with this subgroup containing over 65\% of our 245 total 
 genome-wide hits. We show that across many pathways BMI produces stronger signals of marginal epistasis than height. And lastly, we find evidence that cellular signaling and immune-related pathways may be particularly enriched for marginal epistasis, and the proteasome as a protein complex may be enriched for marginal epistatic interactions as well. 
 
-The fact that we find such an abundance of results in the African subgroup may not be surprising. The notion that African populations, and non-European ancestries in general, could be particularly insightful for complex trait genetics is not novel \citep{Rotimi2017,Choudhury2018,Martin2018,Wojcik2019,Bentley2020}, with efforts delineating the genetic architecture of skin pigmentation \citep{Martin2017b,Crawford2017b} and the evolutionary histories of FOXP2 and other loci \citep{Atkinson2018,Sugden2018} being some recent examples. The question of what aspects of the greater genetic diversity observed in African populations is driving the results found here is still an area of future work. As we have found initially, it is unlikely that our results are due to broadscale differences in within- or between-population genetic variation or pathway-level genetic variation alone. We also did not find any connections between local African ancestry or cryptic genetic variation in PC space and our MAPIT-R results as well. The need for more publicly available GWA datasets of non-European ancestry is well-documented by this point \citep{Need2009,Popejoy2016,Gurdasani2019,Martin2019,Sirugo2019}, but this only further reveals what can be gained by expanding such resources. These results may indicate that non-European ancestries, and African ancestries in particular, may be better suited for identifying signals of epistasis. 
+The fact that we find such an abundance of results in the African subgroup may not be surprising. It has increasingly been shown that African populations, and non-European ancestries in general, are particularly insightful for complex trait genetics \citep{Dumitrescu2011,Rotimi2017,Choudhury2018,Martin2018,Mogil2018,Bien2019,Kuchenbaecker2019,Wojcik2019,Zhong2019,Bentley2020}, with efforts delineating the genetic architecture of skin pigmentation \citep{Martin2017b,Crawford2017b}, the evolutionary histories of FOXP2 and other loci \citep{Atkinson2018,Sugden2018}, and properly implementing polygenic risk scores \citep{Duncan2019,Marnetto2020,Mostafavi2020} being some recent examples. The question of what aspects of the greater genetic diversity observed in African populations is driving the results found here is still an area of future work. As we have found initially, it is unlikely that our results are due to broadscale differences in within- or between-population genetic variation or pathway-level genetic variation alone. We also did not find any connections between local African ancestry or cryptic genetic variation in PC space and our MAPIT-R results as well. The need for more publicly available GWA datasets of non-European ancestry is well-documented by this point \citep{Need2009,Popejoy2016,Gurdasani2019,Martin2019,Sirugo2019}, but this only further reveals what can be gained by expanding such resources. These results may indicate that non-European ancestries, and African ancestries in particular, may be better suited for identifying signals of epistasis. 
 
 
 While the results presented here are encouraging, there are some limitations to the current analyses. One major future direction for work is the need for scaling these types of marginal epistasis methods. Similar to MAPIT, MAPIT-R currently does not scale well to the full sizes of current biobanks; in its current form MAPIT-R may begin to encounter burdensome computational times beyond 20,000 individuals. One potential avenue to overcome these issues is to incorporate the use of summary statistics for the analysis of marginal epistasis; moving from direct genotypes to GWA study summary statistics has proven useful in both speeding up computational time as well as increasing power in multiple other GWA contexts \citep{Shi2016,Johnson2018,Ray2018,Turchin2019,Urbut2019,Cheng2020}. Another limitation of MAPIT-R is that, as part of the marginal epistasis framework, it identifies whether a pathway contains any epistatic interactions with the rest of the genome. As shown here this has the advantage of accumulating signal over multiple variants, but it produces an ambiguous situation in terms of what regions of the genome to analyze \textit{a posteriori}. One strategy explored by \citet{Crawford2017a} is to conduct an exhaustive pairwise epistasis search among all MAPIT significant SNPs against the rest of the SNPs in the genome; extending a similar approach to MAPIT-R, we could conduct an exhaustive pairwise search between all variants present in our significant pathways against all variants remaining in the genome. Perhaps surprisingly given our sample sizes, doing such an exhaustive epistasis scan using our MAPIT-R significant pathways does .
@@ -1364,6 +1341,29 @@ SCRAP
 
 
 However, the distributions of PC1 PVE shown in Figure \ref{} may still reveal a promising future direction; Instead, what we may be observing is differences in observable population structure leading to variation in the ability to correct for background noise; the higher PC1 PVE observed in the African population may be evidence that being able to remove a greater amount of structure from the data leads to more exposure of the underlying genetic signal. Future work based on these results should include further exploration of this connection between patterns of genetic variation and power to detect epistatic signals in the African subgroup.  
+
+
+
+
+
+\textcolor{blue}{MT: collection of parts that were requested to be moved to discussion -- not integrated yet}
+
+
+
+And we analyzed multiple human ancestries due to the ongoing imbalance of published GWA studies that solely focuses on European-ancestry individuals \citep{Need2009,Popejoy2016,Gurdasani2019,Martin2019,Sirugo2019}. Roughly 20\% of published GWA studies have been conducted in individuals of non-European ancestries \citep{Gurdasani2019,Martin2019,Sirugo2019}, and that is despite ongoing awareness of this problem over the last decade \citep{Need2009,Popejoy2016} and an increasing amount of work showing the importance of studying non-European populations \citep{Dumitrescu2011,Martin2017a,Martin2017b,Mogil2018,Bien2019,Duncan2019,Kuchenbaecker2019,Wojcik2019,Zhong2019,Marnetto2020,Mostafavi2020}.
+
+%Dumitrescu2011,Stranger2012,Carlson2013,Kerminen2019,Rosenberg2019,
+
+
+
+
+This pattern of overlapping results for each non-African subgroup with results from analyzing  the African subgroup may suggest that the first sets of pathways to be identified as having marginal epistasis interactions will be widely important biologically, hence seeing themes such as cellular signaling and the immune system; identifying more population-specific examples of pathway-level marginal epistasis may require greater sample sizes. \textcolor{blue}{from: pathway overlap between African and other non-African populations}
+
+
+
+
+
+\textcolor{blue}{MT: not updated yet}
 
 
 \fi
