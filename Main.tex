@@ -1290,27 +1290,49 @@ British.Ran4000 & 6490 & 7.704E-05 & 1 & 0.015 & 0.001 & 4 & 0.062 & 0.010 & 52 
 \end{table}
 \clearpage
 
+%KEGG_PHOSPHATIDYLINOSITOL_SIGNALING_SYSTEM 91 4.497e-05 1681 629165758 7.947e-11 1
+%  10  10:134411966   21   21:43586397     0.913728      44.3145    2.811e-11
+%INPP5A 10:134411966 intronic,NA,NA 229102
+%ABCG1 21:43586397 intergenic_downstream,dist=33402,NA 366872
+%UMODL1 21:43586397 intergenic_upstream,dist=23292,NA 366872
+
+\begin{landscape}
 \begin{table}[ht]
 \centering
 \hspace*{-1.5cm}
-\begin{tabular}{ccccccc}
+\begin{tabular}{ccccccccc}
   \hline
-  \textbf{Database +} & \textbf{Subgroup} & \textbf{Pathway} & \textbf{Bonferonni} & \textbf{SNP1} & \textbf{SNP2} & \textbf{Epistasis} \\
-  \textbf{Phenotype} & & & \textbf{Threshold} & & & \textbf{$p$-Value}\\
+  \multicolumn{2}{c}{\textbf{Database + Phenotype}} & & & & & & & \\
+  \cline{1-2}
+  & \textbf{Subgroup} & \textbf{Pathway} & \textbf{Bonferonni} & \textbf{SNP1} & \textbf{Locus1} & \textbf{SNP2} & \textbf{Locus2} & \textbf{Epistasis} \\
+  & & & \textbf{Threshold} & & & & & \textbf{$p$-Value}\\
   \hline
- \multicolumn{2}{l}{\textbf{KEGG + Height}} & & & & & \\
- & African & & & & & \\
- & British.Ran4000 & & & & & \\
- & Caribbean & & & & & \\
- & Chinese & & & & & \\
- & Indian & & & & & \\
- & Pakistani & & & & & \\ 
+ \multicolumn{2}{l}{\textbf{KEGG + Height}} & & & & & & & \\
+ & African & Phosphatidylinositol & 7.95E-11 & 10:134411966 & INPP5A & 21:43586397 & Intergenic & 2.81e-11 \\
+ & & Signaling System & & & (Intronic) & & & \\
+ & & & & & & & & \\
+ \multicolumn{2}{l}{\textbf{REACTOME + Height}} & & & &  & & & \\
+ & African & Signaling By & 4.63E-11 & 8:13404303 & DLC1 & 18:71234727 & Intergenic & 3.41E-11\\
+ & & Rho GTPases & & & (Intronic) & & & \\
+ & & & & & &  & & \\
+ \multicolumn{2}{l}{\textbf{REACTOME + BMI}} & & &  & & & & \\
  
+ %REACTOME_SIGNALING_BY_RHO_GTPASES 664 9.553e-06 2635 1079940985 4.630e-11 1
+ %  8    8:13404303   18   18:71234727     0.342092       43.937    3.409e-11
+%FBXO15 18:71234727 intergenic_downstream,dist=505861,NA 371116
+%LOC100505817 18:71234727 intergenic_upstream,dist=217603,NA 371116
+%DLC1 8:13404303 intronic,NA,NA 196106
+
+ & African & & & &  & & & \\
+ & & & & & &  & & \\
    \hline
 \end{tabular}
-\caption[TBD]{\textbf{Results from original and size-restricted hypergeometric tests in BMI + African, per gene.}. Attached Excel sheets contain lists of the hypergeometric -$\log_{10}$ $p$-values for both the original and size-restricted gene count analyses per gene in both the KEGG and REACTOME + BMI + African combinations. Differences in the -$\log_{10}$ $p$-values between the original and size-restricted hypergeometric analyses are also shown per gene. Plots of these differences in -$\log_{10}$ $p$-values can be seen in Figure.}
+\caption[TBD]{\textbf{Results from original and size-restricted hypergeometric tests in BMI + African, per gene.}. Attached Excel sheets contain lists of the hypergeometric -$\log_{10}$ $p$-values for both the original and size-restricted gene count analyses per gene in both the KEGG and REACTOME + BMI + African combinations. Differences in the -$\log_{10}$ $p$-values between the original and size-restricted hypergeometric analyses are also shown per gene. Plots of these differences in -$\log_{10}$ $p$-values can be seen in Figure.
+
+KEGG + BMI had no pairwise epistatic interactions that crossed a subgroup's Bonferonni Threshold.}
 \label{InterPath-Supp-Table-PairwiseEpi-Results}
 \end{table}
+\end{landscape}
 \clearpage
 
 
