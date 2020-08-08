@@ -1296,10 +1296,12 @@ British.Ran4000 & 6490 & 7.704E-05 & 1 & 0.015 & 0.001 & 4 & 0.062 & 0.010 & 52 
 %ABCG1 21:43586397 intergenic_downstream,dist=33402,NA 366872
 %UMODL1 21:43586397 intergenic_upstream,dist=23292,NA 366872
 
+
+\setlength{\footskip}{3.5cm}
 \begin{landscape}
 \begin{table}[ht]
 \centering
-\hspace*{-1.5cm}
+\hspace*{-2.5cm}
 \begin{tabular}{ccccccccc}
   \hline
   \multicolumn{2}{c}{\textbf{Database + Phenotype}} & & & & & & & \\
@@ -1317,14 +1319,25 @@ British.Ran4000 & 6490 & 7.704E-05 & 1 & 0.015 & 0.001 & 4 & 0.062 & 0.010 & 52 
  & & & & & &  & & \\
  \multicolumn{2}{l}{\textbf{REACTOME + BMI}} & & &  & & & & \\
  
- %REACTOME_SIGNALING_BY_RHO_GTPASES 664 9.553e-06 2635 1079940985 4.630e-11 1
+ & African & Glycerophospholipid & 1.49E-10 & 12:14693353 &  PLBD1 & 4:129890790 & SCLT1 & 1.24E-10 \\
+ & & Biosynthesis & & & (Intronic) & & (Intronic) & \\
+ & & Assembly of the & 4.04E-10 & 22:35797833 &  MCM5 & 22:23489042 & RAB36 & 3.55E-10 \\
+ & & Pre Replicative Complex & & & (Intronic) & & (Intronic) & \\
+ & & Integrin Cell & 8.38E-11 & 17:45320514 &  ITGB3 & 6:25897169  & Intergenic & 7.85E-11 \\
+ & & Surface Interactions & & & (Downstream) & & & \\ 
+ 
+
+%REACTOME_SIGNALING_BY_RHO_GTPASES 664 9.553e-06 2635 1079940985 4.630e-11 1
  %  8    8:13404303   18   18:71234727     0.342092       43.937    3.409e-11
 %FBXO15 18:71234727 intergenic_downstream,dist=505861,NA 371116
 %LOC100505817 18:71234727 intergenic_upstream,dist=217603,NA 371116
 %DLC1 8:13404303 intronic,NA,NA 196106
 
- & African & & & &  & & & \\
- & & & & & &  & & \\
+%REACTOME_GLYCEROPHOSPHOLIPID_BIOSYNTHESIS 818 9.695e-08 897 335749219 1.489e-10 1
+%  12   12:14693353    4   4:129890790     0.260162      41.4135    1.238e-10
+%PLBD1 12:14693353 intronic,NA,NA   250370
+%SCLT1 4:129890790 intronic,NA,NA   97181
+
    \hline
 \end{tabular}
 \caption[TBD]{\textbf{Results from original and size-restricted hypergeometric tests in BMI + African, per gene.}. Attached Excel sheets contain lists of the hypergeometric -$\log_{10}$ $p$-values for both the original and size-restricted gene count analyses per gene in both the KEGG and REACTOME + BMI + African combinations. Differences in the -$\log_{10}$ $p$-values between the original and size-restricted hypergeometric analyses are also shown per gene. Plots of these differences in -$\log_{10}$ $p$-values can be seen in Figure.
@@ -1333,6 +1346,7 @@ KEGG + BMI had no pairwise epistatic interactions that crossed a subgroup's Bonf
 \label{InterPath-Supp-Table-PairwiseEpi-Results}
 \end{table}
 \end{landscape}
+\setlength{\footskip}{1cm}
 \clearpage
 
 
