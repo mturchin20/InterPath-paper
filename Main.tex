@@ -456,15 +456,15 @@ with $(\wh\omega^2_{0},\wh\nu^2_{0},\wh\tau^2_{0})$ being the MQS estimates of $
 %Add note about MAPIT-R being in an R package at the end of Lorin's material?
 \subsection{MAPIT-R Analyses}
 
-MAPIT-R analyses were conducted by using code built on the modeling and testing described above. SNPs were mapped to pathways by first being mapped to genes, which were then aggregated together determined by gene-based definitions of pathways (ie REACTOME or KEGG pathways were defined by the genes that encompassed them). KEGG and REACTOME pathway definitions were downloaded and extracted from the Broad Institute's MSigDB `C2: Curated Gene Sets' collection of pathways (\url{https://www.gsea-msigdb.org/gsea/msigdb/collections.jsp#C2}; \citep{Liberzon2011}). SNPs were annotated using Annovar vXX \citep{Wang2010a} and were then mapped to a given gene if they were exonic, intronic, in the 5' and 3' UTRs, and 20kb upstream or downstream of the gene. Prior to analysis phenotypes were already adjusted for age, sex, and assessment center (see `Phenotypes'). The top 10 `local' principal components (PCs) were included as covariates during the MAPIT-R analyses; `local' here refers to conducting PCA within each subgroup individually versus a `global' set up of conducting PCA on every subgroup together jointly. Note that due to numerical precision limitations within the R package `CompQuadForm', which is used to calculate final $p$-values, $p$-values < 1E-10 default to 0; so for any analysis presented here where required, $p$-values that were returned as 0 were reassigned as 1E-10 or presented as `< 1E-10'. MAPIT-R R code and a tutorial are available \href{https://github.com/mturchin20/MAPITR}{here} or via \href{}{CRAN}.   
--snp/gene/pathway matching
--note about mapit-r code now in R package.
-
-
+MAPIT-R analyses were conducted by using code built on the modeling and testing described above. SNPs were mapped to pathways by first being mapped to genes, which were then aggregated together determined by gene-based definitions of pathways (ie REACTOME or KEGG pathways were defined by the genes that encompassed them). KEGG and REACTOME pathway definitions were downloaded and extracted from the Broad Institute's MSigDB `C2: Curated Gene Sets' collection of pathways (\url{https://www.gsea-msigdb.org/gsea/msigdb/collections.jsp#C2}; \citep{Liberzon2011}). SNPs were annotated using Annovar \citep{Wang2010a} and were then mapped to a given gene if they were exonic, intronic, in the 5' and 3' UTRs, and 20kb upstream or downstream of the gene. Prior to analysis phenotypes were already adjusted for age, sex, and assessment center (see `Phenotypes'). The top 10 `local' principal components (PCs) were included as covariates during the MAPIT-R analyses; `local' here refers to conducting PCA within each subgroup individually versus a `global' set up of conducting PCA on every subgroup together jointly. Note that due to numerical precision limitations within the R package `CompQuadForm', which is used to calculate final $p$-values, $p$-values < 1E-10 default to 0; so for any analysis presented here where required, $p$-values that were returned as 0 were reassigned as 1E-10 or presented as `< 1E-10'. MAPIT-R R code and a tutorial are available on Github (\url{https://github.com/mturchin20/MAPITR}) or CRAN (\url{}).
 
 \subsection{Hypergeometric enrichment analyses}
 
+Hypergeometric analyses were conducted by counting the number of times a given gene is present among the MAPIT-R significant pathways for a given database + phenotype + subgroup combination versus the number of times the gene is present among the background distribution of pathways from the given database. For the size-restriction analyses, pathways with greater than 1,000 SNPs were removed from both the MAPIT-R significant pathways and the pathway database. 1,000 SNPs were chosen as the threshold  
+
 \subsection{Proteasome gene family `leave-one-out' analyses}
+
+Proteasome gene family `leave-one-out' analyses were conducted by 
 
 \subsection{MAPIT-R results versus genetic variation analyses}
 \subsubsection{Pathway-level IBS analyses}
