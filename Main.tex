@@ -460,7 +460,7 @@ MAPIT-R analyses were conducted by using code built on the modeling and testing 
 
 \subsection{Hypergeometric enrichment analyses}
 
-Hypergeometric analyses were conducted by counting the number of times a given gene is present among the MAPIT-R significant pathways for a given database + phenotype + subgroup combination versus the number of times the gene is present among the background distribution of pathways from the given database. For the size-restriction analyses, pathways with greater than 1,000 SNPs were removed from both the MAPIT-R significant pathways and the pathway database. 1,000 SNPs was chosen as the threshold as a balance between total number of pathways removed and distance from the max SNP pathway sizes across all subgroups jointly (see Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs} for relationship between MAPIT-R $p$-value and SNP pathway sizes for all database + phenotype + subgroup combinations).
+Hypergeometric analyses were conducted by counting the number of times a given gene is present among the MAPIT-R significant pathways for a given database + phenotype + subgroup combination versus the number of times the gene is present among the background distribution of pathways from the given database. For the size-restriction analyses, pathways with greater than 1,000 SNPs were removed from both the MAPIT-R significant pathways and the pathway database. 1,000 SNPs was chosen as the threshold as a balance between total number of pathways removed and distance from the max SNP pathway sizes across all subgroups jointly (see Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs} for relationship between MAPIT-R $p$-value and SNP pathway sizes for all database + phenotype + subgroup combinations). However, for a number of size thresholds ranging from 500 to 1,500 SNPs, the proteasome gene families still stand out as being either the most improved in terms of more significant enrichment $p$-values after the size restriction step or one of the most improved collection of genes (Supplementary Figure \ref{InterPath-Supp-Figure-Hypergeoemtric-SizeThresholds}).
 
 \subsection{Proteasome gene family `leave-one-out' analyses}
 
@@ -938,6 +938,23 @@ PSMF & 22 & Host Interactions of HIV Factors & 1315 & 1.00E-01 \\
 \end{figure}
 \clearpage
 
+\setlength{\footskip}{3cm}
+\begin{figure}[htbp]
+\centering
+\vspace*{-2cm}
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_PC1Loading_AllPaths_vs2_noHLA.png}
+\caption[TBD]{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, all pathways}. Caption continued on next page.}
+\label{InterPath-Supp-Figure-Hypergeoemtric-SizeThresholds}
+\end{figure}
+\clearpage
+\setlength{\footskip}{1cm}
+
+\addtocounter{figure}{-1}
+\begin{figure} [t!]
+  \caption{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, all pathways}. The figure shows the proportion of SNPs within a given pathway that are strongly loaded on local PC1 plotted against that pathway's MAPIT-R -$\log_{10}$ $p$-value. All pathway sizes were used for this analysis. `Local' here refers to PCA having been conducted within-subgroup. SNPs are designated as `strongly loaded' on local PC1 if they are within the 10\% tails of the loading SNP score distributions. We observe that there is no significantly positive relationship between MAPIT-R $p$-values and proportion of SNPs that are strongly loaded on PC1 for any pathway database + phenotype + subgroup combination.}
+\label{InterPath-Supp-Figure-Hypergeoemtric-SizeThresholds-Caption}
+\end{figure}
+\clearpage
 
 
 
