@@ -469,9 +469,11 @@ Pathway-level IBS analyses were conducted by first calculating per-pathway IBS m
 
 \subsubsection{RFMix analyses}
 
-RFMix analyses were conducted within the African subgroup by running local ancestry estimation with RFMix v2.03 \citep{Maples2013} and the 1000 Genomes CEU and YRI populations \citep{Genomes2015} as outgroups. Pathway-level metrics of local ancestry were then calculated by first taking the average local African estimates across all individuals within the subgroup for a given genomic region, and then averaging these subgroup-wide values across all portions of the genome a pathway overlaps. This produce a single per-pathway metic of local African ancestry that was then used to compare against MAPIT-R $p$-values. 
+RFMix analyses were conducted within the African subgroup by running local ancestry estimation with RFMix v2.03 \citep{Maples2013} and the 1000 Genomes CEU and YRI populations \citep{Genomes2015} as outgroups. Pathway-level metrics of local ancestry were then calculated by first taking the average local African estimates across all individuals within the subgroup for a given genomic region, and then averaging these subgroup-wide values across all portions of the genome a pathway overlaps. This produce a single per-pathway metric of local African ancestry that was then used to compare against MAPIT-R $p$-values. 
 
 \subsubsection{PC1 SNP loading analyses}
+
+PC1 SNP loading analyses were conducted by first calculating per-pathway metrics of PC1 SNP loading proportions. This was done first by deriving PC1 loading scores per SNP by projecting all SNPs back onto the `local' PC calculated previously within each subgroup and determining the distribution of local PC1 loading scores across all SNPs. SNPs within the 2.5\% tails of these local PC1 loading score distributions were then considered `strongly loaded' on PC1. Pathway-level metrics were then determined by calculating the proportion of SNPs within each pathway that are `strongly loaded'. Lastly, these per-pathway proportions of `strong loaded' local PC1 SNPs were then compared against each pathway's MAPIT-R $p$-value. Using percent thresholds of 5\% or 10\% in the tails of the local PC1 loading score distributions to determine `strongly loaded' SNPs did not change the results (data not shown).
 
 \section{URLs}\label{InterPath-URLs}
 
