@@ -456,7 +456,7 @@ with $(\wh\omega^2_{0},\wh\nu^2_{0},\wh\tau^2_{0})$ being the MQS estimates of $
 %Add note about MAPIT-R being in an R package at the end of Lorin's material?
 \subsection{MAPIT-R Analyses}
 
-MAPIT-R analyses were conducted by using code built on the modeling and testing described above. SNPs were mapped to pathways by first being mapped to genes, which were then aggregated together determined by gene-based definitions of pathways (ie REACTOME or KEGG pathways were defined by the genes that encompassed them). KEGG and REACTOME pathway definitions were downloaded and extracted from the Broad Institute's MSigDB `C2: Curated Gene Sets' collection of pathways (\url{https://www.gsea-msigdb.org/gsea/msigdb/collections.jsp#C2}; \citep{Liberzon2011}). SNPs were annotated using Annovar \citep{Wang2010a} and were then mapped to a given gene if they were exonic, intronic, in the 5' and 3' UTRs, and 20kb upstream or downstream of the gene. Prior to analysis phenotypes were already adjusted for age, sex, and assessment center (see `Phenotypes'). The top 10 `local' principal components (PCs) were included as covariates during the MAPIT-R analyses; `local' here refers to conducting PCA within each subgroup individually versus a `global' set up of conducting PCA on every subgroup together jointly. Note that due to numerical precision limitations within the R package `CompQuadForm', which is used to calculate final $p$-values, $p$-values < 1E-10 default to 0; so for any analysis presented here where required, $p$-values that were returned as 0 were reassigned as 1E-10 or presented as `< 1E-10'. MAPIT-R R code and a tutorial are available on Github (\url{https://github.com/mturchin20/MAPITR}) or CRAN (\url{}).
+MAPIT-R analyses were conducted by using code built on the modeling and testing described above. SNPs were mapped to pathways by first being mapped to genes, which were then aggregated together determined by the gene-based definitions of pathways the KEGG and REACTOME databases provide. KEGG and REACTOME pathway definitions were downloaded and extracted from the Broad Institute's MSigDB `C2: Curated Gene Sets' collection of pathways (\url{https://www.gsea-msigdb.org/gsea/msigdb/collections.jsp#C2}; \citep{Liberzon2011}). SNPs were annotated using Annovar \citep{Wang2010a} and were then mapped to a given gene if they were exonic, intronic, in the 5' and 3' UTRs, and 20kb upstream or downstream of the gene. Phenotypes were adjusted for age, sex, and assessment center (see `Phenotypes'). The top 10 `local' principal components (PCs) were included as covariates during the MAPIT-R analyses; `local' here refers to conducting PCA within each subgroup individually versus a `global' set up of conducting PCA on every subgroup together jointly. Note that due to numerical precision limitations within the R package `CompQuadForm', which is used to calculate final $p$-values, $p$-values < 1E-10 default to 0; therefore for any analysis presented here where required, $p$-values that were returned as 0 were reassigned as 1E-10 or presented as `< 1E-10'. MAPIT-R R code and a tutorial are available on Github (\url{https://github.com/mturchin20/MAPITR}) or CRAN (\url{}).
 
 \subsection{Hypergeometric enrichment analyses}
 
@@ -469,11 +469,11 @@ Pathway-level IBS analyses were conducted by first calculating per-pathway IBS m
 
 \subsubsection{RFMix analyses}
 
-RFMix analyses were conducted within the African subgroup by running local ancestry estimation with RFMix v2.03 \citep{Maples2013} and the 1000 Genomes CEU and YRI populations \citep{Genomes2015} as outgroups. Pathway-level metrics of local ancestry were then calculated by first taking the average local African estimates across all individuals within the subgroup for a given genomic region, and then averaging these subgroup-wide values across all portions of the genome a pathway overlaps. This produce a single per-pathway metric of local African ancestry that was then used to compare against MAPIT-R $p$-values. 
+RFMix analyses were conducted within the African subgroup by running local ancestry estimation with RFMix v2.03 \citep{Maples2013} and the 1000 Genomes CEU and YRI populations \citep{Genomes2015} as outgroups. Pathway-level metrics of local ancestry were then calculated by first taking the average local African estimates across all individuals within the subgroup for a given genomic region and then averaging these subgroup-wide values across all portions of the genome a pathway overlaps. This produced a single per-pathway metric of local African ancestry that was then used to compare against MAPIT-R $p$-values. Running two iterations of the RFMix EM step to refine local ancestry estimates did not change the results.
 
 \subsubsection{PC1 SNP loading analyses}
 
-PC1 SNP loading analyses were conducted by first calculating per-pathway metrics of PC1 SNP loading proportions. This was done first by deriving PC1 loading scores per SNP by projecting all SNPs back onto the `local' PC calculated previously within each subgroup and determining the distribution of local PC1 loading scores across all SNPs. SNPs within the 2.5\% tails of these local PC1 loading score distributions were then considered `strongly loaded' on PC1. Pathway-level metrics were then determined by calculating the proportion of SNPs within each pathway that are `strongly loaded'. Lastly, these per-pathway proportions of `strong loaded' local PC1 SNPs were then compared against each pathway's MAPIT-R $p$-value. Using percent thresholds of 5\% or 10\% in the tails of the local PC1 loading score distributions to determine `strongly loaded' SNPs did not change the results (data not shown).
+PC1 SNP loading analyses were conducted by first calculating per-pathway metrics of PC1 SNP loading proportions. This was done by: a) deriving PC1 loading scores per SNP by projecting all SNPs back onto the `local' PCA space previously calculated within each subgroup b) determining the distribution of local PC1 loading scores across all SNPs and designating SNPs within the 2.5\% tails of these distributions as `strongly loaded' on PC1 and c) calculating the proportion of SNPs per pathway that are designated as local PC1 `strongly loaded'. Given these per-pathway proportions of `strongly loaded' local PC1 SNPs then, comparisons where made between them and each pathway's MAPIT-R $p$-value. Using percent thresholds of 5\% or 10\% in the tails of the local PC1 loading score distributions to determine `strongly loaded' SNPs did not change the results (data not shown).
 
 \section{URLs}\label{InterPath-URLs}
 
@@ -709,17 +709,17 @@ After this first round of QC procedures, we then proceeded to impute our current
 \textbf{Proteasome} & \textbf{SNPs} & \textbf{REACTOME} & \textbf{SNPs} & \textbf{MAPIT-R} \\
  \textbf{Gene Family} & & \textbf{Pathway} & & \textbf{$p$-Value} \\
   \hline
-PSMA & 17 & Activation of NF-KappaB in B Cells & 465 & 1.86e-05  \\
-PSMB & 74 & Antigen Processing Cross Presentation & 850 & 3.96e-05 \\
-PSMC & 20 & Assembly of the Pre-Replicative Complex & 331 & 3.29e-05 \\
-PSMD & 62 & Cell Cycle Checkpoints & 670 & 5.78e-06 \\
-PSME & 15 & Cell Cycle & 2459 & 1.29e-06 \\
-PSMF & 16 & Cell Cycle Mitotic & 1906 & 4.51e-05 \\
- & & Downstream Signaling Events of the B Cell Receptor & 745 & 1.19e-05 \\
- & & HIV Infection & 1346 & 7.53e-07 \\
- & & Host Interactions of HIV Factors & 963 & 7.52e-06 \\
- & & M G1 Transition & 458 & 3.19e-06 \\
- & & Regulation of Apoptosis & 564 & 1.22e-05 \\
+PSMA & 17 & Activation of NF-KappaB in B Cells & 465 & 1.86E-05  \\
+PSMB & 74 & Antigen Processing Cross Presentation & 850 & 3.96E-05 \\
+PSMC & 20 & Assembly of the Pre-Replicative Complex & 331 & 3.29E-05 \\
+PSMD & 62 & Cell Cycle Checkpoints & 670 & 5.78E-06 \\
+PSME & 15 & Cell Cycle & 2459 & 1.29E-06 \\
+PSMF & 16 & Cell Cycle Mitotic & 1906 & 4.51E-05 \\
+ & & Downstream Signaling Events of the B Cell Receptor & 745 & 1.19E-05 \\
+ & & HIV Infection & 1346 & 7.53E-07 \\
+ & & Host Interactions of HIV Factors & 963 & 7.52E-06 \\
+ & & M G1 Transition & 458 & 3.19E-06 \\
+ & & Regulation of Apoptosis & 564 & 1.22E-05 \\
   \hline
 \end{tabular}}}
 \caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME + BMI + African}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI + African subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
@@ -1323,7 +1323,7 @@ British.Ran4000 & 6490 & 7.704E-05 & 1 & 0.015 & 0.001 & 4 & 0.062 & 0.010 & 52 
   & & & \textbf{Threshold} & & & & & \textbf{$p$-Value}\\
   \hline
  \multicolumn{2}{l}{\textbf{KEGG + Height}} & & & & & & & \\
- & African & Phosphatidylinositol & 7.95E-11 & 10:134411966 & INPP5A & 21:43586397 & Intergenic & 2.81e-11 \\
+ & African & Phosphatidylinositol & 7.95E-11 & 10:134411966 & INPP5A & 21:43586397 & Intergenic & 2.81E-11 \\
  & & Signaling System & & & (Intronic) & & & \\
  & & & & & & & & \\
  \multicolumn{2}{l}{\textbf{REACTOME + Height}} & & & &  & & & \\
