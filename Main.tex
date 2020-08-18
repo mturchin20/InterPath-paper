@@ -343,7 +343,18 @@ To investigate this hypothesis, we tested whether pathways that covered greater 
 
 
 
-One other possibility is that PC space is revealing an important pattern of how population structure heterogeneity among subgroups affects MAPIT-R results, but the same PC space itself may not be sensitive enough for a pathway-level analysis. Another representation of population structure that may be more ancestry-specific, and therefore more sensitive, is local admixture ancestry estimates. 
+One other possibility is that PC space, while revealing a possible connection between how population structure heterogeneity among subgroups may affect MAPIT-R results, is not sensitive enough for a pathway-level analysis. Another representation of population structure that may be more ancestry-specific, and therefore more sensitive, is local ancestry estimates. Because the African subgroup contains admixture, we can test whether pathways that have a greater proportion of local African ancestry are more likely to have lower MAPIT-R $p$-values. To do this, we ran RFMix \citep{Maples2013} on the African subgroup with the 1000 Genomes CEU and YRI \citep{Genomes2015} populations as outgroups to calculate per individual estimates of local African ancestry, and we then derived subgroup-wide average local ancestry estimates across all individuals. To get final pathway-level metrics of local ancestry, we calculated the average overlap a pathway has with regions of the genome that have local African ancestry. We then tested each pathway's proportion of local African ancestry against its MAPIT-R $p$-value to see if this more ancestry-specific form of population structure has a relationship to the large number of MAPIT-R results the African subgroup has. However, as Figure \ref{InterPath-Main-Figure-RFMix-African-REACTOME} and Supplementary Figure \ref{InterPath-Supp-Figure-RFMix-African-KEGG} show, we find no relationship between a pathway's proportion of local African ancestry and its MAPIT-R $p$-value.
+
+
+
+Comparing these We did not identify a significant relationship between a pathway's MAPIT-R $p$-value and the average amount of local African ancestry in that pathway in the African subgroup  (Figure \ref{InterPath-Main-Figure-RFMix-African-REACTOME} and Supplementary Figure \ref{InterPath-Supp-Figure-RFMix-African-KEGG}).    
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_RFMix_vs2_African_REACTOME_noHLA.png}
+\caption[TBD]{\textbf{MAPIT-R results vs. proportion of local African ancestry per REACTOME pathway}. The figure shows MAPIT-R $p$-values per pathway plotted against each pathway's proportion of local African ancestry for each REACTOME (a) height and (b) BMI analysis. Proportions of African ancestry are shown on the $x$-axis and MAPIT-R $p$-values are shown on the $y$-axis. African ancestry proportions were calculated per individual by using RFMix with the 1000 Genomes CEU and YRI populations as outgroups and then genome-wide averages were taken across the subgroup. Per pathway proportions of African ancestry were derived by taking the average of the subgroup-wide estimates of African ancestry across the regions of the genome that each pathway overlapped.}
+\label{InterPath-Main-Figure-RFMix-African-REACTOME}
+\end{figure}
 
 
 as SNPs that
