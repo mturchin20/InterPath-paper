@@ -302,14 +302,7 @@ We detect one cluster of pathways in the KEGG results  with divergent statistica
 
 One important consideration of our results is that the diverse non-European human ancestries we are analyzing have smaller sample sizes than do recent GWA studies in individuals of European ancestry. Given the large sample size of the white British individuals in the UK BioBank, we decided to test whether the subsampled subgroup of this cohort---if similar in size to the sample sizes of non-European ancestry cohorts in the UK Biobank---would be large enough to be representative of the genetic variation in the full white British sample of over 470,000 individuals. Specifically, we sampled four additional, non-overlapping random subgroups of 4,000 British individuals and tested whether MAPIT-R scans in those random samples were consistent with our results for the original British 4,000 subgroup.  We also constructed larger non-overlapping British subsamples of 10,000 individuals to investigate how our results might vary with sample size. In total we analyzed five non-overlapping sets of 4,000 British individuals and five non-overlapping sets of 10,000 British individuals. 
 
-When applying MAPIT-R to these replicates of 4,000 and 10,000 white British individuals, we find that our results are similar to what was observed in the original British 4,000 subgroup (Figures \ref{InterPath-Main-Figure-Barplots-KEGG}-\ref{InterPath-Main-Figure-Heatplots-KEGG}): limited numbers of significant pathways across all database-phenotype-replicate subgroup combinations, as well as limited overlap of significant pathways between replicates (Supplementary Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}\textcolor{blue}{-}\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}). We also ran analyses with permuted phenotypes to once again test the null model of no marginal epistasis between pathways and the rest of the genome, and once more we find very low FDRs (Supplementary Tables \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}). 
-statement about how this suggests that there is some level of consistency across the British subsamples ma
-
-Connecting these results back to results from analyzing non-European subgroups , these findings suggest that the large numbers of pathways significantly enriched for epistatic signals with the rest of the genome that we observe in the African subgroup are likely to be representative of MAPIT-R results applied to a larger sample. 
-
-
-
-
+When applying MAPIT-R to these replicates of 4,000 and 10,000 white British individuals, we find that our results are similar to what was observed in the original British 4,000 subgroup (Figures \ref{InterPath-Main-Figure-Barplots-KEGG}-\ref{InterPath-Main-Figure-Heatplots-KEGG}): limited numbers of significant pathways across all database-phenotype-replicate subgroup combinations, as well as limited overlap of significant pathways between replicates (Supplementary Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}\textcolor{blue}{-}\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}). We also ran analyses with permuted phenotypes to once again test the null model of no marginal epistasis between pathways and the rest of the genome, and once more we find very low FDRs (Supplementary Tables \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}). Within the British subgroups then, there appears to be consistency across these random samples despite their lower sample sizes compared to full cohort of over 470,000 individuals.
 
 \subsection{Identifying drivers of  pathway-level marginal epistatic signals}
 
@@ -343,6 +336,14 @@ Figure \ref{InterPath-Main-Figure-Proteasome-Panels}\textcolor{blue}{b} shows th
 %...is Interferon-$\gamma$ (IFN-$\gamma$) inducible and...
 
 \subsection{Investigating the relationship between subgroup genetic variation and signals of marginal epistasis}
+
+
+
+
+
+
+
+
 
 As described earlier, MAPIT-R analyses of the African subgroup in the UKB produced the majority of significant MAPIT-R results. There may be multiple reasons why we see heterogeneity across ancestries in our MAPIT-R scans for pathways with significant signals of epistasis with the rest of the genome. One possibility is that MAPIT-R's performance is influenced by the genomic backgrounds of different ancestries -- greater levels of genetic variation in one ancestry may allow for more effective identification of candidate non-linear genetic interactions. It is also well-established that African-ancestry populations often contain the highest levels of within-population genetic variation compared to other global populations \citep{International2010,Genomes2015,Mallick2016}. Therefore, we decided to investigate whether there were any associations between measures of genetic variation within and between subgroups we analyzed and the number of significant MAPIT-R pathway-level results identified in each subgroup.
 
