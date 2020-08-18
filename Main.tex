@@ -337,6 +337,28 @@ Figure \ref{InterPath-Main-Figure-Proteasome-Panels}\textcolor{blue}{b} shows th
 
 \subsection{Investigating the relationship between subgroup genetic variation and signals of marginal epistasis}
 
+MAPIT-R analyses of the African subgroup in the UKB produced the majority of significant MAPIT-R results, but why is there such a difference in significant pathways between the African subgroup and the rest of the subgroups we analyzed? One possibility may be related to heterogeneity in population structure among the UKB subgroups. We observed in our analyses that the African subgroup had much larger eigenvalue proportions of variance explained (PVE) among the top 10 local principal components from the earlier PCA (Figure \ref{InterPath-Main-Figure-Eigenvalues}). As Figure \ref{InterPath-Main-Figure-Eigenvalues} displays, we in fact observe an ordering of our subgroups on PC1 that relatively matches the ordering of which subgroups have the most significant MAPIT-R pathways. Perhaps what is driving this large number of results in the African subgroup then is a greater ability to capture and remove population structure than compared to the other subgroups. Epistatic signals tend to be more subtle, so being able to remove a larger proportion of unrelated background noise might lead to more effective identification of epistatic signals. 
+
+To investigate this hypothesis, we tested whether pathways that covered greater proportions of the genome that were `highly loaded' on PC1 lead to more significant MAPIT-R $p$-values. Here, we define a genomic region as being `highly loaded' on PC1 if it contains any SNP that exists in the 2.5\% tails of the PC1 SNP loading score distributions for a given subgroup (see Materials and Methods). Therefore, we calculated the proportion of SNPs for each pathway that fall in these PC1 loading score tails, and compared these proportions against each pathway's MAPIT-R $p$-value. As (Supplementary) Figure \ref{InterPath-Supp-Figure-PC1Loading-AllPaths} shows however, we find no significant relationship between a pathway's proportion of SNPs that are `highly loaded' on PC1 and that pathway's MAPIT-R $p$-value. This lack of a relationship may be a result of our limited sample sizes or indicative that there is no connection between MAPIT-R results and cryptic population structure as represented by principal component space.
+
+
+
+One other possibility is that PC space is revealing an important pattern of how population structure heterogeneity among subgroups affects MAPIT-R results, but the same PC space itself may not be sensitive enough for a pathway-level analysis. Another representation of population structure that may be more ancestry-specific, and therefore more sensitive, is local admixture ancestry estimates. 
+
+
+as SNPs that
+
+ouolocal PCA
+
+(Supplementary Figure \ref{InterPath-Supp-Figure-PC1Loading-AllPaths}
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=.45]{Images/Main/InterPath_Main_Figure_Eigenvalues_vs2.png}
+\caption[TBD]{\textbf{Distribution of top 10 local principal component PVEs across UKB subgroups}. The plot shows the PVE of each of the top 10 local PCs for each of our UKB population subgroups. Local here continues to refer to calculating PCs within each subgroup separately (versus calculating PCs jointly across all subgroups together). We observe that the distribution of PC1 PVEs among the subgroups appears to match the distribution of total number of genome-wide significant MAPIT-R pathways we identify per subgroup (see Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and  Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}).}
+\label{InterPath-Main-Figure-Eigenvalues}
+\end{figure}
 
 
 
@@ -345,7 +367,7 @@ Figure \ref{InterPath-Main-Figure-Proteasome-Panels}\textcolor{blue}{b} shows th
 
 
 
-As described earlier, MAPIT-R analyses of the African subgroup in the UKB produced the majority of significant MAPIT-R results. There may be multiple reasons why we see heterogeneity across ancestries in our MAPIT-R scans for pathways with significant signals of epistasis with the rest of the genome. One possibility is that MAPIT-R's performance is influenced by the genomic backgrounds of different ancestries -- greater levels of genetic variation in one ancestry may allow for more effective identification of candidate non-linear genetic interactions. It is also well-established that African-ancestry populations often contain the highest levels of within-population genetic variation compared to other global populations \citep{International2010,Genomes2015,Mallick2016}. Therefore, we decided to investigate whether there were any associations between measures of genetic variation within and between subgroups we analyzed and the number of significant MAPIT-R pathway-level results identified in each subgroup.
+MAPIT-R analyses of the African subgroup in the UKB produced the majority of significant MAPIT-R results. There may be multiple reasons why we see heterogeneity across ancestries in our MAPIT-R scans for pathways with significant signals of epistasis with the rest of the genome. One possibility is that MAPIT-R's performance is influenced by the genomic backgrounds of different ancestries -- \textcolor{red}{greater levels of genetic variation in one ancestry may allow for more effective identification of candidate non-linear genetic interactions}. It is also well-established that African-ancestry populations often contain the highest levels of within-population genetic variation compared to other global populations \citep{International2010,Genomes2015,Mallick2016}. Therefore, we decided to investigate whether there were any associations between measures of genetic variation within and between subgroups we analyzed and the number of significant MAPIT-R pathway-level results identified in each subgroup.
 
 First we examined genome-wide levels of genetic variation between and within the subgroups of the UK Biobank we analyzed using F\textsubscript{ST} (Figure \ref{InterPath-Main-Figure-Fst}\textcolor{blue}{a}). Between groups, we find pairwise F\textsubscript{ST} values within the range of previous estimates from globally distributed datasets \citep{Ramachandran2005,Weir2005,Henn2011,Wang2012,Sugden2016}, with the African and Caribbean subgroups being the most differentiated from each other. Within each subgroup, we calculated the mean nucleotide divergence per site (Figure \ref{InterPath-Main-Figure-Fst}\textcolor{blue}{b}). We find that the Chinese and African subgroups have the largest mean nucleotide divergences, .308 and .302 respectively. However, the number of significant signals of pathway-level  epistasis with the rest of the genome identified by MAPIT-R (FIGURE CITE/TABLE CITE) in a given subgroup do not seem qualitatively correlated with that subgroup's  genetic variation. 
 
@@ -381,12 +403,7 @@ Since neither whole-genome or pathway-level metrics of genetic variation appear 
 
 We tested whether cryptic patterns of genetic variation, such as genetic variation patterns observed in principal component space, might be correlated with MAPIT-R $p$-values. Principal components could capture more multidimensional patterns of variation and provide direction on which areas of the genome to further explore for epistatic interactions. We examined the  proportion of variance explained (PVE) of the top 10 local PCs for each subgroup to see if there were any patterns that aligned with the number of significant MAPIT-R results we observe per subgroup. Figure \ref{InterPath-Main-Figure-Eigenvalues} demonstrates that PVE explained by the first principal component in each ancestry has a distribution across ancestries qualitatively similar to the rank order of significant MAPIT-R results per subgroup.
 
-\begin{figure}[htb]
-\centering
-\includegraphics[scale=.45]{Images/Main/InterPath_Main_Figure_Eigenvalues_vs2.png}
-\caption[TBD]{\textbf{Distribution of top 10 local principal component PVEs across UKB subgroups}. The plot shows the PVE of each of the top 10 local PCs for each of our UKB population subgroups. Local here continues to refer to calculating PCs within each subgroup separately (versus calculating PCs jointly across all subgroups together). We observe that the distribution of PC1 PVEs among the subgroups appears to match the distribution of total number of genome-wide significant MAPIT-R pathways we identify per subgroup (see Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and  Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}).}
-\label{InterPath-Main-Figure-Eigenvalues}
-\end{figure}
+
 
 Next, we compared the proportion of SNPs that are strongly loaded on PC1 within a given pathway against that pathway's MAPIT-R $p$-value. If the cryptic structure represented by PC1 is driving the African MAPIT-R results, then we might expect pathways with more SNPs that are strongly loaded on PC1 to have more significant MAPIT-R $p$-values as well. To assess this, we projected every SNP back onto the local PC space derived for the MAPIT-R analyses, and defined a SNP as `strongly loaded' on PC1 if it had a loading score within the 2.5\% tails of the full PC1 loading score distribution. We then found the proportion of `strongly loaded' SNPs that were present in every pathway to have a final pathway-level metric. However, after comparing these values to MAPIT-R $p$-values, we once again find no relationship. Testing MAPIT-R pathway $p$-values against each pathway's proportion of `strongly loaded' PC1 SNPs shows no significantly positive relationship across any of our database-phenotype-subgroup combinations (Supplementary Figure \ref{InterPath-Supp-Figure-PC1Loading-AllPaths}). 
 
