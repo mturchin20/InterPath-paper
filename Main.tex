@@ -176,6 +176,17 @@ sramachandran@brown.edu}
 
 Genome-wide association (GWA) studies have identified thousands of significant genetic associations in humans across a number of complex traits. However, the majority of these studies focus on linear additive relationships between genotypic and phenotypic variation. Epistasis, or non-additive genetic interactions, is often regarded as a major driver of both complex trait architecture and evolution in multiple model organisms; yet, this same phenomenon is not considered to be a significant factor underlying human complex traits. There are two possible reasons for this assumption. First, most large GWA studies are conducted solely with European cohorts, therefore limiting our understanding of broad-sense heritability for many complex traits to just one ancestry group. Second, current epistasis mapping methods commonly identify significant genetic interactions by exhaustively searching across all possible pairs of SNPs; in these frameworks, estimated epistatic effects size are often small and power can be low due to the multiple testing burden. Here, we present a case study that uses a novel region-based mapping approach to analyze functionally interacting sets of variants for the presence of epistatic effects (``MArginal ePIstasis Test for Regions'', or \href{https://github.com/mturchin20/MAPITR}{MAPIT-R}) across six diverse subgroups within the UK BioBank (African, British, Caribbean, Chinese, Indian, and Pakistani). Even with limited sample sizes, we find a total of 245 pathways within the KEGG and REACTOME databases that are significantly enriched for epistasis in the complex traits height and body mass index (BMI), with 67\% of these pathways being detected within the African subgroup. We find that BMI commonly produces greater evidence for epistatic interactions than height, and that, amongst the BMI significant pathways in the African subgroup, components of the proteasome are enriched for epistatic interactions. Further, using proteasome gene families, we show how to use a region-based `leave-one-out' approach to localize pathway-level interaction signals to more specific genes. Overall, our results indicate that non-European ancestry populations may be better suited for the discovery of epistatic signals in human complex traits---further underscoring the need for publicly available, biobank-sized datasets of diverse non-European individuals.
 
+
+
+
+
+
+
+
+
+
+
+
 \end{abstract}
 
 \linenumbers
@@ -190,6 +201,20 @@ Marginal epistasis refers to the total interaction effects of a single variant w
 \citet{Crawford2017a} implemented MAPIT, and focused on analyzing only single variants one at a time for marginal signals of epistasis with other variants in the rest of the genome. As with GWA studies though, identifying marginal signals of association is difficult to interpret biologically. One successful way GWA studies have addressed this issue is by expanding GWA frameworks to aggregate across multiple SNP-level association signals and test for enrichment of associations in genes and pathways \citep{Subramanian2005,Cantor2010,Wang2010b,Lee2012,Carbonetto2013,Mooney2014,Gamazon2015,de2016,Nakka2016,Zhu2018,Sun2019,Cheng2020}. In this study, our objective is to expand the marginal epistasis framework to test for enrichment of epistatic signals in user-specified groups of variants (e.g., genes, pathways), producing biologically interpretable scans for epistasis while reducing the multiple testing burden. We implement this new approach in ``MArginal ePIstasis Test for Regions'', which we refer to as MAPIT-R (\url{https://github.com/mturchin20/MAPITR}).
 
 We apply MAPIT-R to genotype data and the quantitative measurements of standing height and body mass index (BMI) using pathways from the KEGG and REACTOME databases \citep{Liberzon2011} and samples from multiple human ancestry ``subgroups'' (British, African, Caribbean, Chinese, Indian, and Pakistani)  in the UK BioBank (UKB) dataset \citep{Sudlow2015}. We analyze multiple non-European human ancestries to study how varying genomic backgrounds might reveal epistatic interactions. We find over 200 pathways that have significant marginal epistatic interactions with the rest of the genome across both our phenotypes and UKB datasets. We then investigate the distribution of these significant epistatic signals across ancestries, traits, and pathways, which suggests future directions to prioritize for studies of epistasis in human complex traits.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Results}\label{InterPath-Results}
 
