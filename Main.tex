@@ -4,7 +4,7 @@
 
 
 
-\documentclass[12pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 %\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -151,6 +151,15 @@
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 
+%2020091 Additions from Lorin's main edits
+%\topmargin 0.0cm
+%\oddsidemargin 0.5cm
+%\evensidemargin 0.5cm
+%\textwidth 16cm 
+%\textheight 21cm
+
+%\pagestyle{myheadings}
+
 \title{Pathway Analysis within Multiple Human Ancestries Reveals Novel Signals for Epistasis in Complex Traits}
 \author[1,2,$\dag$]{Michael C. Turchin}
 \author[1,3]{Gregory Darnell}
@@ -170,9 +179,37 @@ sramachandran@brown.edu}
 \begin{document}
 %\setlength{\footskip}{0cm}
 
-\maketitle
+%\maketitle
 
-\begin{abstract}\label{InterPath-Abstract}
+\linenumbers
+\begin{flushleft}
+{\Large
+\textbf{Pathway Analysis within Multiple Human Ancestries Reveals Novel Signals for Epistasis in Complex Traits}
+}
+\newline
+% Insert Author names, affiliations and corresponding author email.
+\\
+Michael C. Turchin\textsuperscript{1,2,$\dagger$}, Gregory Darnell\textsuperscript{2,3}, Lorin Crawford\textsuperscript{2,4,5,*}, and Sohini Ramachandran\textsuperscript{1,2,*,$\dagger$} 
+\\
+\bigskip
+\bf{1} Department of Ecology and Evolutionary Biology, Brown University, Providence, RI, USA
+\\
+\bf{2} Center for Computational Molecular Biology, Brown University, Providence, RI, USA
+\\
+\bf{3} Institute for Computational and Experimental Research in Mathematics (ICERM), Brown University, Providence, RI, USA
+\\
+\bf{4} Department of Biostatistics, Brown University, Providence, RI, USA
+\\
+\bf{5} Center for Statistical Sciences, Brown University, Providence, RI, USA
+\\
+\bigskip
+*: Authors Contributed Equally\\
+$\dagger$ Corresponding E-mail: michael\_turchin@brown.edu; sramachandran@brown.edu 
+\end{flushleft}
+
+
+%\begin{abstract}\label{InterPath-Abstract}
+\section*{Abstract}\label{InterPath-Abstract} 
 
 Genome-wide association (GWA) studies have identified thousands of significant genetic associations in humans across a number of complex traits. However, the majority of these studies focus on linear additive relationships between genotypic and phenotypic variation. Epistasis, or non-additive genetic interactions, is often regarded as a major driver of both complex trait architecture and evolution in multiple model organisms; yet, this same phenomenon is not considered to be a significant factor underlying human complex traits. There are two possible reasons for this assumption. First, most large GWA studies are conducted solely with European cohorts, therefore limiting our understanding of broad-sense heritability for many complex traits to just one ancestry group. Second, current epistasis mapping methods commonly identify significant genetic interactions by exhaustively searching across all possible pairs of SNPs; in these frameworks, estimated epistatic effects size are often small and power can be low due to the multiple testing burden. Here, we present a case study that uses a novel region-based mapping approach to analyze functionally interacting sets of variants for the presence of epistatic effects (``MArginal ePIstasis Test for Regions'', or \href{https://github.com/mturchin20/MAPITR}{MAPIT-R}) across six diverse subgroups within the UK BioBank (African, British, Caribbean, Chinese, Indian, and Pakistani). Even with limited sample sizes, we find a total of 245 pathways within the KEGG and REACTOME databases that are significantly enriched for epistasis in the complex traits height and body mass index (BMI), with 67\% of these pathways being detected within the African subgroup. We find that BMI commonly produces greater evidence for epistatic interactions than height, and that, amongst the BMI significant pathways in the African subgroup, components of the proteasome are enriched for epistatic interactions. Further, using proteasome gene families, we show how to use a region-based `leave-one-out' approach to localize pathway-level interaction signals to more specific genes. Overall, our results indicate that non-European ancestry populations may be better suited for the discovery of epistatic signals in human complex traits---further underscoring the need for publicly available, biobank-sized datasets of diverse non-European individuals.
 
@@ -187,11 +224,9 @@ Genome-wide association (GWA) studies have identified thousands of significant g
 
 
 
-\end{abstract}
+%\end{abstract}
 
-\linenumbers
-
-\section{Introduction}\label{InterPath-Introduction}
+\section*{Introduction}\label{InterPath-Introduction}
 
 Genome-wide association (GWA) studies are a powerful tool for identifying statistical associations between genetic variation and complex traits, and have identified over 70,000 statistically significant such associations in humans alone \citep{Buniello2019}. The most common approach for conducting GWA studies is testing for linear associations between genetic variants and a trait of interest, where estimated effect sizes represent an additive relationship between number of copies of a single-nucleotide polymorphism and the phenotypic state. While this approach has produced many additive associations, it is unable to detect nonlinear associations---such as epistasis between genetic variants---that also contribute to a trait's genetic architecture. Epistasis produces non-additive effects on a given trait and is a well-established phenomenon in a number of model organisms \citep{Lehner2006,Rowe2008,Shao2008,Flint2009,Costanzo2010,He2010,Jarvis2011,Pettersson2011,Bloom2013,Monnahan2015}. Epistasis has also been suggested as a major driver of both complex trait genetic architecture and evolution \citep{Carlborg2004,Carlborg2006,Martin2007,Phillips2008,Moore2009,Zuk2012,Jones2014,Mackay2014}. Still, there remains skepticism regarding the importance of epistasis in human complex traits and diseases \citep{Hill2008,Crow2010,Yang2010,Aschard2012,Powell2013,Maki-Tanila2014,Wood2014,Yang2015}. For example, multiple studies have suggested  that complex trait variation can be explained mainly with additive effects \citep{Hill2008,Crow2010,Maki-Tanila2014} (though the framework for doing so has been questioned \citep{Huang2016}). In initial work to locate the  ``missing heritability'' in the human genome -- the discrepancy between larger pedigree-based trait heritability estimates and smaller SNP-based trait heritability estimates using the first wave of human GWAS results \citep{Maher2008,Manolio2009,Eichler2010} -- it was suggested that epistasis may account for a significant portion of this observed discrepancy \citep{Slatkin2009,Zuk2012,Hemani2013}. However recent studies have suggested that, for at least some complex traits,  epistasis is unlikely to be a major contributor to total trait heritability \citep{Yang2015}.
 
@@ -216,7 +251,7 @@ We apply MAPIT-R to genotype data and the quantitative measurements of standing 
 
 
 
-\section{Results}\label{InterPath-Results}
+\section*{Results}\label{InterPath-Results}
 
 %MT Org notes:
 %
@@ -226,7 +261,7 @@ We apply MAPIT-R to genotype data and the quantitative measurements of standing 
 %-'SR: also, do those describe why the pathway numbers change? Is it due to SNPs in pathways changing with QC procedures? I think that needs to be clarified in the caption.' for BritReps table (cmmnt)
 %-grgSmltnFgr?
 
-\subsection{Overview of the MAPIT-R Model}\label{InterPath-Results-MAPITRModel}
+\subsection*{Overview of the MAPIT-R Model}\label{InterPath-Results-MAPITRModel}
 
 Here we provide an overview of the MAPIT-R model, a multiple-variant extension of the single-variant MAPIT framework (\citet{Crawford2017a}; see Materials and Methods for a full description). The objective of MAPIT-R is to test whether there are any non-zero genetic interaction effects between a group of variants $\textbf{R}$ and \textbf{any} other variant remaining in the genome ($\textbf{R}^C$). The typical GWA linear form of this model is:  
 \begin{equation}\label{Overview1}
@@ -245,7 +280,7 @@ where \textbf{K}, \textbf{M}, and \textbf{G} are all random effects that follow 
 
 Given this new, implementable form of our model, we return to our test of interest: whether there are any non-zero interaction effects between the variants in \textbf{R} and the rest of the genome. This is equivalent to testing whether the variance component $\sigma$ is equal to 0, or restated, to testing a null hypothesis of $H_0: \sigma = 0$. To estimate and test $\sigma$, we follow the same procedure as MAPIT and employ MQS, an approach that is based on the method of moments and produces estimates that are mathematically identical to the Haseman-Elston (HE) cross-product regression \citep{Haseman1972, Zhou2017} (see Materials and Methods). MQS allows us to jointly estimate the set of variance components $(\phi^{2}, \omega^{2}, \sigma^{2}, \tau^{2})$ in a computationally tractable manner, which are needed to both properly test $\sigma$ and be recalculated for every pathway. Given these variance component estimates per pathway then, we are able to test $\sigma$ and get final $p$-values using the Davies method \citep{Crawford2017a,Davies1980}.  
 
-\subsection{Analyses of the African subgroup identify many pathways with significant marginal epistasis}\label{InterPath-Results-PathwayEpistasis}
+\subsection*{Analyses of the African subgroup identify many pathways with significant marginal epistasis}\label{InterPath-Results-PathwayEpistasis}
 
 We applied MAPIT-R to height and BMI to detect pathways from the KEGG and REACTOME databases \citep{Liberzon2011} with significant epistatic interactions with the rest of the genome, using genotype data and diverse individuals from the UK Biobank. We focused on height and BMI due to the extensive work that has already been done investigating the broad-sense and narrow-sense heritabilities of these traits \citep{Yang2010,Elks2012,Visscher2012,Finucane2015,Speed2017,Wainschtein2019}, and we used the KEGG and REACTOME databases because they cover an extensive range of biological processes as well as pathway-sizes (measured in SNP counts). We analyzed six different human ancestry subgroups that we extracted from the UKB: African (n=3111), British (n=3848, chosen randomly from 442,688), Caribbean (n=3833), Chinese (n=1448), Indian (n=5077), and Pakistani (n=1581) (Supplementary Figure \ref{InterPath-Supp-Figure-UKB-subgroups-PCAPlot} and Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Subgroups were extracted based on self-identified ancestry and individuals were filtered using standard quality control (QC) procedures (see Materials and Methods for details).
 
@@ -297,7 +332,7 @@ The specific pathways with significant marginal epistasis signals in the African
 
 The African subgroup has neither the largest sample size nor the largest number of SNPs passing QC filters, yet has the most significant epistatic signals of any subgroup analyzed  (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). To investigate the performance of MAPIT-R, we conducted simulation studies under a range of genetic architectures that explore different proportions of epistatic effects, and we find that MAPIT-R both controls type 1 error accurately and has power to detect pathway level marginal epistasis (Supplementary Figure XX). We also ran versions of MAPIT-R using permuted phenotypes and further find that MAPIT-R operates appropriately when epistasis is absent between any pathway and the rest of the genome (Supplementary Figures \ref{InterPath-Supp-Figure-perm1-QQPlots-AllPaths} and \ref{InterPath-Supp-Figure-10perms-pValHists}); these permutations allow us to investigate MAPIT-R's false discovery rates and we observe values only as high as 1.5\% across our different database-phenotype-subgroup combinations at multiple significance thresholds (Supplementary Table \ref{InterPath-Supp-Table-AllPops-FDRs}).
 
-\subsection{Non-African subgroups reveal additional pathways with significant marginal epistasis}
+\subsection*{Non-African subgroups reveal additional pathways with significant marginal epistasis}
 
 In our analyses of the British, Chinese, Caribbean, Indian, and Pakistani subgroups, we identify 80 pathways in total that have significant marginal epistatic interactions across the different database-phenotype combinations. Many of these other pathways overlap with the set of significant results from the African subgroup, though there is less overlap among other non-African subgroups (Figure \ref{InterPath-Main-Figure-Barplots-KEGG}\& Supplementary Figure \ref{InterPath-Supp-Figure-Heatplots-REACTOME}). For example, in the KEGG-height analysis, six of the seven pathways with significant marginal epistasis identified using the Caribbean subgroup overlap with those identified using the African subgroup, and seven of the eight pathways with significant marginal epistasis identified using the Chinese subgroup overlap with those identified using the African subgroup. However, there is no overlap in results from our marginal epistasis scans at the pathway level between the Chinese and Caribbean subgroups.
 
@@ -310,7 +345,7 @@ In our analyses of the British, Chinese, Caribbean, Indian, and Pakistani subgro
 
 The pathways with significant marginal epistasis identified in both the African and Caribbean subgroups are related to the cellular signaling and heart condition patterns; the genes in these overlapping pathways include multiple kinases (e.g, {\emph{MAPK1}}, {\emph{ROCK1}}, {\emph{PRKCB}}, {\emph{PAK1}}) and calcium channel proteins (e.g., {\emph{CACNA1S}}, {\emph{CACNA1D}}) (Supplementary Tables \ref{InterPath-Supp-Table-MAPITR-TopPathway-Overlap} \& \ref{InterPath-Supp-Table-MAPITR-TopPathway-GeneCounts-Overlap}). In contrast, the pathways with significant marginal epistasis identified in both the African and Chinese subgroups are pathways related to the immune system and contain multiple HLA loci (e.g., {\emph{HLA-DRA}}, {\emph{HLA-DRB1}}, {\emph{HLA-A}}, {\emph{HLA-B}})  (Supplementary Tables \ref{InterPath-Supp-Table-MAPITR-TopPathway-Overlap} \& \ref{InterPath-Supp-Table-MAPITR-TopPathway-GeneCounts-Overlap}). Recent work has also suggested that Han Chinese may be particularly enriched for interactions involving HLA loci \citep{Deng2020}. 
 
-\subsection{Stronger signals of pathway-level marginal epistasis underlie BMI than height}
+\subsection*{Stronger signals of pathway-level marginal epistasis underlie BMI than height}
 
 In our analyses of marginal epistasis at the pathway-level in the African subgroup, we find that BMI contains more significant pathways than does height, in both the KEGG and REACTOME databases (Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}). While there is a strong correlation between height and BMI MAPIT-R -$\log_{10}$ $p$-values (.758 in KEGG and .716 in REACTOME), there are consistently more pathways with significant marginal epistasis signals in BMI (Figure \ref{InterPath-Main-Figure-MAPITR-PhenoComps-African}). These results align with pedigree-based heritability estimates for each trait, which have indicated narrow-sense heritability is around 0.8 in height and between 0.4 and 0.6 in BMI \citep{Elks2012,Visscher2012}. Taken together, these estimates suggest that non-additive effects may play a greater role in BMI than height, as observed here. 
 
@@ -323,13 +358,13 @@ In our analyses of marginal epistasis at the pathway-level in the African subgro
 
 We detect one cluster of pathways in the KEGG results  with divergent statistical evidence for marginal epistasis in height versus BMI (Figure \ref{InterPath-Main-Figure-MAPITR-PhenoComps-African}). The four highlighted pathways in Figure \ref{InterPath-Main-Figure-MAPITR-PhenoComps-African} are signaling and oncogenic pathways: sorted by increasing $p$-value, these are Small Cell Lung Cancer ($p$-value: 3.20E-10), ErbB Signaling Pathway ($p$-value: 3.30E-07), Non Small Cell Lung Cancer ($p$-value: 1.64E-06), and T Cell Receptor Signaling Pathway ($p$-value: 6.12E-06). Two sets of gene families appear in all four of these pathways: (Supplementary Table \ref{InterPath-Supp-Table-MAPITR-PhenoComps-African-GeneCounts}): phosphatidylinositol 3-kinases (PIKs) and the AKT serine/threonine-protein kinases. One gene in this group, \emph{AKT2}, has been associated with multiple monogenic disorders of glucose metabolism, including severe insulin resistance and diabetes, and severe fasting hypoinsulinemic hypoglycemia \citep{George2004,Manning2017,Latva-Rasku2018}, representing a possible driver of this cluster. Additionally, we observe multiple oncogenic pathways among top epistatic signals, and other recent work suggests epistasis may be an important feature of cancer \citep{Wang2014,Jamshidi2015,Fang2019,Li2019,Ma2019}. 
 
-\subsection{Testing variability in MAPIT-R results with British replicate subpopulations}
+\subsection*{Testing variability in MAPIT-R results with British replicate subpopulations}
 
 One important consideration of our results is that the diverse non-European human ancestries we are analyzing have smaller sample sizes than do recent GWA studies in individuals of European ancestry. Given the large sample size of the white British individuals in the UK BioBank, we decided to test whether the subsampled subgroup of this cohort---if similar in size to the sample sizes of non-European ancestry cohorts in the UK Biobank---would be large enough to be representative of the genetic variation in the full white British sample of over 470,000 individuals. Specifically, we sampled four additional, non-overlapping random subgroups of 4,000 British individuals and tested whether MAPIT-R scans in those random samples were consistent with our results for the original British 4,000 subgroup.  We also constructed larger non-overlapping British subsamples of 10,000 individuals to investigate how our results might vary with sample size. In total we analyzed five non-overlapping sets of 4,000 British individuals and five non-overlapping sets of 10,000 British individuals. 
 
 When applying MAPIT-R to these replicates of 4,000 and 10,000 white British individuals, we find that our results are similar to what was observed in the original British 4,000 subgroup (Figures \ref{InterPath-Main-Figure-Barplots-KEGG}-\ref{InterPath-Main-Figure-Heatplots-KEGG}): limited numbers of significant pathways across all database-phenotype-replicate subgroup combinations, as well as limited overlap of significant pathways between replicates (Supplementary Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}\textcolor{blue}{-}\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}). We also ran analyses with permuted phenotypes to once again test the null model of no marginal epistasis between pathways and the rest of the genome, and once more we find very low FDRs (Supplementary Tables \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}). Within the British subgroups then, there appears to be consistency across these random samples despite their lower sample sizes compared to full cohort of over 470,000 individuals.
 
-\subsection{Identifying drivers of  pathway-level marginal epistatic signals}
+\subsection*{Identifying drivers of  pathway-level marginal epistatic signals}
 
 We were also interested in identifying which genomic regions were driving pathway-level significant signals of epistasis with the rest of the genome in our MAPIT-R analyses. To explore this, we first wanted to identify whether there were any genes or gene families that appeared to be particularly enriched amongst our significant MAPIT-R pathways. We then wanted to test whether such genes or gene families were drivers of the original MAPIT-R pathway-level signals. To accomplish this first part, we conducted two types of hypergeometric tests for enrichment to identify genes that were significantly overrepresented amongst the pathways that showed significant marginal epistatic interactions with the rest of the genome (Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}\textcolor{blue}{a-d}). 
 
@@ -357,28 +392,6 @@ Figure \ref{InterPath-Main-Figure-Hypergeometric-RestrictedComps-African-BMI} sh
 To further investigate whether the proteasome drives pathway-level signals of marginal epistasis, we first collected all the significant MAPIT-R pathways from the REACTOME-BMI-African analysis that contained every proteasome gene family. Next we identified whether any of these individual gene families ({\emph{PSMA}}, {\emph{PSMB}}, {\emph{PSMC}}, {\emph{PSMD}}, {\emph{PSME}}, and {\emph{PSMF}}) had particularly strong effects on the original MAPIT-R $p$-values. To accomplish this, we removed each gene family one at a time from the original significant pathways and then conducted MAPIT-R analyses using these `one-gene-family-removed' pathways; we then compared these new MAPIT-R $p$-values to each pathway's original, full MAPIT-R $p$-value and identified whether the removal of any particular gene families lead to large changes across multiple pathways.  
 
 Figure \ref{InterPath-Main-Figure-Proteasome-Panels}\textcolor{blue}{b} shows the results from this analysis, where we find that the \emph{PSMA} and \emph{PSME} gene families have potentially biologically interpretable patterns of $p$-value changes across multiple REACTOME pathways. For the \emph{PSMA} gene family, we observe almost no examples of where removing these genes leads to an increase in the MAPIT-R $p$-value. The \emph{PSMA} gene family encodes the outer two rings of the core four rings in the main 20S core. These outer, `alpha' rings are gates which control the entry of proteins into the core of the proteasome. Unlike the regulatory caps or the inner `beta' rings encoded by the \emph{PSMB} family, which contain protease active sites, the outer rings have no known major catalytic functionality. This lack of catalytic activity then may explain the lack of increase in MAPIT-R $p$-values, or lack of information lost, when \emph{PSMA} genes are removed from analysis. For the the \emph{PSME} gene family, we find some of the largest increases in MAPIT-R $p$-values across multiple REACTOME pathways. The \emph{PSME} gene family encodes an alternative regulatory particle, 11S PA28$\alpha\beta$, that can also associate with the 20S core; these alternative isoforms, which can contain either two 11S caps or one 11S and one 19S cap (a `hybrid proteasome'), are part of a subset of proteasomes known as immunoproteasomes. Immunoproteasomes are specialized isoforms that are expressed at higher levels in hematopoietic cells and are more directly associated with immunity-related processes such as MHC antigen presentation \citep{Ferrington2012,Basler2013,McCarthy2015}. PA28$\alpha\beta$ itself is an Interferon-$\gamma$ (IFN-$\gamma$) inducible regulatory protein that operates in a ubiquitin-independent manner and increases production of a specific subset of MHC-1 presenting antigens \citep{Groettrup1996,de2011,Raule2014,Murata2018}. Additionally, recent work has more directly connected \emph{PSME} genes as potential upregulators of NF$\kappa$B \citep{Sun2016,Mitchell2019}. Therefore these connections to immune activity may explain why removal of the \emph{PSME} gene family affects pathways related to NF$\kappa$B, B cells, HIV, and apoptosis more than other proteasome gene families. Lastly, conducting these `leave-one-out' MAPIT-R analyses in the other remaining UKB subgroups, we observe that removing the \emph{PSME} gene family often leads to some of the largest increases in MAPIT-R $p$-values across all of the gene family and REACTOME pathways combinations analyzed; this is consistent with our results of \emph{PSME} being potentially important to proteasome epistatic interactions with the rest of the genome (Supplementary Figures \ref{InterPath-Supp-Figure-Prot-Heatplots-African}-\textcolor{blue}{f}). 
-
-\subsection{Investigating the relationship between subgroup genetic variation and signals of marginal epistasis}
-
-MAPIT-R analyses of the African subgroup in the UKB produced the majority of significant MAPIT-R results, but why is there such a difference in significant pathways between the African subgroup and the rest of the subgroups we analyzed? One possibility may be related to heterogeneity in population structure among the UKB subgroups. We observed in our analyses that the African subgroup had much larger eigenvalue proportions of variance explained (PVE) among the top 10 local principal components from the earlier PCA (Figure \ref{InterPath-Main-Figure-Eigenvalues}). As Figure \ref{InterPath-Main-Figure-Eigenvalues} displays, we in fact observe an ordering of our subgroups on PC1 that relatively matches the ordering of which subgroups have the most significant MAPIT-R pathways. Perhaps what is driving this large number of results in the African subgroup then is a greater ability to capture and remove population structure than compared to the other subgroups. Epistatic signals tend to be more subtle, so being able to remove a larger proportion of unrelated background noise might lead to more effective identification of epistatic signals. 
-
-To investigate this hypothesis, we tested whether pathways that covered greater proportions of the genome that were `highly loaded' on PC1 lead to more significant MAPIT-R $p$-values. Here, we define a genomic region as being `highly loaded' on PC1 if it contains any SNP that exists in the 2.5\% tails of the PC1 SNP loading score distributions for a given subgroup (see Materials and Methods). Therefore, we calculated the proportion of SNPs for each pathway that fall in these PC1 loading score tails, and compared these proportions against each pathway's MAPIT-R $p$-value. As (Supplementary) Figure \ref{InterPath-Supp-Figure-PC1Loading-AllPaths} shows however, we find no significant relationship between a pathway's proportion of SNPs that are `highly loaded' on PC1 and that pathway's MAPIT-R $p$-value. This lack of a relationship may be a result of our limited sample sizes or indicative that there is no connection between MAPIT-R results and cryptic population structure as represented by principal component space.
-
-\begin{figure}[htb]
-\centering
-\includegraphics[scale=.45]{Images/Main/InterPath_Main_Figure_Eigenvalues_vs2.png}
-\caption[TBD]{\textbf{Distribution of top 10 local principal component PVEs across UKB subgroups}. The plot shows the PVE of each of the top 10 local PCs for each of our UKB population subgroups. Local here continues to refer to calculating PCs within each subgroup separately (versus calculating PCs jointly across all subgroups together). We observe that the distribution of PC1 PVEs among the subgroups appears to match the distribution of total number of genome-wide significant MAPIT-R pathways we identify per subgroup (see Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and  Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}).}
-\label{InterPath-Main-Figure-Eigenvalues}
-\end{figure}
-
-One other possibility is that PC space, while revealing a possible connection between how population structure heterogeneity among subgroups may affect MAPIT-R results, is not sensitive enough for a pathway-level analysis. Another representation of population structure that may be more ancestry-specific, and therefore more sensitive, is local ancestry estimates. Because the African subgroup contains admixture, we can test whether pathways that have a greater proportion of local African ancestry are more likely to have lower MAPIT-R $p$-values. To do this, we ran RFMix \citep{Maples2013} on the African subgroup with the 1000 Genomes CEU and YRI \citep{Genomes2015} populations as outgroups to calculate per individual estimates of local African ancestry, and we then derived subgroup-wide average local ancestry estimates across all individuals. To get final pathway-level metrics of local ancestry, we calculated the average overlap a pathway has with regions of the genome that have local African ancestry. We then tested each pathway's proportion of local African ancestry against its MAPIT-R $p$-value to see if this more ancestry-specific form of population structure has a relationship to the large number of MAPIT-R results the African subgroup has. However, as Figure \ref{InterPath-Main-Figure-RFMix-African-REACTOME} and Supplementary Figure \ref{InterPath-Supp-Figure-RFMix-African-KEGG} show, we find no relationship between a pathway's proportion of local African ancestry and its MAPIT-R $p$-value.
-
-\begin{figure}[htb]
-\centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_RFMix_vs2_African_REACTOME_noHLA.png}
-\caption[TBD]{\textbf{MAPIT-R results vs. proportion of local African ancestry per REACTOME pathway}. The figure shows MAPIT-R $p$-values per pathway plotted against each pathway's proportion of local African ancestry for each REACTOME (a) height and (b) BMI analysis. Proportions of African ancestry are shown on the $x$-axis and MAPIT-R $p$-values are shown on the $y$-axis. African ancestry proportions were calculated per individual by using RFMix with the 1000 Genomes CEU and YRI populations as outgroups and then genome-wide averages were taken across the subgroup. Per pathway proportions of African ancestry were derived by taking the average of the subgroup-wide estimates of African ancestry across the regions of the genome that each pathway overlapped.}
-\label{InterPath-Main-Figure-RFMix-African-REACTOME}
-\end{figure}
 
 \section{Discussion}\label{InterPath-Discussion}
 
@@ -1374,38 +1387,20 @@ And we analyzed multiple human ancestries due to the ongoing imbalance of publis
 
 %Dumitrescu2011,Stranger2012,Carlson2013,Kerminen2019,Rosenberg2019,
 
-\textcolor{blue}{MT: not updated yet}
+\subsection{Investigating the relationship between subgroup genetic variation and signals of marginal epistasis}
 
+MAPIT-R analyses of the African subgroup in the UKB produced the majority of significant MAPIT-R results, but why is there such a difference in significant pathways between the African subgroup and the rest of the subgroups we analyzed? One possibility may be related to heterogeneity in population structure among the UKB subgroups. We observed in our analyses that the African subgroup had much larger eigenvalue proportions of variance explained (PVE) among the top 10 local principal components from the earlier PCA (Figure \ref{InterPath-Main-Figure-Eigenvalues}). As Figure \ref{InterPath-Main-Figure-Eigenvalues} displays, we in fact observe an ordering of our subgroups on PC1 that relatively matches the ordering of which subgroups have the most significant MAPIT-R pathways. Perhaps what is driving this large number of results in the African subgroup then is a greater ability to capture and remove population structure than compared to the other subgroups. Epistatic signals tend to be more subtle, so being able to remove a larger proportion of unrelated background noise might lead to more effective identification of epistatic signals. 
 
-
-
-
-MAPIT-R analyses of the African subgroup in the UKB produced the majority of significant MAPIT-R results. There may be multiple reasons why we see heterogeneity across ancestries in our MAPIT-R scans for pathways with significant signals of epistasis with the rest of the genome. One possibility is that MAPIT-R's performance is influenced by the genomic backgrounds of different ancestries -- \textcolor{red}{greater levels of genetic variation in one ancestry may allow for more effective identification of candidate non-linear genetic interactions}. It is also well-established that African-ancestry populations often contain the highest levels of within-population genetic variation compared to other global populations \citep{International2010,Genomes2015,Mallick2016}. Therefore, we decided to investigate whether there were any associations between measures of genetic variation within and between subgroups we analyzed and the number of significant MAPIT-R pathway-level results identified in each subgroup.
-
-First we examined genome-wide levels of genetic variation between and within the subgroups of the UK Biobank we analyzed using F\textsubscript{ST} (Figure \ref{InterPath-Main-Figure-Fst}\textcolor{blue}{a}). Between groups, we find pairwise F\textsubscript{ST} values within the range of previous estimates from globally distributed datasets \citep{Ramachandran2005,Weir2005,Henn2011,Wang2012,Sugden2016}, with the African and Caribbean subgroups being the most differentiated from each other. Within each subgroup, we calculated the mean nucleotide divergence per site (Figure \ref{InterPath-Main-Figure-Fst}\textcolor{blue}{b}). We find that the Chinese and African subgroups have the largest mean nucleotide divergences, .308 and .302 respectively. However, the number of significant signals of pathway-level  epistasis with the rest of the genome identified by MAPIT-R (FIGURE CITE/TABLE CITE) in a given subgroup do not seem qualitatively correlated with that subgroup's  genetic variation. 
+To investigate this hypothesis, we tested whether pathways that covered greater proportions of the genome that were `highly loaded' on PC1 lead to more significant MAPIT-R $p$-values. Here, we define a genomic region as being `highly loaded' on PC1 if it contains any SNP that exists in the 2.5\% tails of the PC1 SNP loading score distributions for a given subgroup (see Materials and Methods). Therefore, we calculated the proportion of SNPs for each pathway that fall in these PC1 loading score tails, and compared these proportions against each pathway's MAPIT-R $p$-value. As (Supplementary) Figure \ref{InterPath-Supp-Figure-PC1Loading-AllPaths} shows however, we find no significant relationship between a pathway's proportion of SNPs that are `highly loaded' on PC1 and that pathway's MAPIT-R $p$-value. This lack of a relationship may be a result of our limited sample sizes or indicative that there is no connection between MAPIT-R results and cryptic population structure as represented by principal component space.
 
 \begin{figure}[htb]
 \centering
-\hspace*{-2cm}
-\includegraphics[scale=.5]{Images/Main/InterPath_Main_Figure_Fst_vs3.png}
-\caption[TBD]{\textbf{Between- and within-UKB subgroup genetic variation estimates}. (a) The heatplot shows pairwise F\textsubscript{ST} values between each of our UKB population subgroups using the genome-wide SNP data. (b) The table shows the average nucleotide divergence per site for each presented subgroup.}
-\label{InterPath-Main-Figure-Fst}
+\includegraphics[scale=.45]{Images/Main/InterPath_Main_Figure_Eigenvalues_vs2.png}
+\caption[TBD]{\textbf{Distribution of top 10 local principal component PVEs across UKB subgroups}. The plot shows the PVE of each of the top 10 local PCs for each of our UKB population subgroups. Local here continues to refer to calculating PCs within each subgroup separately (versus calculating PCs jointly across all subgroups together). We observe that the distribution of PC1 PVEs among the subgroups appears to match the distribution of total number of genome-wide significant MAPIT-R pathways we identify per subgroup (see Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and  Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}).}
+\label{InterPath-Main-Figure-Eigenvalues}
 \end{figure}
 
-%These global patterns, however, do not match the distribution of total number of significant MAPIT-R pathways observed per-ancestry in Figure \ref{InterPath-Main-Figure-Barplots-KEGG} and Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}.
-
-To test whether localized signatures of genetic variation influence our MAPIT-R results, we calculated a pathway-level metric of within-subgroup genetic variation, the mean pairwise proportion of identity-by-state (IBS) per pathway;  specifically, for each pathway, we calculated the proportion of IBS between every pair of individuals within a given subgroup using the SNPs in that pathway and then took the average of this proportion across all pairwise comparisons.  Comparing this per-pathway metric of within-subgroup genetic variation against each pathway's MAPIT-R $p$-value then, we find that there is no significant relationship between the two (Figure \ref{InterPath-Main-Figure-IBS-African} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}). Figure \ref{InterPath-Main-Figure-IBS-African} shows the analysis specifically for the African subgroup in the REACTOME database for both height and BMI, but this lack of relationship is observed for the majority of our pathway database-phenotype-UKB subgroup combinations (Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}). 
-
-%And in directly comparing these analyses between subgroups, we observe that specific differences between pathways are similar across subgroups; subgroups are shifted by their average level of mean proportion of pairwise IBS per pathway, but otherwise no clear ancestry-specific patterns are seen. (Figure \ref{InterPath-Main-Figure-IBS-AllPopComps-KEGG} \& Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPopComps-REACTOME}). 
-
-\begin{figure}[htb]
-\centering
-\includegraphics[scale=.35]{Images/Main/InterPath_Main_Figure_IBS_vs4_African_REACTOME_noHLA.png}
-\caption[TBD]{\textbf{MAPIT-R results vs. pathway-level genetic diversity in the African subgroup and REACTOME database}. The figure shows MAPIT-R $p$-values per pathway plotted against each pathway's mean pairwise IBS proportions for the African subgroup REACTOME (a) height and (b) BMI analyses. Mean pairwise IBS proportions are shown on the $x$-axis and MAPIT-R $p$-values are shown on the $y$-axis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results for each database-phenotype-subgroup combination can be found in Supplementary Figure \ref{InterPath-Supp-Figure-IBS-AllPops}.}
-\label{InterPath-Main-Figure-IBS-African}
-\end{figure}
-
-Since neither whole-genome or pathway-level metrics of genetic variation appear to drive MAPIT-R results, we instead looked at more direct estimates of African ancestry rather than genetic variation as a proxy for African ancestry. Specifically, we ran RFMix \citep{Maples2013} on our African subgroup with the 1000 Genomes CEU and YRI \citep{Genomes2015} populations as outgroups to calculate per individual estimates of local African ancestry and then derived subgroup-wide average local ancestry estimates across all individuals. By comparing the average overlap a pathway has on African ancestry regions of the genome against that pathway's MAPIT-R $p$-value, we might identify regions of the genome that are both driving the MAPIT-R results but also doing so in an African-ancestry specific way. We did not identify a significant relationship between a pathway's MAPIT-R $p$-value and the average amount of local African ancestry in that pathway in the African subgroup  (Figure \ref{InterPath-Main-Figure-RFMix-African-REACTOME} and Supplementary Figure \ref{InterPath-Supp-Figure-RFMix-African-KEGG}).    
+One other possibility is that PC space, while revealing a possible connection between how population structure heterogeneity among subgroups may affect MAPIT-R results, is not sensitive enough for a pathway-level analysis. Another representation of population structure that may be more ancestry-specific, and therefore more sensitive, is local ancestry estimates. Because the African subgroup contains admixture, we can test whether pathways that have a greater proportion of local African ancestry are more likely to have lower MAPIT-R $p$-values. To do this, we ran RFMix \citep{Maples2013} on the African subgroup with the 1000 Genomes CEU and YRI \citep{Genomes2015} populations as outgroups to calculate per individual estimates of local African ancestry, and we then derived subgroup-wide average local ancestry estimates across all individuals. To get final pathway-level metrics of local ancestry, we calculated the average overlap a pathway has with regions of the genome that have local African ancestry. We then tested each pathway's proportion of local African ancestry against its MAPIT-R $p$-value to see if this more ancestry-specific form of population structure has a relationship to the large number of MAPIT-R results the African subgroup has. However, as Figure \ref{InterPath-Main-Figure-RFMix-African-REACTOME} and Supplementary Figure \ref{InterPath-Supp-Figure-RFMix-African-KEGG} show, we find no relationship between a pathway's proportion of local African ancestry and its MAPIT-R $p$-value.
 
 \begin{figure}[htb]
 \centering
@@ -1413,13 +1408,5 @@ Since neither whole-genome or pathway-level metrics of genetic variation appear 
 \caption[TBD]{\textbf{MAPIT-R results vs. proportion of local African ancestry per REACTOME pathway}. The figure shows MAPIT-R $p$-values per pathway plotted against each pathway's proportion of local African ancestry for each REACTOME (a) height and (b) BMI analysis. Proportions of African ancestry are shown on the $x$-axis and MAPIT-R $p$-values are shown on the $y$-axis. African ancestry proportions were calculated per individual by using RFMix with the 1000 Genomes CEU and YRI populations as outgroups and then genome-wide averages were taken across the subgroup. Per pathway proportions of African ancestry were derived by taking the average of the subgroup-wide estimates of African ancestry across the regions of the genome that each pathway overlapped.}
 \label{InterPath-Main-Figure-RFMix-African-REACTOME}
 \end{figure}
-
-We tested whether cryptic patterns of genetic variation, such as genetic variation patterns observed in principal component space, might be correlated with MAPIT-R $p$-values. Principal components could capture more multidimensional patterns of variation and provide direction on which areas of the genome to further explore for epistatic interactions. We examined the  proportion of variance explained (PVE) of the top 10 local PCs for each subgroup to see if there were any patterns that aligned with the number of significant MAPIT-R results we observe per subgroup. Figure \ref{InterPath-Main-Figure-Eigenvalues} demonstrates that PVE explained by the first principal component in each ancestry has a distribution across ancestries qualitatively similar to the rank order of significant MAPIT-R results per subgroup.
-
-
-
-Next, we compared the proportion of SNPs that are strongly loaded on PC1 within a given pathway against that pathway's MAPIT-R $p$-value. If the cryptic structure represented by PC1 is driving the African MAPIT-R results, then we might expect pathways with more SNPs that are strongly loaded on PC1 to have more significant MAPIT-R $p$-values as well. To assess this, we projected every SNP back onto the local PC space derived for the MAPIT-R analyses, and defined a SNP as `strongly loaded' on PC1 if it had a loading score within the 2.5\% tails of the full PC1 loading score distribution. We then found the proportion of `strongly loaded' SNPs that were present in every pathway to have a final pathway-level metric. However, after comparing these values to MAPIT-R $p$-values, we once again find no relationship. Testing MAPIT-R pathway $p$-values against each pathway's proportion of `strongly loaded' PC1 SNPs shows no significantly positive relationship across any of our database-phenotype-subgroup combinations (Supplementary Figure \ref{InterPath-Supp-Figure-PC1Loading-AllPaths}). 
-
-\fi
 
 \end{document}
