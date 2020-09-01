@@ -10,7 +10,7 @@
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue, hypertexnames=false]{hyperref}
 \usepackage{epsfig,amsfonts}
-\usepackage{natbib}
+%\usepackage{natbib}
 \usepackage{authblk}
 \usepackage{subfig}
 \usepackage{setspace}
@@ -75,7 +75,6 @@
 \newcommand{\bg}{\mathbf{g}}
 \newcommand{\bl}{\mathbf{l}}
 \newcommand{\bs}{\mathbf{s}}
-\newcommand{\bt}{\mathbf{t}}
 \newcommand{\bq}{\mathbf{q}}
 \newcommand{\bk}{\mathbf{k}}
 \newcommand{\bv}{\mathbf{v}}
@@ -84,9 +83,9 @@
 \newcommand{\bz}{\mathbf{z}}
 \newcommand{\bh}{\mathbf{h}}
 \newcommand{\bu}{\mathbf{u}}
+\newcommand{\bfm}{\mathbf{m}}
 \newcommand{\bw}{\mathbf{w}}
 \newcommand{\w}{\mathbf{w}}
-%\newcommand{\bm}{\mathbf{m}}
 \newcommand{\bp}{\mathbf{p}}
 \newcommand{\bK}{\mathbf{K}}
 \newcommand{\bV}{\mathbf{V}}
@@ -112,10 +111,12 @@
 \newcommand{\wt}{\widetilde}
 \newcommand{\wh}{\widehat}
 
-\newcommand{\E}{\mbox{E}}
-\newcommand{\V}{\mbox{V}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\V}{\mathbb{V}}
 
 \newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\N}{\mathcal{N}}
 
 \newcommand{\bepsilon}{\boldsymbol\epsilon}
 \newcommand{\bvarepsilon}{\boldsymbol\varepsilon}
@@ -126,9 +127,7 @@
 \newcommand{\bgamma}{\boldsymbol\gamma}
 \newcommand{\bdelta}{\boldsymbol\delta}
 \newcommand{\btheta}{\boldsymbol\theta}
-\newcommand{\bpi}{\boldsymbol\pi}
 \newcommand{\bpsi}{\boldsymbol\psi}
-\newcommand{\blambda}{\boldsymbol\lambda}
 \newcommand{\bphi}{\boldsymbol\phi}
 \newcommand{\brho}{\boldsymbol\rho}
 \newcommand{\balpha}{\boldsymbol\alpha}
@@ -136,7 +135,6 @@
 \newcommand{\bomega}{\boldsymbol\omega}
 \newcommand{\btau}{\boldsymbol\tau}
 \newcommand{\bDelta}{\boldsymbol\Delta}
-\newcommand{\bGamma}{\boldsymbol\Gamma}
 \newcommand{\bOmega}{\boldsymbol\Omega}
 \newcommand{\bSigma}{\boldsymbol\Sigma}
 \newcommand{\bLambda}{\boldsymbol\Lambda}
@@ -152,7 +150,42 @@
 \textwidth 16cm 
 \textheight 21cm
 
+\usepackage{latexsym,color,multirow,soul,xspace,tabularx}
+\usepackage{booktabs}
+\usepackage{multirow,multicol}
 %\pagestyle{myheadings}
+
+\newcommand{\edit}[2]{\sout{#1}\textcolor{red}{\xspace#2}}
+%\newcommand{\sr}[2]{\sout{#1}\textcolor{red}{#2}}
+\newcommand{\black}{\textcolor{black}}
+\newcommand{\genee}{gene-$\varepsilon$~}
+\newcommand{\genE}{gene-$\varepsilon$}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\newcolumntype{R}[2]{%
+    >{\adjustbox{angle=#1,lap=\width-(#2)}\bgroup}%
+    l%
+    <{\egroup}%
+}
+\newcommand*\rot{\multicolumn{1}{R{90}{1em}}}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\allowdisplaybreaks
+
+\renewcommand\thesubfigure{(\Alph{subfigure})}
+
+\bibliographystyle{plos2015}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+
+%%%%%%%%%%%%
+%%%%%%%%%%%%
 
 \title{Supplementary: Differential complex trait architecture across humans: epistasis identified in non-European populations at multiple genomic scales}
 \author[1,2]{Michael C. Turchin}
@@ -174,11 +207,15 @@
 
 \section{Supplementary Note}\label{Supplementary-Note}
 
-\subsection{Population Subgroup Quality Control}
+\section{Data Quality Control Procedures for UK Biobank}
 
-We conducted standard quality control (QC) procedures on each of these population subgroups. Note that we focused our analyzes on the genotyped chip data throughout the project. First we conducted SNP-level QC by dropping variants that did not meet the following criteria:  minor allele frequency (MAF) $>$ .01, genotype missingness $<$ 5\%, and Hardy-Weinberg equilibrium test $p$-value $>$ $1\times10^{-6}$. We then conducted individual-level QC via the following steps. Individuals were removed if they did not have genotype missingness $>$ 5\%. Individuals were also removed if they were a 3\textsuperscript{rd} degree relative or more to someone else in the dataset; specifically the KING relatedness values provided with the UKB data were used to identify related individuals, and one individual from every pair of 3\textsuperscript{rd} degree or more relatives was removed. Individuals were also dropped if they were tagged by any of the following three flags from the UKB data: `het.missing.outliers', `putative.sex.chromosome.aneuploidy', and `excess.relatives'. Lastly, individuals were removed if they were determined to be PCA outliers; this was conducted by running FlashPCA (version 2.1) \citep{Abraham2017} in R on each population subgroup separately and identifying individuals that had PC values greater than 7 standard deviations away from the mean for any of the top 6 PCs. We refer to conducting PCA on each subgroup separately as 'local PCA' to help distinguish from the alternative setup of conducting PCA on the entire dataset jointly, which would be referred to as 'global PCA'. 
+The results presented in the main text made use of genotyped chip data released from the UK Biobank \cite{Sudlow2015}. Here, we focus on subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Quality control procedures for each of these subgroups in the data are as follows. First, we removed (\textit{i}) SNPs with minor allele frequency (MAF) less than 1\%, (\textit{ii}) SNPs with missingness greater than 5\%, and (\textit{iii}) SNPs not in Hardy-Weinberg Equilibrium (Fisher's exact test $p$-value $> 10^{-6}$). We also removed individuals by checking three sets of criteria. First, we removed individuals if they were a 3rd degree relative (or more) to someone else in the dataset --- specifically, the KING relatedness values provided with the UK Biobank data were used to identify related individuals, and one individual from every pair of 3rd degree or more relatives was removed. Second, individuals were also removed if they were tagged by any of the following three flags within the UK Biobank data: \texttt{het.missing.outliers}, \texttt{putative.sex.chromosome.aneuploidy}, and \texttt{excess.relatives}. Lastly, individuals were removed if they were determined to be outliers via principal component analysis (PCA) --- this was conducted by running \texttt{FlashPCA} (version 2.1) \cite{Abraham2017} in \texttt{R} on each population subgroup separately and identifying individuals that had any of their top six principal component (PC) values greater than seven standard deviations away from the mean. We refer to conducting PCA on each subgroup separately as ``local PCA'' to help distinguish from the alternative setup of conducting PCA on the entire dataset jointly, which would be referred to as ``global PCA''. 
 
-After this first round of QC procedures, we then proceeded to impute our current population subgroups. Since most of the analyses in this project utilized genetic relatedness matrices (GRMs), and variants need to have no missing data for these GRMs, we used imputation primarily to maximize the number of genotyped SNPs that would not be dropped by this stringent threshold (as opposed to using imputation to increase the number of SNPs we were analyzing). To conduct this imputation, we uploaded our population subgroups to the University of Michigan Imputation Server \citep{Das2016} and used the following options: Minimac3 for the imputation software, 1000G phase 3 v5 for the reference panel, and Eagle v2.3 for the phasing software. Completed imputed files were then downloaded from the Imputation Server afterwards and treated to further QC steps: imputed variants were intersected back to the original set of genotyped chip variants, variants with imputation quality scores $<$ .3 were removed, and variants that had genotype missingness rates $>$ 0\% were also removed. These steps represent the last of our QC and imputation procedures, and information on the final forms of our UKB population subgroups can be found in Supplementary Table (table).
+After the first round of quality control procedures, we then proceeded to impute missing genotypes for each population subgroup. To conduct this imputation, we uploaded our population subgroups to the University of Michigan Imputation Server \cite{Das2016} and used the following options: \texttt{Minimac3} for the imputation software, 1000 Genomes (phase 3 version 5) for the reference panel, and \texttt{Eagle} (version 2.3) for the phasing software. Completed imputed files were then downloaded from the Imputation Server afterwards and treated to one last round of quality control. Here, imputed variants were intersected back to the original set of genotyped chip variants. Variants with imputation quality scores  less than 30\% were removed, and variants that had genotype missingness greater than 0\% were also removed. Information on the final forms of our UK Biobank population subgroups can be found in Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}.
+
+\section{Hypergeometric Enrichment Analyses}
+
+Hypergeometric analyses were conducted by counting the number of times a given gene is present among the significant pathways identified by MAPIT-R for a given database-phenotype-subgroup combination versus the number of times the gene is present among the background distribution of pathways from the same database. For the size-restriction analyses, pathways with greater than 1,000 SNPs were removed. The 1,000 SNP threshold was chosen to balance between the total number of pathways removed and the average pathway size across all subgroups (see Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs} for the relationship between MAPIT-R $p$-values and pathway sizes). Note that for a number of size thresholds ranging from 500 to 1,500 SNPs, results regarding the proteasome family genes remain robust (Supplementary Figure \ref{InterPath-Supp-Figure-Hypergeoemtric-SizeThresholds}).
 
 \clearpage
 
@@ -195,7 +232,7 @@ After this first round of QC procedures, we then proceeded to impute our current
 \centering
 \hspace*{-1cm}
 \includegraphics[scale=.4]{Images/Supp/InterPath_Supp_Figure_UKB_PCAPlot_vs2.png}
-\caption[TBD]{\textbf{Global PCA Plots of the UK BioBank subgroups}. The figure shows the top eight global principal components (PCs) of our UKB subgroup dataset plotted against one another: (a) PC1 vs. PC2, (b) PC3 vs. PC4, (c) PC5 vs. PC6, and (d) PC7 vs. PC8. PCA was conducted using FlashPCA \citep{Abraham2017} and a post-QC, pruned SNP set. Here `Global' PCs refers to PCs calculated from running PCA on the full dataset of all subgroups together jointly. This is in contrast to `local' PCs, which are calculated by running PCA on each subgroup separately. As a result of this difference, global PCs were created similar to the descriptions in `Population subgroups' of Methods and `Population Subgroup Quality Control' of Supplementary Note, but in lieu of running FlashPCA on each subgroup separately, FlashPCA was run on the full dataset together jointly. Global PCs were only used for these plots, and local PCs were used for quality control and as covariates. In parentheses next to each PC is the percent variance explained (PVE) each PC accounts for of the total variation present in the underlying covariance matrix.}
+\caption[TBD]{\textbf{Global PCA Plots of the UK BioBank subgroups}. The figure shows the top eight global principal components (PCs) of our UKB subgroup dataset plotted against one another: (a) PC1 vs. PC2, (b) PC3 vs. PC4, (c) PC5 vs. PC6, and (d) PC7 vs. PC8. PCA was conducted using FlashPCA \cite{Abraham2017} and a post-QC, pruned SNP set. Here `Global' PCs refers to PCs calculated from running PCA on the full dataset of all subgroups together jointly. This is in contrast to `local' PCs, which are calculated by running PCA on each subgroup separately. As a result of this difference, global PCs were created similar to the descriptions in `Population subgroups' of Methods and `Population Subgroup Quality Control' of Supplementary Note, but in lieu of running FlashPCA on each subgroup separately, FlashPCA was run on the full dataset together jointly. Global PCs were only used for these plots, and local PCs were used for quality control and as covariates. In parentheses next to each PC is the percent variance explained (PVE) each PC accounts for of the total variation present in the underlying covariance matrix.}
 \label{InterPath-Supp-Figure-UKB-subgroups-PCAPlot}
 \end{figure}
 \clearpage
@@ -1021,7 +1058,7 @@ British.Ran4000 & 6490 & 7.704E-05 & 1 & 0.015 & 0.001 & 4 & 0.062 & 0.010 & 52 
  & & Surface Interactions & & & (Downstream) & & & \\ 
    \hline
 \end{tabular}
-\caption[TBD]{\textbf{Significant pairwise SNP interactions between MAPIT-R pathways and the rest of the genome}. The table shows pairwise SNP interactions that have $p$-values lower than Bonferroni-corrected thresholds for test schemes using MAPIT-R significant pathways versus the rest of the genome. Specifically, for every MAPIT-R significant pathway previously found in each pathway database-phenotype-subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}), all the SNPs within each pathway were tested for pairwise interactions with all the remaining SNPs in the genome using the PLINK v1.90b4 `\texttt{-{}-epistasis set-by-all'} command \citep{Purcell2007}. The first column shows the database-phenotype-subgroup combination specific for the given pathway, the second column shows the pathway containing the significant SNP pairwise interaction, the third column shows the Bonferroni corrected $p$-value threshold for significance (ie .05 / the number of pairwise tests that were conducted within the given pathway), the fourth column shows the SNP within the pathway that is part of the significant interaction (chromosome:basepair formatting), the fifth column shows the locus SNP1 maps to (if known), the sixth column shows the SNP from the rest of the genome that is the other part of the significant interaction (chromosome:basepair formatting), the seventh column shows the locus SNP2 maps to (if known) , and the eighth column shows the $p$-value for the PLINK pairwise epistasis test between SNP1 and SNP2. Combinations involving KEGG-BMI are not shown since no significant pairwise epistatic interactions were found with those groupings.}
+\caption[TBD]{\textbf{Significant pairwise SNP interactions between MAPIT-R pathways and the rest of the genome}. The table shows pairwise SNP interactions that have $p$-values lower than Bonferroni-corrected thresholds for test schemes using MAPIT-R significant pathways versus the rest of the genome. Specifically, for every MAPIT-R significant pathway previously found in each pathway database-phenotype-subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}), all the SNPs within each pathway were tested for pairwise interactions with all the remaining SNPs in the genome using the PLINK v1.90b4 `\texttt{-{}-epistasis set-by-all'} command \cite{Purcell2007}. The first column shows the database-phenotype-subgroup combination specific for the given pathway, the second column shows the pathway containing the significant SNP pairwise interaction, the third column shows the Bonferroni corrected $p$-value threshold for significance (ie .05 / the number of pairwise tests that were conducted within the given pathway), the fourth column shows the SNP within the pathway that is part of the significant interaction (chromosome:basepair formatting), the fifth column shows the locus SNP1 maps to (if known), the sixth column shows the SNP from the rest of the genome that is the other part of the significant interaction (chromosome:basepair formatting), the seventh column shows the locus SNP2 maps to (if known) , and the eighth column shows the $p$-value for the PLINK pairwise epistasis test between SNP1 and SNP2. Combinations involving KEGG-BMI are not shown since no significant pairwise epistatic interactions were found with those groupings.}
 \label{InterPath-Supp-Table-PairwiseEpi-Results}
 \end{table}
 \end{landscape}
@@ -1030,7 +1067,7 @@ British.Ran4000 & 6490 & 7.704E-05 & 1 & 0.015 & 0.001 & 4 & 0.062 & 0.010 & 52 
 
 
 \begingroup
-\bibliographystyle{apalike}
+%\bibliographystyle{apalike}
 \setstretch{1.0}
 \bibliography{Main}
 \endgroup
