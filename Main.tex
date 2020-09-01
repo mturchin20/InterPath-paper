@@ -1,9 +1,3 @@
-
-
-
-
-
-
 \documentclass[10pt,a4paper]{article}
 %\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
 \usepackage[english]{babel}
@@ -400,7 +394,7 @@ When applying MAPIT-R to these data replicates, we find that our results are rob
 
 To better understand the genomic regions that are driving pathway-level marginal epistatic effects, we first investigated genes (and gene families) that appeared to be particularly enriched amongst the significant pathways identified by MAPIT-R. To accomplish this, we conducted two types of hypergeometric tests for enrichment to detect genes that are overrepresented amongst the pathway annotations with low $P$-values (Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}). In the first, we took the annotations from a given database (i.e., KEGG or REACTOME) and implemented a standard hypergeometric test where we compared the number of times a gene appears within the set of significant epistatic pathways versus the number of times that same gene appears across all pathways in the database. Indeed, this type of test may be confounded by the fact that larger pathways naturally have more SNPs and are therefore more likely to be involved in non-additive genetic interactions (see Supplementary Figures \ref{InterPath-Supp-Figure-pValsVsNumSNPs} and \ref{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}). To mitigate this concern, we run a second hypergeometric enrichment test using only pathways containing 1000 SNPs or fewer. By focusing on smaller pathways, we have the additional advantage of further assessing the extent to which pathway size may confound our understanding of genes driving crosstalk between pathways. 
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=.4]{Images/Main/InterPath_Main_Figure_Hypergeometric_RestrictedComps_African_BMI_vs4.png}
 \caption[TBD]{\textbf{Comparison of gene count hypergeometric enrichment $p$-values in BMI using pathway size of at most 1000 SNPs versus no size restrictions in the African subgroup}. The figure shows comparisons of the gene-based hypergeometric enrichment $p$-values between the size restricted version of the analysis and the original unrestricted version of the analysis in the (a) KEGG and (b) REACTOME pathway databases. Only results for BMI are shown because few MAPIT-R significant pathways in the height analysis remained after the size restriction step. The $x$-axis shows the original, unrestricted hypergeometric -$\log_{10}$ $p$-values, and the $y$-axis shows the new, size restricted hypergeometric -$\log_{10}$ $p$-values. The proteasome gene family cluster is highlighted (blue dashed circle) in the REACTOME plot. For lists containing each gene's original and  size-restricted hypergeometric $p$-values, see Supplementary Table \ref{InterPath-Supp-Table-Hypergeometric-RestrictedComps-African-BMI}.}

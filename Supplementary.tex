@@ -56,6 +56,11 @@
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 %\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
+\newtheorem{claim}{Claim}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}{Proposition}[section]
+
 \def\dsum{\displaystyle\sum}
 \def\dint{\displaystyle\int}
 %\def\dfrac{\displaystyle\frac}
@@ -153,6 +158,18 @@
 \usepackage{latexsym,color,multirow,soul,xspace,tabularx}
 \usepackage{booktabs}
 \usepackage{multirow,multicol}
+\usepackage{grffile}
+\usepackage{epstopdf}
+\usepackage{longtable}
+\usepackage{adjustbox} 
+\usepackage{makecell}
+\usepackage{sidecap}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage[subfigure]{tocloft}
+\usepackage{etoolbox}
 %\pagestyle{myheadings}
 
 \newcommand{\edit}[2]{\sout{#1}\textcolor{red}{\xspace#2}}
@@ -201,11 +218,43 @@
 \affil[$^\dag$]{To whom correspondence should be addressed: sramachandran@brown.edu}
 
 \begin{document}
+%\maketitle
 
-\maketitle
+% Title must be 150 characters or less
+\begin{flushleft}
+{\Large{\textbf{Supplementary Note to ``Pathway Analysis within Multiple Human Ancestries Reveals Novel Signals for Epistasis in Complex Traits''}}}
+\newline
+% Insert Author names, affiliations and corresponding author email.
+\\
+Michael C. Turchin\textsuperscript{1,2,$\dagger$}, Gregory Darnell\textsuperscript{2,3}, Lorin Crawford\textsuperscript{2,4,5,*}, and Sohini Ramachandran\textsuperscript{1,2,*,$\dagger$} 
+\\
+\bigskip
+\bf{1} Department of Ecology and Evolutionary Biology, Brown University, Providence, RI, USA
+\\
+\bf{2} Center for Computational Molecular Biology, Brown University, Providence, RI, USA
+\\
+\bf{3} Institute for Computational and Experimental Research in Mathematics (ICERM), Brown University, Providence, RI, USA
+\\
+\bf{4} Department of Biostatistics, Brown University, Providence, RI, USA
+\\
+\bf{5} Center for Statistical Sciences, Brown University, Providence, RI, USA
+\\
+\bigskip
+*: Authors Contributed Equally\\
+$\dagger$ Corresponding E-mail: michael\_turchin@brown.edu; sramachandran@brown.edu 
+\end{flushleft}
 
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{equation}{0}
+\makeatletter 
 
-\section{Supplementary Note}\label{Supplementary-Note}
+\tableofcontents
+
+\clearpage
+\newpage
+
+%\section{Supplementary Note}\label{Supplementary-Note}
 
 \section{Data Quality Control Procedures for UK Biobank}
 
@@ -1067,6 +1116,7 @@ British.Ran4000 & 6490 & 7.704E-05 & 1 & 0.015 & 0.001 & 4 & 0.062 & 0.010 & 52 
 
 
 \begingroup
+\addcontentsline{toc}{section}{References}
 %\bibliographystyle{apalike}
 \setstretch{1.0}
 \bibliography{Main}
