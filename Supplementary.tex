@@ -280,7 +280,7 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 
 \begin{figure}[htbp]
 \centering
-\hspace*{-1cm}
+%\hspace*{-1cm}
 \includegraphics[width = \textwidth]{Images/Supp/InterPath_Supp_Figure_UKB_PCAPlot_vs2.png}
 \caption{\textbf{Global principal component analysis (PCA) of the different ancestry-specific subgroups in the UK Biobank}. Here, subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. The figure shows the top eight global principal components (PCs) for each subgroup plotted against one another. The comparisons include: \textbf{(a)} PC1 vs.~PC2, \textbf{(b)} PC3 vs.~PC4, \textbf{(c)} PC5 vs.~PC6, and \textbf{(d)} PC7 vs.~PC8. PCA was conducted using \texttt{FlashPCA} \cite{Abraham2017}. Here, ``global'' refers to running PCA on the full UK Biobank dataset with all subgroups pulled together jointly. This is in contrast to `local' PCA which conducts principal component analysis on each subgroup separately. Note that global PCs was only used for exploratory analyses and to create these plots, while local PCs were used for quality control and to adjust for population structure in the MAPIT-R analyses. On each axis, we also list the percent of total variation explained (PVE) by each PC in parentheses.}
 \label{InterPath-Supp-Figure-UKB-subgroups-PCAPlot}
@@ -289,17 +289,17 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 
 \begin{figure}[htbp]
 \centering
-\hspace*{-.9cm}
-\includegraphics[scale=.45]{Images/Supp/InterPath_Supp_Figure_Barplots_REACTOME_vs4.png}
-\caption[TBD]{\textbf{Numbers of REACTOME pathways that have significant marginal epistasis, per subgroup}. The barplots show the number of genome-wide significant pathways found from running MAPIT-R for both (a) height and (b) BMI in the REACTOME database on each of our UKB subgroups. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each pathway database-phenotype-subgroup combination. As shown in these results, we find across all database-phenotype combinations that the African subgroup has the largest numbers of significant pathways. For lists of the specific significant pathways per database-phenotype-subgroup combination, see Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}\textcolor{blue}{a-d}.}
+%\hspace*{-.9cm}
+\includegraphics[width = \textwidth]{Images/Supp/InterPath_Supp_Figure_Barplots_REACTOME_vs4.png}
+\caption{\textbf{Number of REACTOME pathways identified by MAPIT-R that have significant marginal epistatic effects within (a) standing height and (b) body mass index (BMI) per subgroup in the UK Biobank.} Here, the subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Genome-wide significance was determined by using Bonferroni-corrected $P$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Across all database-phenotype combinations, the African subgroup has the largest numbers of significant pathways. For lists of the specific significant pathways per database-phenotype-subgroup combination, see Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}.}
 \label{InterPath-Supp-Figure-Barplots-REACTOME}
 \end{figure}
 \clearpage
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_perm1_QQPlots_AllPaths_vs2.png}
-\caption[TBD]{\textbf{QQ-Plots of MAPIT-R results using permuted phenotypes, per subgroup}. The figure shows QQ-plots for running MAPIT-R using a single permutation of either height or BMI measurements within the KEGG and REACTOME databases. Phenotypes were permuted within each population subgroup. Shown on the $x$-axis are the -$\log_{10}$ of the expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of the observed $p$-values. The dotted red line is the Bonferroni-corrected $p$-value threshold based on the number of pathways tested per pathway database-phenotype combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Looking in total across the ten permutation runs conducted for each pathway database-phenotype-UKB subgroup combination, we find that MAPIT-R properly controls for the false positive rate at varying significance cutoff thresholds (Supplementary Figure \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}).}
+\includegraphics[width = \textwidth]{Images/Supp/InterPath_Supp_Figure_perm1_QQPlots_AllPaths_vs2.png}
+\caption{\textbf{QQ-Plots of MAPIT-R $\bm{P}$-values using KEGG and REACTOME pathways annotations and randomly permuted phenotypes in each ancestry-specific subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were permuted within each population subgroup ten different times. Shown on the x-axis are the -$\log_{10}$ transformed expected $p$-values, while the $y$-axis shows the -$\log_{10}$ observed $p$-values. The dotted red line is the Bonferroni-corrected $P$-value threshold based on the number of pathways tested per database-phenotype combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Overall, we find that MAPIT-R properly controls for type 1 error rate at varying significance cutoff thresholds (Supplementary Table \ref{InterPath-Supp-Table-AllPops-FDRs}).}
 \label{InterPath-Supp-Figure-perm1-QQPlots-AllPaths}
 \end{figure}
 \clearpage
@@ -307,9 +307,9 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \setlength{\footskip}{3cm}
 \begin{figure}[htbp]
 \centering
-\vspace*{-2cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_pValHists_vs3.png}
-\caption[TBD]{\textbf{$p$-Value histograms of MAPIT-R results using permuted phenotypes, per subgroup}. The figure shows histograms of MAPIT-R $p$-values collected across ten independent phenotype permutation runs for each UKB subgroup (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). The same phenotype permutation for a given subgroup was used across both pathway databases (i.e. 10 permutations were done for height and 10 done for BMI for each subgroup). And the same covariates used per individual from the original MAPIT-R analysis were used for these permuted-phenotype analyses (see Materials and Methods).}
+%\vspace*{-2cm}
+\includegraphics[width = \textwidth]{Images/Supp/InterPath_Supp_Figure_pValHists_vs3.png}
+\caption{\textbf{Histograms of MAPIT-R $\bm{p}$-values using KEGG and REACTOME pathways annotations and randomly permuted phenotypes in each ancestry-specific subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were independently permuted within each population subgroup ten different times. Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Overall, we find that MAPIT-R properly controls for type 1 error rate at varying significance cutoff thresholds (Supplementary Table \ref{InterPath-Supp-Table-AllPops-FDRs}).}
 \label{InterPath-Supp-Figure-10perms-pValHists}
 \end{figure}
 \clearpage
@@ -318,64 +318,66 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \setlength{\footskip}{1cm}
 \begin{figure}[htbp]
 \centering
-\vspace*{-2cm}
-\includegraphics[scale=.225]{Images/Supp/InterPath_Supp_Figure_Heatplots_REACTOME_vs4.png}
-\caption[TBD]{\textbf{Overlap of genome-wide significant MAPIT-R pathways between UKB population subgroups: REACTOME}. The heatplots show the numbers of genome-wide significant MAPIT-R pathways that overlap between each UKB subgroup for (a) height and (b) BMI in the REACTOME database. The diagonal shows the total number of genome-wide significant pathways per population subgroup. We observe that most subgroups often have overlap with the African subgroup but rarely do so with the remaining non-African subgroups. For results from the KEGG database see Figure \ref{InterPath-Main-Figure-Heatplots-KEGG}.}
+%\vspace*{-2cm}
+\includegraphics[width = \textwidth]{Images/Supp/InterPath_Supp_Figure_Heatplots_REACTOME_vs4.png}
+\caption{\textbf{Heatmaps depicting the overlap of MAPIT-R significant REACTOME pathways for (a) standing height and (b) body mass index (BMI) between the different ancestry-specific subgroups in the UK Biobank}. Here, subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Genome-wide significance was determined by using Bonferroni-corrected $P$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). The diagonal shows the total number of genome-wide significant pathways per subgroup. We observe that significant pathways observed in non-African subgroups overlap more often with pathways from the African subgroup than they do with pathways from the other, remaining non-African subgroups. Results for both phenotypes in the KEGG database can be seen in Figure \ref{InterPath-Main-Figure-Heatplots-KEGG} in the main text.}
 \label{InterPath-Supp-Figure-Heatplots-REACTOME}
 \end{figure}
 \clearpage
 \setlength{\footskip}{1cm}
 
+\begin{landscape}
 \setlength{\footskip}{3cm}
 \begin{figure}[htbp]
 \centering
-\vspace*{-2cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_MAPITR_PhenoComps_AllPops_vs4.png}
-\caption[TBD]{\textbf{Comparison of MAPIT-R results between height and BMI, per subgroup}. The figure shows MAPIT-R height results plotted against MAPIT-R BMI results for all pathways from the KEGG and REACTOME databases in all UKB subgroups. The $x$-axes are the MAPIT-R height -$\log_{10}$ $p$-values and the $y$-axes are the MAPIT-R BMI -$\log_{10}$ $p$-values. The dotted red lines are the Bonferroni-corrected $p$-value thresholds for genome-wide significance in each pathway-phenotype-subgroup combination. The correlation between the phenotype -$\log_{10}$ $p$-values is shown in the bottom right.}
+\hspace*{-2cm}
+\includegraphics[angle=270,scale=.25]{Images/Supp/InterPath_Supp_Figure_MAPITR_PhenoComps_AllPops_vs4.png}
+\caption{\textbf{Scatterplots comparing the MAPIT-R $\bm{p}$-values using (top) KEGG and (bottom) REACTOME pathways annotations in height and body mass index (BMI) within all of the different ancestry-specific subgroups in the UK Biobank.} Here, subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. For each plot, the x-axis depicts the -$\log_{10}$ transformed MAPIT-R $p$-value for height, while the y-axis shows the same results for BMI. The red horizontal and vertical dashed lines are marked at the Bonferroni-corrected $p$-value thresholds for genome-wide significance in each pathway-phenotype combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Pathways in the top right quadrant have significant marginal epistatic effects in both traits; while, points in the bottom right and top left quadrants are pathways that are uniquely enriched in height or BMI, respectively. Within each plot we also list the Pearson correlation coefficient describing the similarity of marginally epistatic enriched pathways in both traits.}
 \label{InterPath-Supp-Figure-MAPITR-PhenoComps-AllPops}
 \end{figure}
 \clearpage
 \setlength{\footskip}{1cm}
+\end{landscape}
 
 \begin{figure}[htbp]
 \centering
 \hspace*{-1.75cm}
 \includegraphics[scale=.45]{Images/Supp/InterPath_Supp_Figure_BritReps_Barplot_vs4.png}
-\caption[TBD]{\textbf{Numbers of pathways that have significant marginal epistasis, per British replicate}. The barplots show the number of genome-wide significant pathways found from running MAPIT-R for both height and BMI in the KEGG and REACTOME databases on each of the British subsample replicate subgroups we analyzed. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each pathway database-phenotype-subgroup combination. Most replicate runs did not produce many significant results.}
+\caption{\textbf{Number of KEGG and REACTOME pathways identified by MAPIT-R that have significant marginal epistatic effects within standing height and body mass index (BMI) per British replicate subgroup in the UK Biobank.} Here, the random subgroups were created by subsampling either $N =$ 4,000 or 10,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Note that most replicate runs did not produce many significant results.}
 \label{InterPath-Supp-Figure-BritReps-Barplots}
 \end{figure}
 \clearpage
 
-\newcounter{CharNumber4}
-\setcounter{CharNumber4}{1}
-\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber4}}
+%\newcounter{CharNumber4}
+%\setcounter{CharNumber4}{1}
+%\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber4}}
 \begin{landscape}
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_Heatplots_KEGG_vs4.png}
-\caption[TBD]{\textbf{Overlap of genome-wide significant MAPIT-R pathways between British replicate subgroups: KEGG}. The heatplots show the numbers of genome-wide significant MAPIT-R pathways that overlap between each British replicate subgroup for (a) height and (b) BMI in the KEGG database. The diagonal shows the total number of genome-wide significant pathways per population subgroup. We do not observe many genome-wide significant pathways or pathways that overlap between replicate subgroups.}
+\caption{\textbf{Heatmaps depicting the overlap of MAPIT-R significant KEGG pathways for (a) standing height and (b) body mass index (BMI) per British replicate subgroup in the UK Biobank}. Here, the random subgroups were created by subsampling either $N =$ 4,000 or 10,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). Genome-wide significance was determined by using Bonferroni-corrected $P$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). The diagonal shows the total number of genome-wide significant pathways per subgroup. We do not observe much overlap between enriched pathways between the replicate subgroups --- even though they all consist of individuals of the same ancestry.}
 \label{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths-KEGG}
 \end{figure}
 \clearpage
-\addtocounter{figure}{-1}
-\addtocounter{CharNumber4}{1}
+%\addtocounter{figure}{-1}
+%\addtocounter{CharNumber4}{1}
 \end{landscape}
 
 \begin{landscape}
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_Heatplots_REACTOME_vs4.png}
-\caption[TBD]{\textbf{Overlap of genome-wide significant MAPIT-R pathways between British replicate subgroups: REACTOME}. The heatplots show the numbers of genome-wide significant MAPIT-R pathways that overlap between each British replicate subgroup for (a) height and (b) BMI in the REACTOME database. The diagonal shows the total number of genome-wide significant pathways per population subgroup. We do not observe many genome-wide significant pathways or pathways that overlap between replicate subgroups.}
+\caption{\textbf{Heatmaps depicting the overlap of MAPIT-R significant REACTOME pathways for (a) standing height and (b) body mass index (BMI) per British replicate subgroup in the UK Biobank}. Here, the random subgroups were created by subsampling either $N =$ 4,000 or 10,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). Genome-wide significance was determined by using Bonferroni-corrected $P$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). The diagonal shows the total number of genome-wide significant pathways per subgroup. We do not observe much overlap between enriched pathways between the replicate subgroups --- even though they all consist of individuals of the same ancestry.}
 \label{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths-REACTOME}
 \end{figure}
 \clearpage
 \end{landscape}
-\renewcommand{\thefigure}{\arabic{figure}}
+%\renewcommand{\thefigure}{\arabic{figure}}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_BritReps_perm1_QQPlots_AllPaths_vs1.png}
-\caption[TBD]{\textbf{QQ-Plots of MAPIT-R results using permuted phenotypes, per British replicate}. The figure shows QQ-plots for running MAPIT-R using single, permuted versions of both height and BMI with the KEGG \& REACTOME databases. Phenotypes were permuted within each British replicate subgroup. Shown on the $x$-axis are the -$\log_{10}$ of the expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of the observed $p$-values. The dotted red line is the Bonferroni-corrected $p$-value threshold based on the number of pathways tested per pathway database-phenotype combination. We find across all pathway database-phenotype-replicate combinations that MAPIT-R continues to show proper null behavior within the range expected when using permuted phenotypes.}
+\includegraphics[width=\textwidth]{Images/Supp/InterPath_Supp_Figure_BritReps_perm1_QQPlots_AllPaths_vs1.png}
+\caption{\textbf{QQ-Plots of MAPIT-R $\bm{p}$-values using KEGG and REACTOME pathways annotations and randomly permuted phenotypes in British replicate subgroups from the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were permuted within each population subgroup ten different times. Shown on the x-axis are the -$\log_{10}$ transformed expected $p$-values, while the $y$-axis shows the -$\log_{10}$ observed $p$-values. The random subgroups were created by subsampling either $N =$ 4,000 or 10,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). The dotted red line is the Bonferroni-corrected $P$-value threshold based on the number of pathways tested per database-phenotype combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Overall, we find that MAPIT-R continues to exhibit well-calibrated behavior under the null hypothesis and properly controls for type 1 error rate.}
 \label{InterPath-Supp-Figure-BritReps-perm1-QQPlots-AllPaths}
 \end{figure}
 \clearpage
@@ -386,22 +388,22 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \setlength{\footskip}{1cm}
 \begin{figure}[htbp]
 \centering
-\vspace*{-1cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_pValHists_AllPaths_vs1_pt1.png}
-\caption[TBD]{\textbf{$p$-Value histograms of MAPIT-R results using permuted phenotypes, per British replicate}. The figure shows histograms of MAPIT-R $p$-values collected across ten independent phenotype permutation runs for each British Ran4000 and Ran10000 subsample replicate. The same phenotype permutation for a given replicate was used across both pathway databases (i.e. 10 permutations were done for height and 10 done for BMI for each subgroup). Covariates used from the original MAPIT-R analysis were kept the same.}
+%\vspace*{-1cm}
+\includegraphics[width=\textwidth]{Images/Supp/InterPath_Supp_Figure_BritReps_pValHists_AllPaths_vs1_pt1.png}
+\caption{\textbf{Histograms of MAPIT-R $\bm{p}$-values using KEGG and REACTOME pathways annotations and randomly permuted phenotypes in each \textcolor{red}{British 4,000 replicate} subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were independently permuted within each population subgroup ten different times. The random subgroups were created by subsampling $N =$ 4,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). Overall, we find that MAPIT-R continues to exhibit well-calibrated behavior under the null hypothesis.}
 \label{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}
 \end{figure}
 \clearpage
 \setlength{\footskip}{1cm}
-\addtocounter{figure}{-1}
+%\addtocounter{figure}{-1}
 %\addtocounter{CharNumber3}{1}
 
 \setlength{\footskip}{2cm}
 \begin{figure}[htbp]
 \centering
-\vspace*{-1cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_pValHists_AllPaths_vs1_pt2.png}
-\caption[TBD]{\textbf{$p$-Value histograms of MAPIT-R results using permuted phenotypes, per British replicate}. The figure shows histograms of MAPIT-R $p$-values collected across ten independent phenotype permutation runs for each British Ran4000 and Ran10000 subsample replicate. The same phenotype permutation for a given replicate was used across both pathway databases (i.e. 10 permutations were done for height and 10 done for BMI for each subgroup). Covariates used from the original MAPIT-R analysis were kept the same.}
+%\vspace*{-1cm}
+\includegraphics[width=\textwidth]{Images/Supp/InterPath_Supp_Figure_BritReps_pValHists_AllPaths_vs1_pt2.png}
+\caption{\textbf{Histograms of MAPIT-R $\bm{P}$-values using KEGG and REACTOME pathways annotations and randomly permuted phenotypes in each \textcolor{red}{British 10,000 replicate} subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were independently permuted within each population subgroup ten different times. The random subgroups were created by subsampling $N =$ 10,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran10k.4} denotes the fourth replicate in the $N =$ 10,000 subsampling scheme). Overall, we find that MAPIT-R continues to exhibit well-calibrated behavior under the null hypothesis.}
 \label{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt2}
 \end{figure}
 \clearpage
