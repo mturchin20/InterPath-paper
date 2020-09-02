@@ -12,7 +12,8 @@
 \usepackage{epsfig,amsfonts}
 %\usepackage{natbib}
 \usepackage{authblk}
-\usepackage{subfig}
+%\usepackage{subfig}
+\usepackage{subfigure} %w/ Lorin's edits
 \usepackage{setspace}
 \usepackage{hypcap}
 \usepackage{lscape}
@@ -171,7 +172,7 @@
 \usepackage[subfigure]{tocloft}
 \usepackage{etoolbox}
 \usepackage{pdflscape}
-%\pagestyle{myheadings}
+\pagestyle{myheadings}
 
 \newcommand{\edit}[2]{\sout{#1}\textcolor{red}{\xspace#2}}
 %\newcommand{\sr}[2]{\sout{#1}\textcolor{red}{#2}}
@@ -385,7 +386,7 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 %\newcounter{CharNumber3}
 %\setcounter{CharNumber3}{1}
 %\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber3}}
-\setlength{\footskip}{1cm}
+%\setlength{\footskip}{1cm}
 \begin{figure}[htbp]
 \centering
 %\vspace*{-1cm}
@@ -394,11 +395,11 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \label{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}
 \end{figure}
 \clearpage
-\setlength{\footskip}{1cm}
+%\setlength{\footskip}{1cm}
 %\addtocounter{figure}{-1}
 %\addtocounter{CharNumber3}{1}
 
-\setlength{\footskip}{2cm}
+%\setlength{\footskip}{2cm}
 \begin{figure}[htbp]
 \centering
 %\vspace*{-1cm}
@@ -407,328 +408,265 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \label{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt2}
 \end{figure}
 \clearpage
-\setlength{\footskip}{1cm}
+%\setlength{\footskip}{1cm}
 %\renewcommand{\thefigure}{\arabic{figure}}
 
-\setlength{\footskip}{3cm}
+%\setlength{\footskip}{3cm}
+\begin{landscape}
 \begin{figure}[htbp]
 \centering
-\vspace*{-2cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_pValsVsNumSNPs_vs3.png}
-\caption[TBD]{\textbf{Number of SNPs in a pathway versus a pathway's MAPIT-R $p$-value}. Caption continued on next page.}
+\vspace*{-2.2cm}
+\includegraphics[angle=270,scale=0.179]{Images/Supp/InterPath_Supp_Figure_pValsVsNumSNPs_vs3.png}
+\caption{\textbf{Scatterplots comparing the MAPIT-R $\bm{P}$-values as function of the number of SNPs annotated within each pathway for KEGG and REACTOME in height and body mass index (BMI) across each ancestry-specific subgroup in the UK Biobank.} Here, subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. The dotted red line represents the best fit using a univariate model, and the legend provides the corresponding regression coefficient and its associated $p$-value. We observe that for most combinations there is a significant relationship between the MAPIT-R $p$-value and the number of SNPs present in a pathway. This follows our hypothesis that combining SNPs together in a joint analysis might provide greater power to detect marginal epistasis than analyzing each SNP independently. We note, however, that these results appear to not solely be driven just by the presence or absence of large SNP counts --- conducting this same analysis on one of our sets of permuted phenotypes, we find very few significant relationships between MAPIT-R $p$-values and pathway SNP counts (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}).}
 \label{InterPath-Supp-Figure-pValsVsNumSNPs}
 \end{figure}
 \clearpage
-\setlength{\footskip}{1cm}
+\end{landscape}
+%\setlength{\footskip}{1cm}
 
-\addtocounter{figure}{-1}
-\begin{figure} [t!]
-  \caption{\textbf{Number of SNPs in a pathway versus a pathway's MAPIT-R $p$-value}. The figure shows plots comparing the MAPIT-R $p$-values from our main analysis to the number of SNPs present in each pathway. Results for every pathway database-phenotype-UB subgroup combinations are shown. The dotted red line is the line of best fit and the legend provides the regression coefficient and its associated $p$-value. We observe that for most combinations there is a significant relationship between MAPIT-R $p$-value and the number of SNPs present in a pathway. This follows our hypothesis that combining SNPs together in a joint analysis might provide greater power to detect marginal epistasis than analyzing each SNP independently. We note, however, that these results appear to not solely be driven just by the presence or absence of large SNP counts -- conducting this same analysis on one of our sets of permuted phenotypes we now find very few significant relationships between MAPIT-R $p$-values and pathway SNP counts (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}).}
-\label{InterPath-Supp-Figure-pValsVsNumSNPs-Caption}
-\end{figure}
-\clearpage
-
-\setlength{\footskip}{3cm}
+\begin{landscape}
+%\setlength{\footskip}{3cm}
 \begin{figure}[htbp]
 \centering
-\vspace*{-2cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_pValsVsNumSNPs_perm1_vs3.png}
-\caption[TBD]{\textbf{Number of SNPs in a pathway versus a pathway's MAPIT-R $p$-value using permuted phenotypes}. Caption continued on next page.}
+\vspace*{-2.2cm}
+\includegraphics[angle=270,scale=0.179]{Images/Supp/InterPath_Supp_Figure_pValsVsNumSNPs_perm1_vs3.png}
+\caption{\textbf{Scatterplots comparing the MAPIT-R $\bm{P}$-values as function of the number of SNPs annotated within each pathway for KEGG and REACTOME using permuted phenotypes across each ancestry-specific subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were independently permuted within each population subgroup ten different times. The dotted red line represents the best fit using a univariate model, and the legend provides the corresponding regression coefficient and its associated $p$-value. Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. In these permuted cases, we observe hardly any relationship between MAPIT-R results and the number of SNPs present in a pathway. For this same analysis on the original set of observed phenotypes, see Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}.}
 \label{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}
 \end{figure}
 \clearpage
-\setlength{\footskip}{1cm}
-
-\addtocounter{figure}{-1}
-\begin{figure} [t!]
-  \caption{\textbf{Number of SNPs in a pathway versus a pathway's MAPIT-R $p$-value using permuted phenotypes}. The figure shows plots comparing the MAPIT-R $p$-values from our main analysis to the number of SNPs present in each pathway. For this analysis a single set of our permuted phenotypes (i.e. Supplementary Figure \ref{InterPath-Supp-Figure-perm1-QQPlots-AllPaths}) was used for each UKB subgroup. Results for every pathway database-phenotype-subgroup combination is shown. The dotted red line is the line of best fit and the legend provides the regression coefficient and its associated $p$-value. We observe that for very few combinations there is any relationship between MAPIT-R $p$-value and the number of SNPs present in a pathway. For the same analysis on the original set of observed phenotypes, see Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}.}
-\label{InterPath-Supp-Figure-pValsVsNumSNPs-perm1-Caption}
-\end{figure}
-\clearpage
-
-%\begin{figure}[htb]
-%\centering
-%\hspace*{-1.4cm}
-%\includegraphics[scale=.45]{Images/Main/InterPath_Main_Figure_MAPIT_vs4_HeightBMI.png}
-%\caption[TBD]{\textbf{QQ-Plots of MAPIT results, per subgroup}. The figure shows QQ-plots of our results from running MAPIT on our four initial UKB population subgroups in height and BMI. On the $x$-axis are the -$\log_{10}$ of the expected $p$-values and the on the $y$-axis are on the -$\log_{10}$ of the observed $p$-values. Each data point is a SNP and total SNP counts per UKB subgroup can be found in Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}. We observe no genome-wide significant signals in any subgroup across both phenotypes ($p$-value $< 5\times10^{-8}$) and, due to this lack of significant results, observe no clear differences in patterns between our subgroups.}
-%\label{InterPath-Supp-Figure-MAPIT-HeightBMI}
-%\end{figure}
-
-%\begin{figure}[htbp]
-%\centering
-%\hspace*{-1.7cm}
-%\includegraphics[scale=.45]{Images/Supp/InterPath_Supp_Figure_PLINK_BestSNPs_vs2_AllPops_HeightBMI.png}
-%\caption[TBD]{\textbf{SNPs with the largest PLINK pairwise epistasis signals, per subgroup}. The figure shows the best $p$-values obtained from running PLINK's exhaustive pairwise SNP epistasis test for both height and BMI in each of the UKB subgroups. Only the top 50 SNPs, sorted by best pairwise SNP epistasis $p$-value, for each subgroup are shown. No test reaches genome-wide significance based on using a Bonferroni-corrected $p$-value threshold ($p$-value $< 5\times10^{-13}$).}
-%\label{InterPath-Supp-Figure-PLINK-HeightBMI-AllPops}
-%\end{figure}
-%\clearpage
+%\setlength{\footskip}{1cm}
+\end{landscape}
 
 %From: ,https://tex.stackexchange.com/questions/64934/subfig-label-positioning, https://tex.stackexchange.com/questions/196653/how-do-i-stack-two-figures-on-top-of-each-other-rather-than-side-to-side, https://tex.stackexchange.com/questions/47311/include-table-as-a-subfigure, https://tex.stackexchange.com/questions/169541/looking-for-three-images-on-top-of-each-other-with-text-underneath-each, https://tex.stackexchange.com/questions/10863/is-there-a-way-to-slightly-shrink-a-table-including-font-size-to-fit-within-th
 
-\newcounter{CharNumber5}
-\setcounter{CharNumber5}{1}
-\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber5}}
-\begin{figure}[ht]
+%\newcounter{CharNumber5}
+%\setcounter{CharNumber5}{1}
+%\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber5}}
+%\begin{figure}[ht]
+%\centering
+%\vspace*{-.5cm}
+%\subfloat[]{\includegraphics[scale=.5]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_African_Loop_vs3.png}}
+\par
+%\subfloat[]{\resizebox{1.1\columnwidth}{!}{
+% \hspace*{-1.75cm}
+% \begin{tabular}{cc|ccc}
+%  \hline
+%\textbf{Proteasome} & \textbf{SNPs} & \textbf{REACTOME} & \textbf{SNPs} & \textbf{MAPIT-R} \\
+% \textbf{Gene Family} & & \textbf{Pathway} & & \textbf{$p$-Value} \\
+%  \hline
+%PSMA & 17 & Activation of NF-KappaB in B Cells & 465 & 1.86E-05  \\
+%PSMB & 74 & Antigen Processing Cross Presentation & 850 & 3.96E-05 \\
+%PSMC & 20 & Assembly of the Pre-Replicative Complex & 331 & 3.29E-05 \\
+%PSMD & 62 & Cell Cycle Checkpoints & 670 & 5.78E-06 \\
+%PSME & 15 & Cell Cycle & 2459 & 1.29E-06 \\
+%PSMF & 16 & Cell Cycle Mitotic & 1906 & 4.51E-05 \\
+% & & Downstream Signaling Events of the B Cell Receptor & 745 & 1.19E-05 \\
+% & & HIV Infection & 1346 & 7.53E-07 \\
+% & & Host Interactions of HIV Factors & 963 & 7.52E-06 \\
+% & & M G1 Transition & 458 & 3.19E-06 \\
+% & & Regulation of Apoptosis & 564 & 1.22E-05 \\
+%  \hline
+%\end{tabular}}}
+%\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME-BMI-African}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI-African subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+%\label{InterPath-Supp-Figure-Prot-Heatplots-African}
+%\end{figure}
+%\clearpage
+%\addtocounter{figure}{-1}
+%\addtocounter{CharNumber5}{1}
+
+\begin{figure}[H]
 \centering
 \vspace*{-.5cm}
-\subfloat[]{\includegraphics[scale=.5]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_African_Loop_vs3.png}}
-\par
-\subfloat[]{\resizebox{1.1\columnwidth}{!}{
- \hspace*{-1.75cm}
- \begin{tabular}{cc|ccc}
+\subfigure[$\Delta$ in MAPIT-R -$\log_{10}$ $p$-value per SNP]{\includegraphics[width=\textwidth]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_African_Loop_vs3.png}}
+\subfigure[\textcolor{red}{Number of SNPs in each Proteasome Gene Family and REACTOME Pathway}]{
+\setlength{\extrarowheight}{3pt}
+ \hspace*{-1cm}
+ \begin{tabular}{|cc|ccc|}
   \hline
-\textbf{Proteasome} & \textbf{SNPs} & \textbf{REACTOME} & \textbf{SNPs} & \textbf{MAPIT-R} \\
- \textbf{Gene Family} & & \textbf{Pathway} & & \textbf{$p$-Value} \\
+\textbf{Gene Family} & \textbf{\# SNPs} & \textbf{REACTOME Pathway} & \textbf{\# SNPs} & \textbf{$\bm{P}$-Value}\\ [2pt]\hline
+PSMA & 17 & Activation of NF-KappaB in B Cells & 465 & 1.86$\times10^{-5}$  \\[2pt]
+PSMB & 74 & Antigen Processing Cross Presentation & 850 & 3.96$\times10^{-5}$ \\[2pt]
+PSMC & 20 & Assembly of the Pre-Replicative Complex & 331 & 3.29$\times10^{-5}$ \\[2pt]
+PSMD & 62 & Cell Cycle Checkpoints & 670 & 5.78$\times10^{-6}$ \\[2pt]
+PSME & 15 & Cell Cycle & 2459 & 1.29$\times10^{-6}$\\[2pt]
+PSMF & 16 & Cell Cycle Mitotic & 1906 & 4.51$\times10^{-5}$ \\[2pt]
+ & & Downstream Signaling Events of the B Cell Receptor & 745 & 1.19$\times10^{-5}$ \\[2pt]
+ & & HIV Infection & 1346 & 7.53$\times10^{-7}$ \\[2pt]
+ & & Host Interactions of HIV Factors & 963 & 7.52$\times10^{-6}$ \\[2pt]
+ & & M G1 Transition & 458 & 3.19$\times10^{-6}$ \\[2pt]
+ & & Regulation of Apoptosis & 564 & 1.22$\times10^{-5}$ \\[2pt]
   \hline
-PSMA & 17 & Activation of NF-KappaB in B Cells & 465 & 1.86E-05  \\
-PSMB & 74 & Antigen Processing Cross Presentation & 850 & 3.96E-05 \\
-PSMC & 20 & Assembly of the Pre-Replicative Complex & 331 & 3.29E-05 \\
-PSMD & 62 & Cell Cycle Checkpoints & 670 & 5.78E-06 \\
-PSME & 15 & Cell Cycle & 2459 & 1.29E-06 \\
-PSMF & 16 & Cell Cycle Mitotic & 1906 & 4.51E-05 \\
- & & Downstream Signaling Events of the B Cell Receptor & 745 & 1.19E-05 \\
- & & HIV Infection & 1346 & 7.53E-07 \\
- & & Host Interactions of HIV Factors & 963 & 7.52E-06 \\
- & & M G1 Transition & 458 & 3.19E-06 \\
- & & Regulation of Apoptosis & 564 & 1.22E-05 \\
-  \hline
-\end{tabular}}}
-\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME-BMI-African}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI-African subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+\end{tabular}}
+\caption{\textbf{Results from applying a ``leave-one-out'' approach to MAPIT-R with proteasome gene families in body mass index (BMI) within the African subgroup in the UK Biobank.} \textbf{(a)} The heatmap shows the change in original MAPIT-R -$\log_{10}$ $P$-value for different REACTOME pathways when each proteasome gene family is removed one at a time in a `leave-one-out' manner. The x-axis shows each proteasome gene family and the y-axis lists each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatmap specifically shows the -$\log_{10}$ $P$-value change per SNP. \textbf{(b)} The table shows the number of SNPs present in each proteasome gene family (left), as well as the number of SNPs present in each REACTOME pathway (right). The original MAPIT-R $P$-values are also shown for each pathway (right).}
 \label{InterPath-Supp-Figure-Prot-Heatplots-African}
 \end{figure}
 \clearpage
-\addtocounter{figure}{-1}
-\addtocounter{CharNumber5}{1}
 
 %\captionsetup[subfigure]{position=top, labelfont=bf,textfont=normalfont,singlelinecheck=off,justification=raggedright}
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
 \vspace*{-.5cm}
-\subfloat[]{\includegraphics[scale=.5]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_BritRan4000_Loop_vs3.png}}
-\par
-\subfloat[]{\resizebox{1.1\columnwidth}{!}{
- \hspace*{-1.75cm}
- \begin{tabular}{cc|ccc}
+\subfigure[$\Delta$ in MAPIT-R -$\log_{10}$ $p$-value per SNP]{\includegraphics[width=\textwidth]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_BritRan4000_Loop_vs3.png}}
+\subfigure[\textcolor{red}{Number of SNPs in each Proteasome Gene Family and REACTOME Pathway}]{
+\setlength{\extrarowheight}{3pt}
+ \hspace*{-1cm}
+ \begin{tabular}{|cc|ccc|}
   \hline
-\textbf{Proteasome} & \textbf{SNPs} & \textbf{REACTOME} & \textbf{SNPs} & \textbf{MAPIT-R} \\
- \textbf{Gene Family} & & \textbf{Pathway} & & \textbf{$p$-Value} \\
+\textbf{Gene Family} & \textbf{\# SNPs} & \textbf{REACTOME Pathway} & \textbf{\# SNPs} & \textbf{$\bm{P}$-Value}\\ [2pt]\hline
+PSMA & 40 & Activation of NF-KappaB in B Cells & 756 & 2.28$\times10^{-1}$  \\[2pt]
+PSMB & 91 & Antigen Processing Cross Presentation & 1104 & 2.48$\times10^{-5}$ \\[2pt]
+PSMC & 29 & Assembly of the Pre-Replicative Complex & 507 & 1.84$\times10^{-2}$ \\[2pt]
+PSMD & 101 & Cell Cycle Checkpoints & 1121 & 6.77$\times10^{-2}$ \\[2pt]
+PSME & 25 & Cell Cycle Mitotic & 3304 & 2.34$\times10^{-1}$ \\[2pt]
+ PSMF & 26 & Downstream Signaling Events of the B Cell Receptor & 1248 & 3.25$\times10^{-1}$ \\[2pt]
+ & & HIV Infection & 2221 & 8.26$\times10^{-2}$ \\[2pt]
+ & & Host Interactions of HIV Factors & 1541 & 1.55$\times10^{-2}$ \\[2pt]
+ & & M G1 Transition & 697 & 3.02$\times10^{-1}$ \\[2pt]
+ & & Regulation of Apoptosis & 906 & 2.98$\times10^{-2}$ \\[2pt]
   \hline
-PSMA & 40 & Activation of NF-KappaB in B Cells & 756 & 2.28E-01  \\
-PSMB & 91 & Antigen Processing Cross Presentation & 1104 & 2.48E-05 \\
-PSMC & 29 & Assembly of the Pre-Replicative Complex & 507 & 1.84E-02 \\
-PSMD & 101 & Cell Cycle Checkpoints & 1121 & 6.77E-02 \\
-PSME & 25 & Cell Cycle Mitotic & 3304 & 2.34E-01 \\
- PSMF & 26 & Downstream Signaling Events of the B Cell Receptor & 1248 & 3.25E-01 \\
- & & HIV Infection & 2221 & 8.26E-02 \\
- & & Host Interactions of HIV Factors & 1541 & 1.55E-02 \\
- & & M G1 Transition & 697 & 3.02E-01 \\
- & & Regulation of Apoptosis & 906 & 2.98E-02 \\
-  \hline
-\end{tabular}}}
-\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME-BMI-British.Ran4000}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI-British.Ran4000 subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+\end{tabular}}
+\caption{\textbf{Results from applying a ``leave-one-out'' approach to MAPIT-R with proteasome gene families in body mass index (BMI) within 4,000 randomly subsampled individuals of British ancestry (\texttt{Brit.Ran4k}) in the UK Biobank.} \textbf{(a)} The heatmap shows the change in original MAPIT-R -$\log_{10}$ $p$-value for different REACTOME pathways when each proteasome gene family is removed one at a time in a `leave-one-out' manner. The x-axis shows each proteasome gene family and the y-axis lists each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatmap specifically shows the -$\log_{10}$ $P$-value change per SNP. \textbf{(b)} The table shows the number of SNPs present in each proteasome gene family (left), as well as the number of SNPs present in each REACTOME pathway (right). The original MAPIT-R $P$-values are also shown for each pathway (right).}
 \label{InterPath-Supp-Figure-Prot-Heatplots-BritRan4000}
 \end{figure}
 \clearpage
-\addtocounter{figure}{-1}
-\addtocounter{CharNumber5}{1}
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
 \vspace*{-.5cm}
-\subfloat[]{\includegraphics[scale=.5]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_Caribbean_Loop_vs3.png}}
-\par
-\subfloat[]{\resizebox{1.1\columnwidth}{!}{
- \hspace*{-1.75cm}
- \begin{tabular}{cc|ccc}
+\subfigure[$\Delta$ in MAPIT-R -$\log_{10}$ $p$-value per SNP]{\includegraphics[width=\textwidth]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_Caribbean_Loop_vs3.png}}
+\subfigure[\textcolor{red}{Number of SNPs in each Proteasome Gene Family and REACTOME Pathway}]{
+\setlength{\extrarowheight}{3pt}
+ \hspace*{-1cm}
+ \begin{tabular}{|cc|ccc|}
   \hline
-\textbf{Proteasome} & \textbf{SNPs} & \textbf{REACTOME} & \textbf{SNPs} & \textbf{MAPIT-R} \\
- \textbf{Gene Family} & & \textbf{Pathway} & & \textbf{$p$-Value} \\
+\textbf{Gene Family} & \textbf{\# SNPs} & \textbf{REACTOME Pathway} & \textbf{\# SNPs} & \textbf{$\bm{P}$-Value}\\ [2pt]\hline
+PSMA & 18 & Activation of NF-KappaB in B Cells & 507 & 9.93$\times10^{-1}$   \\[2pt]
+PSMB & 77 & Antigen Processing Cross Presentation & 871 & 5.15$\times10^{-2}$  \\[2pt]
+PSMC & 21 & Assembly of the Pre-Replicative Complex & 357 & 7.25$\times10^{-1}$  \\[2pt]
+PSMD & 69 & Cell Cycle Checkpoints & 736 & 8.83$\times10^{-1}$  \\[2pt]
+PSME & 15 & Cell Cycle & 2711 & 2.51$\times10^{-1}$  \\[2pt]
+PSMF & 16 & Cell Cycle Mitotic & 2111 & 7.98$\times10^{-1}$  \\[2pt]
+ & & Downstream Signaling Events of the B Cell Receptor & 829 & 8.37$\times10^{-1}$  \\[2pt]
+ & & HIV Infection & 1483 & 3.11$\times10^{-1}$  \\[2pt]
+ & & Host Interactions of HIV Factors & 1055 & 6.68$\times10^{-1}$  \\[2pt]
+ & & M G1 Transition & 500 & 6.37$\times10^{-1}$  \\[2pt]
+ & & Regulation of Apoptosis & 615 & 9.42$\times10^{-1}$  \\[2pt]
   \hline
-PSMA & 18 & Activation of NF-KappaB in B Cells & 507 & 9.93E-01  \\
-PSMB & 77 & Antigen Processing Cross Presentation & 871 & 5.15E-02 \\
-PSMC & 21 & Assembly of the Pre-Replicative Complex & 357 & 7.25E-01 \\
-PSMD & 69 & Cell Cycle Checkpoints & 736 & 8.83E-01 \\
-PSME & 15 & Cell Cycle & 2711 & 2.51E-01 \\
-PSMF & 16 & Cell Cycle Mitotic & 2111 & 7.98E-01 \\
- & & Downstream Signaling Events of the B Cell Receptor & 829 & 8.37E-01 \\
- & & HIV Infection & 1483 & 3.11E-01 \\
- & & Host Interactions of HIV Factors & 1055 & 6.68E-01 \\
- & & M G1 Transition & 500 & 6.37E-01 \\
- & & Regulation of Apoptosis & 615 & 9.42E-01 \\
-  \hline
-\end{tabular}}}
-\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME-BMI-Caribbean}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI-Caribbean subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+\end{tabular}}
+\caption{\textbf{Results from applying a ``leave-one-out'' approach to MAPIT-R with proteasome gene families in body mass index (BMI) within the Caribbean cohort in the UK Biobank.} \textbf{(a)} The heatmap shows the change in original MAPIT-R -$\log_{10}$ $P$-value for different REACTOME pathways when each proteasome gene family is removed one at a time in a `leave-one-out' manner. The x-axis shows each proteasome gene family and the y-axis lists each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatmap specifically shows the -$\log_{10}$ $P$-value change per SNP. \textbf{(b)} The table shows the number of SNPs present in each proteasome gene family (left), as well as the number of SNPs present in each REACTOME pathway (right). The original MAPIT-R $P$-values are also shown for each pathway (right).}
 \label{InterPath-Supp-Figure-Prot-Heatplots-Caribbean}
 \end{figure}
 \clearpage
-\addtocounter{figure}{-1}
-\addtocounter{CharNumber5}{1}
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
 \vspace*{-.5cm}
-\subfloat[]{\includegraphics[scale=.5]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_Chinese_Loop_vs3.png}}
-\par
-\subfloat[]{\resizebox{1.1\columnwidth}{!}{
- \hspace*{-1.75cm}
- \begin{tabular}{cc|ccc}
+\subfigure[$\Delta$ in MAPIT-R -$\log_{10}$ $p$-value per SNP]{\includegraphics[width=\textwidth]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_Chinese_Loop_vs3.png}}
+\subfigure[\textcolor{red}{Number of SNPs in each Proteasome Gene Family and REACTOME Pathway}]{
+\setlength{\extrarowheight}{3pt}
+ \hspace*{-1cm}
+ \begin{tabular}{|cc|ccc|}
   \hline
-\textbf{Proteasome} & \textbf{SNPs} & \textbf{REACTOME} & \textbf{SNPs} & \textbf{MAPIT-R} \\
- \textbf{Gene Family} & & \textbf{Pathway} & & \textbf{$p$-Value} \\
+\textbf{Gene Family} & \textbf{\# SNPs} & \textbf{REACTOME Pathway} & \textbf{\# SNPs} & \textbf{$\bm{P}$-Value}\\ [2pt]\hline
+PSMA & 13 & Activation of NF-KappaB in B Cells & 433 & 5.27$\times10^{-1}$  \\[2pt]
+PSMB & 74 & Antigen Processing Cross Presentation & 771 & 1.11$\times10^{-2}$ \\[2pt]
+PSMC & 18 & Assembly of the Pre-Replicative Complex & 292 & 8.77$\times10^{-1}$ \\[2pt]
+PSMD & 58 & Cell Cycle Checkpoints & 589 & 5.41$\times10^{-1}$  \\[2pt]
+PSME & 12 & Downstream Signaling Events of the B Cell Receptor & 698 & 1.40$\times10^{-1}$ \\[2pt]
+PSMF & 16 & HIV Infection & 1266 & 3.68$\times10^{-3}$ \\[2pt]
+ & & Host Interactions of HIV Factors & 902 & 4.24$\times10^{-2}$\\[2pt]
+ & & M G1 Transition & 400 & 8.20$\times10^{-1}$ \\[2pt]
+ & & Regulation of Apoptosis & 527 & 2.26$\times10^{-2}$ \\[2pt]
   \hline
-PSMA & 13 & Activation of NF-KappaB in B Cells & 433 & 5.27E-01  \\
-PSMB & 74 & Antigen Processing Cross Presentation & 771 & 1.11E-02 \\
-PSMC & 18 & Assembly of the Pre-Replicative Complex & 292 & 8.77E-01 \\
-PSMD & 58 & Cell Cycle Checkpoints & 589 & 5.41E-01  \\
-PSME & 12 & Downstream Signaling Events of the B Cell Receptor & 698 & 1.40E-01 \\
-PSMF & 16 & HIV Infection & 1266 & 3.68E-03 \\
- & & Host Interactions of HIV Factors & 902 & 4.24E-02 \\
- & & M G1 Transition & 400 & 8.20E-01 \\
- & & Regulation of Apoptosis & 527 & 2.26E-02 \\
-  \hline
-\end{tabular}}}
-\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME-BMI-Chinese}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI-Chinese subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+\end{tabular}}
+\caption{\textbf{Results from applying a ``leave-one-out'' approach to MAPIT-R with proteasome gene families in body mass index (BMI) within the Chinese cohort in the UK Biobank.} \textbf{(a)} The heatmap shows the change in original MAPIT-R -$\log_{10}$ $P$-value for different REACTOME pathways when each proteasome gene family is removed one at a time in a `leave-one-out' manner. The x-axis shows each proteasome gene family and the y-axis lists each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatmap specifically shows the -$\log_{10}$ $P$-value change per SNP. \textbf{(b)} The table shows the number of SNPs present in each proteasome gene family (left), as well as the number of SNPs present in each REACTOME pathway (right). The original MAPIT-R $P$-values are also shown for each pathway (right).}
 \label{InterPath-Supp-Figure-Prot-Heatplots-Chinese}
 \end{figure}
 \clearpage
-\addtocounter{figure}{-1}
-\addtocounter{CharNumber5}{1}
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
 \vspace*{-.5cm}
-\subfloat[]{\includegraphics[scale=.5]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_Indian_Loop_vs3.png}}
-\par
-\subfloat[]{\resizebox{1.1\columnwidth}{!}{
- \hspace*{-1.75cm}
- \begin{tabular}{cc|ccc}
+\subfigure[$\Delta$ in MAPIT-R -$\log_{10}$ $p$-value per SNP]{\includegraphics[width=\textwidth]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_Indian_Loop_vs3.png}}
+\subfigure[\textcolor{red}{Number of SNPs in each Proteasome Gene Family and REACTOME Pathway}]{
+\setlength{\extrarowheight}{3pt}
+ \hspace*{-1cm}
+ \begin{tabular}{|cc|ccc|}
   \hline
-\textbf{Proteasome} & \textbf{SNPs} & \textbf{REACTOME} & \textbf{SNPs} & \textbf{MAPIT-R} \\
- \textbf{Gene Family} & & \textbf{Pathway} & & \textbf{$p$-Value} \\
+\textbf{Gene Family} & \textbf{\# SNPs} & \textbf{REACTOME Pathway} & \textbf{\# SNPs} & \textbf{$\bm{P}$-Value}\\ [2pt]\hline
+PSMA & 29 & Activation of NF-KappaB in B Cells & 618 & 9.98$\times10^{-1}$  \\[2pt]
+PSMB & 85 & Antigen Processing Cross Presentation & 977 & 4.48$\times10^{-1}$ \\[2pt]
+PSMC & 25 & Assembly of the Pre-Replicative Complex & 427 & 5.02$\times10^{-1}$ \\[2pt]
+PSMD & 78 & Cell Cycle Checkpoints & 909 & 8.04$\times10^{-1}$ \\[2pt]
+PSME & 21 & Cell Cycle & 3361 & 1.87$\times10^{-1}$ \\[2pt]
+PSMF & 21 & Cell Cycle Mitotic & 2656 & 2.32$\times10^{-1}$ \\[2pt]
+ & & Downstream Signaling Events of the B Cell Receptor & 1037 & 5.53$\times10^{-1}$ \\[2pt]
+ & & HIV Infection & 1836 & 9.80$\times10^{-2}$ \\[2pt]
+ & & Host Interactions of HIV Factors & 1278 & 3.79$\times10^{-1}$ \\[2pt]
+ & & M G1 Transition & 590 & 4.65$\times10^{-1}$ \\[2pt]
+ & & Regulation of Apoptosis & 754 & 5.61$\times10^{-1}$\\[2pt]
   \hline
-PSMA & 29 & Activation of NF-KappaB in B Cells & 618 & 9.978E-01  \\
-PSMB & 85 & Antigen Processing Cross Presentation & 977 & 4.476E-01 \\
-PSMC & 25 & Assembly of the Pre-Replicative Complex & 427 & 5.019E-01 \\
-PSMD & 78 & Cell Cycle Checkpoints & 909 & 8.042E-01 \\
-PSME & 21 & Cell Cycle & 3361 & 1.873E-01 \\
-PSMF & 21 & Cell Cycle Mitotic & 2656 & 2.316E-01 \\
- & & Downstream Signaling Events of the B Cell Receptor & 1037 & 5.534E-01 \\
- & & HIV Infection & 1836 & 9.803E-02 \\
- & & Host Interactions of HIV Factors & 1278 & 3.788E-01 \\
- & & M G1 Transition & 590 & 4.658E-01 \\
- & & Regulation of Apoptosis & 754 & 5.606E-01 \\
-  \hline
-\end{tabular}}}
-\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME-BMI-Indian}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI-Indian subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+\end{tabular}}
+\caption{\textbf{Results from applying a ``leave-one-out'' approach to MAPIT-R with proteasome gene families in body mass index (BMI) within the Indian cohort in the UK Biobank.} \textbf{(a)} The heatmap shows the change in original MAPIT-R -$\log_{10}$ $P$-value for different REACTOME pathways when each proteasome gene family is removed one at a time in a `leave-one-out' manner. The x-axis shows each proteasome gene family and the y-axis lists each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatmap specifically shows the -$\log_{10}$ $P$-value change per SNP. \textbf{(b)} The table shows the number of SNPs present in each proteasome gene family (left), as well as the number of SNPs present in each REACTOME pathway (right). The original MAPIT-R $P$-values are also shown for each pathway (right).}
 \label{InterPath-Supp-Figure-Prot-Heatplots-Indian}
 \end{figure}
 \clearpage
-\addtocounter{figure}{-1}
-\addtocounter{CharNumber5}{1}
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
 \vspace*{-.5cm}
-\subfloat[]{\includegraphics[scale=.5]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_Pakistani_Loop_vs3.png}}
-\par
-\subfloat[]{\resizebox{1.1\columnwidth}{!}{
- \hspace*{-1.75cm}
- \begin{tabular}{cc|ccc}
+\subfigure[$\Delta$ in MAPIT-R -$\log_{10}$ $p$-value per SNP]{\includegraphics[width=\textwidth]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_Pakistani_Loop_vs3.png}}
+\subfigure[\textcolor{red}{Number of SNPs in each Proteasome Gene Family and REACTOME Pathway}]{
+\setlength{\extrarowheight}{3pt}
+ \hspace*{-1cm}
+ \begin{tabular}{|cc|ccc|}
   \hline
-\textbf{Proteasome} & \textbf{SNPs} & \textbf{REACTOME} & \textbf{SNPs} & \textbf{MAPIT-R} \\
- \textbf{Gene Family} & & \textbf{Pathway} & & \textbf{$p$-Value} \\
+\textbf{Gene Family} & \textbf{\# SNPs} & \textbf{REACTOME Pathway} & \textbf{\# SNPs} & \textbf{$\bm{P}$-Value}\\ [2pt]\hline
+PSMA & 30 & Activation of NF-KappaB in B Cells & 643 & 4.61$\times10^{-1}$  \\[2pt]
+PSMB & 90 & Antigen Processing Cross Presentation & 1036 & 8.74$\times10^{-3}$ \\[2pt]
+PSMC & 24 & Assembly of the Pre-Replicative Complex & 444 & 9.73$\times10^{-1}$ \\[2pt]
+PSMD & 86 & Cell Cycle Checkpoints & 940 & 1.63$\times10^{-1}$ \\[2pt]
+PSME & 21 & Downstream Signaling Events of the B Cell Receptor & 1073 & 6.57$\times10^{-2}$ \\[2pt]
+PSMF & 22 & Host Interactions of HIV Factors & 1315 & 1.00$\times10^{-1}$ \\[2pt]
+ & & M G1 Transition & 612 & 6.66$\times10^{-1}$ \\[2pt]
+ & & Regulation of Apoptosis & 774 & 5.16$\times10^{-2}$ \\[2pt]
   \hline
-PSMA & 30 & Activation of NF-KappaB in B Cells & 643 & 4.61E-01  \\
-PSMB & 90 & Antigen Processing Cross Presentation & 1036 & 8.74E-03 \\
-PSMC & 24 & Assembly of the Pre-Replicative Complex & 444 & 9.73E-01 \\
-PSMD & 86 & Cell Cycle Checkpoints & 940 & 1.63E-01 \\
-PSME & 21 & Downstream Signaling Events of the B Cell Receptor & 1073 & 6.57E-02 \\
-PSMF & 22 & Host Interactions of HIV Factors & 1315 & 1.00E-01 \\
- & & M G1 Transition & 612 & 6.66E-01 \\
- & & Regulation of Apoptosis & 774 & 5.16E-02 \\
-  \hline
-\end{tabular}}}
-\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME-BMI-Pakistani}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI-Pakistani subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+\end{tabular}}
+\caption{\textbf{Results from applying a ``leave-one-out'' approach to MAPIT-R with proteasome gene families in body mass index (BMI) within the Pakistani cohort in the UK Biobank.} \textbf{(a)} The heatmap shows the change in original MAPIT-R -$\log_{10}$ $P$-value for different REACTOME pathways when each proteasome gene family is removed one at a time in a `leave-one-out' manner. The x-axis shows each proteasome gene family and the y-axis lists each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatmap specifically shows the -$\log_{10}$ $P$-value change per SNP. \textbf{(b)} The table shows the number of SNPs present in each proteasome gene family (left), as well as the number of SNPs present in each REACTOME pathway (right). The original MAPIT-R $P$-values are also shown for each pathway (right).}
 \label{InterPath-Supp-Figure-Prot-Heatplots-Pakistani}
 \end{figure}
 \clearpage
-\addtocounter{figure}{-1}
-\addtocounter{CharNumber5}{1}
 
-\addtocounter{figure}{1}
-\renewcommand{\thefigure}{\arabic{figure}}
+%\addtocounter{figure}{1}
+%\renewcommand{\thefigure}{\arabic{figure}}
 
-\setlength{\footskip}{3cm}
+%\setlength{\footskip}{2cm}
 \begin{figure}[htbp]
 \centering
-\vspace*{-2cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_IBS_AllPops_vs4_noHLA.png}
-\caption[TBD]{\textbf{Pathway-level genetic diversity vs. MAPIT-R results for all database-phenotype-subgroup combinations}. Caption continued on next page.}
-\label{InterPath-Supp-Figure-IBS-AllPops}
-\end{figure}
-\clearpage
-\setlength{\footskip}{1cm}
-\addtocounter{figure}{-1}
-
-\begin{figure} [t!]
-\caption[TBD]{\textbf{Pathway-level genetic diversity vs. MAPIT-R results for all database-phenotype-subgroup combinations}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for every pathway database-phenotype-UKB subgroup combination. IBS proportions were calculated per pathway by using that pathway's set of SNPs, were calculated pairwise between every set of individuals in the subgroup, and then averaged across each of these pairs for a final, single summary metric. We observe across the majority of combinations no significant relationship between mean pairwise IBS proportion and MAPIT-R $p$-value.}
-\label{InterPath-Supp-Figure-IBS-AllPops-Caption}
-\end{figure}
-\clearpage
-
-%\begin{figure}[htbp]
-%\centering
-%\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_IBS_AllPopComps_vs3_REACTOME.png}
-%\caption[TBD]{\textbf{Pathway-level genetic diversity across all UKB subgroups for top African MAPIT-R REACTOME pathways}. The figure plots the mean pairwise IBS proportions of each UKB subgroup for the top 75 REACTOME pathways (sorted by MAPIT-R African subgroup $p$-value) for each pathway database-phenotype combination. Most variation in mean pairwise IBS proportions varies moreso based on the pathways themselves and not on ancestry; subgroups differ between one another mostly at the same levels across each pathway.}
-%\label{InterPath-Supp-Figure-IBS-AllPopComps-REACTOME}
-%\end{figure}
-%\clearpage
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_RFMix_vs2_African_KEGG_noHLA.png}
-\caption[TBD]{\textbf{Pathway-level genetic diversity vs. MAPIT-R results in the African subgroup and KEGG database}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the African subgroup KEGG (a) height and (b) BMI analysis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results with REACTOME database pathways can be found in Supplementary Figure \ref{InterPath-Main-Figure-RFMix-African-REACTOME}. We observe across the majority of our combinations no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
-\label{InterPath-Supp-Figure-RFMix-African-KEGG}
-\end{figure}
-\clearpage
-
-\setlength{\footskip}{3cm}
-\begin{figure}[htbp]
-\centering
-\vspace*{-2cm}
-\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_PC1Loading_AllPaths_vs2_noHLA.png}
-\caption[TBD]{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, all pathways}. Caption continued on next page.}
-\label{InterPath-Supp-Figure-PC1Loading-AllPaths}
-\end{figure}
-\clearpage
-\setlength{\footskip}{1cm}
-
-\addtocounter{figure}{-1}
-\begin{figure} [t!]
-  \caption{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, all pathways}. The figure shows the proportion of SNPs within a given pathway that are strongly loaded on local PC1 plotted against that pathway's MAPIT-R -$\log_{10}$ $p$-value. All pathway sizes were used for this analysis. `Local' here refers to PCA having been conducted within-subgroup. SNPs are designated as `strongly loaded' on local PC1 if they are within the 10\% tails of the loading SNP score distributions. We observe that there is no significantly positive relationship between MAPIT-R $p$-values and proportion of SNPs that are strongly loaded on PC1 for any pathway database-phenotype-subgroup combination.}
-\label{InterPath-Supp-Figure-PC1Loading-AllPaths-Caption}
-\end{figure}
-\clearpage
-
-\setlength{\footskip}{2cm}
-\begin{figure}[htbp]
-\centering
-\vspace*{-1.75cm}
-\hspace*{-1cm}
-\includegraphics[scale=.325]{Images/Supp/InterPath_Supp_Figure_Hypergemeotric_SizeThresholds_vs1.png}
-\caption[TBD]{\textbf{Impact of pathway size thresholds on hypergeometric enrichment analyses}. Caption continued on next page.}
+%\vspace*{-1.75cm}
+%\hspace*{-1cm}
+\includegraphics[width=0.9\textwidth]{Images/Supp/InterPath_Supp_Figure_Hypergemeotric_SizeThresholds_vs1.png}
+\caption{\textbf{Impact of pathway size thresholds on hypergeometric enrichment analyses.} 
+Here, we show multiple comparisons of size-restricted versus unrestricted hypergeometric 
+enrichment analyses using incrementally decreasing pathway size thresholds. Size thresholds 
+range from $T =$ 500 SNPs to 1,500 SNPs in 100-SNP increments. In each plot, the x-axis is the 
+unrestricted hypergeometric $P$-value for each gene, while the y-axis is the size-restricted 
+hypergeometric $P$-value for each gene. Red triangles represent results for each gene belonging 
+to a proteasome gene family: {\emph{PSMA}}, {\emph{PSMB}}, {\emph{PSMC}}, {\emph{PSMD}}, 
+{\emph{PSME}}, and {\emph{PSMF}}. Note that there are only three triangles since most proteasome 
+genes are assigned to the same pathways.}
 \label{InterPath-Supp-Figure-Hypergeoemtric-SizeThresholds}
 \end{figure}
 \clearpage
-\setlength{\footskip}{1cm}
+%\setlength{\footskip}{1cm}
 
-\addtocounter{figure}{-1}
-\begin{figure} [t!]
-  \caption{\textbf{Impact of pathway size thresholds on hypergeometric enrichment analyses}. The figure shows multiple comparisons of size-restricted hypergeometric enrichment analyses versus unrestricted hypergeometric enrichment analyses using incrementally decreasing pathway size thresholds. Size thresholds change from 1,500 SNPs to 500 SNPs in 100 SNP increments. In each plot the $x$-axis is the unrestricted hypergeometric $p$-value for each gene and the $y$-axis is the size-restricted hypergeometric $p$-value for each gene. Red triangles represent results for each gene belonging to a proteasome gene family ({\emph{PSMA}}, {\emph{PSMB}}, {\emph{PSMC}}, {\emph{PSMD}}, {\emph{PSME}}, and {\emph{PSMF}}). Note that there are only three triangles since most proteasome genes are assigned to the same pathways.}
-\label{InterPath-Supp-Figure-Hypergeoemtric-SizeThresholds-Caption}
-\end{figure}
-\clearpage
+%\addtocounter{figure}{-1}
+%\begin{figure} [t!]
+%  \caption{\textbf{Impact of pathway size thresholds on hypergeometric enrichment analyses}. The figure shows multiple comparisons of size-restricted hypergeometric enrichment analyses versus unrestricted hypergeometric enrichment analyses using incrementally decreasing pathway size thresholds. Size thresholds change from 1,500 SNPs to 500 SNPs in 100 SNP increments. In each plot the $x$-axis is the unrestricted hypergeometric $p$-value for each gene and the $y$-axis is the size-restricted hypergeometric $p$-value for each gene. Red triangles represent results for each gene belonging to a proteasome gene family ({\emph{PSMA}}, {\emph{PSMB}}, {\emph{PSMC}}, {\emph{PSMD}}, {\emph{PSME}}, and {\emph{PSMF}}). Note that there are only three triangles since most proteasome genes are assigned to the same pathways.}
+%\label{InterPath-Supp-Figure-Hypergeoemtric-SizeThresholds-Caption}
+%\end{figure}
+%\clearpage
 
 \section{Supplementary Tables}\label{Supplementary-Tables}
 
@@ -1132,6 +1070,73 @@ British.Ran4000 & 6490 & 7.704E-05 & 1 & 0.015 & 0.001 & 4 & 0.062 & 0.010 & 52 
 SCRAP
 
 
+
+%\addtocounter{figure}{-1}
+%\begin{figure} [t!]
+%  \caption{\textbf{Number of SNPs in a pathway versus a pathway's MAPIT-R $p$-value}. The figure shows plots comparing the MAPIT-R $p$-values from our main analysis to the number of SNPs present in each pathway. Results for every pathway database-phenotype-UB subgroup combinations are shown. The dotted red line is the line of best fit and the legend provides the regression coefficient and its associated $p$-value. We observe that for most combinations there is a significant relationship between MAPIT-R $p$-value and the number of SNPs present in a pathway. This follows our hypothesis that combining SNPs together in a joint analysis might provide greater power to detect marginal epistasis than analyzing each SNP independently. We note, however, that these results appear to not solely be driven just by the presence or absence of large SNP counts -- conducting this same analysis on one of our sets of permuted phenotypes we now find very few significant relationships between MAPIT-R $p$-values and pathway SNP counts (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}).}
+%\label{InterPath-Supp-Figure-pValsVsNumSNPs-Caption}
+%\end{figure}
+%\clearpage
+
+%\addtocounter{figure}{-1}
+%\begin{figure} [t!]
+%  \caption{\textbf{Number of SNPs in a pathway versus a pathway's MAPIT-R $p$-value using permuted phenotypes}. The figure shows plots comparing the MAPIT-R $p$-values from our main analysis to the number of SNPs present in each pathway. For this analysis a single set of our permuted phenotypes (i.e. Supplementary Figure \ref{InterPath-Supp-Figure-perm1-QQPlots-AllPaths}) was used for each UKB subgroup. Results for every pathway database-phenotype-subgroup combination is shown. The dotted red line is the line of best fit and the legend provides the regression coefficient and its associated $p$-value. We observe that for very few combinations there is any relationship between MAPIT-R $p$-value and the number of SNPs present in a pathway. For the same analysis on the original set of observed phenotypes, see Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}.}
+%\label{InterPath-Supp-Figure-pValsVsNumSNPs-perm1-Caption}
+%\end{figure}
+%\clearpage
+
+
+\setlength{\footskip}{3cm}
+\begin{figure}[htbp]
+\centering
+\vspace*{-2cm}
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_IBS_AllPops_vs4_noHLA.png}
+\caption[TBD]{\textbf{Pathway-level genetic diversity vs. MAPIT-R results for all database-phenotype-subgroup combinations}. Caption continued on next page.}
+\label{InterPath-Supp-Figure-IBS-AllPops}
+\end{figure}
+\clearpage
+\setlength{\footskip}{1cm}
+\addtocounter{figure}{-1}
+
+\begin{figure} [t!]
+\caption[TBD]{\textbf{Pathway-level genetic diversity vs. MAPIT-R results for all database-phenotype-subgroup combinations}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for every pathway database-phenotype-UKB subgroup combination. IBS proportions were calculated per pathway by using that pathway's set of SNPs, were calculated pairwise between every set of individuals in the subgroup, and then averaged across each of these pairs for a final, single summary metric. We observe across the majority of combinations no significant relationship between mean pairwise IBS proportion and MAPIT-R $p$-value.}
+\label{InterPath-Supp-Figure-IBS-AllPops-Caption}
+\end{figure}
+\clearpage
+
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_IBS_AllPopComps_vs3_REACTOME.png}
+%\caption[TBD]{\textbf{Pathway-level genetic diversity across all UKB subgroups for top African MAPIT-R REACTOME pathways}. The figure plots the mean pairwise IBS proportions of each UKB subgroup for the top 75 REACTOME pathways (sorted by MAPIT-R African subgroup $p$-value) for each pathway database-phenotype combination. Most variation in mean pairwise IBS proportions varies moreso based on the pathways themselves and not on ancestry; subgroups differ between one another mostly at the same levels across each pathway.}
+%\label{InterPath-Supp-Figure-IBS-AllPopComps-REACTOME}
+%\end{figure}
+%\clearpage
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_RFMix_vs2_African_KEGG_noHLA.png}
+\caption[TBD]{\textbf{Pathway-level genetic diversity vs. MAPIT-R results in the African subgroup and KEGG database}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the African subgroup KEGG (a) height and (b) BMI analysis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results with REACTOME database pathways can be found in Supplementary Figure \ref{InterPath-Main-Figure-RFMix-African-REACTOME}. We observe across the majority of our combinations no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
+\label{InterPath-Supp-Figure-RFMix-African-KEGG}
+\end{figure}
+\clearpage
+
+\setlength{\footskip}{3cm}
+\begin{figure}[htbp]
+\centering
+\vspace*{-2cm}
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_PC1Loading_AllPaths_vs2_noHLA.png}
+\caption[TBD]{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, all pathways}. Caption continued on next page.}
+\label{InterPath-Supp-Figure-PC1Loading-AllPaths}
+\end{figure}
+\clearpage
+\setlength{\footskip}{1cm}
+
+\addtocounter{figure}{-1}
+\begin{figure} [t!]
+  \caption{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, all pathways}. The figure shows the proportion of SNPs within a given pathway that are strongly loaded on local PC1 plotted against that pathway's MAPIT-R -$\log_{10}$ $p$-value. All pathway sizes were used for this analysis. `Local' here refers to PCA having been conducted within-subgroup. SNPs are designated as `strongly loaded' on local PC1 if they are within the 10\% tails of the loading SNP score distributions. We observe that there is no significantly positive relationship between MAPIT-R $p$-values and proportion of SNPs that are strongly loaded on PC1 for any pathway database-phenotype-subgroup combination.}
+\label{InterPath-Supp-Figure-PC1Loading-AllPaths-Caption}
+\end{figure}
+\clearpage
 
 
 \fi
