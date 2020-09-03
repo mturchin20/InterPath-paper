@@ -931,3 +931,74 @@ MAPIT-R analyses were conducted by using code built on the modeling and testing 
 %\label{InterPath-Supp-Figure-PLINK-HeightBMI-AllPops}
 %\end{figure}
 %\clearpage
+
+
+
+
+
+%\addtocounter{figure}{-1}
+%\begin{figure} [t!]
+%  \caption{\textbf{Number of SNPs in a pathway versus a pathway's MAPIT-R $p$-value}. The figure shows plots comparing the MAPIT-R $p$-values from our main analysis to the number of SNPs present in each pathway. Results for every pathway database-phenotype-UB subgroup combinations are shown. The dotted red line is the line of best fit and the legend provides the regression coefficient and its associated $p$-value. We observe that for most combinations there is a significant relationship between MAPIT-R $p$-value and the number of SNPs present in a pathway. This follows our hypothesis that combining SNPs together in a joint analysis might provide greater power to detect marginal epistasis than analyzing each SNP independently. We note, however, that these results appear to not solely be driven just by the presence or absence of large SNP counts -- conducting this same analysis on one of our sets of permuted phenotypes we now find very few significant relationships between MAPIT-R $p$-values and pathway SNP counts (Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}).}
+%\label{InterPath-Supp-Figure-pValsVsNumSNPs-Caption}
+%\end{figure}
+%\clearpage
+
+%\addtocounter{figure}{-1}
+%\begin{figure} [t!]
+%  \caption{\textbf{Number of SNPs in a pathway versus a pathway's MAPIT-R $p$-value using permuted phenotypes}. The figure shows plots comparing the MAPIT-R $p$-values from our main analysis to the number of SNPs present in each pathway. For this analysis a single set of our permuted phenotypes (i.e. Supplementary Figure \ref{InterPath-Supp-Figure-perm1-QQPlots-AllPaths}) was used for each UKB subgroup. Results for every pathway database-phenotype-subgroup combination is shown. The dotted red line is the line of best fit and the legend provides the regression coefficient and its associated $p$-value. We observe that for very few combinations there is any relationship between MAPIT-R $p$-value and the number of SNPs present in a pathway. For the same analysis on the original set of observed phenotypes, see Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs}.}
+%\label{InterPath-Supp-Figure-pValsVsNumSNPs-perm1-Caption}
+%\end{figure}
+%\clearpage
+
+
+\setlength{\footskip}{3cm}
+\begin{figure}[htbp]
+\centering
+\vspace*{-2cm}
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_IBS_AllPops_vs4_noHLA.png}
+\caption[TBD]{\textbf{Pathway-level genetic diversity vs. MAPIT-R results for all database-phenotype-subgroup combinations}. Caption continued on next page.}
+\label{InterPath-Supp-Figure-IBS-AllPops}
+\end{figure}
+\clearpage
+\setlength{\footskip}{1cm}
+\addtocounter{figure}{-1}
+
+\begin{figure} [t!]
+\caption[TBD]{\textbf{Pathway-level genetic diversity vs. MAPIT-R results for all database-phenotype-subgroup combinations}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for every pathway database-phenotype-UKB subgroup combination. IBS proportions were calculated per pathway by using that pathway's set of SNPs, were calculated pairwise between every set of individuals in the subgroup, and then averaged across each of these pairs for a final, single summary metric. We observe across the majority of combinations no significant relationship between mean pairwise IBS proportion and MAPIT-R $p$-value.}
+\label{InterPath-Supp-Figure-IBS-AllPops-Caption}
+\end{figure}
+\clearpage
+
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_IBS_AllPopComps_vs3_REACTOME.png}
+%\caption[TBD]{\textbf{Pathway-level genetic diversity across all UKB subgroups for top African MAPIT-R REACTOME pathways}. The figure plots the mean pairwise IBS proportions of each UKB subgroup for the top 75 REACTOME pathways (sorted by MAPIT-R African subgroup $p$-value) for each pathway database-phenotype combination. Most variation in mean pairwise IBS proportions varies moreso based on the pathways themselves and not on ancestry; subgroups differ between one another mostly at the same levels across each pathway.}
+%\label{InterPath-Supp-Figure-IBS-AllPopComps-REACTOME}
+%\end{figure}
+%\clearpage
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=.35]{Images/Supp/InterPath_Supp_Figure_RFMix_vs2_African_KEGG_noHLA.png}
+\caption[TBD]{\textbf{Pathway-level genetic diversity vs. MAPIT-R results in the African subgroup and KEGG database}. The figure shows the mean pairwise IBS proportions per pathway plotted against each pathway's MAPIT-R $p$-value for the African subgroup KEGG (a) height and (b) BMI analysis. IBS proportions were calculated per pathway by using each pathway's set of SNPs to derive pairwise IBS values between every set of individuals in the subgroup, and then averaging across each of these pairs for a final summary metric. Results with REACTOME database pathways can be found in Supplementary Figure \ref{InterPath-Main-Figure-RFMix-African-REACTOME}. We observe across the majority of our combinations no significant relationship between a pathway's mean pairwise IBS proportion and its MAPIT-R $p$-value.}
+\label{InterPath-Supp-Figure-RFMix-African-KEGG}
+\end{figure}
+\clearpage
+
+\setlength{\footskip}{3cm}
+\begin{figure}[htbp]
+\centering
+\vspace*{-2cm}
+\includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_PC1Loading_AllPaths_vs2_noHLA.png}
+\caption[TBD]{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, all pathways}. Caption continued on next page.}
+\label{InterPath-Supp-Figure-PC1Loading-AllPaths}
+\end{figure}
+\clearpage
+\setlength{\footskip}{1cm}
+
+\addtocounter{figure}{-1}
+\begin{figure} [t!]
+  \caption{\textbf{Relationship between MAPIT-R $p$-values and proportions of pathway SNPs loaded on PC1, all pathways}. The figure shows the proportion of SNPs within a given pathway that are strongly loaded on local PC1 plotted against that pathway's MAPIT-R -$\log_{10}$ $p$-value. All pathway sizes were used for this analysis. `Local' here refers to PCA having been conducted within-subgroup. SNPs are designated as `strongly loaded' on local PC1 if they are within the 10\% tails of the loading SNP score distributions. We observe that there is no significantly positive relationship between MAPIT-R $p$-values and proportion of SNPs that are strongly loaded on PC1 for any pathway database-phenotype-subgroup combination.}
+\label{InterPath-Supp-Figure-PC1Loading-AllPaths-Caption}
+\end{figure}
+\clearpage
