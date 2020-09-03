@@ -192,11 +192,15 @@
 \newcommand*\rot{\multicolumn{1}{R{90}{1em}}}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
+% Bold the 'Figure #' in the caption and separate it with a period
+% Captions will be left justified
+\usepackage[labelfont=bf,labelsep=period,justification=justified]{caption}
+\captionsetup[table]{name=Supplementary Table}
+\captionsetup[figure]{name=Supplementary Figure}
 \allowdisplaybreaks
-
 \renewcommand\thesubfigure{(\Alph{subfigure})}
-
 \bibliographystyle{plos2015}
+\usepackage{cite}
 
 % Remove brackets from numbering in List of References
 \makeatletter
@@ -280,7 +284,7 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \setcounter{figure}{0}
 \setcounter{table}{0}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 %\hspace*{-1cm}
 \includegraphics[width = \textwidth]{Images/Supp/InterPath_Supp_Figure_UKB_PCAPlot_vs2.png}
@@ -306,10 +310,10 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \end{figure}
 \clearpage
 
-\setlength{\footskip}{3cm}
+%\setlength{\footskip}{3cm}
 \begin{figure}[htbp]
 \centering
-%\vspace*{-2cm}
+\vspace*{-2cm}
 \includegraphics[width = \textwidth]{Images/Supp/InterPath_Supp_Figure_pValHists_vs3.png}
 \caption{\textbf{Histograms of MAPIT-R $\bm{p}$-values using KEGG and REACTOME pathways annotations and randomly permuted phenotypes in each ancestry-specific subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were independently permuted within each population subgroup ten different times. Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Overall, we find that MAPIT-R properly controls for type 1 error rate at varying significance cutoff thresholds (Supplementary Table \ref{InterPath-Supp-Table-AllPops-FDRs}).}
 \label{InterPath-Supp-Figure-10perms-pValHists}
@@ -734,14 +738,14 @@ genes are assigned to the same pathways.}
   & Indian & 1810 & 2.76$\times10^{-4}$ & 1 & 0.055 & 1 & 0.055 & 20 & 1.105 \\ 
   & Pakistani & 1410 & 3.55$\times10^{-4}$ & 0 & 0.000 & 2 & 0.142 & 17 & 1.206 \\ 
   \hline
-\multirow{6.5}{*}{\textbf{KEGG (BMI)}} & African & 1800 & 2.778E-04 & 0 & 0.000 & 1 & 0.056 & 16 & 0.889 \\
+\multirow{6.5}{*}{\textbf{KEGG (BMI)}} & African & 1800 & 2.778$\times10^{-4}$ & 0 & 0.000 & 1 & 0.056 & 16 & 0.889 \\
  & Caribbean & 1810 & 2.762$\times10^{-4}$ & 0 & 0.000 & 1 & 0.055 & 25 & 1.381 \\ 
  & Chinese & 1530 & 3.268$\times10^{-4}$ & 0 & 0.000 & 1 & 0.065 & 24 & 1.569 \\ 
  & Indian & 1810 & 2.762$\times10^{-4}$ & 1 & 0.055 & 2 & 0.110 & 20 & 1.105 \\ 
  & Irish & 1860 & 2.688$\times10^{-4}$ & 0 & 0.000 & 0 & 0.000 & 14 & 0.753 \\ 
  & Pakistani & 1410 & 3.546$\times10^{-4}$ & 0 & 0.000 & 2 & 0.142 & 15 & 1.064 \\ 
   \hline
-\multirow{6.5}{*}{\textbf{REACTOME (Height)}} & African & 6580 & 7.599E-05 & 0 & 0.000 & 6 & 0.091 & 47 & 0.714 \\ 
+\multirow{6.5}{*}{\textbf{REACTOME (Height)}} & African & 6580 & 7.599$\times10^{-5}$ & 0 & 0.000 & 6 & 0.091 & 47 & 0.714 \\ 
  & Caribbean & 6610 & 7.564$\times10^{-5}$ & 0 & 0.000 & 2 & 0.030 & 22 & 0.333 \\ 
  & Chinese & 6260 & 7.987$\times10^{-5}$ & 0 & 0.000 & 13 & 0.208 & 85 & 1.358 \\ 
  & Indian & 6620 & 7.553$\times10^{-5}$ & 1 & 0.015 & 5 & 0.076 & 90 & 1.360 \\ 
@@ -860,7 +864,7 @@ genes are assigned to the same pathways.}
   \textbf{Notable} & \textbf{Pathway SNP} & \textbf{Gene Count in} & \textbf{Total Count of} & \textbf{Gene Count in} & \textbf{Total Count of} & \textbf{Hypergeometric} \\
  \textbf{Gene} & \textbf{Count Limit} & \textbf{Top Pathways} & \textbf{Top Pathways} & \textbf{All Pathways} & \textbf{All Pathways} & \textbf{$\bm{P}$-Value} \\[2pt]
   \hline
- \multirow{2}{*}{\textit{UBA52}} & No Limit & 22 & 65 & 106 & 658 & 1.534$\times10^{-4}$ \\ [2pt] \cline{2-7}
+ \multirow{2}{*}{\textit{UBA52}} & No Limit & 22 & 65 & 106 & 658 & 1.53$\times10^{-4}$ \\ [2pt] \cline{2-7}
  & $<$ 1000 SNPs & 10 & 26 & 84 & 577 & 1.86$\times10^{-3}$ \\ [2pt]\hline
 \multirow{2}{*}{\textit{PSM*}} & No Limit & 12 & 65 & 44 & 658 & 5.30$\times10^{-4}$ \\ [2pt] \cline{2-7}
  & $<$ 1000 SNPs & 9 & 26 & 34 & 577 & 4.46$\times10^{-6}$ \\ [2pt]

@@ -1,10 +1,11 @@
-\documentclass[10pt,a4paper]{article}
+%\documentclass[10pt,a4paper]{article}
+\documentclass[10pt]{article}
 %\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[a4paper]{geometry}
-\geometry{a4paper, top=1in, bottom=2in}
+%\geometry{a4paper, top=1in, bottom=2in}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
@@ -173,11 +174,13 @@
 \newcommand*\rot{\multicolumn{1}{R{90}{1em}}}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
+% Bold the 'Figure #' in the caption and separate it with a period
+% Captions will be left justified
+\usepackage[labelfont=bf,labelsep=period,justification=justified]{caption}
 \allowdisplaybreaks
-
 \renewcommand\thesubfigure{(\Alph{subfigure})}
-
 \bibliographystyle{plos2015}
+\usepackage{cite}
 
 % Remove brackets from numbering in List of References
 \makeatletter
