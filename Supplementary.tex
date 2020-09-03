@@ -874,139 +874,111 @@ genes are assigned to the same pathways.}
 \label{InterPath-Supp-Table-AllPops-Proteasome-Dropouts-Caption}
 \end{table}
 
-\setlength{\footskip}{4cm}
 \begin{landscape}
+\setlength{\extrarowheight}{3pt}
 \begin{table}[ht]
-\vspace*{-1.25cm}
 \centering
-\hspace*{-3.25cm}
-\begin{tabular}{ccccccccccc}
+\vspace*{-1.5cm}
+\hspace*{-2em}
+\begin{tabular}{|c|c|c|ccc|cc|cc|}
   \hline
-\textbf{Population} & \textbf{Pathway} & \textbf{Bonferroni} & \textbf{Bonferroni} & \textbf{Bonferroni} & \textbf{0.001} & \textbf{0.001} & \textbf{0.001} & \textbf{0.01} & \textbf{0.01} & \textbf{0.01} \\
- & \textbf{Counts} & \textbf{Threshold} & \textbf{Counts} & \textbf{FDR} & \textbf{Threshold} & \textbf{Counts} & \textbf{FDR} & \textbf{Threshold} & \textbf{Counts} & \textbf{FDR} \\ 
+& & & \multicolumn{3}{c|}{\textbf{$\bm{\alpha =}$ Bonferroni Correction}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.001}$ Thresh.}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.01}$ Thresh.}}\\
+\hline
+\textbf{Database (Trait)} & \textbf{Subgroup} & \textbf{\# Pathways} & \textbf{Thresh.} & \textbf{\# FPs} & \textbf{FDR (\%)} & \textbf{\# FPs} & \textbf{FDR (\%)} &  \textbf{\# FPs} & \textbf{FDR (\%)} \\ 
   \hline
-\textbf{KEGG Height:} & & & & & & & & & \\
-British.Ran4000 & 1730 & 2.890E-04 & 0 & 0.000 & 0.001 & 0 & 0.000 & 0.010 & 13 & 0.751 \\
-  British.Ran4000.2 & 1730 & 2.890E-04 & 0 & 0.000 & 0.001 & 1 & 0.058 & 0.010 & 18 & 1.040 \\
-  British.Ran4000.3 & 1730 & 2.890E-04 & 1 & 0.058 & 0.001 & 1 & 0.058 & 0.010 & 20 & 1.156 \\
-  British.Ran4000.4 & 1730 & 2.890E-04 & 0 & 0.000 & 0.001 & 4 & 0.231 & 0.010 & 23 & 1.329 \\
-  British.Ran4000.5 & 1730 & 2.890E-04 & 0 & 0.000 & 0.001 & 2 & 0.116 & 0.010 & 22 & 1.272 \\
-  British.Ran10000.1 & 1860 & 2.688E-04 & 0 & 0.000 & 0.001 & 1 & 0.054 & 0.010 & 26 & 1.398 \\
-  British.Ran10000.2 & 1860 & 2.688E-04 & 0 & 0.000 & 0.001 & 1 & 0.054 & 0.010 & 12 & 0.645 \\
-  British.Ran10000.3 & 1860 & 2.688E-04 & 2 & 0.108 & 0.001 & 2 & 0.108 & 0.010 & 21 & 1.129 \\
-  British.Ran10000.4 & 1860 & 2.688E-04 & 1 & 0.054 & 0.001 & 2 & 0.108 & 0.010 & 16 & 0.860 \\
-  British.Ran10000.5 & 1860 & 2.688E-04 & 0 & 0.000 & 0.001 & 0 & 0.000 & 0.010 & 12 & 0.645 \\
-  \\
-  \textbf{KEGG BMI:} & & & & & & & & & \\
-British.Ran4000 & 1730 & 2.890E-04 & 1 & 0.058 & 0.001 & 2 & 0.116 & 0.010 & 14 & 0.809 \\
-  British.Ran4000.2 & 1730 & 2.890E-04 & 0 & 0.000 & 0.001 & 1 & 0.058 & 0.010 & 23 & 1.329 \\
-  British.Ran4000.3 & 1730 & 2.890E-04 & 0 & 0.000 & 0.001 & 3 & 0.173 & 0.010 & 21 & 1.214 \\
-  British.Ran4000.4 & 1730 & 2.890E-04 & 1 & 0.058 & 0.001 & 5 & 0.289 & 0.010 & 21 & 1.214 \\
-  British.Ran4000.5 & 1730 & 2.890E-04 & 2 & 0.116 & 0.001 & 7 & 0.405 & 0.010 & 23 & 1.329 \\
-  British.Ran10000.1 & 1860 & 2.688E-04 & 0 & 0.000 & 0.001 & 1 & 0.054 & 0.010 & 25 & 1.344 \\
-  British.Ran10000.2 & 1860 & 2.688E-04 & 2 & 0.108 & 0.001 & 4 & 0.215 & 0.010 & 22 & 1.183 \\
-  British.Ran10000.3 & 1860 & 2.688E-04 & 0 & 0.000 & 0.001 & 2 & 0.108 & 0.010 & 20 & 1.075 \\
-  British.Ran10000.4 & 1860 & 2.688E-04 & 1 & 0.054 & 0.001 & 2 & 0.108 & 0.010 & 23 & 1.237 \\
-  British.Ran10000.5 & 1860 & 2.688E-04 & 0 & 0.000 & 0.001 & 0 & 0.000 & 0.010 & 20 & 1.075 \\
+\multirow{10.5}{*}{\textbf{KEGG (Height)}} & British (4k, Rep.~1) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 0 & 0.000 & 13 & 0.751 \\
+  & British (4k, Rep.~2) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.058 & 18 & 1.040 \\
+  & British (4k, Rep.~3) & 1730 & 2.89$\times 10^{-4}$ & 1 & 0.058 & 1 & 0.058 & 20 & 1.156 \\
+  & British (4k, Rep.~4) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 4 & 0.231 & 23 & 1.329 \\
+  & British (4k, Rep.~5) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 2 & 0.116 & 22 & 1.272 \\
+  & British (10k, Rep.~1) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.054 & 26 & 1.398 \\
+  & British (10k, Rep.~2) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.054 & 12 & 0.645 \\
+  & British (10k, Rep.~3) & 1860 & 2.69$\times 10^{-4}$ & 2 & 0.108 & 2 & 0.108 & 21 & 1.129 \\
+  & British (10k, Rep.~4) & 1860 & 2.69$\times 10^{-4}$ & 1 & 0.054 & 2 & 0.108 & 16 & 0.860 \\
+  & British (10k, Rep.~5) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 0 & 0.000 & 12 & 0.645 \\ 
+  \hline
+\multirow{10.5}{*}{\textbf{KEGG (BMI)}} & British (4k, Rep.~1) & 1730 & 2.89$\times 10^{-4}$ & 1 & 0.058 & 2 & 0.116 & 14 & 0.809 \\
+  & British (4k, Rep.~2) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.058 & 23 & 1.329 \\
+  & British (4k, Rep.~3) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 3 & 0.173 & 21 & 1.214 \\
+  & British (4k, Rep.~4) & 1730 & 2.89$\times 10^{-4}$ & 1 & 0.058 & 5 & 0.289 & 21 & 1.214 \\
+  & British (4k, Rep.~5) & 1730 & 2.89$\times 10^{-4}$ & 2 & 0.116 & 7 & 0.405 & 23 & 1.329 \\
+  & British (10k, Rep.~1) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.054 & 25 & 1.344 \\
+  & British (10k, Rep.~2) & 1860 & 2.69$\times 10^{-4}$ & 2 & 0.108 & 4 & 0.215 & 22 & 1.183 \\
+  & British (10k, Rep.~3) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 2 & 0.108 & 20 & 1.075 \\
+  & British (10k, Rep.~4) & 1860 & 2.69$\times 10^{-4}$ & 1 & 0.054 & 2 & 0.108 & 23 & 1.237 \\
+  & British (10k, Rep.~5) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 0 & 0.000 & 20 & 1.075 \\ 
    \hline
 \end{tabular}
-\caption[TBD]{\textbf{MAPIT-R false discovery rates at different significance thresholds, per British replicate}. Caption continued at end of tables.}
+\caption{\textbf{MAPIT-R false discovery rates at different significance thresholds using KEGG pathway annotations and permuted phenotypes across the British replicate subgroups in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or body mass index (BMI) measurements. Note that traits were independently permuted within each population subgroup ten different times. The random subgroups were created by subsampling either $N$ = 4,000 or 10,000 individuals from the full British cohort. Genome-wide significance at a Bonferroni-corrected $P$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$. The second column lists the total number of pathways that were tested across each of the ten phenotype permutations. \# FPs denotes the number of false positives at that threshold and FDR reports the corresponding false discovery rate (listed as percentages). The remaining columns list the same information but at significance levels $\alpha = 0.001$ and 0.01, respectively.}
 \label{InterPath-Supp-Table-BritReps-FDRs-pt1}
 \end{table}
 \end{landscape}
-\clearpage
-\setlength{\footskip}{1cm}
-\addtocounter{table}{-1}
 
-\setlength{\footskip}{4cm}
-\renewcommand{\thetable}{\arabic{table}}
 \begin{landscape}
-\begin{table}[ht]
-\vspace*{-1.25cm}
-\centering
-\hspace*{-3.5cm}
-\begin{tabular}{ccccccccccc}
-  \hline
-\textbf{Population} & \textbf{Pathway} & \textbf{Bonferroni} & \textbf{Bonferroni} & \textbf{Bonferroni} & \textbf{0.001} & \textbf{0.001} & \textbf{0.001} & \textbf{0.01} & \textbf{0.01} & \textbf{0.01} \\
- & \textbf{Counts} & \textbf{Threshold} & \textbf{Counts} & \textbf{FDR} & \textbf{Threshold} & \textbf{Counts} & \textbf{FDR} & \textbf{Threshold} & \textbf{Counts} & \textbf{FDR} \\ 
-  \hline
-  \textbf{REACTOME Height:} & & & & & & & & & \\
-British.Ran4000 & 6500 & 7.692E-05 & 0 & 0.000 & 0.001 & 9 & 0.138 & 0.010 & 69 & 1.062 \\
-  British.Ran4000.2 & 6500 & 7.692E-05 & 0 & 0.000 & 0.001 & 4 & 0.062 & 0.010 & 61 & 0.938 \\
-  British.Ran4000.3 & 6490 & 7.704E-05 & 1 & 0.015 & 0.001 & 8 & 0.123 & 0.010 & 59 & 0.909 \\
-  British.Ran4000.4 & 6500 & 7.692E-05 & 0 & 0.000 & 0.001 & 5 & 0.077 & 0.010 & 69 & 1.062 \\
-  British.Ran4000.5 & 6500 & 7.692E-05 & 0 & 0.000 & 0.001 & 6 & 0.092 & 0.010 & 53 & 0.815 \\
-   British.Ran10000.1 & 6690 & 7.474E-05 & 0 & 0.000 & 0.001 & 4 & 0.060 & 0.010 & 55 & 0.822 \\
-  British.Ran10000.2 & 6690 & 7.474E-05 & 0 & 0.000 & 0.001 & 4 & 0.060 & 0.010 & 52 & 0.777 \\
-  British.Ran10000.3 & 6690 & 7.474E-05 & 2 & 0.030 & 0.001 & 11 & 0.164 & 0.010 & 60 & 0.897 \\
-  British.Ran10000.4 & 6690 & 7.474E-05 & 1 & 0.015 & 0.001 & 4 & 0.060 & 0.010 & 69 & 1.031 \\
-  British.Ran10000.5 & 6690 & 7.474E-05 & 0 & 0.000 & 0.001 & 4 & 0.060 & 0.010 & 60 & 0.897 \\
 
-  \\
-  \textbf{REACTOME BMI:} & & & & & & & & & \\
-British.Ran4000 & 6490 & 7.704E-05 & 1 & 0.015 & 0.001 & 4 & 0.062 & 0.010 & 52 & 0.801 \\
-  British.Ran4000.2 & 6500 & 7.692E-05 & 1 & 0.015 & 0.001 & 14 & 0.215 & 0.010 & 63 & 0.969 \\
-  British.Ran4000.3 & 6490 & 7.704E-05 & 0 & 0.000 & 0.001 & 5 & 0.077 & 0.010 & 79 & 1.217 \\
-  British.Ran4000.4 & 6500 & 7.692E-05 & 2 & 0.031 & 0.001 & 6 & 0.092 & 0.010 & 61 & 0.938 \\
-  British.Ran4000.5 & 6500 & 7.692E-05 & 0 & 0.000 & 0.001 & 7 & 0.108 & 0.010 & 73 & 1.123 \\
-  British.Ran10000.1 & 6690 & 7.474E-05 & 2 & 0.030 & 0.001 & 10 & 0.149 & 0.010 & 73 & 1.091 \\
-  British.Ran10000.2 & 6690 & 7.474E-05 & 0 & 0.000 & 0.001 & 3 & 0.045 & 0.010 & 42 & 0.628 \\
-  British.Ran10000.3 & 6690 & 7.474E-05 & 1 & 0.015 & 0.001 & 10 & 0.149 & 0.010 & 74 & 1.106 \\
-  British.Ran10000.4 & 6690 & 7.474E-05 & 0 & 0.000 & 0.001 & 7 & 0.105 & 0.010 & 65 & 0.972 \\
-  British.Ran10000.5 & 6690 & 7.474E-05 & 0 & 0.000 & 0.001 & 5 & 0.075 & 0.010 & 57 & 0.852 \\
+\setlength{\extrarowheight}{3pt}
+
+\begin{table}[ht]
+\centering
+\vspace*{-1.5cm}
+\hspace*{-4em}
+\begin{tabular}{|c|c|c|ccc|cc|cc|}
+  \hline
+& & & \multicolumn{3}{c|}{\textbf{$\bm{\alpha =}$ Bonferroni Correction}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.001}$ Thresh.}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.01}$ Thresh.}}\\
+\hline
+\textbf{Database (Trait)} & \textbf{Subgroup} & \textbf{\# Pathways} & \textbf{Thresh.} & \textbf{\# FPs} & \textbf{FDR (\%)} & \textbf{\# FPs} & \textbf{FDR (\%)} &  \textbf{\# FPs} & \textbf{FDR (\%)} \\ 
+  \hline
+\multirow{10.5}{*}{\textbf{REACTOME (Height)}} & British (4k, Rep.~1) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 & 9 & 0.138 & 69 & 1.062 \\
+  & British (4k, Rep.~2) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 &  4 & 0.062 & 61 & 0.938 \\
+  & British (4k, Rep.~3) & 6490 & 7.704$\times 10^{-5}$ & 1 & 0.015 & 8 & 0.123 & 59 & 0.909 \\
+  & British (4k, Rep.~4) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 & 5 & 0.077 & 69 & 1.062 \\
+  & British (4k, Rep.~5) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 & 6 & 0.092 & 53 & 0.815 \\
+  & British (10k, Rep.~1) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 4 & 0.060 & 55 & 0.822 \\
+  & British (10k, Rep.~2) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 4 & 0.060 & 52 & 0.777 \\
+  & British (10k, Rep.~3) & 6690 & 7.474$\times 10^{-5}$ & 2 & 0.030 & 11 & 0.164 & 60 & 0.897 \\
+  & British (10k, Rep.~4) & 6690 & 7.474$\times 10^{-5}$ & 1 & 0.015 & 4 & 0.060 & 69 & 1.031 \\
+  & British (10k, Rep.~5) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 4 & 0.060 & 60 & 0.897 \\
    \hline
+\multirow{10.5}{*}{\textbf{REACTOME (BMI)}} & British (4k, Rep.~1) & 6490 & 7.704$\times 10^{-5}$ & 1 & 0.015 & 4 & 0.062 & 52 & 0.801 \\
+  & British (4k, Rep.~2) & 6500 & 7.692$\times 10^{-5}$ & 1 & 0.015 & 14 & 0.215 & 63 & 0.969 \\
+  & British (4k, Rep.~3) & 6490 & 7.704$\times 10^{-5}$ & 0 & 0.000 & 5 & 0.077 & 79 & 1.217 \\
+  & British (4k, Rep.~4) & 6500 & 7.692$\times 10^{-5}$ & 2 & 0.031 & 6 & 0.092 & 61 & 0.938 \\
+  & British (4k, Rep.~5) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 & 7 & 0.108 & 73 & 1.123 \\
+  & British (10k, Rep.~1) & 6690 & 7.474$\times 10^{-5}$ & 2 & 0.030 & 10 & 0.149 & 73 & 1.091 \\
+  & British (10k, Rep.~2) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 3 & 0.045 & 42 & 0.628 \\
+  & British (10k, Rep.~3) & 6690 & 7.474$\times 10^{-5}$ & 1 & 0.015 & 10 & 0.149 & 74 & 1.106 \\
+  & British (10k, Rep.~4) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 7 & 0.105 & 65 & 0.972 \\
+  & British (10k, Rep.~4) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 5 & 0.075 & 57 & 0.852 \\
+    \hline
 \end{tabular}
-\caption[TBD]{\textbf{MAPIT-R false discovery rates at different significance thresholds, per British replicate}. Continued.}
+\caption{\textbf{MAPIT-R false discovery rates at different significance thresholds using REACTOME pathway annotations and permuted phenotypes across the British replicate subgroups in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or body mass index (BMI) measurements. Note that traits were independently permuted within each population subgroup ten different times. The random subgroups were created by subsampling either $N$ = 4,000 or 10,000 individuals from the full British cohort. Genome-wide significance at a Bonferroni-corrected $P$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$. The second column lists the total number of pathways that were tested across each of the ten phenotype permutations. \# FPs denotes the number of false positives at that threshold and FDR reports the corresponding false discovery rate (listed as percentages). The remaining columns list the same information but at significance levels $\alpha = 0.001$ and 0.01, respectively.}
 \label{InterPath-Supp-Table-BritReps-FDRs-pt2}
 \end{table}
+
 \end{landscape}
-\clearpage
-\setlength{\footskip}{1cm}
 
-\addtocounter{table}{-1}
-\begin{table} [t!]
-  \caption{\textbf{MAPIT-R false discovery rates at different significance thresholds, per British replicate}. The tables show for various significance thresholds the false discovery rates observed from MAPIT-R when run on ten rounds of phenotype permutations for each British replicate subsample and pathway database. The first column lists the pathway database-phenotype-British replicate subsample combinations. The second column lists the total number of pathways that were tested across each of the ten phenotype permutations. The third column shows the $p$-value threshold associated with using the Bonferroni method of correction, also known as the `genome-wide significant' threshold. The fourth column shows the number of pathways across all ten phenotype permutation rounds that crossed this Bonferroni threshold. The fifth column shows the associated FDR associated with the fourth column. And the remaining six columns show the same setup as columns three to five but with a $p$-value threshold of either 0.001 or 0.01.}
-\label{InterPath-Supp-Table-BritReps-FDRs-Caption}
-\end{table}
-\clearpage
-
-\setlength{\footskip}{3.5cm}
-\begin{landscape}
-\begin{table}[ht]
-\centering
-\vspace{-1cm}
-\hspace*{-2.5cm}
-\begin{tabular}{ccccccccc}
-  \hline
-  \multicolumn{2}{c}{\textbf{Database-Phenotype}} & & & & & & & \\
-  \cline{1-2}
-  & \textbf{Subgroup} & \textbf{Pathway} & \textbf{Bonferroni} & \textbf{SNP1} & \textbf{Locus1} & \textbf{SNP2} & \textbf{Locus2} & \textbf{Epistasis} \\
-  & & & \textbf{Threshold} & & & & & \textbf{$p$-Value}\\
-  \hline
- \multicolumn{2}{l}{\textbf{KEGG-Height}} & & & & & & & \\
- & African & Phosphatidylinositol & 7.95E-11 & 10:134411966 & INPP5A & 21:43586397 & Intergenic & 2.81E-11 \\
- & & Signaling System & & & (Intronic) & & & \\
- & & & & & & & & \\
- \multicolumn{2}{l}{\textbf{REACTOME-Height}} & & & &  & & & \\
- & Caribbean & Signaling By & 4.63E-11 & 8:13404303 & DLC1 & 18:71234727 & Intergenic & 3.41E-11\\
- & & Rho GTPases & & & (Intronic) & & & \\
- & & & & & &  & & \\
- \multicolumn{2}{l}{\textbf{REACTOME-BMI}} & & &  & & & & \\
- & African & Glycerophospholipid & 1.49E-10 & 12:14693353 &  PLBD1 & 4:129890790 & SCLT1 & 1.24E-10 \\
- & & Biosynthesis & & & (Intronic) & & (Intronic) & \\
- & & Assembly of the & 4.04E-10 & 22:35797833 &  MCM5 & 22:23489042 & RAB36 & 3.55E-10 \\
- & & Pre Replicative Complex & & & (Intronic) & & (Intronic) & \\
- & & Integrin Cell & 8.38E-11 & 17:45320514 &  ITGB3 & 6:25897169  & Intergenic & 7.85E-11 \\
- & & Surface Interactions & & & (Downstream) & & & \\ 
-   \hline
-\end{tabular}
-\caption[TBD]{\textbf{Significant pairwise SNP interactions between MAPIT-R pathways and the rest of the genome}. The table shows pairwise SNP interactions that have $p$-values lower than Bonferroni-corrected thresholds for test schemes using MAPIT-R significant pathways versus the rest of the genome. Specifically, for every MAPIT-R significant pathway previously found in each pathway database-phenotype-subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}), all the SNPs within each pathway were tested for pairwise interactions with all the remaining SNPs in the genome using the PLINK v1.90b4 `\texttt{-{}-epistasis set-by-all'} command \cite{Purcell2007}. The first column shows the database-phenotype-subgroup combination specific for the given pathway, the second column shows the pathway containing the significant SNP pairwise interaction, the third column shows the Bonferroni corrected $p$-value threshold for significance (ie .05 / the number of pairwise tests that were conducted within the given pathway), the fourth column shows the SNP within the pathway that is part of the significant interaction (chromosome:basepair formatting), the fifth column shows the locus SNP1 maps to (if known), the sixth column shows the SNP from the rest of the genome that is the other part of the significant interaction (chromosome:basepair formatting), the seventh column shows the locus SNP2 maps to (if known) , and the eighth column shows the $p$-value for the PLINK pairwise epistasis test between SNP1 and SNP2. Combinations involving KEGG-BMI are not shown since no significant pairwise epistatic interactions were found with those groupings.}
-\label{InterPath-Supp-Table-PairwiseEpi-Results}
-\end{table}
-\end{landscape}
-\setlength{\footskip}{1cm}
-\clearpage
-
+%\begin{landscape}
+%
+%\setlength{\extrarowheight}{3pt}
+%
+%\begin{table}[ht]
+%\centering
+%\hspace*{-2.7cm}
+%\begin{tabular}{|c|c|P{1.5 in}|c|cc|cc|c|}
+%\hline
+%\textbf{Database (Trait)} & \textbf{Subgroup} & \textbf{Pathway} & \textbf{Threshold} & \textbf{SNP \#1} & \textbf{Locus \#1} & \textbf{SNP \#2} & \textbf{Locus \#2} &  \textbf{$\bm{P}$-Value} \\ [2pt]
+%  \hline
+%\multirow{2}{*}{\textbf{KEGG (Height)}} & \multirow{2}{*}{African} & Phosphatidylinositol Signaling & \multirow{2}{*}{7.95$\times 10^{-11}$} & \multirow{2}{*}{10:134411966} & \multirow{2}{*}{INPP5A (Intronic)} & \multirow{2}{*}{21:43586397} & \multirow{2}{*}{Intergenic} & \multirow{2}{*}{2.81$\times 10^{-11}$}\\ [2pt]\hline
+%\multirow{2}{*}{\textbf{REACTOME (Height)}} & \multirow{2}{*}{Caribbean} & Signaling By Rho GTPases & \multirow{2}{*}{4.63$\times 10^{-11}$} & \multirow{2}{*}{8:13404303} & \multirow{2}{*}{DLC1 (Intronic)} & \multirow{2}{*}{21:43586397} & \multirow{2}{*}{Intergenic} & \multirow{2}{*}{3.41$\times 10^{-11}$}\\ [2pt]\hline
+%\multirow{5.5}{*}{\textbf{REACTOME (BMI)}} & \multirow{5.5}{*}{African} & Glycerophospholipid Biosynthesis & \multirow{2}{*}{1.49$\times 10^{-10}$} & \multirow{2}{*}{12:14693353} & \multirow{2}{*}{PLBD1 (Intronic)} & \multirow{2}{*}{4:129890790} & \multirow{2}{*}{SCLT1 (Intronic)} & \multirow{2}{*}{1.24$\times 10^{-10}$}\\ [2pt]\cline{3-9}
+%& & Assembly of the Pre Replicative Complex & \multirow{2}{*}{4.04$\times 10^{-10}$} & \multirow{2}{*}{22:35797833} & \multirow{2}{*}{MCM5 (Intronic)} & \multirow{2}{*}{22:23489042} & \multirow{2}{*}{RAB36 (Intronic)} & \multirow{2}{*}{3.55$\times 10^{-10}$}\\ [2pt]\cline{3-9}
+%& & Integrin Cell Surface Interactions & \multirow{2}{*}{8.38$\times 10^{-11}$} & \multirow{2}{*}{17:45320514} & \multirow{2}{*}{ITGB3 (Downstream)} & \multirow{2}{*}{6:25897169} & \multirow{2}{*}{Intergenic} & \multirow{2}{*}{7.85$\times 10^{-11}$}\\ [2pt]
+%   \hline
+%\end{tabular}
+%\caption{\textbf{Significant pairwise interactions between SNPs within MAPIT-R enriched pathways and variants throughout the rest of the genome}. The table shows pairwise SNP interactions that have $P$-values lower than Bonferroni-corrected thresholds. Here, for every MAPIT-R significant pathway found in each database-phenotype-subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}), all the SNPs within each pathway were tested for pairwise interactions with the remaining SNPs in the genome using PLINK (version 1.90) with the \texttt{-{}-epistasis set-by-all} command \cite{Purcell2007}. The first two columns of the table list the database-phenotype-subgroup combination; the third column gives the pathway containing the significant SNP pairwise interaction; the fourth column shows the Bonferroni corrected $P$-value threshold with a significance level set to $\alpha = 0.05$; the fifth column shows the SNP within the pathway that is part of the significant interaction (i.e., chromosome:basepair formatting); the sixth column shows the locus that SNP \#1 maps to (if known); the seventh column shows the SNP from the rest of the genome that is part of the significant interaction (i.e., chromosome:basepair formatting); the eighth column shows the locus that SNP \#2 maps to (if known); and the ninth column gives the $P$-value for the PLINK pairwise epistasis test between SNP \#1 and SNP \#2. Combinations involving KEGG and BMI are not shown because there were no significant pairwise epistatic interactions found within those groupings.}
+%\label{InterPath-Supp-Table-PairwiseEpi-Results}
+%\end{table}
+%\end{landscape}
 
 \begingroup
 \addcontentsline{toc}{section}{References}
