@@ -1,10 +1,11 @@
-\documentclass[10pt,a4paper]{article}
+%\documentclass[10pt,a4paper]{article}
+\documentclass[10pt]{article}
 %\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[a4paper]{geometry}
-\geometry{a4paper, top=1in, bottom=2in}
+%\usepackage[a4paper]{geometry}
+%\geometry{a4paper, top=1in, bottom=2in}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
@@ -206,18 +207,18 @@
 %%%%%%%%%%%%
 %%%%%%%%%%%%
 
-\title{Supplementary: Differential complex trait architecture across humans: epistasis identified in non-European populations at multiple genomic scales}
-\author[1,2]{Michael C. Turchin}
-\author[1,3]{Isabella Ting}
-\author[1,4,5,*]{Lorin Crawford}
-\author[1,2,*,$\dag$]{Sohini Ramachandran}
-\affil[1]{Center for Computational Molecular Biology, Brown University}
-\affil[2]{Department of Ecology and Evolutionary Biology, Brown University}
-\affil[3]{Department of Computer Science, Brown University}
-\affil[4]{Department of Biostatistics, Brown University}
-\affil[5]{Center for Statistical Science, Brown University}
-\affil[$\ast$]{indicates these authors contributed equally}
-\affil[$^\dag$]{To whom correspondence should be addressed: sramachandran@brown.edu}
+%\title{Supplementary: Differential complex trait architecture across humans: epistasis identified in non-European populations at multiple genomic scales}
+%\author[1,2]{Michael C. Turchin}
+%\author[1,3]{Isabella Ting}
+%\author[1,4,5,*]{Lorin Crawford}
+%\author[1,2,*,$\dag$]{Sohini Ramachandran}
+%\affil[1]{Center for Computational Molecular Biology, Brown University}
+%\affil[2]{Department of Ecology and Evolutionary Biology, Brown University}
+%\affil[3]{Department of Computer Science, Brown University}
+%\affil[4]{Department of Biostatistics, Brown University}
+%\affil[5]{Center for Statistical Science, Brown University}
+%\affil[$\ast$]{indicates these authors contributed equally}
+%\affil[$^\dag$]{To whom correspondence should be addressed: sramachandran@brown.edu}
 
 \begin{document}
 %\maketitle
@@ -228,7 +229,7 @@
 \newline
 % Insert Author names, affiliations and corresponding author email.
 \\
-Michael C. Turchin\textsuperscript{1,2,$\dagger$}, Gregory Darnell\textsuperscript{2,3}, Lorin Crawford\textsuperscript{2,4,5,*}, and Sohini Ramachandran\textsuperscript{1,2,*,$\dagger$} 
+Michael C. Turchin\textsuperscript{1,2,$\dagger$}, Gregory Darnell\textsuperscript{2,3}, Lorin Crawford\textsuperscript{2,4,5,*,$\dagger$}, and Sohini Ramachandran\textsuperscript{1,2,*,$\dagger$} 
 \\
 \bigskip
 \bf{1} Department of Ecology and Evolutionary Biology, Brown University, Providence, RI, USA
@@ -243,7 +244,7 @@ Michael C. Turchin\textsuperscript{1,2,$\dagger$}, Gregory Darnell\textsuperscri
 \\
 \bigskip
 *: Authors Contributed Equally\\
-$\dagger$ Corresponding E-mail: michael\_turchin@brown.edu; sramachandran@brown.edu 
+$\dagger$ Corresponding E-mail: michael\_turchin@brown.edu; lorin\_crawford@brown.edu; sramachandran@brown.edu 
 \end{flushleft}
 
 \setcounter{figure}{0}
@@ -670,257 +671,208 @@ genes are assigned to the same pathways.}
 
 \section{Supplementary Tables}\label{Supplementary-Tables}
 
+\setlength{\extrarowheight}{3pt}
+
 \begin{table}[ht]
 \centering
-\begin{tabular}{ccccc}
+\begin{tabular}{|c|c|c|c|c|c|}
   \hline
-\textbf{UK BioBank} & \textbf{Individuals} & \textbf{SNPs} & \textbf{KEGG} & \textbf{REACTOME} \\
-\textbf{subgroup} & & & \textbf{Pathways} & \textbf{Pathways}  \\
-  \hline
-\textbf{Original subgroups:} & & & & \\
-African & 3111 & 374466 & 180 & 658 \\ 
-British.Ran4000 & 3848 & 600006 & 173 & 650 \\ 
-Caribbean & 3833 & 410017 & 181 & 661 \\ 
-Chinese & 1448 & 345221 & 153 & 626 \\ 
-Indian & 5077 & 505854 & 181 & 662 \\ 
-Pakistani & 1581 & 516806 & 141 & 596 \\ 
-\\
-\textbf{British Replicates:} & & & & \\
-British.Ran4000.2 & 3869 & 599381 & 173 & 650 \\ 
-British.Ran4000.3 & 3836 & 600654 & 173 & 649 \\ 
-British.Ran4000.4 & 3838 & 599829 & 173 & 650 \\ 
-British.Ran4000.5 & 3853 & 599442 & 173 & 650 \\ 
-British.Ran10000 & 9603 & 597298 & 186 & 669 \\ 
-British.Ran10000.2 & 9628 & 597577 & 186 & 669 \\ 
-British.Ran10000.3 & 9636 & 597486 & 186 & 669 \\ 
-British.Ran10000.4 & 9593 & 597369 & 186 & 669 \\ 
-British.Ran10000.5 & 9596 & 597507 & 186 & 669 \\ 
+\textbf{Subgroups} & \textbf{Ancestry} & \textbf{Individuals} & \textbf{SNPs} & \textbf{KEGG} & \textbf{REACTOME} \\
+[2pt]\hline
+ \multirow{6.5}{*}{\textbf{Original}} &African & 3111 & 374466 & 180 & 658 \\ [2pt]
+& British (4k, Rep.~1) & 3848 & 600006 & 173 & 650 \\ [2pt]
+& Caribbean & 3833 & 410017 & 181 & 661 \\ [2pt]
+& Chinese & 1448 & 345221 & 153 & 626 \\ [2pt]
+& Indian & 5077 & 505854 & 181 & 662 \\ [2pt]
+& Pakistani & 1581 & 516806 & 141 & 596 \\ [2pt]\hline
+\multirow{9.5}{*}{\textbf{British}} & British (4k, Rep.~2) & 3869 & 599381 & 173 & 650 \\[2pt] 
+& British (4k, Rep.~3) & 3836 & 600654 & 173 & 649 \\ [2pt]
+& British (4k, Rep.~4) & 3838 & 599829 & 173 & 650 \\ [2pt]
+& British (4k, Rep.~5) & 3853 & 599442 & 173 & 650 \\ [2pt]
+& British (10k, Rep.~1) & 9603 & 597298 & 186 & 669 \\ [2pt]
+& British (10k, Rep.~2) & 9628 & 597577 & 186 & 669 \\ [2pt]
+& British (10k, Rep.~3) & 9636 & 597486 & 186 & 669 \\ [2pt]
+& British (10k, Rep.~4) & 9593 & 597369 & 186 & 669 \\ [2pt]
+& British (10k, Rep.~5) & 9596 & 597507 & 186 & 669 \\ [2pt]
   \hline
 \end{tabular}
-\caption[TBD]{\textbf{Pathways and subgroups of the UK BioBank analyzed in this study}. The table shows the individual, SNP, and pathway counts for each of the UKB subgroups analyzed in this study. `Original subgroups' refers to the multiple global human ancestries that were initially analyzed at the beginning of this study, and `British Replicates' refers specifically to the subgroups that were created to analyze multiple, independent random subsamples of the UKB British cohort. The number of individuals and SNPs post quality-control are shown in the second and third columns (see Materials and Methods), and the number of KEGG and REACTOME pathways analyzed in each subgroup are shown in the fourth and fifth columns. Note that for the `British Replicates' subgroups each group began with an independent set of either 4,000 or 10,000 individuals from the original UKB phenotype file.}
+\caption{\textbf{Tabulation of the number of subgroups, individuals, SNPs, and pathways analyzed in this study}. Here, the category ``original'' subgroups refers to the multiple global human ancestries from the UK Biobank that were initially analyzed at the beginning of this study, while the ``British replicates'' refers specifically to the different subgroups that were created by taking random independent subsamples of the full British cohort in the UK Biobank. The number of individuals and SNPs in the second and third columns are those post quality-control (see Supplementary Note), and the number of KEGG and REACTOME pathways analyzed within each subgroup are shown in the fourth and fifth columns. Note that for the ``British replicate'' subgroups, each dataset initially began with either 4,000 or 10,000 individuals before quality-control.}
 \label{InterPath-Supp-Table-UKBPopStats}
 \end{table}
-\clearpage
 
 %Irish & 11575 & 588324 & 186 & 671 \\ 
 
 %\textbf{Supplementary Tables 2a-d.} \textbf{Lists of New \bmass{} Multivariate Associations, per Dataset}. \\ Attached Excel sheets list new \bmass{} associations for each dataset analyzed.
 %\bigskip \bigskip
 
-\begin{table} [t!]
-  \caption{\textbf{Lists of genome-wide significant MAPIT-R pathways, per subgroup}.  Attached Excel sheets list the pathways that were found to be MAPIT-R genome-wide significant in each UKB subgroup for the following phenotype and pathway database combinations: (a) KEGG+Height, (b) KEGG+BMI, (c) REACTOME+Height, and (d) REACTOME+BMI. Genome-wide significance was determined by using a Bonferroni-corrected $p$-value threshold of .05 divided by the number of pathways tested (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}).}
+\begin{table}[H]
+\caption{\textbf{List of MAPIT-R significant pathways genome-wide for standing height and body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank.} Here, subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Phenotype and pathway database combinations include: (\textit{i}) KEGG+Height, (\textit{ii}) KEGG+BMI, (\textit{iii}) REACTOME+Height, and (\textit{iv}) REACTOME+BMI. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination with significance value $\alpha = 0.05$ (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). (XLSX)}
 \label{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}
 \end{table}
+
 \clearpage
 
-\setlength{\footskip}{4cm}
 \begin{landscape}
+
+\setlength{\extrarowheight}{3pt}
+
 \begin{table}[ht]
-\vspace*{-1.5cm}
 \centering
-\hspace*{-3.5cm}
-\begin{tabular}{ccccccccc}
+\vspace*{-1.5cm}
+\hspace*{-2em}
+\begin{tabular}{|c|c|c|ccc|cc|cc|}
   \hline
-\textbf{Population} & \textbf{Pathway} & \textbf{Bonferroni} & \textbf{Bonferroni} & \textbf{Bonferroni} & \multicolumn{2}{c}{\textbf{.001 Threshold}} & \multicolumn{2}{c}{\textbf{.01 Threshold}} \\
-\cline{6-7}
-\cline{8-9}
- & \textbf{Counts} & \textbf{Threshold} & \textbf{Counts} & \textbf{FDR} & \textbf{Counts} & \textbf{FDR} & \textbf{Counts} & \textbf{FDR} \\ 
+& & & \multicolumn{3}{c|}{\textbf{$\bm{\alpha =}$ Bonferroni Correction}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.001}$ Thresh.}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.01}$ Thresh.}}\\
+\hline
+\textbf{Database (Trait)} & \textbf{Subgroup} & \textbf{\# Pathways} & \textbf{Thresh.} & \textbf{\# FPs} & \textbf{FDR (\%)} & \textbf{\# FPs} & \textbf{FDR (\%)} &  \textbf{\# FPs} & \textbf{FDR (\%)} \\ 
   \hline
-\textbf{KEGG Height:} & & & & & & & \\
-African & 1800 & 2.778E-04 & 0 & 0.000  & 1 & 0.056 & 10 & 0.556 \\ 
-  British.Ran4000 & 1730 & 2.890E-04 & 0 & 0.000 & 0 & 0.000 & 13 & 0.751 \\ 
-  Caribbean & 1810 & 2.762E-04 & 1 & 0.055 & 1 & 0.055 & 5 & 0.276 \\ 
-  Chinese & 1530 & 3.268E-04 & 0 & 0.000 & 3 & 0.196 & 24 & 1.569 \\ 
-  Indian & 1810 & 2.762E-04 & 1 & 0.055 & 1 & 0.055 & 20 & 1.105 \\ 
-  Pakistani & 1410 & 3.546E-04 & 0 & 0.000 & 2 & 0.142 & 17 & 1.206 \\ 
-  \\
-  \textbf{KEGG BMI:} & & & & & & & \\
-African & 1800 & 2.778E-04 & 0 & 0.000 & 1 & 0.056 & 10 & 0.556 \\ 
-  British.Ran4000 & 1730 & 2.890E-04 & 0 & 0.000 & 0 & 0.000 & 13 & 0.751 \\ 
-  Caribbean & 1810 & 2.762E-04 & 1 & 0.055 & 1 & 0.055 & 5 & 0.276 \\ 
-  Chinese & 1530 & 3.268E-04 & 0 & 0.000 & 3 & 0.196 & 24 & 1.569 \\ 
-  Indian & 1810 & 2.762E-04 & 1 & 0.055 & 1 & 0.055 & 20 & 1.105 \\ 
-  Pakistani & 1410 & 3.546E-04 & 0 & 0.000 & 2 & 0.142 & 17 & 1.206 \\ 
-  \\
-  \textbf{REACTOME Height:} & & & & & & & \\
-  African & 1800 & 2.778E-04 & 0 & 0.000 & 1 & 0.056 & 16 & 0.889 \\
-  British.Ran4000 & 1730 & 2.890E-04 & 1 & 0.058 & 2 & 0.116 & 14 & 0.809 \\
-  Caribbean & 1810 & 2.762E-04 & 0 & 0.000 & 1 & 0.055 & 25 & 1.381 \\
-  Chinese & 1530 & 3.268E-04 & 0 & 0.000 & 1 & 0.065 & 24 & 1.569 \\
-  Indian & 1810 & 2.762E-04 & 1 & 0.055 & 2 & 0.110 & 20 & 1.105 \\
-  Pakistani & 1410 & 3.546E-04 & 0 & 0.000 & 2 & 0.142 & 15 & 1.064 \\
-  \\
-  \textbf{REACTOME BMI:} & & & & & & & \\
-African & 6580 & 7.599E-05 & 1 & 0.015 & 4 & 0.061 & 39 & 0.593 \\
-  British.Ran4000 & 6490 & 7.704E-05 & 1 & 0.015 & 4 & 0.062 & 52 & 0.801 \\
-  Caribbean & 6610 & 7.564E-05 & 0 & 0.000 & 13 & 0.197 & 97 & 1.467 \\
-  Chinese & 6260 & 7.987E-05 & 0 & 0.000 & 6 & 0.096 & 49 & 0.783 \\
-  Indian & 6620 & 7.553E-05 & 0 & 0.000 & 3 & 0.045 & 66 & 0.997 \\
-  Pakistani & 5960 & 8.389E-05 & 0 & 0.000 & 4 & 0.067 & 45 & 0.755 \\
+\multirow{6.5}{*}{\textbf{KEGG (Height)}} & African & 1800 & 2.78$\times10^{-4}$ & 0 & 0.000  & 1 & 0.056 & 10 & 0.556 \\ 
+  & British (4k) & 1730 & 2.89$\times10^{-4}$ & 0 & 0.000 & 0 & 0.000 & 13 & 0.751 \\ 
+  & Caribbean & 1810 & 2.76$\times10^{-4}$ & 1 & 0.055 & 1 & 0.055 & 5 & 0.276 \\ 
+  & Chinese & 1530 & 3.27$\times10^{-4}$ & 0 & 0.000 & 3 & 0.196 & 24 & 1.569 \\ 
+  & Indian & 1810 & 2.76$\times10^{-4}$ & 1 & 0.055 & 1 & 0.055 & 20 & 1.105 \\ 
+  & Pakistani & 1410 & 3.55$\times10^{-4}$ & 0 & 0.000 & 2 & 0.142 & 17 & 1.206 \\ 
+  \hline
+\multirow{6.5}{*}{\textbf{KEGG (BMI)}} & African & 1800 & 2.778E-04 & 0 & 0.000 & 1 & 0.056 & 16 & 0.889 \\
+ & Caribbean & 1810 & 2.762$\times10^{-4}$ & 0 & 0.000 & 1 & 0.055 & 25 & 1.381 \\ 
+ & Chinese & 1530 & 3.268$\times10^{-4}$ & 0 & 0.000 & 1 & 0.065 & 24 & 1.569 \\ 
+ & Indian & 1810 & 2.762$\times10^{-4}$ & 1 & 0.055 & 2 & 0.110 & 20 & 1.105 \\ 
+ & Irish & 1860 & 2.688$\times10^{-4}$ & 0 & 0.000 & 0 & 0.000 & 14 & 0.753 \\ 
+ & Pakistani & 1410 & 3.546$\times10^{-4}$ & 0 & 0.000 & 2 & 0.142 & 15 & 1.064 \\ 
+  \hline
+\multirow{6.5}{*}{\textbf{REACTOME (Height)}} & African & 6580 & 7.599E-05 & 0 & 0.000 & 6 & 0.091 & 47 & 0.714 \\ 
+ & Caribbean & 6610 & 7.564$\times10^{-5}$ & 0 & 0.000 & 2 & 0.030 & 22 & 0.333 \\ 
+ & Chinese & 6260 & 7.987$\times10^{-5}$ & 0 & 0.000 & 13 & 0.208 & 85 & 1.358 \\ 
+ & Indian & 6620 & 7.553$\times10^{-5}$ & 1 & 0.015 & 5 & 0.076 & 90 & 1.360 \\ 
+ & Irish & 6710 & 7.452$\times10^{-5}$ & 0 & 0.000 & 1 & 0.015 & 55 & 0.820 \\
+ & Pakistani & 5960 & 8.389$\times10^{-5}$ & 0 & 0.000 & 3 & 0.050 & 63 & 1.057 \\
+\hline 
+\multirow{6.5}{*}{\textbf{REACTOME (BMI)}} & African & 6580 & 7.60$\times10^{-5}$ & 1 & 0.015 & 4 & 0.061 & 39 & 0.593 \\
+ & British (4k) & 6490 & 7.70$\times10^{-5}$ & 1 & 0.015 & 4 & 0.062 & 52 & 0.801 \\
+ & Caribbean & 6610 & 7.56$\times10^{-5}$ & 0 & 0.000 & 13 & 0.197 & 97 & 1.467 \\
+ & Chinese & 6260 & 7.99$\times10^{-5}$ & 0 & 0.000 & 6 & 0.096 & 49 & 0.783 \\
+ & Indian & 6620 & 7.55$\times10^{-5}$ & 0 & 0.000 & 3 & 0.045 & 66 & 0.997 \\
+ & Pakistani & 5960 & 8.39$\times10^{-5}$ & 0 & 0.000 & 4 & 0.067 & 45 & 0.755 \\
    \hline
 \end{tabular}
-\caption[TBD]{\textbf{MAPIT-R false discovery rates at different significance thresholds, per subgroup}. Caption continued on next page. }
+\caption[TBD]{\textbf{MAPIT-R false discovery rates at different significance thresholds using permuted phenotypes across the different ancestry-specific subgroups in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were independently permuted within each population subgroup ten different times. Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Phenotype and pathway database combinations include: (\textit{i}) KEGG+Height, (\textit{ii}) KEGG+BMI, (\textit{iii}) REACTOME+Height, and (\textit{iv}) REACTOME+BMI. Genome-wide significance at a Bonferroni-corrected $p$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$. The second column lists the total number of pathways that were tested across each of the ten phenotype permutations. \# FPs denotes the number of false positives at that threshold and FDR reports the corresponding false discovery rate (listed as percentages). The remaining columns list the same information but at significance levels $\alpha = 0.001$ and 0.01, respectively.}
 \label{InterPath-Supp-Table-AllPops-FDRs}
 \end{table}
+
 \end{landscape}
 \clearpage
-\setlength{\footskip}{1cm}
 
-\addtocounter{table}{-1}
-\begin{table} [t!]
-  \caption{\textbf{MAPIT-R false discovery rates at different significance thresholds, per subgroup}. The table shows for various significance thresholds the false discovery rates observed from MAPIT-R when run on ten rounds of phenotype permutations for each UKB subgroup and pathway database. The first column lists the pathway database-phenotype-UKB subgroup combinations. The second column lists the total number of pathways that were tested across each of the ten phenotype permutations. The third column shows the $p$-value threshold associated with using the Bonferroni method of correction, also known as the `genome-wide significant' threshold. The fourth column shows the number of pathways across all ten phenotype permutation rounds that crossed this Bonferroni threshold. The fifth column shows the associated FDR associated with the fourth column. And the remaining six columns show the same setup as columns three to five but with a $p$-value threshold of either 0.001 or 0.01.}
-\label{InterPath-Supp-Table-AllPops-FDRs-Caption}
-\end{table}
-\clearpage
+\setlength{\extrarowheight}{3pt}
 
-\setlength{\footskip}{2cm}
-\begin{landscape}
-\begin{table}[ht]
+\begin{table}[H]
 \centering
-\begin{tabular}{ll}
+\hspace*{-0.5em}
+\begin{tabular}{|c|P{4.25 in}|}
   \hline
- \textbf{Population} & \textbf{Pathways}\\
- \textbf{Comparison} & \\
+\textbf{Population Comparison} & \textbf{Enriched Pathways} \\
+[2pt]\hline
+ \multirow{6.5}{*}{\textbf{African and Caribbean}} & \texttt{KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC} \\ [2pt] \cline{2-2}
+& \texttt{KEGG\_AXON\_GUIDANCE} \\ [2pt] \cline{2-2}
+& \texttt{KEGG\_CHEMOKINE\_SIGNALING\_PATHWAY} \\ [2pt] \cline{2-2}
+& \texttt{KEGG\_HYPERTROPHIC\_CARDIOMYOPATHY\_HCM} \\ [2pt] \cline{2-2}
+& \texttt{KEGG\_NATURAL\_KILLER\_CELL\_MEDIATED\_CYTOTOXICITY} \\ [2pt] \cline{2-2} 
+& \texttt{KEGG\_VASCULAR\_SMOOTH\_MUSCLE\_CONTRACTION} \\ [2pt] \hline
+\multirow{5.5}{*}{\textbf{African and Chinese}} & \texttt{KEGG\_ALLOGRAFT\_REJECTION} \\ [2pt] \cline{2-2}
+& \texttt{KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION} \\ [2pt] \cline{2-2}
+& \texttt{KEGG\_GRAFT\_VERSUS\_HOST\_DISEASE} \\ [2pt] \cline{2-2}
+& \texttt{KEGG\_SYSTEMIC\_LUPUS\_ERYTHEMATOSUS} \\ [2pt] \cline{2-2}
+& \texttt{KEGG\_TYPE\_I\_DIABETES\_MELLITUS}\\ [2pt]
   \hline
-\textbf{African Vs.} & \\
-\textbf{Caribbean:} & \\
- & KEGG\_ARRHYTHMOGENIC\_RIGHT\_VENTRICULAR\_CARDIOMYOPATHY\_ARVC \\
- & KEGG\_AXON\_GUIDANCE \\
- & KEGG\_CHEMOKINE\_SIGNALING\_PATHWAY \\
- & KEGG\_HYPERTROPHIC\_CARDIOMYOPATHY\_HCM \\
- & KEGG\_NATURAL\_KILLER\_CELL\_MEDIATED\_CYTOTOXICITY \\
- & KEGG\_VASCULAR\_SMOOTH\_MUSCLE\_CONTRACTION \\
-\\
-\textbf{African Vs.} & \\
-\textbf{Chinese:} & \\
- & KEGG\_ALLOGRAFT\_REJECTION \\
- & KEGG\_ANTIGEN\_PROCESSING\_AND\_PRESENTATION \\
- & KEGG\_GRAFT\_VERSUS\_HOST\_DISEASE \\
- & KEGG\_SYSTEMIC\_LUPUS\_ERYTHEMATOSUS \\
- & KEGG\_TYPE\_I\_DIABETES\_MELLITUS \\
-   \hline
 \end{tabular}
-\caption[TBD]{\textbf{Genome-wide significant MAPIT-R KEGG pathway overlap between UKB subgroups, in height}. Caption continued on next page. }
+\caption{\textbf{List of overlap between the MAPIT-R enriched pathways genome-wide for standing height and body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank.} Here, we compare enrichment between the following subgroups in the UK Biobank: ``African'' and ``Chinese'', and ``African'' and``Caribbean'', respectively. Pathway annotations were determined according to the KEGG database. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination with significance value $\alpha = 0.05$ (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}).}
 \label{InterPath-Supp-Table-MAPITR-TopPathway-Overlap}
 \end{table}
-\end{landscape}
-\clearpage
-\setlength{\footskip}{1cm}
 
-\addtocounter{table}{-1}
-\begin{table} [t!]
-  \caption{\textbf{Genome-wide significant MAPIT-R KEGG pathway overlap between UKB subgroups, in height}. The table shows genome-wide significant pathways that overlap between multiple UKB subgroups. Specifically, pathways that overlap between the African subgroup and Caribbean subgroup, and between the African subgroup and Chinese subgroup, are listed for height results from KEGG.}
-\label{InterPath-Supp-Table-MAPITR-TopPathway-Overlap-Caption}
-\end{table}
-\clearpage
+%\addtocounter{table}{-1}
+%\begin{table} [t!]
+%  \caption{\textbf{Genome-wide significant MAPIT-R KEGG pathway overlap between UKB subgroups, in height}. The table shows genome-wide significant pathways that overlap between multiple UKB subgroups. Specifically, pathways that overlap between the African subgroup and Caribbean subgroup, and between the African subgroup and Chinese subgroup, are listed for height results from KEGG.}
+%\label{InterPath-Supp-Table-MAPITR-TopPathway-Overlap-Caption}
+%\end{table}
+%\clearpage
 
-\setlength{\footskip}{2cm}
+\setlength{\extrarowheight}{3pt}
+
 \begin{table}[ht]
 \centering
-\begin{tabular}{lll}
+\hspace*{-0.5em}
+\begin{tabular}{|c|c|P{3.5 in}|}
   \hline
- \textbf{Population} & \textbf{Gene} & \textbf{Genes} \\
- \textbf{Comparison} & \textbf{Count} & \\
+\textbf{Population Comparison} & \textbf{Frequency} & \textbf{Genes in Enriched Pathways} \\
+[2pt]\hline
+ \multirow{4}{*}{\textbf{African and Caribbean}} & 4 & \textit{MAPK1}, \textit{MAPK3} \\ [2pt] \cline{2-3}
+ & \multirow{3}{*}{3} & \textit{ROCK2}, \textit{ROCK1}, \textit{RHOA}, \textit{RAF1}, \textit{RAC2}, \textit{RAC1}, \textit{PRKCB}, \textit{PAK1}, \textit{NRAS}, \textit{MAP2K1}, \textit{KRAS}, \textit{ITGB1}, \textit{HRAS}, \textit{CACNA1S}, \textit{CACNA1D}, \textit{CACNA1C}, \textit{BRAF} \\ [2pt]\hline
+\multirow{6}{*}{\textbf{African and Chinese}} & \multirow{3}{*}{5} & \textit{HLA-DRB1}, \textit{HLA-DRA}, \textit{HLA-DQB1}, \textit{HLA-DQA2}, \textit{HLA-DQA1}, \textit{HLA-DPB1}, \textit{HLA-DPA1}, \textit{HLA-DOB}, \textit{HLA-DOA}, \textit{HLA-DMB}, \textit{HLA-DM}\\ [2pt] \cline{2-3}
+& \multirow{2}{*}{4} & \textit{TNF}, \textit{IFNG}, \textit{HLA-G}, \textit{HLA-F}, \textit{HLA-E}, \textit{HLA-C}, \textit{HLA-B}, \textit{HLA-A}, \textit{CD86}, \textit{CD80}, \textit{CD28} \\ [2pt] \cline{2-3}
+& 3 & \textit{PRF1}, \textit{IL2}, \textit{GZMB}, \textit{FASLG}, \textit{FAS}\\ [2pt]
   \hline
-\textbf{African Vs.} & & \\
-\textbf{Caribbean:} & & \\
-& 4 & MAPK3,MAPK1 \\
-& 3 & ROCK2,ROCK1,RHOA,RAF1,RAC2,RAC1,PRKCB, \\
-& & PAK1,NRAS,MAP2K1,KRAS,ITGB1,HRAS,CACNA1S, \\
-& & CACNA1D,CACNA1C,BRAF \\
-\\
-\textbf{African Vs.} & & \\
-\textbf{Chinese:} & & \\
-& 5 & HLA-DRB1,HLA-DRA,HLA-DQB1,HLA-DQA2,HLA-DQA1, \\
-& & HLA-DPB1,HLA-DPA1,HLA-DOB,HLA-DOA,HLA-DMB, \\
-& & HLA-DMA \\
-& 4 & TNF,IFNG,HLA-G,HLA-F,HLA-E,HLA-C,HLA-B,HLA-A, \\ 
-& & CD86,CD80,CD28 \\
-& 3 & PRF1,IL2,GZMB,FASLG,FAS \\
-   \hline
 \end{tabular}
-\caption[TBD]{\textbf{Gene counts across genome-wide significant MAPIT-R KEGG pathways that overlap between UKB subgroups, in height}. The table shows genes that are present across multiple pathways that overlap between the population subgroups referenced in the first column. Pathways from which these gene count lists are derived can be found in Supplementary Table \ref{InterPath-Supp-Table-MAPITR-TopPathway-Overlap}. The second column lists the number of times the given genes appear across the aforementioned lists of pathways. The third column lists the specific genes the appear at the specific gene count numbers. Note that these results are specifically for the KEGG height analysis.}
+\caption{\textbf{Genes that are annotated for multiple MAPIT-R enriched pathways in both standing height and body mass index (BMI) for different ancestry-specific subgroups in the UK Biobank.} Here, we compare enrichment between the following subgroups in the UK Biobank: ``African'' and ``Chinese'', and ``African'' and``Caribbean'', respectively. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination with significance value $\alpha = 0.05$ (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). The second column records the number of enriched pathways that each gene belongs to, according to the KEGG database.}
 \label{InterPath-Supp-Table-MAPITR-TopPathway-GeneCounts-Overlap}
 \end{table}
-\clearpage
-\setlength{\footskip}{1cm}
+
+\setlength{\extrarowheight}{3pt}
 
 \begin{table}[ht]
 \centering
-\begin{tabular}{cl}
+\hspace*{-0.5em}
+\begin{tabular}{|c|c|P{3.5 in}|}
   \hline
- \textbf{Frequency} & \textbf{Genes} \\
-  \hline
-  4 & PIK3R5,PIK3R3,PIK3R2,PIK3R1,PIK3CG,PIK3CD,PIK3CB, \\
-  & PIK3CA,AKT3,AKT2,AKT1 \\
-  3 & SOS2,SOS1,RAF1,PLCG1,NRAS,MAPK3,MAPK1,MAP2K2, \\
-  & MAP2K1,KRAS,HRAS,GRB2,CDK4 \\
-  2 & TP53,TGFA,RXRG,RXRB,RXRA,RELA,RB1,RARB,PTK2, \\
-  & PRKCG,PRKCB,PRKCA,PLCG2,PDPK1,PAK6,PAK4,PAK2, \\
-  & PAK1,NFKBIA,NFKB1,NCK2,NCK1,MYC,MAPK9,MAP2K7, \\ 
-  & JUN,IKBKB,GSK3B,FHIT,ERBB2,EGFR,EGF,E2F3,E2F2, \\
-  & E2F1,CHUK,CDKN1B,CDK6,CCND1,CBLC,CBLB,CBL, \\
-  & CASP9,BRAF,BAD \\
-   \hline
+\textbf{Trait Comparison} & \textbf{Frequency} & \textbf{Genes in Enriched Pathways} \\
+[2pt]\hline
+ \multirow{10}{*}{\textbf{Height vs.~BMI}} & \multirow{2}{*}{4} & \textit{PIK3R5}, \textit{PIK3R3}, \textit{PIK3R2}, \textit{PIK3R1}, \textit{PIK3CG}, \textit{PIK3CD}, \textit{PIK3CB}, \textit{PIK3CA}, \textit{AKT3}, \textit{AKT2}, \textit{AKT1} \\ [2pt] \cline{2-3}
+ & \multirow{2}{*}{3} & \textit{SOS2}, \textit{SOS1}, \textit{RAF1}, \textit{PLCG1}, \textit{NRAS}, \textit{MAPK3}, \textit{MAPK1}, \textit{MAP2K2}, \textit{MAP2K1}, \textit{KRAS}, \textit{HRAS}, \textit{GRB2}, \textit{CDK4} \\ [2pt]\cline{2-3}
+ & \multirow{6}{*}{2} & \textit{TP53}, \textit{TGFA}, \textit{RXRG}, \textit{RXRB}, \textit{RXRA}, \textit{RELA}, \textit{RB1}, \textit{RARB}, \textit{PTK2}, \textit{PRKCG}, \textit{PRKCB}, \textit{PRKCA}, \textit{PLCG2}, \textit{PDPK1}, \textit{PAK6}, \textit{PAK4}, \textit{PAK2}, \textit{PAK1}, \textit{NFKBIA}, \textit{NFKB1}, \textit{NCK2}, \textit{NCK1}, \textit{MYC}, \textit{MAPK9}, \textit{MAP2K7}, \textit{JUN}, \textit{IKBKB}, \textit{GSK3B}, \textit{FHIT}, \textit{ERBB2}, \textit{EGFR}, \textit{EGF}, \textit{E2F3}, \textit{E2F2}, \textit{E2F1}, \textit{CHUK}, \textit{CDKN1B}, \textit{CDK6}, \textit{CCND1}, \textit{CBLC}, \textit{CBLB}, \textit{CBL}, \textit{CASP9}, \textit{BRAF}, \textit{BAD} \\ [2pt]
+ \hline
 \end{tabular}
-\caption[TBD]{\textbf{Gene counts across four KEGG pathways highlighted in African height vs. BMI analysis (Figure \ref{InterPath-Main-Figure-MAPITR-PhenoComps-African})}. The table shows the genes that are present across multiple of the pathways highlighted in blue in Figure \ref{InterPath-Main-Figure-MAPITR-PhenoComps-African}; these are pathways that have particularly more significant MAPIT-R $p$-values in BMI than in height. The first column lists the frequency (out of four) the given genes appear across the aforementioned list of pathways in Figure \ref{InterPath-Main-Figure-MAPITR-PhenoComps-African}. The second column lists the specific genes that appear at the given frequency across the four pathways highlighted in Figure \ref{InterPath-Main-Figure-MAPITR-PhenoComps-African}.}
+\caption{\textbf{Genes that are annotated for multiple enriched pathways in both standing height and body mass index (BMI) within the African subgroup from the UK Biobank.} Here, we compare genes that are present across multiple of the pathways highlighted in blue in Figure \ref{InterPath-Main-Figure-MAPITR-PhenoComps-African}; these are specific pathways that have more significant MAPIT-R $p$-values in BMI than in height. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination with significance value $\alpha = 0.05$ (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). The second column records the number of enriched pathways that each gene belongs to, according to the KEGG database.}
 \label{InterPath-Supp-Table-MAPITR-PhenoComps-African-GeneCounts}
 \end{table}
-\clearpage
 
-\begin{table} [t!]
-  \caption{\textbf{Gene counts across MAPIT-R genome-wide significant pathways, per subgroup}. Attached Excel sheets contain lists of genes that appear multiple times across the MAPIT-R genome-wide significant pathways in each UKB subgroup for the following pathway database-phenotype combinations: (a) KEGG-Height, (b) KEGG-BMI, (c) REACTOME-Height, and (d) REACTOME-BMI. Genome-wide significance was determined by using a Bonferroni-corrected $p$-value threshold of .05 divided by the number of pathways tested (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}).}
+\begin{table}[H]
+\caption{\textbf{Genes that are annotated for multiple MAPIT-R enriched pathways in standing height and body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank.} Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Phenotype and pathway database combinations include: (\textit{i}) KEGG+Height, (\textit{ii}) KEGG+BMI, (\textit{iii}) REACTOME+Height, and (\textit{iv}) REACTOME+BMI. Genome-wide significance at a Bonferroni-corrected $P$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$ (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). (XLSX)}
 \label{InterPath-Supp-Table-AllPops-TopGeneCounts-Caption}
 \end{table}
 
-\begin{table} [t!]
-  \caption{\textbf{Gene counts across size-restricted MAPIT-R genome-wide significant pathways, per subgroup}. Attached Excel sheets contain lists of genes that appear multiple times across the MAPIT-R genome-wide significant pathways that contain less than or equal to 1,000 SNPs (`size-restricted') in each UKB subgroup for the following pathway database-phenotype combinations: (a) KEGG-Height, (b) KEGG-BMI, (c) REACTOME-Height, and (d) REACTOME-BMI. Genome-wide significance was determined by using a Bonferroni-corrected $p$-value threshold of .05 divided by the number of pathways tested (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}).}
+\begin{table}[H]
+\caption{\textbf{Genes that are annotated for multiple MAPIT-R enriched pathways (after imposing a size restriction) in standing height and body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank.} Here, we only consider pathways that contain less than or equal to 1,000 SNPs. Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Phenotype and pathway database combinations include: (\textit{i}) KEGG+Height, (\textit{ii}) KEGG+BMI, (\textit{iii}) REACTOME+Height, and (\textit{iv}) REACTOME+BMI. Genome-wide significance at a Bonferroni-corrected $p$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$ (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). (XLSX)}
 \label{InterPath-Supp-Table-AllPops-TopGeneCounts-SizeRestricted-Caption}
 \end{table}
-\clearpage
 
-\begin{table} [t!]
-  \caption{\textbf{Results from original and size-restricted hypergeometric tests in BMI-African, per gene.}. Attached Excel sheets contain lists of the hypergeometric -$\log_{10}$ $p$-values for both the original and size-restricted gene count analyses per gene in both the KEGG and REACTOME-BMI-African combinations. Differences in the -$\log_{10}$ $p$-values between the original and size-restricted hypergeometric analyses are also shown per gene. Plots of these differences in -$\log_{10}$ $p$-values can be seen in Figure \ref{InterPath-Main-Figure-Hypergeometric-RestrictedComps-African-BMI}.}
+\begin{table}[H]
+\caption{\textbf{Results from hypergeometric tests performed for body mass index (BMI) using both the original and size-restricted pathway annotations within the African subgroup in the UK Biobank.} Here, pathway annotations were determined according to both the KEGG and REACTOME databases. Listed are the -$\log_{10}$ transformed $p$-values from the hypergeometric tests. Differences in the -$\log_{10}$ $p$-values between the original and size-restricted hypergeometric analyses are also shown per gene. Attached Excel sheets contain lists of the hypergeometric -$\log_{10}$ $p$-values for both the original and size-restricted gene count analyses per gene in both the KEGG and REACTOME-BMI-African combinations. Differences in the -$\log_{10}$ $p$-values between the original and size-restricted hypergeometric analyses are also shown per gene. Plots of these differences in can be seen in Figure \ref{InterPath-Main-Figure-Hypergeometric-RestrictedComps-African-BMI} in the main text. (XLSX)}
 \label{InterPath-Supp-Table-Hypergeometric-RestrictedComps-African-BMI}
 \end{table}
 \clearpage
 
-\begin{landscape}
-\begin{table}[ht]
+\setlength{\extrarowheight}{3pt}
+
+\begin{table}[H]
 \centering
-\hspace*{-1.5cm}
-\begin{tabular}{ccccccc}
+\hspace*{-2.5cm}
+\begin{tabular}{|c|c|c|c|c|c|c|}
   \hline
-  \textbf{Gene} & \textbf{Pathway SNP} & \textbf{Gene Count in} & \textbf{Total Count of} & \textbf{Gene Count in} & \textbf{Total Count of} & \textbf{Hypergeometric} \\
-   & \textbf{Count Limit} & \textbf{Top Pathways} & \textbf{Top Pathways} & \textbf{All Pathways} & \textbf{All Pathways} & \textbf{$p$-Value} \\
+  \textbf{Notable} & \textbf{Pathway SNP} & \textbf{Gene Count in} & \textbf{Total Count of} & \textbf{Gene Count in} & \textbf{Total Count of} & \textbf{Hypergeometric} \\
+ \textbf{Gene} & \textbf{Count Limit} & \textbf{Top Pathways} & \textbf{Top Pathways} & \textbf{All Pathways} & \textbf{All Pathways} & \textbf{$\bm{P}$-Value} \\[2pt]
   \hline
- \textbf{UBA52} & & & & & & \\
- & No Limit & 22 & 65 & 106 & 658 & 1.537E-4 \\
- & $<$ 1000 SNPs & 10 & 26 & 84 & 577 & 1.855E-3 \\
-\\
- \textbf{PSM*} & & & & & & \\
- & No Limit & 12 & 65 & 44 & 658 & 5.304E-4 \\
- & $<$ 1000 SNPs & 9 & 26 & 34 & 577 & 4.464E-6 \\
+ \multirow{2}{*}{\textit{UBA52}} & No Limit & 22 & 65 & 106 & 658 & 1.534$\times10^{-4}$ \\ [2pt] \cline{2-7}
+ & $<$ 1000 SNPs & 10 & 26 & 84 & 577 & 1.86$\times10^{-3}$ \\ [2pt]\hline
+\multirow{2}{*}{\textit{PSM*}} & No Limit & 12 & 65 & 44 & 658 & 5.30$\times10^{-4}$ \\ [2pt] \cline{2-7}
+ & $<$ 1000 SNPs & 9 & 26 & 34 & 577 & 4.46$\times10^{-6}$ \\ [2pt]
    \hline
 \end{tabular}
-\caption[TBD]{\textbf{MAPIT-R Genome-Wide Significant Pathway Gene Counts: Hypergeometric Enrichment Examples}. Caption continued on next page.}
+\caption[TBD]{\textbf{Specific results from hypergeometric tests performed for body mass index (BMI) using both the original and size-restricted pathway annotations within the African subgroup in the UK Biobank.} Here, we focus on two genes, \textit{UBA52} and \textit{PSM*}. Note that the vast majority of proteasome genes included in our analysis had similar results across each hypergeometric category, so we use \textit{PSM*} to represent the gene family as a whole. In each case, genes are tested for being annotated more frequently among MAPIT-R enriched pathways than among the background distribution of pathways in the KEGG and REACTOME databases. Two study designs were employed for these tests: (\textit{i}) using all pathways present in the given databases, or (\textit{ii}) using only pathways that contained less than or equal to 1,000 SNPs. The first column lists the gene or gene family being tested. The second column lists which of the two aforementioned study designs was used. Columns three through six list the different count values used in the hypergeometric test: the third column lists the number of times a gene is present among the genome-wide significant list of pathways, the fourth column lists the total number of pathways that were genome-wide significant, the fifth column lists the number of times a gene is present among all the pathways in the given database, and the sixth column lists the total number of pathways in the given database. The seventh column is the hypergeometric $p$-value associated with columns three through six.}
 \label{InterPath-Supp-Table-AllPops-TopGeneCount-HypergeometricTests}
 \end{table}
-\end{landscape}
-\clearpage
 
-\addtocounter{table}{-1}
-\begin{table} [t!]
-  \caption{\textbf{PSM* and UBA52 gene count enrichment test examples, size restriction and no restriction}. The table shows examples and results of running the hypergeometric test for enrichment on two different genes in two different study designs. In all cases a gene is tested for being significantly more frequent among the set of MAPIT-R genome-wide significant pathways than among the background distribution of pathways in the original database. Two study designs were employed for these tests, either (a) using all pathways present in the given databases or (b) using only pathways that contained less than or equal to 1,000 SNPs. The first column lists the gene or gene family being tested. The second column lists which of the two aforementioned study designs was used. Columns three through six list the different count values used in the hypergeometric test: the third column lists the number of times a gene is present among the genome-wide significant list of pathways, the fourth column lists the total number of pathways that were genome-wide significant, the fifth column lists the number of times a gene is present among all the pathways in the given database, and the sixth column lists the total number of pathways in the given database. The seventh column is the hypergeometric $p$-value associated with columns three through six. Note that the vast majority of proteasome genes included in our analysis had the same number of gene counts across each hypergeometric category, hence why \textbf{PSM*} was used to represent them as a whole.}
-\label{InterPath-Supp-Table-AllPops-TopGeneCount-HypergeometricTests-Caption}
-\end{table}
-\clearpage
-
-\begin{table} [t!]
-  \caption{\textbf{MAPIT-R $p$-values from rerunning REACTOME pathways + BMI with each proteasome gene family individually removed, per subgroup}. Attached Excel sheets contain the MAPIT-R $p$-values for each of the REACTOME pathways analyzed in Figure \ref{InterPath-Main-Figure-Proteasome-Panels} + BMI with each of the proteasome gene families (eg \textit{PSMA}, \textit{PSMB}, \textit{PSMC}, \textit{PSMD}, \textit{PSME}, and \textit{PSMF}) removed one at a time, per UKB subgroup. These are the raw MAPIT-R $p$-values underlying Figure \ref{InterPath-Main-Figure-Proteasome-Panels} and Supplementary Figures \ref{InterPath-Supp-Figure-Prot-Heatplots-African}\textcolor{blue}{-f}. Note that for some subgroups not all of the original pathways from Figure \ref{InterPath-Main-Figure-Proteasome-Panels} were analyzable (generally due to number of SNPs >> number of individuals).}
+\begin{table}[H]
+\caption{\textbf{Results from applying a ``leave-one-out'' approach to MAPIT-R with proteasome gene families in body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank.} Here, pathway annotations were determined according to the REACTOME database. Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. The proteasome genes analyzed included: \textit{PSMA}, \textit{PSMB}, \textit{PSMC}, \textit{PSMD}, \textit{PSME}, and \textit{PSMF}, respectively. These are the raw MAPIT-R $P$-values underlying Figure \ref{InterPath-Main-Figure-Proteasome-Panels} in the main text and Supplementary Figures \ref{InterPath-Supp-Figure-Prot-Heatplots-African}-\ref{InterPath-Supp-Figure-Prot-Heatplots-Pakistani}. Note that for some subgroups not all of the original pathways from Figure \ref{InterPath-Main-Figure-Proteasome-Panels} were analyzable (generally due to number of SNPs being far greater than the number of individuals). (XLSX)}
 \label{InterPath-Supp-Table-AllPops-Proteasome-Dropouts-Caption}
 \end{table}
-\clearpage
 
 \setlength{\footskip}{4cm}
 \begin{landscape}
