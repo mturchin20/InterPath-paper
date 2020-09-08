@@ -6,3 +6,5 @@ sub makeexternaldocument {
         system( "latexmk -pdf \"$_[0]\"" );
     }
 }
+
+$pdflatex = 'pdflatex %O %S; bibtex %R;'
