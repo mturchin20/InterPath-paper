@@ -302,6 +302,19 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 
 \begin{figure}[htbp]
 \centering
+\begin{subfigure}{.5\textwidth}\includegraphics[scale=.2]{Images/Supp/Greg/power_split.png}
+\caption{Num1}
+\end{subfigure}
+\subfigure[Num2]{\includegraphics[width=\textwidth]{Images/Supp/Greg/Rplot01.png}}
+\subfigure[Num3]{\includegraphics[width=\textwidth]{Images/Supp/Greg/Rplot02.png}}
+\subfigure[Num4]{\includegraphics[width=\textwidth]{Images/Supp/Greg/Rplot03.png}}
+\caption{\textbf{QQ-Plots of MAPIT-R $\bm{P}$-values using KEGG and REACTOME pathways annotations and randomly permuted phenotypes in each ancestry-specific subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were permuted within each population subgroup ten different times. Shown on the x-axis are the -$\log_{10}$ transformed expected $p$-values, while the $y$-axis shows the -$\log_{10}$ observed $p$-values. The dotted red line is the Bonferroni-corrected $P$-value threshold based on the number of pathways tested per database-phenotype combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Overall, we find that MAPIT-R properly controls for type 1 error rate at varying significance cutoff thresholds (Supplementary Table \ref{InterPath-Supp-Table-AllPops-FDRs}).}
+\label{InterPath-Supp-Figure-Greg-Simulations}
+\end{figure}
+\clearpage
+
+\begin{figure}[htbp]
+\centering
 \includegraphics[width = \textwidth]{Images/Supp/InterPath_Supp_Figure_perm1_QQPlots_AllPaths_vs2.png}
 \caption{\textbf{QQ-Plots of MAPIT-R $\bm{P}$-values using KEGG and REACTOME pathways annotations and randomly permuted phenotypes in each ancestry-specific subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were permuted within each population subgroup ten different times. Shown on the x-axis are the -$\log_{10}$ transformed expected $p$-values, while the $y$-axis shows the -$\log_{10}$ observed $p$-values. The dotted red line is the Bonferroni-corrected $P$-value threshold based on the number of pathways tested per database-phenotype combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Overall, we find that MAPIT-R properly controls for type 1 error rate at varying significance cutoff thresholds (Supplementary Table \ref{InterPath-Supp-Table-AllPops-FDRs}).}
 \label{InterPath-Supp-Figure-perm1-QQPlots-AllPaths}
