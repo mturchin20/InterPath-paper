@@ -198,7 +198,7 @@
 \captionsetup[table]{name=Supplementary Table}
 \captionsetup[figure]{name=Supplementary Figure}
 \allowdisplaybreaks
-\renewcommand\thesubfigure{(\Alph{subfigure})}
+\renewcommand\thesubfigure{(\alph{subfigure})}
 \bibliographystyle{plos2015}
 \usepackage{cite}
 
@@ -302,13 +302,16 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 
 \begin{figure}[htbp]
 \centering
-\begin{subfigure}{.5\textwidth}\includegraphics[scale=.2]{Images/Supp/Greg/power_split.png}
-\caption{Num1}
-\end{subfigure}
-\subfigure[Num2]{\includegraphics[width=\textwidth]{Images/Supp/Greg/Rplot01.png}}
-\subfigure[Num3]{\includegraphics[width=\textwidth]{Images/Supp/Greg/Rplot02.png}}
-\subfigure[Num4]{\includegraphics[width=\textwidth]{Images/Supp/Greg/Rplot03.png}}
-\caption{\textbf{QQ-Plots of MAPIT-R $\bm{P}$-values using KEGG and REACTOME pathways annotations and randomly permuted phenotypes in each ancestry-specific subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were permuted within each population subgroup ten different times. Shown on the x-axis are the -$\log_{10}$ transformed expected $p$-values, while the $y$-axis shows the -$\log_{10}$ observed $p$-values. The dotted red line is the Bonferroni-corrected $P$-value threshold based on the number of pathways tested per database-phenotype combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Overall, we find that MAPIT-R properly controls for type 1 error rate at varying significance cutoff thresholds (Supplementary Table \ref{InterPath-Supp-Table-AllPops-FDRs}).}
+\subfigure[Num1]{\includegraphics[width=.4\textwidth]{Images/Supp/Greg/power_split.png}}
+\subfigure[Num2]{\includegraphics[width=.4\textwidth]{Images/Supp/Greg/Rplot01.png}}
+\subfigure[Num3]{\includegraphics[width=.4\textwidth]{Images/Supp/Greg/Rplot02.png}}
+\subfigure[Num4]{\includegraphics[width=.4\textwidth]{Images/Supp/Greg/Rplot03.png}}
+\caption{\textbf{Plots showing behavior of MAPIT-R under simulations of varying genetic architectures and pathway definitions}. Here, we run simulations of MAPIT-R under various biological scenarios. For all plots, 3,000 individuals from the British subgroup and 10,000 SNPs from chromosome 1 were used to simulate different phenotypes based on varying additive and non-additive genetic architectures. Each simulation contains 10 pathways, each of which contains 50 SNPs. For each pathway, every SNP is `interacting', meaning each SNP of the 50 has 200 `interacting SNPs' randomly chosen elsewhere among the remaining 9,950 background SNPs. To properly simulate background additive heritability, an additional 50\% of the background, non-interacting SNPs were assigned additive effects. Overall heritability ($H^2$) was set at .6 or .8. Additive heritability was set at $H^2*(\rho)$ and epistatic heritability was set at $H^2*(1-\rho)$, where $\rho$ is a value ranging from .9 to .6 that controls the ratio between. Lastly, the top 10 local principal components of the individuals were used to introduce population structure and account for 10\% of the overall phenotype variance. (a) additive to epistatic heritability.  Each pathway has
+%For all plots, number of individuals = 3,000. Number of SNPs total = 10,000. Genotypes are from uk biobank, chromosome 1. First 10k SNPs and random 3k white british individuals. There are 10 pathways in each simulation. Each pathway has exactly 50 group 1 SNPs and 200 interactions per group 1 SNP, so 10,000 total group 2 SNPs. Group 3 SNPs, which is those SNPs that have an additive background is 50\% of the total SNPs chosen at random, so 5,000 SNPs. Overall heritability is (0.6 or 0.8 for power plots) $H^2$. Epistatic PVE is $H^2*(1-\rho)$. And additive heritability is $H^2*(\rho)$. 10 global population structure PCs are included in each simulation and account for 10\% of the overall phenotype variance.
+%A) power plot: $H^2$ on the top facet. $\rho$ on the x-axis. power = true positive rate on the y-axis. false positive rate is color. 50 simulations are performed per rho/pve combo. error bars are standard errors across 50 simulations.
+%B) ROC curve: true positive rate vs false positive rate across 100 simulations with 10 pathways per sim. 5 are true positives and 5 are true negatives. I need to double check these stats for the ROC curve.
+%C) QQ\_overlap: and D) QQ\_disjoint: 50 simulations. 10 pathways in each. same as the power plots. overlap vs disjoint refers to whether the SNPs in *group 1* so the main pathway SNPs could contain any duplicates across pathways tested in the same simulation.}
+}
 \label{InterPath-Supp-Figure-Greg-Simulations}
 \end{figure}
 \clearpage
@@ -316,7 +319,7 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \begin{figure}[htbp]
 \centering
 \includegraphics[width = \textwidth]{Images/Supp/InterPath_Supp_Figure_perm1_QQPlots_AllPaths_vs2.png}
-\caption{\textbf{QQ-Plots of MAPIT-R $\bm{P}$-values using KEGG and REACTOME pathways annotations and randomly permuted phenotypes in each ancestry-specific subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were permuted within each population subgroup ten different times. Shown on the x-axis are the -$\log_{10}$ transformed expected $p$-values, while the $y$-axis shows the -$\log_{10}$ observed $p$-values. The dotted red line is the Bonferroni-corrected $P$-value threshold based on the number of pathways tested per database-phenotype combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Overall, we find that MAPIT-R properly controls for type 1 error rate at varying significance cutoff thresholds (Supplementary Table \ref{InterPath-Supp-Table-AllPops-FDRs}).}
+\caption{\textbf{QQ-Plots of MAPIT-R $\bm{p}$-values using KEGG and REACTOME pathways annotations and randomly permuted phenotypes in each ancestry-specific subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were permuted within each population subgroup ten different times. Shown on the x-axis are the -$\log_{10}$ transformed expected $p$-values, while the $y$-axis shows the -$\log_{10}$ observed $p$-values. The dotted red line is the Bonferroni-corrected $P$-value threshold based on the number of pathways tested per database-phenotype combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Overall, we find that MAPIT-R properly controls for type 1 error rate at varying significance cutoff thresholds (Supplementary Table \ref{InterPath-Supp-Table-AllPops-FDRs}).}
 \label{InterPath-Supp-Figure-perm1-QQPlots-AllPaths}
 \end{figure}
 \clearpage
