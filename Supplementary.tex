@@ -300,22 +300,36 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \end{figure}
 \clearpage
 
+\begin{landscape}
 \begin{figure}[htbp]
 \centering
-\subfigure[Num1]{\includegraphics[width=.4\textwidth]{Images/Supp/Greg/power_split.png}}
-\subfigure[Num2]{\includegraphics[width=.4\textwidth]{Images/Supp/Greg/Rplot01.png}}
-\subfigure[Num3]{\includegraphics[width=.4\textwidth]{Images/Supp/Greg/Rplot02.png}}
-\subfigure[Num4]{\includegraphics[width=.4\textwidth]{Images/Supp/Greg/Rplot03.png}}
-\caption{\textbf{Plots showing behavior of MAPIT-R under simulations of varying genetic architectures and pathway definitions}. Here, we show results from running simulations of MAPIT-R under various genetic architectures. For all plots, 3,000 individuals from the British subgroup and 10,000 SNPs from chromosome 1 were used. Phenotypes were constructed by simulation both additive and epistatic components. Epistatic components were constructed by simulaing interactions between pathways and the rest of the genomic background. Specifically, 10 pathways were used in each simulation, where each pathway contained 50 SNPs. For each pathway, every SNP was considered an `interacting' SNP, meaning each SNP had 200 `interacting partner' SNPs randomly chosen elsewhere from among the remaining 9,950 background SNPs. To simulate the additive heritability component, an additional 50\% of the background, non-interacting SNPs were assigned additive effects. Overall heritability ($H^2$) was set at .6 or .8. Additive heritability was set at $H^2*(\rho)$ and epistatic heritability was set at $H^2*(1-\rho)$, where $\rho$ is a value ranging from .6 to .9 that controls the ratio between additive and epistatic heritability. Lastly, the top 10 local principal components of the individuals were used to introduce population structure and account for 10\% of the overall phenotype variance. (a) The barplots show power and false positive rates from running the aforementioned MAPIT-R simulations. $H^2$ of .6 is shown on the left and $H^2$ is shown on the right. The $x$-axis shows the different values of $\rho$ and the $y$-axis shows additive to epistatic heritability.  
-
+\subfigure[Num1]{\includegraphics[width=.6\textwidth]{Images/Supp/Greg/power_split.png}}
+\subfigure[Num2]{\includegraphics[width=.6\textwidth]{Images/Supp/Greg/Rplot01.png}}
+%\subfigure[Num3]{\includegraphics[width=.4\textwidth]{Images/Supp/Greg/Rplot03.png}}
+%\subfigure[Num4]{\includegraphics[width=.4\textwidth]{Images/Supp/Greg/Rplot02.png}}
+\caption{\textbf{Plots of MAPIT-R performance under a variety of simulated genetic architectures and pathway definition schemes}. Here, we show results from running simulations of MAPIT-R under various genetic architectures. For all plots, 3,000 individuals from the British subgroup and 10,000 SNPs from chromosome 1 were used. Phenotypes were constructed by simulation both additive and epistatic components. Epistatic components were constructed by simulating interactions between pathways and the rest of the genomic background. Specifically, 10 pathways were used in each simulation, where each pathway contained 50 SNPs. For each pathway, every SNP was considered an `interacting' SNP, meaning each SNP had 200 `interacting partner' SNPs randomly chosen elsewhere from among the remaining 9,950 background SNPs. To simulate the additive heritability component, an additional 50\% of the background, non-interacting SNPs were assigned additive effects. Overall heritability ($H^2$) was set at .6 or .8. Additive heritability was set at $H^2*(\rho)$ and epistatic heritability was set at $H^2*(1-\rho)$, where $\rho$ is a value ranging from .6 to .9 that controls the ratio between additive and epistatic heritability. Lastly, the top 10 local principal components of the individuals were used to introduce population structure and account for 10\% of the overall phenotype variance. (a) The barplots show power and false positive rates (FPR) from running the aforementioned MAPIT-R simulations. $H^2$ of .6 is shown on the left and $H^2$ is shown on the right. The $x$-axis shows the different values of $\rho$ and the $y$-axis shows power. Colors correspond to different value of $\rho$ and the legend shows each corresponding FPR. (b) The plot shows the false positive rate vs. true positive rate ROC curve across 100 different simulations, each with 10 pathways. In each simulation 5 pathways were `true positive' and 5 were `true negatives', where `true negative' refers to no epistatic effects. The $x$-axis shows the false positive rate and the $y$-axis shows the true positive rate. (c) and (d) The QQ-plots show results from 50 `null' simulations conducted under two different pathway definition schemes. Here, `null' means epistatic effects were randomly assigned regardless of genotype. (c) shows a pathway definition scheme were there is no SNP overlap between pathways, in other words no SNP is in more than one pathway, and (d) shows a pathway definition scheme where SNPs were allowed to be included in multiple pathways. For both plots, the $x$-axis shows the -$\log_{10}$ expected $p$-value and the $y$-axis shows the -$\log_{10}$ observed $p$-value. The blue 
 Each pathway has
 %For all plots, number of individuals = 3,000. Number of SNPs total = 10,000. Genotypes are from uk biobank, chromosome 1. First 10k SNPs and random 3k white british individuals. There are 10 pathways in each simulation. Each pathway has exactly 50 group 1 SNPs and 200 interactions per group 1 SNP, so 10,000 total group 2 SNPs. Group 3 SNPs, which is those SNPs that have an additive background is 50\% of the total SNPs chosen at random, so 5,000 SNPs. Overall heritability is (0.6 or 0.8 for power plots) $H^2$. Epistatic PVE is $H^2*(1-\rho)$. And additive heritability is $H^2*(\rho)$. 10 global population structure PCs are included in each simulation and account for 10\% of the overall phenotype variance.
 %A) power plot: $H^2$ on the top facet. $\rho$ on the x-axis. power = true positive rate on the y-axis. false positive rate is color. 50 simulations are performed per rho/pve combo. error bars are standard errors across 50 simulations.
 %B) ROC curve: true positive rate vs false positive rate across 100 simulations with 10 pathways per sim. 5 are true positives and 5 are true negatives. I need to double check these stats for the ROC curve.
 %C) QQ\_overlap: and D) QQ\_disjoint: 50 simulations. 10 pathways in each. same as the power plots. overlap vs disjoint refers to whether the SNPs in *group 1* so the main pathway SNPs could contain any duplicates across pathways tested in the same simulation.}
 }
-\label{InterPath-Supp-Figure-Greg-Simulations}
+\label{InterPath-Supp-Figure-Greg-Simulations-part1}
 \end{figure}
+\end{landscape}
+\clearpage
+
+\begin{landscape}
+\begin{figure}[htbp]
+\centering
+\subfigure[Num3]{\includegraphics[width=.6\textwidth]{Images/Supp/Greg/Rplot03.png}}
+\subfigure[Num4]{\includegraphics[width=.6\textwidth]{Images/Supp/Greg/Rplot02.png}}
+\caption{\textbf{Plots of MAPIT-R performance under a variety of simulated genetic architectures and pathway definition schemes}. (c) and (d) The QQ-plots show results from 50 `null' simulations conducted under two different pathway definition schemes. Here, `null' means epistatic effects were randomly assigned regardless of genotype. (c) shows a pathway definition scheme were there is no SNP overlap between pathways, in other words no SNP is in more than one pathway, and (d) shows a pathway definition scheme where SNPs were allowed to be included in multiple pathways. For both plots, the $x$-axis shows the -$\log_{10}$ expected $p$-value and the $y$-axis shows the -$\log_{10}$ observed $p$-value.
+%C) QQ\_overlap: and D) QQ\_disjoint: 50 simulations. 10 pathways in each. same as the power plots. overlap vs disjoint refers to whether the SNPs in *group 1* so the main pathway SNPs could contain any duplicates across pathways tested in the same simulation.}
+}
+\label{InterPath-Supp-Figure-Greg-Simulations-part2}
+\end{figure}
+\end{landscape}
 \clearpage
 
 \begin{figure}[htbp]
