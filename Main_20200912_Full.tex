@@ -1,19 +1,24 @@
+%\documentclass[10pt,a4paper]{article}
 \documentclass[10pt]{article}
+%\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[a4paper]{geometry}
+%\geometry{a4paper, top=1in, bottom=2in}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue, hypertexnames=false]{hyperref}
 \usepackage{epsfig,amsfonts}
+%\usepackage{natbib}
 \usepackage{authblk}
 \usepackage{subfig}
 \usepackage{setspace}
 \usepackage{hypcap}
 \usepackage{lscape}
-\usepackage{lineno}
+\usepackage{lineno} %can do [right] to shift location of #s
+%From: https://www.overleaf.com/learn/how-to/Cross_referencing_with_the_xr_package_in_Overleaf
 \usepackage{xr}
 \makeatletter
 \newcommand*{\addFileDependency}[1]{% argument=file name and extension
@@ -28,6 +33,9 @@
     \addFileDependency{#1.aux}%
 }
 \myexternaldocument{Supplementary}
+%From: https://tex.stackexchange.com/questions/64934/subfig-label-positioning (went with second example solution on how to get multiple figures aligned with subfig + desired labeling)
+%\usepackage{floatrow}
+%From: https://tex.stackexchange.com/questions/332295/command-textalpha-unavailable-in-encoding-t1-when-using-greek
 \usepackage{textgreek}
 
 %From Lorin
@@ -39,7 +47,7 @@
 \def\pdf{p.d.f.\ } \def\cdf{c.d.f.\ }
 \def\pdfs{p.d.f.s} \def\cdfs{c.d.f.s}
 \def\mgf{m.g.f.\ } \def\mgfs{m.g.f.s\ }
-\def\ci{\perp   \perp}  
+\def\ci{\perp   \perp}  % conditional independence symbol
 \def\beginmat{ \left( \begin{array} }
 \def\endmat{ \end{array} \right) }
 \def\diag{{\rm diag}}
@@ -47,10 +55,11 @@
 \def\tr{{\rm tr}}
 \def\cond{\, | \,}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
-
+%\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
 \def\dsum{\displaystyle\sum}
 \def\dint{\displaystyle\int}
+%\def\dfrac{\displaystyle\frac}
 \def\dsup{\displaystyle\sup}
 \def\dinf{\displaystyle\inf}
 \def\dmin{\displaystyle\min}
@@ -149,6 +158,7 @@
 \pagestyle{myheadings}
 
 \newcommand{\edit}[2]{\sout{#1}\textcolor{red}{\xspace#2}}
+%\newcommand{\sr}[2]{\sout{#1}\textcolor{red}{#2}}
 \newcommand{\black}{\textcolor{black}}
 \newcommand{\genee}{gene-$\varepsilon$~}
 \newcommand{\genE}{gene-$\varepsilon$}
@@ -181,7 +191,26 @@
 %%%%%%%%%%%%
 %%%%%%%%%%%%
 
+%\title{Pathway Analysis within Multiple Human Ancestries Reveals Novel Signals for Epistasis in Complex Traits}
+%\author[1,2,$\dag$]{Michael C. Turchin}
+%\author[1,3]{Gregory Darnell}
+%\author[1,4,5,*]{Lorin Crawford}
+%\author[1,2,*,$\dag$]{Sohini Ramachandran}
+%\affil[1]{Center for Computational Molecular Biology, Brown University}
+%\affil[2]{Department of Ecology and Evolutionary Biology, Brown University}
+%\affil[3]{Institute for Computational and Experimental Research in Mathematics, Brown University}
+%\affil[4]{Department of Biostatistics, Brown University}
+%\affil[5]{Center for Statistical Science, Brown University}
+%\affil[$\ast$]{indicates these authors contributed equally}
+%\affil[$^\dag$]{To whom correspondence should be addressed:
+%michael\_turchin@brown.edu
+
+%sramachandran@brown.edu}
+
 \begin{document}
+%\setlength{\footskip}{0cm}
+
+%\maketitle
 
 \linenumbers
 \begin{flushleft}
@@ -207,13 +236,12 @@ Michael C. Turchin\textsuperscript{1,2,$\dagger$}, Gregory Darnell\textsuperscri
 $\dagger$ Corresponding E-mail: michael\_turchin@brown.edu; lcrawford@microsoft.com; sramachandran@brown.edu 
 \end{flushleft}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%\begin{abstract}\label{InterPath-Abstract}
+%\end{abstract}
 \section*{Abstract}\label{InterPath-Abstract} 
 
 Genome-wide association (GWA) studies have identified thousands of significant genetic associations in humans across a number of complex traits. However, the majority of these studies focus on linear additive relationships between genotypic and phenotypic variation. Epistasis, or non-additive genetic interactions, has been identified as a major driver of both complex trait architecture and evolution in multiple model organisms; yet, this same phenomenon is not considered to be a significant factor underlying human complex traits. There are two possible reasons for this assumption. First, most large GWA studies are conducted solely with European cohorts; therefore, our understanding of broad-sense heritability for many complex traits is limited to just one ancestry group. Second, current epistasis mapping methods commonly identify significant genetic interactions by exhaustively searching across all possible pairs of SNPs. In these frameworks, estimated epistatic effects size are often small and power can be low due to the multiple testing burden. Here, we present a case study that uses a novel region-based mapping approach to analyze functionally interacting sets of variants for the presence of epistatic effects across six diverse subgroups within the UK Biobank. We refer to this method as the ``MArginal ePIstasis Test for Regions'' or MAPIT-R. Even with limited sample sizes, we find a total of 245 pathways within the KEGG and REACTOME databases that are significantly enriched for epistatic effects in height and body mass index (BMI), with 67\% of these pathways being detected within individuals of African ancestry. As a secondary analysis, we introduce a novel region-based `leave-one-out' approach to localize pathway-level epistatic signals to specific interacting genes in BMI. Overall, our results indicate that non-European ancestry populations may be better suited for the discovery of non-additive genetic variation in human complex traits --- further underscoring the need for publicly available, biobank-sized datasets of diverse groups of individuals.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Introduction}\label{InterPath-Introduction}
 
@@ -222,8 +250,6 @@ Genome-wide association (GWA) studies are a powerful tool for understanding the 
 Algorithmically, detecting statistically significant epistatic signals via genome-wide scans is much more computationally expensive than the the traditional hypothesis-generating GWA framework. GWA tests for additive effects are linear in the number of SNPs, while epistasis scans usually consider, at a minimum, all pairwise combinations of SNPs (e.g., a total of $J(J - 1)/2$ possible pairwise combinations for $J$ variants in a study). Methods that fall within the MArginal ePIstasis Test (MAPIT) framework \cite{Crawford2017a,Crawford2018b,Moore2019,Wang2019} attempt to address these challenges by alternatively testing for \textit{marginal} epistasis. Specifically, instead of directly identifying individual pairwise or higher-order interactions, these approaches focus on identifying variants that have a non-zero interaction effect with any other variant in the data. Indeed, analyzing epistasis among pairs of SNPs can be underpowered in GWA studies, particularly when applied to polygenic traits or traits which are generated by many mutations of small effect \cite{Zhou2013,Yang2014,Bulik-Sullivan2015,Wray2018}. To overcome this limitation, more recent computational approaches have expanded the additive GWA framework to aggregate across multiple SNP-level association signals and test for the enrichment of genes and pathways \cite{Subramanian2005,Cantor2010,Wang2010b,Lee2012,Carbonetto2013,Mooney2014,Gamazon2015,de2016,Nakka2016,Zhu2018,Sun2019,Cheng2020}. \textcolor{red}{Additionally in Nakka et al. \cite{Nakka2017}, we showed that enrichment analyses applied to multiple ancestries can identify genes and gene networks contributing to disease risk that ancestry-specific enrichment analyses fail to find. Despite recent efforts promoting the need for conducting GWA in diverse ancestries \cite{Popejoy2016,Martin2018,Martin2019,Gurdasani2019,Sirugo2019,Wojcik2019}, few studies have investigated the role of epistasis in shaping multiethnic human genetic variation (but see \cite{Ma2012,Fish2016,Choquet2018,Hoffmann2018} for examples)}. 
 
 In this study, our objective is to expand the marginal epistasis framework from individual SNPs to user-specified sets of variants (e.g., genes, signaling pathways). Here, we aim to detect novel interactions between biologically relevant disease mechanisms underlying complex traits and to analyze multiple human ancestries, all while reducing the multiple testing burden that traditionally hinders exhaustive epistatic scans. We implement our new approach in ``MArginal ePIstasis Test for Regions'', which we refer to as MAPIT-R. We apply MAPIT-R using pathway annotations from the ``Kyoto Encyclopedia of Genes and Genomes`` (KEGG) and REACTOME databases \cite{Liberzon2011} to standing height and body mass index (BMI) assayed in individuals from multiple human ancestry ``subgroups'' (British, African, Caribbean, Chinese, Indian, and Pakistani) in the UK Biobank \cite{Sudlow2015}. We analyze multiple non-European human ancestries to study if different genomic backgrounds might reveal varying contributions of epistatic interactions to phenotypic variation. We find more than 200 pathways spanning over all cohorts that have significant marginal epistatic effects on standing height and BMI. We then investigate the distribution of these significant non-additive signals across ancestries, traits, and pathways, which suggests future directions to prioritize for studies of epistasis in human complex traits.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Materials and Methods} 
 
@@ -275,8 +301,6 @@ To create appropriate pathway annotations for MAPIT-R, we first assign SNP to ge
 
 To create the UK Biobank population subgroups used in this study \textcolor{red}{(UK Biobank Application Number 2241)}, we first extracted and grouped individuals by the self-identified ancestries of ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani''. \textcolor{red}{For the British subgroups, five sets of 4,000 and 10,000 non-overlapping individuals were created, with one set from each sample size used for primary analyses and the remaining four from each sample sized used for replication analyses.} Standard quality control procedures were applied to each population subgroup (see Supplementary Note for details). Local principal component analysis (PCA) was then conducted to confirm ancestry groupings and to remove outliers. Note that the genetic data we used in this study were the directly genotyped variant sets from the UK Biobank after running imputation of missing genotypes on the University of Michigan Imputation Server \cite{Das2016}; \textcolor{red}{imputation was conducted manually so that an ancestry-diverse and sample size balanced reference panel (1000G Phase 3 v5) could be used}. For \textcolor{red}{details} and \textcolor{red}{global} PCA plots of the final UK Biobank dataset, see Supplementary Figure \ref{InterPath-Supp-Figure-UKB-subgroups-PCAPlot} and Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}. Lastly, both the standing height and body mass index (BMI) traits were adjusted for age, gender, and assessment center. Following previous pipelines \cite{Wood2014a,Locke2015}, each dataset was first divided into males and females. Age was then regressed out within each sex, and the resulting residuals were inverse normalized. These normalized values were then combined back together between sexes and, lastly, assessment center designations were regressed out. \textcolor{red}{Top 10 `local' principal components (PCs) were included as covariates during the actual MAPIT-R analyses; `local' here refers to conducting PCA within each subgroup individually versus the `global' set up from before of conducting PCA on every subgroup together jointly}. \textcolor{red}{Note that in total we conducted 24 different testing schemes (2 pathway databases, 2 phenotypes, 6 population subgroups), which we refer to as `database-phenotype-subgroup' combinations.} And for analyses using permuted phenotypes, permutations were conducted within-subgroup and done by randomly reassigning phenotypes to individuals.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section*{Results}\label{InterPath-Results}
 
 \subsection*{Multiethnic Analyses Enables the Detection of Pathway-Level Interactions}\label{InterPath-Results-PathwayEpistasis}
@@ -325,8 +349,6 @@ For the \textit{PSME} gene family, on the other hand, we find some of the larges
 %Further, PA28$\alpha\beta$ itself is an Interferon-$\gamma$ (IFN-$\gamma$) inducible regulatory protein that operates in a ubiquitin-independent manner and
 %Further, PA28$\alpha\beta$ also increases production of a specific subset of MHC-1 presenting antigens \cite{Groettrup1996,de2011,Raule2014,Murata2018}, and 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section*{Discussion}\label{InterPath-Discussion}
 
 Here, we present the first scans for marginal epistasis within multiple human ancestries across signaling pathways and annotated gene sets. We implement a new method, MAPIT-R, to test for evidence of non-additive genetic effects on the pathway-level and apply the framework to six different human ancestries sampled in the UK Biobank: African, British, Caribbean, Chinese, Indian, and Pakistani subgroups. Using two different pathway databases, we study continuous measurements of height and body mass index (BMI) and find a total 245 pathways that have significant epistatic interactions with their polygenic background \textcolor{red}{(see Figure \ref{InterPath-Main-Figure-Barplots-KEGG})}. We find that the African subgroup produces the majority of these results, with over 65\% of our 245 significant pathways being identified within this subgroup \textcolor{red}{(see Figure \ref{InterPath-Main-Figure-Heatplots-KEGG})}. Additionally, we find that pathways related to immunity, cellular signaling, and metabolism have significant signals in our genome-wide marginal epistasis scans, and that BMI produces more significant marginal epistatic interactions at the pathway level than height \textcolor{red}{(see Figure \ref{InterPath-Main-Figure-MAPITR-PhenoComps-African} and Table \ref{InterPath-Main-Table-KEGG-African-TopPathways-Themes})}. In testing for drivers of our MAPIT-R results, we find evidence that the proteasome may be enriched for marginal epistatic interactions and characterize how proteasome gene families contribute to non-additive genetic architecture of complex traits \textcolor{red}{(see Figures \ref{InterPath-Main-Figure-Hypergeometric-RestrictedComps-African-BMI}-\ref{InterPath-Main-Figure-Proteasome-Panels})}. 
@@ -335,33 +357,22 @@ The fact that we find such an abundance of epistatic signals in the African subg
 
 Our analyses are not without limitations. First, we are limited due to the computational costs of epistasis detection, although testing for marginal epistasis reduces our testing burden compared to standard exhaustive epistasis scans. Still, the MAPIT-R framework does not scale well to the full sample sizes of modern human genomic biobanks \cite{Crawford2017a,Crawford2018a,Moore2019}. MAPIT-R encounters burdensome scalability when analyzing tens of thousands of individuals. One important direction for future research is to detect epistatic interactions using GWA summary statistics. Moving away from the need to have individual-level genotype-phenotype data to GWA study summary statistics has proven useful in both speeding up algorithmic efficiency as well as increasing power in multiple other GWA contexts \cite{Shi2016,Johnson2018,Ray2018,Turchin2019,Urbut2019,Cheng2020}. Another noticeable limitation is that MAPIT-R cannot be used to directly identify the interaction pairs that drive individual non-additive associations with a given trait. In particular, after identifying a pathway is involved in epistasis, it is still unclear which particular region of the genome it interacts with. Thus, despite being able to identify specific pathways that are involved in epistasis, MAPIT-R is unable to directly identify detailed interaction pairs. Exploring marginal epistasis results \textit{a posteriori} in a two step procedure can be one way to overcome these issues. For example, linking MAPIT-R with a framework that explicitly follows up on marginal epistasis signals with locus-focused methods such as fine-mapping \cite{Kichaev2014,Chen2015,Benner2016} or co-localization \cite{Hormozdiari2016,Zhu2016,Wen2017,Giambartolomei2018,Wallace2020} could even further expand the power of the framework. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{URLs}\label{InterPath-URLs}
 
 MArginal ePIstasis Test for Regions (MAPIT-R) software, \url{https://github.com/mturchin20/MAPITR}; UK Biobank, \url{https://www.ukbiobank.ac.uk}; Molecular Signatures Database (MSigDB), \url{https://www.gsea-msigdb.org/gsea/msigdb/index.jsp}; Database of Genotypes and Phenotypes (dbGaP), \url{https://www.ncbi.nlm.nih.gov/gap}; NHGRI-EBI GWAS Catalog, \url{https://www.ebi.ac.uk/gwas/}; UCSC Genome Browser, \url{https://genome.ucsc.edu/index.html}; MArginal ePIstasis Test (MAPIT), \url{https://github.com/lorinanthony/MAPIT}; PLINK, \url{https://www.cog-genomics.org/plink/1.9/}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Acknowledgments}\label{InterPath-Acknowledgments}
 
 \textcolor{red}{We thank Shigeo Murata for helpful feedback during the preparation of this manuscript.} This research was conducted in part using computational resources and services at the Center for Computation and Visualization at Brown University. This research was also conducted using data from the UK Biobank Resource under Application Number 22419. G.~Darnell was supported by NSF Grant No. DMS-1439786 while in residence at the Institute for Computational and Experimental Research in Mathematics (ICERM) in Providence, RI. This research was supported in part by grants P20GM109035 (COBRE Center for Computational Biology of Human Disease; PI Rand) and P20GM103645 (COBRE Center for Central Nervous; PI Sanes) from the NIH NIGMS, 2U10CA180794-06 from the NIH NCI and the Dana Farber Cancer Institute (PIs Gray and Gatsonis), as well as by an Alfred P. Sloan Research Fellowship (No. FG-2019-11622) awarded to L.~Crawford. This research was also partly supported by the US National Institutes of Health (NIH) grant R01 GM118652, and the National Science Foundation (NSF) CAREER award DBI-1452622 to S.~Ramachandran. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of any of the funders.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section*{Author Contributions}\label{InterPath-Author-Contributions}
 
 MCT, LC, and SR conceived the study design. LC and SR conceived the methods. MCT developed the software and carried out the analyses of UK Biobank data. GD carried out the simulation studies. All authors wrote and reviewed the manuscript.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Competing Interests}\label{InterPath-Competing-Interests}
 
 The authors declare no competing interests.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\clearpage
 \newpage
 
 \section*{Figures and Tables}
@@ -373,8 +384,6 @@ The authors declare no competing interests.
 \caption{\textbf{Number of KEGG pathways identified by MAPIT-R that have significant marginal epistatic effects within (a) standing height and (b) body mass index (BMI) per subgroup in the UK Biobank.} Here, the subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Across all database-phenotype combinations, the African subgroup has the largest numbers of significant pathways. For lists of the specific significant pathways per database-phenotype-subgroup combination, see Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}. Results from running MAPIT-R with REACTOME database pathways can be found in Supplementary Figure \ref{InterPath-Supp-Figure-Barplots-REACTOME}.}
 \label{InterPath-Main-Figure-Barplots-KEGG}
 \end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{landscape}
 \begin{table}[]
@@ -428,16 +437,12 @@ The authors declare no competing interests.
 \end{table}
 \end{landscape}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{figure}[htb]
 \centering
 \includegraphics[width=\textwidth]{Images/Main/InterPath_Main_Figure_Heatplots_KEGG_vs4.png}
 \caption{\textbf{Heatmaps depicting the overlap of MAPIT-R significant KEGG pathways for (a) standing height and (b) body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank}. Here, subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). The diagonal shows the total number of genome-wide significant pathways per subgroup. We observe that significant pathways identified in non-African subgroups overlap more often with pathways from the African subgroup than they do with pathways from the other, remaining non-African subgroups. Results for both phenotypes in the REACTOME database can be seen in Supplementary Figure \ref{InterPath-Supp-Figure-Heatplots-REACTOME}.}
 \label{InterPath-Main-Figure-Heatplots-KEGG}
 \end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[htb]
 \centering
@@ -446,8 +451,6 @@ The authors declare no competing interests.
 \label{InterPath-Main-Figure-MAPITR-PhenoComps-African}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{figure}[htb]
 \centering
 \includegraphics[width=\textwidth]{Images/Main/InterPath_Main_Figure_Hypergeometric_RestrictedComps_African_BMI_vs4.png}
@@ -455,24 +458,153 @@ The authors declare no competing interests.
 \label{InterPath-Main-Figure-Hypergeometric-RestrictedComps-African-BMI}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{landscape}
 \begin{figure}[htbp]
 \centering
+%\hspace*{-2.5cm}
 \includegraphics[scale=.6]{Images/Main/InterPath_Main_Figure_Proteasome_vs2.png}
 \caption{\textbf{Structure of the proteasome and results from applying a ``leave-one-out'' approach to MAPIT-R with proteasome gene families}. \textbf{(a)} Models of the different isoforms of the proteasome. The ``26S Proteasome'' is the main isoform, composed of the 20S core particle (CP) and capped on both ends by the 19S regulatory particle (RP), which is required for degradation of ubiquitinated proteins. The ``Hybrid Proteasome'' isoform is produced when the CP binds on one end with an RP and on the other end with the IFN-$\gamma$-inducible complex PA28$\alpha\beta$. The \textit{PSMA} and \textit{PSMB} gene families encode components of the CP, the \textit{PSMC} and \textit{PSMD} gene families encode components of the RP, and members of the \textit{PSME} gene family encode PA28$\alpha\beta$. Note that \textit{PSMF} represents a proteasome inhibitor and is not shown. The structures shown were adopted and modified from the Protein Data Bank (human 26S proteasome, \url{https://www.rcsb.org/structure/5GJR}; mouse PA28$\alpha\beta$, \url{https://www.rcsb.org/structure/5MX5}) \cite{Murata2018}. \textbf{(b)} The heatmap shows the change in original MAPIT-R -$\log_{10}$ $p$-value for different REACTOME pathways when each proteasome gene family is removed one at a time in a ``leave-one-out'' manner. The analyses were conducted in BMI for the African subgroup of the UK Biobank. The $x$-axis shows each proteasome gene family and the $y$-axis lists each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatmap specifically shows the \textcolor{red}{-$\log_{10}$ $p$-value change ($\Delta$ in legend) per SNP}. \textbf{(c)} The table shows the number of SNPs present in each proteasome gene family (left), as well as the number of SNPs present in each REACTOME pathway (right).}
 \label{InterPath-Main-Figure-Proteasome-Panels}
 \end{figure} 
 \end{landscape}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\nolinenumbers
 
 \begingroup
+%\bibliographystyle{apalike}
 \setstretch{1.0}
 \bibliography{Main}
 \endgroup
 
-\end{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+\iffalse
+
+SCRAP
+
+
+And we analyzed multiple human ancestries due to the ongoing imbalance of published GWA studies that solely focuses on European-ancestry individuals \citep{Need2009,Popejoy2016,Gurdasani2019,Martin2019,Sirugo2019}. Roughly 20\% of published GWA studies have been conducted in individuals of non-European ancestries \citep{Gurdasani2019,Martin2019,Sirugo2019}, and that is despite ongoing awareness of this problem over the last decade \citep{Need2009,Popejoy2016} and an increasing amount of work showing the importance of studying non-European populations \citep{Dumitrescu2011,Martin2017a,Martin2017b,Mogil2018,Bien2019,Duncan2019,Kuchenbaecker2019,Wojcik2019,Zhong2019,Marnetto2020,Mostafavi2020}.
+
+%Dumitrescu2011,Stranger2012,Carlson2013,Kerminen2019,Rosenberg2019,
+
+
+
+
+
+\begin{table}[h]
+\centering
+\hspace*{-4.5cm}
+%\vspace*{-2cm}
+\begin{tabular}{|c|c|cc|cc|}
+  \hline
+   \multirow{3.5}{*}{\textbf{Biological Category}} &
+   \multirow{3.75}{*}{\shortstack{\textbf{KEGG Pathway} \\ \textbf{Annotation}}} &
+   \multicolumn{2}{c|}{\multirow{1.25}{*}{\textbf{Height}}} &
+   \multicolumn{2}{c|}{\multirow{1.25}{*}{\textbf{BMI}}} \\[2pt]
+   \cline{3-4} \cline{5-6}
+   & & \multirow{2.5}{*}{\shortstack{\textbf{MAPIT-R}\\ \textbf{$p$-Value}}} & \multirow{2.5}{*}{\shortstack{\textbf{Highlighted} \\ \textbf{Genes}}} & \multirow{2.5}{*}{\shortstack{\textbf{MAPIT-R}\\ \textbf{$p$-Value}}}  & \multirow{2.5}{*}{\shortstack{\textbf{Highlighted} \\ \textbf{Genes}}} \\[16pt]
+%   & & \textbf{$p$-Value} & \textbf{Genes} & \textbf{$p$-Values} & \textbf{Genes} \\[2pt]
+\hline
+
+ \multirow{9}{*}{\textbf{Cellular Signaling}}
+ 
+ & \multirow{2}{*}{\texttt{CHEMOKINE\_SIGNALING\_PATHWAY}} & \multirow{2}{*}{$5.14\times 10^{-10}$} & \multirow{2.5}{*}{\shortstack{\textit{PCSK5}\cite{Akiyama2019,Kichaev2019},\textit{CDC42EP3}\cite{Berndt2013,Tachmazidou2017},\\ \textit{STAT2}\cite{Lango2010,He2015}}} & \multirow{2}{*}{$1.51\times 10^{-8}$} & \multirow{2.5}{*}{\shortstack{\textit{ADCY3}\cite{Stergiakouli2014,Saeed2018}, \\\textit{PLCB3}\cite{Justice2019,Cao2020}}} \\[16pt]
+ 
+ & \multirow{2}{*}{\texttt{CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION}} & \multirow{2}{*}{$2.84\times 10^{-8}$} & \multirow{2}{*}{\shortstack{\textit{GDF5}\cite{Sanna2008,Wojcik2019},\\\textit{LTBP1}\cite{Kim2010,Wood2014a},\textit{LTBP2}\cite{He2015,Kichaev2019}}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} \\[16pt]
+ 
+ & \multirow{2}{*}{\texttt{WNT\_SIGNALING\_PATHWAY}} & \multirow{2}{*}{$6.54\times 10^{-6}$} & \multirow{2}{*}{\shortstack{\textit{FBXW11}\cite{Kichaev2019,Akiyama2019},\textit{NFATC4}\cite{Lango2010,Berndt2013},\\\textit{ANAPC10}\cite{Wood2014a,Akiyama2019}}} & \multirow{2}{*}{$1.41\times 10^{-7}$} & \multirow{2}{*}{\shortstack{\textit{CEP63}\cite{Shungin2015,Zhu2020},\textit{ANAPC13}\cite{Shungin2015,Graff2017},\\\textit{SMAD3}\cite{Pulit2018,Zhu2020}}} \\[16pt]
+ 
+ & \multirow{2}{*}{\texttt{ERBB\_SIGNALING\_PATHWAY}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$3.30\times 10^{-7}$} & \multirow{2}{*}{\shortstack{\textit{VEGFA}\cite{Randall2013,Zhu2020},\textit{MACROD1}\cite{Lotta2018,Zhu2020},\\\textit{ERBB4}\cite{Scannell2014,Justice2018}}} \\ [14pt]\hline
+ 
+  \multirow{6.5}{*}{\textbf{Immune System}} 
+  & \multirow{2}{*}{\texttt{AUTOIMMUNE\_THYROID\_DISEASE}} & \multirow{2}{*}{$1.49\times 10^{-6}$} & \multirow{2.5}{*}{\shortstack{\textit{TGFB2}\cite{Kichaev2019,Wojcik2019},\\ \textit{HLA-C}\cite{Wood2014a,Akiyama2019}}} & \multirow{2}{*}{$1.39\times 10^{-8}$} & \multirow{2.5}{*}{\shortstack{\textit{LYPLAL1}\cite{Shungin2015,Chu2017},\textit{ITGB8}\cite{Pulit2019,Zhu2020},\\ \textit{HLA-DRB1}\cite{Graff2017}}} \\[16pt]
+  
+  & \multirow{2}{*}{\texttt{ALLOGRAFT\_REJECTION}} & \multirow{2}{*}{$8.15\times 10^{-8}$} & \multirow{2}{*}{\textit{HLA-B}\cite{Wood2014a,Akiyama2019}} & \multirow{2}{*}{$2.53\times 10^{-8}$} & \multirow{2}{*}{\shortstack{\textit{TNFAIP8}\cite{Pulit2019,Zhu2020},\textit{HSD17B4}\cite{Winkler2015,Shungin2015},\\\textit{DTWD2}\cite{Winkler2015}}} \\[16pt]
+  
+  & \multirow{2}{*}{\texttt{ANTIGEN\_PROCESSING\_AND\_PRESENTATION}} & \multirow{2}{*}{$2.89\times 10^{-5}$} & \multirow{2}{*}{\textit{C2CD4A}\cite{Lango2010,Akiyama2019}} & \multirow{2}{*}{$2.08\times 10^{-7}$} & \multirow{2}{*}{\shortstack{\textit{IFI30}\cite{Justice2019},\textit{ZNF318}\cite{Winkler2015},\\\textit{TJAP1}\cite{Winkler2015}}} \\ [14pt]\hline
+  
+  \multirow{4.5}{*}{\textbf{Heart Condition}} 
+  & \multirow{2}{*}{\texttt{DILATED\_CARDIOMYOPATHY}} & \multirow{2}{*}{$1.24\times 10^{-7}$} & \multirow{2.5}{*}{\shortstack{\textit{IGF1}\cite{Kichaev2019,Wojcik2019},\textit{IGF1R}\cite{Kichaev2019,Akiyama2019},\\\textit{POMC}\cite{Gudbjartsson2008,Berndt2013}}} & \multirow{2}{*}{$6.99\times 10^{-6}$} & \multirow{2.5}{*}{\shortstack{\textit{TGFB2}\cite{Shungin2015,Zhu2020},\textit{ADCY3}\cite{Stergiakouli2014,Saeed2018},\\\textit{HSD17B4}\cite{Shungin2015}}} \\[16pt]
+  
+  & \multirow{2}{*}{\texttt{VIRAL\_MYOCARDITIS}} & \multirow{2}{*}{$1.89\times 10^{-5}$} & \multirow{2}{*}{\shortstack{\textit{HMGA1}\cite{Wojcik2019,Kichaev2019},\textit{HLA-B}\cite{Wood2014a,Akiyama2019},\\\textit{LAMA2}\cite{Akiyama2019,Kichaev2019}}} & \multirow{2}{*}{$1.09\times 10^{-6}$} & \multirow{2}{*}{\shortstack{\textit{HMGA1}\cite{Shungin2015,Zhu2020},\textit{CYCSL1}\cite{Graff2017},\\\textit{HLA-DRB1}\cite{Graff2017}}} \\ [14pt]\hline
+  
+  \multirow{9}{*}{\textbf{Metabolism}} 
+  & \multirow{2}{*}{\texttt{PURINE\_METABOLISM}} & \multirow{2}{*}{$1.19\times 10^{-7}$} & \multirow{2.5}{*}{\shortstack{\textit{ADAMTSL3}\cite{Wojcik2019,Kichaev2019},\textit{ADAMTS17}\cite{Akiyama2019,Kichaev2019},\\\textit{PDE3A}\cite{Rueger2018,Kichaev2019}}} & \multirow{2}{*}{$2.46\times 10^{-6}$} & \multirow{2.5}{*}{\shortstack{\textit{ADAMTSL3}\cite{Shungin2015,Zhu2020},\textit{ADAMTS9}\cite{Zhu2020},\\\textit{CENTA2}\cite{Shungin2015,Justice2019}}} \\[16pt]
+  
+  & \multirow{2}{*}{\texttt{BETA\_ALANINE\_METABOLISM}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$1.12\times 10^{-4}$} & \multirow{2}{*}{\shortstack{\textit{DPYSL5}\cite{},\\ \textit{DPYD}\cite{}}} \\[16pt]
+  
+  & \multirow{2}{*}{\texttt{ETHER\_LIPID\_METABOLISM}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$1.41\times 10^{-4}$} & \multirow{2}{*}{\shortstack{\textit{}\cite{},\textit{}\cite{},\\\textit{}\cite{}}} \\[16pt]
+  
+  & \multirow{2}{*}{\texttt{O\_GLYCAN\_BIOSYNTHESIS}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$1.92\times 10^{-4}$} & \multirow{2}{*}{\shortstack{\textit{}\cite{},\textit{}\cite{},\\\textit{}\cite{}}} \\ [14pt]\hline
+\end{tabular}
+\end{table}
+
+
+\begin{landscape}
+\begin{table}[!]
+\centering
+\hspace*{-4.35cm}
+\vspace*{-4em}
+\begin{tabular}{|c|c|cc|cc|}
+  \hline
+   \multirow{3.5}{*}{\textbf{Biological Category}} &
+   \multirow{3.75}{*}{\shortstack{\textbf{KEGG Pathway} \\ \textbf{Annotation}}} &
+   \multicolumn{2}{c|}{\multirow{1.25}{*}{\textbf{Height}}} &
+   \multicolumn{2}{c|}{\multirow{1.25}{*}{\textbf{BMI}}} \\[2pt]
+   \cline{3-4} \cline{5-6}
+   & & \multirow{2.5}{*}{\shortstack{\textbf{MAPIT-R}\\ \textbf{$p$-Value}}} & \multirow{2.5}{*}{\shortstack{\textbf{Highlighted} \\ \textbf{Genes}}} & \multirow{2.5}{*}{\shortstack{\textbf{MAPIT-R}\\ \textbf{$p$-Value}}}  & \multirow{2.5}{*}{\shortstack{\textbf{Highlighted} \\ \textbf{Genes}}} \\[16pt]
+%   & & \textbf{$p$-Value} & \textbf{Genes} & \textbf{$p$-Values} & \textbf{Genes} \\[2pt]
+\hline
+
+ \multirow{9}{*}{\textbf{Cellular Signaling}}
+ 
+ & \multirow{2}{*}{\texttt{CHEMOKINE\_SIGNALING\_PATHWAY}} & \multirow{2}{*}{$5.14\times 10^{-10}$} & \multirow{2.5}{*}{\shortstack{\textit{PCSK5}\cite{Akiyama2019}, \textit{CDC42EP3}\cite{Tachmazidou2017}, \\ \textit{STAT2}\cite{He2015}}} & \multirow{2}{*}{$1.51\times 10^{-8}$} & \multirow{2.5}{*}{\shortstack{\textit{ADCY3}\cite{Saeed2018}, \\\textit{PLCB3}\cite{Cao2020}}} \\[16pt]
+ 
+ & \multirow{2}{*}{\texttt{CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION}} & \multirow{2}{*}{$2.84\times 10^{-8}$} & \multirow{2}{*}{\shortstack{\textit{GDF5}\cite{Wojcik2019}, \textit{LTBP1}\cite{Wood2014a},\\\textit{LTBP2}\cite{Kichaev2019}}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} \\[16pt]
+ 
+ & \multirow{2}{*}{\texttt{WNT\_SIGNALING\_PATHWAY}} & \multirow{2}{*}{$6.54\times 10^{-6}$} & \multirow{2}{*}{\shortstack{\textit{FBXW11}\cite{Kichaev2019}, \textit{NFATC4}\cite{Berndt2013},\\\textit{ANAPC10}\cite{Akiyama2019}}} & \multirow{2}{*}{$1.41\times 10^{-7}$} & \multirow{2}{*}{\shortstack{\textit{CEP63}\cite{Shungin2015}, \textit{ANAPC13}\cite{Graff2017},\\\textit{SMAD3}\cite{Pulit2019}}} \\[16pt]
+ 
+ & \multirow{2}{*}{\texttt{ERBB\_SIGNALING\_PATHWAY}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$3.30\times 10^{-7}$} & \multirow{2}{*}{\shortstack{\textit{VEGFA}\cite{Zhu2020}, \textit{MACROD1}\cite{Lotta2018},\\\textit{ERBB4}\cite{Justice2019}}} \\ [14pt]\hline
+ 
+  \multirow{6.5}{*}{\textbf{Immune System}} 
+  & \multirow{2}{*}{\texttt{AUTOIMMUNE\_THYROID\_DISEASE}} & \multirow{2}{*}{$1.49\times 10^{-6}$} & \multirow{2.5}{*}{\shortstack{\textit{TGFB2}\cite{Wojcik2019},\\ \textit{HLA-C}\cite{Akiyama2019}}} & \multirow{2}{*}{$1.39\times 10^{-8}$} & \multirow{2.5}{*}{\shortstack{\textit{LYPLAL1}\cite{Chu2017}, \textit{ITGB8}\cite{Zhu2020},\\ \textit{HLA-DRB1}\cite{Graff2017}}} \\[16pt]
+  
+  & \multirow{2}{*}{\texttt{ALLOGRAFT\_REJECTION}} & \multirow{2}{*}{$8.15\times 10^{-8}$} & \multirow{2}{*}{\textit{HLA-B}\cite{Wood2014a}} & \multirow{2}{*}{$2.53\times 10^{-8}$} & \multirow{2}{*}{\shortstack{\textit{TNFAIP8}\cite{Zhu2020}, \textit{HSD17B4}\cite{Shungin2015},\\\textit{DTWD2}\cite{Winkler2015}}} \\[16pt]
+  
+  & \multirow{2}{*}{\texttt{ANTIGEN\_PROCESSING\_AND\_PRESENTATION}} & \multirow{2}{*}{$2.89\times 10^{-5}$} & \multirow{2}{*}{\textit{C2CD4A}\cite{Akiyama2019}} & \multirow{2}{*}{$2.08\times 10^{-7}$} & \multirow{2}{*}{\shortstack{\textit{IFI30}\cite{Justice2019}, \textit{ZNF318}\cite{Winkler2015},\\\textit{TJAP1}\cite{Winkler2015}}} \\ [14pt]\hline
+  
+  \multirow{4.5}{*}{\textbf{Heart Condition}} 
+  & \multirow{2}{*}{\texttt{DILATED\_CARDIOMYOPATHY}} & \multirow{2}{*}{$1.24\times 10^{-7}$} & \multirow{2.5}{*}{\shortstack{\textit{IGF1}\cite{Wojcik2019}, \textit{IGF1R}\cite{Kichaev2019},\\\textit{POMC}\cite{Berndt2013}}} & \multirow{2}{*}{$6.99\times 10^{-6}$} & \multirow{2.5}{*}{\shortstack{\textit{TGFB2}\cite{Zhu2020}, \textit{ADCY3}\cite{Saeed2018},\\\textit{HSD17B4}\cite{Shungin2015}}} \\[16pt]
+  
+  & \multirow{2}{*}{\texttt{VIRAL\_MYOCARDITIS}} & \multirow{2}{*}{$1.89\times 10^{-5}$} & \multirow{2}{*}{\shortstack{\textit{HMGA1}\cite{Wojcik2019}, \textit{HLA-B}\cite{Wood2014a},\\\textit{LAMA2}\cite{Akiyama2019}}} & \multirow{2}{*}{$1.09\times 10^{-6}$} & \multirow{2}{*}{\shortstack{\textit{HMGA1}\cite{Zhu2020}, \textit{CYCSL1}\cite{Graff2017},\\\textit{HLA-DRB1}\cite{Graff2017}}} \\ [14pt]\hline
+  
+  \multirow{9}{*}{\textbf{Metabolism}} 
+  & \multirow{2}{*}{\texttt{PURINE\_METABOLISM}} & \multirow{2}{*}{$1.19\times 10^{-7}$} & \multirow{2.5}{*}{\shortstack{\textit{ADAMTSL3}\cite{Kichaev2019}, \textit{ADAMTS17}\cite{Akiyama2019},\\\textit{PDE3A}\cite{Rueger2018}}} & \multirow{2}{*}{$2.46\times 10^{-6}$} & \multirow{2.5}{*}{\shortstack{\textit{ADAMTSL3}\cite{Zhu2020}, \textit{ADAMTS9}\cite{Zhu2020},\\\textit{CENTA2}\cite{Justice2019}}} \\[16pt]
+  
+  & \multirow{2}{*}{\texttt{BETA\_ALANINE\_METABOLISM}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$1.12\times 10^{-4}$} & \multirow{2}{*}{\shortstack{\textit{DPYSL5}\cite{Manning2012},\\ \textit{DPYD}\cite{Tachmazidou2017}}} \\[16pt]
+  
+  & \multirow{2}{*}{\texttt{ETHER\_LIPID\_METABOLISM}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$1.41\times 10^{-4}$} & \multirow{2}{*}{\textit{PLA2G2D}\cite{Tachmazidou2017}} \\[16pt]
+  
+  & \multirow{2}{*}{\texttt{O\_GLYCAN\_BIOSYNTHESIS}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$1.92\times 10^{-4}$} & \multirow{2}{*}{\shortstack{\textit{GALNT10}\cite{Ng2012},\\\textit{B4GALNT3}\cite{Zhu2020}}} \\ [14pt]\hline
+\end{tabular}
+%\vspace*{4cm}
+\bigskip  \bigskip  \bigskip
+  \caption{\textbf{Biological themes among the MAPIT-R significant KEGG pathways for height and body mass index (BMI) within the African subgroup in the UK Biobank}. The biological themes include: cellular signaling, immune system, heart condition, and metabolism. Notably enriched pathways for each biological theme are included in the second column, along with MAPIT-R $p$-values in the third and fourth columns for each pathway in height and BMI, respectively. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). For a full list of MAPIT-R significant pathways in all database-phenotype-subgroup combinations, see Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}. NS indicates that a pathway was not genome-wide significant for a given phenotype.}
+\label{InterPath-Main-Table-KEGG-African-TopPathways-Themes}
+\end{table}
+\end{landscape}
+
+\fi
+
+\end{document}

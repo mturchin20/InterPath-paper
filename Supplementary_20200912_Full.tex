@@ -1,18 +1,25 @@
+%\documentclass[10pt,a4paper]{article}
 \documentclass[10pt]{article}
+%\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
+%\usepackage[a4paper]{geometry}
+%\geometry{a4paper, top=1in, bottom=2in}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue, hypertexnames=false]{hyperref}
 \usepackage{epsfig,amsfonts}
+%\usepackage{natbib}
 \usepackage{authblk}
-\usepackage{subfigure}
+%\usepackage{subfig}
+\usepackage{subfigure} %w/ Lorin's edits
 \usepackage{setspace}
 \usepackage{hypcap}
 \usepackage{lscape}
-\usepackage{lineno}
+\usepackage{lineno} %can do [right] to shift location of #s
+%From: https://www.overleaf.com/learn/how-to/Cross_referencing_with_the_xr_package_in_Overleaf
 \usepackage{xr}
 \makeatletter
 \newcommand*{\addFileDependency}[1]{% argument=file name and extension
@@ -27,6 +34,9 @@
     \addFileDependency{#1.aux}%
 }
 \myexternaldocument{Main}
+%From: https://tex.stackexchange.com/questions/64934/subfig-label-positioning (went with second example solution on how to get multiple figures aligned with subfig + desired labeling)
+%\usepackage{floatrow}
+%From: https://tex.stackexchange.com/questions/332295/command-textalpha-unavailable-in-encoding-t1-when-using-greek
 \usepackage{textgreek}
 
 %From Lorin
@@ -38,7 +48,7 @@
 \def\pdf{p.d.f.\ } \def\cdf{c.d.f.\ }
 \def\pdfs{p.d.f.s} \def\cdfs{c.d.f.s}
 \def\mgf{m.g.f.\ } \def\mgfs{m.g.f.s\ }
-\def\ci{\perp   \perp} 
+\def\ci{\perp   \perp}  % conditional independence symbol
 \def\beginmat{ \left( \begin{array} }
 \def\endmat{ \end{array} \right) }
 \def\diag{{\rm diag}}
@@ -46,6 +56,7 @@
 \def\tr{{\rm tr}}
 \def\cond{\, | \,}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
+%\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
 \newtheorem{claim}{Claim}[section]
 \newtheorem{definition}{Definition}[section]
@@ -54,6 +65,7 @@
 
 \def\dsum{\displaystyle\sum}
 \def\dint{\displaystyle\int}
+%\def\dfrac{\displaystyle\frac}
 \def\dsup{\displaystyle\sup}
 \def\dinf{\displaystyle\inf}
 \def\dmin{\displaystyle\min}
@@ -164,6 +176,7 @@
 \pagestyle{myheadings}
 
 \newcommand{\edit}[2]{\sout{#1}\textcolor{red}{\xspace#2}}
+%\newcommand{\sr}[2]{\sout{#1}\textcolor{red}{#2}}
 \newcommand{\black}{\textcolor{black}}
 \newcommand{\genee}{gene-$\varepsilon$~}
 \newcommand{\genE}{gene-$\varepsilon$}
@@ -194,13 +207,25 @@
 \renewcommand{\@biblabel}[1]{\quad#1.}
 \makeatother
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% END MACROS SECTION
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+
+%\title{Supplementary: Differential complex trait architecture across humans: epistasis identified in non-European populations at multiple genomic scales}
+%\author[1,2]{Michael C. Turchin}
+%\author[1,3]{Isabella Ting}
+%\author[1,4,5,*]{Lorin Crawford}
+%\author[1,2,*,$\dag$]{Sohini Ramachandran}
+%\affil[1]{Center for Computational Molecular Biology, Brown University}
+%\affil[2]{Department of Ecology and Evolutionary Biology, Brown University}
+%\affil[3]{Department of Computer Science, Brown University}
+%\affil[4]{Department of Biostatistics, Brown University}
+%\affil[5]{Center for Statistical Science, Brown University}
+%\affil[$\ast$]{indicates these authors contributed equally}
+%\affil[$^\dag$]{To whom correspondence should be addressed: sramachandran@brown.edu}
 
 \begin{document}
+%\maketitle
 
 % Title must be 150 characters or less
 \begin{flushleft}
@@ -231,12 +256,10 @@ $\dagger$ Corresponding E-mail: michael\_turchin@brown.edu; lcrawford@microsoft.
 
 \tableofcontents
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \clearpage
 \newpage
+
+%\section{Supplementary Note}\label{Supplementary-Note}
 
 \section{Data Quality Control Procedures for UK Biobank}
 
@@ -248,12 +271,7 @@ After the first round of quality control procedures, we then proceeded to impute
 
 Hypergeometric analyses were conducted by counting the number of times a given gene is present among the significant pathways identified by MAPIT-R for a given database-phenotype-subgroup combination versus the number of times the gene is present among the background distribution of pathways from the same database. For the size-restriction analyses, pathways with greater than 1,000 SNPs were removed. The 1,000 SNP threshold was chosen to balance between the total number of pathways included in analyses and the average pathway size across all subgroups (see Supplementary Figure \ref{InterPath-Supp-Figure-pValsVsNumSNPs} for the relationship between MAPIT-R $p$-values and pathway sizes). Note that for a number of size thresholds ranging from 500 to 1,500 SNPs, results regarding the proteasome family genes remain robust (see Supplementary Figure \ref{InterPath-Supp-Figure-Hypergeoemtric-SizeThresholds}).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \clearpage
-\newpage
 
 \section{Supplementary Figures}\label{Supplementary-Figures}
 
@@ -273,8 +291,6 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \end{figure}
 \clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{figure}[htbp]
 \centering
 %\hspace*{-.9cm}
@@ -283,8 +299,6 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \label{InterPath-Supp-Figure-Barplots-REACTOME}
 \end{figure}
 \clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\begin{landscape}
 \begin{figure}[htbp]
@@ -307,8 +321,6 @@ Each pathway has
 %\end{landscape}
 \clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %\begin{landscape}
 \begin{figure}[htbp]
 \centering
@@ -322,8 +334,6 @@ Each pathway has
 %\end{landscape}
 \clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{figure}[htbp]
 \centering
 \includegraphics[width = \textwidth]{Images/Supp/InterPath_Supp_Figure_perm1_QQPlots_AllPaths_vs2.png}
@@ -331,8 +341,6 @@ Each pathway has
 \label{InterPath-Supp-Figure-perm1-QQPlots-AllPaths}
 \end{figure}
 \clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\setlength{\footskip}{3cm}
 \begin{figure}[htbp]
@@ -345,8 +353,6 @@ Each pathway has
 \clearpage
 \setlength{\footskip}{1cm}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \setlength{\footskip}{1cm}
 \begin{figure}[htbp]
 \centering
@@ -357,8 +363,6 @@ Each pathway has
 \end{figure}
 \clearpage
 \setlength{\footskip}{1cm}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{landscape}
 \setlength{\footskip}{3cm}
@@ -373,8 +377,6 @@ Each pathway has
 \setlength{\footskip}{1cm}
 \end{landscape}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{figure}[htbp]
 \centering
 \hspace*{-1.75cm}
@@ -383,8 +385,6 @@ Each pathway has
 \label{InterPath-Supp-Figure-BritReps-Barplots}
 \end{figure}
 \clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\newcounter{CharNumber4}
 %\setcounter{CharNumber4}{1}
@@ -401,8 +401,6 @@ Each pathway has
 %\addtocounter{CharNumber4}{1}
 \end{landscape}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{landscape}
 \begin{figure}[htbp]
 \centering
@@ -414,8 +412,6 @@ Each pathway has
 \end{landscape}
 %\renewcommand{\thefigure}{\arabic{figure}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{Images/Supp/InterPath_Supp_Figure_BritReps_perm1_QQPlots_AllPaths_vs1.png}
@@ -423,8 +419,6 @@ Each pathway has
 \label{InterPath-Supp-Figure-BritReps-perm1-QQPlots-AllPaths}
 \end{figure}
 \clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\newcounter{CharNumber3}
 %\setcounter{CharNumber3}{1}
@@ -442,8 +436,6 @@ Each pathway has
 %\addtocounter{figure}{-1}
 %\addtocounter{CharNumber3}{1}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %\setlength{\footskip}{2cm}
 \begin{figure}[htbp]
 \centering
@@ -455,8 +447,6 @@ Each pathway has
 \clearpage
 %\setlength{\footskip}{1cm}
 %\renewcommand{\thefigure}{\arabic{figure}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\setlength{\footskip}{3cm}
 \begin{landscape}
@@ -471,8 +461,6 @@ Each pathway has
 \end{landscape}
 %\setlength{\footskip}{1cm}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{landscape}
 %\setlength{\footskip}{3cm}
 \begin{figure}[htbp]
@@ -486,7 +474,42 @@ Each pathway has
 %\setlength{\footskip}{1cm}
 \end{landscape}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%From: ,https://tex.stackexchange.com/questions/64934/subfig-label-positioning, https://tex.stackexchange.com/questions/196653/how-do-i-stack-two-figures-on-top-of-each-other-rather-than-side-to-side, https://tex.stackexchange.com/questions/47311/include-table-as-a-subfigure, https://tex.stackexchange.com/questions/169541/looking-for-three-images-on-top-of-each-other-with-text-underneath-each, https://tex.stackexchange.com/questions/10863/is-there-a-way-to-slightly-shrink-a-table-including-font-size-to-fit-within-th
+
+%\newcounter{CharNumber5}
+%\setcounter{CharNumber5}{1}
+%\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber5}}
+%\begin{figure}[ht]
+%\centering
+%\vspace*{-.5cm}
+%\subfloat[]{\includegraphics[scale=.5]{Images/Supp/InterPath_Supp_Figure_Proteaseome_Heatplots_African_Loop_vs3.png}}
+\par
+%\subfloat[]{\resizebox{1.1\columnwidth}{!}{
+% \hspace*{-1.75cm}
+% \begin{tabular}{cc|ccc}
+%  \hline
+%\textbf{Proteasome} & \textbf{SNPs} & \textbf{REACTOME} & \textbf{SNPs} & \textbf{MAPIT-R} \\
+% \textbf{Gene Family} & & \textbf{Pathway} & & \textbf{$p$-Value} \\
+%  \hline
+%PSMA & 17 & Activation of NF-KappaB in B Cells & 465 & 1.86E-05  \\
+%PSMB & 74 & Antigen Processing Cross Presentation & 850 & 3.96E-05 \\
+%PSMC & 20 & Assembly of the Pre-Replicative Complex & 331 & 3.29E-05 \\
+%PSMD & 62 & Cell Cycle Checkpoints & 670 & 5.78E-06 \\
+%PSME & 15 & Cell Cycle & 2459 & 1.29E-06 \\
+%PSMF & 16 & Cell Cycle Mitotic & 1906 & 4.51E-05 \\
+% & & Downstream Signaling Events of the B Cell Receptor & 745 & 1.19E-05 \\
+% & & HIV Infection & 1346 & 7.53E-07 \\
+% & & Host Interactions of HIV Factors & 963 & 7.52E-06 \\
+% & & M G1 Transition & 458 & 3.19E-06 \\
+% & & Regulation of Apoptosis & 564 & 1.22E-05 \\
+%  \hline
+%\end{tabular}}}
+%\caption[TBD]{\textbf{Proteasome gene family leave-one-out MAPIT-R reruns, REACTOME-BMI-African}. (a) The figure shows the change in original MAPIT-R -$\log_{10}$ $p$-value for each presented REACTOME pathway when each proteasome gene family is removed one at a time. The analyses were conducted in the BMI-African subgroup combination. The $x$-axis shows each proteasome gene family and the $y$-axis shows each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatplot specifically shows the -$\log_{10}$ $p$-value change per SNP. (b) The table shows the number of SNPs that are present in each proteasome gene family (left) and each REACTOME pathway (right). The original MAPIT-R $p$-values for each pathway are also shown (right).}
+%\label{InterPath-Supp-Figure-Prot-Heatplots-African}
+%\end{figure}
+%\clearpage
+%\addtocounter{figure}{-1}
+%\addtocounter{CharNumber5}{1}
 
 \begin{figure}[H]
 \centering
@@ -516,7 +539,7 @@ PSMF & 16 & Cell Cycle Mitotic & 1906 & 4.51$\times10^{-5}$ \\[2pt]
 \end{figure}
 \clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\captionsetup[subfigure]{position=top, labelfont=bf,textfont=normalfont,singlelinecheck=off,justification=raggedright}
 
 \begin{figure}[H]
 \centering
@@ -544,8 +567,6 @@ PSME & 25 & Cell Cycle Mitotic & 3304 & 2.34$\times10^{-1}$ \\[2pt]
 \label{InterPath-Supp-Figure-Prot-Heatplots-BritRan4000}
 \end{figure}
 \clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[H]
 \centering
@@ -575,8 +596,6 @@ PSMF & 16 & Cell Cycle Mitotic & 2111 & 7.98$\times10^{-1}$  \\[2pt]
 \end{figure}
 \clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{figure}[H]
 \centering
 \vspace*{-.5cm}
@@ -602,8 +621,6 @@ PSMF & 16 & HIV Infection & 1266 & 3.68$\times10^{-3}$ \\[2pt]
 \label{InterPath-Supp-Figure-Prot-Heatplots-Chinese}
 \end{figure}
 \clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[H]
 \centering
@@ -633,8 +650,6 @@ PSMF & 21 & Cell Cycle Mitotic & 2656 & 2.32$\times10^{-1}$ \\[2pt]
 \end{figure}
 \clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{figure}[H]
 \centering
 \vspace*{-.5cm}
@@ -660,7 +675,8 @@ PSMF & 22 & Host Interactions of HIV Factors & 1315 & 1.00$\times10^{-1}$ \\[2pt
 \end{figure}
 \clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\addtocounter{figure}{1}
+%\renewcommand{\thefigure}{\arabic{figure}}
 
 %\setlength{\footskip}{2cm}
 \begin{figure}[htbp]
@@ -683,12 +699,12 @@ genes are assigned to the same pathways.}
 \clearpage
 %\setlength{\footskip}{1cm}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\clearpage
-\newpage
+%\addtocounter{figure}{-1}
+%\begin{figure} [t!]
+%  \caption{\textbf{Impact of pathway size thresholds on hypergeometric enrichment analyses}. The figure shows multiple comparisons of size-restricted hypergeometric enrichment analyses versus unrestricted hypergeometric enrichment analyses using incrementally decreasing pathway size thresholds. Size thresholds change from 1,500 SNPs to 500 SNPs in 100 SNP increments. In each plot the $x$-axis is the unrestricted hypergeometric $p$-value for each gene and the $y$-axis is the size-restricted hypergeometric $p$-value for each gene. Red triangles represent results for each gene belonging to a proteasome gene family ({\emph{PSMA}}, {\emph{PSMB}}, {\emph{PSMC}}, {\emph{PSMD}}, {\emph{PSME}}, and {\emph{PSMF}}). Note that there are only three triangles since most proteasome genes are assigned to the same pathways.}
+%\label{InterPath-Supp-Figure-Hypergeoemtric-SizeThresholds-Caption}
+%\end{figure}
+%\clearpage
 
 \section{Supplementary Tables}\label{Supplementary-Tables}
 
@@ -721,16 +737,18 @@ genes are assigned to the same pathways.}
 \label{InterPath-Supp-Table-UKBPopStats}
 \end{table}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Irish & 11575 & 588324 & 186 & 671 \\ 
+
+%\textbf{Supplementary Tables 2a-d.} \textbf{Lists of New \bmass{} Multivariate Associations, per Dataset}. \\ Attached Excel sheets list new \bmass{} associations for each dataset analyzed.
+%\bigskip \bigskip
 
 \clearpage
 \begin{table}[H]
 \caption{\textbf{List of MAPIT-R significant pathways genome-wide for standing height and body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank.} Here, subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Phenotype and pathway database combinations include: (\textit{i}) KEGG+Height, (\textit{ii}) KEGG+BMI, (\textit{iii}) REACTOME+Height, and (\textit{iv}) REACTOME+BMI. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination with significance value $\alpha = 0.05$ (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). (XLSX)}
 \label{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}
 \end{table}
-\clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 
 \begin{landscape}
 
@@ -782,8 +800,6 @@ genes are assigned to the same pathways.}
 \end{landscape}
 \clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \setlength{\extrarowheight}{3pt}
 
 \begin{table}[H]
@@ -810,7 +826,12 @@ genes are assigned to the same pathways.}
 \label{InterPath-Supp-Table-MAPITR-TopPathway-Overlap}
 \end{table}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\addtocounter{table}{-1}
+%\begin{table} [t!]
+%  \caption{\textbf{Genome-wide significant MAPIT-R KEGG pathway overlap between UKB subgroups, in height}. The table shows genome-wide significant pathways that overlap between multiple UKB subgroups. Specifically, pathways that overlap between the African subgroup and Caribbean subgroup, and between the African subgroup and Chinese subgroup, are listed for height results from KEGG.}
+%\label{InterPath-Supp-Table-MAPITR-TopPathway-Overlap-Caption}
+%\end{table}
+%\clearpage
 
 \clearpage
 
@@ -836,8 +857,6 @@ genes are assigned to the same pathways.}
 
 \clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \setlength{\extrarowheight}{3pt}
 
 \begin{table}[ht]
@@ -858,29 +877,21 @@ genes are assigned to the same pathways.}
 
 \clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{table}[H]
 \caption{\textbf{Genes that are annotated for multiple MAPIT-R enriched pathways in standing height and body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank.} Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Phenotype and pathway database combinations include: (\textit{i}) KEGG+Height, (\textit{ii}) KEGG+BMI, (\textit{iii}) REACTOME+Height, and (\textit{iv}) REACTOME+BMI. Genome-wide significance at a Bonferroni-corrected $p$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$ (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). (XLSX)}
 \label{InterPath-Supp-Table-AllPops-TopGeneCounts-Caption}
 \end{table}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{table}[H]
 \caption{\textbf{Genes that are annotated for multiple MAPIT-R enriched pathways (after imposing a size restriction) in standing height and body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank.} Here, we only consider pathways that contain less than or equal to 1,000 SNPs. Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Phenotype and pathway database combinations include: (\textit{i}) KEGG+Height, (\textit{ii}) KEGG+BMI, (\textit{iii}) REACTOME+Height, and (\textit{iv}) REACTOME+BMI. Genome-wide significance at a Bonferroni-corrected $p$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$ (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). (XLSX)}
 \label{InterPath-Supp-Table-AllPops-TopGeneCounts-SizeRestricted-Caption}
 \end{table}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{table}[H]
 \caption{\textbf{Results from hypergeometric tests performed for body mass index (BMI) using both the original and size-restricted pathway annotations within the African subgroup in the UK Biobank.} Here, pathway annotations were determined according to both the KEGG and REACTOME databases. Listed are the -$\log_{10}$ transformed $p$-values from the hypergeometric tests. Differences in the -$\log_{10}$ $p$-values between the original and size-restricted hypergeometric analyses are also shown per gene. Attached Excel sheets contain lists of the hypergeometric -$\log_{10}$ $p$-values for both the original and size-restricted gene count analyses per gene in both the KEGG and REACTOME-BMI-African combinations. Differences in the -$\log_{10}$ $p$-values between the original and size-restricted hypergeometric analyses are also shown per gene. Plots of these differences in can be seen in Figure \ref{InterPath-Main-Figure-Hypergeometric-RestrictedComps-African-BMI} in the main text. (XLSX)}
 \label{InterPath-Supp-Table-Hypergeometric-RestrictedComps-African-BMI}
 \end{table}
 \clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setlength{\extrarowheight}{3pt}
 
@@ -902,8 +913,6 @@ genes are assigned to the same pathways.}
 \label{InterPath-Supp-Table-AllPops-TopGeneCount-HypergeometricTests}
 \end{table}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \clearpage
 \begin{table}[H]
 \caption{\textbf{Results from applying a ``leave-one-out'' approach to MAPIT-R with proteasome gene families in body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank.} Here, pathway annotations were determined according to the REACTOME database. Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. The proteasome genes analyzed included: \textit{PSMA}, \textit{PSMB}, \textit{PSMC}, \textit{PSMD}, \textit{PSME}, and \textit{PSMF}, respectively. These are the raw MAPIT-R $p$-values underlying Figure \ref{InterPath-Main-Figure-Proteasome-Panels} in the main text and Supplementary Figures \ref{InterPath-Supp-Figure-Prot-Heatplots-African}-\ref{InterPath-Supp-Figure-Prot-Heatplots-Pakistani}. Note that for some subgroups not all of the original pathways from Figure \ref{InterPath-Main-Figure-Proteasome-Panels} were analyzable (generally due to number of SNPs being far greater than the number of individuals). (XLSX)}
@@ -911,8 +920,6 @@ genes are assigned to the same pathways.}
 \end{table}
 
 \clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{landscape}
 \setlength{\extrarowheight}{3pt}
@@ -953,8 +960,6 @@ genes are assigned to the same pathways.}
 \label{InterPath-Supp-Table-BritReps-FDRs-pt1}
 \end{table}
 \end{landscape}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{landscape}
 
@@ -999,8 +1004,6 @@ genes are assigned to the same pathways.}
 
 \end{landscape}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{table}[ht]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -1029,13 +1032,45 @@ The number of individuals and SNPs in the second and third columns are those pos
 \label{InterPath-Supp-Table-UKBQCStats}
 \end{table}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{landscape}
+%
+%\setlength{\extrarowheight}{3pt}
+%
+%\begin{table}[ht]
+%\centering
+%\hspace*{-2.7cm}
+%\begin{tabular}{|c|c|P{1.5 in}|c|cc|cc|c|}
+%\hline
+%\textbf{Database (Trait)} & \textbf{Subgroup} & \textbf{Pathway} & \textbf{Threshold} & \textbf{SNP \#1} & \textbf{Locus \#1} & \textbf{SNP \#2} & \textbf{Locus \#2} &  \textbf{$\bm{P}$-Value} \\ [2pt]
+%  \hline
+%\multirow{2}{*}{\textbf{KEGG (Height)}} & \multirow{2}{*}{African} & Phosphatidylinositol Signaling & \multirow{2}{*}{7.95$\times 10^{-11}$} & \multirow{2}{*}{10:134411966} & \multirow{2}{*}{INPP5A (Intronic)} & \multirow{2}{*}{21:43586397} & \multirow{2}{*}{Intergenic} & \multirow{2}{*}{2.81$\times 10^{-11}$}\\ [2pt]\hline
+%\multirow{2}{*}{\textbf{REACTOME (Height)}} & \multirow{2}{*}{Caribbean} & Signaling By Rho GTPases & \multirow{2}{*}{4.63$\times 10^{-11}$} & \multirow{2}{*}{8:13404303} & \multirow{2}{*}{DLC1 (Intronic)} & \multirow{2}{*}{21:43586397} & \multirow{2}{*}{Intergenic} & \multirow{2}{*}{3.41$\times 10^{-11}$}\\ [2pt]\hline
+%\multirow{5.5}{*}{\textbf{REACTOME (BMI)}} & \multirow{5.5}{*}{African} & Glycerophospholipid Biosynthesis & \multirow{2}{*}{1.49$\times 10^{-10}$} & \multirow{2}{*}{12:14693353} & \multirow{2}{*}{PLBD1 (Intronic)} & \multirow{2}{*}{4:129890790} & \multirow{2}{*}{SCLT1 (Intronic)} & \multirow{2}{*}{1.24$\times 10^{-10}$}\\ [2pt]\cline{3-9}
+%& & Assembly of the Pre Replicative Complex & \multirow{2}{*}{4.04$\times 10^{-10}$} & \multirow{2}{*}{22:35797833} & \multirow{2}{*}{MCM5 (Intronic)} & \multirow{2}{*}{22:23489042} & \multirow{2}{*}{RAB36 (Intronic)} & \multirow{2}{*}{3.55$\times 10^{-10}$}\\ [2pt]\cline{3-9}
+%& & Integrin Cell Surface Interactions & \multirow{2}{*}{8.38$\times 10^{-11}$} & \multirow{2}{*}{17:45320514} & \multirow{2}{*}{ITGB3 (Downstream)} & \multirow{2}{*}{6:25897169} & \multirow{2}{*}{Intergenic} & \multirow{2}{*}{7.85$\times 10^{-11}$}\\ [2pt]
+%   \hline
+%\end{tabular}
+%\caption{\textbf{Significant pairwise interactions between SNPs within MAPIT-R enriched pathways and variants throughout the rest of the genome}. The table shows pairwise SNP interactions that have $p$-values lower than Bonferroni-corrected thresholds. Here, for every MAPIT-R significant pathway found in each database-phenotype-subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}), all the SNPs within each pathway were tested for pairwise interactions with the remaining SNPs in the genome using PLINK (version 1.90) with the \texttt{-{}-epistasis set-by-all} command \cite{Purcell2007}. The first two columns of the table list the database-phenotype-subgroup combination; the third column gives the pathway containing the significant SNP pairwise interaction; the fourth column shows the Bonferroni corrected $p$-value threshold with a significance level set to $\alpha = 0.05$; the fifth column shows the SNP within the pathway that is part of the significant interaction (i.e., chromosome:basepair formatting); the sixth column shows the locus that SNP \#1 maps to (if known); the seventh column shows the SNP from the rest of the genome that is part of the significant interaction (i.e., chromosome:basepair formatting); the eighth column shows the locus that SNP \#2 maps to (if known); and the ninth column gives the $p$-value for the PLINK pairwise epistasis test between SNP \#1 and SNP \#2. Combinations involving KEGG and BMI are not shown because there were no significant pairwise epistatic interactions found within those groupings.}
+%\label{InterPath-Supp-Table-PairwiseEpi-Results}
+%\end{table}
+%\end{landscape}
 
 \clearpage
 \begingroup
 \addcontentsline{toc}{section}{References}
+%\bibliographystyle{apalike}
 \setstretch{1.0}
 \bibliography{Main}
 \endgroup
+
+
+
+\iffalse
+
+SCRAP
+
+
+\fi
 
 \end{document}
