@@ -385,40 +385,37 @@ The authors declare no competing interests.
 \label{InterPath-Main-Figure-Barplots-KEGG}
 \end{figure}
 
-%\begin{landscape}
+\begin{landscape}
 \begin{table}[ht]
 \centering
 \begin{tabular}{|c|c|cc|cc|}
   \hline
    \multirow{3.5}{*}{\textbf{Biological Category}} &
-   \multirow{3.5}{*}{\shortstack{\textbf{KEGG Pathway} \\ \textbf{Annotation}}} &
-   \multicolumn{2}{c}{\textbf{Height}} &
-   \multicolumn{2}{c}{\textbf{BMI}} \\[2pt]
+   \multirow{3.75}{*}{\shortstack{\textbf{KEGG Pathway} \\ \textbf{Annotation}}} &
+   \multicolumn{2}{c|}{\textbf{Height}} &
+   \multicolumn{2}{c|}{\textbf{BMI}} \\[2pt]
+   \cline{3-4} \cline{5-6}
    & & \textbf{MAPIT-R} & \textbf{Highlighted} & \textbf{MAPIT-R} & \textbf{Highlighted} \\[2pt]
    & & \textbf{$p$-Value} & \textbf{Genes} & \textbf{$p$-Values} & \textbf{Genes} \\[2pt]
-%\textbf{Biological Category} & \textbf{KEGG Pathway} & \textbf{Height} & \textbf{BMI} \\
-%[2pt]
-%\textbf{Biological Category} & \textbf{Annotation} & \textbf{Height} & \textbf{BMI} \\
-%[2pt]
 \hline
- \multirow{4.5}{*}{\textbf{Cellular Signaling}} & \texttt{CHEMOKINE\_SIGNALING\_PATHWAY} & $5.14\times 10^{-10}$ & & $1.51\times 10^{-8}$ & \\[2pt]
- & \texttt{CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION} & $2.84\times 10^{-8}$ & & NS & \\[2pt]
- & \texttt{WNT\_SIGNALING\_PATHWAY} & $6.54\times 10^{-6}$ & & $1.41\times 10^{-7}$ & \\[2pt]
- & \texttt{ERBB\_SIGNALING\_PATHWAY} & NS & & $3.30\times 10^{-7}$ & \\ [2pt]\hline
-  \multirow{3.5}{*}{\textbf{Immune System}} & \texttt{AUTOIMMUNE\_THYROID\_DISEASE} & $1.49\times 10^{-6}$ & & $1.39\times 10^{-8}$ & \\[2pt]
-  & \texttt{ALLOGRAFT\_REJECTION} & $8.15\times 10^{-8}$ & & $2.53\times 10^{-8}$ & \\[2pt]
-  & \texttt{ANTIGEN\_PROCESSING\_AND\_PRESENTATION} & $2.89\times 10^{-5}$ & & $2.08\times 10^{-7}$ & \\ [2pt]\hline
-  \multirow{2.5}{*}{\textbf{Heart Condition}} & \texttt{DILATED\_CARDIOMYOPATHY} & $1.24\times 10^{-7}$ & & $6.99\times 10^{-6}$ & \\[2pt]
-  & \texttt{VIRAL\_MYOCARDITIS} & $1.89\times 10^{-5}$ & & $1.09\times 10^{-6}$ & \\ [2pt]\hline
-  \multirow{4.5}{*}{\textbf{Metabolism}} & \texttt{PURINE\_METABOLISM} & $1.19\times 10^{-7}$ & & $2.46\times 10^{-6}$ & \\[2pt]
-  & \texttt{BETA\_ALANINE\_METABOLISM} & NS & & $1.12\times 10^{-4}$ & \\[2pt]
-  & \texttt{ETHER\_LIPID\_METABOLISM} & NS & & $1.41\times 10^{-4}$ & \\[2pt]
-  & \texttt{O\_GLYCAN\_BIOSYNTHESIS} & NS & & $1.92\times 10^{-4}$ & \\ [2pt]\hline
+ \multirow{4.5}{*}{\textbf{Cellular Signaling}} & \texttt{CHEMOKINE\_SIGNALING\_PATHWAY} & $5.14\times 10^{-10}$ & \textit{PCSK5}\cite{},\textit{CDC42EP3}\cite{},\textit{STAT2}\cite{} & $1.51\times 10^{-8}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} \\[2pt]
+ & \texttt{CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION} & $2.84\times 10^{-8}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} & NS & NS \\[2pt]
+ & \texttt{WNT\_SIGNALING\_PATHWAY} & $6.54\times 10^{-6}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} & $1.41\times 10^{-7}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} \\[2pt]
+ & \texttt{ERBB\_SIGNALING\_PATHWAY} & NS & NS & $3.30\times 10^{-7}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} \\ [2pt]\hline
+  \multirow{3.5}{*}{\textbf{Immune System}} & \texttt{AUTOIMMUNE\_THYROID\_DISEASE} & $1.49\times 10^{-6}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} & $1.39\times 10^{-8}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite \\[2pt]
+  & \texttt{ALLOGRAFT\_REJECTION} & $8.15\times 10^{-8}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} & $2.53\times 10^{-8}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} \\[2pt]
+  & \texttt{ANTIGEN\_PROCESSING\_AND\_PRESENTATION} & $2.89\times 10^{-5}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} & $2.08\times 10^{-7}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} \\ [2pt]\hline
+  \multirow{2.5}{*}{\textbf{Heart Condition}} & \texttt{DILATED\_CARDIOMYOPATHY} & $1.24\times 10^{-7}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} & $6.99\times 10^{-6}$ & \\[2pt]
+  & \texttt{VIRAL\_MYOCARDITIS} & $1.89\times 10^{-5}$ & & $1.09\times 10^{-6}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} \\ [2pt]\hline
+  \multirow{4.5}{*}{\textbf{Metabolism}} & \texttt{PURINE\_METABOLISM} & $1.19\times 10^{-7}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} & $2.46\times 10^{-6}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{}\\[2pt]
+  & \texttt{BETA\_ALANINE\_METABOLISM} & NS & NS & $1.12\times 10^{-4}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} \\[2pt]
+  & \texttt{ETHER\_LIPID\_METABOLISM} & NS & NS & $1.41\times 10^{-4}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} \\[2pt]
+  & \texttt{O\_GLYCAN\_BIOSYNTHESIS} & NS & NS & $1.92\times 10^{-4}$ & \textit{}\cite{},\textit{}\cite{},\textit{}\cite{} \\ [2pt]\hline
 \end{tabular}
   \caption{\textbf{Biological themes among the MAPIT-R significant KEGG pathways for height and body mass index (BMI) within the African subgroup in the UK Biobank}. The biological themes include: cellular signaling, immune system, heart condition, and metabolism. Notably enriched pathways for each biological theme are included in the second column, along with MAPIT-R $p$-values in the third and fourth columns for each pathway in height and BMI, respectively. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). For a full list of MAPIT-R significant pathways in all database-phenotype-subgroup combinations, see Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}. NS indicates that a pathway was not genome-wide significant for a given phenotype.}
 \label{InterPath-Main-Table-KEGG-African-TopPathways-Themes}
 \end{table}
-%\end{landscape}
+\end{landscape}
 
 \begin{figure}[htb]
 \centering
