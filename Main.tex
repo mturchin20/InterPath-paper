@@ -386,53 +386,51 @@ The authors declare no competing interests.
 \end{figure}
 
 \begin{landscape}
-\begin{table}[!]
+\begin{table}[]
 \centering
-\hspace*{-4.35cm}
+\hspace*{-3.75cm}
 \vspace*{-4em}
-\begin{tabular}{|c|c|cc|cc|}
+\resizebox{1.3\columnwidth}{!}{ \begin{tabular}{|c|c|ccc|ccc|}
   \hline
    \multirow{3.5}{*}{\textbf{Biological Category}} &
    \multirow{3.75}{*}{\shortstack{\textbf{KEGG Pathway} \\ \textbf{Annotation}}} &
-   \multicolumn{2}{c|}{\multirow{1.25}{*}{\textbf{Height}}} &
-   \multicolumn{2}{c|}{\multirow{1.25}{*}{\textbf{BMI}}} \\[2pt]
-   \cline{3-4} \cline{5-6}
-   & & \multirow{2.5}{*}{\shortstack{\textbf{MAPIT-R}\\ \textbf{$p$-Value}}} & \multirow{2.5}{*}{\shortstack{\textbf{Highlighted} \\ \textbf{Genes}}} & \multirow{2.5}{*}{\shortstack{\textbf{MAPIT-R}\\ \textbf{$p$-Value}}}  & \multirow{2.5}{*}{\shortstack{\textbf{Highlighted} \\ \textbf{Genes}}} \\[16pt]
-%   & & \textbf{$p$-Value} & \textbf{Genes} & \textbf{$p$-Values} & \textbf{Genes} \\[2pt]
+   \multicolumn{3}{c|}{\multirow{1.25}{*}{\textbf{Height}}} &
+   \multicolumn{3}{c|}{\multirow{1.25}{*}{\textbf{BMI}}} \\[2pt]
+   \cline{3-5} \cline{6-8}
+   & & \multirow{2.5}{*}{\shortstack{\textbf{MAPIT-R}\\ \textbf{$p$-Value}}} & \multirow{2.5}{*}{\shortstack{\textbf{Highlighted} \\ \textbf{Genes}}} & \multirow{2.5}{*}{\textbf{References}} & \multirow{2.5}{*}{\shortstack{\textbf{MAPIT-R}\\ \textbf{$p$-Value}}}  & \multirow{2.5}{*}{\shortstack{\textbf{Highlighted} \\ \textbf{Genes}}} & \multirow{2.5}{*}{\textbf{References}} \\[16pt]
 \hline
 
  \multirow{9}{*}{\textbf{Cellular Signaling}}
  
- & \multirow{2}{*}{\texttt{CHEMOKINE\_SIGNALING\_PATHWAY}} & \multirow{2}{*}{$5.14\times 10^{-10}$} & \multirow{2.5}{*}{\shortstack{\textit{PCSK5}\cite{Akiyama2019}, \textit{CDC42EP3}\cite{Tachmazidou2017}, \\ \textit{STAT2}\cite{He2015}}} & \multirow{2}{*}{$1.51\times 10^{-8}$} & \multirow{2.5}{*}{\shortstack{\textit{ADCY3}\cite{Saeed2018}, \\\textit{PLCB3}\cite{Cao2020}}} \\[16pt]
+ & \multirow{2}{*}{\texttt{CHEMOKINE\_SIGNALING\_PATHWAY}} & \multirow{2}{*}{$5.14\times 10^{-10}$} & \multirow{2.5}{*}{\shortstack{\textit{PCSK5}, \textit{CDC42EP3}, \\ \textit{STAT2}}} & \multirow{2}{*}{\cite{He2015,Tachmazidou2017,Akiyama2019}} & \multirow{2}{*}{$1.51\times 10^{-8}$} & \multirow{2.5}{*}{\shortstack{\textit{ADCY3}, \\\textit{PLCB3}}} & \multirow{2}{*}{\cite{Saeed2018,Cao2020}} \\[16pt]
  
- & \multirow{2}{*}{\texttt{CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION}} & \multirow{2}{*}{$2.84\times 10^{-8}$} & \multirow{2}{*}{\shortstack{\textit{GDF5}\cite{Wojcik2019}, \textit{LTBP1}\cite{Wood2014a},\\\textit{LTBP2}\cite{Kichaev2019}}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} \\[16pt]
+ & \multirow{2}{*}{\texttt{CYTOKINE\_CYTOKINE\_RECEPTOR\_INTERACTION}} & \multirow{2}{*}{$2.84\times 10^{-8}$} & \multirow{2}{*}{\shortstack{\textit{GDF5}, \textit{LTBP1},\\\textit{LTBP2}}} & \multirow{2}{*}{\cite{Wood2014a,Kichaev2019,Wojcik2019}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} \\[16pt]
  
- & \multirow{2}{*}{\texttt{WNT\_SIGNALING\_PATHWAY}} & \multirow{2}{*}{$6.54\times 10^{-6}$} & \multirow{2}{*}{\shortstack{\textit{FBXW11}\cite{Kichaev2019}, \textit{NFATC4}\cite{Berndt2013},\\\textit{ANAPC10}\cite{Akiyama2019}}} & \multirow{2}{*}{$1.41\times 10^{-7}$} & \multirow{2}{*}{\shortstack{\textit{CEP63}\cite{Shungin2015}, \textit{ANAPC13}\cite{Graff2017},\\\textit{SMAD3}\cite{Pulit2019}}} \\[16pt]
+ & \multirow{2}{*}{\texttt{WNT\_SIGNALING\_PATHWAY}} & \multirow{2}{*}{$6.54\times 10^{-6}$} & \multirow{2}{*}{\shortstack{\textit{FBXW11}, \textit{NFATC4},\\\textit{ANAPC10}}} & \multirow{2}{*}{\cite{Berndt2013,Akiyama2019,Kichaev2019}} & \multirow{2}{*}{$1.41\times 10^{-7}$} & \multirow{2}{*}{\shortstack{\textit{CEP63}, \textit{ANAPC13},\\\textit{SMAD3}}} & \multirow{2}{*}{\cite{Shungin2015,Graff2017,Pulit2019}} \\[16pt]
  
- & \multirow{2}{*}{\texttt{ERBB\_SIGNALING\_PATHWAY}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$3.30\times 10^{-7}$} & \multirow{2}{*}{\shortstack{\textit{VEGFA}\cite{Zhu2020}, \textit{MACROD1}\cite{Lotta2018},\\\textit{ERBB4}\cite{Justice2019}}} \\ [14pt]\hline
+ & \multirow{2}{*}{\texttt{ERBB\_SIGNALING\_PATHWAY}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$3.30\times 10^{-7}$} & \multirow{2}{*}{\shortstack{\textit{VEGFA}, \textit{MACROD1},\\\textit{ERBB4}}} & \multirow{2}{*}{\cite{Lotta2018,Justice2019,Zhu2020}} \\ [14pt]\hline
  
   \multirow{6.5}{*}{\textbf{Immune System}} 
-  & \multirow{2}{*}{\texttt{AUTOIMMUNE\_THYROID\_DISEASE}} & \multirow{2}{*}{$1.49\times 10^{-6}$} & \multirow{2.5}{*}{\shortstack{\textit{TGFB2}\cite{Wojcik2019},\\ \textit{HLA-C}\cite{Akiyama2019}}} & \multirow{2}{*}{$1.39\times 10^{-8}$} & \multirow{2.5}{*}{\shortstack{\textit{LYPLAL1}\cite{Chu2017}, \textit{ITGB8}\cite{Zhu2020},\\ \textit{HLA-DRB1}\cite{Graff2017}}} \\[16pt]
+  & \multirow{2}{*}{\texttt{AUTOIMMUNE\_THYROID\_DISEASE}} & \multirow{2}{*}{$1.49\times 10^{-6}$} & \multirow{2.5}{*}{\shortstack{\textit{TGFB2},\\ \textit{HLA-C}}} & \multirow{2}{*}{\cite{Akiyama2019,Wojcik2019}} &  \multirow{2}{*}{$1.39\times 10^{-8}$} & \multirow{2.5}{*}{\shortstack{\textit{LYPLAL1}, \textit{ITGB8},\\ \textit{HLA-DRB1}}} & \multirow{2}{*}{\cite{Chu2017,Graff2017,Zhu2020}} \\[16pt]
   
-  & \multirow{2}{*}{\texttt{ALLOGRAFT\_REJECTION}} & \multirow{2}{*}{$8.15\times 10^{-8}$} & \multirow{2}{*}{\textit{HLA-B}\cite{Wood2014a}} & \multirow{2}{*}{$2.53\times 10^{-8}$} & \multirow{2}{*}{\shortstack{\textit{TNFAIP8}\cite{Zhu2020}, \textit{HSD17B4}\cite{Shungin2015},\\\textit{DTWD2}\cite{Winkler2015}}} \\[16pt]
+  & \multirow{2}{*}{\texttt{ALLOGRAFT\_REJECTION}} & \multirow{2}{*}{$8.15\times 10^{-8}$} & \multirow{2}{*}{\textit{HLA-B}} & \multirow{2}{*}{\cite{Wood2014a}} & \multirow{2}{*}{$2.53\times 10^{-8}$} & \multirow{2}{*}{\shortstack{\textit{TNFAIP8}, \textit{HSD17B4},\\\textit{DTWD2}}} & \multirow{2}{*}{\cite{Shungin2015,Winkler2015,Zhu2020}} \\[16pt]
   
-  & \multirow{2}{*}{\texttt{ANTIGEN\_PROCESSING\_AND\_PRESENTATION}} & \multirow{2}{*}{$2.89\times 10^{-5}$} & \multirow{2}{*}{\textit{C2CD4A}\cite{Akiyama2019}} & \multirow{2}{*}{$2.08\times 10^{-7}$} & \multirow{2}{*}{\shortstack{\textit{IFI30}\cite{Justice2019}, \textit{ZNF318}\cite{Winkler2015},\\\textit{TJAP1}\cite{Winkler2015}}} \\ [14pt]\hline
+  & \multirow{2}{*}{\texttt{ANTIGEN\_PROCESSING\_AND\_PRESENTATION}} & \multirow{2}{*}{$2.89\times 10^{-5}$} & \multirow{2}{*}{\textit{C2CD4A}} & \multirow{2}{*}{\cite{Akiyama2019}} & \multirow{2}{*}{$2.08\times 10^{-7}$} & \multirow{2}{*}{\shortstack{\textit{IFI30}, \textit{ZNF318},\\\textit{TJAP1}}} & \multirow{2}{*}{\cite{Winkler2015,Justice2019}}\\ [14pt]\hline
   
   \multirow{4.5}{*}{\textbf{Heart Condition}} 
-  & \multirow{2}{*}{\texttt{DILATED\_CARDIOMYOPATHY}} & \multirow{2}{*}{$1.24\times 10^{-7}$} & \multirow{2.5}{*}{\shortstack{\textit{IGF1}\cite{Wojcik2019}, \textit{IGF1R}\cite{Kichaev2019},\\\textit{POMC}\cite{Berndt2013}}} & \multirow{2}{*}{$6.99\times 10^{-6}$} & \multirow{2.5}{*}{\shortstack{\textit{TGFB2}\cite{Zhu2020}, \textit{ADCY3}\cite{Saeed2018},\\\textit{HSD17B4}\cite{Shungin2015}}} \\[16pt]
+  & \multirow{2}{*}{\texttt{DILATED\_CARDIOMYOPATHY}} & \multirow{2}{*}{$1.24\times 10^{-7}$} & \multirow{2.5}{*}{\shortstack{\textit{IGF1}, \textit{IGF1R},\\\textit{POMC}}} & \multirow{2}{*}{\cite{Berndt2013,Kichaev2019,Wojcik2019}} & \multirow{2}{*}{$6.99\times 10^{-6}$} & \multirow{2.5}{*}{\shortstack{\textit{TGFB2}, \textit{ADCY3},\\\textit{HSD17B4}}} & \multirow{2}{*}{\cite{Shungin2015,Saeed2018,Zhu2020}} \\[16pt]
   
-  & \multirow{2}{*}{\texttt{VIRAL\_MYOCARDITIS}} & \multirow{2}{*}{$1.89\times 10^{-5}$} & \multirow{2}{*}{\shortstack{\textit{HMGA1}\cite{Wojcik2019}, \textit{HLA-B}\cite{Wood2014a},\\\textit{LAMA2}\cite{Akiyama2019}}} & \multirow{2}{*}{$1.09\times 10^{-6}$} & \multirow{2}{*}{\shortstack{\textit{HMGA1}\cite{Zhu2020}, \textit{CYCSL1}\cite{Graff2017},\\\textit{HLA-DRB1}\cite{Graff2017}}} \\ [14pt]\hline
+  & \multirow{2}{*}{\texttt{VIRAL\_MYOCARDITIS}} & \multirow{2}{*}{$1.89\times 10^{-5}$} & \multirow{2}{*}{\shortstack{\textit{HMGA1}, \textit{HLA-B},\\\textit{LAMA2}}} & \multirow{2}{*}{\cite{Wood2014a,Akiyama2019,Wojcik2019}} & \multirow{2}{*}{$1.09\times 10^{-6}$} & \multirow{2}{*}{\shortstack{\textit{HMGA1}, \textit{CYCSL1},\\\textit{HLA-DRB1}}} & \multirow{2}{*}{\cite{Graff2017,Zhu2020}} \\ [14pt]\hline
   
   \multirow{9}{*}{\textbf{Metabolism}} 
-  & \multirow{2}{*}{\texttt{PURINE\_METABOLISM}} & \multirow{2}{*}{$1.19\times 10^{-7}$} & \multirow{2.5}{*}{\shortstack{\textit{ADAMTSL3}\cite{Kichaev2019}, \textit{ADAMTS17}\cite{Akiyama2019},\\\textit{PDE3A}\cite{Rueger2018}}} & \multirow{2}{*}{$2.46\times 10^{-6}$} & \multirow{2.5}{*}{\shortstack{\textit{ADAMTSL3}\cite{Zhu2020}, \textit{ADAMTS9}\cite{Zhu2020},\\\textit{CENTA2}\cite{Justice2019}}} \\[16pt]
+  & \multirow{2}{*}{\texttt{PURINE\_METABOLISM}} & \multirow{2}{*}{$1.19\times 10^{-7}$} & \multirow{2.5}{*}{\shortstack{\textit{ADAMTSL3}, \textit{ADAMTS17},\\\textit{PDE3A}}} & \multirow{2}{*}{\cite{Rueger2018,Akiyama2019,Kichaev2019}} & \multirow{2}{*}{$2.46\times 10^{-6}$} & \multirow{2.5}{*}{\shortstack{\textit{ADAMTSL3}, \textit{ADAMTS9},\\\textit{CENTA2}}} & \multirow{2}{*}{\cite{Justice2019,Zhu2020}} \\[16pt]
   
-  & \multirow{2}{*}{\texttt{BETA\_ALANINE\_METABOLISM}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$1.12\times 10^{-4}$} & \multirow{2}{*}{\shortstack{\textit{DPYSL5}\cite{Manning2012},\\ \textit{DPYD}\cite{Tachmazidou2017}}} \\[16pt]
+  & \multirow{2}{*}{\texttt{BETA\_ALANINE\_METABOLISM}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$1.12\times 10^{-4}$} & \multirow{2}{*}{\shortstack{\textit{DPYSL5},\\ \textit{DPYD}}} & \multirow{2}{*}{\cite{Manning2012,Tachmazidou2017}} \\[16pt]
   
-  & \multirow{2}{*}{\texttt{ETHER\_LIPID\_METABOLISM}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$1.41\times 10^{-4}$} & \multirow{2}{*}{\textit{PLA2G2D}\cite{Tachmazidou2017}} \\[16pt]
+  & \multirow{2}{*}{\texttt{ETHER\_LIPID\_METABOLISM}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$1.41\times 10^{-4}$} & \multirow{2}{*}{\textit{PLA2G2D}} & \multirow{2}{*}{\cite{Tachmazidou2017}} \\[16pt]
   
-  & \multirow{2}{*}{\texttt{O\_GLYCAN\_BIOSYNTHESIS}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$1.92\times 10^{-4}$} & \multirow{2}{*}{\shortstack{\textit{GALNT10}\cite{Ng2012},\\\textit{B4GALNT3}\cite{Zhu2020}}} \\ [14pt]\hline
-\end{tabular}
-%\vspace*{4cm}
+  & \multirow{2}{*}{\texttt{O\_GLYCAN\_BIOSYNTHESIS}} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{NS} & \multirow{2}{*}{$1.92\times 10^{-4}$} & \multirow{2}{*}{\shortstack{\textit{GALNT10},\\\textit{B4GALNT3}}} & \multirow{2}{*}{\cite{Ng2012,Zhu2020}} \\ [14pt]\hline
+\end{tabular}}
 \bigskip  \bigskip  \bigskip
   \caption{\textbf{Biological themes among the MAPIT-R significant KEGG pathways for height and body mass index (BMI) within the African subgroup in the UK Biobank}. The biological themes include: cellular signaling, immune system, heart condition, and metabolism. Notably enriched pathways for each biological theme are included in the second column, along with MAPIT-R $p$-values in the third and fourth columns for each pathway in height and BMI, respectively. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). For a full list of MAPIT-R significant pathways in all database-phenotype-subgroup combinations, see Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}. NS indicates that a pathway was not genome-wide significant for a given phenotype.}
 \label{InterPath-Main-Table-KEGG-African-TopPathways-Themes}
