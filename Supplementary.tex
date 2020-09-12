@@ -13,6 +13,26 @@
 \usepackage{hypcap}
 \usepackage{lscape}
 \usepackage{lineno}
+\usepackage{textgreek}
+\usepackage{latexsym,color,soul,xspace,tabularx}
+\usepackage{booktabs}
+\usepackage{multirow,multicol}
+\usepackage{grffile}
+\usepackage{epstopdf}
+\usepackage{longtable}
+\usepackage{adjustbox} 
+\usepackage{makecell}
+\usepackage{sidecap}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage[subfigure]{tocloft}
+\usepackage{etoolbox}
+\usepackage{pdflscape}
+\pagestyle{myheadings}
+\usepackage{bm}
+\usepackage{bbm}
 \usepackage{xr}
 \makeatletter
 \newcommand*{\addFileDependency}[1]{% argument=file name and extension
@@ -27,12 +47,6 @@
     \addFileDependency{#1.aux}%
 }
 \myexternaldocument{Main}
-\usepackage{textgreek}
-
-%From Lorin
-\usepackage{latexsym}
-\usepackage{bm}
-\usepackage{bbm}
 
 \def\eq#1{(\ref{#1})}
 \def\pdf{p.d.f.\ } \def\cdf{c.d.f.\ }
@@ -138,38 +152,14 @@
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 
-%2020091 Additions from Lorin's main edits
 \topmargin 0.0cm
 \oddsidemargin 0.5cm
 \evensidemargin 0.5cm
 \textwidth 16cm 
 \textheight 21cm
 
-\usepackage{latexsym,color,multirow,soul,xspace,tabularx}
-\usepackage{booktabs}
-\usepackage{multirow,multicol}
-\usepackage{grffile}
-\usepackage{epstopdf}
-\usepackage{longtable}
-\usepackage{adjustbox} 
-\usepackage{makecell}
-\usepackage{sidecap}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
-\usepackage{tikz}
-\usepackage{caption}
-\usepackage[subfigure]{tocloft}
-\usepackage{etoolbox}
-\usepackage{pdflscape}
-\pagestyle{myheadings}
-
 \newcommand{\edit}[2]{\sout{#1}\textcolor{red}{\xspace#2}}
 \newcommand{\black}{\textcolor{black}}
-\newcommand{\genee}{gene-$\varepsilon$~}
-\newcommand{\genE}{gene-$\varepsilon$}
-
-\DeclareMathOperator*{\argmin}{arg\,min}
-\DeclareMathOperator*{\argmax}{arg\,max}
 
 \newcolumntype{R}[2]{%
     >{\adjustbox{angle=#1,lap=\width-(#2)}\bgroup}%
@@ -194,11 +184,11 @@
 \renewcommand{\@biblabel}[1]{\quad#1.}
 \makeatother
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %% END MACROS SECTION
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 

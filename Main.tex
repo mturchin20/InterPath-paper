@@ -14,6 +14,13 @@
 \usepackage{hypcap}
 \usepackage{lscape}
 \usepackage{lineno}
+\usepackage{latexsym,color,soul,xspace,tabularx}
+\usepackage{booktabs}
+\usepackage{multirow,multicol}
+\usepackage{pdflscape}
+\pagestyle{myheadings}
+\usepackage{bm}
+\usepackage{bbm}
 \usepackage{xr}
 \makeatletter
 \newcommand*{\addFileDependency}[1]{% argument=file name and extension
@@ -30,11 +37,6 @@
 \myexternaldocument{Supplementary}
 \usepackage{textgreek}
 
-%From Lorin
-\usepackage{latexsym}
-\usepackage{bm}
-\usepackage{bbm}
-
 \def\eq#1{(\ref{#1})}
 \def\pdf{p.d.f.\ } \def\cdf{c.d.f.\ }
 \def\pdfs{p.d.f.s} \def\cdfs{c.d.f.s}
@@ -47,7 +49,6 @@
 \def\tr{{\rm tr}}
 \def\cond{\, | \,}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
-
 
 \def\dsum{\displaystyle\sum}
 \def\dint{\displaystyle\int}
@@ -135,26 +136,14 @@
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 
-%2020091 Additions from Lorin's main edits
 \topmargin 0.0cm
 \oddsidemargin 0.5cm
 \evensidemargin 0.5cm
 \textwidth 16cm 
 \textheight 21cm
 
-\usepackage{latexsym,color,multirow,soul,xspace,tabularx}
-\usepackage{booktabs}
-\usepackage{multirow,multicol}
-\usepackage{pdflscape}
-\pagestyle{myheadings}
-
 \newcommand{\edit}[2]{\sout{#1}\textcolor{red}{\xspace#2}}
 \newcommand{\black}{\textcolor{black}}
-\newcommand{\genee}{gene-$\varepsilon$~}
-\newcommand{\genE}{gene-$\varepsilon$}
-
-\DeclareMathOperator*{\argmin}{arg\,min}
-\DeclareMathOperator*{\argmax}{arg\,max}
 
 \newcolumntype{R}[2]{%
     >{\adjustbox{angle=#1,lap=\width-(#2)}\bgroup}%
@@ -177,9 +166,11 @@
 \renewcommand{\@biblabel}[1]{\quad#1.}
 \makeatother
 
+%% END MACROS SECTION
 
-%%%%%%%%%%%%
-%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -293,7 +284,7 @@ It is important to note that, in our analyses, the African subgroup has neither 
 
 In our analyses of the British, Chinese, Caribbean, Indian, and Pakistani subgroups, we identify 80 pathways in total that have significant marginal epistatic interactions. Interestingly, many of these pathways overlap with the set of significant results from the African subgroup; though, there is notably less overlap in results between each of the individual non-African subgroups (Figure \ref{InterPath-Main-Figure-Heatplots-KEGG} and Supplementary Figure \ref{InterPath-Supp-Figure-Heatplots-REACTOME}). For example, in the height analysis with KEGG annotations, 6-out-of-7 and 7-out-of-8 enriched pathways identified using the Caribbean and Chinese subgroups overlap with those detected while using the African subgroup, respectively. However, there is no overlap in results from our marginal epistasis scans at the pathway level between the Chinese and Caribbean subgroups.
 
-The pathways commonly identified with significant marginal epistatic signals in both the African and Caribbean subgroups contain the genes related to multiple kinases (e.g., \textit{MAPK1}, \textit{ROCK1}, \textit{PRKCB}, \textit{PAK1}) and calcium channel proteins (e.g., \textit{CACNA1S}, \textit{CACNA1D}) (Supplementary Tables \ref{InterPath-Supp-Table-MAPITR-TopPathway-Overlap} and \ref{InterPath-Supp-Table-MAPITR-TopPathway-GeneCounts-Overlap}) --- many of which are supported by associations validated in previous GWA applications \cite{Cousminer2013,Wood2014a}. In contrast, the pathways with significant marginal epistatic effects identified in both the African and Chinese subgroups are pathways related to the immune system and contain multiple HLA loci (e.g., \textit{HLA-DRA}, \textit{HLA-DRB1}, \textit{HLA-A}, \textit{HLA-B}) (Supplementary Tables \ref{InterPath-Supp-Table-MAPITR-TopPathway-Overlap} and \ref{InterPath-Supp-Table-MAPITR-TopPathway-GeneCounts-Overlap}). These results are unsurprising since it is well known that the MHC region holds significant clinical relevance in complex traits \cite{Wan2010,Rose2012,Stahl2012,Crawford2018b}; however, more recent work has also suggested that Han Chinese genomes may be particularly enriched for interactions involving HLA loci \cite{Deng2020}. 
+The pathways commonly identified with significant marginal epistatic signals in both the African and Caribbean subgroups contain genes related to multiple kinases (e.g., \textit{MAPK1}, \textit{ROCK1}, \textit{PRKCB}, \textit{PAK1}) and calcium channel proteins (e.g., \textit{CACNA1S}, \textit{CACNA1D}) (Supplementary Tables \ref{InterPath-Supp-Table-MAPITR-TopPathway-Overlap} and \ref{InterPath-Supp-Table-MAPITR-TopPathway-GeneCounts-Overlap}) --- many of which are supported by associations validated in previous GWA applications \cite{Cousminer2013,Wood2014a}. In contrast, the pathways with significant marginal epistatic effects identified in both the African and Chinese subgroups are pathways related to the immune system and contain multiple HLA loci (e.g., \textit{HLA-DRA}, \textit{HLA-DRB1}, \textit{HLA-A}, \textit{HLA-B}) (Supplementary Tables \ref{InterPath-Supp-Table-MAPITR-TopPathway-Overlap} and \ref{InterPath-Supp-Table-MAPITR-TopPathway-GeneCounts-Overlap}). These results are unsurprising since it is well known that the MHC region holds significant clinical relevance in complex traits \cite{Wan2010,Rose2012,Stahl2012,Crawford2018b}; however, more recent work has also suggested that Han Chinese genomes may be particularly enriched for interactions involving HLA loci \cite{Deng2020}. 
 
 \subsection*{Stronger Epistatic Signals underlie BMI than Height}
 
@@ -311,7 +302,8 @@ When applying MAPIT-R to these data replicates, we find that our results are rob
 %Proteasome Gene Families Drive Pathway-Level Signals of Marginal Epistasis
 %{Pairwise Gene Interactions within Pathways with Marginal Epistatic Effects are Enriched in the Proteasome}}
 
-To better identify the genes and genomic regions that are driving pathway-level marginal epistatic effects, we first investigated genes and gene families that are enriched amongst the significant pathways identified by MAPIT-R. To accomplish this, we conducted two types of hypergeometric tests for enrichment to detect genes that are overrepresented amongst the pathway annotations with low $p$-values (Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}). In the first test, we took the annotations from a given database (i.e., KEGG or REACTOME) and implemented a standard hypergeometric test where we compared the number of times a gene appears within the set of significant epistatic pathways versus the number of times that same gene appears across all pathways in the database. \textcolor{red}{However,} this type of test may be confounded by the fact that larger pathways naturally have more SNPs and are therefore more likely to be involved in non-additive genetic interactions (see Supplementary Figures \ref{InterPath-Supp-Figure-pValsVsNumSNPs} and \ref{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}). To mitigate this concern, we ran a second hypergeometric enrichment test using only pathways containing 1000 SNPs or fewer. By focusing on smaller pathways, we have the additional advantage of further assessing the extent to which pathway size may confound our understanding of genes driving crosstalk within pathways. 
+To better identify the genes and genomic regions that are driving pathway-level marginal epistatic effects, we first investigated genes and gene families that are enriched amongst the significant pathways identified by MAPIT-R. To accomplish this, we conducted two types of hypergeometric tests for enrichment to detect genes that are overrepresented amongst the pathway annotations with low $p$-values (Supplementary Tables \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}). In the first test, we took the annotations from a given database (i.e., KEGG or REACTOME) and implemented a standard hypergeometric test where we compared the number of times a gene appears within the set of significant epistatic pathways versus the number of times that same gene appears across all pathways in the database. This type of test, \textcolor{red}{however,} may be confounded by the fact that larger pathways naturally have more SNPs and are therefore more likely to be involved in non-additive genetic interactions (see Supplementary Figures \ref{InterPath-Supp-Figure-pValsVsNumSNPs} and \ref{InterPath-Supp-Figure-pValsVsNumSNPs-perm1}). \textcolor{red}{Because of this, the first test may also capture genes that are enriched for being in larger pathways in general, such as housekeeping genes.} To mitigate this concern, we ran a second hypergeometric enrichment test using only pathways containing 1000 SNPs or fewer. \textcolor{red}{By focusing on smaller pathways and comparing the results from each test, we are better able to identify genes that are enriched for marginal epistasis and not for being present in larger pathways.} 
+% are able to better focus our analyses limit the extent to which we are testing for enriched have the additional advantage of further assessing the extent to which pathway size may confound our understanding of genes driving crosstalk within pathways
 
 Figure \ref{InterPath-Main-Figure-Hypergeometric-RestrictedComps-African-BMI} shows the hypergeometric $p$-values for all genes in significant interacting pathways. Here, we focus on results for BMI within the African subgroup using annotations from the REACTOME database and we specifically highlight the only genes that were significant under both types of hypergeometric enrichment tests (i.e., the genes that were robustly identified as drivers regardless of the number of SNPs included in the test). Notably, these gene families (\textit{PSMA}, \textit{PSMB}, \textit{PSMC}, \textit{PSMD}, \textit{PSME}, and \textit{PSMF}) are all from proteasome which is the catalytic half of the ubiquitin-proteasome system (UPS) --- a critical system for a variety of processes related to protein degradation within the cell \cite{Voges1999,Livneh2016,Collins2017}. The main proteasome isoform, 26S, is made up of two main components: (\textit{i}) the 20S core particle (CP) of four stacked rings (two outer structural rings encoded by \textit{PSMA} genes, and two inner catalytic rings encoded by \textit{PSMB} genes), and (\textit{ii}) the 19S regulatory particle (RP) which caps both ends of the CP (encoded by both genes within the \textit{PSMC} and \textit{PSMD} families). See Figure \ref{InterPath-Main-Figure-Proteasome-Panels}(a) for an illustration of this structure. Since these gene families covered both a large number of genomic sites, as well as biological functions known to be relevant to BMI, we used the proteasome as a test case to further refine the pathway-level signal identified by MAPIT-R.
  
