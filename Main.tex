@@ -2,7 +2,6 @@
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[a4paper]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
@@ -21,6 +20,7 @@
 \pagestyle{myheadings}
 \usepackage{bm}
 \usepackage{bbm}
+\usepackage{adjustbox}
 \usepackage{xr}
 \makeatletter
 \newcommand*{\addFileDependency}[1]{% argument=file name and extension
@@ -367,7 +367,7 @@ The authors declare no competing interests.
 \begin{landscape}
 \begin{table}[]
 \centering
-\hspace*{-3.75cm}
+\hspace*{-8.25em}
 \vspace*{-4em}
 \resizebox{1.3\columnwidth}{!}{ \begin{tabular}{|c|c|ccc|ccc|}
   \hline
@@ -420,8 +420,8 @@ The authors declare no competing interests.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{Images/Main/InterPath_Main_Figure_Heatplots_KEGG_vs4.png}
-\caption{\textbf{Heatmaps depicting the overlap of MAPIT-R significant KEGG pathways for (a) standing height and (b) body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank}. Here, subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'', respectively. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). The diagonal shows the total number of genome-wide significant pathways per subgroup. We observe that significant pathways identified in non-African subgroups overlap more often with pathways from the African subgroup than they do with pathways from the other, remaining non-African subgroups. Results for both phenotypes in the REACTOME database can be seen in Supplementary Figure \ref{InterPath-Supp-Figure-Heatplots-REACTOME}.}
+\includegraphics[width=\textwidth]{Images/Main/InterPath_Main_Figure_Heatplots_KEGG_vs5.png}
+\caption{\textbf{Heatmaps depicting the overlap of MAPIT-R significant KEGG pathways for (a) standing height and (b) body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank}. Here, subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'' \textcolor{red}{(ordered here from top-to-bottom and left-to-right)}. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). The diagonal shows the total number of genome-wide significant pathways per subgroup. We observe that significant pathways identified in non-African subgroups overlap more often with pathways from the African subgroup than they do with pathways from the other, remaining non-African subgroups. Results for both phenotypes in the REACTOME database can be seen in Supplementary Figure \ref{InterPath-Supp-Figure-Heatplots-REACTOME}.}
 \label{InterPath-Main-Figure-Heatplots-KEGG}
 \end{figure}
 
