@@ -1010,3 +1010,27 @@ MAPIT-R analyses were conducted by using code built on the modeling and testing 
 %To simulate continuous phenotypes that mirror genetic architectures affected by a combination of additive and pairwise epistatic effects, we randomly choose 1,000 causal SNPs to directly affect the phenotype and classify the causal variants into three groups: (1) a small set of interaction SNPs, (2) a larger set of interaction SNPs, and (3) a large set of additive SNPs. In the simulations carried out in this study, SNPs interact between sets, so that SNPs in the first group interact with SNPs in the second group, but do not interact with variants in their own group (the same rule applies to the second group). One may view the SNPs in the first set as the “hubs” in an interaction map. We are reminded that interaction (epistatic) effects are different from additive effects. All causal SNPs in both the first and second groups have additive effects and are involved in pairwise interactions, while causal SNPs in the third set only have additive effects.
 %The additive effect sizes of all causal SNPs again come from a standard normal distribution or β ∼ MVN(0, I). Next, we create a separate matrix W which holds the pairwise interactions of all the causal SNPs between groups 1 and 2. These SNPs have effect sizes also drawn as α ∼ MVN(0, I). We scale both the additive and pairwise genetic effects so that collectively they explain a fixed proportion of genetic variance. Namely, the additive effects make up ρ\%, while the pairwise interactions make up the remaining (1 − ρ)%. Once we obtain the final effect sizes for all causal SNPs, we draw errors to achieve the target H2. The phenotypes are then created by summing all effects using two simulation models: (i) y = Xβ + Wα + ε and (ii) y = Zu + Xβ + Wα + ε, where Zu again represents population stratification. In the latter model, population stratification effects are introduced into the simulations by allowing the top 5 and 10 genotype principal components (PCs) Z to make up 10% of the overall variation in the trait. The effect sizes for these stratification effects are also drawn as u ∼ MVN(0, I)
 %Each pathway has
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\extrarowheight}{3pt}
+
+\begin{table}[H]
+\centering
+\hspace*{-2.5cm}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+  \textbf{Notable} & \textbf{Pathway SNP} & \textbf{Gene Count in} & \textbf{Total Count of} & \textbf{Gene Count in} & \textbf{Total Count of} & \textbf{Hypergeometric} \\
+ \textbf{Gene} & \textbf{Count Limit} & \textbf{Top Pathways} & \textbf{Top Pathways} & \textbf{All Pathways} & \textbf{All Pathways} & \textbf{$\bm{p}$-Value} \\[2pt]
+  \hline
+ \multirow{2}{*}{\textit{UBA52}} & No Limit & 22 & 65 & 106 & 658 & 1.53$\times10^{-4}$ \\ [2pt] \cline{2-7}
+ & $<$ 1000 SNPs & 10 & 26 & 84 & 577 & 1.86$\times10^{-3}$ \\ [2pt]\hline
+\multirow{2}{*}{\textit{PSM*}} & No Limit & 12 & 65 & 44 & 658 & 5.30$\times10^{-4}$ \\ [2pt] \cline{2-7}
+ & $<$ 1000 SNPs & 9 & 26 & 34 & 577 & 4.46$\times10^{-6}$ \\ [2pt]
+   \hline
+\end{tabular}
+\caption[TBD]{\textbf{Specific results from hypergeometric tests performed for body mass index (BMI) using both the original and size-restricted pathway annotations within the African subgroup in the UK Biobank.} Here, we focus on two genes, \textit{UBA52} and \textit{PSM*}. Note that the vast majority of proteasome genes included in our analysis had similar results across each hypergeometric category, so we use \textit{PSM*} to represent the gene families as a whole. In each case, genes are tested for being annotated more frequently among MAPIT-R enriched pathways than among the background distribution of pathways in the KEGG and REACTOME databases. Two study designs were employed for these tests: (\textit{i}) using all pathways present in the given databases, or (\textit{ii}) using only pathways that contained less than or equal to 1,000 SNPs. The first column lists the gene or gene family being tested. The second column lists which of the two aforementioned study designs was used. Columns three through six list the different count values used in the hypergeometric test: the third column lists the number of times a gene is present among the genome-wide significant list of pathways, the fourth column lists the total number of pathways that were genome-wide significant, the fifth column lists the number of times a gene is present among all the pathways in the given database, and the sixth column lists the total number of pathways in the given database. The seventh column is the hypergeometric $p$-value associated with columns three through six.}
+\label{MAPITR-Supp-Table-Hypergeometric-Example}
+\end{table}
