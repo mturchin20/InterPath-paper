@@ -247,8 +247,6 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 
 \section{Supplementary Figures}\label{Supplementary-Figures}
 
-%\renewcommand{\thefigure}{Supplementary Figure \arabic{figure}}
-%\renewcommand{\thetable}{Supplementary \arabic{table}}
 \renewcommand{\figurename}{Supplementary Figure}
 \renewcommand{\tablename}{Supplementary Table}
 \setcounter{figure}{0}
@@ -269,7 +267,7 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \centering
 %\hspace*{-.9cm}
 \includegraphics[width = \textwidth]{Images/Supp/InterPath_Supp_Figure_Barplots_REACTOME_vs4.png}
-\caption{\textbf{Number of REACTOME pathways identified by MAPIT-R that have significant marginal epistatic effects within (a) standing height and (b) body mass index (BMI) per subgroup in the UK Biobank.} Here, the subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'' \textcolor{red}{(see legend to the right of plots)}. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Across all database-phenotype combinations, the African subgroup has the largest numbers of significant pathways. For lists of the specific significant pathways per database-phenotype-subgroup combination, see Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}.}
+\caption{\textbf{Number of REACTOME pathways identified by MAPIT-R that have significant marginal epistatic effects within (a) standing height and (b) body mass index (BMI) per subgroup in the UK Biobank.} Here, subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'' \textcolor{red}{(see legend to the right of plots)}. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Across all database-phenotype combinations, the African subgroup has the largest numbers of significant pathways. For lists of the specific significant pathways per database-phenotype-subgroup combination, see Supplementary Table \ref{InterPath-Supp-Table-TopPathways-AllPaths-AllPhenos}.}
 \label{InterPath-Supp-Figure-Barplots-REACTOME}
 \end{figure}
 \clearpage
@@ -280,17 +278,8 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.8]{Images/Supp/Greg/power_split.png}
-%\subfigure[Num1]{\includegraphics[width=.6\textwidth]{Images/Supp/Greg/power_split.png}}
-%\subfigure[Num2]{\includegraphics[width=.6\textwidth]{Images/Supp/Greg/Rplot01.png}}
-%\subfigure[Num3]{\includegraphics[width=.4\textwidth]{Images/Supp/Greg/Rplot03.png}}
-%\subfigure[Num4]{\includegraphics[width=.4\textwidth]{Images/Supp/Greg/Rplot02.png}}
 \caption{\textbf{Barplots of MAPIT-R performance under different simulated genetic architectures}. Here, we show results from running simulations of MAPIT-R under various genetic architectures. For all plots, 3,000 individuals from the British subgroup and 10,000 SNPs from chromosome 1 were used. Phenotypes were constructed by simulation both additive and epistatic components. Epistatic components were constructed by simulating interactions between pathways and the rest of the genomic background. Specifically, 10 pathways were used in each simulation, where each pathway contained 50 SNPs. For each pathway, every SNP was considered an `interacting' SNP, meaning each SNP had 200 `interacting partner' SNPs randomly chosen elsewhere from among the remaining 9,950 background SNPs. To simulate the additive heritability component, an additional 50\% of the background, non-interacting SNPs were assigned additive effects. Overall heritability ($H^2$) was set at .6 or .8. Additive heritability was set at $H^2*(\rho)$ and epistatic heritability was set at $H^2*(1-\rho)$, where $\rho$ is a value ranging from .6 to .9 that controls the ratio between additive and epistatic heritability. Lastly, the top 10 local principal components of the individuals were used to introduce population structure and account for 10\% of the overall phenotype variance. (a) The barplots show power and false discovery rates (FDR) from running the aforementioned MAPIT-R simulations. $H^2$ of .6 is shown on the left and $H^2$ is shown on the right. The $x$-axis shows the different values of $\rho$ and the $y$-axis shows power. Colors correspond to different value of $\rho$ and the legend shows each corresponding FPR.
 Each pathway has
-%(b) The plot shows the false positive rate vs. true positive rate ROC curve across 100 different simulations, each with 10 pathways. In each simulation 5 pathways were `true positive' and 5 were `true negatives', where `true negative' refers to no epistatic effects. The $x$-axis shows the false positive rate and the $y$-axis shows the true positive rate. 
-%For all plots, number of individuals = 3,000. Number of SNPs total = 10,000. Genotypes are from uk biobank, chromosome 1. First 10k SNPs and random 3k white british individuals. There are 10 pathways in each simulation. Each pathway has exactly 50 group 1 SNPs and 200 interactions per group 1 SNP, so 10,000 total group 2 SNPs. Group 3 SNPs, which is those SNPs that have an additive background is 50\% of the total SNPs chosen at random, so 5,000 SNPs. Overall heritability is (0.6 or 0.8 for power plots) $H^2$. Epistatic PVE is $H^2*(1-\rho)$. And additive heritability is $H^2*(\rho)$. 10 global population structure PCs are included in each simulation and account for 10\% of the overall phenotype variance.
-%A) power plot: $H^2$ on the top facet. $\rho$ on the x-axis. power = true positive rate on the y-axis. false positive rate is color. 50 simulations are performed per rho/pve combo. error bars are standard errors across 50 simulations.
-%B) ROC curve: true positive rate vs false positive rate across 100 simulations with 10 pathways per sim. 5 are true positives and 5 are true negatives. I need to double check these stats for the ROC curve.
-%C) QQ\_overlap: and D) QQ\_disjoint: 50 simulations. 10 pathways in each. same as the power plots. overlap vs disjoint refers to whether the SNPs in *group 1* so the main pathway SNPs could contain any duplicates across pathways tested in the same simulation.}
 }
 \label{InterPath-Supp-Figure-Greg-Simulations-part1}
 \end{figure}
@@ -369,26 +358,21 @@ Each pathway has
 \centering
 \hspace*{-1.75cm}
 \includegraphics[scale=.45]{Images/Supp/InterPath_Supp_Figure_BritReps_Barplot_vs4.png}
-\caption{\textbf{Number of KEGG and REACTOME pathways identified by MAPIT-R that have significant marginal epistatic effects within standing height and body mass index (BMI) per British replicate subgroup in the UK Biobank.} Here, the random subgroups were created by subsampling either $N =$ 4,000 (reds and oranges) or 10,000 (blues) individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Note that most replicate runs did not produce many significant results.}
+\caption{\textbf{Number of KEGG and REACTOME pathways identified by MAPIT-R that have significant marginal epistatic effects within standing height and body mass index (BMI) per British replicate subgroup in the UK Biobank.} Here, the random subgroups were created by subsampling either $N =$ 4,000 (reds and oranges) or 10,000 (blues) individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Note that most replicate runs did not produce many significant results. \textcolor{red}{See Supplemental Figures \ref{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths-KEGG}-\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt2} and Supplemental Tables \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}-\ref{InterPath-Supp-Table-BritReps-FDRs-pt2} for other analyses using the 4,000 and 10,000 British replicate subgroups.}}
 \label{InterPath-Supp-Figure-BritReps-Barplots}
 \end{figure}
 \clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\newcounter{CharNumber4}
-%\setcounter{CharNumber4}{1}
-%\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber4}}
 \begin{landscape}
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_Heatplots_KEGG_vs4.png}
-\caption{\textbf{Heatmaps depicting the overlap of MAPIT-R significant KEGG pathways for (a) standing height and (b) body mass index (BMI) per British replicate subgroup in the UK Biobank}. Here, the random subgroups were created by subsampling either $N =$ 4,000 or 10,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). The diagonal shows the total number of genome-wide significant pathways per subgroup. We do not observe much overlap between enriched pathways between the replicate subgroups --- even though they all consist of individuals of the same ancestry.}
+\caption{\textbf{Heatmaps depicting the overlap of MAPIT-R significant KEGG pathways for (a) standing height and (b) body mass index (BMI) per British replicate subgroup in the UK Biobank}. Here, the random subgroups were created by subsampling either $N =$ 4,000 or 10,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). The diagonal shows the total number of genome-wide significant pathways per subgroup. We do not observe much overlap between enriched pathways between the replicate subgroups --- even though they all consist of individuals of the same ancestry. \textcolor{red}{See Supplemental Figures \ref{InterPath-Supp-Figure-BritReps-Barplots},\ref{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths-REACTOME}-\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt2} and Supplemental Tables \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}-\ref{InterPath-Supp-Table-BritReps-FDRs-pt2} for other analyses using the 4,000 and 10,000 British replicate subgroups.}}
 \label{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths-KEGG}
 \end{figure}
 \clearpage
-%\addtocounter{figure}{-1}
-%\addtocounter{CharNumber4}{1}
 \end{landscape}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -397,40 +381,35 @@ Each pathway has
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.2]{Images/Supp/InterPath_Supp_Figure_BritReps_Heatplots_REACTOME_vs4.png}
-\caption{\textbf{Heatmaps depicting the overlap of MAPIT-R significant REACTOME pathways for (a) standing height and (b) body mass index (BMI) per British replicate subgroup in the UK Biobank}. Here, the random subgroups were created by subsampling either $N =$ 4,000 or 10,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). The diagonal shows the total number of genome-wide significant pathways per subgroup. We do not observe much overlap between enriched pathways between the replicate subgroups --- even though they all consist of individuals of the same ancestry.}
+\caption{\textbf{Heatmaps depicting the overlap of MAPIT-R significant REACTOME pathways for (a) standing height and (b) body mass index (BMI) per British replicate subgroup in the UK Biobank}. Here, the random subgroups were created by subsampling either $N =$ 4,000 or 10,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). The diagonal shows the total number of genome-wide significant pathways per subgroup. We do not observe much overlap between enriched pathways between the replicate subgroups --- even though they all consist of individuals of the same ancestry. \textcolor{red}{See Supplemental Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}-\ref{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths-KEGG},\ref{InterPath-Supp-Figure-BritReps-perm1-QQPlots-AllPaths}-\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt2} and Supplemental Tables \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}-\ref{InterPath-Supp-Table-BritReps-FDRs-pt2} for other analyses using the 4,000 and 10,000 British replicate subgroups.}}
 \label{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths-REACTOME}
 \end{figure}
 \clearpage
 \end{landscape}
-%\renewcommand{\thefigure}{\arabic{figure}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{Images/Supp/InterPath_Supp_Figure_BritReps_perm1_QQPlots_AllPaths_vs1.png}
-\caption{\textbf{QQ-Plots of MAPIT-R $\bm{p}$-values using KEGG and REACTOME pathway annotations and randomly permuted phenotypes in British replicate subgroups from the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were permuted within each population subgroup ten different times. The $x$-axis shows the -$\log_{10}$ transformed expected $p$-values, while the $y$-axis shows the -$\log_{10}$ observed $p$-values. The random subgroups were created by subsampling either $N =$ 4,000 or 10,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). The dotted red line is the Bonferroni-corrected $p$-value threshold based on the number of pathways tested per database-phenotype combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Overall, we find that MAPIT-R continues to exhibit well-calibrated behavior under the null hypothesis and properly controls for type 1 error rate.}
+\caption{\textbf{QQ-Plots of MAPIT-R $\bm{p}$-values using KEGG and REACTOME pathway annotations and randomly permuted phenotypes in British replicate subgroups from the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were permuted within each population subgroup ten different times. The $x$-axis shows the -$\log_{10}$ transformed expected $p$-values, while the $y$-axis shows the -$\log_{10}$ observed $p$-values. The random subgroups were created by subsampling either $N =$ 4,000 or 10,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). The dotted red line is the Bonferroni-corrected $p$-value threshold based on the number of pathways tested per database-phenotype combination (Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). Overall, we find that MAPIT-R continues to exhibit well-calibrated behavior under the null hypothesis and properly controls for type 1 error rate. \textcolor{red}{See Supplemental Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}-\ref{InterPath-Supp-Figure-BritReps-Heatplots-AllPaths-REACTOME},\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}-\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt2} and Supplemental Tables \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}-\ref{InterPath-Supp-Table-BritReps-FDRs-pt2} for other analyses using the 4,000 and 10,000 British replicate subgroups.}}
 \label{InterPath-Supp-Figure-BritReps-perm1-QQPlots-AllPaths}
 \end{figure}
 \clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\newcounter{CharNumber3}
-%\setcounter{CharNumber3}{1}
-%\renewcommand{\thefigure}{\arabic{figure}\alph{CharNumber3}}
 %\setlength{\footskip}{1cm}
 \begin{figure}[htbp]
 \centering
 %\vspace*{-1cm}
 \includegraphics[width=\textwidth]{Images/Supp/InterPath_Supp_Figure_BritReps_pValHists_AllPaths_vs3_pt1.png}
-\caption{\textbf{Histograms of MAPIT-R $\bm{p}$-values using KEGG and REACTOME pathway annotations and randomly permuted phenotypes in each \textcolor{red}{British 4,000 replicate} subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were independently permuted within each population subgroup ten different times. The random subgroups were created by subsampling $N =$ 4,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). The dotted red line corresponds to a uniform distribution of $p$-values. Overall, we find that MAPIT-R continues to exhibit well-calibrated behavior under the null hypothesis.}
+\caption{\textbf{Histograms of MAPIT-R $\bm{p}$-values using KEGG and REACTOME pathway annotations and randomly permuted phenotypes in each \textcolor{red}{British 4,000 replicate} subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were independently permuted within each population subgroup ten different times. The random subgroups were created by subsampling $N =$ 4,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran4k.4} denotes the fourth replicate in the $N =$ 4,000 subsampling scheme). The dotted red line corresponds to a uniform distribution of $p$-values. Overall, we find that MAPIT-R continues to exhibit well-calibrated behavior under the null hypothesis.
+\textcolor{red}{See Supplemental Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}-\ref{InterPath-Supp-Figure-BritReps-perm1-QQPlots-AllPaths},\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt2} and Supplemental Tables \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}-\ref{InterPath-Supp-Table-BritReps-FDRs-pt2} for other analyses using the 4,000 and 10,000 British replicate subgroups.}}
 \label{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1}
 \end{figure}
 \clearpage
 %\setlength{\footskip}{1cm}
-%\addtocounter{figure}{-1}
-%\addtocounter{CharNumber3}{1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -439,12 +418,11 @@ Each pathway has
 \centering
 %\vspace*{-1cm}
 \includegraphics[width=\textwidth]{Images/Supp/InterPath_Supp_Figure_BritReps_pValHists_AllPaths_vs3_pt2.png}
-\caption{\textbf{Histograms of MAPIT-R $\bm{p}$-values using KEGG and REACTOME pathway annotations and randomly permuted phenotypes in each \textcolor{red}{British 10,000 replicate} subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were independently permuted within each population subgroup ten different times. The random subgroups were created by subsampling $N =$ 10,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran10k.4} denotes the fourth replicate in the $N =$ 10,000 subsampling scheme). The dotted red line corresponds to a uniform distribution of $p$-values. Overall, we find that MAPIT-R continues to exhibit well-calibrated behavior under the null hypothesis.}
+\caption{\textbf{Histograms of MAPIT-R $\bm{p}$-values using KEGG and REACTOME pathway annotations and randomly permuted phenotypes in each \textcolor{red}{British 10,000 replicate} subgroup in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were independently permuted within each population subgroup ten different times. The random subgroups were created by subsampling $N =$ 10,000 individuals from the full British cohort. In the legend, replicates are marked as numbers after the root tag name (e.g., \texttt{Brit.Ran10k.4} denotes the fourth replicate in the $N =$ 10,000 subsampling scheme). The dotted red line corresponds to a uniform distribution of $p$-values. Overall, we find that MAPIT-R continues to exhibit well-calibrated behavior under the null hypothesis. \textcolor{red}{See Supplemental Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}-\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt1} and Supplemental Tables \ref{InterPath-Supp-Table-BritReps-FDRs-pt1}-\ref{InterPath-Supp-Table-BritReps-FDRs-pt2} for other analyses using the 4,000 and 10,000 British replicate subgroups.}}
 \label{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt2}
 \end{figure}
 \clearpage
 %\setlength{\footskip}{1cm}
-%\renewcommand{\thefigure}{\arabic{figure}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -707,7 +685,7 @@ genes are assigned to the same pathways.}
 & British (10k, Rep.~5) & 9596 & 597507 & 186 & 669 \\ [2pt]
   \hline
 \end{tabular}
-\caption{\textbf{Tabulation of the number of subgroups, individuals, SNPs, and pathways analyzed in this study}. Here, the category ``original'' subgroups refers to the multiple global human ancestries from the UK Biobank that were initially analyzed at the beginning of this study, while the ``British replicates'' refers specifically to the different subgroups that were created by taking random independent subsamples of the full British cohort in the UK Biobank. The number of individuals and SNPs in the second and third columns are those post quality-control (see Supplementary Note), and the number of KEGG and REACTOME pathways analyzed within each subgroup are shown in the fourth and fifth columns. Note that for the ``British replicate'' subgroups, each dataset initially began with either 4,000 or 10,000 individuals before quality-control.}
+\caption{\textbf{Tabulation of the number of subgroups, individuals, SNPs, and pathways analyzed in this study}. Here, the category ``original'' subgroups refers to the multiple global human ancestries from the UK Biobank that were initially analyzed at the beginning of this study, while the ``British replicates'' refers specifically to the different subgroups that were created by taking random independent subsamples of the full British cohort in the UK Biobank. The number of individuals and SNPs in the second and third columns are those post quality control (see Supplementary Note \textcolor{red}{for details and Supplementary Table \ref{InterPath-Supp-Table-UKBQCStats} for number of individuals dropped at each quality control processing stage}), and the number of KEGG and REACTOME pathways analyzed within each subgroup are shown in the fourth and fifth columns. Note that for the ``British replicate'' subgroups, each dataset initially began with either 4,000 or 10,000 individuals before quality control. \textcolor{red}{Additionally, note that pathway numbers across British replicates vary slightly due to some replicates not containing enough individuals to analyze pathways with the most SNPs; this leads to those largest pathways being dropped.}}
 \label{InterPath-Supp-Table-UKBPopStats}
 \end{table}
 
@@ -765,7 +743,7 @@ genes are assigned to the same pathways.}
  & Pakistani & 5960 & 8.39$\times10^{-5}$ & 0 & 0.000 & 4 & 0.067 & 45 & 0.755 \\
    \hline
 \end{tabular}
-\caption[TBD]{\textbf{MAPIT-R false discovery rates at different significance thresholds using permuted phenotypes across the different ancestry-specific subgroups in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were independently permuted within each population subgroup ten different times. Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'' \textcolor{red}{(ordered from top-to-bottom in each section)}. Phenotype and pathway database combinations include: (\textit{i}) KEGG+Height, (\textit{ii}) KEGG+BMI, (\textit{iii}) REACTOME+Height, and (\textit{iv}) REACTOME+BMI. Genome-wide significance at a Bonferroni-corrected $p$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$. The second column lists the total number of pathways that were tested across each of the ten phenotype permutations. \# FPs denotes the number of false positives at that threshold and FDR reports the corresponding false discovery rate (listed as percentages). The remaining columns list the same information but at significance levels $\alpha = 0.001$ and 0.01, respectively.}
+\caption[TBD]{\textbf{MAPIT-R false discovery rates at different significance thresholds using permuted phenotypes across the different ancestry-specific subgroups in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or BMI measurements. Note that traits were independently permuted within each population subgroup ten different times. Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'' \textcolor{red}{(ordered here from top-to-bottom in each section)}. Phenotype and pathway database combinations include: (\textit{i}) KEGG+Height, (\textit{ii}) KEGG+BMI, (\textit{iii}) REACTOME+Height, and (\textit{iv}) REACTOME+BMI. Genome-wide significance at a Bonferroni-corrected $p$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$. The second column lists the total number of pathways that were tested across each of the ten phenotype permutations. \# FPs denotes the number of false positives at that threshold and FDR reports the corresponding false discovery rate (listed as percentages). The remaining columns list the same information but at significance levels $\alpha = 0.001$ and 0.01, respectively.}
 \label{InterPath-Supp-Table-AllPops-FDRs}
 \end{table}
 
@@ -850,6 +828,93 @@ genes are assigned to the same pathways.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{landscape}
+\setlength{\extrarowheight}{3pt}
+\begin{table}[ht]
+\centering
+\vspace*{-1.5cm}
+\hspace*{-2em}
+\begin{tabular}{|c|c|c|ccc|cc|cc|}
+  \hline
+& & & \multicolumn{3}{c|}{\textbf{$\bm{\alpha =}$ Bonferroni Correction}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.001}$ Thresh.}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.01}$ Thresh.}}\\
+\hline
+\textbf{Database (Trait)} & \textbf{Subgroup} & \textbf{\# Pathways} & \textbf{Thresh.} & \textbf{\# FPs} & \textbf{FDR (\%)} & \textbf{\# FPs} & \textbf{FDR (\%)} &  \textbf{\# FPs} & \textbf{FDR (\%)} \\ 
+  \hline
+\multirow{10.5}{*}{\textbf{KEGG (Height)}} & British (4k, Rep.~1) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 0 & 0.000 & 13 & 0.751 \\
+  & British (4k, Rep.~2) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.058 & 18 & 1.040 \\
+  & British (4k, Rep.~3) & 1730 & 2.89$\times 10^{-4}$ & 1 & 0.058 & 1 & 0.058 & 20 & 1.156 \\
+  & British (4k, Rep.~4) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 4 & 0.231 & 23 & 1.329 \\
+  & British (4k, Rep.~5) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 2 & 0.116 & 22 & 1.272 \\
+  & British (10k, Rep.~1) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.054 & 26 & 1.398 \\
+  & British (10k, Rep.~2) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.054 & 12 & 0.645 \\
+  & British (10k, Rep.~3) & 1860 & 2.69$\times 10^{-4}$ & 2 & 0.108 & 2 & 0.108 & 21 & 1.129 \\
+  & British (10k, Rep.~4) & 1860 & 2.69$\times 10^{-4}$ & 1 & 0.054 & 2 & 0.108 & 16 & 0.860 \\
+  & British (10k, Rep.~5) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 0 & 0.000 & 12 & 0.645 \\ 
+  \hline
+\multirow{10.5}{*}{\textbf{KEGG (BMI)}} & British (4k, Rep.~1) & 1730 & 2.89$\times 10^{-4}$ & 1 & 0.058 & 2 & 0.116 & 14 & 0.809 \\
+  & British (4k, Rep.~2) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.058 & 23 & 1.329 \\
+  & British (4k, Rep.~3) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 3 & 0.173 & 21 & 1.214 \\
+  & British (4k, Rep.~4) & 1730 & 2.89$\times 10^{-4}$ & 1 & 0.058 & 5 & 0.289 & 21 & 1.214 \\
+  & British (4k, Rep.~5) & 1730 & 2.89$\times 10^{-4}$ & 2 & 0.116 & 7 & 0.405 & 23 & 1.329 \\
+  & British (10k, Rep.~1) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.054 & 25 & 1.344 \\
+  & British (10k, Rep.~2) & 1860 & 2.69$\times 10^{-4}$ & 2 & 0.108 & 4 & 0.215 & 22 & 1.183 \\
+  & British (10k, Rep.~3) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 2 & 0.108 & 20 & 1.075 \\
+  & British (10k, Rep.~4) & 1860 & 2.69$\times 10^{-4}$ & 1 & 0.054 & 2 & 0.108 & 23 & 1.237 \\
+  & British (10k, Rep.~5) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 0 & 0.000 & 20 & 1.075 \\ 
+   \hline
+\end{tabular}
+\caption{\textbf{MAPIT-R false discovery rates at different significance thresholds using KEGG pathway annotations and permuted phenotypes across the British replicate subgroups in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or body mass index (BMI) measurements. Note that traits were independently permuted within each population subgroup ten different times. The random subgroups were created by subsampling either $N$ = 4,000 or 10,000 individuals from the full British cohort. Genome-wide significance at a Bonferroni-corrected $p$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$. The second column lists the total number of pathways that were tested across each of the ten phenotype permutations. \# FPs denotes the number of false positives at that threshold and FDR reports the corresponding false discovery rate (listed as percentages). The remaining columns list the same information but at significance levels $\alpha = 0.001$ and 0.01, respectively. \textcolor{red}{See Supplemental Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}-\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt2} and Supplemental Table \ref{InterPath-Supp-Table-BritReps-FDRs-pt2} for other analyses using the 4,000 and 10,000 British replicate subgroups.}}
+\label{InterPath-Supp-Table-BritReps-FDRs-pt1}
+\end{table}
+\end{landscape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{landscape}
+
+\setlength{\extrarowheight}{3pt}
+
+\begin{table}[ht]
+\centering
+\vspace*{-1.5cm}
+\hspace*{-4em}
+\begin{tabular}{|c|c|c|ccc|cc|cc|}
+  \hline
+& & & \multicolumn{3}{c|}{\textbf{$\bm{\alpha =}$ Bonferroni Correction}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.001}$ Thresh.}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.01}$ Thresh.}}\\
+\hline
+\textbf{Database (Trait)} & \textbf{Subgroup} & \textbf{\# Pathways} & \textbf{Thresh.} & \textbf{\# FPs} & \textbf{FDR (\%)} & \textbf{\# FPs} & \textbf{FDR (\%)} &  \textbf{\# FPs} & \textbf{FDR (\%)} \\ 
+  \hline
+\multirow{10.5}{*}{\textbf{REACTOME (Height)}} & British (4k, Rep.~1) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 & 9 & 0.138 & 69 & 1.062 \\
+  & British (4k, Rep.~2) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 &  4 & 0.062 & 61 & 0.938 \\
+  & British (4k, Rep.~3) & 6490 & 7.704$\times 10^{-5}$ & 1 & 0.015 & 8 & 0.123 & 59 & 0.909 \\
+  & British (4k, Rep.~4) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 & 5 & 0.077 & 69 & 1.062 \\
+  & British (4k, Rep.~5) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 & 6 & 0.092 & 53 & 0.815 \\
+  & British (10k, Rep.~1) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 4 & 0.060 & 55 & 0.822 \\
+  & British (10k, Rep.~2) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 4 & 0.060 & 52 & 0.777 \\
+  & British (10k, Rep.~3) & 6690 & 7.474$\times 10^{-5}$ & 2 & 0.030 & 11 & 0.164 & 60 & 0.897 \\
+  & British (10k, Rep.~4) & 6690 & 7.474$\times 10^{-5}$ & 1 & 0.015 & 4 & 0.060 & 69 & 1.031 \\
+  & British (10k, Rep.~5) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 4 & 0.060 & 60 & 0.897 \\
+   \hline
+\multirow{10.5}{*}{\textbf{REACTOME (BMI)}} & British (4k, Rep.~1) & 6490 & 7.704$\times 10^{-5}$ & 1 & 0.015 & 4 & 0.062 & 52 & 0.801 \\
+  & British (4k, Rep.~2) & 6500 & 7.692$\times 10^{-5}$ & 1 & 0.015 & 14 & 0.215 & 63 & 0.969 \\
+  & British (4k, Rep.~3) & 6490 & 7.704$\times 10^{-5}$ & 0 & 0.000 & 5 & 0.077 & 79 & 1.217 \\
+  & British (4k, Rep.~4) & 6500 & 7.692$\times 10^{-5}$ & 2 & 0.031 & 6 & 0.092 & 61 & 0.938 \\
+  & British (4k, Rep.~5) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 & 7 & 0.108 & 73 & 1.123 \\
+  & British (10k, Rep.~1) & 6690 & 7.474$\times 10^{-5}$ & 2 & 0.030 & 10 & 0.149 & 73 & 1.091 \\
+  & British (10k, Rep.~2) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 3 & 0.045 & 42 & 0.628 \\
+  & British (10k, Rep.~3) & 6690 & 7.474$\times 10^{-5}$ & 1 & 0.015 & 10 & 0.149 & 74 & 1.106 \\
+  & British (10k, Rep.~4) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 7 & 0.105 & 65 & 0.972 \\
+  & British (10k, Rep.~4) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 5 & 0.075 & 57 & 0.852 \\
+    \hline
+\end{tabular}
+\caption{\textbf{MAPIT-R false discovery rates at different significance thresholds using REACTOME pathway annotations and permuted phenotypes across the British replicate subgroups in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or body mass index (BMI) measurements. Note that traits were independently permuted within each population subgroup ten different times. The random subgroups were created by subsampling either $N$ = 4,000 or 10,000 individuals from the full British cohort. Genome-wide significance at a Bonferroni-corrected $p$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$. The second column lists the total number of pathways that were tested across each of the ten phenotype permutations. \# FPs denotes the number of false positives at that threshold and FDR reports the corresponding false discovery rate (listed as percentages). The remaining columns list the same information but at significance levels $\alpha = 0.001$ and 0.01, respectively. \textcolor{red}{See Supplemental Figures \ref{InterPath-Supp-Figure-BritReps-Barplots}-\ref{InterPath-Supp-Figure-BritReps-10perms-pValHists-pt2} and Supplemental Table \ref{InterPath-Supp-Table-BritReps-FDRs-pt1} for other analyses using the 4,000 and 10,000 British replicate subgroups.}}
+\label{InterPath-Supp-Table-BritReps-FDRs-pt2}
+\end{table}
+
+\end{landscape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{table}[H]
 \caption{\textbf{Genes that are annotated for multiple MAPIT-R enriched pathways in standing height and body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank.} Subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'' \textcolor{red}{(ordered here from top-to-bottom)}. Phenotype and pathway database combinations include: (\textit{i}) KEGG+Height, (\textit{ii}) KEGG+BMI, (\textit{iii}) REACTOME+Height, and (\textit{iv}) REACTOME+BMI. Genome-wide significance at a Bonferroni-corrected $p$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$ (see Supplementary Table \ref{InterPath-Supp-Table-UKBPopStats}). (XLSX)}
 \label{InterPath-Supp-Table-AllPops-TopGeneCounts-Caption}
@@ -904,93 +969,6 @@ genes are assigned to the same pathways.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{landscape}
-\setlength{\extrarowheight}{3pt}
-\begin{table}[ht]
-\centering
-\vspace*{-1.5cm}
-\hspace*{-2em}
-\begin{tabular}{|c|c|c|ccc|cc|cc|}
-  \hline
-& & & \multicolumn{3}{c|}{\textbf{$\bm{\alpha =}$ Bonferroni Correction}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.001}$ Thresh.}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.01}$ Thresh.}}\\
-\hline
-\textbf{Database (Trait)} & \textbf{Subgroup} & \textbf{\# Pathways} & \textbf{Thresh.} & \textbf{\# FPs} & \textbf{FDR (\%)} & \textbf{\# FPs} & \textbf{FDR (\%)} &  \textbf{\# FPs} & \textbf{FDR (\%)} \\ 
-  \hline
-\multirow{10.5}{*}{\textbf{KEGG (Height)}} & British (4k, Rep.~1) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 0 & 0.000 & 13 & 0.751 \\
-  & British (4k, Rep.~2) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.058 & 18 & 1.040 \\
-  & British (4k, Rep.~3) & 1730 & 2.89$\times 10^{-4}$ & 1 & 0.058 & 1 & 0.058 & 20 & 1.156 \\
-  & British (4k, Rep.~4) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 4 & 0.231 & 23 & 1.329 \\
-  & British (4k, Rep.~5) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 2 & 0.116 & 22 & 1.272 \\
-  & British (10k, Rep.~1) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.054 & 26 & 1.398 \\
-  & British (10k, Rep.~2) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.054 & 12 & 0.645 \\
-  & British (10k, Rep.~3) & 1860 & 2.69$\times 10^{-4}$ & 2 & 0.108 & 2 & 0.108 & 21 & 1.129 \\
-  & British (10k, Rep.~4) & 1860 & 2.69$\times 10^{-4}$ & 1 & 0.054 & 2 & 0.108 & 16 & 0.860 \\
-  & British (10k, Rep.~5) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 0 & 0.000 & 12 & 0.645 \\ 
-  \hline
-\multirow{10.5}{*}{\textbf{KEGG (BMI)}} & British (4k, Rep.~1) & 1730 & 2.89$\times 10^{-4}$ & 1 & 0.058 & 2 & 0.116 & 14 & 0.809 \\
-  & British (4k, Rep.~2) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.058 & 23 & 1.329 \\
-  & British (4k, Rep.~3) & 1730 & 2.89$\times 10^{-4}$ & 0 & 0.000 & 3 & 0.173 & 21 & 1.214 \\
-  & British (4k, Rep.~4) & 1730 & 2.89$\times 10^{-4}$ & 1 & 0.058 & 5 & 0.289 & 21 & 1.214 \\
-  & British (4k, Rep.~5) & 1730 & 2.89$\times 10^{-4}$ & 2 & 0.116 & 7 & 0.405 & 23 & 1.329 \\
-  & British (10k, Rep.~1) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 1 & 0.054 & 25 & 1.344 \\
-  & British (10k, Rep.~2) & 1860 & 2.69$\times 10^{-4}$ & 2 & 0.108 & 4 & 0.215 & 22 & 1.183 \\
-  & British (10k, Rep.~3) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 2 & 0.108 & 20 & 1.075 \\
-  & British (10k, Rep.~4) & 1860 & 2.69$\times 10^{-4}$ & 1 & 0.054 & 2 & 0.108 & 23 & 1.237 \\
-  & British (10k, Rep.~5) & 1860 & 2.69$\times 10^{-4}$ & 0 & 0.000 & 0 & 0.000 & 20 & 1.075 \\ 
-   \hline
-\end{tabular}
-\caption{\textbf{MAPIT-R false discovery rates at different significance thresholds using KEGG pathway annotations and permuted phenotypes across the British replicate subgroups in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or body mass index (BMI) measurements. Note that traits were independently permuted within each population subgroup ten different times. The random subgroups were created by subsampling either $N$ = 4,000 or 10,000 individuals from the full British cohort. Genome-wide significance at a Bonferroni-corrected $p$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$. The second column lists the total number of pathways that were tested across each of the ten phenotype permutations. \# FPs denotes the number of false positives at that threshold and FDR reports the corresponding false discovery rate (listed as percentages). The remaining columns list the same information but at significance levels $\alpha = 0.001$ and 0.01, respectively.}
-\label{InterPath-Supp-Table-BritReps-FDRs-pt1}
-\end{table}
-\end{landscape}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{landscape}
-
-\setlength{\extrarowheight}{3pt}
-
-\begin{table}[ht]
-\centering
-\vspace*{-1.5cm}
-\hspace*{-4em}
-\begin{tabular}{|c|c|c|ccc|cc|cc|}
-  \hline
-& & & \multicolumn{3}{c|}{\textbf{$\bm{\alpha =}$ Bonferroni Correction}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.001}$ Thresh.}} & \multicolumn{2}{c|}{\textbf{$\bm{\alpha = 0.01}$ Thresh.}}\\
-\hline
-\textbf{Database (Trait)} & \textbf{Subgroup} & \textbf{\# Pathways} & \textbf{Thresh.} & \textbf{\# FPs} & \textbf{FDR (\%)} & \textbf{\# FPs} & \textbf{FDR (\%)} &  \textbf{\# FPs} & \textbf{FDR (\%)} \\ 
-  \hline
-\multirow{10.5}{*}{\textbf{REACTOME (Height)}} & British (4k, Rep.~1) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 & 9 & 0.138 & 69 & 1.062 \\
-  & British (4k, Rep.~2) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 &  4 & 0.062 & 61 & 0.938 \\
-  & British (4k, Rep.~3) & 6490 & 7.704$\times 10^{-5}$ & 1 & 0.015 & 8 & 0.123 & 59 & 0.909 \\
-  & British (4k, Rep.~4) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 & 5 & 0.077 & 69 & 1.062 \\
-  & British (4k, Rep.~5) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 & 6 & 0.092 & 53 & 0.815 \\
-  & British (10k, Rep.~1) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 4 & 0.060 & 55 & 0.822 \\
-  & British (10k, Rep.~2) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 4 & 0.060 & 52 & 0.777 \\
-  & British (10k, Rep.~3) & 6690 & 7.474$\times 10^{-5}$ & 2 & 0.030 & 11 & 0.164 & 60 & 0.897 \\
-  & British (10k, Rep.~4) & 6690 & 7.474$\times 10^{-5}$ & 1 & 0.015 & 4 & 0.060 & 69 & 1.031 \\
-  & British (10k, Rep.~5) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 4 & 0.060 & 60 & 0.897 \\
-   \hline
-\multirow{10.5}{*}{\textbf{REACTOME (BMI)}} & British (4k, Rep.~1) & 6490 & 7.704$\times 10^{-5}$ & 1 & 0.015 & 4 & 0.062 & 52 & 0.801 \\
-  & British (4k, Rep.~2) & 6500 & 7.692$\times 10^{-5}$ & 1 & 0.015 & 14 & 0.215 & 63 & 0.969 \\
-  & British (4k, Rep.~3) & 6490 & 7.704$\times 10^{-5}$ & 0 & 0.000 & 5 & 0.077 & 79 & 1.217 \\
-  & British (4k, Rep.~4) & 6500 & 7.692$\times 10^{-5}$ & 2 & 0.031 & 6 & 0.092 & 61 & 0.938 \\
-  & British (4k, Rep.~5) & 6500 & 7.692$\times 10^{-5}$ & 0 & 0.000 & 7 & 0.108 & 73 & 1.123 \\
-  & British (10k, Rep.~1) & 6690 & 7.474$\times 10^{-5}$ & 2 & 0.030 & 10 & 0.149 & 73 & 1.091 \\
-  & British (10k, Rep.~2) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 3 & 0.045 & 42 & 0.628 \\
-  & British (10k, Rep.~3) & 6690 & 7.474$\times 10^{-5}$ & 1 & 0.015 & 10 & 0.149 & 74 & 1.106 \\
-  & British (10k, Rep.~4) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 7 & 0.105 & 65 & 0.972 \\
-  & British (10k, Rep.~4) & 6690 & 7.474$\times 10^{-5}$ & 0 & 0.000 & 5 & 0.075 & 57 & 0.852 \\
-    \hline
-\end{tabular}
-\caption{\textbf{MAPIT-R false discovery rates at different significance thresholds using REACTOME pathway annotations and permuted phenotypes across the British replicate subgroups in the UK Biobank.} Here, we run MAPIT-R after conducting a single random permutation of either height or body mass index (BMI) measurements. Note that traits were independently permuted within each population subgroup ten different times. The random subgroups were created by subsampling either $N$ = 4,000 or 10,000 individuals from the full British cohort. Genome-wide significance at a Bonferroni-corrected $p$-value threshold was based on the number of pathways tested in each database-phenotype-subgroup combination with significance value set to $\alpha = 0.05$. The second column lists the total number of pathways that were tested across each of the ten phenotype permutations. \# FPs denotes the number of false positives at that threshold and FDR reports the corresponding false discovery rate (listed as percentages). The remaining columns list the same information but at significance levels $\alpha = 0.001$ and 0.01, respectively.}
-\label{InterPath-Supp-Table-BritReps-FDRs-pt2}
-\end{table}
-
-\end{landscape}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{table}[ht]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -1015,7 +993,7 @@ genes are assigned to the same pathways.}
    \hline
 \end{tabular}
 \caption{\textbf{Tabulation of the number of individuals dropped per subgroup after each quality control step}. Here, the category ``original'' subgroups refers to the multiple global human ancestries from the UK Biobank that were initially analyzed at the beginning of this study, while the ``British replicates'' refers specifically to the different subgroups that were created by taking random independent subsamples of the full British cohort in the UK Biobank. 
-The number of individuals and SNPs in the second and third columns are those post quality-control (see Supplementary Note), and the number of KEGG and REACTOME pathways analyzed within each subgroup are shown in the fourth and fifth columns. Note that for the ``British replicate'' subgroups, each dataset initially began with either 4,000 or 10,000 individuals before quality-control.}
+The number of individuals and SNPs in the second and third columns are those post quality control (see Supplementary Note), and the number of KEGG and REACTOME pathways analyzed within each subgroup are shown in the fourth and fifth columns. Note that for the ``British replicate'' subgroups, each dataset initially began with either 4,000 or 10,000 individuals before quality control.}
 \label{InterPath-Supp-Table-UKBQCStats}
 \end{table}
 
@@ -1029,3 +1007,5 @@ The number of individuals and SNPs in the second and third columns are those pos
 \endgroup
 
 \end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
