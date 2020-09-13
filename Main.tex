@@ -357,7 +357,7 @@ The authors declare no competing interests.
 \begin{figure}[htb]
 \centering
 %\hspace*{-.9cm}
-\includegraphics[width=\textwidth]{Images/Main/InterPath_Main_Figure_Barplots_KEGG_vs4.png}
+\includegraphics[width=\textwidth]{Images/Main/Figure1.png}
 \caption{\textbf{Number of KEGG pathways identified by MAPIT-R that have significant marginal epistatic effects within (a) standing height and (b) body mass index (BMI) per subgroup in the UK Biobank.} Here, subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'' \textcolor{red}{(see legend to the right of plots)}. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{MAPITR-Supp-Table-UKBPopStats}). Across all database-phenotype combinations, the African subgroup has the largest numbers of significant pathways. For lists of the specific significant pathways per database-phenotype-subgroup combination, see Supplementary Table \ref{MAPITR-Supp-Table-TopPathways}. Results from running MAPIT-R with REACTOME database pathways can be found in Supplementary Figure \ref{MAPITR-Supp-Figure-Barplots-REACTOME}.}
 \label{MAPITR-Main-Figure-Barplots-KEGG}
 \end{figure}
@@ -420,7 +420,7 @@ The authors declare no competing interests.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{Images/Main/InterPath_Main_Figure_Heatplots_KEGG_vs5.png}
+\includegraphics[width=\textwidth]{Images/Main/Figure2.png}
 \caption{\textbf{Heatmaps depicting the overlap of MAPIT-R significant KEGG pathways for (a) standing height and (b) body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank}. Here, subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'' \textcolor{red}{(ordered here from top-to-bottom and left-to-right)}. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination (see Supplementary Table \ref{MAPITR-Supp-Table-UKBPopStats}). The diagonal shows the total number of genome-wide significant pathways per subgroup. We observe that significant pathways identified in non-African subgroups overlap more often with pathways from the African subgroup than they do with pathways from the other, remaining non-African subgroups. Results for both phenotypes in the REACTOME database can be seen in Supplementary Figure \ref{MAPITR-Supp-Figure-Heatplots-REACTOME}.}
 \label{MAPITR-Main-Figure-Heatplots-KEGG}
 \end{figure}
@@ -429,7 +429,7 @@ The authors declare no competing interests.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{Images/Main/InterPath_Main_Figure_MAPITR_PhenoComps_African_vs4_legend.png}
+\includegraphics[width=\textwidth]{Images/Main/Figure3.png}
 \caption{\textbf{Scatterplots comparing the MAPIT-R $\bm{p}$-values using (a) KEGG and (b) REACTOME pathways annotations in height and body mass index (BMI) within the African subgroup in the UK Biobank.} For each plot, the $x$-axis shows the -$\log_{10}$ transformed MAPIT-R $p$-value for height, while the $y$-axis shows the same results for BMI. The red horizontal and vertical dashed lines are marked at the Bonferroni-corrected $p$-value thresholds for genome-wide significance in each pathway-phenotype combination (see Supplementary Table \ref{MAPITR-Supp-Table-UKBPopStats}). Pathways in the top right quadrant have significant marginal epistatic effects in both traits; while, points in the bottom right and top left quadrants are pathways that are uniquely enriched in height or BMI, respectively. The four highlighted pathways in blue represent a cluster metabolic related signaling pathways and gene-sets that have been functionally connected to BMI in previous studies \cite{George2004,Manning2017,Latva-Rasku2018}. Across both databases, BMI results have lower MAPIT-R $p$-values than height results on average. For these comparisons in all the UK Biobank subgroups, see Supplementary Figure \ref{MAPITR-Supp-Figure-PhenoComps-AllPops}.}
 \label{MAPITR-Main-Figure-PhenoComps-African}
 \end{figure}
@@ -438,7 +438,7 @@ The authors declare no competing interests.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{Images/Main/InterPath_Main_Figure_Hypergeometric_RestrictedComps_African_BMI_vs4.png}
+\includegraphics[width=\textwidth]{Images/Main/Figure4.png}
 \caption{\textbf{Scatterplots comparing the $\bm{p}$-values from the hypergeometric enrichment analyses using only (a) KEGG and (b) REACTOME pathways annotations with at most 1000 SNPs within the African subgroup in the UK Biobank.} Here, the gene-based $p$-values using the size restricted pathways are shown on the $y$-axis, while the results from the original unrestricted version of the analysis are shown on the $x$-axis. The blue dashed circle in panel \textbf{(b)} highlights the proteasome gene family cluster. For lists containing each gene's original and size-restricted hypergeometric $p$-values, see Supplementary Table \ref{MAPITR-Supp-Table-Hypergeometric-RestrictedComps-African-BMI}. Note that we only show results for BMI because few MAPIT-R significant pathways in the height analysis remained after imposing the size restriction.}
 \label{MAPITR-Main-Figure-Hypergeometric-RestrictedComps-African-BMI}
 \end{figure}
@@ -448,7 +448,7 @@ The authors declare no competing interests.
 \begin{landscape}
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=.6]{Images/Main/InterPath_Main_Figure_Proteasome_vs2.png}
+\includegraphics[scale=.6]{Images/Main/Figure5.png}
 \caption{\textbf{Structure of the proteasome and results from applying a ``leave-one-out'' approach to MAPIT-R with proteasome gene families}. \textbf{(a)} Models of the different isoforms of the proteasome. The ``26S Proteasome'' is the main isoform, composed of the 20S core particle (CP) and capped on both ends by the 19S regulatory particle (RP), which is required for degradation of ubiquitinated proteins. The ``Hybrid Proteasome'' isoform is produced when the CP binds on one end with an RP and on the other end with the IFN-$\gamma$-inducible complex PA28$\alpha\beta$. The \textit{PSMA} and \textit{PSMB} gene families encode components of the CP, the \textit{PSMC} and \textit{PSMD} gene families encode components of the RP, and members of the \textit{PSME} gene family encode PA28$\alpha\beta$. Note that \textit{PSMF} represents a proteasome inhibitor and is not shown. The structures shown were adopted and modified from the Protein Data Bank (human 26S proteasome, \url{https://www.rcsb.org/structure/5GJR}; mouse PA28$\alpha\beta$, \url{https://www.rcsb.org/structure/5MX5}) \cite{Murata2018}. \textbf{(b)} The heatmap shows the change in original MAPIT-R -$\log_{10}$ $p$-value for different REACTOME pathways when each proteasome gene family is removed one at a time in a ``leave-one-out'' manner. The analyses were conducted in BMI for the African subgroup of the UK Biobank. The $x$-axis shows each proteasome gene family and the $y$-axis lists each REACTOME pathway. Each column has been scaled by the number of SNPs present in the given gene family and, as a result, the heatmap specifically shows the \textcolor{red}{-$\log_{10}$ $p$-value change ($\Delta$ in legend) per SNP}. \textbf{(c)} The table shows the number of SNPs present in each proteasome gene family (left), as well as the number of SNPs present in each REACTOME pathway (right).}
 \label{MAPITR-Main-Figure-Proteasome-Panels}
 \end{figure} 
