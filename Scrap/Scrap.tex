@@ -1034,3 +1034,22 @@ MAPIT-R analyses were conducted by using code built on the modeling and testing 
 \caption[TBD]{\textbf{Specific results from hypergeometric tests performed for body mass index (BMI) using both the original and size-restricted pathway annotations within the African subgroup in the UK Biobank.} Here, we focus on two genes, \textit{UBA52} and \textit{PSM*}. Note that the vast majority of proteasome genes included in our analysis had similar results across each hypergeometric category, so we use \textit{PSM*} to represent the gene families as a whole. In each case, genes are tested for being annotated more frequently among MAPIT-R enriched pathways than among the background distribution of pathways in the KEGG and REACTOME databases. Two study designs were employed for these tests: (\textit{i}) using all pathways present in the given databases, or (\textit{ii}) using only pathways that contained less than or equal to 1,000 SNPs. The first column lists the gene or gene family being tested. The second column lists which of the two aforementioned study designs was used. Columns three through six list the different count values used in the hypergeometric test: the third column lists the number of times a gene is present among the genome-wide significant list of pathways, the fourth column lists the total number of pathways that were genome-wide significant, the fifth column lists the number of times a gene is present among all the pathways in the given database, and the sixth column lists the total number of pathways in the given database. The seventh column is the hypergeometric $p$-value associated with columns three through six.}
 \label{MAPITR-Supp-Table-Hypergeometric-Example}
 \end{table}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{landscape}
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[No Pathway Overlap]{\includegraphics[width=.45\textwidth]{Images/Supp/SupplementaryFigure4a.png}}
+%\subfigure[Pathway Overlap]{\includegraphics[width=.45\textwidth]{Images/Supp/SupplementaryFigure4b.png}}
+%\caption{\textcolor{red}{\textbf{QQ-Plots of MAPIT-R performance under different pathway definition schemes}. Here, we show QQ-plots from running 50 `null' simulations of the model described in Supplementary Figure \ref{MAPITR-Supp-Figure-Simulations-pt1} with two different pathway definition schemes. `Null' here means epistatic effect sizes were assigned values of zero instead of being drawn as standard normal variables; as a result, this setup represents a scenario where there is no interactions between pathway SNPs and the rest of the genome, hence being a test of the null hypothesis of no epistatic interactions. (a) shows a pathway definition scheme where pathway SNPs were chosen from the genome without replacement, meaning there is no SNP overlap between pathways. (b) shows a pathway definition scheme where pathway SNPs were chosen from the genome with replacement, meaning there can be SNP overlap between pathways. For both plots, the $x$-axis shows the -$\log_{10}$ expected $p$-value and the $y$-axis shows the -$\log_{10}$ observed $p$-value. Blue points represent the 500 total (10 pathways * 50 simulations) pathways simulated and tested. Grey windows represent 95\% confidence intervals. Barplots of simulation results, including from a wider range of simulated genetic architectures, are shown in Supplementary Figure \ref{MAPITR-Supp-Figure-Simulations-pt1}}.
+%}
+%\label{MAPITR-Supp-Figure-Simulations-pt2}
+%\end{figure}
+%\end{landscape}
+\clearpage
