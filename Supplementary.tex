@@ -278,8 +278,8 @@ Hypergeometric analyses were conducted by counting the number of times a given g
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=.6]{Images/Supp/SupplementaryFigure3.png}
-\caption{\textcolor{red}{\textbf{Barplots of MAPIT-R performance under different simulated genetic architectures}. Here, we show results from running simulations of MAPIT-R under various genetic architectures. We run a simulation scheme similar to that used in Crawford et al. \cite{Crawford2017a}. For all simulations, 3,000 random individuals from the British subgroup and 10,000 random SNPs from chromosome 1 were used. We simulated continuous phenotypes using the following model: $\by =  \bX_{\mathcal{C}}\bbeta_{\mathcal{C}} + \bZ\bu + \bW\balpha + \bepsilon$, where $\bX_{\mathcal{C}}$ is a genotype matrix of randomly chosen causal SNPs with additive effects, $\bZ$ is a covariate matrix representing population structure, $\bW$ is a design matrix that contains SNP-by-SNP interaction designations, and $\bu$, $\bbeta$, and $\balpha$ are all effect sizes that are drawn from standard normal distributions, or $\N(\bm{0},\bI)$. The random noise term, $\bepsilon$, is also drawn as a standard normal variable. To create the matrix $\bW$, we first randomly create 10 enriched pathways, each containing 50 causal SNPs. We then allow each causal SNP to interact with 200 SNPs from the additive genetic background. This is done by simply taking the Hadamard (element-wise) product between genotypic vectors. In total, 100,000 interactions are created per simulation (i.e., 10 pathways each with 50 SNPs that interact with 200 partnering SNPs). We scale both the additive and pairwise interaction effects so that collectively they explain a fixed proportion of the phenotypic variance. Namely, the additive effects make
-up $\rho\%$ while the epistatic terms make up the remaining $(1-\rho)\%$. Alternatively, the proportion of broad-sense heritability that is explained by additive effects is said to be $\V[\bX_{\mathcal{C}}\bbeta_{\mathcal{C}}] = H^2\rho$, while the proportion of heritability that is detailed by interactions is $H^2(1-\rho)$. Lastly, we introduce population stratification effects by using the top 10 local principal components as the covariates in $\bZ$ and scaling their effects to account for an additional 10\% of the overall phenotypic variance. Overall, analyze 50 simulated datasets per scenario. The barplots show mean power and false discovery rates (FDR) as a function of $\rho$ for \textbf{(a)} $H^2 = 0.6$ and \textbf{(b)} $H^2 = 0.8$, respectively. Standard error bars are also included. QQ-plots from this simulation scheme can be found in Supplementary Figure \ref{MAPITR-Supp-Figure-Simulations-pt2}.}
+\caption{\textcolor{red}{\textbf{Barplots of MAPIT-R performance under different simulated genetic architectures}. Here, we show results from running simulations of MAPIT-R under various genetic architectures. We run a simulation scheme similar to that used in Crawford et al. \cite{Crawford2017a}. For all simulations, 3,000 random individuals from the British subgroup and 10,000 random SNPs from chromosome 1 were used. We simulated continuous phenotypes using the following model: $\by =  \bX_{\mathcal{C}}\bbeta_{\mathcal{C}} + \bZ\bu + \bW\balpha + \bepsilon$, where $\bX_{\mathcal{C}}$ is a genotype matrix of randomly chosen causal SNPs with additive effects, $\bZ$ is a covariate matrix representing population structure, $\bW$ is a design matrix that contains SNP-by-SNP interaction designations, and $\bu$, $\bbeta$, and $\balpha$ are all effect sizes that are drawn from standard normal distributions, or $\N(\bm{0},\bI)$. The random noise term, $\bepsilon$, is also drawn as a standard normal variable. To create the matrix $\bW$, we first randomly create 10 enriched pathways, each containing 50 causal SNPs. We then allow each causal SNP to interact with 200 SNPs from the additive genetic background. This is done by simply taking the Hadamard (element-wise) product between genotypic vectors. In total, 100,000 interactions are created per simulation (i.e. 10 pathways each with 50 SNPs that interact with 200 partnering SNPs). We scale both the additive and pairwise interaction effects so that collectively they explain a fixed proportion of the phenotypic variance. Namely, the additive effects make
+up $\rho\%$ while the epistatic terms make up the remaining $(1-\rho)\%$. Alternatively, the proportion of broad-sense heritability that is explained by additive effects is said to be $\V[\bX_{\mathcal{C}}\bbeta_{\mathcal{C}}] = H^2\rho$, while the proportion of heritability that is detailed by interactions is $H^2(1-\rho)$. Lastly, we introduce population stratification effects by using the top 10 local principal components as the covariates in $\bZ$ and scaling their effects to account for an additional 10\% of the overall phenotypic variance. Overall, we analyze 50 simulated datasets per scenario. The barplots show mean power and false discovery rates (FDR) as a function of $\rho$ for \textbf{(a)} $H^2 = 0.6$ and \textbf{(b)} $H^2 = 0.8$, respectively. Standard error bars are also included.}
 }
 \label{MAPITR-Supp-Figure-Simulations-pt1}
 \end{figure}
@@ -668,6 +668,37 @@ genes are assigned to the same pathways.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{table}[ht]
+\centering
+\hspace*{-1.75em}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+ \multirow{2}{*}{\textbf{Subgroups}} & \multirow{2}{*}{\textbf{Ancestry}} & \multirow{2.2}{*}{\shortstack{ \textbf{Initial} \\ \textbf{Numbers}}} & \multirow{2.2}{*}{\shortstack{\textbf{Missingness} \\ \textbf{Drops}}} & \multirow{2.2}{*}{\shortstack{\textbf{Relatedness} \\ \textbf{Drops}}} & \multirow{2.2}{*}{\shortstack{\textbf{UKBiobank} \\ \textbf{Drops}}} & \multirow{2.2}{*}{\shortstack{\textbf{PCA} \\ \textbf{Drops}}} \\
+  [14pt]
+  \hline
+\multirow{6.5}{*}{\textbf{Original}} & African & 3205 & 3202 & 3117 & 3116 & 3111 \\ [2pt]
+  & British.Ran4000 & 3889 & 3888 & 3878 & 3866 & 3848 \\ [2pt]
+  & Caribbean & 4299 & 4296 & 3861 & 3854 & 3833 \\ [2pt]
+  & Chinese & 1504 & 1502 & 1454 & 1454 & 1448 \\ [2pt]
+  & Indian & 5716 & 5715 & 5261 & 5203 & 5077 \\ [2pt]
+  & Pakistani & 1748 & 1746 & 1609 & 1604 & 1581 \\ [2pt] \hline
+  \multirow{9.5}{*}{\textbf{British}} & British (4k, Rep.~2) & 3907 & 3906 & 3900 & 3890 & 3869 \\ [2pt]
+  & British (4k, Rep.~3) & 3884 & 3881 & 3875 & 3859 & 3836 \\ [2pt]
+  & British (4k, Rep.~4) & 3882 & 3879 & 3868 & 3855 & 3838 \\ [2pt]
+  & British (4k, Rep.~5) & 3894 & 3891 & 3886 & 3871 & 3853 \\ [2pt]
+  & British (10k, Rep.~1) & 9733 & 9726 & 9683 & 9639 & 9603 \\ [2pt]
+  & British (10k, Rep.~2) & 9747 & 9745 & 9698 & 9669 & 9628 \\ [2pt]
+  & British (10k, Rep.~3) & 9740 & 9736 & 9692 & 9671 & 9636 \\ [2pt]
+  & British (10k, Rep.~4) & 9750 & 9748 & 9697 & 9665 & 9593 \\ [2pt]
+  & British (10k, Rep.~5) & 9739 & 9731 & 9687 & 9654 & 9596 \\ [2pt]
+   \hline
+\end{tabular}
+\caption{\textcolor{red}{\textbf{Tabulation of the number of individuals dropped per subgroup after each quality control step}. Here, the \texttt{Subgroups} category ``Original'' refers to the multiple global human ancestries from the UK Biobank that were initially analyzed at the beginning of this study, while the \texttt{Subgroups} category ``British'' refers specifically to the different replicates that were created by taking random independent subsamples of the full British cohort in the UK Biobank. The third column shows the number of individuals each subgroup began with prior to any quality control steps. Note that British replicates were initially created by extracting individual IDs from the associated UK Biobank individual information file. However, not all individuals present in this file are also present in the genotype files, so a set of individuals from the original groups of 4,000 and 10,000 were initially dropped at this point. The fourth column shows the remaining sample sizes after dropping individuals due to genotype missingness being greater than 5\%. The fifth column shows the remaining sample sizes after dropping a random individual from every pair of individuals that were 3\textsuperscript{rd} degree relatives or more based on the KING relatedness values provided with the UK Biobank dataset. The sixth column shows the remaining sample sizes after dropping individuals due to being flagged by the following three UK Biobank dataset quality control categories: \texttt{het.missing.outliers}, \texttt{putative.sex.chromosome.aneuploidy}, and \texttt{excess.relatives}. The seventh column shows the remaining sample sizes after dropping individuals due to being principal component analysis (PCA) outliers based on the top six local principal components (PCs). We refer to conducting PCA on each subgroup separately as ``local'' PCA to help distinguish from the alternative setup of conducting PCA on the entire dataset jointly, which we refer to as ``global'' PCA. Note that global PCs were only used to create the PCA plots shown in Supplementary Figure \ref{MAPITR-Supp-Figure-PCAPlots}, while local PCs were used for quality control and to adjust for population structure in the MAPIT-R analyses. For other final dataset statistics see Supplementary Table \ref{MAPITR-Supp-Table-UKBPopStats} and for other details regarding dataset quality control steps see Supplementary Note.}}
+\label{MAPITR-Supp-Table-UKBQCStats}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \clearpage
 \begin{table}[H]
 \caption{\textbf{List of MAPIT-R significant pathways genome-wide for standing height and body mass index (BMI) across the different ancestry-specific subgroups in the UK Biobank.} Here, subgroups in the UK Biobank included individuals based on their self-identified ancestries: ``African'', ``British'', ``Caribbean'', ``Chinese'', ``Indian'', and ``Pakistani'' \textcolor{red}{(ordered here from top-to-bottom)}. Phenotype and pathway database combinations include: (\textit{i}) KEGG+Height, (\textit{ii}) KEGG+BMI, (\textit{iii}) REACTOME+Height, and (\textit{iv}) REACTOME+BMI. Genome-wide significance was determined by using Bonferroni-corrected $p$-value thresholds based on the number of pathways tested in each database-phenotype-subgroup combination with significance value $\alpha = 0.05$ (see Supplementary Table \ref{MAPITR-Supp-Table-UKBPopStats}). (XLSX)}
@@ -919,37 +950,6 @@ genes are assigned to the same pathways.}
 \end{table}
 
 \clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{table}[ht]
-\centering
-\hspace*{-1.75em}
-\begin{tabular}{|c|c|c|c|c|c|c|}
-  \hline
- \multirow{2}{*}{\textbf{Subgroups}} & \multirow{2}{*}{\textbf{Ancestry}} & \multirow{2.2}{*}{\shortstack{ \textbf{Initial} \\ \textbf{Numbers}}} & \multirow{2.2}{*}{\shortstack{\textbf{Missingness} \\ \textbf{Drops}}} & \multirow{2.2}{*}{\shortstack{\textbf{Relatedness} \\ \textbf{Drops}}} & \multirow{2.2}{*}{\shortstack{\textbf{UKBiobank} \\ \textbf{Drops}}} & \multirow{2.2}{*}{\shortstack{\textbf{PCA} \\ \textbf{Drops}}} \\
-  [14pt]
-  \hline
-\multirow{6.5}{*}{\textbf{Original}} & African & 3205 & 3202 & 3117 & 3116 & 3111 \\ [2pt]
-  & British.Ran4000 & 3889 & 3888 & 3878 & 3866 & 3848 \\ [2pt]
-  & Caribbean & 4299 & 4296 & 3861 & 3854 & 3833 \\ [2pt]
-  & Chinese & 1504 & 1502 & 1454 & 1454 & 1448 \\ [2pt]
-  & Indian & 5716 & 5715 & 5261 & 5203 & 5077 \\ [2pt]
-  & Pakistani & 1748 & 1746 & 1609 & 1604 & 1581 \\ [2pt] \hline
-  \multirow{9.5}{*}{\textbf{British}} & British (4k, Rep.~2) & 3907 & 3906 & 3900 & 3890 & 3869 \\ [2pt]
-  & British (4k, Rep.~3) & 3884 & 3881 & 3875 & 3859 & 3836 \\ [2pt]
-  & British (4k, Rep.~4) & 3882 & 3879 & 3868 & 3855 & 3838 \\ [2pt]
-  & British (4k, Rep.~5) & 3894 & 3891 & 3886 & 3871 & 3853 \\ [2pt]
-  & British (10k, Rep.~1) & 9733 & 9726 & 9683 & 9639 & 9603 \\ [2pt]
-  & British (10k, Rep.~2) & 9747 & 9745 & 9698 & 9669 & 9628 \\ [2pt]
-  & British (10k, Rep.~3) & 9740 & 9736 & 9692 & 9671 & 9636 \\ [2pt]
-  & British (10k, Rep.~4) & 9750 & 9748 & 9697 & 9665 & 9593 \\ [2pt]
-  & British (10k, Rep.~5) & 9739 & 9731 & 9687 & 9654 & 9596 \\ [2pt]
-   \hline
-\end{tabular}
-\caption{\textcolor{red}{\textbf{Tabulation of the number of individuals dropped per subgroup after each quality control step}. Here, the \texttt{Subgroups} category ``Original'' refers to the multiple global human ancestries from the UK Biobank that were initially analyzed at the beginning of this study, while the \texttt{Subgroups} category ``British'' refers specifically to the different replicates that were created by taking random independent subsamples of the full British cohort in the UK Biobank. The third column shows the number of individuals each subgroup began with prior to any quality control steps. Note that British replicates were initially created by extracting individual IDs from the associated UK Biobank individual information file. However, not all individuals present in this file are also present in the genotype files, so a set of individuals from the original groups of 4,000 and 10,000 were initially dropped at this point. The fourth column shows the remaining sample sizes after dropping individuals due to genotype missingness being greater than 5\%. The fifth column shows the remaining sample sizes after dropping a random individual from every pair of individuals that were 3-rd degree relatives or more based on the KING relatedness values provided with the UK Biobank dataset. The sixth column shows the remaining sample sizes after dropping individuals due to being flagged by the following three UK Biobank dataset quality control categories: \texttt{het.missing.outliers}, \texttt{putative.sex.chromosome.aneuploidy}, and \texttt{excess.relatives}. The seventh column shows the remaining sample sizes after dropping individuals due to being principal component analysis (PCA) outliers based on the top six local principal components (PCs). We refer to conducting PCA on each subgroup separately as ``local'' PCA to help distinguish from the alternative setup of conducting PCA on the entire dataset jointly, which we refer to as ``global'' PCA. Note that global PCs were only used to create the PCA plots shown in Supplementary Figure \ref{MAPITR-Supp-Figure-PCAPlots}, while local PCs were used for quality control and to adjust for population structure in the MAPIT-R analyses. For other final dataset statistics see Supplementary Table \ref{MAPITR-Supp-Table-UKBPopStats} and for other details regarding dataset quality control steps see Supplementary Note.}}
-\label{MAPITR-Supp-Table-UKBQCStats}
-\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
